@@ -25,9 +25,7 @@
               greenDark: '#047857',
               greenEmerald: '#059669',
               greenLight: '#5FE073',
-              dark: '#080E18',
-              surface: '#F1F5F9',
-              surfaceVariant: '#E2E8F0'
+              dark: '#060D17'
             }
           },
           fontFamily: {
@@ -49,13 +47,8 @@
   
   <style>
     :root {
-      --m3-surface: #FFFFFF;
-      --m3-surface-container: #F8FAFC;
-      --m3-surface-container-high: #F1F5F9;
-      --m3-primary: #005BBD;
-      --m3-secondary: #059669;
-      --m3-on-surface: #0F172A;
-      --m3-outline: #E2E8F0;
+      --elevgro-blue: #005BBD;
+      --elevgro-green: #059669;
       --ios-spring: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -75,28 +68,21 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Material 3 Expressive Cards */
-    .m3-card {
+    /* Single Clean Stage Card (NO INNER BOXES) */
+    .clean-stage-card {
       background: #FFFFFF;
-      border-radius: 32px;
-      border: 1px solid var(--m3-outline);
-      box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.04), 0 1px 3px 0 rgba(15, 23, 42, 0.02);
-      transition: all 0.4s var(--ios-spring);
+      border-radius: 36px;
+      border: 1px solid #E2E8F0;
+      box-shadow: 0 10px 40px -10px rgba(0, 91, 189, 0.05);
+      transition: background-color 0.4s ease, border-color 0.4s ease;
     }
 
-    .m3-card:hover {
-      box-shadow: 0 20px 40px -10px rgba(0, 91, 189, 0.08);
-      border-color: rgba(0, 91, 189, 0.3);
+    /* Smooth GSAP Slides */
+    .slide-section {
+      transition: opacity 0.4s ease, transform 0.4s var(--ios-spring);
     }
 
-    /* M3 Tonal Surface Box */
-    .m3-tonal-box {
-      background: #F4F7FB;
-      border-radius: 24px;
-      transition: all 0.3s ease;
-    }
-
-    /* Dynamic 3D Stage Overhaul */
+    /* Overhauled Clean 3D Stage */
     .viewport-3d {
       perspective: 1200px;
       transform-style: preserve-3d;
@@ -104,7 +90,7 @@
 
     .space-3d {
       transform-style: preserve-3d;
-      transition: transform 0.6s var(--ios-spring);
+      transition: transform 0.5s var(--ios-spring);
     }
 
     .layer-3d {
@@ -112,39 +98,17 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      object-contain: contain;
+      object-fit: contain;
       pointer-events: none;
       transform-style: preserve-3d;
-      transition: transform 0.5s var(--ios-spring), opacity 0.4s ease;
-    }
-
-    /* Grid Ground Plane in 3D */
-    .grid-plane-3d {
-      position: absolute;
-      width: 140%;
-      height: 140%;
-      top: -20%;
-      left: -20%;
-      background-image: 
-        linear-gradient(to right, rgba(0, 91, 189, 0.1) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0, 91, 189, 0.1) 1px, transparent 1px);
-      background-size: 32px 32px;
-      transform: rotateX(60deg) translateZ(-60px);
-      pointer-events: none;
-      opacity: 0.6;
-      border-radius: 32px;
-    }
-
-    /* Page Slide Transitions */
-    .slide-section {
-      transition: opacity 0.45s ease, transform 0.45s var(--ios-spring);
+      transition: transform 0.45s var(--ios-spring);
     }
   </style>
 </head>
 <body class="antialiased">
 
   <!-- ======================================================= -->
-  <!-- TOP BALANCED M3 NAVIGATION HEADER (EXACT REFERENCE)     -->
+  <!-- TOP BALANCED NAVIGATION HEADER (EXACT REFERENCE)        -->
   <!-- ======================================================= -->
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-2xl border-b border-slate-200/80 px-4 sm:px-8 py-3 transition-all">
     <div class="max-w-6xl mx-auto flex items-center justify-between gap-3 sm:gap-6">
@@ -193,7 +157,7 @@
     <!-- ======================================================= -->
     <div id="slide-1" class="slide-section space-y-16">
       
-      <!-- HERO TITLE BLOCK (EXACT REFERENCE FROM USER SCREENSHOT) -->
+      <!-- HERO TITLE BLOCK (EXACT MATCH REFERENCE SCREENSHOT) -->
       <div class="text-center space-y-4 max-w-4xl mx-auto pt-2">
         <p class="text-xs sm:text-sm font-mono font-bold tracking-wider text-slate-500 uppercase">
           Logo Guide by SYMP Studio &bull; Design by Daru Fahmaa Muliawan
@@ -209,7 +173,7 @@
         </p>
       </div>
 
-      <!-- CANVAS SWITCHER STRIP (PURE LIGHT, SAPPHIRE, OBSIDIAN) -->
+      <!-- CANVAS SWITCHER STRIP (PURE LIGHT, SAPPHIRE, DARK VELVET) -->
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-5">
         <div>
           <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
@@ -222,37 +186,37 @@
 
         <!-- Clean Tonal Canvas Pills -->
         <div class="flex items-center gap-1.5 p-1 bg-slate-100 rounded-full border border-slate-200">
-          <button id="btn-canvas-light" class="px-4 py-1.5 rounded-full text-xs font-bold bg-white text-slate-900 shadow-sm transition-all" onclick="setM3Canvas('light')">
+          <button id="btn-canvas-light" class="px-4 py-1.5 rounded-full text-xs font-bold bg-white text-slate-900 shadow-sm transition-all" onclick="setCleanCanvas('light')">
             Pure Light
           </button>
-          <button id="btn-canvas-sapphire" class="px-4 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-slate-900 transition-all" onclick="setM3Canvas('sapphire')">
+          <button id="btn-canvas-sapphire" class="px-4 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-slate-900 transition-all" onclick="setCleanCanvas('sapphire')">
             Sapphire Deep
           </button>
-          <button id="btn-canvas-obsidian" class="px-4 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-slate-900 transition-all" onclick="setM3Canvas('obsidian')">
+          <button id="btn-canvas-obsidian" class="px-4 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-slate-900 transition-all" onclick="setCleanCanvas('obsidian')">
             Dark Velvet
           </button>
         </div>
       </div>
 
-      <!-- 2-COLUMN SIDE-BY-SIDE COMPARISON CARDS (EXACT REFERENCE) -->
-      <div id="m3-dual-wrapper" class="m3-card p-6 sm:p-12 transition-all duration-500">
+      <!-- 2-COLUMN SIDE-BY-SIDE COMPARISON (SEAMLESS CANVAS, ZERO INNER BOXES) -->
+      <div id="clean-main-wrapper" class="clean-stage-card p-6 sm:p-12 transition-all duration-500">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 divide-y lg:divide-y-0 lg:divide-x divide-slate-200">
           
-          <!-- Column 1: Stacked Emblem -->
+          <!-- Column 1: Stacked Emblem (Logo floats directly on card, NO INNER BOX) -->
           <div class="space-y-6 flex flex-col justify-between pt-4 lg:pt-0">
-            <div class="space-y-5">
+            <div class="space-y-6">
               
-              <!-- Clean Title Header without Badges -->
+              <!-- Clean Title Header -->
               <div class="flex items-center justify-between">
-                <span class="text-sm font-mono font-black text-[#005BBD] tracking-wider uppercase">
+                <span id="tag-title-1" class="text-xs font-mono font-black text-[#005BBD] tracking-wider uppercase">
                   STACKED EMBLEM
                 </span>
                 <span class="text-xs font-mono text-slate-400 uppercase">1:1 MARK</span>
               </div>
 
-              <!-- Stage Box -->
-              <div id="stage-box-1" class="m3-tonal-box p-8 sm:p-12 flex items-center justify-center min-h-[280px] sm:min-h-[320px] relative group overflow-hidden">
-                <img id="img-opt-1" src="../assets/elevgro_logo1_full.png" alt="ELEVGRO Stacked Logo" class="max-h-44 sm:max-h-52 max-w-[85%] object-contain filter drop-shadow-md transition-all duration-500 transform group-hover:scale-105" />
+              <!-- Pure Seamless Logo Stage (NO INNER BOX / NO BG) -->
+              <div class="flex items-center justify-center min-h-[260px] sm:min-h-[300px] py-4">
+                <img id="img-opt-1" src="../assets/elevgro_logo1_full.png" alt="ELEVGRO Stacked Logo" class="max-h-48 sm:max-h-56 max-w-[85%] object-contain filter drop-shadow-sm transition-all duration-300 transform hover:scale-105" />
               </div>
 
               <!-- Description -->
@@ -271,27 +235,27 @@
             </div>
 
             <!-- Action Button -->
-            <button onclick="goToSlide(2, 1)" class="w-full py-3 px-5 rounded-2xl bg-blue-50 hover:bg-blue-100 text-[#005BBD] text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-blue-200">
+            <button onclick="goToSlide(2, 1)" id="btn-opt-1" class="w-full py-3 px-5 rounded-2xl bg-blue-50 hover:bg-blue-100 text-[#005BBD] text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-blue-200">
               <span>Bedah Objek 3D &bull; Varian 1</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
           </div>
 
-          <!-- Column 2: Horizontal Crest -->
+          <!-- Column 2: Horizontal Crest (Logo floats directly on card, NO INNER BOX) -->
           <div class="space-y-6 flex flex-col justify-between pt-10 lg:pt-0 lg:pl-14">
-            <div class="space-y-5">
+            <div class="space-y-6">
               
-              <!-- Clean Title Header without Badges -->
+              <!-- Clean Title Header -->
               <div class="flex items-center justify-between">
-                <span class="text-sm font-mono font-black text-[#059669] tracking-wider uppercase">
+                <span id="tag-title-2" class="text-xs font-mono font-black text-[#059669] tracking-wider uppercase">
                   HORIZONTAL CREST
                 </span>
                 <span class="text-xs font-mono text-slate-400 uppercase">HORIZONTAL CREST</span>
               </div>
 
-              <!-- Stage Box -->
-              <div id="stage-box-2" class="m3-tonal-box p-8 sm:p-12 flex items-center justify-center min-h-[280px] sm:min-h-[320px] relative group overflow-hidden">
-                <img id="img-opt-2" src="../assets/elevgro_logo2_full.png" alt="ELEVGRO Horizontal Logo" class="max-h-20 sm:max-h-24 max-w-[80%] object-contain filter drop-shadow-md transition-all duration-500 transform group-hover:scale-105" />
+              <!-- Pure Seamless Logo Stage (NO INNER BOX / NO BG) -->
+              <div class="flex items-center justify-center min-h-[260px] sm:min-h-[300px] py-4">
+                <img id="img-opt-2" src="../assets/elevgro_logo2_full.png" alt="ELEVGRO Horizontal Logo" class="max-h-20 sm:max-h-24 max-w-[80%] object-contain filter drop-shadow-sm transition-all duration-300 transform hover:scale-105" />
               </div>
 
               <!-- Description -->
@@ -310,7 +274,7 @@
             </div>
 
             <!-- Action Button -->
-            <button onclick="goToSlide(2, 2)" class="w-full py-3 px-5 rounded-2xl bg-emerald-50 hover:bg-emerald-100 text-[#059669] text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-emerald-200">
+            <button onclick="goToSlide(2, 2)" id="btn-opt-2" class="w-full py-3 px-5 rounded-2xl bg-emerald-50 hover:bg-emerald-100 text-[#059669] text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-emerald-200">
               <span>Bedah Objek 3D &bull; Varian 2</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
@@ -319,7 +283,7 @@
         </div>
       </div>
 
-      <!-- 3 PILAR FILOSOFI (CLEAN MATERIAL 3 CARDS) -->
+      <!-- 3 PILAR FILOSOFI (CLEAN EDITORIAL SECTIONS, NO BOX CLUTTER) -->
       <div class="space-y-8 pt-4">
         <div class="border-l-2 border-[#005BBD] pl-4">
           <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
@@ -330,10 +294,10 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           <!-- Pilar 1 -->
-          <div class="m3-card p-8 space-y-4">
+          <div class="space-y-3 pt-2">
             <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#005BBD] flex items-center justify-center font-bold">
               <i data-lucide="trending-up" class="w-6 h-6"></i>
             </div>
@@ -344,7 +308,7 @@
           </div>
 
           <!-- Pilar 2 -->
-          <div class="m3-card p-8 space-y-4">
+          <div class="space-y-3 pt-2">
             <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-[#059669] flex items-center justify-center font-bold">
               <i data-lucide="leaf" class="w-6 h-6"></i>
             </div>
@@ -355,7 +319,7 @@
           </div>
 
           <!-- Pilar 3 -->
-          <div class="m3-card p-8 space-y-4">
+          <div class="space-y-3 pt-2">
             <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold">
               <i data-lucide="heart-handshake" class="w-6 h-6"></i>
             </div>
@@ -371,11 +335,11 @@
     </div>
 
     <!-- ======================================================= -->
-    <!-- SLIDE 02: OVERHAULED MASTER 3D BEDAH LAYER              -->
+    <!-- SLIDE 02: OVERHAULED CLEAN 3D BEDAH LAYER               -->
     <!-- ======================================================= -->
     <div id="slide-2" class="slide-section space-y-16 hidden">
       
-      <!-- 3D HERO CONTROLS & OVERHAUL -->
+      <!-- 3D HERO CONTROLS -->
       <div class="space-y-6">
         
         <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-200 pb-6">
@@ -388,7 +352,7 @@
             </p>
           </div>
 
-          <!-- Dynamic Controls Strip -->
+          <!-- Controls Strip -->
           <div class="flex flex-wrap items-center gap-3">
             
             <!-- Variant Selector -->
@@ -398,19 +362,6 @@
               </button>
               <button id="btn-3d-v2" class="px-4 py-1.5 rounded-full text-slate-600 hover:text-slate-900 transition-all" onclick="set3DVariant(2)">
                 Varian 2 (Horizontal)
-              </button>
-            </div>
-
-            <!-- Preset Angle Buttons -->
-            <div class="flex items-center p-1 bg-slate-100 rounded-full border border-slate-200 text-xs font-bold">
-              <button class="px-3 py-1.5 rounded-full text-slate-600 hover:text-slate-900 transition-all" onclick="set3DAngle('isometric')">
-                Isometric
-              </button>
-              <button class="px-3 py-1.5 rounded-full text-slate-600 hover:text-slate-900 transition-all" onclick="set3DAngle('front')">
-                Front
-              </button>
-              <button class="px-3 py-1.5 rounded-full text-slate-600 hover:text-slate-900 transition-all" onclick="set3DAngle('side')">
-                Profile
               </button>
             </div>
 
@@ -424,27 +375,24 @@
           </div>
         </div>
 
-        <!-- 3D HIGH-TECH MASTER STAGE (COMPLETELY OVERHAULED) -->
-        <div id="stage-3d-master" class="viewport-3d rounded-[36px] bg-[#070D18] border border-blue-900/40 p-8 sm:p-20 flex items-center justify-center min-h-[460px] sm:min-h-[540px] relative overflow-hidden shadow-2xl">
+        <!-- 3D CLEAN STAGE (NO UNNECESSARY BOX CLUTTER) -->
+        <div id="stage-3d-master" class="viewport-3d rounded-[36px] bg-[#060D17] border border-blue-900/40 p-8 sm:p-20 flex items-center justify-center min-h-[440px] sm:min-h-[500px] relative overflow-hidden shadow-2xl">
           
           <!-- Background Atmospheric Glow -->
-          <div class="absolute inset-0 bg-gradient-to-tr from-blue-900/20 via-transparent to-emerald-900/20 pointer-events-none"></div>
-
-          <!-- Ground Grid Plane -->
-          <div class="grid-plane-3d"></div>
+          <div class="absolute inset-0 bg-gradient-to-tr from-blue-950/40 via-transparent to-emerald-950/30 pointer-events-none"></div>
 
           <!-- Main 3D Space Container -->
           <div id="space-3d-container" class="space-3d relative w-56 h-56 sm:w-72 sm:h-72 flex items-center justify-center">
             
             <!-- Layer 1: Corporate Blue Foundation -->
-            <img id="layer-3d-blue" src="../assets/elevgro_logo1_layer_blue.png" alt="Blue Foundation" class="layer-3d filter drop-shadow-[0_25px_35px_rgba(0,0,0,0.8)]" style="transform: translateZ(0px);" />
+            <img id="layer-3d-blue" src="../assets/elevgro_logo1_layer_blue.png" alt="Blue Foundation" class="layer-3d filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)]" style="transform: translateZ(0px);" />
 
             <!-- Layer 2: Growth Emerald Momentum -->
-            <img id="layer-3d-green" src="../assets/elevgro_logo1_layer_green.png" alt="Green Momentum" class="layer-3d filter drop-shadow-[0_25px_35px_rgba(0,0,0,0.8)]" style="transform: translateZ(0px);" />
+            <img id="layer-3d-green" src="../assets/elevgro_logo1_layer_green.png" alt="Green Momentum" class="layer-3d filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)]" style="transform: translateZ(0px);" />
 
           </div>
 
-          <!-- Bottom Interactive Floating Overlay -->
+          <!-- Bottom Status Overlay -->
           <div class="absolute bottom-5 inset-x-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono text-slate-400 bg-white/5 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/10">
             <div class="flex items-center gap-2">
               <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -480,15 +428,15 @@
           <div class="h-3.5 rounded-full overflow-hidden flex shadow-inner border border-slate-200">
             <div class="w-[70%] bg-[#005BBD]"></div>
             <div class="w-[20%] bg-[#48C15A]"></div>
-            <div class="w-[10%] bg-[#080E18]"></div>
+            <div class="w-[10%] bg-[#060D17]"></div>
           </div>
         </div>
 
-        <!-- 4 Pantone Cards -->
+        <!-- 4 Pantone Swatches -->
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
           
           <!-- Swatch 1 -->
-          <div class="m3-card p-5 space-y-4 cursor-pointer group" onclick="copyHex('#005BBD', this)">
+          <div class="p-5 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4 cursor-pointer hover:border-[#005BBD] transition-all group" onclick="copyHex('#005BBD', this)">
             <div class="h-24 rounded-2xl bg-[#005BBD] shadow-sm flex items-end justify-end p-2.5 text-white">
               <i data-lucide="copy" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
             </div>
@@ -500,31 +448,31 @@
           </div>
 
           <!-- Swatch 2 -->
-          <div class="m3-card p-5 space-y-4 cursor-pointer group" onclick="copyHex('#48C15A', this)">
+          <div class="p-5 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4 cursor-pointer hover:border-[#48C15A] transition-all group" onclick="copyHex('#48C15A', this)">
             <div class="h-24 rounded-2xl bg-[#48C15A] shadow-sm flex items-end justify-end p-2.5 text-white">
               <i data-lucide="copy" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
             </div>
             <div>
               <span class="text-xs font-mono text-slate-400 block uppercase">20% ACCENT</span>
-              <span class="text-sm font-extrabold text-slate-900 block">Growth Emerald (Majoo)</span>
+              <span class="text-sm font-extrabold text-slate-900 block">Growth Emerald</span>
               <span class="text-xs font-mono font-black text-[#48C15A]">#48C15A</span>
             </div>
           </div>
 
           <!-- Swatch 3 -->
-          <div class="m3-card p-5 space-y-4 cursor-pointer group" onclick="copyHex('#080E18', this)">
-            <div class="h-24 rounded-2xl bg-[#080E18] shadow-sm flex items-end justify-end p-2.5 text-white">
+          <div class="p-5 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4 cursor-pointer hover:border-slate-800 transition-all group" onclick="copyHex('#060D17', this)">
+            <div class="h-24 rounded-2xl bg-[#060D17] shadow-sm flex items-end justify-end p-2.5 text-white">
               <i data-lucide="copy" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
             </div>
             <div>
               <span class="text-xs font-mono text-slate-400 block uppercase">10% CANVAS</span>
-              <span class="text-sm font-extrabold text-slate-900 block">Obsidian Velvet</span>
-              <span class="text-xs font-mono font-black text-slate-900">#080E18</span>
+              <span class="text-sm font-extrabold text-slate-900 block">Obsidian Tech</span>
+              <span class="text-xs font-mono font-black text-slate-900">#060D17</span>
             </div>
           </div>
 
           <!-- Swatch 4 -->
-          <div class="m3-card p-5 space-y-4 cursor-pointer group" onclick="copyHex('#FFFFFF', this)">
+          <div class="p-5 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4 cursor-pointer hover:border-slate-400 transition-all group" onclick="copyHex('#FFFFFF', this)">
             <div class="h-24 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-end justify-end p-2.5 text-slate-700">
               <i data-lucide="copy" class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity"></i>
             </div>
@@ -551,7 +499,7 @@
           </p>
         </div>
 
-        <div class="m3-card p-8 sm:p-10 space-y-6">
+        <div class="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-6">
           
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
             <div class="flex items-center gap-2">
@@ -679,21 +627,6 @@
       update3DExplode(0);
     }
 
-    // 3D Angle Presets
-    function set3DAngle(angle) {
-      if (angle === 'isometric') {
-        rotX = -20;
-        rotY = 30;
-      } else if (angle === 'front') {
-        rotX = 0;
-        rotY = 0;
-      } else if (angle === 'side') {
-        rotX = -10;
-        rotY = 65;
-      }
-      apply3DTransform();
-    }
-
     // 3D Exploder Slider
     function update3DExplode(val) {
       explodeDistance = val;
@@ -731,43 +664,75 @@
       }
     });
 
-    // Initial 3D angle setup
-    set3DAngle('isometric');
+    // Initial 3D angle
+    rotX = -15;
+    rotY = 25;
+    apply3DTransform();
 
-    // Material 3 Canvas Switcher
-    function setM3Canvas(c) {
-      const wrapper = document.getElementById('m3-dual-wrapper');
-      const b1 = document.getElementById('stage-box-1');
-      const b2 = document.getElementById('stage-box-2');
+    // Clean Seamless Canvas Switcher (NO INNER BOXES!)
+    function setCleanCanvas(c) {
+      const wrapper = document.getElementById('clean-main-wrapper');
       const img1 = document.getElementById('img-opt-1');
       const img2 = document.getElementById('img-opt-2');
+
+      const title1 = document.getElementById('title-opt-1');
+      const title2 = document.getElementById('title-opt-2');
+      const desc1 = document.getElementById('desc-opt-1');
+      const desc2 = document.getElementById('desc-opt-2');
 
       const btnL = document.getElementById('btn-canvas-light');
       const btnS = document.getElementById('btn-canvas-sapphire');
       const btnO = document.getElementById('btn-canvas-obsidian');
 
+      const btnOpt1 = document.getElementById('btn-opt-1');
+      const btnOpt2 = document.getElementById('btn-opt-2');
+
       btnL.className = c === 'light' ? 'px-4 py-1.5 rounded-full text-xs font-bold bg-white text-slate-900 shadow-sm transition-all' : 'px-4 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-slate-900 transition-all';
       btnS.className = c === 'sapphire' ? 'px-4 py-1.5 rounded-full text-xs font-bold bg-[#002552] text-white shadow-sm transition-all' : 'px-4 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-slate-900 transition-all';
-      btnO.className = c === 'obsidian' ? 'px-4 py-1.5 rounded-full text-xs font-bold bg-[#080E18] text-white shadow-sm transition-all' : 'px-4 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-slate-900 transition-all';
+      btnO.className = c === 'obsidian' ? 'px-4 py-1.5 rounded-full text-xs font-bold bg-[#060D17] text-white shadow-sm transition-all' : 'px-4 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-slate-900 transition-all';
 
       if (c === 'light') {
         wrapper.style.backgroundColor = '#FFFFFF';
-        b1.style.backgroundColor = '#F4F7FB';
-        b2.style.backgroundColor = '#F4F7FB';
+        wrapper.style.borderColor = '#E2E8F0';
+
         img1.src = '../assets/elevgro_logo1_full.png';
         img2.src = '../assets/elevgro_logo2_full.png';
+
+        title1.className = 'text-lg sm:text-xl font-extrabold text-slate-900';
+        title2.className = 'text-lg sm:text-xl font-extrabold text-slate-900';
+        desc1.className = 'text-xs sm:text-sm text-slate-600 leading-relaxed';
+        desc2.className = 'text-xs sm:text-sm text-slate-600 leading-relaxed';
+
+        btnOpt1.className = 'w-full py-3 px-5 rounded-2xl bg-blue-50 hover:bg-blue-100 text-[#005BBD] text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-blue-200';
+        btnOpt2.className = 'w-full py-3 px-5 rounded-2xl bg-emerald-50 hover:bg-emerald-100 text-[#059669] text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-emerald-200';
       } else if (c === 'sapphire') {
         wrapper.style.backgroundColor = '#002552';
-        b1.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-        b2.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+        wrapper.style.borderColor = 'rgba(0, 91, 189, 0.4)';
+
         img1.src = '../assets/elevgro_logo1_white.png';
         img2.src = '../assets/elevgro_logo2_white.png';
+
+        title1.className = 'text-lg sm:text-xl font-extrabold text-white';
+        title2.className = 'text-lg sm:text-xl font-extrabold text-white';
+        desc1.className = 'text-xs sm:text-sm text-slate-300 leading-relaxed';
+        desc2.className = 'text-xs sm:text-sm text-slate-300 leading-relaxed';
+
+        btnOpt1.className = 'w-full py-3 px-5 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-white/20';
+        btnOpt2.className = 'w-full py-3 px-5 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-white/20';
       } else if (c === 'obsidian') {
-        wrapper.style.backgroundColor = '#080E18';
-        b1.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-        b2.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+        wrapper.style.backgroundColor = '#060D17';
+        wrapper.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+
         img1.src = '../assets/elevgro_logo1_white.png';
         img2.src = '../assets/elevgro_logo2_white.png';
+
+        title1.className = 'text-lg sm:text-xl font-extrabold text-white';
+        title2.className = 'text-lg sm:text-xl font-extrabold text-white';
+        desc1.className = 'text-xs sm:text-sm text-slate-300 leading-relaxed';
+        desc2.className = 'text-xs sm:text-sm text-slate-300 leading-relaxed';
+
+        btnOpt1.className = 'w-full py-3 px-5 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-white/20';
+        btnOpt2.className = 'w-full py-3 px-5 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-white/20';
       }
     }
 
