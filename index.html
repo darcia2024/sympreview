@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>KOLOHAGA — Visual Identity by SYMP Studio</title>
+  <title>SYMP Studio — Brand Architecture & Visual Identity by Daru Fahmaa Muliawan</title>
   
   <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,12 +17,13 @@
       theme: {
         extend: {
           colors: {
-            kol: {
-              emerald: '#059B66',
-              forest: '#013A25',
-              gold: '#F0BE3E',
-              ochre: '#E2BE63',
-              slate: '#0F172A'
+            symp: {
+              maroon: '#460713',
+              deep: '#140205',
+              dark: '#220308',
+              crimson: '#8C0D23',
+              ruby: '#E61C3D',
+              gold: '#E4B854'
             }
           },
           fontFamily: {
@@ -39,669 +40,291 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="symp.css">
 </head>
-<body class="bg-[#FCFDFC] text-slate-800 antialiased selection:bg-kol-emerald selection:text-white relative font-jakarta">
+<body class="bg-[#140205] text-[#FFF5F7] antialiased selection:bg-[#E61C3D] selection:text-white relative font-jakarta">
 
-  <!-- Ambient Light (Zero Pattern) -->
-  <div class="ambient-glow">
-    <div class="glow-orb-1"></div>
-    <div class="glow-orb-2"></div>
+  <!-- Ambient Light Orbs (Maroon & Warm Gold) -->
+  <div class="ambient-maroon">
+    <div class="maroon-orb-1"></div>
+    <div class="maroon-orb-2"></div>
   </div>
 
-  <!-- Top Progress Bar -->
-  <div class="fixed top-0 left-0 w-full h-1 bg-slate-200/50 z-50">
-    <div id="top-progress-bar" class="h-full bg-gradient-to-r from-kol-emerald via-amber-500 to-emerald-500 w-1/2 transition-all duration-500"></div>
-  </div>
-
-  <!-- Floating Minimalist Header (Mobile-Optimized iOS Architecture) -->
-  <header class="sticky top-0 z-40 ios-frosted-nav px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 transition-all">
-    <div class="max-w-6xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
+  <!-- Floating Minimalist Header -->
+  <header class="sticky top-0 z-50 symp-nav px-4 sm:px-8 py-3.5 transition-all">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
       
-      <!-- Prev Button -->
-      <button class="btn-prev-page w-9 h-9 sm:w-auto sm:h-auto sm:px-3.5 sm:py-1.5 rounded-full bg-slate-100/90 border border-slate-200/80 text-slate-700 hover:bg-slate-200 active:scale-95 flex items-center justify-center gap-1.5 transition-all flex-shrink-0" title="Slide Sebelumnya">
-        <i data-lucide="chevron-left" class="w-4 h-4 text-slate-700"></i>
-        <span class="hidden sm:inline text-xs font-semibold">Prev</span>
-      </button>
+      <!-- Brand Logo / Studio Emblem -->
+      <a href="/" class="flex items-center gap-2.5 group">
+        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-[#8C0D23] via-[#E61C3D] to-[#E4B854] flex items-center justify-center text-white font-extrabold text-xs shadow-md shadow-[#8C0D23]/40 group-hover:scale-105 transition-transform">
+          S
+        </div>
+        <div class="flex flex-col">
+          <span class="text-sm font-extrabold tracking-tight text-white flex items-center gap-1.5">
+            SYMP STUDIO
+            <span class="pulse-ruby-dot"></span>
+          </span>
+          <span class="text-[9px] font-mono text-[#D1B4B9] tracking-wider uppercase">Visual Architecture</span>
+        </div>
+      </a>
 
-      <!-- Center iOS Segmented 2-Slide Nav -->
-      <nav class="ios-segmented-control flex-1 max-w-[280px] sm:max-w-md mx-auto grid grid-cols-2 text-center shadow-sm">
-        <button class="ios-segment-btn active page-dot-btn flex items-center justify-center gap-1.5 !py-1.5 !px-2 sm:!px-4" onclick="goToPage(1)">
-          <i data-lucide="compass" class="w-3.5 h-3.5 flex-shrink-0"></i>
-          <span class="text-[11px] sm:text-xs font-bold whitespace-nowrap">01. Filosofi</span>
-        </button>
-        <button class="ios-segment-btn page-dot-btn flex items-center justify-center gap-1.5 !py-1.5 !px-2 sm:!px-4" onclick="goToPage(2)">
-          <i data-lucide="box" class="w-3.5 h-3.5 flex-shrink-0"></i>
-          <span class="text-[11px] sm:text-xs font-bold whitespace-nowrap">02. Bedah 3D</span>
-        </button>
+      <!-- Center Links (Desktop) -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-[#D1B4B9]">
+        <a href="#showcase" class="hover:text-[#E4B854] transition-colors">Showcase Klien</a>
+        <a href="#capabilities" class="hover:text-[#E4B854] transition-colors">Kapabilitas</a>
+        <a href="#about" class="hover:text-[#E4B854] transition-colors">Tentang Studio</a>
       </nav>
 
-      <!-- Next Button -->
-      <button class="btn-next-page w-9 h-9 sm:w-auto sm:h-auto sm:px-4 sm:py-1.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white shadow-md shadow-emerald-600/25 active:scale-95 flex items-center justify-center gap-1.5 transition-all flex-shrink-0" title="Slide Selanjutnya">
-        <span class="hidden sm:inline text-xs font-bold">Next</span>
-        <i data-lucide="chevron-right" class="w-4 h-4 text-white"></i>
-      </button>
+      <!-- Direct Action -->
+      <div class="flex items-center gap-2.5">
+        <a href="kolohaga" class="btn-symp-gold !py-1.5 !px-4 text-xs">
+          <span>KOLOHAGA Deck</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
 
     </div>
   </header>
 
-  <!-- Main Multi-Page Container -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 relative z-10 font-jakarta">
+  <!-- Main Container -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 relative z-10 space-y-20 sm:space-y-28">
 
     <!-- ======================================================= -->
-    <!-- SLIDE 1: OVERVIEW, FILOSOFI, 2 LOGO UTAMA & COLOR HARMONY-->
+    <!-- HERO SECTION: THE MASTER BRAND ARCHITECTURE            -->
     <!-- ======================================================= -->
-    <section id="page-1" class="page-view active space-y-12 sm:space-y-16">
+    <section class="text-center space-y-6 max-w-3xl mx-auto pt-6 sm:pt-10 reveal-on-scroll">
       
-      <!-- High-End Editorial Hero Header (Logo Proposal Copywriting) -->
-      <div class="text-center space-y-3 max-w-3xl mx-auto pt-4 sm:pt-6 pb-2 reveal-on-scroll">
-        
-        <!-- Designer & Studio Line (Pure Typography - No Badges/Capsules) -->
-        <p class="text-xs sm:text-sm font-bold tracking-wider text-emerald-800">
-          Logo Guide by SYMP Studio &bull; Design by Daru Fahmaa Muliawan
-        </p>
-        
-        <!-- Bold Agency Proposal Headline -->
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-          Penawaran Eksklusif <br class="hidden sm:inline" />
-          <span class="text-gradient-emerald">Konsep Identitas Logo</span>
-        </h1>
-        
-        <!-- Persuasive Subtitle -->
-        <p class="text-xs sm:text-sm md:text-base text-slate-600 font-normal leading-relaxed max-w-xl mx-auto">
-          Eksplorasi 2 arah desain visual terbaik yang dirancang presisi untuk mengangkat wibawa brand, membangun <em>trust</em> instan di mata konsumen, dan siap mendominasi pasar.
-        </p>
+      <!-- Studio & Lead Tag -->
+      <div class="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-wider text-[#E4B854] uppercase">
+        <span class="pulse-ruby-dot"></span>
+        <span>SYMP Studio &bull; Design by Daru Fahmaa Muliawan</span>
       </div>
 
-      <!-- Master Logo Showcase with Theme Switcher (Frameless Seamless Canvas) -->
-      <div class="space-y-6 reveal-on-scroll">
-        
-        <!-- Section Bar & Theme Switcher -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200/80 pb-4">
-          <div class="border-l-2 border-emerald-600 pl-3">
-            <span class="text-[10px] font-mono text-emerald-700 tracking-[0.2em] uppercase font-extrabold">FORMAT UTAMA</span>
-            <h2 class="text-lg sm:text-xl font-bold text-slate-900">2 Opsi Logo Resmi</h2>
-          </div>
-          
-          <!-- iOS Segmented Theme Switcher -->
-          <div class="ios-segmented-control theme-switcher-group self-start sm:self-auto overflow-x-auto max-w-full">
-            <button class="theme-btn ios-segment-btn active" data-stage="overview-stage-1" data-theme="light">
-              Pure Light
-            </button>
-            <button class="theme-btn ios-segment-btn" data-stage="overview-stage-1" data-theme="forest">
-              Pine Forest (#013A25)
-            </button>
-            <button class="theme-btn ios-segment-btn" data-stage="overview-stage-1" data-theme="dark">
-              Dark Velvet
-            </button>
-          </div>
-        </div>
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.12]">
+        Crafting Timeless <br class="hidden sm:inline" />
+        <span class="text-gradient-gold">Visual Identities</span> <br class="hidden sm:inline" />
+        for Visionary Brands.
+      </h1>
 
-        <!-- 2 Logo Showcases Side by Side (Frameless, Unboxed, Seamless Canvas) -->
-        <div id="overview-stage-1" class="preview-stage theme-light grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 transition-all">
-          
-          <!-- Logo 1 Showcase (Frameless) -->
-          <div class="flex flex-col justify-between space-y-6 reveal-on-scroll stagger-1 group md:border-r theme-stage-divider md:pr-8 lg:pr-12">
-            
-            <!-- Clean Architectural Header -->
-            <div class="flex items-center justify-between border-b theme-stage-divider pb-3">
-              <div class="flex items-center gap-2">
-                <span class="text-xs font-mono font-extrabold text-emerald-500 tracking-wider">[ 01 ]</span>
-                <span class="text-xs font-bold tracking-tight theme-stage-text-title uppercase">Harmonic Emblem</span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold opacity-60 theme-stage-text-desc tracking-wider">1:1 SQUARE MARK</span>
-            </div>
+      <!-- Persuasive Subhead -->
+      <p class="text-sm sm:text-base md:text-lg text-[#D1B4B9] font-normal leading-relaxed max-w-2xl mx-auto">
+        Kami merancang arsitektur logo berdaya ingat tinggi, eksplorasi geometris 3D yang presisi, dan sistem identitas visual yang siap memimpin pasar modern.
+      </p>
 
-            <!-- Main Visual Stage (Logo floats freely with zero inner box) -->
-            <div class="py-8 px-4 flex items-center justify-center min-h-[180px] sm:min-h-[220px]">
-              <img src="assets/logo1_full.png" data-light-src="assets/logo1_white_text.png" data-dark-src="assets/logo1_full.png" alt="Logo Kolohaga 1" class="adaptive-logo-img max-h-36 sm:max-h-44 max-w-full object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-sm" />
-            </div>
-
-            <!-- Breakdown Summary & Action -->
-            <div class="space-y-3 pt-4 border-t theme-stage-divider">
-              <h3 class="text-sm sm:text-base font-bold theme-stage-text-title flex items-center justify-between">
-                <span>Perisai Persegi &amp; Simpul Anyaman 4 Arah</span>
-                <i data-lucide="shield" class="w-4 h-4 opacity-80"></i>
-              </h3>
-              <p class="text-xs theme-stage-text-desc leading-relaxed">
-                Vibe-nya kokoh, terpusat, dan berwibawa parah. Pas banget buat App Icon di iPhone/Android, avatar sosmed, sampai stempel packaging produk.
-              </p>
-              <button onclick="goToPage(2); switchLogoTab('logo1');" class="theme-stage-btn w-full py-3 rounded-full text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm">
-                <span>Bedah Objek 3D &bull; Varian 1</span>
-                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-              </button>
-            </div>
-
-          </div>
-
-          <!-- Logo 2 Showcase (Frameless) -->
-          <div class="flex flex-col justify-between space-y-6 reveal-on-scroll stagger-2 group">
-            
-            <!-- Clean Architectural Header -->
-            <div class="flex items-center justify-between border-b theme-stage-divider pb-3">
-              <div class="flex items-center gap-2">
-                <span class="text-xs font-mono font-extrabold text-amber-500 tracking-wider">[ 02 ]</span>
-                <span class="text-xs font-bold tracking-tight theme-stage-text-title uppercase">Infinity Synergy</span>
-              </div>
-              <span class="text-[10px] font-mono font-semibold opacity-60 theme-stage-text-desc tracking-wider">HORIZONTAL CREST</span>
-            </div>
-
-            <!-- Main Visual Stage (Logo floats freely with zero inner box) -->
-            <div class="py-8 px-4 flex items-center justify-center min-h-[180px] sm:min-h-[220px]">
-              <img src="assets/logo2_full.png" data-light-src="assets/logo2_white_text.png" data-dark-src="assets/logo2_full.png" alt="Logo Kolohaga 2" class="adaptive-logo-img max-h-36 sm:max-h-44 max-w-full object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-sm" />
-            </div>
-
-            <!-- Breakdown Summary & Action -->
-            <div class="space-y-3 pt-4 border-t theme-stage-divider">
-              <h3 class="text-sm sm:text-base font-bold theme-stage-text-title flex items-center justify-between">
-                <span>Pita Infinity &amp; Tipografi Mengalir</span>
-                <i data-lucide="infinity" class="w-4 h-4 opacity-80"></i>
-              </h3>
-              <p class="text-xs theme-stage-text-desc leading-relaxed">
-                Gaya modern nan luwes dengan pita infinity angka 8. Enak banget dipasang di header website, kop surat resmi, neon box toko, atau billboard jalan protokol.
-              </p>
-              <button onclick="goToPage(2); switchLogoTab('logo2');" class="theme-stage-btn w-full py-3 rounded-full text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm">
-                <span>Bedah Objek 3D &bull; Varian 2</span>
-                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-              </button>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- Core Brand Philosophy (3 Bento Pillars) -->
-      <div class="space-y-6 border-t border-slate-200/80 pt-8 reveal-on-scroll">
-        <div class="border-l-2 border-emerald-600 pl-3">
-          <span class="text-[10px] font-mono text-emerald-700 tracking-[0.2em] uppercase font-extrabold">PILAR FILOSOFIS</span>
-          <h2 class="text-lg sm:text-xl font-bold text-slate-900 mt-0.5">3 Nilai Penting di Balik KOLOHAGA</h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-          
-          <!-- Pillar 1 -->
-          <div class="clean-surface-card p-5 sm:p-6 space-y-3 reveal-on-scroll stagger-1">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono font-extrabold text-emerald-700">01 / 03</span>
-              <i data-lucide="layers" class="w-5 h-5 text-emerald-600"></i>
-            </div>
-            <h3 class="text-base font-bold text-slate-900">One-Stop Solution ("Gak Pake Ribet")</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Konsepnya satu pintu. Mau urusan apa aja, semuanya <em>ready</em> di satu tempat. Lu gak perlu capek bolak-balik cari vendor atau platform lain, di sini udah beres dari A sampai Z.
-            </p>
-          </div>
-
-          <!-- Pillar 2 -->
-          <div class="clean-surface-card p-5 sm:p-6 space-y-3 reveal-on-scroll stagger-2">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono font-extrabold text-[#013A25]">02 / 03</span>
-              <i data-lucide="sprout" class="w-5 h-5 text-[#013A25]"></i>
-            </div>
-            <h3 class="text-base font-bold text-slate-900">Cuan Berkelanjutan &amp; Tahan Banting</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Kombinasi Hijau Zamrud (#059B66) &amp; Hijau Hutan Pinus (#013A25) ngasih sinyal kuat: bisnis kita terus bertumbuh segar, punya fondasi kokoh kayak pohon pinus, dan anti-mati gaya!
-            </p>
-          </div>
-
-          <!-- Pillar 3 -->
-          <div class="clean-surface-card p-5 sm:p-6 space-y-3 reveal-on-scroll stagger-3">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono font-extrabold text-amber-700">03 / 03</span>
-              <i data-lucide="infinity" class="w-5 h-5 text-amber-600"></i>
-            </div>
-            <h3 class="text-base font-bold text-slate-900">Kemitraan Saling Ngunci (Win-Win)</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Bentuk simpul 4 arah dan pita infinity itu simbol relasi yang saling menguntungkan. Hubungan brand sama konsumen dan mitra itu saling nopang dan gak bakal putus di tengah jalan.
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Master Color Harmony (Luxury Pantone Swatch Architecture) -->
-      <div class="space-y-6 border-t border-slate-200/80 pt-8 reveal-on-scroll">
-        
-        <!-- Header -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-l-2 border-amber-500 pl-3">
-          <div>
-            <span class="text-[10px] font-mono text-amber-700 tracking-[0.2em] uppercase font-extrabold">SISTEM WARNA</span>
-            <h2 class="text-lg sm:text-xl font-bold text-slate-900 mt-0.5">Master Color Harmony</h2>
-          </div>
-          <p class="text-[11px] text-slate-400 font-mono">Klik kartu mana saja buat copy HEX instan</p>
-        </div>
-
-        <!-- Integrated Visual Ratio Bar (60-25-10-5) -->
-        <div class="space-y-2 reveal-on-scroll">
-          <div class="h-3.5 w-full rounded-full overflow-hidden flex shadow-inner border border-slate-200/80 p-0.5 bg-slate-100">
-            <div class="h-full bg-[#059B66] rounded-l-full" style="width: 60%;" title="Emerald 60%"></div>
-            <div class="h-full bg-[#013A25]" style="width: 25%;" title="Pine Forest 25%"></div>
-            <div class="h-full bg-[#F0BE3E]" style="width: 10%;" title="Sunstone Gold 10%"></div>
-            <div class="h-full bg-[#E2BE63] rounded-r-full" style="width: 5%;" title="Warm Ochre 5%"></div>
-          </div>
-          <div class="flex items-center justify-between text-[10px] font-mono text-slate-500 px-1">
-            <span class="text-emerald-700 font-bold">Primary (60%)</span>
-            <span class="text-[#013A25] font-bold">Secondary (25%)</span>
-            <span class="text-amber-600 font-bold">Accent (10%)</span>
-            <span class="text-amber-700 font-bold">Synergy (5%)</span>
-          </div>
-        </div>
-
-        <!-- 4 Physical Pantone Swatch Cards -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5">
-          
-          <!-- Swatch 1: Emerald -->
-          <div class="pantone-card card-emerald copy-color-btn reveal-on-scroll stagger-1" data-copy-value="#059B66">
-            <div class="h-20 sm:h-24 bg-[#059B66] p-3 flex flex-col justify-between text-white relative">
-              <span class="text-[10px] font-mono tracking-widest uppercase opacity-80 font-bold">PRIMARY</span>
-              <span class="text-base sm:text-lg font-mono font-extrabold self-end">60%</span>
-            </div>
-            <div class="p-3 space-y-0.5 bg-white">
-              <div class="flex items-center justify-between font-mono text-xs font-bold text-slate-900">
-                <span>#059B66</span>
-                <i data-lucide="copy" class="w-3.5 h-3.5 text-slate-400"></i>
-              </div>
-              <p class="text-[11px] text-slate-500">Vibrant Emerald</p>
-            </div>
-            <div class="copy-tooltip">Tersalin!</div>
-          </div>
-
-          <!-- Swatch 2: Forest #013A25 -->
-          <div class="pantone-card card-forest copy-color-btn reveal-on-scroll stagger-2" data-copy-value="#013A25">
-            <div class="h-20 sm:h-24 bg-[#013A25] p-3 flex flex-col justify-between text-emerald-100 relative">
-              <span class="text-[10px] font-mono tracking-widest uppercase opacity-80 font-bold">SECONDARY</span>
-              <span class="text-base sm:text-lg font-mono font-extrabold self-end">25%</span>
-            </div>
-            <div class="p-3 space-y-0.5 bg-white">
-              <div class="flex items-center justify-between font-mono text-xs font-bold text-slate-900">
-                <span>#013A25</span>
-                <i data-lucide="copy" class="w-3.5 h-3.5 text-slate-400"></i>
-              </div>
-              <p class="text-[11px] text-slate-500">Pine Forest</p>
-            </div>
-            <div class="copy-tooltip">Tersalin!</div>
-          </div>
-
-          <!-- Swatch 3: Gold Core -->
-          <div class="pantone-card card-gold copy-color-btn reveal-on-scroll stagger-3" data-copy-value="#F0BE3E">
-            <div class="h-20 sm:h-24 bg-[#F0BE3E] p-3 flex flex-col justify-between text-zinc-950 relative">
-              <span class="text-[10px] font-mono tracking-widest uppercase opacity-80 font-bold">ACCENT</span>
-              <span class="text-base sm:text-lg font-mono font-extrabold self-end">10%</span>
-            </div>
-            <div class="p-3 space-y-0.5 bg-white">
-              <div class="flex items-center justify-between font-mono text-xs font-bold text-slate-900">
-                <span>#F0BE3E</span>
-                <i data-lucide="copy" class="w-3.5 h-3.5 text-slate-400"></i>
-              </div>
-              <p class="text-[11px] text-slate-500">Sunstone Gold</p>
-            </div>
-            <div class="copy-tooltip">Tersalin!</div>
-          </div>
-
-          <!-- Swatch 4: Warm Ochre -->
-          <div class="pantone-card card-ochre copy-color-btn reveal-on-scroll stagger-4" data-copy-value="#E2BE63">
-            <div class="h-20 sm:h-24 bg-[#E2BE63] p-3 flex flex-col justify-between text-zinc-950 relative">
-              <span class="text-[10px] font-mono tracking-widest uppercase opacity-80 font-bold">SYNERGY</span>
-              <span class="text-base sm:text-lg font-mono font-extrabold self-end">5%</span>
-            </div>
-            <div class="p-3 space-y-0.5 bg-white">
-              <div class="flex items-center justify-between font-mono text-xs font-bold text-slate-900">
-                <span>#E2BE63</span>
-                <i data-lucide="copy" class="w-3.5 h-3.5 text-slate-400"></i>
-              </div>
-              <p class="text-[11px] text-slate-500">Warm Ochre</p>
-            </div>
-            <div class="copy-tooltip">Tersalin!</div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Slide 1 Bottom Action Callout -->
-      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-200 reveal-on-scroll">
-        <div class="text-xs text-slate-500 font-mono text-center sm:text-left">
-          [ 01 / 02 ] &bull; SYMP Studio Visual Architecture
-        </div>
-        <button onclick="goToPage(2)" class="w-full sm:w-auto m3-btn-filled !py-3.5 !px-7 text-sm group">
-          <span>Lanjut ke Slide 2: Bedah 3D &amp; Tipografi</span>
+      <!-- CTA Action Group -->
+      <div class="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+        <a href="kolohaga" class="btn-symp-gold w-full sm:w-auto text-sm shadow-lg shadow-[#E4B854]/20 group">
+          <span>Lihat Proposal KOLOHAGA</span>
           <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-        </button>
+        </a>
+        <a href="#showcase" class="btn-symp-glass w-full sm:w-auto text-sm">
+          <span>Eksplorasi Proyek Klien</span>
+        </a>
       </div>
 
     </section>
 
+    <!-- ======================================================= -->
+    <!-- FEATURED CLIENT SHOWCASE (KOLOHAGA PROPOSAL CARD)       -->
+    <!-- ======================================================= -->
+    <section id="showcase" class="space-y-6 reveal-on-scroll">
+      
+      <!-- Section Bar -->
+      <div class="flex items-center justify-between border-b border-[#E4B854]/20 pb-4">
+        <div class="border-l-2 border-[#E61C3D] pl-3">
+          <span class="text-[10px] font-mono text-[#E4B854] tracking-[0.2em] uppercase font-extrabold">FEATURED PROPOSAL</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-white mt-0.5">KOLOHAGA &mdash; Visual Identity Deck</h2>
+        </div>
+        <span class="text-xs font-mono text-[#E4B854] hidden sm:block">SLUG: /kolohaga</span>
+      </div>
+
+      <!-- Immersive Showcase Card -->
+      <div class="maroon-card p-6 sm:p-10 space-y-8 group">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Visual Preview Column -->
+          <div class="lg:col-span-6 bg-[#013A25]/90 rounded-2xl p-6 sm:p-8 border border-[#E4B854]/30 shadow-inner relative overflow-hidden flex flex-col items-center justify-center min-h-[260px] sm:min-h-[300px]">
+            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/40 text-[10px] font-mono text-emerald-300 font-bold border border-emerald-500/30">
+              PINE FOREST #013A25 CANVAS
+            </div>
+            
+            <img src="assets/logo1_white_text.png" alt="Logo Kolohaga 1" class="max-h-32 sm:max-h-40 max-w-full object-contain filter drop-shadow-md group-hover:scale-105 transition-transform duration-500" />
+            
+            <div class="absolute bottom-3 right-3 text-[10px] font-mono text-emerald-200/60">
+              [ 2 VARIAN RESMI + 3D DECONSTRUCTION ]
+            </div>
+          </div>
+
+          <!-- Description & CTA Column -->
+          <div class="lg:col-span-6 space-y-5">
+            
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-mono font-bold text-[#E4B854] px-2.5 py-1 rounded-full bg-[#E4B854]/10 border border-[#E4B854]/30">
+                PROPOSAL RESMI
+              </span>
+              <span class="text-xs font-mono text-[#D1B4B9]">KOLOHAGA &bull; everything you need</span>
+            </div>
+
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+              Eksplorasi Konsep Identitas Visual &amp; Bedah Lapisan Objek 3D
+            </h3>
+
+            <p class="text-xs sm:text-sm text-[#D1B4B9] leading-relaxed">
+              Presentasi interaktif lengkap memuat 2 opsi logo resmi (Harmonic Emblem &amp; Infinity Synergy), 3 pilar filosofi bisnis, sistem warna Pantone 1-tap copy, serta mesin bedah 3D real-time.
+            </p>
+
+            <!-- Features Checklist -->
+            <div class="grid grid-cols-2 gap-2 text-xs font-mono text-[#FFF5F7] pt-2">
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-[#E4B854]"></i>
+                <span>2-Slide Mobile UI</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-[#E4B854]"></i>
+                <span>Bedah Objek 3D</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-[#E4B854]"></i>
+                <span>Color Harmony HEX</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-[#E4B854]"></i>
+                <span>Live Font Playground</span>
+              </div>
+            </div>
+
+            <!-- Direct Link Button -->
+            <div class="pt-4">
+              <a href="kolohaga" class="btn-symp-gold w-full sm:w-auto text-sm justify-center shadow-md">
+                <span>Buka Presentasi KOLOHAGA (/kolohaga)</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
 
     <!-- ======================================================= -->
-    <!-- SLIDE 2: ANATOMI 3D DEKONSTRUKSI OBJEK & SISTEM TIPOGRAFI-->
+    <!-- STUDIO CAPABILITIES & METHODOLOGY                       -->
     <!-- ======================================================= -->
-    <section id="page-2" class="page-view space-y-12 sm:space-y-16">
+    <section id="capabilities" class="space-y-8 reveal-on-scroll">
       
-      <!-- Section Header -->
-      <div class="space-y-2 reveal-on-scroll">
-        <div class="font-mono text-[10px] tracking-[0.25em] uppercase font-extrabold text-emerald-700">
-          // 02 &bull; 3D GEOMETRIC DECONSTRUCTION ENGINE
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <div class="text-[10px] font-mono tracking-[0.25em] text-[#E4B854] uppercase font-extrabold">
+          // OUR EXPERTISE
         </div>
-        <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-          Anatomi Geometris <span class="text-gradient-emerald">SYMP Studio</span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Kapabilitas Arsitektur Brand <span class="text-gradient-gold">SYMP Studio</span>
         </h2>
-        <p class="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
-          Tiap milimeter kurva, sudut lengkung perisai, dan rajutan simpul dihitung dengan presisi matematika untuk menciptakan daya ingat visual terkuat.
+        <p class="text-xs sm:text-sm text-[#D1B4B9]">
+          Setiap proyek dikerjakan dengan standar agensi global tanpa kompromi estetika dan fungsi.
         </p>
       </div>
 
-      <!-- Logo Variant Tab Switcher for 3D Deconstruction -->
-      <div class="space-y-6 reveal-on-scroll">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <!-- Switch between Logo 1 and Logo 2 in Slide 2 -->
-          <div class="ios-segmented-control self-start">
-            <button id="tab-btn-logo1" class="logo-tab-btn ios-segment-btn active" onclick="switchLogoTab('logo1')">
-              <i data-lucide="shield" class="w-3.5 h-3.5 inline mr-1"></i>
-              <span>Varian 01 (Emblem)</span>
-            </button>
-            <button id="tab-btn-logo2" class="logo-tab-btn ios-segment-btn" onclick="switchLogoTab('logo2')">
-              <i data-lucide="infinity" class="w-3.5 h-3.5 inline mr-1"></i>
-              <span>Varian 02 (Infinity)</span>
-            </button>
+        <!-- Card 1 -->
+        <div class="maroon-card p-6 space-y-4 reveal-on-scroll stagger-1">
+          <div class="w-12 h-12 rounded-2xl bg-[#E61C3D]/20 border border-[#E61C3D]/40 flex items-center justify-center text-[#E61C3D] shadow-sm">
+            <i data-lucide="compass" class="w-6 h-6"></i>
           </div>
-
-          <div class="text-xs font-mono text-slate-400">
-            Geser slider buat misahin layer secara 3D
-          </div>
+          <h3 class="text-lg font-bold text-white">01. Geometric Logo Engineering</h3>
+          <p class="text-xs text-[#D1B4B9] leading-relaxed">
+            Perancangan logo berbasis grid proporsional, matematika geometri, dan kekuatan siluet agar langsung dikenali dalam 0.5 detik pertama.
+          </p>
         </div>
 
-        <!-- 3D CONTAINER FOR LOGO 1 -->
-        <div id="logo1-tab-content" class="clean-surface-card p-5 sm:p-8 space-y-6">
-          
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-4">
-            <div>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900">Bedah Objek Logo 01: Harmonic Emblem</h3>
-              <p class="text-xs text-slate-500 font-mono">Perisai Persegi (#059B66) + Simpul Anyaman (#013A25) + Inti Emas (#F0BE3E)</p>
-            </div>
-
-            <!-- Slider (Default 0%) -->
-            <div class="flex items-center gap-3 bg-slate-100/90 px-3.5 py-1.5 rounded-full border border-slate-200 shadow-inner self-start sm:self-auto">
-              <span class="text-xs font-mono text-slate-700 font-semibold">Jarak:</span>
-              <input id="logo1-explode-slider" type="range" min="0" max="100" value="0" class="w-24 sm:w-32 accent-emerald-600 cursor-pointer" />
-              <span id="logo1-explode-val" class="text-xs font-mono font-bold text-emerald-700 w-8 text-right">0%</span>
-            </div>
+        <!-- Card 2 -->
+        <div class="maroon-card p-6 space-y-4 reveal-on-scroll stagger-2">
+          <div class="w-12 h-12 rounded-2xl bg-[#E4B854]/20 border border-[#E4B854]/40 flex items-center justify-center text-[#E4B854] shadow-sm">
+            <i data-lucide="box" class="w-6 h-6"></i>
           </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-            
-            <!-- 3D Stage -->
-            <div id="logo1-stage-container" class="lg:col-span-6 hologram-stage p-4 sm:p-6 flex flex-col items-center justify-center min-h-[300px] sm:min-h-[360px] relative">
-              
-              <div id="logo1-exploded-stack" class="exploded-stack-3d">
-                <div class="exploded-layer-item layer-0 layer-bg-square" style="transform: translateZ(0px) translateY(0px);">
-                  <img src="assets/logo1_square_bg.png" alt="Base Emerald Shield" class="filter drop-shadow-[0_10px_20px_rgba(5,155,102,0.3)]" />
-                </div>
-                <div class="exploded-layer-item layer-1 layer-knot" style="transform: translateZ(0px) translateY(0px);">
-                  <img src="assets/logo1_knot.png" alt="4-Petal Knot" class="filter drop-shadow-[0_14px_24px_rgba(1,58,37,0.4)]" />
-                </div>
-                <div class="exploded-layer-item layer-2 layer-dot" style="transform: translateZ(0px) translateY(0px);">
-                  <img src="assets/logo1_center_dot.png" alt="Golden Center Dot" class="filter drop-shadow-[0_16px_30px_rgba(240,190,62,0.6)]" />
-                </div>
-              </div>
-
-              <!-- Minimalist Layer Pins -->
-              <div class="layer-pin pin-2" onclick="selectLayerL1('layer-dot')">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#F0BE3E]"></span>
-                <span>[L2] TITIK EMAS &bull; #F0BE3E</span>
-              </div>
-              <div class="layer-pin pin-1" onclick="selectLayerL1('layer-knot')">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#013A25]"></span>
-                <span>[L1] SIMPUL 4 ARAH &bull; #013A25</span>
-              </div>
-              <div class="layer-pin pin-0" onclick="selectLayerL1('layer-bg-square')">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#059B66]"></span>
-                <span>[L0] PERISAI &bull; #059B66</span>
-              </div>
-            </div>
-
-            <!-- Breakdown Cards -->
-            <div class="lg:col-span-6 space-y-2.5">
-              
-              <div class="logo1-object-card clean-surface-card p-4 cursor-pointer reveal-on-scroll stagger-1 border-emerald-300 bg-emerald-50/50" data-layer-target="layer-bg-square">
-                <div class="flex items-start gap-3">
-                  <div class="w-9 h-9 rounded-xl bg-[#059B66] flex-shrink-0 flex items-center justify-center text-white shadow-sm">
-                    <i data-lucide="shield" class="w-4 h-4"></i>
-                  </div>
-                  <div class="space-y-0.5 flex-1 text-xs">
-                    <h4 class="font-bold text-slate-900">1. Rounded Emerald Shield (Perisai Sudut Melengkung)</h4>
-                    <p class="text-slate-600">Bukan sembarang kotak! Sudut yang membulat ini bikin wadah bisnis kita kelihatan solid &amp; aman tapi tetep <em>approachable</em> alias asik diajak temenan tanpa kesan kaku.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="logo1-object-card clean-surface-card p-4 cursor-pointer reveal-on-scroll stagger-2 bg-white" data-layer-target="layer-knot">
-                <div class="flex items-start gap-3">
-                  <div class="w-9 h-9 rounded-xl bg-[#013A25] flex-shrink-0 flex items-center justify-center text-emerald-300 shadow-sm">
-                    <i data-lucide="git-fork" class="w-4 h-4"></i>
-                  </div>
-                  <div class="space-y-0.5 flex-1 text-xs">
-                    <h4 class="font-bold text-slate-900">2. 4-Petal Interwoven Knot (Anyaman Simpul 4 Arah)</h4>
-                    <p class="text-slate-600">Terinspirasi dari daun semanggi pembawa hoki 4 kelopak dan simpul tak berujung. Maknanya: 4 mata angin &amp; seluruh lini bisnis nyatu saling ngunci, gak ada yang bocor!</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="logo1-object-card clean-surface-card p-4 cursor-pointer reveal-on-scroll stagger-3 bg-white" data-layer-target="layer-dot">
-                <div class="flex items-start gap-3">
-                  <div class="w-9 h-9 rounded-xl bg-[#F0BE3E] flex-shrink-0 flex items-center justify-center text-zinc-950 shadow-sm">
-                    <i data-lucide="disc" class="w-4 h-4"></i>
-                  </div>
-                  <div class="space-y-0.5 flex-1 text-xs">
-                    <h4 class="font-bold text-slate-900">3. Golden Nucleus Core (Titik Inti Emas)</h4>
-                    <p class="text-slate-600">Titik emas pas di tengah-tengah. Ini poros intinya! Maknanya: customer itu raja, fokus kita ngasih kepuasan &amp; cuan instan dalam satu sentuhan (*everything you need*).</p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
+          <h3 class="text-lg font-bold text-white">02. 3D Object Deconstruction</h3>
+          <p class="text-xs text-[#D1B4B9] leading-relaxed">
+            Pembedahan komponen logo per layer untuk presentasi konsep yang transparan, memudahkan klien memahami filosofi dan kedalaman setiap elemen.
+          </p>
         </div>
 
-        <!-- 3D CONTAINER FOR LOGO 2 -->
-        <div id="logo2-tab-content" class="clean-surface-card p-5 sm:p-8 space-y-6 hidden">
-          
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-4">
-            <div>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900">Bedah Objek Logo 02: Infinity Synergy</h3>
-              <p class="text-xs text-slate-500 font-mono">Pita Hijau Zamrud (#059B66) + Gelombang Emas Penyelaras (#E2BE63)</p>
-            </div>
-
-            <!-- Slider (Default 0%) -->
-            <div class="flex items-center gap-3 bg-slate-100/90 px-3.5 py-1.5 rounded-full border border-slate-200 shadow-inner self-start sm:self-auto">
-              <span class="text-xs font-mono text-slate-700 font-semibold">Jarak:</span>
-              <input id="logo2-explode-slider" type="range" min="0" max="100" value="0" class="w-24 sm:w-32 accent-amber-600 cursor-pointer" />
-              <span id="logo2-explode-val" class="text-xs font-mono font-bold text-amber-700 w-8 text-right">0%</span>
-            </div>
+        <!-- Card 3 -->
+        <div class="maroon-card p-6 space-y-4 reveal-on-scroll stagger-3">
+          <div class="w-12 h-12 rounded-2xl bg-[#8C0D23]/30 border border-[#8C0D23]/60 flex items-center justify-center text-[#FFF5F7] shadow-sm">
+            <i data-lucide="palette" class="w-6 h-6"></i>
           </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-            
-            <!-- 3D Stage -->
-            <div id="logo2-stage-container" class="lg:col-span-6 hologram-stage p-4 sm:p-6 flex flex-col items-center justify-center min-h-[300px] sm:min-h-[360px] relative">
-              
-              <div id="logo2-exploded-stack" class="exploded-stack-3d">
-                <div class="exploded-layer-item layer-green layer-ribbon-green" style="transform: translateZ(0px) translateY(0px);">
-                  <img src="assets/logo2_green_ribbon.png" alt="Green Ribbon" class="filter drop-shadow-[0_10px_20px_rgba(5,155,102,0.3)]" />
-                </div>
-                <div class="exploded-layer-item layer-gold layer-ribbon-gold" style="transform: translateZ(0px) translateY(0px) translateX(0px);">
-                  <img src="assets/logo2_gold_ribbon.png" alt="Gold Ribbon" class="filter drop-shadow-[0_14px_24px_rgba(240,190,62,0.55)]" />
-                </div>
-              </div>
-
-              <!-- Minimalist Layer Pins -->
-              <div class="layer-pin pin-2" onclick="selectLayerL2('layer-ribbon-gold')">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#E2BE63]"></span>
-                <span>[L1] PITA EMAS &bull; #E2BE63</span>
-              </div>
-              <div class="layer-pin pin-0" onclick="selectLayerL2('layer-ribbon-green')">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#059B66]"></span>
-                <span>[L0] PITA INFINITY &bull; #059B66</span>
-              </div>
-            </div>
-
-            <!-- Breakdown Cards -->
-            <div class="lg:col-span-6 space-y-2.5">
-              
-              <div class="logo2-object-card clean-surface-card p-4 cursor-pointer reveal-on-scroll stagger-1 border-emerald-300 bg-emerald-50/50" data-layer-target="layer-ribbon-green">
-                <div class="flex items-start gap-3">
-                  <div class="w-9 h-9 rounded-xl bg-[#059B66] flex-shrink-0 flex items-center justify-center text-white shadow-sm">
-                    <i data-lucide="repeat" class="w-4 h-4"></i>
-                  </div>
-                  <div class="space-y-0.5 flex-1 text-xs">
-                    <h4 class="font-bold text-slate-900">1. Emerald Infinity Loop (Pita Hijau Angka 8)</h4>
-                    <p class="text-slate-600">Pita hijau yang muter terus tanpa henti. Filosofinya: bisnis yang adaptif, terus upgrade, dan siap gaspol ngadepin era digital tanpa ada kata mentok!</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="logo2-object-card clean-surface-card p-4 cursor-pointer reveal-on-scroll stagger-2 bg-white" data-layer-target="layer-ribbon-gold">
-                <div class="flex items-start gap-3">
-                  <div class="w-9 h-9 rounded-xl bg-[#E2BE63] flex-shrink-0 flex items-center justify-center text-zinc-950 shadow-sm">
-                    <i data-lucide="trending-up" class="w-4 h-4"></i>
-                  </div>
-                  <div class="space-y-0.5 flex-1 text-xs">
-                    <h4 class="font-bold text-slate-900">2. Ascending Golden Wave (Pita Emas Penyelaras)</h4>
-                    <p class="text-slate-600">Pita emas yang melesat ke atas di tengah persilangan. Maknanya: sentuhan kemewahan, kreativitas, dan sinergi yang bikin kita dan partner makin untung bareng.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="logo2-object-card clean-surface-card p-4 cursor-pointer reveal-on-scroll stagger-3 bg-white" data-layer-target="all">
-                <div class="flex items-start gap-3">
-                  <div class="w-9 h-9 rounded-xl bg-slate-100 flex-shrink-0 flex items-center justify-center text-slate-700 shadow-sm border border-slate-200">
-                    <i data-lucide="layout" class="w-4 h-4"></i>
-                  </div>
-                  <div class="space-y-0.5 flex-1 text-xs">
-                    <h4 class="font-bold text-slate-900">3. Tata Letak Horizontal Kompak</h4>
-                    <p class="text-slate-600">Pita nangkring pas di samping nama brand. Bikin nama Kolohaga langsung nempel di kepala orang sekali lirik di layar smartphone!</p>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
+          <h3 class="text-lg font-bold text-white">03. Adaptive Brand Architecture</h3>
+          <p class="text-xs text-[#D1B4B9] leading-relaxed">
+            Sistem palet warna dengan rasio dominasi pasti, standar tipografi modern, dan pedoman aturan penggunaan logo yang anti-gagal di segala media.
+          </p>
         </div>
 
       </div>
 
-      <!-- Typography System & Live Tester -->
-      <div class="space-y-6 border-t border-slate-200/80 pt-8 reveal-on-scroll">
-        <div class="border-l-2 border-emerald-600 pl-3">
-          <span class="text-[10px] font-mono text-emerald-700 tracking-[0.2em] uppercase font-extrabold">STANDAR TIPOGRAFI</span>
-          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mt-0.5">Plus Jakarta Sans</h3>
-          <p class="text-xs text-slate-500 mt-0.5">Font asli racikan Indonesia berstandar global. Karakternya modern, tegas, gampang dibaca di layar HP sekecil apa pun, dan anti ngebosenin!</p>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- ABOUT LEAD DESIGNER & STUDIO PHILOSOPHY                 -->
+    <!-- ======================================================= -->
+    <section id="about" class="maroon-card p-8 sm:p-12 reveal-on-scroll">
+      <div class="max-w-3xl mx-auto text-center space-y-5">
+        
+        <div class="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#E4B854]">
+          <span class="pulse-ruby-dot"></span>
+          <span>LEAD VISUAL ARCHITECT</span>
         </div>
 
-        <!-- Live Font Tester (Clean Form) -->
-        <div class="clean-surface-card p-4 sm:p-6 space-y-4 reveal-on-scroll">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-slate-200 pb-3">
-            <h4 class="font-bold text-slate-900 text-sm flex items-center gap-1.5">
-              <i data-lucide="edit-3" class="w-4 h-4 text-emerald-700"></i>
-              <span>Live Type Tester</span>
-            </h4>
-            
-            <!-- Minimalist Weight Selectors -->
-            <div class="flex items-center flex-wrap gap-1.5">
-              <button class="m3-chip active font-weight-btn" data-weight="font-extrabold">
-                <span>800 ExtraBold</span>
-              </button>
-              <button class="m3-chip font-weight-btn" data-weight="font-bold">
-                <span>700 Bold</span>
-              </button>
-              <button class="m3-chip font-weight-btn" data-weight="font-semibold">
-                <span>600 SemiBold</span>
-              </button>
-              <button class="m3-chip font-weight-btn" data-weight="font-normal">
-                <span>400 Regular</span>
-              </button>
-            </div>
-          </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Daru Fahmaa Muliawan
+        </h2>
 
-          <!-- Controls -->
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 items-center">
-            <div class="sm:col-span-2">
-              <input id="live-type-input" type="text" value="KOLOHAGA everything you need" class="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-xs sm:text-sm focus:outline-none focus:border-kol-emerald focus:bg-white transition-all shadow-inner" />
-            </div>
-            <div>
-              <div class="flex items-center justify-between text-[11px] font-mono text-slate-500 mb-1">
-                <span>Ukuran:</span>
-                <span id="live-type-size-val" class="text-emerald-700 font-bold">32px</span>
-              </div>
-              <input id="live-type-size-slider" type="range" min="16" max="52" value="32" class="w-full cursor-pointer" />
-            </div>
-          </div>
+        <p class="text-xs sm:text-sm md:text-base text-[#D1B4B9] leading-relaxed font-normal">
+          "Identitas visual bukan sekadar gambar indah di atas kertas. Logo adalah jangkar utama yang menancapkan reputasi, wibawa, dan keyakinan konsumen sejak pandangan pertama. Di SYMP Studio, kami memastikan setiap garis dan kurva memiliki alasan yang tak terbantahkan."
+        </p>
 
-          <!-- Live Preview -->
-          <div class="py-8 px-2 bg-slate-50/80 rounded-xl border border-slate-200/80 min-h-[100px] flex items-center justify-center text-center overflow-x-auto">
-            <div id="live-type-preview" class="font-extrabold text-gradient-emerald tracking-tight transition-all font-jakarta" style="font-size: 32px;">
-              KOLOHAGA everything you need
-            </div>
-          </div>
+        <div class="pt-4 flex items-center justify-center gap-6 text-xs font-mono text-[#E4B854]">
+          <span>SYMP STUDIO &bull; EST. 2026</span>
+          <span>&bull;</span>
+          <span>INDONESIA FOR THE WORLD</span>
         </div>
 
       </div>
-
-      <!-- Quick Brand Rules -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-slate-200/80 pt-6 reveal-on-scroll">
-        <div class="clean-surface-card p-4 space-y-2 border-l-4 border-emerald-500 bg-emerald-50/40 text-xs reveal-on-scroll stagger-1">
-          <div class="flex items-center gap-1.5 text-emerald-800 font-bold uppercase tracking-wider font-mono">
-            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>
-            <span>Do's (Sangat Dianjurkan)</span>
-          </div>
-          <p class="text-slate-700">&bull; Wajib pake logo teks putih kalau latarnya gelap atau Pine Forest (#013A25) biar kontrasnya tetep ganteng maksimal!</p>
-          <p class="text-slate-700">&bull; Pake Plus Jakarta Sans ExtraBold buat judul &amp; banner promosi utama.</p>
-        </div>
-
-        <div class="clean-surface-card p-4 space-y-2 border-l-4 border-rose-500 bg-rose-50/40 text-xs reveal-on-scroll stagger-2">
-          <div class="flex items-center gap-1.5 text-rose-800 font-bold uppercase tracking-wider font-mono">
-            <i data-lucide="x-circle" class="w-4 h-4 text-rose-600"></i>
-            <span>Don'ts (Pantangan Keras)</span>
-          </div>
-          <p class="text-slate-700">&bull; Jangan pernah narik atau ngegepengin proporsi logo ya bro, biar estetikanya gak ancur!</p>
-          <p class="text-slate-700">&bull; Jangan gonta-ganti racikan warna resmi (#059B66, #013A25, &amp; #F0BE3E).</p>
-        </div>
-      </div>
-
-      <!-- Slide 2 Bottom Back Callout -->
-      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-200 reveal-on-scroll">
-        <button onclick="goToPage(1)" class="m3-btn-tonal w-full sm:w-auto !py-3 !px-6 text-xs">
-          <i data-lucide="arrow-left" class="w-4 h-4"></i>
-          <span>Kembali ke Slide 1 (Filosofi)</span>
-        </button>
-
-        <button onclick="goToPage(1)" class="m3-btn-filled w-full sm:w-auto !py-3.5 !px-7 text-xs font-bold">
-          <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
-          <span>Mulai Dari Awal (Slide 1)</span>
-        </button>
-      </div>
-
     </section>
 
   </main>
 
-  <!-- Footer (SYMP Studio Masterpiece Credit) -->
-  <footer class="border-t border-slate-200/80 py-8 px-4 text-center text-xs font-mono text-slate-500 space-y-1.5 relative z-10 bg-transparent font-jakarta">
-    <p>&copy; 2026 <strong>KOLOHAGA</strong> &mdash; <em>everything you need</em>. All rights reserved.</p>
-    <p class="text-[11px] text-slate-600 font-bold tracking-wider">
-      CONCEIVED &amp; CRAFTED BY <span class="text-emerald-700 font-extrabold">SYMP STUDIO</span> &bull; DESIGN BY <span class="text-slate-900 font-extrabold">DARU FAHMAA MULIAWAN</span>
+  <!-- Luxury Footer -->
+  <footer class="border-t border-[#E4B854]/15 py-10 px-4 text-center text-xs font-mono text-[#D1B4B9] space-y-2 relative z-10 bg-[#140205]">
+    <p>&copy; 2026 <strong>SYMP STUDIO</strong>. All rights reserved.</p>
+    <p class="text-[11px] text-[#8F6F74] font-bold tracking-wider">
+      DESIGNED &amp; DIRECTED BY <span class="text-[#E4B854] font-extrabold">DARU FAHMAA MULIAWAN</span> &bull; GLOBAL DESIGN EXCELLENCE
     </p>
   </footer>
 
-  <!-- Application Script -->
-  <script src="app.js"></script>
+  <!-- Scroll Reveal Observer Script -->
   <script>
     lucide.createIcons();
-    setInterval(() => {
-      lucide.createIcons();
-    }, 1000);
+    
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+      observer.observe(el);
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 30) {
+        el.classList.add('is-revealed');
+      }
+    });
   </script>
 </body>
 </html>
