@@ -136,21 +136,6 @@
       transform-style: preserve-3d;
       transition: transform 0.45s var(--ios-spring);
     }
-
-    /* Geometric Construction Grid Overlay */
-    .grid-overlay-svg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.35s ease;
-    }
-
-    .grid-overlay-svg.active {
-      opacity: 1;
-    }
   </style>
 </head>
 <body class="antialiased">
@@ -201,7 +186,7 @@
   <main class="max-w-6xl mx-auto px-3.5 sm:px-8 py-6 sm:py-16 space-y-12 sm:space-y-20">
 
     <!-- ======================================================= -->
-    <!-- SLIDE 01: FILOSOFI, 2 OPSI, GRID, MONOCHROME & CLOSING  -->
+    <!-- SLIDE 01: FILOSOFI, 2 OPSI, MONOCHROME & CLOSING HUB    -->
     <!-- ======================================================= -->
     <div id="slide-1" class="slide-section space-y-10 sm:space-y-20">
       
@@ -221,7 +206,7 @@
         </p>
       </div>
 
-      <!-- CANVAS & TOOL CONTROLS STRIP (MOBILE SWIPEABLE / WRAP-SAFE) -->
+      <!-- CANVAS & TOOL CONTROLS STRIP (CLEAN, NO GRID) -->
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 border-b border-slate-200 pb-4 sm:pb-5">
         <div>
           <h2 class="text-lg sm:text-2xl font-extrabold text-slate-900 tracking-tight">
@@ -235,12 +220,6 @@
         <!-- Horizontal Swipeable Controls on Mobile -->
         <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 w-full sm:w-auto flex-nowrap">
           
-          <!-- Geometric Grid Toggle Button -->
-          <button id="btn-toggle-grid" onclick="toggleGeometricGrid()" class="px-3 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all flex items-center gap-1.5 border border-slate-200 whitespace-nowrap flex-shrink-0">
-            <i data-lucide="ruler" class="w-3.5 h-3.5 text-[#005BBD]"></i>
-            <span>Grid Geometri</span>
-          </button>
-
           <!-- Color Mode / Monochrome Switcher -->
           <div class="flex items-center gap-0.5 p-1 bg-slate-100 rounded-full border border-slate-200 text-[11px] sm:text-xs font-bold whitespace-nowrap flex-shrink-0">
             <button id="btn-mode-color" class="px-2.5 sm:px-3 py-1 rounded-full bg-white text-slate-900 shadow-sm transition-all" onclick="setColorMode('color')">
@@ -267,7 +246,7 @@
         </div>
       </div>
 
-      <!-- 2-COLUMN SIDE-BY-SIDE COMPARISON (RESPONSIVE CARDS) -->
+      <!-- 2-COLUMN SIDE-BY-SIDE COMPARISON (SEAMLESS CANVAS) -->
       <div id="clean-main-wrapper" class="clean-stage-card p-4 sm:p-12 transition-all duration-500 relative">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 divide-y lg:divide-y-0 lg:divide-x divide-slate-200">
           
@@ -283,60 +262,9 @@
                 <span class="text-[10px] sm:text-xs font-mono text-slate-400 uppercase">TYPOGRAPHIC LOGOTYPE</span>
               </div>
 
-              <!-- Pure Seamless Logo Stage with Pixel-Exact SVG Grid Overlay -->
+              <!-- Pure Seamless Logo Stage -->
               <div class="flex items-center justify-center min-h-[220px] sm:min-h-[320px] py-2 sm:py-4">
-                
-                <div class="relative inline-block max-h-44 sm:max-h-60">
-                  <!-- Logo Image 1 (2974 x 2976) -->
-                  <img id="img-opt-1" src="../assets/elevgro_logo1_full.png" alt="ELEVGRO Stacked Wordmark" class="max-h-44 sm:max-h-60 w-auto object-contain block transition-all duration-300 transform hover:scale-105" />
-
-                  <!-- Mathematical 1:1 Pixel-Accurate Geometric Grid Overlay (ViewBox 0 0 2974 2976) -->
-                  <svg id="grid-svg-1" class="grid-overlay-svg" viewBox="0 0 2974 2976" preserveAspectRatio="xMidYMid meet">
-                    <!-- Outer Golden Boundary -->
-                    <rect x="20" y="20" width="2934" height="2936" fill="none" stroke="#005BBD" stroke-width="6" stroke-dasharray="24 16" opacity="0.4" />
-                    
-                    <!-- Line 1 Typographic Baselines & X-Height -->
-                    <line x1="0" y1="325" x2="2974" y2="325" stroke="#005BBD" stroke-width="7" stroke-dasharray="20 16" />
-                    <line x1="0" y1="542" x2="2974" y2="542" stroke="#005BBD" stroke-width="6" stroke-dasharray="16 12" />
-                    <line x1="0" y1="1380" x2="2974" y2="1380" stroke="#005BBD" stroke-width="8" />
-                    
-                    <!-- Line 2 Typographic Baselines & X-Height ('gro') -->
-                    <line x1="0" y1="1500" x2="2974" y2="1500" stroke="#005BBD" stroke-width="6" stroke-dasharray="16 12" />
-                    <line x1="0" y1="2340" x2="2974" y2="2340" stroke="#005BBD" stroke-width="8" />
-                    <line x1="0" y1="2936" x2="2974" y2="2936" stroke="#005BBD" stroke-width="6" stroke-dasharray="20 16" />
-
-                    <!-- Sprout 45-Degree Tangent Axis & Leaf Node Circles -->
-                    <line x1="1500" y1="1380" x2="2974" y2="0" stroke="#48C15A" stroke-width="12" stroke-dasharray="28 16" />
-                    <circle cx="2470" cy="373" r="370" fill="none" stroke="#48C15A" stroke-width="8" stroke-dasharray="20 14" />
-                    <circle cx="2470" cy="373" r="185" fill="none" stroke="#48C15A" stroke-width="6" stroke-dasharray="14 10" />
-
-                    <!-- Letter 'e' Geometric Construction Circle -->
-                    <circle cx="350" cy="960" r="420" fill="none" stroke="#005BBD" stroke-width="8" stroke-dasharray="20 14" />
-                    
-                    <!-- Letter 'o' Geometric Construction Circle -->
-                    <circle cx="2250" cy="1920" r="420" fill="none" stroke="#005BBD" stroke-width="8" stroke-dasharray="20 14" />
-                    
-                    <!-- Letter 'g' Top Loop & Bottom Loop Tangent Circles -->
-                    <circle cx="700" cy="1920" r="420" fill="none" stroke="#005BBD" stroke-width="8" stroke-dasharray="20 14" />
-                    <circle cx="650" cy="2550" r="380" fill="none" stroke="#005BBD" stroke-width="6" stroke-dasharray="16 12" />
-
-                    <!-- Technical Labels in Outer Margin -->
-                    <g font-family="JetBrains Mono, monospace" font-size="64" font-weight="bold">
-                      <rect x="1800" y="70" width="1050" height="90" rx="20" fill="#060D17" fill-opacity="0.85" />
-                      <text x="1840" y="135" fill="#48C15A">45.0° SPROUT VECTOR</text>
-
-                      <rect x="60" y="240" width="820" height="90" rx="20" fill="#060D17" fill-opacity="0.85" />
-                      <text x="90" y="305" fill="#005BBD">ASCENDER STEM (l)</text>
-
-                      <rect x="60" y="1280" width="860" height="90" rx="20" fill="#060D17" fill-opacity="0.85" />
-                      <text x="90" y="1345" fill="#005BBD">LINE-1 BASELINE</text>
-
-                      <rect x="60" y="2240" width="860" height="90" rx="20" fill="#060D17" fill-opacity="0.85" />
-                      <text x="90" y="2305" fill="#005BBD">LINE-2 BASELINE</text>
-                    </g>
-                  </svg>
-                </div>
-
+                <img id="img-opt-1" src="../assets/elevgro_logo1_full.png" alt="ELEVGRO Stacked Wordmark" class="max-h-44 sm:max-h-60 w-auto object-contain block transition-all duration-300 transform hover:scale-105" />
               </div>
 
               <!-- Description -->
@@ -373,53 +301,9 @@
                 <span class="text-[10px] sm:text-xs font-mono text-slate-400 uppercase">ICON + HORIZONTAL LOGOTYPE</span>
               </div>
 
-              <!-- Pure Seamless Logo Stage with Pixel-Exact SVG Grid Overlay -->
+              <!-- Pure Seamless Logo Stage -->
               <div class="flex items-center justify-center min-h-[200px] sm:min-h-[320px] py-2 sm:py-4">
-                
-                <div class="relative inline-block max-h-16 sm:max-h-28 max-w-[95%]">
-                  <!-- Logo Image 2 (6562 x 1499) -->
-                  <img id="img-opt-2" src="../assets/elevgro_logo2_full.png" alt="ELEVGRO Combination Mark" class="max-h-16 sm:max-h-28 w-auto object-contain block transition-all duration-300 transform hover:scale-105" />
-
-                  <!-- Mathematical 1:1 Pixel-Accurate Geometric Grid Overlay (ViewBox 0 0 6562 1499) -->
-                  <svg id="grid-svg-2" class="grid-overlay-svg" viewBox="0 0 6562 1499" preserveAspectRatio="xMidYMid meet">
-                    <!-- Icon Outer Bounding Geometric Circles -->
-                    <circle cx="740" cy="760" r="690" fill="none" stroke="#48C15A" stroke-width="14" stroke-dasharray="40 28" />
-                    <circle cx="740" cy="760" r="380" fill="none" stroke="#48C15A" stroke-width="10" stroke-dasharray="28 20" />
-                    
-                    <!-- 45-Degree Arrow Ray -->
-                    <line x1="250" y1="1250" x2="1230" y2="270" stroke="#48C15A" stroke-width="16" stroke-dasharray="40 24" />
-
-                    <!-- Cap-Height Line -->
-                    <line x1="1400" y1="65" x2="6562" y2="65" stroke="#005BBD" stroke-width="14" stroke-dasharray="36 24" />
-                    <!-- X-Height Line -->
-                    <line x1="1400" y1="270" x2="6562" y2="270" stroke="#005BBD" stroke-width="10" stroke-dasharray="28 20" />
-                    <!-- Main Baseline -->
-                    <line x1="1400" y1="1068" x2="6562" y2="1068" stroke="#005BBD" stroke-width="16" />
-                    <!-- Descender Line -->
-                    <line x1="1400" y1="1453" x2="6562" y2="1453" stroke="#48C15A" stroke-width="12" stroke-dasharray="32 20" />
-
-                    <!-- Letter 'o' Module Tangent Circle -->
-                    <circle cx="6080" cy="670" r="400" fill="none" stroke="#48C15A" stroke-width="12" stroke-dasharray="30 20" />
-                    <!-- Letter 'g' Module Tangent Circle -->
-                    <circle cx="4200" cy="670" r="400" fill="none" stroke="#48C15A" stroke-width="12" stroke-dasharray="30 20" />
-
-                    <!-- Vertical Module Boundary separating Icon and Wordmark -->
-                    <line x1="1510" y1="20" x2="1510" y2="1470" stroke="#005BBD" stroke-width="10" stroke-dasharray="24 24" />
-
-                    <!-- Technical Labels in Margin -->
-                    <g font-family="JetBrains Mono, monospace" font-size="110" font-weight="bold">
-                      <rect x="80" y="60" width="1340" height="150" rx="30" fill="#060D17" fill-opacity="0.85" />
-                      <text x="120" y="170" fill="#48C15A">45° ELEVATION ICON</text>
-
-                      <rect x="2200" y="1120" width="1450" height="150" rx="30" fill="#060D17" fill-opacity="0.85" />
-                      <text x="2240" y="1230" fill="#005BBD">OPTICAL BASELINE</text>
-
-                      <rect x="4200" y="60" width="1350" height="150" rx="30" fill="#060D17" fill-opacity="0.85" />
-                      <text x="4240" y="170" fill="#48C15A">GEOMETRIC TANGENTS</text>
-                    </g>
-                  </svg>
-                </div>
-
+                <img id="img-opt-2" src="../assets/elevgro_logo2_full.png" alt="ELEVGRO Combination Mark" class="max-h-16 sm:max-h-28 w-auto object-contain block transition-all duration-300 transform hover:scale-105" />
               </div>
 
               <!-- Description -->
@@ -826,7 +710,6 @@
     let currentSlide = 1;
     let current3DVariant = 1;
     let currentColorMode = 'color';
-    let isGridActive = false;
     let currentCanvas = 'light';
 
     let explodeDistance = 0;
@@ -973,24 +856,6 @@
     rotX = -15;
     rotY = 25;
     apply3DTransform();
-
-    // Toggle Geometric Grid Overlay
-    function toggleGeometricGrid() {
-      isGridActive = !isGridActive;
-      const g1 = document.getElementById('grid-svg-1');
-      const g2 = document.getElementById('grid-svg-2');
-      const btn = document.getElementById('btn-toggle-grid');
-
-      if (isGridActive) {
-        g1.classList.add('active');
-        g2.classList.add('active');
-        btn.className = 'px-3 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-bold bg-[#005BBD] text-white transition-all flex items-center gap-1.5 shadow-sm whitespace-nowrap flex-shrink-0';
-      } else {
-        g1.classList.remove('active');
-        g2.classList.remove('active');
-        btn.className = 'px-3 sm:px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 transition-all flex items-center gap-1.5 border border-slate-200 whitespace-nowrap flex-shrink-0';
-      }
-    }
 
     // Toggle Color Mode / Monochrome
     function setColorMode(mode) {
