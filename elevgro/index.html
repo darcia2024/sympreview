@@ -91,24 +91,6 @@
       }
     }
 
-    .m3-subcard {
-      background: #FFFFFF;
-      border-radius: 22px;
-      border: 1px solid #E2E8F0;
-      box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.04);
-      transition: all 0.3s var(--ios-spring);
-    }
-    @media (min-width: 640px) {
-      .m3-subcard {
-        border-radius: 28px;
-      }
-    }
-
-    .m3-subcard:hover {
-      box-shadow: 0 16px 32px -8px rgba(0, 91, 189, 0.08);
-      border-color: rgba(0, 91, 189, 0.3);
-    }
-
     /* Smooth GSAP Slides */
     .slide-section {
       transition: opacity 0.4s ease, transform 0.4s var(--ios-spring);
@@ -135,6 +117,25 @@
       pointer-events: none;
       transform-style: preserve-3d;
       transition: transform 0.45s var(--ios-spring);
+    }
+
+    /* Redesigned Approval Option Cards */
+    .approval-choice-card {
+      background: #FFFFFF;
+      border-radius: 24px;
+      border: 1.5px solid #E2E8F0;
+      transition: all 0.35s var(--ios-spring);
+      position: relative;
+      overflow: hidden;
+    }
+    .approval-choice-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 35px -10px rgba(0, 91, 189, 0.12);
+    }
+    @media (min-width: 640px) {
+      .approval-choice-card {
+        border-radius: 30px;
+      }
     }
   </style>
 </head>
@@ -331,70 +332,6 @@
         </div>
       </div>
 
-      <!-- CLEAR SPACE & MINIMUM SIZE STANDARDS -->
-      <div class="space-y-6 sm:space-y-8">
-        <div class="border-l-2 border-[#005BBD] pl-3 sm:pl-4">
-          <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            Standar Zona Aman (*Clear Space*) &amp; Ukuran Minimum
-          </h2>
-          <p class="text-[11px] sm:text-sm text-slate-500 font-mono mt-0.5">
-            Panduan proteksi visual agar logo selalu tampil berwibawa di segala media
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
-          
-          <!-- Clear Space Diagram -->
-          <div class="m3-subcard p-5 sm:p-8 space-y-4 sm:space-y-6">
-            <div class="flex items-center justify-between">
-              <span class="text-[11px] sm:text-xs font-mono font-bold text-[#005BBD] uppercase">ZONA AMAN (CLEAR SPACE = 1X LEAF)</span>
-              <i data-lucide="maximize-2" class="w-4 h-4 text-slate-400"></i>
-            </div>
-
-            <div class="border-2 border-dashed border-blue-300 rounded-2xl p-6 sm:p-8 flex items-center justify-center relative bg-blue-50/30">
-              <span class="absolute top-2 left-2 text-[10px] font-mono text-blue-500 font-bold">X</span>
-              <span class="absolute top-2 right-2 text-[10px] font-mono text-blue-500 font-bold">X</span>
-              <span class="absolute bottom-2 left-2 text-[10px] font-mono text-blue-500 font-bold">X</span>
-              <span class="absolute bottom-2 right-2 text-[10px] font-mono text-blue-500 font-bold">X</span>
-              <img src="../assets/elevgro_logo1_full.png" alt="Clear Space Logo" class="max-h-24 sm:max-h-28 object-contain" />
-            </div>
-
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Area bebas di sekeliling logo harus selalu memiliki jarak minimum <strong>X</strong> (setara tinggi tunas/daun hijau) dari teks atau elemen visual lain agar identitas brand tidak terganggu.
-            </p>
-          </div>
-
-          <!-- Minimum Size Standard -->
-          <div class="m3-subcard p-5 sm:p-8 space-y-4 sm:space-y-6">
-            <div class="flex items-center justify-between">
-              <span class="text-[11px] sm:text-xs font-mono font-bold text-[#059669] uppercase">STANDAR UKURAN TERKECIL</span>
-              <i data-lucide="minimize-2" class="w-4 h-4 text-slate-400"></i>
-            </div>
-
-            <div class="grid grid-cols-2 gap-3 sm:gap-4">
-              
-              <div class="p-3.5 sm:p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1 sm:space-y-2">
-                <span class="text-[9px] sm:text-[10px] font-mono text-slate-400 uppercase font-bold">DIGITAL / SCREEN</span>
-                <div class="text-xl sm:text-2xl font-black text-[#005BBD]">24 PX</div>
-                <p class="text-[10px] sm:text-[11px] text-slate-500">Favicon &amp; App Icon bar</p>
-              </div>
-
-              <div class="p-3.5 sm:p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1 sm:space-y-2">
-                <span class="text-[9px] sm:text-[10px] font-mono text-slate-400 uppercase font-bold">PRINT / CETAK</span>
-                <div class="text-xl sm:text-2xl font-black text-[#059669]">15 MM</div>
-                <p class="text-[10px] sm:text-[11px] text-slate-500">Kartu nama &amp; label</p>
-              </div>
-
-            </div>
-
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Proporsi geometris ELEVGRO telah teruji tetap terbaca tajam dan tidak pecah meski diperkecil hingga ukuran mikro.
-            </p>
-          </div>
-
-        </div>
-      </div>
-
       <!-- 3 PILAR FILOSOFI (CLEAN EDITORIAL SECTIONS) -->
       <div class="space-y-6 sm:space-y-8 pt-2 sm:pt-4">
         <div class="border-l-2 border-[#005BBD] pl-3 sm:pl-4">
@@ -444,50 +381,90 @@
         </div>
       </div>
 
-      <!-- ONE-TAP DECISION & APPROVAL ACTION HUB (CLOSING CTA) -->
-      <div class="p-6 sm:p-12 rounded-[28px] sm:rounded-[36px] bg-gradient-to-br from-slate-900 via-[#060D17] to-slate-950 text-white border border-slate-800 shadow-2xl space-y-6 sm:space-y-8">
+      <!-- ======================================================= -->
+      <!-- REDESIGNED SLEEK CLOSING & APPROVAL HUB (PREMIUM UI)    -->
+      <!-- ======================================================= -->
+      <div class="pt-6 sm:pt-10">
         
-        <div class="text-center space-y-2 max-w-xl mx-auto">
-          <span class="text-[10px] sm:text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">// PERSETUJUAN PROPOSAL</span>
-          <h3 class="text-xl sm:text-4xl font-extrabold tracking-tight">
-            Pilih Format Logo Resmi Pilihan Anda
-          </h3>
-          <p class="text-xs sm:text-sm text-slate-400">
-            Klik tombol di bawah untuk langsung menyetujui opsi logo favorit dan melanjutkan ke proses penyerahan master file (SVG, AI, PDF, EPS, PNG).
+        <!-- Header text for approval -->
+        <div class="text-center space-y-2 max-w-2xl mx-auto mb-8 sm:mb-12">
+          <p class="text-xs font-mono font-bold tracking-widest text-[#059669] uppercase">
+            // KEPUTUSAN RESMI KLIEN
+          </p>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">
+            Pilih Format Logo Resmi Elevgro
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Pilih opsi favorit Anda di bawah untuk mengonfirmasi pilihan dan melanjutkan ke penyerahan paket master file lengkap (SVG, AI, PDF, EPS, PNG High-Res).
           </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto">
+        <!-- 2 Clean White Cards Side-by-Side (Mobile Optimized) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           
-          <!-- Card Approval 1 -->
-          <a href="https://wa.me/6281311506025?text=insyaAllah%20abang%20pilih%20nomor%2001%20(Stacked%20Wordmark)" target="_blank" class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#005BBD] transition-all space-y-3 sm:space-y-4 text-center group">
-            <div class="h-14 sm:h-16 flex items-center justify-center">
-              <img src="../assets/elevgro_logo1_white.png" alt="Opt 1" class="max-h-12 sm:max-h-14 object-contain group-hover:scale-105 transition-transform" />
-            </div>
-            <div>
-              <h4 class="text-sm sm:text-base font-bold text-white">Pilih Varian 01: Stacked Wordmark</h4>
-              <p class="text-[11px] sm:text-xs text-slate-400 mt-0.5">Tipografi bertumpuk 2 baris (elev gro)</p>
-            </div>
-            <div class="py-2.5 px-4 rounded-xl bg-[#005BBD] text-white text-xs font-extrabold flex items-center justify-center gap-1.5 shadow-md">
-              <i data-lucide="check" class="w-3.5 h-3.5"></i>
-              <span>Setujui Varian 01 via WA</span>
-            </div>
-          </a>
+          <!-- Choice Card 1: Stacked Wordmark -->
+          <div class="approval-choice-card p-6 sm:p-8 flex flex-col justify-between space-y-6 hover:border-[#005BBD] group">
+            <div class="space-y-4">
+              <!-- Top Label Tag -->
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono font-black text-[#005BBD] tracking-wider uppercase">
+                  OPSI 01
+                </span>
+                <span class="text-[10px] font-mono text-slate-400 font-bold uppercase">STACKED WORDMARK</span>
+              </div>
 
-          <!-- Card Approval 2 -->
-          <a href="https://wa.me/6281311506025?text=insyaAllah%20abang%20pilih%20nomor%2002%20(Combination%20Mark)" target="_blank" class="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#059669] transition-all space-y-3 sm:space-y-4 text-center group">
-            <div class="h-14 sm:h-16 flex items-center justify-center">
-              <img src="../assets/elevgro_logo2_white.png" alt="Opt 2" class="max-h-8 sm:max-h-10 object-contain group-hover:scale-105 transition-transform" />
+              <!-- Clean Logo Showcase -->
+              <div class="h-32 sm:h-36 flex items-center justify-center py-2">
+                <img src="../assets/elevgro_logo1_full.png" alt="Varian 01" class="max-h-28 sm:max-h-32 object-contain group-hover:scale-105 transition-transform duration-300" />
+              </div>
+
+              <!-- Title & Spec -->
+              <div class="space-y-1 text-center sm:text-left">
+                <h3 class="text-base sm:text-lg font-bold text-slate-900">Varian 01: Stacked Wordmark</h3>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                  Tipografi bertumpuk 2 baris (<em>elev gro</em>) dengan tunas hijau di huruf 'v'. Ideal untuk App Icon &amp; avatar sosmed.
+                </p>
+              </div>
             </div>
-            <div>
-              <h4 class="text-sm sm:text-base font-bold text-white">Pilih Varian 02: Combination Mark</h4>
-              <p class="text-[11px] sm:text-xs text-slate-400 mt-0.5">Simbol daun panah &amp; wordmark horizontal</p>
+
+            <!-- WhatsApp Action Button 1 -->
+            <a href="https://wa.me/6281311506025?text=insyaAllah%20abang%20pilih%20nomor%2001%20(Stacked%20Wordmark)" target="_blank" class="w-full py-3 sm:py-3.5 px-5 rounded-2xl bg-[#005BBD] hover:bg-blue-700 text-white text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg active:scale-[0.98]">
+              <i data-lucide="check" class="w-4 h-4"></i>
+              <span>Pilih Varian 01 via WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Choice Card 2: Combination Mark -->
+          <div class="approval-choice-card p-6 sm:p-8 flex flex-col justify-between space-y-6 hover:border-[#059669] group">
+            <div class="space-y-4">
+              <!-- Top Label Tag -->
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono font-black text-[#059669] tracking-wider uppercase">
+                  OPSI 02
+                </span>
+                <span class="text-[10px] font-mono text-slate-400 font-bold uppercase">COMBINATION MARK</span>
+              </div>
+
+              <!-- Clean Logo Showcase -->
+              <div class="h-32 sm:h-36 flex items-center justify-center py-2">
+                <img src="../assets/elevgro_logo2_full.png" alt="Varian 02" class="max-h-14 sm:max-h-16 object-contain group-hover:scale-105 transition-transform duration-300" />
+              </div>
+
+              <!-- Title & Spec -->
+              <div class="space-y-1 text-center sm:text-left">
+                <h3 class="text-base sm:text-lg font-bold text-slate-900">Varian 02: Combination Mark</h3>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                  Ikon mandiri daun panah elevasi + logotype horizontal "Elevgro". Ideal untuk navbar website &amp; kop surat resmi.
+                </p>
+              </div>
             </div>
-            <div class="py-2.5 px-4 rounded-xl bg-[#059669] text-white text-xs font-extrabold flex items-center justify-center gap-1.5 shadow-md">
-              <i data-lucide="check" class="w-3.5 h-3.5"></i>
-              <span>Setujui Varian 02 via WA</span>
-            </div>
-          </a>
+
+            <!-- WhatsApp Action Button 2 -->
+            <a href="https://wa.me/6281311506025?text=insyaAllah%20abang%20pilih%20nomor%2002%20(Combination%20Mark)" target="_blank" class="w-full py-3 sm:py-3.5 px-5 rounded-2xl bg-[#059669] hover:bg-[#047857] text-white text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg active:scale-[0.98]">
+              <i data-lucide="check" class="w-4 h-4"></i>
+              <span>Pilih Varian 02 via WhatsApp</span>
+            </a>
+          </div>
 
         </div>
 
