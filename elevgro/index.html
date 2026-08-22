@@ -45,6 +45,11 @@
   
   <style>
     /* Elevgro Theme Custom Overrides */
+    .reveal-on-scroll {
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+    }
     .bg-elevgro-canvas {
       background-color: #060D17;
     }
@@ -123,10 +128,10 @@
     <!-- ======================================================= -->
     <!-- SLIDE 01: FILOSOFI & VARIAN RESMI                       -->
     <!-- ======================================================= -->
-    <div id="slide-1" class="space-y-12 transition-opacity duration-500">
+    <div id="slide-1" class="space-y-12 transition-opacity duration-300">
       
       <!-- Hero Title & Attribution -->
-      <div class="text-center space-y-3 max-w-2xl mx-auto reveal-on-scroll">
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
         <div class="text-xs font-mono font-bold tracking-widest text-[#005BBD] uppercase">
           Logo Guide by SYMP Studio &bull; Design by Daru Fahmaa Muliawan
         </div>
@@ -141,7 +146,7 @@
       </div>
 
       <!-- Logo Variant Selector Bar -->
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-200 pb-4 reveal-on-scroll">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-200 pb-4">
         <div class="flex items-center gap-2">
           <span class="text-xs font-mono font-bold text-slate-400 uppercase">PILIH VARIAN RESMI:</span>
           <button id="btn-variant-1" class="px-3 py-1.5 rounded-full text-xs font-bold bg-[#005BBD] text-white transition-all shadow-sm" onclick="setElevgroVariant(1)">
@@ -155,14 +160,14 @@
         <!-- Canvas Theme Switcher -->
         <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-full text-[11px] font-mono font-bold">
           <span class="text-slate-400 px-2">CANVAS:</span>
-          <button class="px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs" onclick="setElevgroCanvas('light')">Light</button>
-          <button class="px-2.5 py-1 rounded-full text-slate-600 hover:text-slate-900" onclick="setElevgroCanvas('sapphire')">Sapphire</button>
-          <button class="px-2.5 py-1 rounded-full text-slate-600 hover:text-slate-900" onclick="setElevgroCanvas('obsidian')">Obsidian</button>
+          <button id="btn-canvas-light" class="px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs" onclick="setElevgroCanvas('light')">Light</button>
+          <button id="btn-canvas-sapphire" class="px-2.5 py-1 rounded-full text-slate-600 hover:text-slate-900" onclick="setElevgroCanvas('sapphire')">Sapphire</button>
+          <button id="btn-canvas-obsidian" class="px-2.5 py-1 rounded-full text-slate-600 hover:text-slate-900" onclick="setElevgroCanvas('obsidian')">Obsidian</button>
         </div>
       </div>
 
       <!-- Adaptive Seamless Canvas Stage -->
-      <div id="elevgro-stage" class="rounded-3xl bg-white border border-slate-200/80 p-8 sm:p-16 flex items-center justify-center min-h-[320px] sm:min-h-[400px] shadow-sm transition-all duration-500 relative overflow-hidden reveal-on-scroll">
+      <div id="elevgro-stage" class="rounded-3xl bg-white border border-slate-200/80 p-8 sm:p-16 flex items-center justify-center min-h-[320px] sm:min-h-[400px] shadow-sm transition-all duration-500 relative overflow-hidden">
         
         <!-- Logo Display Image -->
         <img id="elevgro-display-img" src="../assets/elevgro_logo1_full.png" alt="ELEVGRO Logo" class="max-h-44 sm:max-h-56 max-w-full object-contain filter drop-shadow-md transition-all duration-500 transform hover:scale-105" />
@@ -174,7 +179,7 @@
       </div>
 
       <!-- 3 Pilar Filosofi Bisnis ELEVGRO (Mendalam & Bikin Yakin) -->
-      <div class="space-y-6 reveal-on-scroll">
+      <div class="space-y-6">
         
         <div class="border-l-2 border-[#005BBD] pl-3">
           <span class="text-[10px] font-mono text-[#005BBD] tracking-[0.2em] uppercase font-extrabold">BEDAH MAKNA GEOMETRIS</span>
@@ -225,7 +230,7 @@
     <!-- ======================================================= -->
     <!-- SLIDE 02: BEDAH 3D & SISTEM IDENTITAS LENGKAP           -->
     <!-- ======================================================= -->
-    <div id="slide-2" class="space-y-12 hidden transition-opacity duration-500">
+    <div id="slide-2" class="space-y-12 hidden transition-opacity duration-300">
       
       <!-- 3D Exploder Section -->
       <div class="space-y-6">
@@ -413,6 +418,14 @@
 
     function setElevgroCanvas(c) {
       currentCanvas = c;
+      const bLight = document.getElementById('btn-canvas-light');
+      const bSapphire = document.getElementById('btn-canvas-sapphire');
+      const bObsidian = document.getElementById('btn-canvas-obsidian');
+
+      bLight.className = c === 'light' ? 'px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs' : 'px-2.5 py-1 rounded-full text-slate-600 hover:text-slate-900';
+      bSapphire.className = c === 'sapphire' ? 'px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs' : 'px-2.5 py-1 rounded-full text-slate-600 hover:text-slate-900';
+      bObsidian.className = c === 'obsidian' ? 'px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs' : 'px-2.5 py-1 rounded-full text-slate-600 hover:text-slate-900';
+
       if (c === 'light') {
         stage.style.backgroundColor = '#FFFFFF';
         stage.style.borderColor = '#E2E8F0';
@@ -487,7 +500,6 @@
     // Copy HEX
     function copyHex(hex, el) {
       navigator.clipboard.writeText(hex).then(() => {
-        const orig = el.innerHTML;
         const note = document.createElement('div');
         note.className = 'fixed top-4 right-4 bg-slate-900 text-white text-xs font-mono py-2 px-4 rounded-xl shadow-2xl z-50 animate-bounce';
         note.innerText = `Copied ${hex} to clipboard!`;
