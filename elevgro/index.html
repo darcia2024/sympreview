@@ -82,7 +82,7 @@
   <!-- TOP BALANCED NAVIGATION HEADER                          -->
   <!-- ======================================================= -->
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/80 px-3 sm:px-6 py-2.5 transition-all">
-    <div class="max-w-5xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
       
       <!-- Left Column: Back to Portal & Prev Slide -->
       <div class="flex items-center gap-1.5 flex-shrink-0">
@@ -98,7 +98,7 @@
       <!-- Center Column: 50:50 Segmented Tab Pill -->
       <div class="flex items-center p-1 bg-slate-100/90 rounded-full border border-slate-200/60 max-w-[280px] sm:max-w-xs w-full">
         <button id="tab-slide-1" class="flex-1 py-1 px-2 rounded-full text-[11px] sm:text-xs font-bold text-center transition-all bg-white text-slate-900 shadow-sm" onclick="goToSlide(1)">
-          01. Filosofi
+          01. 2 Opsi Resmi
         </button>
         <button id="tab-slide-2" class="flex-1 py-1 px-2 rounded-full text-[11px] sm:text-xs font-bold text-center transition-all text-slate-500 hover:text-slate-900" onclick="goToSlide(2)">
           02. Bedah 3D
@@ -123,66 +123,133 @@
   <!-- ======================================================= -->
   <!-- MAIN CONTAINER (2-SLIDE INTERACTIVE PRESENTATION)       -->
   <!-- ======================================================= -->
-  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-12">
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-12">
 
     <!-- ======================================================= -->
-    <!-- SLIDE 01: FILOSOFI & VARIAN RESMI                       -->
+    <!-- SLIDE 01: 2 OPSI LOGO RESMI (SIDE-BY-SIDE COMPARISON)   -->
     <!-- ======================================================= -->
-    <div id="slide-1" class="space-y-12 transition-opacity duration-300">
+    <div id="slide-1" class="space-y-10 transition-opacity duration-300">
       
-      <!-- Hero Title & Attribution -->
-      <div class="text-center space-y-3 max-w-2xl mx-auto">
-        <div class="text-xs font-mono font-bold tracking-widest text-[#005BBD] uppercase">
-          Logo Guide by SYMP Studio &bull; Design by Daru Fahmaa Muliawan
-        </div>
+      <!-- Top Section Header & Canvas Selector Bar (Exact Reference) -->
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-200 pb-6">
         
-        <h1 class="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight leading-tight">
-          Penawaran Eksklusif Konsep Identitas Logo <span class="text-[#005BBD]">ELEVGRO</span>
-        </h1>
+        <!-- Left: Category Eyebrow & Headline -->
+        <div class="space-y-1 border-l-2 border-[#005BBD] pl-3">
+          <span class="text-[10px] font-mono text-[#005BBD] tracking-[0.2em] uppercase font-extrabold">FORMAT UTAMA</span>
+          <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">
+            2 Opsi Logo Resmi ELEVGRO
+          </h1>
+          <p class="text-xs text-slate-500 font-mono">
+            "elevate &bull; grow &bull; help others"
+          </p>
+        </div>
 
-        <p class="text-xs sm:text-sm text-slate-500 font-semibold leading-relaxed font-mono">
-          "elevate &bull; grow &bull; help others"
-        </p>
-        <p class="text-xs sm:text-sm text-slate-500 font-normal leading-relaxed max-w-xl mx-auto">
-          Arsitektur identitas visual modern yang merepresentasikan semangat elevasi bisnis, pertumbuhan eksponensial, dan komitmen kebermanfaatan bagi sesama.
-        </p>
-      </div>
-
-      <!-- Logo Variant Selector Bar -->
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-200 pb-4">
-        <div class="flex items-center gap-2">
-          <span class="text-xs font-mono font-bold text-slate-400 uppercase">PILIH VARIAN RESMI:</span>
-          <button id="btn-variant-1" class="px-3 py-1.5 rounded-full text-xs font-bold bg-[#005BBD] text-white transition-all shadow-sm" onclick="setElevgroVariant(1)">
-            Varian 01: Stacked Mark
+        <!-- Right: Canvas Switcher Pill (Exact Reference) -->
+        <div class="flex items-center gap-1 bg-slate-100/90 p-1 rounded-full border border-slate-200/80 text-xs font-medium">
+          <button id="btn-canvas-light" class="px-3.5 py-1.5 rounded-full font-bold transition-all bg-white text-slate-900 shadow-sm" onclick="setDualCanvas('light')">
+            Pure Light
           </button>
-          <button id="btn-variant-2" class="px-3 py-1.5 rounded-full text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all" onclick="setElevgroVariant(2)">
-            Varian 02: Horizontal Crest
+          <button id="btn-canvas-sapphire" class="px-3.5 py-1.5 rounded-full font-bold transition-all text-slate-600 hover:text-slate-900" onclick="setDualCanvas('sapphire')">
+            Sapphire Deep (#002552)
+          </button>
+          <button id="btn-canvas-obsidian" class="px-3.5 py-1.5 rounded-full font-bold transition-all text-slate-600 hover:text-slate-900" onclick="setDualCanvas('obsidian')">
+            Dark Velvet (#060D17)
           </button>
         </div>
 
-        <!-- Canvas Theme Switcher -->
-        <div class="flex items-center gap-1.5 bg-slate-100 p-1 rounded-full text-[11px] font-mono font-bold">
-          <span class="text-slate-400 px-2">CANVAS:</span>
-          <button id="btn-canvas-light" class="px-2.5 py-1 rounded-full text-slate-600 hover:text-slate-900" onclick="setElevgroCanvas('light')">Light</button>
-          <button id="btn-canvas-sapphire" class="px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs" onclick="setElevgroCanvas('sapphire')">Sapphire</button>
-          <button id="btn-canvas-obsidian" class="px-2.5 py-1 rounded-full text-slate-600 hover:text-slate-900" onclick="setElevgroCanvas('obsidian')">Obsidian</button>
-        </div>
       </div>
 
-      <!-- Adaptive Seamless Canvas Stage with Refined Proportions -->
-      <div id="elevgro-stage" class="rounded-3xl bg-[#002552] border border-blue-900/50 p-8 sm:p-14 flex items-center justify-center min-h-[320px] sm:min-h-[380px] shadow-sm transition-all duration-500 relative overflow-hidden">
-        
-        <!-- Logo Display Image (Refined Proportions) -->
-        <img id="elevgro-display-img" src="../assets/elevgro_logo1_white.png" alt="ELEVGRO Logo" class="max-h-40 sm:max-h-48 max-w-[85%] sm:max-w-[70%] object-contain filter drop-shadow-md transition-all duration-500 transform hover:scale-105" />
+      <!-- Main 2-Column Comparison Stage (Exact Reference Layout) -->
+      <div id="dual-stage-wrapper" class="rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-10 shadow-sm transition-all duration-500">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 divide-y lg:divide-y-0 lg:divide-x divide-slate-200">
+          
+          <!-- Column 1: Stacked Mark [ 01 ] -->
+          <div class="space-y-6 flex flex-col justify-between pt-4 lg:pt-0">
+            
+            <div class="space-y-4">
+              <!-- Header Tag -->
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono font-black text-[#005BBD] tracking-wider uppercase flex items-center gap-1.5">
+                  <span class="text-[#005BBD] font-mono">[ 01 ]</span> STACKED EMBLEM
+                </span>
+                <span class="text-[10px] font-mono text-slate-400 tracking-wider uppercase font-bold">1:1 STACKED MARK</span>
+              </div>
 
-        <!-- Floating Format Tag -->
-        <div id="elevgro-format-tag" class="absolute bottom-4 right-4 text-[10px] font-mono px-3 py-1 rounded-full bg-white/10 text-white/80 border border-white/10 font-bold backdrop-blur-sm">
-          STACKED EMBLEM MARK
+              <!-- Visual Stage Box -->
+              <div id="stage-box-1" class="rounded-2xl p-6 sm:p-10 flex items-center justify-center min-h-[260px] sm:min-h-[300px] transition-all duration-500 relative group">
+                <img id="img-opt-1" src="../assets/elevgro_logo1_full.png" alt="ELEVGRO Stacked Logo" class="max-h-40 sm:max-h-48 max-w-[85%] object-contain filter drop-shadow-sm transition-all duration-300 transform group-hover:scale-105" />
+              </div>
+
+              <!-- Description & Info -->
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <h3 id="title-opt-1" class="text-base sm:text-lg font-bold text-slate-900">
+                    Simpul Isometrik &amp; Vektor Elevasi
+                  </h3>
+                  <i data-lucide="shield" class="w-4 h-4 text-slate-400"></i>
+                </div>
+                <p id="desc-opt-1" class="text-xs text-slate-500 leading-relaxed">
+                  Vibe-nya kokoh, terpusat, dan berwibawa parah. Pas banget buat App Icon di iPhone/Android, avatar sosmed, favicon browser, sampai stempel packaging produk.
+                </p>
+              </div>
+            </div>
+
+            <!-- Action Button -->
+            <div>
+              <button onclick="goToSlide(2)" class="w-full py-2.5 px-4 rounded-xl bg-blue-50 hover:bg-blue-100 text-[#005BBD] text-xs font-bold transition-all flex items-center justify-center gap-1.5 border border-blue-200/60 shadow-xs">
+                <span>Bedah Objek 3D &bull; Varian 1</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Column 2: Horizontal Crest [ 02 ] -->
+          <div class="space-y-6 flex flex-col justify-between pt-8 lg:pt-0 lg:pl-12">
+            
+            <div class="space-y-4">
+              <!-- Header Tag -->
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono font-black text-[#48C15A] tracking-wider uppercase flex items-center gap-1.5">
+                  <span class="text-[#48C15A] font-mono">[ 02 ]</span> HORIZONTAL CREST
+                </span>
+                <span class="text-[10px] font-mono text-slate-400 tracking-wider uppercase font-bold">HORIZONTAL CREST</span>
+              </div>
+
+              <!-- Visual Stage Box -->
+              <div id="stage-box-2" class="rounded-2xl p-6 sm:p-10 flex items-center justify-center min-h-[260px] sm:min-h-[300px] transition-all duration-500 relative group">
+                <img id="img-opt-2" src="../assets/elevgro_logo2_full.png" alt="ELEVGRO Horizontal Logo" class="max-h-20 sm:max-h-24 max-w-[80%] object-contain filter drop-shadow-sm transition-all duration-300 transform group-hover:scale-105" />
+              </div>
+
+              <!-- Description & Info -->
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <h3 id="title-opt-2" class="text-base sm:text-lg font-bold text-slate-900">
+                    Kombinasi Horizontal &amp; Tipografi Mengalir
+                  </h3>
+                  <i data-lucide="infinity" class="w-4 h-4 text-slate-400"></i>
+                </div>
+                <p id="desc-opt-2" class="text-xs text-slate-500 leading-relaxed">
+                  Gaya modern nan luwes dengan komposisi horizontal proporsional. Enak banget dipasang di header website, kop surat resmi, kartu nama, neon box toko, atau billboard jalan protokol.
+                </p>
+              </div>
+            </div>
+
+            <!-- Action Button -->
+            <div>
+              <button onclick="goToSlide(2)" class="w-full py-2.5 px-4 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 text-xs font-bold transition-all flex items-center justify-center gap-1.5 border border-emerald-200/60 shadow-xs">
+                <span>Bedah Objek 3D &bull; Varian 2</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+
+          </div>
+
         </div>
       </div>
 
       <!-- 3 Pilar Filosofi Bisnis ELEVGRO (Mendalam & Bikin Yakin) -->
-      <div class="space-y-6">
+      <div class="space-y-6 pt-4">
         
         <div class="border-l-2 border-[#005BBD] pl-3">
           <span class="text-[10px] font-mono text-[#005BBD] tracking-[0.2em] uppercase font-extrabold">BEDAH MAKNA GEOMETRIS</span>
@@ -404,59 +471,68 @@
   <script>
     lucide.createIcons();
 
-    let currentVariant = 1;
-    let currentCanvas = 'sapphire'; // Default sapphire dark looks majestic for Elevgro
+    let currentCanvas = 'light';
 
-    const stage = document.getElementById('elevgro-stage');
-    const displayImg = document.getElementById('elevgro-display-img');
-    const formatTag = document.getElementById('elevgro-format-tag');
+    const wrapper = document.getElementById('dual-stage-wrapper');
+    const box1 = document.getElementById('stage-box-1');
+    const box2 = document.getElementById('stage-box-2');
+    const img1 = document.getElementById('img-opt-1');
+    const img2 = document.getElementById('img-opt-2');
 
-    function setElevgroVariant(v) {
-      currentVariant = v;
-      document.getElementById('btn-variant-1').className = v === 1 ? 'px-3 py-1.5 rounded-full text-xs font-bold bg-[#005BBD] text-white transition-all shadow-sm' : 'px-3 py-1.5 rounded-full text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all';
-      document.getElementById('btn-variant-2').className = v === 2 ? 'px-3 py-1.5 rounded-full text-xs font-bold bg-[#005BBD] text-white transition-all shadow-sm' : 'px-3 py-1.5 rounded-full text-xs font-bold bg-slate-100 text-slate-600 hover:bg-slate-200 transition-all';
+    const title1 = document.getElementById('title-opt-1');
+    const title2 = document.getElementById('title-opt-2');
+    const desc1 = document.getElementById('desc-opt-1');
+    const desc2 = document.getElementById('desc-opt-2');
 
-      updateElevgroImage();
-    }
-
-    function setElevgroCanvas(c) {
+    function setDualCanvas(c) {
       currentCanvas = c;
       const bLight = document.getElementById('btn-canvas-light');
       const bSapphire = document.getElementById('btn-canvas-sapphire');
       const bObsidian = document.getElementById('btn-canvas-obsidian');
 
-      bLight.className = c === 'light' ? 'px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs' : 'px-2.5 py-1 rounded-full text-slate-600 hover:text-slate-900';
-      bSapphire.className = c === 'sapphire' ? 'px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs' : 'px-2.5 py-1 rounded-full text-slate-600 hover:text-slate-900';
-      bObsidian.className = c === 'obsidian' ? 'px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs' : 'px-2.5 py-1 rounded-full text-slate-600 hover:text-slate-900';
+      bLight.className = c === 'light' ? 'px-3.5 py-1.5 rounded-full font-bold transition-all bg-white text-slate-900 shadow-sm' : 'px-3.5 py-1.5 rounded-full font-bold transition-all text-slate-600 hover:text-slate-900';
+      bSapphire.className = c === 'sapphire' ? 'px-3.5 py-1.5 rounded-full font-bold transition-all bg-[#002552] text-white shadow-sm' : 'px-3.5 py-1.5 rounded-full font-bold transition-all text-slate-600 hover:text-slate-900';
+      bObsidian.className = c === 'obsidian' ? 'px-3.5 py-1.5 rounded-full font-bold transition-all bg-[#060D17] text-white shadow-sm' : 'px-3.5 py-1.5 rounded-full font-bold transition-all text-slate-600 hover:text-slate-900';
 
       if (c === 'light') {
-        stage.style.backgroundColor = '#FFFFFF';
-        stage.style.borderColor = '#E2E8F0';
-        formatTag.className = 'absolute bottom-4 right-4 text-[10px] font-mono px-3 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200 font-bold';
+        wrapper.style.backgroundColor = '#FFFFFF';
+        wrapper.style.borderColor = '#E2E8F0';
+        box1.style.backgroundColor = 'transparent';
+        box2.style.backgroundColor = 'transparent';
+
+        img1.src = '../assets/elevgro_logo1_full.png';
+        img2.src = '../assets/elevgro_logo2_full.png';
+
+        title1.className = 'text-base sm:text-lg font-bold text-slate-900';
+        title2.className = 'text-base sm:text-lg font-bold text-slate-900';
+        desc1.className = 'text-xs text-slate-500 leading-relaxed';
+        desc2.className = 'text-xs text-slate-500 leading-relaxed';
       } else if (c === 'sapphire') {
-        stage.style.backgroundColor = '#002552';
-        stage.style.borderColor = 'rgba(0, 91, 189, 0.5)';
-        formatTag.className = 'absolute bottom-4 right-4 text-[10px] font-mono px-3 py-1 rounded-full bg-white/10 text-white/80 border border-white/10 font-bold backdrop-blur-sm';
+        wrapper.style.backgroundColor = '#002552';
+        wrapper.style.borderColor = 'rgba(0, 91, 189, 0.4)';
+        box1.style.backgroundColor = 'rgba(255, 255, 255, 0.04)';
+        box2.style.backgroundColor = 'rgba(255, 255, 255, 0.04)';
+
+        img1.src = '../assets/elevgro_logo1_white.png';
+        img2.src = '../assets/elevgro_logo2_white.png';
+
+        title1.className = 'text-base sm:text-lg font-bold text-white';
+        title2.className = 'text-base sm:text-lg font-bold text-white';
+        desc1.className = 'text-xs text-slate-300 leading-relaxed';
+        desc2.className = 'text-xs text-slate-300 leading-relaxed';
       } else if (c === 'obsidian') {
-        stage.style.backgroundColor = '#060D17';
-        stage.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-        formatTag.className = 'absolute bottom-4 right-4 text-[10px] font-mono px-3 py-1 rounded-full bg-white/10 text-white/80 border border-white/10 font-bold backdrop-blur-sm';
-      }
+        wrapper.style.backgroundColor = '#060D17';
+        wrapper.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+        box1.style.backgroundColor = 'rgba(255, 255, 255, 0.04)';
+        box2.style.backgroundColor = 'rgba(255, 255, 255, 0.04)';
 
-      updateElevgroImage();
-    }
+        img1.src = '../assets/elevgro_logo1_white.png';
+        img2.src = '../assets/elevgro_logo2_white.png';
 
-    function updateElevgroImage() {
-      const isDark = currentCanvas !== 'light';
-      if (currentVariant === 1) {
-        displayImg.src = isDark ? '../assets/elevgro_logo1_white.png' : '../assets/elevgro_logo1_full.png';
-        displayImg.className = 'max-h-40 sm:max-h-48 max-w-[85%] sm:max-w-[70%] object-contain filter drop-shadow-md transition-all duration-500 transform hover:scale-105';
-        formatTag.innerText = 'STACKED EMBLEM MARK';
-      } else {
-        displayImg.src = isDark ? '../assets/elevgro_logo2_white.png' : '../assets/elevgro_logo2_full.png';
-        // Reduced size with generous padding for the horizontal logo
-        displayImg.className = 'max-h-20 sm:max-h-28 max-w-[75%] sm:max-w-[65%] object-contain filter drop-shadow-md transition-all duration-500 transform hover:scale-105';
-        formatTag.innerText = 'HORIZONTAL COMBINATION CREST';
+        title1.className = 'text-base sm:text-lg font-bold text-white';
+        title2.className = 'text-base sm:text-lg font-bold text-white';
+        desc1.className = 'text-xs text-slate-300 leading-relaxed';
+        desc2.className = 'text-xs text-slate-300 leading-relaxed';
       }
     }
 
