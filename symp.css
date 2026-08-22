@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap');
 
 :root {
-  /* SYMP Studio Maroon Luxury Tokens */
-  --symp-maroon-deep: #140205;
-  --symp-maroon-dark: #220308;
-  --symp-maroon-base: #3B050E;
-  --symp-maroon-rich: #580816;
-  --symp-crimson: #8C0D23;
-  --symp-ruby: #E61C3D;
-  --symp-gold: #E4B854;
-  --symp-gold-light: #F5D278;
-  
-  --symp-text-white: #FFF5F7;
-  --symp-text-muted: #D1B4B9;
-  --symp-text-dim: #8F6F74;
+  /* Warm Cream & Rich Maroon Palette */
+  --bg-cream: #FAF4F4;
+  --bg-cream-card: #FFFFFF;
+  --maroon-deep: #2A040B;
+  --maroon-rich: #4D0613;
+  --maroon-vibrant: #730B1E;
+  --maroon-accent: #9B112A;
+  --ruby-bright: #E61C3D;
+  --gold-warm: #E2AC36;
+  --gold-light: #F5D278;
+  --text-dark: #1E070B;
+  --text-muted: #7A585E;
+  --text-light: #B4969B;
 
   --ios-spring: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -27,8 +27,8 @@
 
 body {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-  background-color: var(--symp-maroon-deep);
-  color: var(--symp-text-white);
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
   min-height: 100vh;
   letter-spacing: -0.015em;
   -webkit-font-smoothing: antialiased;
@@ -44,157 +44,299 @@ h1, h2, h3, h4, h5, h6 {
 .font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif; }
 .font-mono { font-family: 'JetBrains Mono', monospace; }
 
-/* Maroon Ambient Light Orbs */
-.ambient-maroon {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
+/* Mobile Frame Container for Desktop (Centered phone/tablet elegance) */
+.app-container {
+  max-width: 520px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--bg-cream);
+  position: relative;
+  box-shadow: 0 0 50px rgba(77, 6, 19, 0.08);
 }
 
-.maroon-orb-1 {
-  position: absolute;
-  top: -15%;
-  left: 15%;
-  width: 750px;
-  height: 750px;
-  background: radial-gradient(circle, rgba(140, 13, 35, 0.25) 0%, transparent 70%);
-  filter: blur(120px);
+@media (min-width: 1024px) {
+  .app-container {
+    max-width: 720px;
+  }
 }
 
-.maroon-orb-2 {
-  position: absolute;
-  bottom: 5%;
-  right: 10%;
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, rgba(228, 184, 84, 0.12) 0%, transparent 70%);
-  filter: blur(130px);
+/* App Header Buttons */
+.app-icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  background: #FFFFFF;
+  border: 1px solid rgba(226, 206, 210, 0.6);
+  box-shadow: 0 2px 10px rgba(77, 6, 19, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--maroon-rich);
+  transition: all 0.2s var(--ios-spring);
+  cursor: pointer;
+  position: relative;
 }
 
-/* Frosted Maroon Nav */
-.symp-nav {
-  background: rgba(20, 2, 5, 0.85);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 1px solid rgba(228, 184, 84, 0.15);
+.app-icon-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(77, 6, 19, 0.08);
+  border-color: var(--maroon-accent);
 }
 
-/* Glass Maroon Cards */
-.maroon-card {
-  background: linear-gradient(135deg, rgba(34, 3, 8, 0.8) 0%, rgba(20, 2, 5, 0.9) 100%);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(228, 184, 84, 0.2);
+.app-icon-btn:active {
+  transform: scale(0.95);
+}
+
+/* Search Bar */
+.app-search-input {
+  background: #FFFFFF;
+  border: 1px solid rgba(226, 206, 210, 0.7);
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(77, 6, 19, 0.03);
+  padding: 12px 16px 12px 42px;
+  font-size: 0.875rem;
+  color: var(--text-dark);
+  transition: all 0.2s var(--ios-spring);
+  width: 100%;
+}
+
+.app-search-input:focus {
+  outline: none;
+  border-color: var(--maroon-vibrant);
+  box-shadow: 0 0 0 3px rgba(115, 11, 30, 0.1);
+}
+
+/* Hero Feature Banner (Rich Velvet Maroon) */
+.hero-banner-card {
+  background: linear-gradient(135deg, #4A0512 0%, #2A030A 60%, #170105 100%);
   border-radius: 28px;
-  transition: all 0.4s var(--ios-spring);
+  padding: 24px 20px;
+  color: #FFFFFF;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 16px 36px -8px rgba(74, 5, 18, 0.45);
+  border: 1px solid rgba(226, 172, 54, 0.25);
 }
 
-.maroon-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(228, 184, 84, 0.5);
-  box-shadow: 0 24px 48px -12px rgba(140, 13, 35, 0.45);
+@media (min-width: 640px) {
+  .hero-banner-card {
+    padding: 32px 28px;
+  }
 }
 
-/* Gold Gradient Text */
-.text-gradient-gold {
-  background: linear-gradient(135deg, #FFF0B8 0%, #E4B854 50%, #C89532 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.text-gradient-rose {
-  background: linear-gradient(135deg, #FFFFFF 0%, #F5D278 60%, #E61C3D 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Luxury Buttons */
-.btn-symp-gold {
-  background: linear-gradient(135deg, #F5D278 0%, #E4B854 100%);
-  color: #140205;
-  font-weight: 800;
-  border-radius: 9999px;
-  padding: 12px 28px;
-  display: inline-flex;
+/* Category Bubble Chips */
+.cat-chip {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: all 0.25s var(--ios-spring);
-  box-shadow: 0 4px 18px rgba(228, 184, 84, 0.3);
+  gap: 6px;
+  cursor: pointer;
+  transition: transform 0.2s var(--ios-spring);
+  text-decoration: none;
 }
 
-.btn-symp-gold:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 26px rgba(228, 184, 84, 0.5);
+.cat-chip:hover {
+  transform: translateY(-3px);
 }
 
-.btn-symp-gold:active {
-  transform: scale(0.96);
-}
-
-.btn-symp-glass {
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--symp-text-white);
-  border: 1px solid rgba(228, 184, 84, 0.25);
-  font-weight: 600;
-  border-radius: 9999px;
-  padding: 12px 26px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: all 0.25s var(--ios-spring);
-}
-
-.btn-symp-glass:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(228, 184, 84, 0.5);
-  transform: translateY(-2px);
-}
-
-.btn-symp-glass:active {
-  transform: scale(0.96);
-}
-
-.pulse-ruby-dot {
-  width: 7px;
-  height: 7px;
+.cat-avatar {
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
-  background: var(--symp-ruby);
-  box-shadow: 0 0 0 0 rgba(230, 28, 61, 0.7);
-  animation: pulseRuby 2s infinite;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(226, 206, 210, 0.8);
+  box-shadow: 0 4px 12px rgba(77, 6, 19, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 8px;
+  transition: all 0.2s var(--ios-spring);
 }
 
-@keyframes pulseRuby {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(230, 28, 61, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(230, 28, 61, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(230, 28, 61, 0); }
+.cat-chip.active .cat-avatar, .cat-chip:hover .cat-avatar {
+  border-color: var(--maroon-vibrant);
+  box-shadow: 0 6px 16px rgba(115, 11, 30, 0.18);
+  transform: scale(1.05);
 }
 
-/* Scroll Reveals */
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(28px) scale(0.985);
-  filter: blur(4px);
-  transition: opacity 0.75s var(--ios-spring),
-              transform 0.75s var(--ios-spring),
-              filter 0.75s var(--ios-spring);
-  will-change: opacity, transform, filter;
+.cat-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  white-space: nowrap;
 }
 
-.reveal-on-scroll.is-revealed {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  filter: blur(0);
+.cat-chip.active .cat-label {
+  color: var(--maroon-vibrant);
 }
 
-.stagger-1 { transition-delay: 0.08s; }
-.stagger-2 { transition-delay: 0.16s; }
-.stagger-3 { transition-delay: 0.24s; }
+/* Product / Proposal Cards */
+.pick-card {
+  background: #FFFFFF;
+  border-radius: 24px;
+  border: 1px solid rgba(226, 206, 210, 0.65);
+  box-shadow: 0 4px 16px rgba(77, 6, 19, 0.04);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s var(--ios-spring);
+  position: relative;
+}
+
+.pick-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(115, 11, 30, 0.35);
+  box-shadow: 0 16px 32px -6px rgba(77, 6, 19, 0.12);
+}
+
+.pick-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 2;
+}
+
+.pick-badge.bestseller {
+  background: #4D0613;
+  color: #F5D278;
+}
+
+.pick-badge.popular {
+  background: #E2AC36;
+  color: #2A040B;
+}
+
+.pick-badge.interactive {
+  background: #059B66;
+  color: #FFFFFF;
+}
+
+.pick-heart-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(250, 244, 244, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all 0.2s var(--ios-spring);
+  z-index: 2;
+}
+
+.pick-heart-btn:hover {
+  color: var(--ruby-bright);
+  background: #FFFFFF;
+  transform: scale(1.1);
+}
+
+/* Add / Explore Action Button */
+.btn-pick-add {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gold-warm);
+  color: #2A040B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  box-shadow: 0 4px 10px rgba(226, 172, 54, 0.4);
+  transition: all 0.2s var(--ios-spring);
+}
+
+.btn-pick-add:hover {
+  transform: scale(1.12);
+  background: #F5D278;
+}
+
+/* Exclusive Deal Promo Card */
+.exclusive-deal-card {
+  background: linear-gradient(135deg, #F3E4E6 0%, #FBF0F1 100%);
+  border: 1px solid rgba(115, 11, 30, 0.15);
+  border-radius: 24px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(77, 6, 19, 0.05);
+}
+
+/* Bottom App Navigation Bar */
+.app-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(226, 206, 210, 0.7);
+  padding: 8px 16px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 50;
+  box-shadow: 0 -4px 20px rgba(77, 6, 19, 0.06);
+}
+
+@media (min-width: 1024px) {
+  .app-bottom-nav {
+    max-width: 720px;
+  }
+}
+
+.nav-tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s var(--ios-spring);
+}
+
+.nav-tab-item.active, .nav-tab-item:hover {
+  color: var(--maroon-rich);
+}
+
+.nav-center-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #730B1E 0%, #3B040D 100%);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(115, 11, 30, 0.45);
+  margin-top: -24px;
+  border: 3px solid #FFFFFF;
+  transition: all 0.25s var(--ios-spring);
+  text-decoration: none;
+}
+
+.nav-center-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 26px rgba(115, 11, 30, 0.55);
+}

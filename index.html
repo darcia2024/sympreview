@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>SYMP Studio — Brand Architecture & Visual Identity by Daru Fahmaa Muliawan</title>
+  <title>SYMP Studio — Brand Architecture by Daru Fahmaa Muliawan</title>
   
   <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,13 +17,18 @@
       theme: {
         extend: {
           colors: {
-            symp: {
-              maroon: '#460713',
-              deep: '#140205',
-              dark: '#220308',
-              crimson: '#8C0D23',
-              ruby: '#E61C3D',
-              gold: '#E4B854'
+            maroon: {
+              50: '#FDF2F4',
+              100: '#FBE8EB',
+              600: '#9B112A',
+              700: '#730B1E',
+              800: '#4D0613',
+              900: '#2A040B'
+            },
+            gold: {
+              400: '#F5D278',
+              500: '#E2AC36',
+              600: '#C89326'
             }
           },
           fontFamily: {
@@ -39,292 +44,403 @@
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
   
-  <!-- Custom Stylesheet -->
+  <!-- Custom App Stylesheet -->
   <link rel="stylesheet" href="symp.css">
 </head>
-<body class="bg-[#140205] text-[#FFF5F7] antialiased selection:bg-[#E61C3D] selection:text-white relative font-jakarta">
+<body class="bg-[#FAF4F4] text-[#1E070B] antialiased selection:bg-[#730B1E] selection:text-white font-jakarta pb-24">
 
-  <!-- Ambient Light Orbs (Maroon & Warm Gold) -->
-  <div class="ambient-maroon">
-    <div class="maroon-orb-1"></div>
-    <div class="maroon-orb-2"></div>
-  </div>
+  <!-- Mobile Container Wrapper (Centered App Frame) -->
+  <div class="app-container px-4 sm:px-6 py-4 sm:py-6 space-y-6">
 
-  <!-- Floating Minimalist Header -->
-  <header class="sticky top-0 z-50 symp-nav px-4 sm:px-8 py-3.5 transition-all">
-    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+    <!-- 1. Top Status Bar Mockup (Clean Apple Style) -->
+    <div class="flex items-center justify-between text-xs font-mono font-bold text-[#7A585E] px-1">
+      <span>9:41</span>
+      <div class="flex items-center gap-1.5">
+        <i data-lucide="signal" class="w-3.5 h-3.5"></i>
+        <i data-lucide="wifi" class="w-3.5 h-3.5"></i>
+        <i data-lucide="battery" class="w-4 h-4"></i>
+      </div>
+    </div>
+
+    <!-- 2. App Top Header (Hey, Visionary! + SYMP STUDIO + Actions) -->
+    <header class="flex items-center justify-between gap-3">
       
-      <!-- Brand Logo / Studio Emblem -->
-      <a href="/" class="flex items-center gap-2.5 group">
-        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-[#8C0D23] via-[#E61C3D] to-[#E4B854] flex items-center justify-center text-white font-extrabold text-xs shadow-md shadow-[#8C0D23]/40 group-hover:scale-105 transition-transform">
-          S
-        </div>
-        <div class="flex flex-col">
-          <span class="text-sm font-extrabold tracking-tight text-white flex items-center gap-1.5">
-            SYMP STUDIO
-            <span class="pulse-ruby-dot"></span>
+      <!-- Left: Menu Button -->
+      <button class="app-icon-btn" title="Menu Utama" onclick="document.getElementById('showcase-section').scrollIntoView({behavior:'smooth'})">
+        <i data-lucide="menu" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Center: Studio Greeting & Brand Title -->
+      <div class="text-center flex-1">
+        <p class="text-[11px] font-semibold text-[#7A585E] flex items-center justify-center gap-1">
+          <span>Hey, Visionary Brand!</span>
+          <span>👋</span>
+        </p>
+        <h1 class="text-xl sm:text-2xl font-black text-[#4D0613] tracking-tight uppercase leading-none mt-0.5">
+          SYMP STUDIO
+        </h1>
+        <p class="text-[10px] font-mono text-amber-700 font-semibold tracking-wide">
+          Design by Daru Fahmaa Muliawan
+        </p>
+      </div>
+
+      <!-- Right: Action Buttons (Notifications + Active Proposals) -->
+      <div class="flex items-center gap-2">
+        <button class="app-icon-btn" title="Notifikasi Proyek">
+          <i data-lucide="bell" class="w-4 h-4"></i>
+          <span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#E61C3D] text-white text-[9px] font-bold flex items-center justify-center shadow-xs">
+            1
           </span>
-          <span class="text-[9px] font-mono text-[#D1B4B9] tracking-wider uppercase">Visual Architecture</span>
-        </div>
-      </a>
-
-      <!-- Center Links (Desktop) -->
-      <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-[#D1B4B9]">
-        <a href="#showcase" class="hover:text-[#E4B854] transition-colors">Showcase Klien</a>
-        <a href="#capabilities" class="hover:text-[#E4B854] transition-colors">Kapabilitas</a>
-        <a href="#about" class="hover:text-[#E4B854] transition-colors">Tentang Studio</a>
-      </nav>
-
-      <!-- Direct Action -->
-      <div class="flex items-center gap-2.5">
-        <a href="kolohaga" class="btn-symp-gold !py-1.5 !px-4 text-xs">
-          <span>KOLOHAGA Deck</span>
-          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </button>
+        
+        <a href="kolohaga" class="app-icon-btn" title="Proposal KOLOHAGA">
+          <i data-lucide="briefcase" class="w-4 h-4"></i>
+          <span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#E2AC36] text-[#2A040B] text-[9px] font-black flex items-center justify-center shadow-xs">
+            2
+          </span>
         </a>
+      </div>
+
+    </header>
+
+    <!-- 3. Search & Filter Bar -->
+    <div class="flex items-center gap-2.5">
+      <div class="relative flex-1">
+        <i data-lucide="search" class="w-4 h-4 text-[#7A585E] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+        <input type="text" placeholder="Cari proposal, logo, warna..." class="app-search-input" onfocus="this.placeholder='Ketik KOLOHAGA...'" onblur="this.placeholder='Cari proposal, logo, warna...'" />
+      </div>
+      <button class="app-icon-btn flex-shrink-0" title="Filter Desain">
+        <i data-lucide="sliders-horizontal" class="w-4 h-4"></i>
+      </button>
+    </div>
+
+    <!-- 4. Hero Feature Banner Card (Rich Deep Velvet Maroon Gradient) -->
+    <div class="hero-banner-card">
+      <div class="grid grid-cols-12 gap-3 items-center">
+        
+        <!-- Left Content -->
+        <div class="col-span-7 sm:col-span-8 space-y-2 sm:space-y-3 z-10">
+          <div class="space-y-0.5">
+            <h2 class="text-lg sm:text-2xl font-black uppercase tracking-tight leading-tight text-white">
+              BOLD IDENTITIES.<br />
+              EPIC CRAFT.
+            </h2>
+            <p class="text-xs sm:text-sm font-serif italic text-[#F5D278] font-bold">
+              SYMP Masterpiece
+            </p>
+          </div>
+
+          <p class="text-[11px] sm:text-xs text-rose-100/80 leading-relaxed max-w-xs">
+            Proposal identitas visual terbaik untuk brand masa depan.
+          </p>
+
+          <div class="pt-1">
+            <a href="kolohaga" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#E2AC36] hover:bg-[#F5D278] text-[#2A040B] text-xs font-extrabold shadow-md transition-all active:scale-95">
+              <span>Buka Proposal</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Floating Graphic -->
+        <div class="col-span-5 sm:col-span-4 flex items-center justify-center relative">
+          <div class="relative w-28 h-28 sm:w-36 sm:h-36 flex items-center justify-center">
+            <div class="absolute inset-0 rounded-full bg-[#E61C3D]/20 filter blur-xl animate-pulse"></div>
+            <img src="assets/logo1_knot.png" alt="Logo Emblem Preview" class="w-20 sm:w-24 object-contain filter drop-shadow-[0_12px_20px_rgba(0,0,0,0.5)] transform -rotate-6 hover:rotate-0 transition-transform duration-300 relative z-10" />
+            <img src="assets/logo2_gold_ribbon.png" alt="Gold Ribbon Preview" class="w-14 sm:w-16 object-contain filter drop-shadow-[0_10px_16px_rgba(226,172,54,0.6)] absolute -bottom-1 -right-1 z-20 transform rotate-12" />
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Carousel Pagination Dots -->
+      <div class="flex items-center justify-center gap-1.5 pt-4">
+        <span class="w-4 h-1.5 rounded-full bg-[#E2AC36]"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-white/40"></span>
+      </div>
+    </div>
+
+    <!-- 5. Category Story Chips (Horizontal Scrollable Story Bubbles) -->
+    <div class="space-y-2.5">
+      <div class="flex items-center gap-4 overflow-x-auto pb-2 scrollbar-none">
+        
+        <!-- Cat 1: All -->
+        <a href="kolohaga" class="cat-chip active flex-shrink-0">
+          <div class="cat-avatar bg-[#4D0613] !border-[#4D0613]">
+            <i data-lucide="sparkles" class="w-5 h-5 text-[#F5D278]"></i>
+          </div>
+          <span class="cat-label">All Works</span>
+        </a>
+
+        <!-- Cat 2: Emblem 01 -->
+        <a href="kolohaga" class="cat-chip flex-shrink-0">
+          <div class="cat-avatar">
+            <img src="assets/logo1_symbol.png" alt="Emblem" class="w-full h-full object-contain" />
+          </div>
+          <span class="cat-label">Emblem 01</span>
+        </a>
+
+        <!-- Cat 3: Infinity 02 -->
+        <a href="kolohaga" class="cat-chip flex-shrink-0">
+          <div class="cat-avatar">
+            <img src="assets/logo2_symbol.png" alt="Infinity" class="w-full h-full object-contain" />
+          </div>
+          <span class="cat-label">Infinity 02</span>
+        </a>
+
+        <!-- Cat 4: 3D Bedah -->
+        <a href="kolohaga" class="cat-chip flex-shrink-0">
+          <div class="cat-avatar">
+            <i data-lucide="box" class="w-5 h-5 text-[#4D0613]"></i>
+          </div>
+          <span class="cat-label">Bedah 3D</span>
+        </a>
+
+        <!-- Cat 5: Warna -->
+        <a href="kolohaga" class="cat-chip flex-shrink-0">
+          <div class="cat-avatar">
+            <i data-lucide="palette" class="w-5 h-5 text-emerald-600"></i>
+          </div>
+          <span class="cat-label">Sistem HEX</span>
+        </a>
+
+        <!-- Cat 6: Font -->
+        <a href="kolohaga" class="cat-chip flex-shrink-0">
+          <div class="cat-avatar">
+            <span class="font-extrabold text-sm text-[#4D0613]">Aa</span>
+          </div>
+          <span class="cat-label">Tipografi</span>
+        </a>
+
+        <!-- Cat 7: Do/Don't -->
+        <a href="kolohaga" class="cat-chip flex-shrink-0">
+          <div class="cat-avatar">
+            <i data-lucide="shield-check" class="w-5 h-5 text-[#E2AC36]"></i>
+          </div>
+          <span class="cat-label">Pedoman</span>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- 6. Popular Picks Section (3 Proposal Cards Grid) -->
+    <div id="showcase-section" class="space-y-3.5">
+      
+      <div class="flex items-center justify-between">
+        <h3 class="text-base sm:text-lg font-bold text-[#1E070B] tracking-tight">
+          Popular Proposals
+        </h3>
+        <a href="kolohaga" class="text-xs font-bold text-[#730B1E] hover:text-[#4D0613] flex items-center gap-1">
+          <span>View All</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <!-- Card Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+        
+        <!-- Pick Card 1: Emblem -->
+        <div class="pick-card group">
+          <span class="pick-badge bestseller">BESTSELLER</span>
+          <button class="pick-heart-btn" title="Simpan ke Favorit">
+            <i data-lucide="heart" class="w-3.5 h-3.5"></i>
+          </button>
+
+          <!-- Visual -->
+          <div class="py-6 px-2 flex items-center justify-center min-h-[140px]">
+            <img src="assets/logo1_full_dark_text.png" alt="Harmonic Emblem" class="max-h-20 object-contain group-hover:scale-105 transition-transform duration-300" />
+          </div>
+
+          <!-- Metadata -->
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <div>
+              <h4 class="text-xs font-bold text-[#1E070B] leading-tight">
+                Harmonic Emblem&reg;
+              </h4>
+              <p class="text-[10px] text-[#7A585E] font-medium truncate">
+                Perisai Persegi + Simpul 4 Arah
+              </p>
+            </div>
+
+            <div class="flex items-center gap-1 text-[10px] text-amber-600 font-bold">
+              <i data-lucide="star" class="w-3 h-3 fill-amber-500 text-amber-500"></i>
+              <span>5.0 (SYMP Studio)</span>
+            </div>
+
+            <div class="flex items-center justify-between pt-1">
+              <span class="text-xs font-mono font-black text-[#4D0613]">
+                Proposal 01
+              </span>
+              <a href="kolohaga" class="btn-pick-add" title="Buka Proposal">
+                <i data-lucide="plus" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pick Card 2: Infinity -->
+        <div class="pick-card group">
+          <span class="pick-badge popular">POPULAR</span>
+          <button class="pick-heart-btn" title="Simpan ke Favorit">
+            <i data-lucide="heart" class="w-3.5 h-3.5"></i>
+          </button>
+
+          <!-- Visual -->
+          <div class="py-6 px-2 flex items-center justify-center min-h-[140px]">
+            <img src="assets/logo2_full_dark_text.png" alt="Infinity Synergy" class="max-h-20 object-contain group-hover:scale-105 transition-transform duration-300" />
+          </div>
+
+          <!-- Metadata -->
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <div>
+              <h4 class="text-xs font-bold text-[#1E070B] leading-tight">
+                Infinity Synergy&reg;
+              </h4>
+              <p class="text-[10px] text-[#7A585E] font-medium truncate">
+                Pita Infinity + Gelombang Emas
+              </p>
+            </div>
+
+            <div class="flex items-center gap-1 text-[10px] text-amber-600 font-bold">
+              <i data-lucide="star" class="w-3 h-3 fill-amber-500 text-amber-500"></i>
+              <span>5.0 (Global Class)</span>
+            </div>
+
+            <div class="flex items-center justify-between pt-1">
+              <span class="text-xs font-mono font-black text-[#4D0613]">
+                Proposal 02
+              </span>
+              <a href="kolohaga" class="btn-pick-add" title="Buka Proposal">
+                <i data-lucide="plus" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pick Card 3: 3D Engine -->
+        <div class="pick-card group">
+          <span class="pick-badge interactive">INTERACTIVE</span>
+          <button class="pick-heart-btn" title="Simpan ke Favorit">
+            <i data-lucide="heart" class="w-3.5 h-3.5"></i>
+          </button>
+
+          <!-- Visual -->
+          <div class="py-6 px-2 flex items-center justify-center min-h-[140px] bg-slate-50 rounded-xl">
+            <div class="flex flex-col items-center gap-1 text-[#4D0613]">
+              <i data-lucide="layers" class="w-8 h-8 text-emerald-600 animate-bounce"></i>
+              <span class="text-[10px] font-mono font-extrabold">3D EXPLODER</span>
+            </div>
+          </div>
+
+          <!-- Metadata -->
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <div>
+              <h4 class="text-xs font-bold text-[#1E070B] leading-tight">
+                3D Layer Engine&trade;
+              </h4>
+              <p class="text-[10px] text-[#7A585E] font-medium truncate">
+                Bedah Lapisan Objek Real-Time
+              </p>
+            </div>
+
+            <div class="flex items-center gap-1 text-[10px] text-amber-600 font-bold">
+              <i data-lucide="star" class="w-3 h-3 fill-amber-500 text-amber-500"></i>
+              <span>5.0 (WebGL 3D)</span>
+            </div>
+
+            <div class="flex items-center justify-between pt-1">
+              <span class="text-xs font-mono font-black text-[#4D0613]">
+                Slide 02
+              </span>
+              <a href="kolohaga" class="btn-pick-add" title="Buka Bedah 3D">
+                <i data-lucide="plus" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </div>
 
     </div>
-  </header>
 
-  <!-- Main Container -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 relative z-10 space-y-20 sm:space-y-28">
-
-    <!-- ======================================================= -->
-    <!-- HERO SECTION: THE MASTER BRAND ARCHITECTURE            -->
-    <!-- ======================================================= -->
-    <section class="text-center space-y-6 max-w-3xl mx-auto pt-6 sm:pt-10 reveal-on-scroll">
-      
-      <!-- Studio & Lead Tag -->
-      <div class="inline-flex items-center gap-2 text-xs font-mono font-bold tracking-wider text-[#E4B854] uppercase">
-        <span class="pulse-ruby-dot"></span>
-        <span>SYMP Studio &bull; Design by Daru Fahmaa Muliawan</span>
+    <!-- 7. Exclusive Offer / Deck Promo Banner -->
+    <div class="exclusive-deal-card">
+      <div class="space-y-2 z-10">
+        <span class="text-[9px] font-mono font-extrabold text-[#730B1E] uppercase tracking-widest bg-white/70 px-2 py-0.5 rounded-full">
+          EXCLUSIVE PROPOSAL
+        </span>
+        <h4 class="text-sm sm:text-base font-black text-[#2A040B] leading-tight">
+          KOLOHAGA IDENTITAS 2026
+        </h4>
+        <p class="text-[11px] text-[#7A585E] max-w-xs">
+          2 Slide interaktif, bedah 3D, palet warna Pantone 1-tap copy &amp; live font playground.
+        </p>
+        <a href="kolohaga" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#4D0613] text-white text-[11px] font-bold shadow-sm hover:bg-[#730B1E] transition-all">
+          <span>Buka Deck Sekarang</span>
+          <i data-lucide="arrow-right" class="w-3 h-3"></i>
+        </a>
       </div>
 
-      <!-- Main Headline -->
-      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.12]">
-        Crafting Timeless <br class="hidden sm:inline" />
-        <span class="text-gradient-gold">Visual Identities</span> <br class="hidden sm:inline" />
-        for Visionary Brands.
-      </h1>
+      <!-- Right Deal Badge -->
+      <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#4D0613] text-[#F5D278] flex flex-col items-center justify-center text-center p-2 flex-shrink-0 shadow-lg border-2 border-[#E2AC36]">
+        <span class="text-xs sm:text-sm font-black leading-none">100%</span>
+        <span class="text-[8px] font-mono uppercase font-bold">READY</span>
+      </div>
+    </div>
 
-      <!-- Persuasive Subhead -->
-      <p class="text-sm sm:text-base md:text-lg text-[#D1B4B9] font-normal leading-relaxed max-w-2xl mx-auto">
-        Kami merancang arsitektur logo berdaya ingat tinggi, eksplorasi geometris 3D yang presisi, dan sistem identitas visual yang siap memimpin pasar modern.
+    <!-- 8. Lead Designer Attribution Footnote -->
+    <div class="text-center text-xs font-mono text-[#7A585E] space-y-1 py-4 border-t border-[#E2CED2]/60">
+      <p>&copy; 2026 <strong>SYMP STUDIO</strong>. All rights reserved.</p>
+      <p class="text-[10px] text-[#4D0613] font-bold">
+        DIRECTED &amp; DESIGNED BY <strong>DARU FAHMAA MULIAWAN</strong>
       </p>
+    </div>
 
-      <!-- CTA Action Group -->
-      <div class="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3.5">
-        <a href="kolohaga" class="btn-symp-gold w-full sm:w-auto text-sm shadow-lg shadow-[#E4B854]/20 group">
-          <span>Lihat Proposal KOLOHAGA</span>
-          <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-        </a>
-        <a href="#showcase" class="btn-symp-glass w-full sm:w-auto text-sm">
-          <span>Eksplorasi Proyek Klien</span>
-        </a>
-      </div>
+  </div>
 
-    </section>
+  <!-- 9. Bottom Floating App Navigation Dock (Exact Taco Bell App Bar) -->
+  <nav class="app-bottom-nav">
+    
+    <!-- Home Tab (Active) -->
+    <a href="/" class="nav-tab-item active">
+      <i data-lucide="home" class="w-5 h-5 text-[#4D0613]"></i>
+      <span>Home</span>
+    </a>
 
-    <!-- ======================================================= -->
-    <!-- FEATURED CLIENT SHOWCASE (KOLOHAGA PROPOSAL CARD)       -->
-    <!-- ======================================================= -->
-    <section id="showcase" class="space-y-6 reveal-on-scroll">
-      
-      <!-- Section Bar -->
-      <div class="flex items-center justify-between border-b border-[#E4B854]/20 pb-4">
-        <div class="border-l-2 border-[#E61C3D] pl-3">
-          <span class="text-[10px] font-mono text-[#E4B854] tracking-[0.2em] uppercase font-extrabold">FEATURED PROPOSAL</span>
-          <h2 class="text-xl sm:text-2xl font-bold text-white mt-0.5">KOLOHAGA &mdash; Visual Identity Deck</h2>
-        </div>
-        <span class="text-xs font-mono text-[#E4B854] hidden sm:block">SLUG: /kolohaga</span>
-      </div>
+    <!-- Menu / Showcase Tab -->
+    <a href="kolohaga" class="nav-tab-item">
+      <i data-lucide="layout-grid" class="w-5 h-5"></i>
+      <span>Showcase</span>
+    </a>
 
-      <!-- Immersive Showcase Card -->
-      <div class="maroon-card p-6 sm:p-10 space-y-8 group">
-        
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <!-- Visual Preview Column -->
-          <div class="lg:col-span-6 bg-[#013A25]/90 rounded-2xl p-6 sm:p-8 border border-[#E4B854]/30 shadow-inner relative overflow-hidden flex flex-col items-center justify-center min-h-[260px] sm:min-h-[300px]">
-            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/40 text-[10px] font-mono text-emerald-300 font-bold border border-emerald-500/30">
-              PINE FOREST #013A25 CANVAS
-            </div>
-            
-            <img src="assets/logo1_white_text.png" alt="Logo Kolohaga 1" class="max-h-32 sm:max-h-40 max-w-full object-contain filter drop-shadow-md group-hover:scale-105 transition-transform duration-500" />
-            
-            <div class="absolute bottom-3 right-3 text-[10px] font-mono text-emerald-200/60">
-              [ 2 VARIAN RESMI + 3D DECONSTRUCTION ]
-            </div>
-          </div>
+    <!-- Center Elevated Action Button (Direct KOLOHAGA Trigger) -->
+    <a href="kolohaga" class="nav-center-btn" title="Buka Proposal KOLOHAGA">
+      <i data-lucide="briefcase" class="w-5 h-5"></i>
+      <span class="text-[8px] font-mono font-extrabold uppercase mt-0.5">Kolo</span>
+    </a>
 
-          <!-- Description & CTA Column -->
-          <div class="lg:col-span-6 space-y-5">
-            
-            <div class="flex items-center gap-2">
-              <span class="text-xs font-mono font-bold text-[#E4B854] px-2.5 py-1 rounded-full bg-[#E4B854]/10 border border-[#E4B854]/30">
-                PROPOSAL RESMI
-              </span>
-              <span class="text-xs font-mono text-[#D1B4B9]">KOLOHAGA &bull; everything you need</span>
-            </div>
+    <!-- Offers / Deck Tab -->
+    <a href="kolohaga" class="nav-tab-item">
+      <i data-lucide="tag" class="w-5 h-5"></i>
+      <span>Proposals</span>
+    </a>
 
-            <h3 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-              Eksplorasi Konsep Identitas Visual &amp; Bedah Lapisan Objek 3D
-            </h3>
+    <!-- Profile Tab -->
+    <a href="kolohaga" class="nav-tab-item">
+      <i data-lucide="user" class="w-5 h-5"></i>
+      <span>Daru F.M.</span>
+    </a>
 
-            <p class="text-xs sm:text-sm text-[#D1B4B9] leading-relaxed">
-              Presentasi interaktif lengkap memuat 2 opsi logo resmi (Harmonic Emblem &amp; Infinity Synergy), 3 pilar filosofi bisnis, sistem warna Pantone 1-tap copy, serta mesin bedah 3D real-time.
-            </p>
+  </nav>
 
-            <!-- Features Checklist -->
-            <div class="grid grid-cols-2 gap-2 text-xs font-mono text-[#FFF5F7] pt-2">
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-[#E4B854]"></i>
-                <span>2-Slide Mobile UI</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-[#E4B854]"></i>
-                <span>Bedah Objek 3D</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-[#E4B854]"></i>
-                <span>Color Harmony HEX</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check" class="w-4 h-4 text-[#E4B854]"></i>
-                <span>Live Font Playground</span>
-              </div>
-            </div>
-
-            <!-- Direct Link Button -->
-            <div class="pt-4">
-              <a href="kolohaga" class="btn-symp-gold w-full sm:w-auto text-sm justify-center shadow-md">
-                <span>Buka Presentasi KOLOHAGA (/kolohaga)</span>
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-              </a>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- ======================================================= -->
-    <!-- STUDIO CAPABILITIES & METHODOLOGY                       -->
-    <!-- ======================================================= -->
-    <section id="capabilities" class="space-y-8 reveal-on-scroll">
-      
-      <div class="text-center max-w-2xl mx-auto space-y-2">
-        <div class="text-[10px] font-mono tracking-[0.25em] text-[#E4B854] uppercase font-extrabold">
-          // OUR EXPERTISE
-        </div>
-        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Kapabilitas Arsitektur Brand <span class="text-gradient-gold">SYMP Studio</span>
-        </h2>
-        <p class="text-xs sm:text-sm text-[#D1B4B9]">
-          Setiap proyek dikerjakan dengan standar agensi global tanpa kompromi estetika dan fungsi.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <!-- Card 1 -->
-        <div class="maroon-card p-6 space-y-4 reveal-on-scroll stagger-1">
-          <div class="w-12 h-12 rounded-2xl bg-[#E61C3D]/20 border border-[#E61C3D]/40 flex items-center justify-center text-[#E61C3D] shadow-sm">
-            <i data-lucide="compass" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white">01. Geometric Logo Engineering</h3>
-          <p class="text-xs text-[#D1B4B9] leading-relaxed">
-            Perancangan logo berbasis grid proporsional, matematika geometri, dan kekuatan siluet agar langsung dikenali dalam 0.5 detik pertama.
-          </p>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="maroon-card p-6 space-y-4 reveal-on-scroll stagger-2">
-          <div class="w-12 h-12 rounded-2xl bg-[#E4B854]/20 border border-[#E4B854]/40 flex items-center justify-center text-[#E4B854] shadow-sm">
-            <i data-lucide="box" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white">02. 3D Object Deconstruction</h3>
-          <p class="text-xs text-[#D1B4B9] leading-relaxed">
-            Pembedahan komponen logo per layer untuk presentasi konsep yang transparan, memudahkan klien memahami filosofi dan kedalaman setiap elemen.
-          </p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="maroon-card p-6 space-y-4 reveal-on-scroll stagger-3">
-          <div class="w-12 h-12 rounded-2xl bg-[#8C0D23]/30 border border-[#8C0D23]/60 flex items-center justify-center text-[#FFF5F7] shadow-sm">
-            <i data-lucide="palette" class="w-6 h-6"></i>
-          </div>
-          <h3 class="text-lg font-bold text-white">03. Adaptive Brand Architecture</h3>
-          <p class="text-xs text-[#D1B4B9] leading-relaxed">
-            Sistem palet warna dengan rasio dominasi pasti, standar tipografi modern, dan pedoman aturan penggunaan logo yang anti-gagal di segala media.
-          </p>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- ======================================================= -->
-    <!-- ABOUT LEAD DESIGNER & STUDIO PHILOSOPHY                 -->
-    <!-- ======================================================= -->
-    <section id="about" class="maroon-card p-8 sm:p-12 reveal-on-scroll">
-      <div class="max-w-3xl mx-auto text-center space-y-5">
-        
-        <div class="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#E4B854]">
-          <span class="pulse-ruby-dot"></span>
-          <span>LEAD VISUAL ARCHITECT</span>
-        </div>
-
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-          Daru Fahmaa Muliawan
-        </h2>
-
-        <p class="text-xs sm:text-sm md:text-base text-[#D1B4B9] leading-relaxed font-normal">
-          "Identitas visual bukan sekadar gambar indah di atas kertas. Logo adalah jangkar utama yang menancapkan reputasi, wibawa, dan keyakinan konsumen sejak pandangan pertama. Di SYMP Studio, kami memastikan setiap garis dan kurva memiliki alasan yang tak terbantahkan."
-        </p>
-
-        <div class="pt-4 flex items-center justify-center gap-6 text-xs font-mono text-[#E4B854]">
-          <span>SYMP STUDIO &bull; EST. 2026</span>
-          <span>&bull;</span>
-          <span>INDONESIA FOR THE WORLD</span>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Luxury Footer -->
-  <footer class="border-t border-[#E4B854]/15 py-10 px-4 text-center text-xs font-mono text-[#D1B4B9] space-y-2 relative z-10 bg-[#140205]">
-    <p>&copy; 2026 <strong>SYMP STUDIO</strong>. All rights reserved.</p>
-    <p class="text-[11px] text-[#8F6F74] font-bold tracking-wider">
-      DESIGNED &amp; DIRECTED BY <span class="text-[#E4B854] font-extrabold">DARU FAHMAA MULIAWAN</span> &bull; GLOBAL DESIGN EXCELLENCE
-    </p>
-  </footer>
-
-  <!-- Scroll Reveal Observer Script -->
+  <!-- Lucide Icons Initialize -->
   <script>
     lucide.createIcons();
-    
-    // Intersection Observer for scroll animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-revealed');
-        }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
-
-    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-      observer.observe(el);
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 30) {
-        el.classList.add('is-revealed');
-      }
-    });
+    setInterval(() => {
+      lucide.createIcons();
+    }, 1000);
   </script>
 </body>
 </html>
