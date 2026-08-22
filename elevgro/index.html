@@ -68,7 +68,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Single Clean Stage Card (NO INNER BOXES) */
+    /* Single Clean Stage Card */
     .clean-stage-card {
       background: #FFFFFF;
       border-radius: 36px;
@@ -181,7 +181,7 @@
   <main class="max-w-6xl mx-auto px-4 sm:px-8 py-10 sm:py-16 space-y-20">
 
     <!-- ======================================================= -->
-    <!-- SLIDE 01: FILOSOFI, 2 OPSI, GRID, MONOCHROME & MOCKUPS  -->
+    <!-- SLIDE 01: FILOSOFI, 2 OPSI, GRID, MONOCHROME & CLOSING  -->
     <!-- ======================================================= -->
     <div id="slide-1" class="slide-section space-y-20">
       
@@ -232,13 +232,13 @@
 
           <!-- Clean Tonal Canvas Pills -->
           <div class="flex items-center gap-1 p-1 bg-slate-100 rounded-full border border-slate-200">
-            <button id="btn-canvas-light" class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-white text-slate-900 shadow-sm transition-all" onclick="setCleanCanvas('light')">
+            <button id="btn-canvas-light" class="px-3.5 py-1 rounded-full text-xs font-bold bg-white text-slate-900 shadow-sm transition-all" onclick="setCleanCanvas('light')">
               Light
             </button>
-            <button id="btn-canvas-sapphire" class="px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-slate-900 transition-all" onclick="setCleanCanvas('sapphire')">
+            <button id="btn-canvas-sapphire" class="px-3.5 py-1 rounded-full text-xs font-bold text-slate-600 hover:text-slate-900 transition-all" onclick="setCleanCanvas('sapphire')">
               Sapphire
             </button>
-            <button id="btn-canvas-obsidian" class="px-3.5 py-1.5 rounded-full text-xs font-bold text-slate-600 hover:text-slate-900 transition-all" onclick="setCleanCanvas('obsidian')">
+            <button id="btn-canvas-obsidian" class="px-3.5 py-1 rounded-full text-xs font-bold text-slate-600 hover:text-slate-900 transition-all" onclick="setCleanCanvas('obsidian')">
               Dark
             </button>
           </div>
@@ -303,7 +303,7 @@
             </button>
           </div>
 
-          <!-- Column 2: Combination Mark (Simbol Daun Panah + Wordmark Horizontal) -->
+          <!-- Column 2: Combination Mark -->
           <div class="space-y-6 flex flex-col justify-between pt-10 lg:pt-0 lg:pl-14">
             <div class="space-y-6">
               
@@ -420,128 +420,6 @@
           </div>
 
         </div>
-      </div>
-
-      <!-- INTERACTIVE REAL-WORLD MOCKUP SUITE (4 REALISTIC SCENES) -->
-      <div class="space-y-8">
-        
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-5">
-          <div class="border-l-2 border-[#005BBD] pl-4">
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-              Aplikasi Nyata di Berbagai Media (*Mockup Suite*)
-            </h2>
-            <p class="text-xs sm:text-sm text-slate-500 font-mono mt-1">
-              Visualisasi langsung bagaimana logo Elevgro bekerja di ekosistem nyata
-            </p>
-          </div>
-
-          <!-- Mockup Tabs -->
-          <div class="flex items-center gap-1 p-1 bg-slate-100 rounded-full border border-slate-200 text-xs font-bold">
-            <button id="tab-mock-1" class="px-3.5 py-1.5 rounded-full bg-white text-slate-900 shadow-sm transition-all" onclick="setMockupScene(1)">
-              📱 App Icon
-            </button>
-            <button id="tab-mock-2" class="px-3.5 py-1.5 rounded-full text-slate-600 hover:text-slate-900 transition-all" onclick="setMockupScene(2)">
-              🏢 Signage Toko
-            </button>
-            <button id="tab-mock-3" class="px-3.5 py-1.5 rounded-full text-slate-600 hover:text-slate-900 transition-all" onclick="setMockupScene(3)">
-              🪪 ID Lanyard
-            </button>
-            <button id="tab-mock-4" class="px-3.5 py-1.5 rounded-full text-slate-600 hover:text-slate-900 transition-all" onclick="setMockupScene(4)">
-              📦 Packaging
-            </button>
-          </div>
-        </div>
-
-        <!-- Dynamic Mockup Viewport -->
-        <div id="mockup-display-box" class="m3-subcard p-8 sm:p-16 min-h-[380px] sm:min-h-[440px] flex items-center justify-center relative overflow-hidden transition-all duration-500">
-          
-          <!-- Scene 1: App Icon on Phone Home Screen -->
-          <div id="scene-mock-1" class="flex flex-col sm:flex-row items-center justify-center gap-8 w-full">
-            <div class="w-56 rounded-[40px] bg-slate-950 p-4 border-4 border-slate-800 shadow-2xl space-y-6">
-              <div class="w-16 h-3 bg-slate-800 rounded-full mx-auto"></div>
-              
-              <!-- Grid of App Icons -->
-              <div class="grid grid-cols-3 gap-3 pt-2">
-                <div class="flex flex-col items-center gap-1">
-                  <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#005BBD] to-[#003E82] p-2 flex items-center justify-center shadow-lg transform scale-105 border border-white/20">
-                    <img src="../assets/elevgro_logo1_white.png" alt="App" class="w-8 object-contain" />
-                  </div>
-                  <span class="text-[9px] font-bold text-white">Elevgro</span>
-                </div>
-                <div class="flex flex-col items-center gap-1 opacity-40">
-                  <div class="w-12 h-12 rounded-2xl bg-slate-800"></div>
-                  <span class="text-[9px] text-slate-500">Mail</span>
-                </div>
-                <div class="flex flex-col items-center gap-1 opacity-40">
-                  <div class="w-12 h-12 rounded-2xl bg-slate-800"></div>
-                  <span class="text-[9px] text-slate-500">Store</span>
-                </div>
-              </div>
-
-              <div class="h-8 bg-slate-900/60 rounded-2xl"></div>
-            </div>
-
-            <div class="space-y-2 max-w-xs text-center sm:text-left">
-              <h4 class="text-base font-extrabold text-slate-900">Mobile Ecosystem Icon</h4>
-              <p class="text-xs text-slate-500 leading-relaxed">
-                Format <strong>Stacked Wordmark (elev gro)</strong> tampil sangat menonjol, segar, dan langsung dapat dikenali di antara deretan aplikasi lain di layar smartphone mitra usaha.
-              </p>
-            </div>
-          </div>
-
-          <!-- Scene 2: 3D Acrylic Neon Signage on Wall -->
-          <div id="scene-mock-2" class="hidden flex-col items-center justify-center gap-4 text-center w-full">
-            <div class="w-full max-w-xl h-64 rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-8 border border-slate-700 shadow-2xl relative">
-              <div class="absolute inset-0 bg-blue-500/10 filter blur-3xl pointer-events-none"></div>
-              <img src="../assets/elevgro_logo2_white.png" alt="Neon Sign" class="max-h-20 object-contain filter drop-shadow-[0_0_25px_rgba(72,193,90,0.6)]" />
-            </div>
-            <p class="text-xs text-slate-500 mt-2">
-              Aplikasi <strong>Combination Mark</strong> pada papan signage akrilik menyala di lobi kantor utama atau gerai fisik.
-            </p>
-          </div>
-
-          <!-- Scene 3: Corporate Lanyard & ID Card -->
-          <div id="scene-mock-3" class="hidden flex-col sm:flex-row items-center justify-center gap-8 w-full">
-            <div class="w-48 h-72 rounded-3xl bg-white border border-slate-300 shadow-2xl p-5 flex flex-col justify-between text-center relative overflow-hidden">
-              <div class="h-2 w-full bg-[#005BBD] absolute top-0 inset-x-0"></div>
-              <img src="../assets/elevgro_logo2_full.png" alt="ID Logo" class="max-h-8 object-contain mx-auto mt-2" />
-              
-              <div class="space-y-2">
-                <div class="w-16 h-16 rounded-full bg-slate-100 mx-auto border-2 border-emerald-400 flex items-center justify-center text-slate-400 font-bold">
-                  <i data-lucide="user" class="w-8 h-8"></i>
-                </div>
-                <div class="text-xs font-extrabold text-slate-900">TEAM ELEVGRO</div>
-                <div class="text-[10px] font-mono text-slate-400">BUSINESS ADVISOR</div>
-              </div>
-
-              <div class="text-[9px] font-mono text-slate-400 border-t border-slate-100 pt-2">
-                elevate &bull; grow &bull; help others
-              </div>
-            </div>
-
-            <div class="space-y-2 max-w-xs text-center sm:text-left">
-              <h4 class="text-base font-extrabold text-slate-900">Corporate Identity &amp; Lanyard</h4>
-              <p class="text-xs text-slate-500 leading-relaxed">
-                Mencerminkan profesionalisme tinggi saat dikenakan tim di lapangan saat bertemu klien dan partner bisnis.
-              </p>
-            </div>
-          </div>
-
-          <!-- Scene 4: Packaging & Merchandise Stamp -->
-          <div id="scene-mock-4" class="hidden flex-col items-center justify-center gap-4 text-center w-full">
-            <div class="w-full max-w-md h-60 rounded-3xl bg-[#D2B48C]/30 border-2 border-dashed border-[#A0522D]/40 flex items-center justify-center p-8 shadow-inner">
-              <div class="p-6 rounded-2xl bg-white/80 shadow-md border border-slate-200 flex flex-col items-center gap-2">
-                <img src="../assets/elevgro_logo1_full.png" alt="Stamp" class="max-h-20 object-contain" />
-                <span class="text-[10px] font-mono font-bold text-slate-600">OFFICIAL BUSINESS SEAL</span>
-              </div>
-            </div>
-            <p class="text-xs text-slate-500 mt-2">
-              Aplikasi stempel stiker kemasan &amp; seal packaging produk ramah lingkungan.
-            </p>
-          </div>
-
-        </div>
-
       </div>
 
       <!-- 3 PILAR FILOSOFI (CLEAN EDITORIAL SECTIONS) -->
@@ -1087,23 +965,6 @@
 
         btnOpt1.className = 'w-full py-3 px-5 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-white/20';
         btnOpt2.className = 'w-full py-3 px-5 rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-white/20';
-      }
-    }
-
-    // Mockup Scene Switcher
-    function setMockupScene(sceneNum) {
-      for (let i = 1; i <= 4; i++) {
-        const tab = document.getElementById(`tab-mock-${i}`);
-        const scene = document.getElementById(`scene-mock-${i}`);
-        if (i === sceneNum) {
-          tab.className = 'px-3.5 py-1.5 rounded-full bg-white text-slate-900 shadow-sm transition-all';
-          scene.classList.remove('hidden');
-          scene.classList.add('flex');
-        } else {
-          tab.className = 'px-3.5 py-1.5 rounded-full text-slate-600 hover:text-slate-900 transition-all';
-          scene.classList.add('hidden');
-          scene.classList.remove('flex');
-        }
       }
     }
 
