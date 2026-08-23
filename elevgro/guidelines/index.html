@@ -60,16 +60,38 @@
       -webkit-tap-highlight-color: transparent;
     }
 
+    /* Reference Style: Warm Aurora Pastel Mesh Background */
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #FAFCFF;
+      background: 
+        radial-gradient(circle at 10% 12%, rgba(255, 218, 195, 0.65) 0%, transparent 35%),
+        radial-gradient(circle at 90% 18%, rgba(224, 210, 255, 0.7) 0%, transparent 40%),
+        radial-gradient(circle at 50% 95%, rgba(195, 235, 255, 0.6) 0%, transparent 45%),
+        radial-gradient(circle at 80% 80%, rgba(255, 225, 240, 0.5) 0%, transparent 35%),
+        #F3F5FA;
       color: #0F172A;
+      min-height: 100vh;
       overflow-x: hidden;
       letter-spacing: -0.02em;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Hide scrollbar for clean swipeable pill bar */
+    /* Main Floating Canvas Card */
+    .floating-canvas-card {
+      background: #FFFFFF;
+      border-radius: 36px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 
+        0 25px 70px -15px rgba(0, 45, 115, 0.08),
+        0 0 0 1px rgba(226, 232, 240, 0.7);
+    }
+    @media (min-width: 640px) {
+      .floating-canvas-card {
+        border-radius: 48px;
+      }
+    }
+
+    /* Hide scrollbar */
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
@@ -88,7 +110,7 @@
     }
     @media (min-width: 640px) {
       .guideline-card {
-        border-radius: 32px;
+        border-radius: 30px;
       }
     }
     .guideline-card:hover {
@@ -107,7 +129,6 @@
       box-shadow: 0 12px 28px -6px rgba(0, 91, 189, 0.15);
     }
 
-    /* Section Number Anchor */
     .section-badge {
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
@@ -118,83 +139,71 @@
     }
   </style>
 </head>
-<body class="antialiased">
+<body class="p-3 sm:p-8 flex items-center justify-center">
 
   <!-- ======================================================= -->
-  <!-- TOP BALANCED NAVIGATION HEADER                          -->
+  <!-- MAIN FLOATING CANVAS CARD (COMURAL STYLE)               -->
   <!-- ======================================================= -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-2xl border-b border-slate-200/80 px-3 sm:px-8 py-2.5 sm:py-3 transition-all">
-    <div class="max-w-6xl mx-auto flex items-center justify-between gap-3">
+  <div class="floating-canvas-card max-w-6xl w-full p-6 sm:p-12 space-y-12 sm:space-y-16 relative">
+
+    <!-- ======================================================= -->
+    <!-- TOP NAVIGATION BAR                                      -->
+    <!-- ======================================================= -->
+    <header class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-6">
       
-      <!-- Left Column: Back to Proposal & Home -->
-      <div class="flex items-center gap-2">
-        <a href="/elevgro" class="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-slate-200 text-[11px] sm:text-xs font-bold text-slate-700 hover:bg-slate-100 transition-all flex items-center gap-1.5 shadow-xs">
+      <!-- Brand Logo / Back Button -->
+      <div class="flex items-center gap-3">
+        <a href="/elevgro" class="px-3.5 py-1.5 rounded-full border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 transition-all flex items-center gap-1.5 shadow-xs">
           <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
           <span>Proposal Logo</span>
         </a>
+        <div class="w-2 h-2 rounded-full bg-slate-300"></div>
+        <span class="text-xs font-mono font-bold text-[#005BBD]">BRAND GUIDELINES V1.0</span>
       </div>
 
-      <!-- Center: Title Badge -->
-      <div class="flex items-center gap-1.5 px-3 py-1 bg-blue-50 rounded-full border border-blue-100 text-[#005BBD] text-xs font-bold font-mono">
-        <span class="w-2 h-2 rounded-full bg-[#005BBD] animate-pulse"></span>
-        <span>ELEVGRO BRAND GUIDELINES V1.0</span>
+      <!-- Quick Nav Pills -->
+      <div class="flex items-center gap-1 overflow-x-auto no-scrollbar py-1 text-xs font-bold">
+        <a href="#section-story" class="py-1 px-3 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all whitespace-nowrap">01. Filosofi</a>
+        <a href="#section-logo" class="py-1 px-3 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all whitespace-nowrap">02. Master Logo</a>
+        <a href="#section-colors" class="py-1 px-3 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all whitespace-nowrap">03. Warna</a>
+        <a href="#section-typography" class="py-1 px-3 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all whitespace-nowrap">04. Tipografi</a>
+        <a href="#section-downloads" class="py-1 px-3 rounded-full bg-[#005BBD] text-white shadow-xs whitespace-nowrap">05. Master File</a>
       </div>
 
-      <!-- Right: Direct WhatsApp Hub -->
-      <div class="flex items-center gap-2">
-        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20telah%20meninjau%20Brand%20Guidelines%20resmi%20Elevgro" target="_blank" class="px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-[#059669] hover:bg-[#047857] text-white text-[11px] sm:text-xs font-bold transition-all flex items-center gap-1.5 shadow-md hover:shadow-lg">
-          <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-          <span class="hidden sm:inline">Hubungi Tim Desain</span>
-          <span class="sm:hidden">WA</span>
-        </a>
+      <!-- Right Action Button -->
+      <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20telah%20meninjau%20Brand%20Guidelines%20resmi%20Elevgro" target="_blank" class="px-5 py-2 rounded-full bg-[#059669] hover:bg-[#047857] text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-md hover:shadow-lg">
+        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+        <span>Hubungi Tim Desain</span>
+      </a>
+
+    </header>
+
+    <!-- ======================================================= -->
+    <!-- HERO HEADER                                             -->
+    <!-- ======================================================= -->
+    <section class="text-center space-y-4 max-w-3xl mx-auto pt-2">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#005BBD] text-xs font-mono font-bold">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+        <span>OFFICIAL DESIGN SYSTEM &amp; BRAND MANUAL</span>
       </div>
 
-    </div>
-  </header>
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.1]">
+        Buku Panduan Brand <br class="hidden sm:inline" />
+        <span class="text-[#005BBD]">Resmi ELEVGRO</span>
+      </h1>
 
-  <!-- ======================================================= -->
-  <!-- HERO BANNER (COVER)                                     -->
-  <!-- ======================================================= -->
-  <section class="max-w-6xl mx-auto px-3.5 sm:px-8 pt-8 sm:pt-16 pb-6 sm:pb-12 text-center space-y-4">
-    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-600 text-[11px] sm:text-xs font-mono font-bold">
-      <i data-lucide="shield-check" class="w-3.5 h-3.5 text-[#059669]"></i>
-      <span>OFFICIAL VISUAL IDENTITY &amp; DESIGN SYSTEM</span>
-    </div>
-
-    <h1 class="text-3xl sm:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.1]">
-      Panduan Resmi <br class="hidden sm:inline" />
-      <span class="text-[#005BBD]">Brand Guidelines ELEVGRO</span>
-    </h1>
-
-    <p class="text-xs sm:text-base text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto">
-      Standar baku penggunaan logo, filosofi identitas, sistem warna, tipografi, serta pedoman implementasi digital &amp; fisik untuk menjaga wibawa brand ELEVGRO.
-    </p>
-
-    <!-- Quick Table of Contents Sticky Ribbon -->
-    <div class="pt-4 flex items-center justify-center gap-2 overflow-x-auto no-scrollbar py-2">
-      <a href="#section-story" class="px-3 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 hover:text-[#005BBD] border border-slate-200 shadow-xs whitespace-nowrap">01. Filosofi</a>
-      <a href="#section-logo" class="px-3 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 hover:text-[#005BBD] border border-slate-200 shadow-xs whitespace-nowrap">02. Master Logo</a>
-      <a href="#section-clearspace" class="px-3 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 hover:text-[#005BBD] border border-slate-200 shadow-xs whitespace-nowrap">03. Zona Aman</a>
-      <a href="#section-colors" class="px-3 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 hover:text-[#005BBD] border border-slate-200 shadow-xs whitespace-nowrap">04. Sistem Warna</a>
-      <a href="#section-typography" class="px-3 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 hover:text-[#005BBD] border border-slate-200 shadow-xs whitespace-nowrap">05. Tipografi</a>
-      <a href="#section-applications" class="px-3 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 hover:text-[#005BBD] border border-slate-200 shadow-xs whitespace-nowrap">06. Aplikasi Desain</a>
-      <a href="#section-donts" class="px-3 py-1.5 rounded-full text-xs font-bold bg-white text-slate-700 hover:text-[#005BBD] border border-slate-200 shadow-xs whitespace-nowrap">07. Larangan</a>
-      <a href="#section-downloads" class="px-3 py-1.5 rounded-full text-xs font-bold bg-[#005BBD] text-white shadow-xs whitespace-nowrap">08. Master File</a>
-    </div>
-  </section>
-
-  <!-- ======================================================= -->
-  <!-- MAIN GUIDELINES CONTENT BODY                            -->
-  <!-- ======================================================= -->
-  <main class="max-w-6xl mx-auto px-3.5 sm:px-8 py-6 space-y-16 sm:space-y-24">
+      <p class="text-xs sm:text-base text-slate-600 font-normal leading-relaxed max-w-xl mx-auto">
+        Standar baku implementasi identitas visual, sistem warna Pantone, tipografi resmi, serta aturan penggunaan media digital dan fisik.
+      </p>
+    </section>
 
     <!-- ======================================================= -->
     <!-- SECTION 01: BRAND STORY & CORE ESSENCE                  -->
     <!-- ======================================================= -->
-    <section id="section-story" class="space-y-8">
+    <section id="section-story" class="space-y-6 pt-4 border-t border-slate-100">
       <div class="border-l-2 border-[#005BBD] pl-3 sm:pl-4">
         <span class="section-badge">01 // BRAND STORY &amp; ESSENCE</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+        <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
           Karakter &amp; Esensi Brand ELEVGRO
         </h2>
         <p class="text-xs sm:text-sm text-slate-500 font-mono">
@@ -205,71 +214,48 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         
         <!-- Pillar 1: Elevate -->
-        <div class="guideline-card p-6 sm:p-8 space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#005BBD] flex items-center justify-center font-bold">
-            <i data-lucide="trending-up" class="w-6 h-6"></i>
+        <div class="guideline-card p-6 sm:p-8 space-y-3 bg-blue-50/40 border-blue-100">
+          <div class="w-10 h-10 rounded-2xl bg-[#005BBD] text-white flex items-center justify-center font-bold shadow-sm">
+            <i data-lucide="trending-up" class="w-5 h-5"></i>
           </div>
-          <div class="space-y-1">
-            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 01</span>
-            <h3 class="text-lg font-extrabold text-slate-900">ELEVATE (Meningkatkan)</h3>
-          </div>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Mencerminkan semangat mengangkat standar kualitas bisnis, teknologi yang efisien, serta akselerasi performa penjualan mitra dari skala UMKM menuju level perusahaan terdepan.
+          <h3 class="text-base font-extrabold text-slate-900">01. ELEVATE (Meningkatkan)</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Mencerminkan semangat mengangkat standar kualitas bisnis, efisiensi sistem, dan akselerasi performa penjualan mitra dari skala UMKM menuju level enterprise.
           </p>
         </div>
 
         <!-- Pillar 2: Grow -->
-        <div class="guideline-card p-6 sm:p-8 space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-[#059669] flex items-center justify-center font-bold">
-            <i data-lucide="sprout" class="w-6 h-6"></i>
+        <div class="guideline-card p-6 sm:p-8 space-y-3 bg-emerald-50/40 border-emerald-100">
+          <div class="w-10 h-10 rounded-2xl bg-[#059669] text-white flex items-center justify-center font-bold shadow-sm">
+            <i data-lucide="sprout" class="w-5 h-5"></i>
           </div>
-          <div class="space-y-1">
-            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 02</span>
-            <h3 class="text-lg font-extrabold text-slate-900">GROW (Bertumbuh)</h3>
-          </div>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Disimbolkan lewat tunas hijau zamrud yang mekar dari huruf 'v'. Melambangkan kesuburan wirausaha, regenerasi omzet berkelanjutan, dan kelancaran arus transaksi harian.
+          <h3 class="text-base font-extrabold text-slate-900">02. GROW (Bertumbuh)</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Disimbolkan lewat tunas hijau zamrud yang mekar dari huruf 'v'. Melambangkan kesuburan usaha, regenerasi omzet, dan kelancaran transaksi harian.
           </p>
         </div>
 
         <!-- Pillar 3: Help Others -->
-        <div class="guideline-card p-6 sm:p-8 space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold">
-            <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+        <div class="guideline-card p-6 sm:p-8 space-y-3 bg-indigo-50/40 border-indigo-100">
+          <div class="w-10 h-10 rounded-2xl bg-indigo-600 text-white flex items-center justify-center font-bold shadow-sm">
+            <i data-lucide="heart-handshake" class="w-5 h-5"></i>
           </div>
-          <div class="space-y-1">
-            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 03</span>
-            <h3 class="text-lg font-extrabold text-slate-900">HELP OTHERS (Bermanfaat)</h3>
-          </div>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Ditegaskan oleh warna biru kobalt terpercaya. Menjadi nilai inti brand dalam memberikan solusi nyata, kemudahan akses teknologi, dan empati bagi setiap pelaku usaha.
+          <h3 class="text-base font-extrabold text-slate-900">03. HELP OTHERS (Bermanfaat)</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Ditegaskan oleh warna biru kobalt terpercaya. Nilai inti brand dalam memberikan solusi nyata, kemudahan akses teknologi, dan empati bagi setiap wirausahawan.
           </p>
         </div>
 
-      </div>
-
-      <!-- Tone of Voice Box -->
-      <div class="guideline-card p-6 sm:p-8 bg-slate-900 text-white border-slate-800 space-y-4">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-4">
-          <div>
-            <span class="text-xs font-mono font-bold text-emerald-400 uppercase">TONE OF VOICE &amp; BRAND PERSONALITY</span>
-            <h3 class="text-lg font-bold text-white">Modern, Humanis, Ramah &amp; Terpercaya</h3>
-          </div>
-          <span class="text-xs font-mono text-slate-400">BENCHMARK: MAJOO, MOKA POS, MEKARI</span>
-        </div>
-        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-          Komunikasi visual ELEVGRO harus selalu mencerminkan keramahan (<em>approachable</em>), tidak menggunakan istilah teknis yang rumit (<em>anti-cold techy</em>), bersahabat bagi pedagang/wirausahawan, namun tetap memancarkan keandalan sistem berskala enterprise.
-        </p>
       </div>
     </section>
 
     <!-- ======================================================= -->
     <!-- SECTION 02: MASTER LOGOTYPE SPECIFICATIONS              -->
     <!-- ======================================================= -->
-    <section id="section-logo" class="space-y-8">
+    <section id="section-logo" class="space-y-6 pt-4 border-t border-slate-100">
       <div class="border-l-2 border-[#005BBD] pl-3 sm:pl-4">
         <span class="section-badge">02 // MASTER LOGOTYPE</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+        <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
           Master Logotype Resmi &amp; Varian Kanvas
         </h2>
         <p class="text-xs sm:text-sm text-slate-500 font-mono">
@@ -277,292 +263,135 @@
         </p>
       </div>
 
-      <!-- Main Showcase Cards -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
-        <!-- Variant 1: Primary Full Color on Pure White -->
-        <div class="guideline-card p-6 sm:p-8 flex flex-col justify-between space-y-6">
+        <!-- Light Canvas -->
+        <div class="guideline-card p-6 flex flex-col justify-between space-y-4">
           <div class="space-y-3">
-            <span class="text-[10px] font-mono font-bold text-[#005BBD] uppercase">UTAMA // LIGHT CANVAS</span>
-            <div class="h-36 sm:h-44 flex items-center justify-center rounded-2xl bg-white border border-slate-100 p-4">
-              <img src="../assets/elevgro_final_fix.png" alt="Elevgro Primary Full Color" class="max-h-16 sm:max-h-20 w-auto object-contain" />
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+              <span class="text-[10px] font-mono font-bold text-[#005BBD] uppercase">LIGHT CANVAS</span>
+              <div class="flex items-center gap-1">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+              </div>
+            </div>
+            <div class="h-32 flex items-center justify-center rounded-2xl bg-white border border-slate-100 p-4">
+              <img src="../assets/elevgro_final_fix.png" alt="Elevgro Light" class="max-h-14 object-contain" />
             </div>
             <div>
               <h4 class="text-sm font-bold text-slate-900">Primary Full Color (Resmi)</h4>
-              <p class="text-xs text-slate-500 mt-1">Cobalt Velocity Blue (#005BBD) + Growth Emerald (#48C15A) di atas latar putih atau cerah.</p>
+              <p class="text-xs text-slate-500 mt-1">Cobalt Velocity Blue (#005BBD) + Growth Emerald (#48C15A) di atas latar putih.</p>
             </div>
-          </div>
-          <div class="text-[11px] font-mono text-slate-400 bg-slate-50 p-2 rounded-xl border border-slate-100 text-center">
-            Standard: Dokumen, Kop Surat, Website
           </div>
         </div>
 
-        <!-- Variant 2: Reverse White on Sapphire Blue -->
-        <div class="guideline-card p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-[#002552] border-blue-900 text-white">
+        <!-- Sapphire Blue Canvas -->
+        <div class="guideline-card p-6 flex flex-col justify-between space-y-4 bg-[#002552] border-blue-900 text-white">
           <div class="space-y-3">
-            <span class="text-[10px] font-mono font-bold text-emerald-400 uppercase">REVERSE // SAPPHIRE CANVAS</span>
-            <div class="h-36 sm:h-44 flex items-center justify-center rounded-2xl bg-[#001D40] border border-white/10 p-4">
-              <img src="../assets/elevgro_final_white.png" alt="Elevgro White Reverse" class="max-h-16 sm:max-h-20 w-auto object-contain" />
+            <div class="flex items-center justify-between border-b border-white/10 pb-2">
+              <span class="text-[10px] font-mono font-bold text-emerald-400 uppercase">SAPPHIRE CANVAS</span>
+              <div class="flex items-center gap-1">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+              </div>
+            </div>
+            <div class="h-32 flex items-center justify-center rounded-2xl bg-[#001D40] border border-white/10 p-4">
+              <img src="../assets/elevgro_final_white.png" alt="Elevgro White" class="max-h-14 object-contain" />
             </div>
             <div>
               <h4 class="text-sm font-bold text-white">Reverse Solid White</h4>
-              <p class="text-xs text-slate-300 mt-1">100% Alpine White di atas latar biru gelap korporat atau Sapphire Canvas.</p>
+              <p class="text-xs text-slate-300 mt-1">100% Alpine White di atas latar biru gelap korporat.</p>
             </div>
-          </div>
-          <div class="text-[11px] font-mono text-slate-300 bg-white/10 p-2 rounded-xl border border-white/10 text-center">
-            Standard: Seragam, Souvenir, Booth Banner
           </div>
         </div>
 
-        <!-- Variant 3: Solid Black (100% K Monochrome) -->
-        <div class="guideline-card p-6 sm:p-8 flex flex-col justify-between space-y-6">
+        <!-- Monochrome Solid Black -->
+        <div class="guideline-card p-6 flex flex-col justify-between space-y-4">
           <div class="space-y-3">
-            <span class="text-[10px] font-mono font-bold text-slate-700 uppercase">MONOKROM // SOLID 100% K</span>
-            <div class="h-36 sm:h-44 flex items-center justify-center rounded-2xl bg-white border border-slate-100 p-4">
-              <img src="../assets/elevgro_final_fix.png" alt="Elevgro Monochrome" class="max-h-16 sm:max-h-20 w-auto object-contain filter grayscale contrast-200" />
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+              <span class="text-[10px] font-mono font-bold text-slate-700 uppercase">MONOCHROME 100% K</span>
+              <div class="flex items-center gap-1">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+              </div>
+            </div>
+            <div class="h-32 flex items-center justify-center rounded-2xl bg-white border border-slate-100 p-4">
+              <img src="../assets/elevgro_final_fix.png" alt="Elevgro Monochrome" class="max-h-14 object-contain filter grayscale contrast-200" />
             </div>
             <div>
-              <h4 class="text-sm font-bold text-slate-900">Monokrom Tinta Hitam</h4>
-              <p class="text-xs text-slate-500 mt-1">Solid Black 100% K untuk cetak stempel, sablon 1 warna, resi thermal, dan fax.</p>
+              <h4 class="text-sm font-bold text-slate-900">Solid Black Tinta Tunggal</h4>
+              <p class="text-xs text-slate-500 mt-1">Untuk cetak stempel, sablon 1 warna, resi kasir thermal POS, dan fax.</p>
             </div>
           </div>
-          <div class="text-[11px] font-mono text-slate-400 bg-slate-50 p-2 rounded-xl border border-slate-100 text-center">
-            Standard: Resi Thermal POS, Stempel, Faktur
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Standalone App Icon Mark Section -->
-      <div class="guideline-card p-6 sm:p-10 space-y-6">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
-          <div>
-            <span class="text-xs font-mono font-bold text-[#059669] uppercase">STANDALONE APP ICON &bull; GLYPH SYMBOL</span>
-            <h3 class="text-lg sm:text-xl font-bold text-slate-900">Simbol Mandiri Tunas Elevasi ('v')</h3>
-          </div>
-          <span class="text-xs font-mono text-slate-400">RASIO 1:1 APPS &amp; AVATAR</span>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          
-          <!-- App Icon 1: Light Launcher -->
-          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3">
-            <div class="w-20 h-20 mx-auto rounded-2xl bg-white shadow-md flex items-center justify-center border border-slate-100">
-              <img src="../assets/elevgro_app_icon_light.png" alt="App Icon Light" class="w-16 h-16 object-contain rounded-xl" />
-            </div>
-            <div>
-              <span class="text-xs font-bold text-slate-900 block">iOS / Android Light</span>
-              <span class="text-[10px] font-mono text-slate-500">App Launcher Icon</span>
-            </div>
-          </div>
-
-          <!-- App Icon 2: Dark Launcher -->
-          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3">
-            <div class="w-20 h-20 mx-auto rounded-2xl bg-[#005BBD] shadow-md flex items-center justify-center border border-blue-600">
-              <img src="../assets/elevgro_app_icon_dark.png" alt="App Icon Dark" class="w-16 h-16 object-contain rounded-xl" />
-            </div>
-            <div>
-              <span class="text-xs font-bold text-slate-900 block">Cobalt Pro Launcher</span>
-              <span class="text-[10px] font-mono text-slate-500">Night Mode / Dark UI</span>
-            </div>
-          </div>
-
-          <!-- App Icon 3: Favicon Browser -->
-          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3">
-            <div class="w-20 h-20 mx-auto rounded-2xl bg-white shadow-md flex items-center justify-center border border-slate-100">
-              <img src="../assets/elevgro_sprout_icon.png" alt="Favicon" class="w-10 h-10 object-contain" />
-            </div>
-            <div>
-              <span class="text-xs font-bold text-slate-900 block">Browser Favicon</span>
-              <span class="text-[10px] font-mono text-slate-500">32x32px &amp; 16x16px</span>
-            </div>
-          </div>
-
-          <!-- App Icon 4: Social Avatar -->
-          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3">
-            <div class="w-20 h-20 mx-auto rounded-full bg-[#060D17] shadow-md flex items-center justify-center border border-slate-700">
-              <img src="../assets/elevgro_app_icon_dark.png" alt="Social Avatar" class="w-14 h-14 object-contain rounded-full" />
-            </div>
-            <div>
-              <span class="text-xs font-bold text-slate-900 block">Social Media Avatar</span>
-              <span class="text-[10px] font-mono text-slate-500">Instagram, WA, TikTok</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================= -->
-    <!-- SECTION 03: CLEAR SPACE & MINIMUM SCALING               -->
-    <!-- ======================================================= -->
-    <section id="section-clearspace" class="space-y-8">
-      <div class="border-l-2 border-[#005BBD] pl-3 sm:pl-4">
-        <span class="section-badge">03 // CLEAR SPACE &amp; SCALING</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-          Standar Zona Aman (*Clear Space*) &amp; Ukuran Minimum
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-500 font-mono">
-          Aturan proteksi visual agar logo selalu tampil berwibawa di setiap media
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        
-        <!-- Clear Space Diagram -->
-        <div class="guideline-card p-6 sm:p-8 space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold text-[#005BBD] uppercase">ZONA AMAN (X = TINGGI TUNAS DAUN)</span>
-            <i data-lucide="maximize-2" class="w-4 h-4 text-slate-400"></i>
-          </div>
-
-          <div class="border-2 border-dashed border-blue-300 rounded-2xl p-6 sm:p-8 flex items-center justify-center relative bg-blue-50/40">
-            <span class="absolute top-2 left-2 text-[10px] font-mono text-blue-600 font-bold">X</span>
-            <span class="absolute top-2 right-2 text-[10px] font-mono text-blue-600 font-bold">X</span>
-            <span class="absolute bottom-2 left-2 text-[10px] font-mono text-blue-600 font-bold">X</span>
-            <span class="absolute bottom-2 right-2 text-[10px] font-mono text-blue-600 font-bold">X</span>
-            <img src="../assets/elevgro_final_fix.png" alt="Clear Space Diagram" class="max-h-16 sm:max-h-20 object-contain" />
-          </div>
-
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Zona aman di sekeliling logo harus selalu memiliki margin minimum <strong>X</strong> (setara tinggi tunas hijau di atas huruf 'v') dari teks, garis pinggir, maupun elemen grafis lain untuk menjaga keterbacaan murni.
-          </p>
-        </div>
-
-        <!-- Minimum Size Standard -->
-        <div class="guideline-card p-6 sm:p-8 space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold text-[#059669] uppercase">STANDAR UKURAN TERKECIL</span>
-            <i data-lucide="minimize-2" class="w-4 h-4 text-slate-400"></i>
-          </div>
-
-          <div class="grid grid-cols-2 gap-3 sm:gap-4">
-            
-            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1.5">
-              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">MEDIA DIGITAL / SCREEN</span>
-              <div class="text-2xl font-black text-[#005BBD]">44 PX</div>
-              <p class="text-[11px] text-slate-500">Tinggi minimum pada navbar web &amp; mobile app</p>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1.5">
-              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">MEDIA CETAK / PRINT</span>
-              <div class="text-2xl font-black text-[#059669]">15 MM</div>
-              <p class="text-[11px] text-slate-500">Lebar minimum pada kartu nama &amp; stiker barcode</p>
-            </div>
-
-          </div>
-
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Logo ELEVGRO telah dikalibrasi secara presisi sehingga tidak mengalami distorsi atau kehilangan detail ketika diperkecil pada media kompak.
-          </p>
         </div>
 
       </div>
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 04: OFFICIAL COLOR PALETTE (PANTONE, HEX, CMYK) -->
+    <!-- SECTION 03: OFFICIAL COLOR PALETTE (PANTONE 70-20-10)   -->
     <!-- ======================================================= -->
-    <section id="section-colors" class="space-y-8">
+    <section id="section-colors" class="space-y-6 pt-4 border-t border-slate-100">
       <div class="border-l-2 border-[#005BBD] pl-3 sm:pl-4">
-        <span class="section-badge">04 // OFFICIAL COLOR PALETTE</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+        <span class="section-badge">03 // COLOR SYSTEM</span>
+        <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
           Sistem Warna &amp; Kalibrasi Pantone (70-20-10)
         </h2>
         <p class="text-xs sm:text-sm text-slate-500 font-mono">
-          Klik pada setiap kartu swatch untuk menyalin kode warna secara instan
+          Klik pada setiap swatch untuk menyalin kode warna langsung ke clipboard
         </p>
       </div>
 
-      <!-- Continuous Spectrum Visual -->
-      <div class="space-y-2">
-        <div class="flex justify-between text-xs font-mono text-slate-500 font-bold">
-          <span>Formula Distribusi Visual</span>
-          <span>70% Primary Blue &bull; 20% Growth Green &bull; 10% Dark Canvas</span>
-        </div>
-        <div class="h-3.5 rounded-full overflow-hidden flex shadow-inner border border-slate-200">
-          <div class="w-[70%] bg-[#005BBD]"></div>
-          <div class="w-[20%] bg-[#48C15A]"></div>
-          <div class="w-[10%] bg-[#060D17]"></div>
-        </div>
-      </div>
-
-      <!-- 4 Swatches with Deep Values -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         
-        <!-- Color 1: Cobalt Velocity Blue -->
-        <div class="swatch-card p-5 bg-white space-y-4" onclick="copyColorCode('#005BBD', 'Cobalt Velocity Blue', this)">
-          <div class="h-28 rounded-2xl bg-[#005BBD] flex items-end justify-end p-3 text-white shadow-inner">
+        <!-- Swatch 1 -->
+        <div class="swatch-card p-5 bg-white space-y-3" onclick="copyColorCode('#005BBD', 'Cobalt Velocity Blue', this)">
+          <div class="h-24 rounded-2xl bg-[#005BBD] flex items-end justify-end p-2.5 text-white shadow-inner">
             <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
           </div>
-          <div class="space-y-2">
-            <div>
-              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">70% PRIMARY COLOR</span>
-              <h4 class="text-sm font-bold text-slate-900">Cobalt Velocity Blue</h4>
-            </div>
-            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
-              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-[#005BBD]">#005BBD</strong></div>
-              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>0, 91, 189</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">CMYK:</span><span>95, 65, 0, 0</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">PANTONE:</span><span>2144 C</span></div>
-            </div>
+          <div>
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">70% PRIMARY</span>
+            <h4 class="text-sm font-bold text-slate-900">Cobalt Velocity Blue</h4>
+            <div class="text-xs font-mono text-[#005BBD] font-bold mt-1">#005BBD &bull; PANTONE 2144 C</div>
           </div>
         </div>
 
-        <!-- Color 2: Growth Emerald Green -->
-        <div class="swatch-card p-5 bg-white space-y-4" onclick="copyColorCode('#48C15A', 'Growth Emerald Green', this)">
-          <div class="h-28 rounded-2xl bg-[#48C15A] flex items-end justify-end p-3 text-white shadow-inner">
+        <!-- Swatch 2 -->
+        <div class="swatch-card p-5 bg-white space-y-3" onclick="copyColorCode('#48C15A', 'Growth Emerald Green', this)">
+          <div class="h-24 rounded-2xl bg-[#48C15A] flex items-end justify-end p-2.5 text-white shadow-inner">
             <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
           </div>
-          <div class="space-y-2">
-            <div>
-              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">20% ACCENT COLOR</span>
-              <h4 class="text-sm font-bold text-slate-900">Growth Emerald Green</h4>
-            </div>
-            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
-              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-[#059669]">#48C15A</strong></div>
-              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>72, 193, 90</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">CMYK:</span><span>68, 0, 80, 0</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">PANTONE:</span><span>7488 C</span></div>
-            </div>
+          <div>
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">20% ACCENT</span>
+            <h4 class="text-sm font-bold text-slate-900">Growth Emerald Green</h4>
+            <div class="text-xs font-mono text-[#059669] font-bold mt-1">#48C15A &bull; PANTONE 7488 C</div>
           </div>
         </div>
 
-        <!-- Color 3: Obsidian Tech -->
-        <div class="swatch-card p-5 bg-white space-y-4" onclick="copyColorCode('#060D17', 'Obsidian Tech', this)">
-          <div class="h-28 rounded-2xl bg-[#060D17] flex items-end justify-end p-3 text-white shadow-inner">
+        <!-- Swatch 3 -->
+        <div class="swatch-card p-5 bg-white space-y-3" onclick="copyColorCode('#060D17', 'Obsidian Tech', this)">
+          <div class="h-24 rounded-2xl bg-[#060D17] flex items-end justify-end p-2.5 text-white shadow-inner">
             <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
           </div>
-          <div class="space-y-2">
-            <div>
-              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">10% CANVAS BASE</span>
-              <h4 class="text-sm font-bold text-slate-900">Obsidian Tech</h4>
-            </div>
-            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
-              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-slate-900">#060D17</strong></div>
-              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>6, 13, 23</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">CMYK:</span><span>85, 75, 60, 80</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">PANTONE:</span><span>Black 6 C</span></div>
-            </div>
+          <div>
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">10% CANVAS</span>
+            <h4 class="text-sm font-bold text-slate-900">Obsidian Tech</h4>
+            <div class="text-xs font-mono text-slate-900 font-bold mt-1">#060D17 &bull; PANTONE Black 6 C</div>
           </div>
         </div>
 
-        <!-- Color 4: Alpine Pure White -->
-        <div class="swatch-card p-5 bg-white space-y-4" onclick="copyColorCode('#FFFFFF', 'Alpine Pure White', this)">
-          <div class="h-28 rounded-2xl bg-white border border-slate-200 flex items-end justify-end p-3 text-slate-700 shadow-inner">
+        <!-- Swatch 4 -->
+        <div class="swatch-card p-5 bg-white space-y-3" onclick="copyColorCode('#FFFFFF', 'Alpine Pure White', this)">
+          <div class="h-24 rounded-2xl bg-white border border-slate-200 flex items-end justify-end p-2.5 text-slate-700 shadow-inner">
             <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
           </div>
-          <div class="space-y-2">
-            <div>
-              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">LIGHT SURFACE</span>
-              <h4 class="text-sm font-bold text-slate-900">Alpine Pure White</h4>
-            </div>
-            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
-              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-slate-600">#FFFFFF</strong></div>
-              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>255, 255, 255</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">CMYK:</span><span>0, 0, 0, 0</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">PAPER:</span><span>100% Bright White</span></div>
-            </div>
+          <div>
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">LIGHT BASE</span>
+            <h4 class="text-sm font-bold text-slate-900">Alpine Pure White</h4>
+            <div class="text-xs font-mono text-slate-500 font-bold mt-1">#FFFFFF &bull; 100% Bright White</div>
           </div>
         </div>
 
@@ -570,379 +399,84 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 05: TYPOGRAPHY SYSTEM                           -->
+    <!-- SECTION 04: TYPOGRAPHY SYSTEM & TYPE TESTER             -->
     <!-- ======================================================= -->
-    <section id="section-typography" class="space-y-8">
+    <section id="section-typography" class="space-y-6 pt-4 border-t border-slate-100">
       <div class="border-l-2 border-[#005BBD] pl-3 sm:pl-4">
-        <span class="section-badge">05 // TYPOGRAPHY SYSTEM</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+        <span class="section-badge">04 // TYPOGRAPHY</span>
+        <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
           Sistem Tipografi Resmi: Plus Jakarta Sans
         </h2>
         <p class="text-xs sm:text-sm text-slate-500 font-mono">
-          Tipografi modern buatan Indonesia yang geometris, bersih, dan berstandar internasional
+          Tipografi modern geometris dengan keterbacaan tinggi di segala ukuran layar
         </p>
       </div>
 
-      <!-- Type Hierarchy Breakdown -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
-        <div class="guideline-card p-6 sm:p-8 space-y-3">
-          <span class="text-xs font-mono font-bold text-[#005BBD] uppercase">DISPLAY &amp; HEADLINE</span>
-          <div class="text-3xl font-extrabold text-slate-950">Plus Jakarta Sans 800</div>
-          <p class="text-xs text-slate-500 leading-relaxed">
-            Digunakan untuk Judul Utama Landing Page, Spanduk Kampanye, dan Banner Promo Besar.
-          </p>
-        </div>
-
-        <div class="guideline-card p-6 sm:p-8 space-y-3">
-          <span class="text-xs font-mono font-bold text-[#059669] uppercase">SUBHEAD &amp; UI BUTTONS</span>
-          <div class="text-3xl font-bold text-slate-900">Plus Jakarta Sans 600</div>
-          <p class="text-xs text-slate-500 leading-relaxed">
-            Digunakan untuk Sub-judul, Menu Navbar, Label Tombol Aksi (CTA), dan Judul Kartu.
-          </p>
-        </div>
-
-        <div class="guideline-card p-6 sm:p-8 space-y-3">
-          <span class="text-xs font-mono font-bold text-slate-700 uppercase">BODY &amp; PARAGRAPH</span>
-          <div class="text-3xl font-normal text-slate-800">Plus Jakarta Sans 400</div>
-          <p class="text-xs text-slate-500 leading-relaxed">
-            Digunakan untuk Teks Paragraf Deskripsi, Artikel Blog, Syarat Ketentuan, dan Email.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- Interactive Type Tester -->
-      <div class="guideline-card p-6 sm:p-10 space-y-6">
+      <div class="guideline-card p-6 sm:p-8 space-y-4">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
           <div class="flex items-center gap-2">
             <span class="text-xs font-mono text-slate-400">WEIGHT:</span>
-            <button class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#005BBD] text-white" onclick="setGuideWeight('800', this)">Extra Bold (800)</button>
-            <button class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-slate-100 text-slate-700" onclick="setGuideWeight('600', this)">Semi Bold (600)</button>
-            <button class="px-3.5 py-1.5 rounded-full text-xs font-bold bg-slate-100 text-slate-700" onclick="setGuideWeight('400', this)">Regular (400)</button>
+            <button class="px-3.5 py-1 rounded-full text-xs font-bold bg-[#005BBD] text-white" onclick="setGuideWeight('800', this)">Extra Bold (800)</button>
+            <button class="px-3.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700" onclick="setGuideWeight('600', this)">Semi Bold (600)</button>
+            <button class="px-3.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700" onclick="setGuideWeight('400', this)">Regular (400)</button>
           </div>
-
-          <div class="flex items-center gap-3">
-            <span class="text-xs font-mono text-slate-400">UKURAN:</span>
-            <input type="range" min="20" max="64" value="36" class="w-32 accent-[#005BBD]" oninput="document.getElementById('guide-type-input').style.fontSize = this.value + 'px'" />
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-mono text-slate-400">SIZE:</span>
+            <input type="range" min="20" max="56" value="32" class="w-28 accent-[#005BBD]" oninput="document.getElementById('guide-type-input').style.fontSize = this.value + 'px'" />
           </div>
         </div>
 
         <div class="py-2">
-          <input type="text" id="guide-type-input" value="ELEVGRO — Elevate & Grow Your Business" class="w-full bg-transparent border-none outline-none text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight" />
-          <p class="text-xs text-slate-400 mt-2 font-mono">
-            ABCDEFGHIJKLMNOPQRSTUVWXYZ &bull; abcdefghijklmnopqrstuvwxyz &bull; 0123456789
-          </p>
+          <input type="text" id="guide-type-input" value="ELEVGRO — Elevate & Grow Your Business" class="w-full bg-transparent border-none outline-none text-2xl sm:text-4xl font-extrabold text-slate-950 tracking-tight" />
         </div>
       </div>
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 06: REAL-WORLD APPLICATIONS & TOUCHPOINTS       -->
+    <!-- SECTION 05: MASTER FILE PACKAGE & DELIVERY              -->
     <!-- ======================================================= -->
-    <section id="section-applications" class="space-y-8">
-      <div class="border-l-2 border-[#005BBD] pl-3 sm:pl-4">
-        <span class="section-badge">06 // BRAND APPLICATIONS</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-          Penerapan Ekosistem Brand di Dunia Nyata
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-500 font-mono">
-          Mockup simulasi penerapan identitas pada media digital, stationery, dan media sosial
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        
-        <!-- Application 1: Web SaaS Navigation Bar -->
-        <div class="guideline-card p-6 sm:p-8 space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold text-[#005BBD] uppercase">01. WEB &amp; SAAS HEADER</span>
-            <i data-lucide="globe" class="w-4 h-4 text-slate-400"></i>
-          </div>
-
-          <!-- Mini Browser Bar Simulation -->
-          <div class="rounded-2xl border border-slate-200 overflow-hidden shadow-xs bg-white">
-            <div class="bg-slate-100 px-4 py-2 flex items-center gap-1.5 border-b border-slate-200">
-              <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
-              <span class="text-[10px] font-mono text-slate-400 ml-2">https://elevgro.com</span>
-            </div>
-            <div class="p-4 flex items-center justify-between bg-white">
-              <img src="../assets/elevgro_final_fix.png" alt="Header Logo" class="h-6 object-contain" />
-              <div class="hidden sm:flex items-center gap-4 text-xs font-bold text-slate-600">
-                <span>Fitur</span>
-                <span>Solusi</span>
-                <span>Harga</span>
-              </div>
-              <button class="px-3.5 py-1.5 rounded-full bg-[#005BBD] text-white text-[11px] font-bold">Mulai Gratis</button>
-            </div>
-          </div>
-
-          <p class="text-xs text-slate-600">
-            Logotype horizontal ELEVGRO tampil sangat proporsional di header website dan dashboard software kasir/POS.
-          </p>
-        </div>
-
-        <!-- Application 2: Social Media Carousel & Feed Standard -->
-        <div class="guideline-card p-6 sm:p-8 space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold text-[#059669] uppercase">02. SOCIAL MEDIA POSTING KIT</span>
-            <i data-lucide="instagram" class="w-4 h-4 text-slate-400"></i>
-          </div>
-
-          <!-- Carousel Feed Card Simulation -->
-          <div class="rounded-2xl bg-gradient-to-br from-slate-900 to-[#002552] p-6 text-white space-y-4 shadow-md">
-            <div class="flex items-center justify-between border-b border-white/10 pb-3">
-              <img src="../assets/elevgro_final_white.png" alt="Carousel Logo" class="h-5 object-contain" />
-              <span class="text-[10px] font-mono text-emerald-400">SLIDE 01 / 05 &bull; TIPS BISNIS</span>
-            </div>
-            <div class="space-y-1 py-2">
-              <h4 class="text-lg font-extrabold text-white">5 Cara Menaikkan Omzet Toko 3X Lipat</h4>
-              <p class="text-xs text-slate-300">Gunakan sistem pencatatan otomatis ELEVGRO POS</p>
-            </div>
-            <div class="flex justify-between items-center text-[10px] font-mono text-slate-400 pt-2 border-t border-white/10">
-              <span>@elevgro.id</span>
-              <span>SWIPE FOR MORE &rarr;</span>
-            </div>
-          </div>
-
-          <p class="text-xs text-slate-600">
-            Template postingan carousel edukasi Instagram &amp; LinkedIn dengan logo putih di pojok kiri atas.
-          </p>
-        </div>
-
-        <!-- Application 3: Corporate Stationery (Business Card & Kop Surat) -->
-        <div class="guideline-card p-6 sm:p-8 space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold text-indigo-600 uppercase">03. KARTU NAMA &amp; KOP SURAT</span>
-            <i data-lucide="credit-card" class="w-4 h-4 text-slate-400"></i>
-          </div>
-
-          <div class="grid grid-cols-2 gap-3">
-            <div class="p-4 rounded-2xl bg-[#005BBD] text-white space-y-4 shadow-sm">
-              <img src="../assets/elevgro_final_white.png" alt="Business Card Front" class="h-5 object-contain" />
-              <div>
-                <span class="text-xs font-bold block">Daru Fahmaa</span>
-                <span class="text-[10px] text-blue-200 block">Founder &amp; Managing Director</span>
-              </div>
-            </div>
-            <div class="p-4 rounded-2xl bg-white border border-slate-200 space-y-4 shadow-sm">
-              <img src="../assets/elevgro_final_fix.png" alt="Business Card Back" class="h-5 object-contain" />
-              <div class="text-[10px] text-slate-500 font-mono space-y-0.5">
-                <div>info@elevgro.com</div>
-                <div>+62 819 1999 200</div>
-              </div>
-            </div>
-          </div>
-
-          <p class="text-xs text-slate-600">
-            Kartu nama premium ukuran standar 90x55mm dengan finishing doff &amp; spot UV pada logo.
-          </p>
-        </div>
-
-        <!-- Application 4: Storefront & Neon Box Signage -->
-        <div class="guideline-card p-6 sm:p-8 space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold text-slate-700 uppercase">04. NEON BOX &amp; SIGNAGE</span>
-            <i data-lucide="store" class="w-4 h-4 text-slate-400"></i>
-          </div>
-
-          <div class="rounded-2xl bg-[#060D17] p-6 text-center flex flex-col items-center justify-center space-y-3 border border-slate-800 shadow-inner">
-            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 shadow-[0_0_30px_rgba(0,91,189,0.3)]">
-              <img src="../assets/elevgro_final_white.png" alt="Neon Box" class="h-8 object-contain" />
-            </div>
-            <span class="text-[10px] font-mono text-emerald-400">ACRYLIC NEON BOX &bull; 3000K WARM WHITE BACKLIGHT</span>
-          </div>
-
-          <p class="text-xs text-slate-600">
-            Penerapan plang toko akrilik dengan pencahayaan LED terang di malam hari.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================= -->
-    <!-- SECTION 07: PROHIBITED MISUSE & DO'S AND DON'TS         -->
-    <!-- ======================================================= -->
-    <section id="section-donts" class="space-y-8">
-      <div class="border-l-2 border-red-500 pl-3 sm:pl-4">
-        <span class="text-[11px] font-mono font-bold text-red-500 tracking-wider uppercase">07 // LOGO MISUSE &amp; PROHIBITIONS</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-          Larangan Penggunaan Logo (Do's &amp; Don'ts)
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-500 font-mono">
-          Hal-hal yang dilarang keras dilakukan pada logo untuk menjaga konsistensi identitas
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-        
-        <!-- Misuse 1: Do Not Stretch / Skew -->
-        <div class="p-5 rounded-2xl bg-red-50/50 border border-red-200 space-y-3">
-          <div class="h-24 rounded-xl bg-white flex items-center justify-center p-3 relative overflow-hidden border border-red-100">
-            <img src="../assets/elevgro_final_fix.png" alt="Stretched" class="h-10 w-full object-fill transform scale-x-125" />
-            <div class="absolute inset-0 bg-red-500/10 flex items-center justify-center">
-              <i data-lucide="x-circle" class="w-8 h-8 text-red-500"></i>
-            </div>
-          </div>
-          <div>
-            <h4 class="text-xs font-bold text-red-900">JANGAN ME-REGANGKAN LOGO</h4>
-            <p class="text-[11px] text-red-700 mt-0.5">Dilarang mengubah rasio aspek, memanjangkan, atau merampingkan logo.</p>
-          </div>
-        </div>
-
-        <!-- Misuse 2: Do Not Recolor with Unapproved Colors -->
-        <div class="p-5 rounded-2xl bg-red-50/50 border border-red-200 space-y-3">
-          <div class="h-24 rounded-xl bg-white flex items-center justify-center p-3 relative overflow-hidden border border-red-100">
-            <img src="../assets/elevgro_final_fix.png" alt="Recolored" class="h-6 object-contain filter hue-rotate-180" />
-            <div class="absolute inset-0 bg-red-500/10 flex items-center justify-center">
-              <i data-lucide="x-circle" class="w-8 h-8 text-red-500"></i>
-            </div>
-          </div>
-          <div>
-            <h4 class="text-xs font-bold text-red-900">JANGAN MENGUBAH WARNA</h4>
-            <p class="text-[11px] text-red-700 mt-0.5">Dilarang mengganti warna resmi dengan warna merah, oranye, ungu, atau gradien liar.</p>
-          </div>
-        </div>
-
-        <!-- Misuse 3: Do Not Rotate -->
-        <div class="p-5 rounded-2xl bg-red-50/50 border border-red-200 space-y-3">
-          <div class="h-24 rounded-xl bg-white flex items-center justify-center p-3 relative overflow-hidden border border-red-100">
-            <img src="../assets/elevgro_final_fix.png" alt="Rotated" class="h-6 object-contain transform -rotate-12" />
-            <div class="absolute inset-0 bg-red-500/10 flex items-center justify-center">
-              <i data-lucide="x-circle" class="w-8 h-8 text-red-500"></i>
-            </div>
-          </div>
-          <div>
-            <h4 class="text-xs font-bold text-red-900">JANGAN MEMUTAR POSISI LOGO</h4>
-            <p class="text-[11px] text-red-700 mt-0.5">Logo harus selalu tegak lurus mendatar (0 derajat rotasi).</p>
-          </div>
-        </div>
-
-        <!-- Misuse 4: Do Not Separate Sprout -->
-        <div class="p-5 rounded-2xl bg-red-50/50 border border-red-200 space-y-3">
-          <div class="h-24 rounded-xl bg-white flex items-center justify-center p-3 relative overflow-hidden border border-red-100">
-            <img src="../assets/elevgro_final_fix.png" alt="Low Contrast" class="h-6 object-contain opacity-25" />
-            <div class="absolute inset-0 bg-red-500/10 flex items-center justify-center">
-              <i data-lucide="x-circle" class="w-8 h-8 text-red-500"></i>
-            </div>
-          </div>
-          <div>
-            <h4 class="text-xs font-bold text-red-900">JANGAN MEMASANG DI LATAR KONTRAS RENDAH</h4>
-            <p class="text-[11px] text-red-700 mt-0.5">Pastikan kontras latar belakang selalu kuat agar logo terbaca tajam.</p>
-          </div>
-        </div>
-
-        <!-- Misuse 5: Do Not Add Heavy Dropshadow -->
-        <div class="p-5 rounded-2xl bg-red-50/50 border border-red-200 space-y-3">
-          <div class="h-24 rounded-xl bg-white flex items-center justify-center p-3 relative overflow-hidden border border-red-100">
-            <img src="../assets/elevgro_final_fix.png" alt="Heavy Shadow" class="h-6 object-contain filter drop-shadow-[0_10px_4px_rgba(0,0,0,0.8)]" />
-            <div class="absolute inset-0 bg-red-500/10 flex items-center justify-center">
-              <i data-lucide="x-circle" class="w-8 h-8 text-red-500"></i>
-            </div>
-          </div>
-          <div>
-            <h4 class="text-xs font-bold text-red-900">JANGAN MENAMBAHKAN EFEK SHADOW TEBAL</h4>
-            <p class="text-[11px] text-red-700 mt-0.5">Dilarang menambahkan drop shadow hitam tebal, glow neon, atau bevel 3D murahan.</p>
-          </div>
-        </div>
-
-        <!-- Misuse 6: Do Not Alter Sprout Position -->
-        <div class="p-5 rounded-2xl bg-red-50/50 border border-red-200 space-y-3">
-          <div class="h-24 rounded-xl bg-white flex items-center justify-center p-3 relative overflow-hidden border border-red-100">
-            <img src="../assets/elevgro_sprout_icon.png" alt="Cropped Weirdly" class="h-10 object-contain transform scale-50" />
-            <div class="absolute inset-0 bg-red-500/10 flex items-center justify-center">
-              <i data-lucide="x-circle" class="w-8 h-8 text-red-500"></i>
-            </div>
-          </div>
-          <div>
-            <h4 class="text-xs font-bold text-red-900">JANGAN MENGGESER LETAK TUNAS</h4>
-            <p class="text-[11px] text-red-700 mt-0.5">Tunas hijau harus selalu bertengger presisi di ujung cabang kanan huruf 'v'.</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================= -->
-    <!-- SECTION 08: MASTER FILE PACKAGE & DOWNLOAD ASSET HUB    -->
-    <!-- ======================================================= -->
-    <section id="section-downloads" class="p-6 sm:p-12 rounded-[32px] bg-gradient-to-br from-slate-950 via-[#060D17] to-slate-900 text-white border border-slate-800 shadow-2xl space-y-8">
+    <section id="section-downloads" class="p-6 sm:p-10 rounded-3xl bg-slate-900 text-white border border-slate-800 shadow-xl space-y-6">
       
-      <div class="text-center space-y-3 max-w-2xl mx-auto">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-bold">
-          <i data-lucide="package-check" class="w-3.5 h-3.5"></i>
-          <span>PAKET MASTER FILE RESMI SIAP SERAH TERIMA</span>
-        </div>
-        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+      <div class="text-center space-y-2 max-w-xl mx-auto">
+        <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">// MASTER ASSET DELIVERY</span>
+        <h3 class="text-xl sm:text-3xl font-extrabold tracking-tight">
           Penyerahan Master File ELEVGRO
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-          Semua file master vektor asli resolusi tinggi telah siap diekspor dalam format standar industri percetakan dan software digital profesional.
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-400">
+          Semua file vektor asli telah siap diserahkan dalam format lengkap (.AI, .EPS, .SVG, .PDF, .PNG High-Res).
         </p>
       </div>
 
-      <!-- File Formats Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-4 max-w-4xl mx-auto">
-        
-        <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1">
-          <div class="text-xl font-black text-[#005BBD]">.AI</div>
-          <span class="text-[10px] font-mono text-slate-400">Adobe Illustrator</span>
-        </div>
-
-        <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1">
-          <div class="text-xl font-black text-[#059669]">.EPS</div>
-          <span class="text-[10px] font-mono text-slate-400">Vector Universal</span>
-        </div>
-
-        <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1">
-          <div class="text-xl font-black text-blue-400">.SVG</div>
-          <span class="text-[10px] font-mono text-slate-400">Web Scalable Vector</span>
-        </div>
-
-        <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1">
-          <div class="text-xl font-black text-red-400">.PDF</div>
-          <span class="text-[10px] font-mono text-slate-400">Print-Ready CMYK</span>
-        </div>
-
-        <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1 col-span-2 sm:col-span-1">
-          <div class="text-xl font-black text-emerald-400">.PNG</div>
-          <span class="text-[10px] font-mono text-slate-400">High-Res Transparan</span>
-        </div>
-
-      </div>
-
-      <!-- WhatsApp Delivery Action Button -->
-      <div class="text-center pt-2">
-        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20telah%20menyetujui%20Brand%20Guidelines%20resmi%20Elevgro.%20Mohon%20bantu%20kirimkan%20link%20Google%20Drive%20Master%20File%20(AI,%20EPS,%20SVG,%20PDF,%20PNG)%20ke%20nomor%20ini." target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-[#059669] hover:bg-[#047857] text-white text-sm font-extrabold shadow-lg hover:shadow-xl transition-all active:scale-[0.98]">
+      <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20telah%20meninjau%20Brand%20Guidelines%20resmi%20Elevgro.%20Mohon%20bantu%20kirimkan%20link%20Google%20Drive%20Master%20File%20(AI,%20EPS,%20SVG,%20PDF,%20PNG)%20ke%20nomor%20ini." target="_blank" class="px-8 py-3.5 rounded-full bg-[#059669] hover:bg-[#047857] text-white text-xs sm:text-sm font-extrabold shadow-lg hover:shadow-xl transition-all flex items-center gap-2">
           <i data-lucide="download-cloud" class="w-4 h-4"></i>
-          <span>Minta Link Google Drive Master File via WhatsApp</span>
+          <span>Minta Link Google Drive Master File via WA</span>
         </a>
       </div>
 
     </section>
 
-  </main>
+    <!-- ======================================================= -->
+    <!-- LUXURY FOOTER                                           -->
+    <!-- ======================================================= -->
+    <footer class="border-t border-slate-100 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+      <div>
+        &copy; 2026 <strong>ELEVGRO Brand Guidelines</strong> &bull; Directed by <strong class="text-[#005BBD]">Daru Fahmaa Muliawan</strong> &bull; SYMP Studio
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="/elevgro" class="hover:text-[#005BBD] font-bold">&larr; Halaman Proposal</a>
+        <a href="/" class="hover:text-slate-900">Portal SYMP</a>
+      </div>
+    </footer>
+
+  </div>
 
   <!-- ======================================================= -->
-  <!-- LUXURY FOOTER                                           -->
-  <!-- ======================================================= -->
-  <footer class="mt-20 border-t border-slate-200 py-12 px-4 text-center text-xs font-mono text-slate-500 space-y-2 bg-white">
-    <p>&copy; 2026 <strong>ELEVGRO Identity System</strong>. All rights reserved.</p>
-    <p class="text-[10px] text-slate-400 font-bold tracking-wider uppercase">
-      OFFICIAL BRAND GUIDELINES &bull; DIRECTED BY <strong class="text-[#005BBD]">DARU FAHMAA MULIAWAN</strong> &bull; SYMP STUDIO
-    </p>
-  </footer>
-
-  <!-- ======================================================= -->
-  <!-- INTERACTIVE CONTROLLER SCRIPT                           -->
+  <!-- INTERACTIVE SCRIPTS                                     -->
   <!-- ======================================================= -->
   <script>
     lucide.createIcons();
 
-    // Copy Color Code Feedback
     function copyColorCode(code, name, el) {
       navigator.clipboard.writeText(code).then(() => {
         const toast = document.createElement('div');
@@ -953,13 +487,12 @@
       });
     }
 
-    // Set Font Weight in Type Tester
     function setGuideWeight(w, btn) {
       document.getElementById('guide-type-input').style.fontWeight = w;
       btn.parentElement.querySelectorAll('button').forEach(b => {
-        b.className = 'px-3.5 py-1.5 rounded-full text-xs font-bold bg-slate-100 text-slate-700';
+        b.className = 'px-3.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700';
       });
-      btn.className = 'px-3.5 py-1.5 rounded-full text-xs font-bold bg-[#005BBD] text-white';
+      btn.className = 'px-3.5 py-1 rounded-full text-xs font-bold bg-[#005BBD] text-white';
     }
   </script>
 </body>
