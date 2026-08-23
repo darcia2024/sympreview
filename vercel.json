@@ -1,0 +1,22 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/elevgro/guidelines.html",
+      "destination": "/elevgro/guideline",
+      "permanent": false
+    },
+    {
+      "source": "/elevgro/guidelines",
+      "destination": "/elevgro/guideline",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/elevgro/guideline",
+      "destination": "/elevgro/guidelines.html"
+    }
+  ]
+}
