@@ -1,746 +1,469 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>SYMP Studio — Portal Penawaran Konsep Identitas Logo Interaktif</title>
-  
-  <!-- Google Fonts Preconnect -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYMP Studio, Katalog Penawaran Logo</title>
+  <meta name="description" content="Katalog deck penawaran logo SYMP Studio. Pilih card klien untuk membuka slug presentasi masing-masing.">
+  <meta property="og:title" content="SYMP Studio, Katalog Penawaran Logo">
+  <meta property="og:description" content="Portal ringkas untuk membuka deck penawaran logo berdasarkan slug klien.">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            symp: {
-              red: '#E01E2B',
-              redDeep: '#B91C1C',
-              redBright: '#FF2E3E',
-              dark: '#0B0B0E',
-              darkSurface: '#141418',
-              neutralBg: '#FFFFFF',
-              neutralSurface: '#F8FAFC'
-            }
-          },
-          fontFamily: {
-            jakarta: ['Plus Jakarta Sans', 'sans-serif'],
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace']
-          }
-        }
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --ink: #f7f7f4;
+      --muted: #9aa3b5;
+      --panel: #15161b;
+      --line: rgba(255, 255, 255, 0.12);
+      --accent: #e01e2b;
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      min-height: 100%;
+      background: #090a0d;
+      color: var(--ink);
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
+    }
+
+    body {
+      min-height: 100dvh;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 15% 8%, rgba(224, 30, 43, 0.16), transparent 25rem),
+        radial-gradient(circle at 86% 18%, rgba(0, 91, 189, 0.13), transparent 24rem),
+        linear-gradient(145deg, #090a0d 0%, #101116 48%, #07080a 100%);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.26;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 76px 76px;
+      mask-image: linear-gradient(to bottom, black, transparent 82%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(1180px, calc(100% - 40px));
+      min-height: 100dvh;
+      margin: 0 auto;
+      padding: 32px 0 44px;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 42px;
+    }
+
+    .topbar,
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 46px;
+      height: auto;
+      display: block;
+    }
+
+    .brand-copy {
+      display: grid;
+      gap: 3px;
+    }
+
+    .brand-copy strong {
+      font-size: 0.86rem;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-copy span,
+    .meta-pill,
+    .card-kicker,
+    .footer {
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-copy span {
+      font-size: 0.58rem;
+      color: var(--muted);
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      min-height: 40px;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0 16px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: #d4d9e6;
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .catalog-head {
+      display: grid;
+      gap: 22px;
+      max-width: 760px;
+      padding-top: 42px;
+    }
+
+    .catalog-head h1 {
+      max-width: 680px;
+      font-size: clamp(3.2rem, 9vw, 7.8rem);
+      line-height: 0.88;
+      letter-spacing: -0.085em;
+      font-weight: 900;
+      text-wrap: balance;
+    }
+
+    .catalog-head p {
+      max-width: 58ch;
+      color: #b7c0d2;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.72;
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      align-self: start;
+    }
+
+    .proposal-card {
+      position: relative;
+      min-height: 360px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(160deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.035)),
+        var(--panel);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+      transition: transform 240ms ease, border-color 240ms ease, background 240ms ease;
+      outline: none;
+      isolation: isolate;
+    }
+
+    .proposal-card:focus-visible {
+      box-shadow: 0 0 0 4px rgba(224, 30, 43, 0.32), 0 24px 80px rgba(0, 0, 0, 0.28);
+    }
+
+    .proposal-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.26);
+    }
+
+    .proposal-card:active {
+      transform: translateY(-2px) scale(0.99);
+    }
+
+    .proposal-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: 0.88;
+      background: radial-gradient(circle at 76% 14%, var(--card-glow), transparent 21rem);
+    }
+
+    .proposal-card::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      pointer-events: none;
+      border-radius: calc(var(--radius) - 1px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .card-inner {
+      min-height: inherit;
+      padding: 28px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 28px;
+    }
+
+    .card-top,
+    .card-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .card-kicker {
+      font-size: 0.67rem;
+      font-weight: 800;
+      color: #d7dceb;
+    }
+
+    .card-status {
+      display: inline-flex;
+      min-height: 28px;
+      align-items: center;
+      border-radius: 999px;
+      padding: 0 10px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--status);
+      background: rgba(255, 255, 255, 0.08);
+      white-space: nowrap;
+    }
+
+    .card-mark {
+      align-self: center;
+      display: grid;
+      gap: 22px;
+    }
+
+    .logo-stage {
+      min-height: 132px;
+      display: grid;
+      place-items: center;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.92);
+      padding: 28px;
+    }
+
+    .proposal-card[data-theme="green"] .logo-stage {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(236, 253, 245, 0.94));
+    }
+
+    .logo-stage img {
+      display: block;
+      max-width: min(100%, 320px);
+      max-height: 92px;
+      object-fit: contain;
+    }
+
+    .card-title {
+      display: grid;
+      gap: 10px;
+    }
+
+    .card-title h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 0.94;
+      letter-spacing: -0.06em;
+      font-weight: 900;
+    }
+
+    .card-title p {
+      max-width: 44ch;
+      color: #b5bed0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .slug {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #dfe5f3;
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .open-icon {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border-radius: 16px;
+      color: #fff;
+      background: var(--accent);
+      transition: transform 240ms ease;
+    }
+
+    .proposal-card:hover .open-icon {
+      transform: translateX(3px) translateY(-3px);
+    }
+
+    .footer {
+      color: #6f7a90;
+      font-size: 0.68rem;
+    }
+
+    @media (max-width: 820px) {
+      .page {
+        width: min(100% - 24px, 1180px);
+        padding: 22px 0 30px;
+        gap: 28px;
+      }
+
+      .topbar,
+      .footer {
+        align-items: flex-start;
+      }
+
+      .topbar {
+        flex-direction: column;
+      }
+
+      .meta-pill {
+        min-height: 34px;
+        font-size: 0.6rem;
+      }
+
+      .catalog-head {
+        padding-top: 14px;
+        gap: 16px;
+      }
+
+      .catalog-head h1 {
+        font-size: clamp(3rem, 17vw, 5.2rem);
+      }
+
+      .catalog-head p {
+        font-size: 0.95rem;
+      }
+
+      .catalog-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .proposal-card {
+        min-height: 330px;
+        border-radius: 22px;
+      }
+
+      .card-inner {
+        padding: 18px;
+        gap: 22px;
+      }
+
+      .logo-stage {
+        min-height: 112px;
+        border-radius: 18px;
+        padding: 22px;
+      }
+
+      .logo-stage img {
+        max-height: 74px;
+      }
+
+      .card-title h2 {
+        font-size: clamp(2.1rem, 12vw, 3.2rem);
+      }
+
+      .card-bottom {
+        align-items: flex-end;
+      }
+
+      .footer {
+        flex-direction: column;
       }
     }
-  </script>
-  
-  <!-- Lucide Icons CDN -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-  
-  <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="symp.css">
+  </style>
 </head>
-<body class="bg-[#FFFFFF] text-[#0F172A] antialiased selection:bg-[#E01E2B] selection:text-white font-jakarta">
-
-  <!-- ======================================================= -->
-  <!-- SECTION 1: DARK HERO CAPSULE (EXACT REFERENCE SECTION 1)-->
-  <!-- ======================================================= -->
-  <div class="ref-hero-wrapper px-4 sm:px-8 pt-6 pb-16 sm:pb-24">
-    <div class="max-w-6xl mx-auto space-y-12 sm:space-y-16">
-      
-      <!-- Top Navbar -->
-      <nav class="flex items-center justify-between gap-4">
-        
-        <!-- Official SYMP Logo -->
-        <a href="/" class="flex items-center gap-2.5">
-          <img src="assets/SYMP LOGO PUTIH.png" alt="SYMP Studio Logo" class="h-8 sm:h-9 object-contain" />
-          <div class="hidden sm:flex flex-col border-l border-white/20 pl-3">
-            <span class="text-xs font-black tracking-tight text-white flex items-center gap-1.5">
-              SYMP STUDIO
-              <span class="w-1.5 h-1.5 rounded-full bg-[#E01E2B] animate-pulse"></span>
-            </span>
-            <span class="text-[9px] font-mono text-slate-400 tracking-widest uppercase">Client Proposal Hub</span>
-          </div>
-        </a>
-
-        <!-- Center Pill Nav -->
-        <div class="hidden md:flex items-center ref-nav-pill">
-          <a href="/" class="ref-nav-item active">Home</a>
-          <a href="#proposals" class="ref-nav-item">Proposal Decks</a>
-          <a href="#standards" class="ref-nav-item">Standar Sistem</a>
-          <a href="#contact" class="ref-nav-item">Ajukan Pitch</a>
-        </div>
-
-        <!-- Right Action Buttons -->
-        <div class="flex items-center gap-2.5">
-          <a href="#proposals" class="px-4 py-2 rounded-full text-xs font-bold text-slate-300 hover:text-white transition-colors">
-            Katalog Deck
-          </a>
-          <a href="https://wa.me/6281311506025?text=Halo%20Daru%20(SYMP%20Studio),%20saya%20tertarik%20untuk%20dibuatkan%20deck%20penawaran%20konsep%20logo%20interaktif" target="_blank" class="btn-ref-white !py-2 !px-4 text-xs">
-            <span>Ajukan Brief Baru</span>
-            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </div>
-
-      </nav>
-
-      <!-- Hero Main 2-Column Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-        
-        <!-- Left Column: Big Headline with Switch Circle & CTA -->
-        <div class="lg:col-span-6 space-y-6 sm:space-y-8">
-          
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-mono font-bold text-slate-300 border border-white/10">
-            <span class="w-2 h-2 rounded-full bg-[#E01E2B] animate-pulse"></span>
-            <span>PORTAL PRESENTASI &amp; PENAWARAN LOGO</span>
-          </div>
-
-          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.08]">
-            Take Control <br />
-            Of Your 
-            <span class="title-switch-pill">
-              <span class="title-switch-dot">
-                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-              </span>
-            </span>
-            <br />
-            Brand Proposal
-          </h1>
-
-          <div class="space-y-4">
-            <div class="flex flex-wrap items-center gap-3">
-              <a href="#proposals" class="btn-ref-white text-sm shadow-xl hover:scale-105 transition-all">
-                <span>Jelajahi Proposal Klien</span>
-                <i data-lucide="arrow-down" class="w-4 h-4 text-[#E01E2B]"></i>
-              </a>
-
-              <a href="https://wa.me/6281311506025?text=Halo%20Daru,%20saya%20ingin%20berdiskusi%20tentang%20pembuatan%20konsep%20logo%20brand%20saya" target="_blank" class="px-4 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition-all flex items-center gap-1.5 border border-white/20">
-                <span>Konsultasi Studio</span>
-                <i data-lucide="message-square" class="w-3.5 h-3.5 text-[#E01E2B]"></i>
-              </a>
-            </div>
-
-            <p class="text-xs sm:text-sm text-slate-400 font-normal leading-relaxed max-w-md">
-              Platform terpusat untuk mendistribusikan deck penawaran konsep logo interaktif, eksplorasi opsi identitas visual, dan bedah lapisan objek 3D real-time bagi klien SYMP Studio.
-            </p>
-          </div>
-
-          <div class="pt-2 text-[11px] font-mono text-slate-500">
-            &copy; 2026 SYMP Studio &bull; Directed by Daru Fahmaa Muliawan
-          </div>
-
-        </div>
-
-        <!-- Right Column: Abstract Interactive Deck Suite (Matching Reference Dashboard Cards) -->
-        <div class="lg:col-span-6 space-y-4 relative">
-          
-          <!-- Widget Card 1: Multi-Option Brand Suite Widget -->
-          <div class="hero-widget-card space-y-4">
-            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#E01E2B]"></span>
-                <span class="text-xs font-mono font-bold text-slate-900 uppercase">PROPOSAL ARCHITECTURE</span>
-              </div>
-              <span class="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-red-50 text-[#E01E2B] font-bold border border-red-200">
-                2–4 OPSI RESMI
-              </span>
-            </div>
-
-            <!-- Segmented Concept Options Preview Bar -->
-            <div class="grid grid-cols-2 gap-2">
-              <div class="p-3 rounded-xl bg-slate-900 text-white space-y-1">
-                <div class="flex items-center justify-between text-[10px] font-mono">
-                  <span class="text-[#E01E2B] font-bold">OPSI A</span>
-                  <span class="text-slate-400">Square Mark</span>
-                </div>
-                <div class="text-xs font-bold truncate">Geometric Shield</div>
-                <div class="h-1 bg-[#E01E2B] rounded-full w-3/4 mt-1"></div>
-              </div>
-
-              <div class="p-3 rounded-xl bg-slate-100 text-slate-900 space-y-1 border border-slate-200">
-                <div class="flex items-center justify-between text-[10px] font-mono">
-                  <span class="text-blue-600 font-bold">OPSI B</span>
-                  <span class="text-slate-500">Horizontal</span>
-                </div>
-                <div class="text-xs font-bold truncate">Infinity Wave Crest</div>
-                <div class="h-1 bg-blue-600 rounded-full w-2/3 mt-1"></div>
-              </div>
-            </div>
-
-            <div class="flex items-center justify-between pt-1 text-xs">
-              <span class="text-[11px] text-slate-500 font-medium">Bedah Objek 3D &amp; Pantone System</span>
-              <a href="#standards" class="text-xs font-bold text-[#E01E2B] hover:underline flex items-center gap-1">
-                <span>Lihat Standar</span>
-                <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Widget Card 2: 3D Exploder & Color Metrics Widget -->
-          <div class="hero-widget-card space-y-4">
-            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-slate-900"></span>
-                <span class="text-xs font-mono font-bold text-slate-900 uppercase">INTERACTIVE 3D ENGINE</span>
-              </div>
-              <div class="flex items-center gap-1.5 text-[10px] font-mono font-bold text-emerald-600">
-                <i data-lucide="trending-up" class="w-3 h-3"></i>
-                <span>100% Vector Precision</span>
-              </div>
-            </div>
-
-            <!-- Visual Exploder Slider Indicator -->
-            <div class="space-y-2">
-              <div class="flex justify-between text-[10px] font-mono text-slate-500">
-                <span>Layer Separation Level</span>
-                <span class="text-[#E01E2B] font-bold">Interactive Slider 0–100%</span>
-              </div>
-              <div class="h-2.5 bg-slate-100 rounded-full overflow-hidden flex p-0.5 border border-slate-200">
-                <div class="bg-[#E01E2B] h-full rounded-full w-1/3"></div>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-3 gap-2 text-center text-xs pt-1">
-              <div class="p-2 rounded-xl bg-slate-50 border border-slate-100">
-                <span class="text-slate-900 font-extrabold text-xs block">SVG/AI</span>
-                <span class="text-[9px] text-slate-500 font-mono">Master File</span>
-              </div>
-              <div class="p-2 rounded-xl bg-slate-50 border border-slate-100">
-                <span class="text-[#E01E2B] font-extrabold text-xs block">60-25-10</span>
-                <span class="text-[9px] text-slate-500 font-mono">Pantone Ratio</span>
-              </div>
-              <div class="p-2 rounded-xl bg-slate-50 border border-slate-100">
-                <span class="text-emerald-600 font-extrabold text-xs block">Live Type</span>
-                <span class="text-[9px] text-slate-500 font-mono">Font Tester</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ======================================================= -->
-  <!-- SECTION 2: LOGO / TRUST STRIP (PURE CRISP WHITE)       -->
-  <!-- ======================================================= -->
-  <div class="bg-white border-b border-slate-200/80 py-8 px-4 sm:px-8">
-    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-6 text-xs font-mono font-bold text-slate-400 uppercase tracking-widest">
-      <span class="hover:text-[#E01E2B] transition-colors flex items-center gap-1.5">
-        <img src="assets/SYMP LOGO MERAH.png" alt="SYMP" class="h-3.5 object-contain inline" />
-        <span>SYMP STUDIO</span>
-      </span>
-      <span class="hover:text-[#E01E2B] transition-colors">MULTI-OPTION PROPOSALS</span>
-      <span class="hover:text-[#E01E2B] transition-colors">3D BEDAH LAYER</span>
-      <span class="hover:text-[#E01E2B] transition-colors">PANTONE SYSTEM</span>
-      <span class="hover:text-[#E01E2B] transition-colors">PLUS JAKARTA SANS</span>
-      <span class="hover:text-[#E01E2B] transition-colors">DARU FAHMAA MULIAWAN</span>
-    </div>
-  </div>
-
-  <!-- ======================================================= -->
-  <!-- SECTION: ACTIVE CLIENT PROPOSAL DECKS & SLOTS          -->
-  <!-- ======================================================= -->
-  <section id="proposals" class="py-16 sm:py-24 px-4 sm:px-8 max-w-6xl mx-auto bg-white space-y-12">
-    
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-200 pb-6">
-      <div class="space-y-1">
-        <span class="text-xs font-mono font-extrabold text-[#E01E2B] tracking-wider uppercase">// KATALOG PROPOSAL</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-          Penawaran Opsi Konsep Logo Klien
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-500 max-w-xl">
-          Setiap brand memiliki tautan presentasi tersendiri lengkap dengan opsi-opsi konsep desain, bedah 3D, dan pengujian sistem warna.
-        </p>
-      </div>
-
-      <a href="https://wa.me/6281311506025?text=Halo%20Daru,%20saya%20ingin%20mengajukan%20proyek%20proposal%20logo%20baru" target="_blank" class="btn-symp-red !py-2.5 !px-5 text-xs whitespace-nowrap self-start sm:self-auto">
-        <span>+ Ajukan Proposal Baru</span>
+<body>
+  <main class="page" aria-labelledby="catalog-title">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="SYMP Studio">
+        <img src="assets/SYMP LOGO PUTIH.png" alt="SYMP Studio logo">
+        <span class="brand-copy">
+          <strong>SYMP Studio</strong>
+          <span>Proposal catalog</span>
+        </span>
       </a>
-    </div>
+      <span class="meta-pill">Client deck directory</span>
+    </header>
 
-    <!-- Multi-Proposal Grid (3 Cards featuring KOLOHAGA, ELEVGRO, & New Booking) -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      
-      <!-- Card 1: KOLOHAGA (Active Deck Entry) -->
-      <div class="ref-value-card space-y-6 flex flex-col justify-between group">
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-mono text-[10px] font-bold border border-emerald-200">
-              ● PROPOSAL AKTIF
+    <section class="catalog-head">
+      <h1 id="catalog-title">Katalog penawaran logo.</h1>
+      <p>Pilih card klien untuk membuka halaman presentasi sesuai slug. Halaman ini sengaja dibuat ringkas agar setiap proposal mudah ditemukan dan tidak tercampur dengan konten studio lain.</p>
+    </section>
+
+    <section class="catalog-grid" aria-label="Daftar penawaran">
+      <a class="proposal-card" data-theme="blue" href="/elevgro/" style="--card-glow: rgba(0, 91, 189, 0.35); --status: #69a7ff;">
+        <span class="card-inner">
+          <span class="card-top">
+            <span class="card-kicker">01. Proposal logo</span>
+            <span class="card-status">Guideline siap</span>
+          </span>
+          <span class="card-mark">
+            <span class="logo-stage">
+              <img src="assets/elevgro_final_fix_web.png" alt="Logo ELEVGRO">
             </span>
-            <span class="text-[11px] font-mono text-slate-400">SLUG: /kolohaga</span>
-          </div>
-
-          <div class="rounded-2xl bg-[#013A25] p-6 flex items-center justify-center min-h-[140px] group-hover:scale-[1.02] transition-transform">
-            <img src="assets/logo1_white_text.png" alt="KOLOHAGA" class="max-h-20 object-contain" />
-          </div>
-
-          <div class="space-y-1">
-            <h3 class="text-lg font-bold text-slate-900">KOLOHAGA Identity System</h3>
-            <p class="text-xs text-slate-500 leading-relaxed">
-              Memuat 2 varian opsi logo resmi (Harmonic Emblem &amp; Infinity Synergy), 3 pilar filosofi, dan mesin 3D interaktif.
-            </p>
-          </div>
-        </div>
-
-        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-          <span class="text-xs font-mono text-slate-400">2 Opsi &bull; 3D Deck</span>
-          <a href="kolohaga" class="px-4 py-2 rounded-full bg-slate-900 text-white text-xs font-bold hover:bg-[#E01E2B] transition-colors flex items-center gap-1.5">
-            <span>Buka Deck</span>
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Card 2: ELEVGRO (Official Final Logo & Brand Guidelines) -->
-      <div class="ref-value-card space-y-6 flex flex-col justify-between group border-blue-200 hover:border-[#005BBD]">
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-[#059669] font-mono text-[10px] font-bold border border-emerald-200 flex items-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#059669]"></span>
-              LOGO RESMI &bull; FINAL
+            <span class="card-title">
+              <h2>ELEVGRO</h2>
+              <p>Deck penawaran identitas visual dan halaman guideline untuk sistem logo ELEVGRO.</p>
             </span>
-            <span class="text-[11px] font-mono text-slate-400">SLUG: /elevgro</span>
-          </div>
+          </span>
+          <span class="card-bottom">
+            <span class="slug">/elevgro</span>
+            <span class="open-icon" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
+          </span>
+        </span>
+      </a>
 
-          <div class="rounded-2xl bg-[#060D17] p-6 flex items-center justify-center min-h-[140px] group-hover:scale-[1.02] transition-transform">
-            <img src="assets/elevgro_final_white.png" alt="ELEVGRO Final Logo" class="max-h-12 sm:max-h-14 object-contain" />
-          </div>
-
-          <div class="space-y-1">
-            <h3 class="text-lg font-bold text-slate-900">ELEVGRO Identity System</h3>
-            <p class="text-xs text-slate-500 leading-relaxed">
-              Desain resmi terpilih dengan tunas elevasi pada huruf 'v', sistem warna Cobalt Velocity &amp; Emerald, serta Buku Brand Guidelines lengkap.
-            </p>
-          </div>
-        </div>
-
-        <div class="pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
-          <a href="elevgro/guidelines" class="text-xs font-bold text-[#059669] hover:text-[#047857] flex items-center gap-1">
-            <span>Brand Guidelines</span>
-            <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
-          </a>
-          <a href="elevgro" class="px-4 py-2 rounded-full bg-[#005BBD] text-white text-xs font-bold hover:bg-blue-700 transition-colors flex items-center gap-1.5 shadow-sm">
-            <span>Buka Portal</span>
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- Card 3: Reserve Next Client Proposal Slot -->
-      <div class="ref-value-card space-y-6 flex flex-col justify-between bg-gradient-to-br from-red-50/50 to-slate-50 border-[#E01E2B]/30">
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="px-2.5 py-0.5 rounded-full bg-red-100 text-[#E01E2B] font-mono text-[10px] font-bold border border-red-200">
-              ✨ OPEN SLOT
+      <a class="proposal-card" data-theme="green" href="/kolohaga/" style="--card-glow: rgba(5, 155, 102, 0.28); --status: #73e2b1;">
+        <span class="card-inner">
+          <span class="card-top">
+            <span class="card-kicker">02. Proposal logo</span>
+            <span class="card-status">Deck aktif</span>
+          </span>
+          <span class="card-mark">
+            <span class="logo-stage">
+              <img src="assets/logo1_full.png" alt="Logo KOLOHAGA">
             </span>
-            <span class="text-[11px] font-mono text-slate-400">SLOT TERSEDIA</span>
-          </div>
-
-          <div class="rounded-2xl bg-white border border-slate-200 p-6 flex flex-col items-center justify-center min-h-[140px] text-center space-y-2">
-            <div class="w-10 h-10 rounded-full bg-[#E01E2B] text-white flex items-center justify-center font-bold">
-              <i data-lucide="sparkles" class="w-5 h-5"></i>
-            </div>
-            <span class="text-xs font-bold text-slate-900">Ajukan Proposal Brand Anda</span>
-          </div>
-
-          <div class="space-y-1">
-            <h3 class="text-lg font-bold text-slate-900">Pesan Pitch Deck Kustom</h3>
-            <p class="text-xs text-slate-500 leading-relaxed">
-              Ingin brand bisnis Anda memiliki deck penawaran logo interaktif seperti KOLOHAGA &amp; ELEVGRO? Hubungi kami untuk memulai sesi brief.
-            </p>
-          </div>
-        </div>
-
-        <div class="pt-4 border-t border-slate-200/60">
-          <a href="https://wa.me/6281311506025?text=Halo%20Daru,%20saya%20ingin%20membuat%20deck%20penawaran%20logo%20kustom%20untuk%20brand%20saya" target="_blank" class="btn-symp-red w-full text-xs justify-center font-bold">
-            <span>Konsultasi 1-on-1 via WA</span>
-            <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- ======================================================= -->
-  <!-- SECTION 3: VALUE PROPOSITION (EXPERIENCE IN NEW LIGHT)  -->
-  <!-- ======================================================= -->
-  <section id="experience" class="py-16 sm:py-24 px-4 sm:px-8 max-w-6xl mx-auto bg-white">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      
-      <!-- Left Column: Designer Photo & Floating Graphic -->
-      <div class="lg:col-span-5 flex items-center justify-center relative">
-        <div class="relative w-full max-w-md">
-          <div class="rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-t from-[#E01E2B]/20 to-slate-900/10 border border-slate-200 aspect-[4/5]">
-            <img src="assets/Designer.png" alt="Daru Fahmaa Muliawan" class="w-full h-full object-cover object-top" />
-          </div>
-
-          <!-- Floating Badge 1: Lead Designer -->
-          <div class="absolute -top-4 -left-4 p-3.5 rounded-2xl bg-white shadow-xl border border-slate-200 flex items-center gap-3">
-            <div class="w-9 h-9 rounded-xl bg-[#E01E2B] text-white flex items-center justify-center font-bold">
-              <i data-lucide="compass" class="w-5 h-5"></i>
-            </div>
-            <div>
-              <span class="text-xs font-bold text-slate-900 block">Daru Fahmaa Muliawan</span>
-              <span class="text-[10px] font-mono text-slate-500">Lead Visual Architect</span>
-            </div>
-          </div>
-
-          <!-- Floating Badge 2: 100% Precision -->
-          <div class="absolute -bottom-4 -right-4 p-3 rounded-2xl bg-[#0B0B0E] text-white shadow-xl border border-slate-800 flex items-center gap-2 text-xs font-mono font-bold">
-            <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
-            <span>Multi-Option Ready</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Column: Headline & 4 Feature Icons -->
-      <div class="lg:col-span-7 space-y-8">
-        
-        <div class="space-y-3">
-          <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            Experience brand identity in a whole <span class="text-[#E01E2B]">new light</span>
-          </h2>
-          <p class="text-xs sm:text-sm text-slate-500 leading-relaxed max-w-xl">
-            Kami mengubah cara presentasi logo konvensional. Setiap klien mendapatkan platform interaktif dengan opsi-opsi konsep yang jelas, terukur, dan transparan.
-          </p>
-        </div>
-
-        <!-- 4 Grid Icons with Vibrant Red -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
-          
-          <!-- Item 1 -->
-          <div class="flex items-start gap-3.5">
-            <div class="w-9 h-9 rounded-full bg-[#E01E2B] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
-              <i data-lucide="layers" class="w-4 h-4"></i>
-            </div>
-            <div class="space-y-1">
-              <h4 class="text-xs font-bold text-slate-900">Bedah Objek 3D Transparan</h4>
-              <p class="text-[11px] text-slate-500 leading-relaxed">
-                Pemisahan setiap layer logo secara interaktif untuk memahami filosofi dan proporsi geometris.
-              </p>
-            </div>
-          </div>
-
-          <!-- Item 2 -->
-          <div class="flex items-start gap-3.5">
-            <div class="w-9 h-9 rounded-full bg-[#E01E2B] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
-              <i data-lucide="palette" class="w-4 h-4"></i>
-            </div>
-            <div class="space-y-1">
-              <h4 class="text-xs font-bold text-slate-900">Sistem Pantone 60-25-10-5</h4>
-              <p class="text-[11px] text-slate-500 leading-relaxed">
-                Rasio warna terkalibrasi dengan fitur 1-tap clipboard copy kode HEX resmi.
-              </p>
-            </div>
-          </div>
-
-          <!-- Item 3 -->
-          <div class="flex items-start gap-3.5">
-            <div class="w-9 h-9 rounded-full bg-[#E01E2B] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
-              <i data-lucide="type" class="w-4 h-4"></i>
-            </div>
-            <div class="space-y-1">
-              <h4 class="text-xs font-bold text-slate-900">Live Typography Playground</h4>
-              <p class="text-[11px] text-slate-500 leading-relaxed">
-                Uji langsung tipografi brand dalam berbagai ukuran dan weight font seketika.
-              </p>
-            </div>
-          </div>
-
-          <!-- Item 4 -->
-          <div class="flex items-start gap-3.5">
-            <div class="w-9 h-9 rounded-full bg-[#E01E2B] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
-              <i data-lucide="shield-check" class="w-4 h-4"></i>
-            </div>
-            <div class="space-y-1">
-              <h4 class="text-xs font-bold text-slate-900">Beragam Opsi Konsep Siap Pakai</h4>
-              <p class="text-[11px] text-slate-500 leading-relaxed">
-                Mulai dari Square Mark, Emblem, hingga Horizontal Crest yang kompatibel di segala media.
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ======================================================= -->
-  <!-- SECTION 4: "OUR FEATU-RES" BENTO SECTION (DARK BENTO)   -->
-  <!-- ======================================================= -->
-  <section id="standards" class="px-4 sm:px-8 max-w-6xl mx-auto py-8">
-    <div class="ref-bento-dark space-y-10">
-      
-      <!-- Top Title Bar -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-white/10 pb-8">
-        <div>
-          <h2 class="text-4xl sm:text-6xl font-black text-white tracking-tight leading-none">
-            Our Featu - 
-            <span class="title-switch-circle">
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            <span class="card-title">
+              <h2>KOLOHAGA</h2>
+              <p>Deck presentasi konsep logo dengan eksplorasi filosofi dan sistem visual brand.</p>
             </span>
-            <br />
-            res
-          </h2>
-          <span class="text-xs font-mono text-slate-400 mt-2 block">Standar Arsitektur Proposal &amp; Pitch SYMP Studio</span>
-        </div>
+          </span>
+          <span class="card-bottom">
+            <span class="slug">/kolohaga</span>
+            <span class="open-icon" aria-hidden="true"><i data-lucide="arrow-up-right"></i></span>
+          </span>
+        </span>
+      </a>
+    </section>
 
-        <div class="space-y-2 max-w-md">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E01E2B]/20 text-red-400 border border-[#E01E2B]/40 text-xs font-mono font-bold">
-            <span>Interactive 3D Pitch Engine</span>
-          </div>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Visualisasikan identitas brand dengan pembedahan 3D interaktif, kalibrasi warna, dan pengujian tipografi langsung.
-          </p>
-        </div>
-      </div>
-
-      <!-- Bento Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-        
-        <!-- Bento Card 1: 3D Exploder Visual -->
-        <div class="md:col-span-5 bento-inner-card space-y-6">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-mono text-slate-400 uppercase">3D LAYER DECONSTRUCTION</span>
-            <span class="text-xs font-mono text-emerald-400 font-bold">● ACTIVE ENGINE</span>
-          </div>
-
-          <div class="py-4 flex items-center justify-center">
-            <div class="relative w-40 h-40 flex items-center justify-center">
-              <img src="assets/logo1_knot.png" alt="Knot" class="w-24 object-contain filter drop-shadow-2xl animate-pulse" />
-              <img src="assets/logo2_gold_ribbon.png" alt="Gold Ribbon" class="w-16 object-contain absolute bottom-0 right-0 filter drop-shadow-xl" />
-            </div>
-          </div>
-
-          <div class="space-y-2 border-t border-white/10 pt-4">
-            <div class="text-sm font-bold text-white">Slider Jarak Interaktif 0% - 100%</div>
-            <p class="text-xs text-slate-400">
-              Pisahkan setiap layer logo secara visual untuk presentasi konsep yang transparan.
-            </p>
-          </div>
-        </div>
-
-        <!-- Bento Card 2: Pitch Deck Highlights -->
-        <div class="md:col-span-7 bento-inner-card space-y-6">
-          
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            
-            <div class="p-4 rounded-2xl bg-white/[0.04] border border-white/5 space-y-2">
-              <span class="text-[10px] font-mono text-slate-400 uppercase">STANDAR FORMAT</span>
-              <div class="text-2xl font-black text-white">100% VEKTOR</div>
-              <span class="text-[10px] text-emerald-400 font-mono">Master AI, SVG, PDF, PNG</span>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-white/[0.04] border border-white/5 space-y-2">
-              <span class="text-[10px] font-mono text-slate-400 uppercase">DECK CAPABILITIES</span>
-              <div class="text-xl font-mono font-black text-[#E01E2B]">MULTI-OPTION</div>
-              <span class="text-[10px] text-slate-400 font-mono">Dedicated Client Slugs</span>
-            </div>
-
-          </div>
-
-          <!-- Large CTA Link in Bento with Vibrant Red -->
-          <div class="p-6 rounded-2xl bg-gradient-to-r from-[#E01E2B]/25 to-red-950/40 border border-[#E01E2B]/40 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="space-y-1 text-center sm:text-left">
-              <h4 class="text-base font-bold text-white">Eksplorasi Katalog Proposal Klien</h4>
-              <p class="text-xs text-slate-400">Akses deck presentasi interaktif dan uji coba fitur 3D.</p>
-            </div>
-
-            <a href="#proposals" class="btn-symp-red !py-2.5 !px-5 text-xs whitespace-nowrap">
-              <span>Buka Katalog</span>
-              <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
-            </a>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ======================================================= -->
-  <!-- SECTION 5: MANIFESTO & METRICS (OUR JOURNEY)            -->
-  <!-- ======================================================= -->
-  <section class="py-16 sm:py-24 px-4 sm:px-8 max-w-6xl mx-auto space-y-16 bg-white">
-    
-    <!-- Manifesto 2-Column Split -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-      
-      <div class="lg:col-span-5 space-y-4">
-        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-          Kami memahami keunikan setiap perjalanan brand. Oleh karena itu, kami merancang arsitektur visual kustom untuk memastikan identitas Anda siap mendominasi pasar jangka panjang.
-        </p>
-
-        <a href="#proposals" class="btn-symp-red !py-2 !px-4 text-xs">
-          <span>Lihat Proposal</span>
-          <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
-        </a>
-      </div>
-
-      <div class="lg:col-span-7">
-        <h2 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-          Strengthening Your Pathway <span class="text-[#E01E2B]">Achieving Brand Dominance</span>
-        </h2>
-      </div>
-
-    </div>
-
-    <!-- Metrics Bar -->
-    <div class="border-t border-b border-slate-200 py-8 grid grid-cols-1 sm:grid-cols-4 gap-6 items-center">
-      <div>
-        <h4 class="text-lg font-bold text-slate-900">Our Journey</h4>
-      </div>
-
-      <div>
-        <div class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">320+</div>
-        <span class="text-xs text-slate-500 font-medium">Geometric Sketches</span>
-      </div>
-
-      <div>
-        <div class="text-3xl sm:text-4xl font-black text-[#E01E2B] tracking-tight">100%</div>
-        <span class="text-xs text-slate-500 font-medium">Interactive 3D Engine</span>
-      </div>
-
-      <div>
-        <div class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">12+</div>
-        <span class="text-xs text-slate-500 font-medium">Years Visual Experience</span>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- ======================================================= -->
-  <!-- SECTION 6: BENTO CARDS (TEAM & CLIENT FOREFRONT)        -->
-  <!-- ======================================================= -->
-  <section class="px-4 sm:px-8 max-w-6xl mx-auto py-8 bg-white">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-      
-      <!-- Left Vibrant Red Accent Card -->
-      <div class="lg:col-span-5 p-8 rounded-3xl bg-[#E01E2B] text-white space-y-6 flex flex-col justify-between shadow-xl">
-        <div class="flex items-center justify-between">
-          <span class="text-xs font-mono uppercase tracking-wider font-bold text-white/90">SYMP STUDIO TEAM</span>
-          <i data-lucide="arrow-up-right" class="w-5 h-5 text-white"></i>
-        </div>
-
-        <h3 class="text-2xl sm:text-3xl font-extrabold leading-tight">
-          Our Studio Strives For The Most Powerful Identity For You
-        </h3>
-
-        <div class="pt-4 border-t border-white/20 flex items-center justify-between text-xs font-mono font-bold">
-          <span>LET'S BRING YOUR VISION TO LIFE</span>
-          <a href="https://wa.me/6281311506025" target="_blank" class="underline text-white">WhatsApp Daru &rarr;</a>
-        </div>
-      </div>
-
-      <!-- Right Dark Dashboard Card -->
-      <div class="lg:col-span-7 p-8 rounded-3xl bg-[#0B0B0E] text-white space-y-6 shadow-xl border border-slate-800">
-        <div class="flex items-center justify-between">
-          <span class="text-xs font-mono text-slate-400 uppercase">CLIENT PROPOSAL SYSTEM</span>
-          <div class="w-8 h-4 rounded-full bg-[#E01E2B] flex items-center justify-end p-0.5">
-            <div class="w-3 h-3 rounded-full bg-white"></div>
-          </div>
-        </div>
-
-        <h3 class="text-2xl sm:text-3xl font-extrabold leading-tight">
-          Forefront of Providing <span class="text-[#E01E2B]">the best</span> brand proposals
-        </h3>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-          <div class="p-4 rounded-2xl bg-white/5 border border-white/5 space-y-1">
-            <span class="text-[10px] font-mono text-slate-400">PROPOSAL KATALOG</span>
-            <div class="text-sm font-bold text-white">Multi-Client Decks</div>
-            <a href="#proposals" class="text-xs font-bold text-red-400 hover:underline block pt-1">Lihat Semua Proposal &rarr;</a>
-          </div>
-
-          <div class="p-4 rounded-2xl bg-white/5 border border-white/5 space-y-1">
-            <span class="text-[10px] font-mono text-slate-400">CONSULTATION</span>
-            <div class="text-sm font-bold text-white">1-on-1 with Daru</div>
-            <a href="https://wa.me/6281311506025" target="_blank" class="text-xs font-bold text-emerald-400 hover:underline block pt-1">+62 813-1150-6025</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ======================================================= -->
-  <!-- SECTION 7: FINAL CTA BANNER & FOOTER                    -->
-  <!-- ======================================================= -->
-  <footer id="contact" class="px-4 sm:px-8 max-w-6xl mx-auto pt-12 pb-16 bg-white">
-    <div class="bg-[#0B0B0E] text-white rounded-3xl p-8 sm:p-12 space-y-12 border border-slate-800 shadow-2xl">
-      
-      <!-- Upper Banner -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-slate-800 pb-10">
-        <h3 class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-tight max-w-md">
-          Keep your <span class="text-[#E01E2B]">Brand Vision</span> Growing and Stable
-        </h3>
-
-        <a href="https://wa.me/6281311506025?text=Halo%20Daru,%20saya%20ingin%20berdiskusi%20tentang%20pembuatan%20konsep%20logo%20brand%20saya" target="_blank" class="btn-symp-red text-sm whitespace-nowrap self-start md:self-auto shadow-xl">
-          <span>Konsultasi Proyek Baru</span>
-          <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-        </a>
-      </div>
-
-      <!-- Footer Columns -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-xs">
-        
-        <div class="space-y-3">
-          <div class="flex items-center gap-2">
-            <img src="assets/SYMP LOGO PUTIH.png" alt="SYMP Studio" class="h-6 object-contain" />
-          </div>
-          <p class="text-slate-400 leading-relaxed text-[11px]">
-            Master-crafting visual identities and 3D proposals for visionary brands worldwide.
-          </p>
-        </div>
-
-        <div class="space-y-2">
-          <h5 class="font-bold text-white uppercase font-mono text-[10px] tracking-wider">Quick Links</h5>
-          <ul class="space-y-1.5 text-slate-400">
-            <li><a href="/" class="hover:text-white transition-colors">Home Portal</a></li>
-            <li><a href="#proposals" class="hover:text-white transition-colors">Katalog Proposal</a></li>
-            <li><a href="#standards" class="hover:text-white transition-colors">Standar Sistem</a></li>
-          </ul>
-        </div>
-
-        <div class="space-y-2">
-          <h5 class="font-bold text-white uppercase font-mono text-[10px] tracking-wider">Client Proposals</h5>
-          <ul class="space-y-1.5 text-slate-400">
-            <li><a href="kolohaga" class="hover:text-white transition-colors text-emerald-400 font-bold">KOLOHAGA Deck (/kolohaga)</a></li>
-            <li><a href="elevgro" class="hover:text-white transition-colors text-blue-400 font-bold">ELEVGRO Deck (/elevgro)</a></li>
-            <li><span class="text-slate-600">Client Slot #03 (Reserved)</span></li>
-          </ul>
-        </div>
-
-        <div class="space-y-2">
-          <h5 class="font-bold text-white uppercase font-mono text-[10px] tracking-wider">Contact</h5>
-          <ul class="space-y-1.5 text-slate-400">
-            <li><a href="https://wa.me/6281311506025" target="_blank" class="hover:text-white transition-colors">+62 813-1150-6025</a></li>
-            <li><span>Daru Fahmaa Muliawan</span></li>
-            <li><span>Indonesia for the World</span></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-mono text-slate-500">
-        <p>&copy; 2026 <strong>SYMP STUDIO</strong>. All rights reserved.</p>
-        <p>DIRECTED BY <strong>DARU FAHMAA MULIAWAN</strong></p>
-      </div>
-
-    </div>
-  </footer>
+    <footer class="footer">
+      <span>2026 SYMP Studio</span>
+      <span>Directed by Daru Fahmaa Muliawan</span>
+    </footer>
+  </main>
 
   <script>
     lucide.createIcons();
