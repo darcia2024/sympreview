@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>SYMP Studio, Katalog Deck Penawaran Logo</title>
-  <meta name="description" content="Katalog deck penawaran logo SYMP Studio. Pilih card klien untuk membuka slug presentasi masing-masing.">
-  <meta property="og:title" content="SYMP Studio, Katalog Deck Penawaran Logo">
-  <meta property="og:description" content="Portal katalog untuk membuka deck penawaran logo berdasarkan slug klien.">
+  <title>SYMP Studio, Marketplace Deck Penawaran Logo</title>
+  <meta name="description" content="Marketplace deck penawaran logo SYMP Studio. Buka setiap card untuk masuk ke slug presentasi klien.">
+  <meta property="og:title" content="SYMP Studio, Marketplace Deck Penawaran Logo">
+  <meta property="og:description" content="Galeri proposal logo SYMP Studio yang terhubung ke slug presentasi masing-masing klien.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,100 +44,259 @@
       background: #0b0b0e;
     }
 
-    .catalog-card {
-      position: relative;
+    .market-shell {
+      min-height: 100dvh;
+    }
+
+    .market-hero {
+      display: grid;
+      gap: 1.2rem;
+      padding-top: clamp(2rem, 6vw, 5.5rem);
+      padding-bottom: clamp(1.8rem, 4vw, 3.2rem);
+    }
+
+    .market-copy {
+      max-width: 760px;
+    }
+
+    .market-toolbar {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.07);
+      padding: 12px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .market-search {
+      min-height: 48px;
       display: flex;
-      min-height: 360px;
-      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.18);
+      padding: 0 14px;
+      color: #cbd5e1;
+    }
+
+    .market-search span {
+      font-size: 0.82rem;
+      color: #9aa6b8;
+    }
+
+    .market-tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .market-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .market-tab {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 0 16px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #cbd5e1;
+      white-space: nowrap;
+      transition: background 180ms ease, color 180ms ease;
+    }
+
+    .market-tab.active {
+      background: #ffffff;
+      color: #0b0b0e;
+    }
+
+    .market-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .market-card {
+      position: relative;
+      grid-column: span 6;
+      min-height: 430px;
       overflow: hidden;
-      border-radius: 32px;
+      border-radius: 34px;
       border: 1px solid rgba(15, 23, 42, 0.1);
       background: #ffffff;
-      padding: 24px;
       color: #0f172a;
-      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.25);
-      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.28);
       outline: none;
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .catalog-card:focus-visible {
-      box-shadow: 0 0 0 5px rgba(224, 30, 43, 0.34), 0 26px 70px rgba(0, 0, 0, 0.25);
-    }
-
-    .catalog-card:hover {
+    .market-card:hover {
       transform: translateY(-6px);
-      border-color: rgba(224, 30, 43, 0.28);
-      box-shadow: 0 34px 90px rgba(0, 0, 0, 0.34);
+      border-color: rgba(224, 30, 43, 0.32);
+      box-shadow: 0 34px 92px rgba(0, 0, 0, 0.36);
     }
 
-    .catalog-card:active {
+    .market-card:focus-visible {
+      box-shadow: 0 0 0 5px rgba(224, 30, 43, 0.34), 0 26px 70px rgba(0, 0, 0, 0.28);
+    }
+
+    .market-card:active {
       transform: translateY(-2px) scale(0.99);
     }
 
-    .catalog-card::before {
+    .market-card::before {
       content: "";
       position: absolute;
       inset: 0;
       pointer-events: none;
-      background: radial-gradient(circle at 88% 8%, var(--card-glow), transparent 18rem);
+      background:
+        radial-gradient(circle at 90% 6%, var(--card-glow), transparent 18rem),
+        linear-gradient(180deg, rgba(248, 250, 252, 0.76), transparent 48%);
     }
 
-    .catalog-logo-stage {
+    .market-card-inner {
       position: relative;
+      z-index: 1;
       display: grid;
-      min-height: 148px;
+      min-height: inherit;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 20px;
+      padding: 24px;
+    }
+
+    .market-card-top,
+    .market-card-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .market-logo-frame {
+      display: grid;
+      min-height: 190px;
       place-items: center;
       overflow: hidden;
-      border-radius: 22px;
+      border-radius: 24px;
       border: 1px solid #e2e8f0;
       background: #f8fafc;
-      padding: 26px;
+      padding: 28px;
     }
 
-    .catalog-logo-stage img {
+    .market-logo-frame img {
       display: block;
-      max-height: 94px;
-      max-width: min(100%, 330px);
+      max-width: min(100%, 360px);
+      max-height: 118px;
       object-fit: contain;
     }
 
-    .catalog-open {
+    .market-card h2 {
+      font-size: clamp(2.25rem, 4vw, 4.5rem);
+      line-height: 0.9;
+      letter-spacing: -0.055em;
+      font-weight: 900;
+    }
+
+    .market-open {
       display: inline-grid;
-      height: 48px;
-      width: 48px;
+      height: 54px;
+      width: 54px;
       place-items: center;
-      border-radius: 18px;
+      border-radius: 19px;
       background: #e01e2b;
       color: #ffffff;
       transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .catalog-card:hover .catalog-open {
+    .market-card:hover .market-open {
       transform: translate(3px, -3px);
     }
 
+    .brief-card {
+      grid-column: span 12;
+      border-radius: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.035)),
+        rgba(255, 255, 255, 0.05);
+      padding: 24px;
+    }
+
+    .market-pages {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 22px;
+    }
+
+    @media (max-width: 900px) {
+      .market-toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      .market-card {
+        grid-column: span 12;
+        min-height: 390px;
+      }
+    }
+
     @media (max-width: 640px) {
-      .catalog-card {
-        min-height: 320px;
-        border-radius: 26px;
+      .market-hero {
+        padding-top: 2.2rem;
+      }
+
+      .market-toolbar {
+        border-radius: 22px;
+        padding: 10px;
+      }
+
+      .market-grid {
+        gap: 14px;
+      }
+
+      .market-card {
+        min-height: 352px;
+        border-radius: 28px;
+      }
+
+      .market-card-inner {
+        gap: 16px;
         padding: 18px;
       }
 
-      .catalog-logo-stage {
-        min-height: 118px;
-        border-radius: 18px;
+      .market-logo-frame {
+        min-height: 132px;
+        border-radius: 20px;
         padding: 20px;
       }
 
-      .catalog-logo-stage img {
-        max-height: 74px;
+      .market-logo-frame img {
+        max-height: 82px;
+      }
+
+      .market-card h2 {
+        font-size: clamp(2.25rem, 12vw, 3.3rem);
+      }
+
+      .brief-card {
+        border-radius: 28px;
+        padding: 18px;
       }
     }
   </style>
 </head>
 <body class="bg-[#0B0B0E] text-white antialiased selection:bg-[#E01E2B] selection:text-white font-jakarta">
-  <main class="ref-hero-wrapper min-h-[100dvh] px-4 pb-12 pt-6 sm:px-8 sm:pb-16">
-    <div class="mx-auto flex min-h-[calc(100dvh-72px)] max-w-6xl flex-col gap-10">
+  <main class="ref-hero-wrapper market-shell px-4 pb-12 pt-6 sm:px-8 sm:pb-16">
+    <div class="mx-auto flex max-w-6xl flex-col gap-8">
       <nav class="flex items-center justify-between gap-4">
         <a href="/" class="flex items-center gap-2.5">
           <img src="assets/SYMP LOGO PUTIH.png" alt="SYMP Studio Logo" class="h-8 object-contain sm:h-9">
@@ -151,7 +310,7 @@
         </a>
 
         <div class="hidden items-center ref-nav-pill md:flex">
-          <a href="/" class="ref-nav-item active">Katalog</a>
+          <a href="/" class="ref-nav-item active">Marketplace</a>
           <a href="/elevgro/" class="ref-nav-item">Elevgro</a>
           <a href="/kolohaga/" class="ref-nav-item">Kolohaga</a>
         </div>
@@ -162,83 +321,106 @@
         </a>
       </nav>
 
-      <section class="grid flex-1 items-end gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
-        <div class="space-y-7">
-          <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1 font-mono text-xs font-bold text-slate-300">
-            <span class="h-2 w-2 rounded-full bg-[#E01E2B]"></span>
-            <span>PORTAL PRESENTASI &amp; PENAWARAN LOGO</span>
-          </div>
-
-          <div class="space-y-5">
-            <h1 class="max-w-xl text-5xl font-extrabold leading-[0.96] tracking-tight text-white sm:text-6xl lg:text-7xl">
-              Katalog Deck Penawaran.
-            </h1>
-            <p class="max-w-md text-sm leading-7 text-slate-400 sm:text-base">
-              Pilih card klien untuk membuka halaman presentasi sesuai slug. Semua deck disusun sebagai halaman khusus agar mudah dibagikan ke client.
-            </p>
-          </div>
-
-          <div class="font-mono text-[11px] text-slate-500">
-            &copy; 2026 SYMP Studio &bull; Directed by Daru Fahmaa Muliawan
-          </div>
+      <section class="market-hero">
+        <div class="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1 font-mono text-xs font-bold text-slate-300">
+          <span class="h-2 w-2 rounded-full bg-[#E01E2B]"></span>
+          <span>MARKETPLACE DECK PENAWARAN LOGO</span>
         </div>
 
-        <section class="grid gap-5 md:grid-cols-2" aria-label="Daftar deck penawaran">
-          <a href="/elevgro/" class="catalog-card" style="--card-glow: rgba(0, 91, 189, 0.13);">
-            <span class="relative z-10 flex h-full flex-col gap-6">
-              <span class="flex items-center justify-between gap-3 border-b border-slate-200 pb-4">
-                <span class="flex items-center gap-2">
-                  <span class="h-2.5 w-2.5 rounded-full bg-[#005BBD]"></span>
-                  <span class="font-mono text-xs font-extrabold uppercase tracking-wider text-slate-900">01. Elevgro</span>
-                </span>
-                <span class="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 font-mono text-[10px] font-bold text-[#005BBD]">Guideline siap</span>
-              </span>
+        <div class="market-copy space-y-5">
+          <h1 class="text-5xl font-extrabold leading-[0.94] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            Galeri proposal yang siap dibuka.
+          </h1>
+          <p class="max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">
+            Semua penawaran logo dikumpulkan dalam card marketplace. Klik card untuk masuk ke slug presentasi client, buka guideline, atau lanjut ke deck yang sedang aktif.
+          </p>
+        </div>
 
-              <span class="catalog-logo-stage">
-                <img src="assets/elevgro_final_fix_web.png" alt="Logo ELEVGRO">
-              </span>
-
-              <span class="mt-auto grid gap-5">
-                <span class="grid gap-2">
-                  <strong class="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">ELEVGRO</strong>
-                  <span class="text-sm leading-6 text-slate-500">Deck penawaran identitas visual dan halaman guideline untuk sistem logo ELEVGRO.</span>
-                </span>
-                <span class="flex items-end justify-between gap-4">
-                  <span class="font-mono text-xs font-extrabold text-slate-500">/elevgro</span>
-                  <span class="catalog-open" aria-hidden="true"><i data-lucide="arrow-up-right" class="h-5 w-5"></i></span>
-                </span>
-              </span>
-            </span>
-          </a>
-
-          <a href="/kolohaga/" class="catalog-card" style="--card-glow: rgba(5, 155, 102, 0.13);">
-            <span class="relative z-10 flex h-full flex-col gap-6">
-              <span class="flex items-center justify-between gap-3 border-b border-slate-200 pb-4">
-                <span class="flex items-center gap-2">
-                  <span class="h-2.5 w-2.5 rounded-full bg-[#059B66]"></span>
-                  <span class="font-mono text-xs font-extrabold uppercase tracking-wider text-slate-900">02. Kolohaga</span>
-                </span>
-                <span class="rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 font-mono text-[10px] font-bold text-[#059B66]">Deck aktif</span>
-              </span>
-
-              <span class="catalog-logo-stage bg-emerald-50">
-                <img src="assets/logo1_full.png" alt="Logo KOLOHAGA">
-              </span>
-
-              <span class="mt-auto grid gap-5">
-                <span class="grid gap-2">
-                  <strong class="text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl">KOLOHAGA</strong>
-                  <span class="text-sm leading-6 text-slate-500">Deck presentasi konsep logo dengan eksplorasi filosofi dan sistem visual brand.</span>
-                </span>
-                <span class="flex items-end justify-between gap-4">
-                  <span class="font-mono text-xs font-extrabold text-slate-500">/kolohaga</span>
-                  <span class="catalog-open" aria-hidden="true"><i data-lucide="arrow-up-right" class="h-5 w-5"></i></span>
-                </span>
-              </span>
-            </span>
-          </a>
-        </section>
+        <div class="market-toolbar" aria-label="Kontrol katalog">
+          <div class="market-search">
+            <i data-lucide="search" class="h-4 w-4 text-slate-400"></i>
+            <span>2 deck tersedia, terhubung langsung ke slug penawaran.</span>
+          </div>
+          <div class="market-tabs" aria-label="Filter deck">
+            <span class="market-tab active">Semua</span>
+            <span class="market-tab">Guideline</span>
+            <span class="market-tab">Deck aktif</span>
+          </div>
+        </div>
       </section>
+
+      <section class="market-grid" aria-label="Galeri deck penawaran">
+        <a href="/elevgro/" class="market-card" style="--card-glow: rgba(0, 91, 189, 0.16);">
+          <span class="market-card-inner">
+            <span class="market-card-top border-b border-slate-200 pb-4">
+              <span class="flex items-center gap-2">
+                <span class="h-2.5 w-2.5 rounded-full bg-[#005BBD]"></span>
+                <span class="font-mono text-xs font-extrabold uppercase tracking-wider text-slate-900">01. Elevgro</span>
+              </span>
+              <span class="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 font-mono text-[10px] font-bold text-[#005BBD]">Guideline siap</span>
+            </span>
+
+            <span class="market-logo-frame">
+              <img src="assets/elevgro_final_fix_web.png" alt="Logo ELEVGRO">
+            </span>
+
+            <span class="grid gap-3">
+              <h2>ELEVGRO</h2>
+              <span class="max-w-md text-sm leading-6 text-slate-500">Deck penawaran identitas visual, opsi logo, dan guideline untuk sistem brand ELEVGRO.</span>
+            </span>
+
+            <span class="market-card-bottom">
+              <span class="font-mono text-xs font-extrabold text-slate-500">/elevgro</span>
+              <span class="market-open" aria-hidden="true"><i data-lucide="arrow-up-right" class="h-5 w-5"></i></span>
+            </span>
+          </span>
+        </a>
+
+        <a href="/kolohaga/" class="market-card" style="--card-glow: rgba(5, 155, 102, 0.16);">
+          <span class="market-card-inner">
+            <span class="market-card-top border-b border-slate-200 pb-4">
+              <span class="flex items-center gap-2">
+                <span class="h-2.5 w-2.5 rounded-full bg-[#059B66]"></span>
+                <span class="font-mono text-xs font-extrabold uppercase tracking-wider text-slate-900">02. Kolohaga</span>
+              </span>
+              <span class="rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 font-mono text-[10px] font-bold text-[#059B66]">Deck aktif</span>
+            </span>
+
+            <span class="market-logo-frame bg-emerald-50">
+              <img src="assets/logo1_full.png" alt="Logo KOLOHAGA">
+            </span>
+
+            <span class="grid gap-3">
+              <h2>KOLOHAGA</h2>
+              <span class="max-w-md text-sm leading-6 text-slate-500">Deck presentasi konsep logo dengan eksplorasi filosofi dan sistem visual brand.</span>
+            </span>
+
+            <span class="market-card-bottom">
+              <span class="font-mono text-xs font-extrabold text-slate-500">/kolohaga</span>
+              <span class="market-open" aria-hidden="true"><i data-lucide="arrow-up-right" class="h-5 w-5"></i></span>
+            </span>
+          </span>
+        </a>
+
+        <div class="brief-card">
+          <div class="grid gap-5 md:grid-cols-[1fr_auto] md:items-center">
+            <div class="space-y-2">
+              <span class="font-mono text-xs font-extrabold uppercase tracking-wider text-[#E01E2B]">Slot penawaran berikutnya</span>
+              <h2 class="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">Deck baru bisa ditambahkan sebagai card baru.</h2>
+              <p class="max-w-2xl text-sm leading-7 text-slate-400">Saat ada project baru, card akan ditambahkan ke galeri ini dan langsung diarahkan ke slug penawarannya.</p>
+            </div>
+            <a href="https://wa.me/6281311506025?text=Halo%20Daru%20(SYMP%20Studio),%20saya%20mau%20ajukan%20brief%20penawaran%20logo%20baru" target="_blank" rel="noreferrer" class="btn-ref-white text-sm">
+              <span>Ajukan Brief Baru</span>
+              <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="market-pages font-mono text-[11px] uppercase tracking-wider text-slate-500">
+        <span>&copy; 2026 SYMP Studio &bull; Directed by Daru Fahmaa Muliawan</span>
+        <span>Halaman 01 / Marketplace deck</span>
+      </footer>
     </div>
   </main>
 
