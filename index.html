@@ -21,8 +21,8 @@
               red: '#E01E2B',
               redDeep: '#B91C1C',
               redBright: '#FF2E3E',
-              dark: '#0B0B0E',
-              darkSurface: '#141418',
+              dark: '#26080F',
+              darkSurface: '#331018',
               neutralBg: '#FFFFFF',
               neutralSurface: '#F8FAFC'
             }
@@ -36,16 +36,25 @@
       }
     }
   </script>
-  <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="symp.css">
   <style>
     html,
     body {
-      background: #0b0b0e;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(255, 46, 62, 0.24), transparent 34rem),
+        radial-gradient(circle at 88% 12%, rgba(185, 28, 28, 0.2), transparent 30rem),
+        linear-gradient(145deg, #26080f 0%, #16070b 48%, #330b15 100%);
     }
 
     .market-shell {
       min-height: 100dvh;
+    }
+
+    .ref-hero-wrapper {
+      background:
+        radial-gradient(circle at 16% 0%, rgba(255, 46, 62, 0.34), transparent 32rem),
+        radial-gradient(circle at 86% 18%, rgba(111, 14, 28, 0.42), transparent 28rem),
+        linear-gradient(145deg, #26080f 0%, #16070b 46%, #330b15 100%) !important;
     }
 
     .market-hero {
@@ -59,61 +68,72 @@
       max-width: 760px;
     }
 
-    .market-toolbar {
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 28px;
-      background: rgba(255, 255, 255, 0.07);
-      padding: 12px;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 12px;
+    .market-label {
+      max-width: max-content;
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.76rem;
+      font-weight: 800;
+      line-height: 1.4;
+      letter-spacing: 0.02em;
+      color: rgba(255, 255, 255, 0.66);
+    }
+
+    .market-nav {
+      display: flex;
       align-items: center;
+      gap: 26px;
+      color: rgba(255, 255, 255, 0.56);
+      font-size: 0.84rem;
+      font-weight: 800;
+    }
+
+    .market-nav a {
+      position: relative;
+      padding: 0.25rem 0;
+      outline: none;
+      transition: color 180ms ease;
+    }
+
+    .market-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -0.3rem;
+      height: 2px;
+      border-radius: 999px;
+      background: #ff2e3e;
+      opacity: 0;
+      transform: scaleX(0.55);
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .market-nav a:hover,
+    .market-nav a:focus-visible,
+    .market-nav a.active {
+      color: #ffffff;
+    }
+
+    .market-nav a.active::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+
+    .market-toolbar {
+      max-width: 760px;
+      border-left: 2px solid rgba(255, 46, 62, 0.78);
+      padding: 0.1rem 0 0.1rem 1.1rem;
     }
 
     .market-search {
-      min-height: 48px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border-radius: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(0, 0, 0, 0.18);
-      padding: 0 14px;
+      display: block;
       color: #cbd5e1;
     }
 
     .market-search span {
-      font-size: 0.82rem;
-      color: #9aa6b8;
-    }
-
-    .market-tabs {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-
-    .market-tabs::-webkit-scrollbar {
-      display: none;
-    }
-
-    .market-tab {
-      min-height: 44px;
-      display: inline-flex;
-      align-items: center;
-      border-radius: 999px;
-      padding: 0 16px;
-      font-size: 0.78rem;
-      font-weight: 800;
-      color: #cbd5e1;
-      white-space: nowrap;
-      transition: background 180ms ease, color 180ms ease;
-    }
-
-    .market-tab.active {
-      background: #ffffff;
-      color: #0b0b0e;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: rgba(226, 232, 240, 0.72);
     }
 
     .market-grid {
@@ -130,7 +150,7 @@
       border: 1px solid rgba(15, 23, 42, 0.1);
       background: #ffffff;
       color: #0f172a;
-      box-shadow: 0 22px 58px rgba(0, 0, 0, 0.24);
+      box-shadow: 0 22px 58px rgba(89, 5, 17, 0.24);
       outline: none;
       transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -138,11 +158,11 @@
     .market-card:hover {
       transform: translateY(-4px);
       border-color: rgba(224, 30, 43, 0.32);
-      box-shadow: 0 30px 74px rgba(0, 0, 0, 0.34);
+      box-shadow: 0 30px 74px rgba(98, 7, 20, 0.42);
     }
 
     .market-card:focus-visible {
-      box-shadow: 0 0 0 5px rgba(224, 30, 43, 0.34), 0 26px 70px rgba(0, 0, 0, 0.28);
+      box-shadow: 0 0 0 5px rgba(224, 30, 43, 0.34), 0 26px 70px rgba(98, 7, 20, 0.3);
     }
 
     .market-card:active {
@@ -204,12 +224,15 @@
 
     .market-open {
       display: inline-grid;
-      height: 42px;
-      width: 42px;
+      min-height: 42px;
       place-items: center;
+      padding: 0 15px;
       border-radius: 15px;
       background: #e01e2b;
       color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.02em;
       transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -220,11 +243,12 @@
     .market-card.locked {
       pointer-events: none;
       background:
-        linear-gradient(160deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035)),
-        rgba(255, 255, 255, 0.055);
-      border-color: rgba(255, 255, 255, 0.13);
+        radial-gradient(circle at 85% 8%, rgba(255, 46, 62, 0.1), transparent 17rem),
+        linear-gradient(160deg, rgba(255, 255, 255, 0.082), rgba(255, 255, 255, 0.036)),
+        rgba(64, 13, 23, 0.54);
+      border-color: rgba(255, 255, 255, 0.15);
       color: #ffffff;
-      box-shadow: 0 18px 54px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 18px 54px rgba(89, 5, 17, 0.22);
     }
 
     .market-card.locked::before {
@@ -241,16 +265,6 @@
       opacity: 0.86;
     }
 
-    .market-lock {
-      display: inline-grid;
-      height: 42px;
-      width: 42px;
-      place-items: center;
-      border-radius: 15px;
-      background: rgba(255, 255, 255, 0.08);
-      color: #cbd5e1;
-    }
-
     .market-pages {
       display: flex;
       flex-wrap: wrap;
@@ -262,10 +276,6 @@
     }
 
     @media (max-width: 900px) {
-      .market-toolbar {
-        grid-template-columns: 1fr;
-      }
-
       .market-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -281,8 +291,7 @@
       }
 
       .market-toolbar {
-        border-radius: 22px;
-        padding: 10px;
+        padding-left: 0.9rem;
       }
 
       .market-grid {
@@ -331,7 +340,7 @@
     }
   </style>
 </head>
-<body class="bg-[#0B0B0E] text-white antialiased selection:bg-[#E01E2B] selection:text-white font-jakarta">
+<body class="bg-[#26080F] text-white antialiased selection:bg-[#E01E2B] selection:text-white font-jakarta">
   <main class="ref-hero-wrapper market-shell px-4 pb-12 pt-6 sm:px-8 sm:pb-16">
     <div class="mx-auto flex max-w-6xl flex-col gap-8">
       <nav class="flex items-center justify-between gap-4">
@@ -340,29 +349,24 @@
           <div class="hidden flex-col border-l border-white/20 pl-3 sm:flex">
             <span class="flex items-center gap-1.5 text-xs font-black tracking-tight text-white">
               SYMP STUDIO
-              <span class="h-1.5 w-1.5 rounded-full bg-[#E01E2B]"></span>
             </span>
             <span class="font-mono text-[9px] uppercase tracking-widest text-slate-400">Client Proposal Hub</span>
           </div>
         </a>
 
-        <div class="hidden items-center ref-nav-pill md:flex">
-          <a href="/" class="ref-nav-item active">Marketplace</a>
-          <a href="/elevgro/" class="ref-nav-item">Elevgro</a>
-          <a href="/kolohaga/" class="ref-nav-item">Kolohaga</a>
+        <div class="market-nav hidden md:flex">
+          <a href="/" class="active">Marketplace</a>
+          <a href="/elevgro/">Elevgro</a>
+          <a href="/kolohaga/">Kolohaga</a>
         </div>
 
         <a href="https://wa.me/6281311506025?text=Halo%20Daru%20(SYMP%20Studio),%20saya%20mau%20ajukan%20brief%20penawaran%20logo%20baru" target="_blank" rel="noreferrer" class="btn-ref-white !px-4 !py-2 text-xs">
           <span>Ajukan Brief Baru</span>
-          <i data-lucide="arrow-up-right" class="h-3.5 w-3.5"></i>
         </a>
       </nav>
 
       <section class="market-hero">
-        <div class="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1 font-mono text-xs font-bold text-slate-300">
-          <span class="h-2 w-2 rounded-full bg-[#E01E2B]"></span>
-          <span>MARKETPLACE DECK PENAWARAN LOGO</span>
-        </div>
+        <p class="market-label">Marketplace deck penawaran logo</p>
 
         <div class="market-copy space-y-5">
           <h1 class="text-5xl font-extrabold leading-[0.94] tracking-tight text-white sm:text-6xl lg:text-7xl">
@@ -375,13 +379,7 @@
 
         <div class="market-toolbar" aria-label="Kontrol katalog">
           <div class="market-search">
-            <i data-lucide="search" class="h-4 w-4 text-slate-400"></i>
             <span>4 card katalog, 2 deck aktif dan 2 slot terkunci.</span>
-          </div>
-          <div class="market-tabs" aria-label="Filter deck">
-            <span class="market-tab active">Semua</span>
-            <span class="market-tab">Guideline</span>
-            <span class="market-tab">Deck aktif</span>
           </div>
         </div>
       </section>
@@ -390,11 +388,9 @@
         <a href="/elevgro/" class="market-card" style="--card-glow: rgba(0, 91, 189, 0.16);">
           <span class="market-card-inner">
             <span class="market-card-top border-b border-slate-200 pb-3">
-              <span class="flex items-center gap-2">
-                <span class="h-2.5 w-2.5 rounded-full bg-[#005BBD]"></span>
+              <span class="flex items-center">
                 <span class="font-mono text-[10px] font-extrabold uppercase tracking-wider text-slate-900">01. Elevgro</span>
               </span>
-              <span class="rounded-full border border-blue-100 bg-blue-50 px-3 py-1 font-mono text-[10px] font-bold text-[#005BBD]">Guideline siap</span>
             </span>
 
             <span class="market-logo-frame">
@@ -408,7 +404,7 @@
 
             <span class="market-card-bottom">
               <span class="font-mono text-xs font-extrabold text-slate-500">/elevgro</span>
-              <span class="market-open" aria-hidden="true"><i data-lucide="arrow-up-right" class="h-5 w-5"></i></span>
+              <span class="market-open" aria-hidden="true">Buka</span>
             </span>
           </span>
         </a>
@@ -416,11 +412,9 @@
         <a href="/kolohaga/" class="market-card" style="--card-glow: rgba(5, 155, 102, 0.16);">
           <span class="market-card-inner">
             <span class="market-card-top border-b border-slate-200 pb-3">
-              <span class="flex items-center gap-2">
-                <span class="h-2.5 w-2.5 rounded-full bg-[#059B66]"></span>
+              <span class="flex items-center">
                 <span class="font-mono text-[10px] font-extrabold uppercase tracking-wider text-slate-900">02. Kolohaga</span>
               </span>
-              <span class="rounded-full border border-emerald-100 bg-emerald-50 px-3 py-1 font-mono text-[10px] font-bold text-[#059B66]">Deck aktif</span>
             </span>
 
             <span class="market-logo-frame bg-emerald-50">
@@ -434,7 +428,7 @@
 
             <span class="market-card-bottom">
               <span class="font-mono text-xs font-extrabold text-slate-500">/kolohaga</span>
-              <span class="market-open" aria-hidden="true"><i data-lucide="arrow-up-right" class="h-5 w-5"></i></span>
+              <span class="market-open" aria-hidden="true">Buka</span>
             </span>
           </span>
         </a>
@@ -442,11 +436,9 @@
         <article class="market-card locked" aria-label="Slot penawaran terkunci">
           <span class="market-card-inner">
             <span class="market-card-top border-b border-white/10 pb-3">
-              <span class="flex items-center gap-2">
-                <span class="h-2.5 w-2.5 rounded-full bg-[#E01E2B]"></span>
+              <span class="flex items-center">
                 <span class="font-mono text-[10px] font-extrabold uppercase tracking-wider text-white">03. Slot kosong</span>
               </span>
-              <span class="rounded-full border border-white/10 bg-white/10 px-3 py-1 font-mono text-[10px] font-bold text-slate-300">Terkunci</span>
             </span>
 
             <span class="market-logo-frame">
@@ -460,7 +452,7 @@
 
             <span class="market-card-bottom">
               <span class="font-mono text-xs font-extrabold text-slate-500">/locked</span>
-              <span class="market-lock" aria-hidden="true"><i data-lucide="lock" class="h-4 w-4"></i></span>
+              <span class="font-mono text-[10px] font-extrabold uppercase tracking-wider text-slate-500">Locked</span>
             </span>
           </span>
         </article>
@@ -468,11 +460,9 @@
         <article class="market-card locked" aria-label="Slot penawaran terkunci">
           <span class="market-card-inner">
             <span class="market-card-top border-b border-white/10 pb-3">
-              <span class="flex items-center gap-2">
-                <span class="h-2.5 w-2.5 rounded-full bg-[#E01E2B]"></span>
+              <span class="flex items-center">
                 <span class="font-mono text-[10px] font-extrabold uppercase tracking-wider text-white">04. Slot kosong</span>
               </span>
-              <span class="rounded-full border border-white/10 bg-white/10 px-3 py-1 font-mono text-[10px] font-bold text-slate-300">Terkunci</span>
             </span>
 
             <span class="market-logo-frame">
@@ -486,7 +476,7 @@
 
             <span class="market-card-bottom">
               <span class="font-mono text-xs font-extrabold text-slate-500">/locked</span>
-              <span class="market-lock" aria-hidden="true"><i data-lucide="lock" class="h-4 w-4"></i></span>
+              <span class="font-mono text-[10px] font-extrabold uppercase tracking-wider text-slate-500">Locked</span>
             </span>
           </span>
         </article>
@@ -498,9 +488,5 @@
       </footer>
     </div>
   </main>
-
-  <script>
-    lucide.createIcons();
-  </script>
 </body>
 </html>
