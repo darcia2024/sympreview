@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>ELEVGRO — Visual Identity & Official Brand System | SYMP Studio</title>
+  <title>ELEVGRO — Visual Identity System | SYMP Studio</title>
   
   <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,15 +20,13 @@
             elevgro: {
               blue: '#005BBD',
               blueDark: '#003E82',
-              blueDeep: '#002552',
-              blueSoft: '#EEF5FF',
+              blueDeep: '#00204A',
               green: '#48C15A',
               greenDark: '#047857',
               greenEmerald: '#059669',
-              greenSoft: '#ECFDF5',
-              peachSoft: '#FFF4EE',
-              lavenderSoft: '#F3E8FF',
-              dark: '#060D17'
+              dark: '#070A10',
+              canvas: '#FBFBFA',
+              border: '#E8E8E6'
             }
           },
           fontFamily: {
@@ -52,8 +50,8 @@
     :root {
       --elevgro-blue: #005BBD;
       --elevgro-green: #48C15A;
-      --elevgro-emerald: #059669;
-      --ios-spring: cubic-bezier(0.16, 1, 0.3, 1);
+      --elevgro-dark: #070A10;
+      --agency-spring: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     * {
@@ -63,38 +61,85 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    /* Reference Style: Warm Aurora Pastel Mesh Background */
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background: 
-        radial-gradient(circle at 10% 12%, rgba(255, 218, 195, 0.65) 0%, transparent 35%),
-        radial-gradient(circle at 90% 18%, rgba(224, 210, 255, 0.7) 0%, transparent 40%),
-        radial-gradient(circle at 50% 95%, rgba(195, 235, 255, 0.6) 0%, transparent 45%),
-        radial-gradient(circle at 80% 80%, rgba(255, 225, 240, 0.5) 0%, transparent 35%),
-        #F3F5FA;
-      color: #0F172A;
-      min-height: 100vh;
+      background-color: #F8F9FA;
+      color: #0A0D14;
       overflow-x: hidden;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.025em;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Main Floating Canvas Card */
-    .floating-canvas-card {
+    /* Double-Bezel Hardware Architecture */
+    .bezel-shell {
       background: #FFFFFF;
-      border-radius: 36px;
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      box-shadow: 
-        0 25px 70px -15px rgba(0, 45, 115, 0.08),
-        0 0 0 1px rgba(226, 232, 240, 0.7);
+      border: 1px solid #E2E8F0;
+      border-radius: 28px;
+      box-shadow: 0 4px 20px -4px rgba(10, 13, 20, 0.03);
+      transition: all 0.4s var(--agency-spring);
     }
     @media (min-width: 640px) {
-      .floating-canvas-card {
-        border-radius: 48px;
+      .bezel-shell {
+        border-radius: 36px;
+      }
+    }
+    .bezel-shell:hover {
+      box-shadow: 0 20px 40px -12px rgba(0, 91, 189, 0.08);
+      border-color: rgba(0, 91, 189, 0.25);
+    }
+
+    /* Nested Inner Core */
+    .bezel-core {
+      border-radius: 22px;
+      transition: all 0.3s ease;
+    }
+    @media (min-width: 640px) {
+      .bezel-core {
+        border-radius: 28px;
       }
     }
 
-    /* Hide scrollbar */
+    /* Button-in-Button Architecture */
+    .btn-island {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 10px 10px 24px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 13px;
+      transition: all 0.3s var(--agency-spring);
+    }
+    .btn-island:active {
+      transform: scale(0.98);
+    }
+    .btn-island-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s var(--agency-spring);
+    }
+    .btn-island:hover .btn-island-icon {
+      transform: translateX(2px) translateY(-1px) scale(1.05);
+    }
+
+    /* Swatch Interactive Card */
+    .swatch-box {
+      border-radius: 20px;
+      border: 1px solid #E2E8F0;
+      transition: all 0.3s var(--agency-spring);
+      cursor: pointer;
+    }
+    .swatch-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px -6px rgba(0, 91, 189, 0.12);
+      border-color: #005BBD;
+    }
+
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
@@ -102,313 +147,517 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
-
-    /* Playful Floating Speech Bubble Badges */
-    .floating-pill-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
-      border-radius: 9999px;
-      font-size: 11px;
-      font-weight: 700;
-      box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
-      animation: floatSlow 4s ease-in-out infinite alternate;
-    }
-
-    @keyframes floatSlow {
-      0% { transform: translateY(0px); }
-      100% { transform: translateY(-6px); }
-    }
-
-    /* Window Mockup Card */
-    .window-mockup-card {
-      border-radius: 28px;
-      overflow: hidden;
-      transition: all 0.35s var(--ios-spring);
-    }
-    .window-mockup-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px -10px rgba(0, 91, 189, 0.12);
-    }
   </style>
 </head>
-<body class="p-3 sm:p-8 flex items-center justify-center">
+<body class="selection:bg-[#005BBD] selection:text-white">
 
   <!-- ======================================================= -->
-  <!-- MAIN FLOATING CANVAS CARD (COMURAL REFERENCE STYLE)     -->
+  <!-- FLOATING EDITORIAL TOP BAR                              -->
   <!-- ======================================================= -->
-  <div class="floating-canvas-card max-w-6xl w-full p-6 sm:p-12 space-y-12 sm:space-y-16 relative">
-
-    <!-- ======================================================= -->
-    <!-- TOP NAVIGATION BAR                                      -->
-    <!-- ======================================================= -->
-    <header class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-6">
+  <header class="sticky top-0 z-50 bg-[#F8F9FA]/90 backdrop-blur-xl border-b border-slate-200/80 px-4 sm:px-8 py-3.5 transition-all">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
       
-      <!-- Brand Logo / Identity -->
-      <a href="/" class="flex items-center gap-2.5">
-        <div class="w-9 h-9 rounded-2xl bg-[#005BBD] text-white flex items-center justify-center font-black shadow-md">
-          <i data-lucide="sparkles" class="w-5 h-5"></i>
+      <!-- Brand & Project Slug -->
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 rounded-xl bg-[#005BBD] text-white flex items-center justify-center font-black shadow-xs">
+          <i data-lucide="layers" class="w-4 h-4"></i>
         </div>
-        <div>
-          <span class="text-base font-extrabold tracking-tight text-slate-900 block leading-tight">ELEVGRO</span>
-          <span class="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-wider">BY SYMP STUDIO</span>
+        <div class="flex flex-col">
+          <span class="text-sm font-extrabold text-slate-950 tracking-tight leading-none group-hover:text-[#005BBD] transition-colors">ELEVGRO</span>
+          <span class="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-wider mt-0.5">IDENTITY GUIDELINES &bull; SYMP</span>
         </div>
       </a>
 
-      <!-- Center Pill Navigation -->
-      <div class="flex items-center p-1 bg-slate-100/80 rounded-full border border-slate-200/80 text-xs font-bold shadow-inner">
-        <a href="#overview" class="py-1.5 px-4 rounded-full bg-white text-slate-900 shadow-xs transition-all">Overview</a>
-        <a href="#philosophy" class="py-1.5 px-4 rounded-full text-slate-500 hover:text-slate-900 transition-all">Filosofi</a>
-        <a href="#specs" class="py-1.5 px-4 rounded-full text-slate-500 hover:text-slate-900 transition-all">Spesifikasi</a>
-      </div>
+      <!-- Center Anchor Tabs (Desktop) -->
+      <nav class="hidden md:flex items-center gap-1 p-1 bg-white rounded-full border border-slate-200 shadow-xs text-xs font-bold text-slate-600">
+        <a href="#overview" class="px-3.5 py-1.5 rounded-full hover:text-slate-950 hover:bg-slate-50 transition-all">Overview</a>
+        <a href="#philosophy" class="px-3.5 py-1.5 rounded-full hover:text-slate-950 hover:bg-slate-50 transition-all">Filosofi</a>
+        <a href="#colors" class="px-3.5 py-1.5 rounded-full hover:text-slate-950 hover:bg-slate-50 transition-all">Sistem Warna</a>
+        <a href="#applications" class="px-3.5 py-1.5 rounded-full hover:text-slate-950 hover:bg-slate-50 transition-all">Aplikasi</a>
+      </nav>
 
-      <!-- Right Pill Action Buttons -->
+      <!-- Right Action CTA -->
       <div class="flex items-center gap-2">
-        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20telah%20meninjau%20tampilan%20desain%20logo%20Elevgro" target="_blank" class="px-4 py-2 rounded-full border border-slate-200 text-xs font-bold text-slate-700 hover:bg-slate-50 transition-all">
-          Hubungi
-        </a>
-        <a href="/elevgro/guidelines" class="px-5 py-2 rounded-full bg-[#005BBD] hover:bg-blue-700 text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-md hover:shadow-lg">
-          <span>Brand Guidelines</span>
-          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-        </a>
-      </div>
-
-    </header>
-
-    <!-- ======================================================= -->
-    <!-- HERO SECTION WITH FLOATING ROLE TAGS                    -->
-    <!-- ======================================================= -->
-    <section id="overview" class="text-center space-y-6 max-w-4xl mx-auto pt-2 sm:pt-4 relative">
-      
-      <!-- Top Trust Rating Pill -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-[#059669] text-xs font-mono font-bold shadow-xs">
-        <span class="text-yellow-500 flex items-center gap-0.5">
-          <i data-lucide="star" class="w-3 h-3 fill-yellow-400 text-yellow-400"></i>
-          <i data-lucide="star" class="w-3 h-3 fill-yellow-400 text-yellow-400"></i>
-          <i data-lucide="star" class="w-3 h-3 fill-yellow-400 text-yellow-400"></i>
-          <i data-lucide="star" class="w-3 h-3 fill-yellow-400 text-yellow-400"></i>
-          <i data-lucide="star" class="w-3 h-3 fill-yellow-400 text-yellow-400"></i>
-        </span>
-        <span>ELEVGRO VISUAL IDENTITY &bull; FINAL APPROVED</span>
-      </div>
-
-      <!-- Main Headline (Inspired by reference) -->
-      <h1 class="text-3xl sm:text-6xl lg:text-7xl font-extrabold text-slate-950 tracking-tight leading-[1.08]">
-        Elevate &amp; grow your <br class="hidden sm:inline" />
-        business with <span class="text-[#005BBD]">confidence.</span>
-      </h1>
-
-      <p class="text-xs sm:text-base text-slate-600 font-normal leading-relaxed max-w-xl mx-auto">
-        Identitas visual resmi ELEVGRO yang menggabungkan tipografi modern ramah konsumen dengan simbol tunas elevasi pada huruf 'v'.
-      </p>
-
-      <!-- Floating Cute Speech Bubble Pills (Like 'designer' & 'developer' in reference) -->
-      <div class="hidden md:block absolute -left-4 top-24 floating-pill-badge bg-purple-100 text-purple-800 border border-purple-200">
-        <span class="w-2 h-2 rounded-full bg-purple-500"></span>
-        <span>elevate &bull; 45°</span>
-      </div>
-      <div class="hidden md:block absolute -right-4 top-28 floating-pill-badge bg-blue-100 text-[#005BBD] border border-blue-200" style="animation-delay: 1.5s;">
-        <span class="w-2 h-2 rounded-full bg-[#005BBD]"></span>
-        <span>growth &bull; sprout</span>
-      </div>
-
-      <!-- Hero Call-to-Actions -->
-      <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
-        <a href="/elevgro/guidelines" class="px-7 py-3.5 rounded-full bg-[#005BBD] hover:bg-blue-700 text-white text-xs sm:text-sm font-extrabold shadow-lg hover:shadow-xl transition-all flex items-center gap-2 active:scale-95">
-          <span>Buka Brand Guidelines Lengkap</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
-        <a href="https://wa.me/6281311506025?text=insyaAllah%20abang%20pilih%20desain%20logo%20final%20Elevgro%20ini.%20Mohon%20kirimkan%20master%20filenya%20ya%20Mas%20Daru." target="_blank" class="px-6 py-3.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2">
-          <i data-lucide="message-circle" class="w-4 h-4 text-[#059669]"></i>
-          <span>Kirim Master File via WA</span>
+        <a href="https://wa.me/6281311506025?text=insyaAllah%20abang%20pilih%20desain%20logo%20final%20Elevgro%20ini.%20Mohon%20kirimkan%20master%20filenya%20ya%20Mas%20Daru." target="_blank" class="btn-island bg-[#005BBD] text-white hover:bg-blue-700 shadow-sm">
+          <span>Konfirmasi Master File</span>
+          <span class="btn-island-icon bg-white/15">
+            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+          </span>
         </a>
       </div>
 
-    </section>
-
-    <!-- ======================================================= -->
-    <!-- 3-CARD SHOWCASE ROW (EXACT COMPOSITION FROM REFERENCE)  -->
-    <!-- ======================================================= -->
-    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-      
-      <!-- Card 1: Light Window Card (MacOS Dots + Primary Logo Showcase) -->
-      <div class="window-mockup-card bg-purple-50/60 border border-purple-100/80 p-5 sm:p-6 flex flex-col justify-between space-y-6">
-        <!-- Window Traffic Light Header -->
-        <div class="flex items-center justify-between border-b border-purple-200/50 pb-3">
-          <div class="flex items-center gap-1.5">
-            <span class="w-3 h-3 rounded-full bg-red-400 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-yellow-400 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-green-400 inline-block"></span>
-          </div>
-          <span class="text-[10px] font-mono font-bold text-purple-700 uppercase">LIGHT MASTER CANVAS</span>
-        </div>
-
-        <!-- Card Body: Logo Display -->
-        <div class="bg-white rounded-2xl p-6 flex items-center justify-center min-h-[140px] shadow-sm border border-purple-100">
-          <img id="ref-logo-display" src="../assets/elevgro_final_fix.png" alt="Elevgro Logo" class="max-h-16 w-auto object-contain transition-transform duration-300 hover:scale-105" />
-        </div>
-
-        <!-- Bottom Controls Pill -->
-        <div class="flex items-center justify-between gap-2 bg-white/80 backdrop-blur-sm p-1.5 rounded-full border border-purple-200/60 text-[11px] font-bold">
-          <button onclick="setRefCanvas('light')" id="ref-btn-light" class="flex-1 py-1 px-2 rounded-full bg-[#005BBD] text-white shadow-xs">Light</button>
-          <button onclick="setRefCanvas('sapphire')" id="ref-btn-sapphire" class="flex-1 py-1 px-2 rounded-full text-slate-600 hover:text-slate-900">Sapphire</button>
-          <button onclick="setRefCanvas('dark')" id="ref-btn-dark" class="flex-1 py-1 px-2 rounded-full text-slate-600 hover:text-slate-900">Dark</button>
-        </div>
-      </div>
-
-      <!-- Card 2: Warm Peach Card (Sprout Icon & App Mark Simulation) -->
-      <div class="window-mockup-card bg-orange-50/60 border border-orange-100/80 p-5 sm:p-6 flex flex-col justify-between space-y-6">
-        <!-- Window Traffic Light Header -->
-        <div class="flex items-center justify-between border-b border-orange-200/50 pb-3">
-          <div class="flex items-center gap-1.5">
-            <span class="w-3 h-3 rounded-full bg-red-400 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-yellow-400 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-green-400 inline-block"></span>
-          </div>
-          <span class="text-[10px] font-mono font-bold text-orange-700 uppercase">APP ICON &bull; GLYPH</span>
-        </div>
-
-        <!-- Center App Icon Display -->
-        <div class="bg-white rounded-2xl p-4 flex items-center justify-center min-h-[140px] shadow-sm border border-orange-100 relative">
-          <div class="w-20 h-20 rounded-2xl bg-[#005BBD] flex items-center justify-center shadow-md">
-            <img src="../assets/elevgro_app_icon_dark.png" alt="App Icon" class="w-16 h-16 object-contain rounded-xl" />
-          </div>
-        </div>
-
-        <!-- Input Bar with Pill Button (Inspired by reference search pill) -->
-        <div class="flex items-center bg-white rounded-full p-1.5 border border-orange-200 shadow-xs">
-          <input type="text" value="Elevgro App Launcher (v1.0)" class="w-full bg-transparent px-3 text-[11px] font-mono text-slate-600 outline-none" readonly />
-          <div class="w-7 h-7 rounded-full bg-[#059669] text-white flex items-center justify-center flex-shrink-0 shadow-xs">
-            <i data-lucide="check" class="w-3.5 h-3.5"></i>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3: Code Terminal Card (Tech Specs & Syntax Highlighting) -->
-      <div class="window-mockup-card bg-slate-900 border border-slate-800 p-5 sm:p-6 flex flex-col justify-between space-y-4 text-white">
-        <!-- Terminal Header with MacOS Dots -->
-        <div class="flex items-center justify-between border-b border-white/10 pb-3">
-          <div class="flex items-center gap-1.5">
-            <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
-          </div>
-          <span class="text-[10px] font-mono text-slate-400">elevgro-theme.css</span>
-        </div>
-
-        <!-- Syntax Highlighting Body -->
-        <div class="font-mono text-[11px] leading-relaxed space-y-1 py-1">
-          <div class="text-purple-400">:root {</div>
-          <div class="pl-3 text-slate-300">--brand-name: <span class="text-emerald-400">'Elevgro'</span>;</div>
-          <div class="pl-3 text-slate-300">--color-blue: <span class="text-[#005BBD] font-bold">#005BBD</span>;</div>
-          <div class="pl-3 text-slate-300">--color-green: <span class="text-[#48C15A] font-bold">#48C15A</span>;</div>
-          <div class="pl-3 text-slate-300">--font-family: <span class="text-yellow-300">'Plus Jakarta Sans'</span>;</div>
-          <div class="pl-3 text-slate-300">--elevation-axis: <span class="text-blue-300">45deg</span>;</div>
-          <div class="text-purple-400">}</div>
-        </div>
-
-        <!-- Terminal Status Pill -->
-        <div class="flex items-center justify-between text-[10px] font-mono text-slate-400 bg-white/5 p-2 rounded-xl border border-white/10">
-          <span>PANTONE 2144 C + 7488 C</span>
-          <span class="text-emerald-400">READY &bull; 100%</span>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- ======================================================= -->
-    <!-- SECTION: 3 BUSINESS PILLARS EDITORIAL STRIP             -->
-    <!-- ======================================================= -->
-    <section id="philosophy" class="space-y-6 pt-4 border-t border-slate-100">
-      
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-        <div class="border-l-2 border-[#005BBD] pl-3">
-          <span class="text-[10px] font-mono text-[#005BBD] uppercase font-bold tracking-widest">// THREE CORE PILLARS</span>
-          <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-            3 Pilar Filosofi Bisnis ELEVGRO
-          </h2>
-        </div>
-        <span class="text-xs font-mono text-slate-400">"elevate &bull; grow &bull; help others"</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        
-        <div class="p-6 rounded-3xl bg-blue-50/50 border border-blue-100 space-y-3">
-          <div class="w-10 h-10 rounded-2xl bg-blue-500 text-white flex items-center justify-center shadow-sm">
-            <i data-lucide="trending-up" class="w-5 h-5"></i>
-          </div>
-          <h3 class="text-base font-bold text-slate-900">01. ELEVATE</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Geometri tunas yang meluncur ke kanan atas melambangkan tekad mengangkat standar mutu bisnis mitra dari biasa menjadi luar biasa di puncak industri.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-3xl bg-emerald-50/50 border border-emerald-100 space-y-3">
-          <div class="w-10 h-10 rounded-2xl bg-[#059669] text-white flex items-center justify-center shadow-sm">
-            <i data-lucide="sprout" class="w-5 h-5"></i>
-          </div>
-          <h3 class="text-base font-bold text-slate-900">02. GROW</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Warna hijau zamrud segar melambangkan kesuburan usaha, kelancaran transaksi harian, kepuasan mitra, dan pertumbuhan omzet berlipat ganda.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-3xl bg-indigo-50/50 border border-indigo-100 space-y-3">
-          <div class="w-10 h-10 rounded-2xl bg-indigo-600 text-white flex items-center justify-center shadow-sm">
-            <i data-lucide="heart-handshake" class="w-5 h-5"></i>
-          </div>
-          <h3 class="text-base font-bold text-slate-900">03. HELP OTHERS</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Fondasi biru kobalt terpercaya mencerminkan nilai empati, integritas, dan komitmen membawa dampak positif nyata bagi sesama wirausaha.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================= -->
-    <!-- LUXURY BOTTOM FOOTER INSIDE CANVAS                      -->
-    <!-- ======================================================= -->
-    <footer class="border-t border-slate-100 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
-      <div>
-        &copy; 2026 <strong>ELEVGRO Visual Identity</strong>. Directed by <strong class="text-[#005BBD]">Daru Fahmaa Muliawan</strong> &bull; SYMP Studio
-      </div>
-      <div class="flex items-center gap-3">
-        <a href="/elevgro/guidelines" class="hover:text-[#005BBD] font-bold">Brand Guidelines &rarr;</a>
-        <a href="/" class="hover:text-slate-900">Portal Utama</a>
-      </div>
-    </footer>
-
-  </div>
+    </div>
+  </header>
 
   <!-- ======================================================= -->
-  <!-- INTERACTIVE CANVAS CONTROLLER                           -->
+  <!-- MAIN PRESENTATION BODY                                  -->
+  <!-- ======================================================= -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-8 py-10 sm:py-20 space-y-16 sm:space-y-28">
+
+    <!-- ======================================================= -->
+    <!-- HERO SECTION: THE MASTER MARK                           -->
+    <!-- ======================================================= -->
+    <section id="overview" class="space-y-8 sm:space-y-12">
+      
+      <!-- Editorial Title Block -->
+      <div class="space-y-4 max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200/70 text-slate-700 text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#059669]"></span>
+          <span>Official Final Brand Identity System</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-6xl lg:text-7xl font-extrabold text-slate-950 tracking-tight leading-[1.06]">
+          The Visual Identity <br />
+          of <span class="text-[#005BBD]">Elevgro.</span>
+        </h1>
+
+        <p class="text-sm sm:text-lg text-slate-600 font-normal leading-relaxed">
+          Dirancang untuk membangun kredibilitas instan, karakter modern yang ramah, dan pertumbuhan bisnis berkelanjutan. Menggabungkan tipografi solid dengan aksen tunas elevasi pada sudut 45 derajat.
+        </p>
+      </div>
+
+      <!-- MASTER LOGO STAGE (DOUBLE-BEZEL ARCHITECTURAL CANVAS) -->
+      <div class="bezel-shell p-2 sm:p-3">
+        <div id="master-stage-core" class="bezel-core bg-white p-8 sm:p-20 flex flex-col items-center justify-center min-h-[320px] sm:min-h-[460px] relative transition-colors duration-500">
+          
+          <!-- Top Tag & Canvas Switcher -->
+          <div class="w-full flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8 sm:mb-12">
+            <span id="stage-label-text" class="text-[11px] font-mono font-bold tracking-widest uppercase text-slate-400">
+              // MASTER LOGOTYPE • PURE ALPINE CANVAS
+            </span>
+
+            <!-- Canvas Switcher Pills -->
+            <div class="flex items-center gap-1 p-1 bg-slate-100/90 rounded-full border border-slate-200 text-xs font-bold self-start sm:self-auto">
+              <button onclick="switchStageCanvas('white')" id="btn-canvas-white" class="px-3.5 py-1 rounded-full bg-white text-slate-900 shadow-xs transition-all">Pure Light</button>
+              <button onclick="switchStageCanvas('sapphire')" id="btn-canvas-sapphire" class="px-3.5 py-1 rounded-full text-slate-600 hover:text-slate-900 transition-all">Sapphire</button>
+              <button onclick="switchStageCanvas('dark')" id="btn-canvas-dark" class="px-3.5 py-1 rounded-full text-slate-600 hover:text-slate-900 transition-all">Obsidian</button>
+            </div>
+          </div>
+
+          <!-- Hero Master Logo Visual -->
+          <div class="py-6 sm:py-10 flex items-center justify-center w-full max-w-2xl">
+            <img id="img-hero-logo" src="../assets/elevgro_final_fix.png" alt="ELEVGRO Master Logo" class="max-h-24 sm:max-h-36 w-auto object-contain transition-transform duration-300 transform hover:scale-105" />
+          </div>
+
+          <!-- Bottom Micro Spec Bar -->
+          <div class="w-full flex flex-col sm:flex-row items-center justify-between gap-3 mt-8 sm:mt-12 pt-4 border-t border-slate-100 text-[11px] font-mono text-slate-400">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[#48C15A]"></span>
+              <span>GROWTH NODE ('v' SPROUT)</span>
+            </div>
+            <div id="stage-hex-info">PRIMARY: #005BBD • ACCENT: #48C15A</div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- ASYMMETRICAL EDITORIAL BENTO GRID: BRAND FOUNDATIONS    -->
+    <!-- ======================================================= -->
+    <section class="space-y-6">
+      
+      <div class="border-l-2 border-[#005BBD] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#005BBD] uppercase">FOUNDATIONS &bull; GEOMETRY</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+          Anatomi Konstruksi &amp; Simbolisme
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        
+        <!-- Bento Card 1: The 45° Velocity Angle (Span 7) -->
+        <div class="md:col-span-7 bezel-shell p-6 sm:p-10 flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-[#005BBD] uppercase">THE 45° VELOCITY AXIS</span>
+              <span class="text-xs font-mono text-slate-400">ANATOMY 01</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900">
+              Tunas Tumbuh di Pucuk Huruf "v"
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Alih-alih menempatkan ikon yang terpisah jauh, aksen tunas hijau zamrud sengaja ditumbuhkan langsung dari cabang kanan huruf "v". Sudut 45 derajat adalah lambang universal momentum kemajuan (<em>forward acceleration</em>) dan kenaikan grafik performa bisnis.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-center">
+            <img src="../assets/elevgro_sprout_icon.png" alt="Sprout 45 Degree" class="max-h-28 object-contain" />
+          </div>
+        </div>
+
+        <!-- Bento Card 2: Standalone App Icon Launcher (Span 5) -->
+        <div class="md:col-span-5 bezel-shell p-6 sm:p-10 flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold text-[#059669] uppercase">STANDALONE 1:1 APP MARK</span>
+              <span class="text-xs font-mono text-slate-400">APPLICATIONS</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900">
+              Ikon Aplikasi &amp; Favicon
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Proporsi ikon mandiri dirancang presisi untuk App Icon iOS/Android launcher, smartwatch widget, dan avatar media sosial.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-4 rounded-2xl bg-white border border-slate-200 text-center space-y-2 shadow-xs">
+              <img src="../assets/elevgro_app_icon_light.png" alt="Light App Icon" class="w-16 h-16 mx-auto rounded-xl object-contain shadow-sm" />
+              <span class="text-[10px] font-mono text-slate-500 font-bold block">iOS / Android Light</span>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-center space-y-2 shadow-xs">
+              <img src="../assets/elevgro_app_icon_dark.png" alt="Dark App Icon" class="w-16 h-16 mx-auto rounded-xl object-contain shadow-sm" />
+              <span class="text-[10px] font-mono text-slate-400 font-bold block">Cobalt Pro Launcher</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 02: 3 BUSINESS PILLARS                          -->
+    <!-- ======================================================= -->
+    <section id="philosophy" class="space-y-8">
+      
+      <div class="border-l-2 border-[#005BBD] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#005BBD] uppercase">BRAND PURPOSE</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+          3 Pilar Filosofi ELEVGRO
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 font-mono">
+          "elevate &bull; grow &bull; help others"
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Pillar 1: Elevate -->
+        <div class="bezel-shell p-6 sm:p-8 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#005BBD] flex items-center justify-center font-bold">
+            <i data-lucide="trending-up" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 01</span>
+            <h3 class="text-lg font-extrabold text-slate-900">ELEVATE (Meningkatkan)</h3>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Tekad mengangkat standar kualitas bisnis, otomatisasi sistem operasional, dan efisiensi penjualan dari skala UMKM menuju level enterprise terdepan.
+          </p>
+        </div>
+
+        <!-- Pillar 2: Grow -->
+        <div class="bezel-shell p-6 sm:p-8 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-[#059669] flex items-center justify-center font-bold">
+            <i data-lucide="sprout" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 02</span>
+            <h3 class="text-lg font-extrabold text-slate-900">GROW (Bertumbuh)</h3>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Disimbolkan lewat tunas hijau zamrud yang mekar dari huruf 'v'. Melambangkan kesuburan usaha, kelancaran transaksi, dan omzet yang berkembang pesat.
+          </p>
+        </div>
+
+        <!-- Pillar 3: Help Others -->
+        <div class="bezel-shell p-6 sm:p-8 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold">
+            <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 03</span>
+            <h3 class="text-lg font-extrabold text-slate-900">HELP OTHERS (Bermanfaat)</h3>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Fondasi biru kobalt (#005BBD) mencerminkan nilai empati, integritas, dan komitmen membawa dampak positif nyata bagi sesama pelaku wirausaha.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 03: COLOR SCIENCE (70-20-10 PANTONE SYSTEM)     -->
+    <!-- ======================================================= -->
+    <section id="colors" class="space-y-8">
+      
+      <div class="border-l-2 border-[#005BBD] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#005BBD] uppercase">COLOR CALIBRATION</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+          Sistem Warna Pantone (70-20-10)
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 font-mono">
+          Klik pada setiap swatch untuk menyalin kode warna secara instan
+        </p>
+      </div>
+
+      <!-- Continuous Spectrum Visual -->
+      <div class="space-y-2">
+        <div class="flex justify-between text-xs font-mono text-slate-500 font-bold">
+          <span>Formula Distribusi Visual</span>
+          <span>70% Primary Blue &bull; 20% Accent Green &bull; 10% Dark Canvas</span>
+        </div>
+        <div class="h-3.5 rounded-full overflow-hidden flex shadow-inner border border-slate-200">
+          <div class="w-[70%] bg-[#005BBD]"></div>
+          <div class="w-[20%] bg-[#48C15A]"></div>
+          <div class="w-[10%] bg-[#070A10]"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Swatch 1: Cobalt Velocity Blue -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#005BBD', 'Cobalt Velocity Blue')">
+          <div class="h-28 rounded-2xl bg-[#005BBD] flex items-end justify-end p-3 text-white shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">70% PRIMARY COLOR</span>
+              <h4 class="text-sm font-bold text-slate-900">Cobalt Velocity Blue</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-[#005BBD]">#005BBD</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>0, 91, 189</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">PANTONE:</span><span>2144 C</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swatch 2: Growth Emerald Green -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#48C15A', 'Growth Emerald Green')">
+          <div class="h-28 rounded-2xl bg-[#48C15A] flex items-end justify-end p-3 text-white shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">20% ACCENT COLOR</span>
+              <h4 class="text-sm font-bold text-slate-900">Growth Emerald Green</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-[#059669]">#48C15A</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>72, 193, 90</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">PANTONE:</span><span>7488 C</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swatch 3: Obsidian Velvet -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#070A10', 'Obsidian Velvet')">
+          <div class="h-28 rounded-2xl bg-[#070A10] flex items-end justify-end p-3 text-white shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">10% CANVAS BASE</span>
+              <h4 class="text-sm font-bold text-slate-900">Obsidian Velvet</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-slate-900">#070A10</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>7, 10, 16</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">PANTONE:</span><span>Black 6 C</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swatch 4: Alpine Pure White -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#FFFFFF', 'Alpine Pure White')">
+          <div class="h-28 rounded-2xl bg-white border border-slate-200 flex items-end justify-end p-3 text-slate-700 shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">LIGHT SURFACE</span>
+              <h4 class="text-sm font-bold text-slate-900">Alpine Pure White</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-slate-600">#FFFFFF</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>255, 255, 255</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">PAPER:</span><span>Bright White</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 04: REAL-WORLD TOUCHPOINTS & APPLICATION        -->
+    <!-- ======================================================= -->
+    <section id="applications" class="space-y-8">
+      
+      <div class="border-l-2 border-[#005BBD] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#005BBD] uppercase">REAL-WORLD APPLICATION</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+          Penerapan Ekosistem Brand
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Application 1: Web & SaaS UI Navbar -->
+        <div class="bezel-shell p-6 sm:p-8 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <span class="text-xs font-mono font-bold text-[#005BBD] uppercase">01. WEB &amp; DASHBOARD HEADER</span>
+            <i data-lucide="globe" class="w-4 h-4 text-slate-400"></i>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200 bg-white p-4 flex items-center justify-between shadow-xs">
+            <img src="../assets/elevgro_final_fix.png" alt="Header Logo" class="h-6 sm:h-7 object-contain" />
+            <div class="hidden sm:flex items-center gap-5 text-xs font-bold text-slate-600">
+              <span>Fitur</span>
+              <span>Solusi</span>
+              <span>Harga</span>
+            </div>
+            <button class="px-4 py-1.5 rounded-full bg-[#005BBD] text-white text-xs font-bold shadow-xs">Mulai Gratis</button>
+          </div>
+
+          <p class="text-xs text-slate-600">
+            Logotype horizontal ELEVGRO memiliki keterbacaan sempurna di header website, navbar software POS/Kasir, dan aplikasi web.
+          </p>
+        </div>
+
+        <!-- Application 2: Corporate Stationery -->
+        <div class="bezel-shell p-6 sm:p-8 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <span class="text-xs font-mono font-bold text-[#059669] uppercase">02. KARTU NAMA &amp; STATIONERY</span>
+            <i data-lucide="credit-card" class="w-4 h-4 text-slate-400"></i>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div class="p-4 rounded-2xl bg-[#005BBD] text-white space-y-4 shadow-sm">
+              <img src="../assets/elevgro_final_white.png" alt="Front" class="h-4 sm:h-5 object-contain" />
+              <div>
+                <span class="text-xs font-bold block">Daru Fahmaa</span>
+                <span class="text-[10px] text-blue-200 block">Managing Director</span>
+              </div>
+            </div>
+            <div class="p-4 rounded-2xl bg-white border border-slate-200 space-y-4 shadow-sm">
+              <img src="../assets/elevgro_final_fix.png" alt="Back" class="h-4 sm:h-5 object-contain" />
+              <div class="text-[10px] text-slate-500 font-mono space-y-0.5">
+                <div>info@elevgro.com</div>
+                <div>+62 819 1999 200</div>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-600">
+            Kartu nama korporat 90x55mm dengan kontras warna tajam dan sentuhan spot UV doff.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 05: CLOSING & MASTER ASSET CONFIRMATION HUB     -->
+    <!-- ======================================================= -->
+    <section class="p-8 sm:p-14 rounded-[36px] bg-[#070A10] text-white border border-slate-800 shadow-2xl space-y-8">
+      
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-bold">
+          <i data-lucide="package-check" class="w-3.5 h-3.5"></i>
+          <span>MASTER FILE DELIVERY HUB</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+          Penyerahan Master File ELEVGRO
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+          Paket master file vektor asli resolusi tinggi telah siap diekspor dalam format standar industri percetakan dan software digital (.AI, .EPS, .SVG, .PDF, .PNG).
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 max-w-3xl mx-auto">
+        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1">
+          <div class="text-lg font-black text-[#005BBD]">.AI</div>
+          <span class="text-[10px] font-mono text-slate-400">Illustrator</span>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1">
+          <div class="text-lg font-black text-[#48C15A]">.EPS</div>
+          <span class="text-[10px] font-mono text-slate-400">Universal Vector</span>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1">
+          <div class="text-lg font-black text-blue-400">.SVG</div>
+          <span class="text-[10px] font-mono text-slate-400">Web Scalable</span>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1">
+          <div class="text-lg font-black text-red-400">.PDF</div>
+          <span class="text-[10px] font-mono text-slate-400">Print CMYK</span>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1 col-span-2 sm:col-span-1">
+          <div class="text-lg font-black text-emerald-400">.PNG</div>
+          <span class="text-[10px] font-mono text-slate-400">Transparan HD</span>
+        </div>
+      </div>
+
+      <div class="text-center pt-2">
+        <a href="https://wa.me/6281311506025?text=insyaAllah%20abang%20pilih%20desain%20logo%20final%20Elevgro%20ini.%20Mohon%20kirimkan%20master%20filenya%20ya%20Mas%20Daru." target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#059669] hover:bg-[#047857] text-white text-sm font-extrabold shadow-lg hover:shadow-xl transition-all active:scale-95">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Minta Link Master File via WhatsApp</span>
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ======================================================= -->
+  <!-- LUXURY FOOTER                                           -->
+  <!-- ======================================================= -->
+  <footer class="border-t border-slate-200 py-12 px-4 text-center text-xs font-mono text-slate-500 space-y-2 bg-white">
+    <p>&copy; 2026 <strong>ELEVGRO Visual Identity System</strong>. All rights reserved.</p>
+    <p class="text-[10px] text-slate-400 font-bold tracking-wider uppercase">
+      DIRECTED BY <strong class="text-[#005BBD]">DARU FAHMAA MULIAWAN</strong> &bull; SYMP STUDIO
+    </p>
+  </footer>
+
+  <!-- ======================================================= -->
+  <!-- INTERACTIVE LOGO STAGE CONTROLLER                       -->
   <!-- ======================================================= -->
   <script>
     lucide.createIcons();
 
-    function setRefCanvas(mode) {
-      const img = document.getElementById('ref-logo-display');
-      const bL = document.getElementById('ref-btn-light');
-      const bS = document.getElementById('ref-btn-sapphire');
-      const bD = document.getElementById('ref-btn-dark');
+    function switchStageCanvas(mode) {
+      const core = document.getElementById('master-stage-core');
+      const img = document.getElementById('img-hero-logo');
+      const label = document.getElementById('stage-label-text');
+      const bW = document.getElementById('btn-canvas-white');
+      const bS = document.getElementById('btn-canvas-sapphire');
+      const bD = document.getElementById('btn-canvas-dark');
 
-      bL.className = mode === 'light' ? 'flex-1 py-1 px-2 rounded-full bg-[#005BBD] text-white shadow-xs' : 'flex-1 py-1 px-2 rounded-full text-slate-600 hover:text-slate-900';
-      bS.className = mode === 'sapphire' ? 'flex-1 py-1 px-2 rounded-full bg-[#002552] text-white shadow-xs' : 'flex-1 py-1 px-2 rounded-full text-slate-600 hover:text-slate-900';
-      bD.className = mode === 'dark' ? 'flex-1 py-1 px-2 rounded-full bg-[#060D17] text-white shadow-xs' : 'flex-1 py-1 px-2 rounded-full text-slate-600 hover:text-slate-900';
+      bW.className = mode === 'white' ? 'px-3.5 py-1 rounded-full bg-white text-slate-900 shadow-xs transition-all' : 'px-3.5 py-1 rounded-full text-slate-600 hover:text-slate-900 transition-all';
+      bS.className = mode === 'sapphire' ? 'px-3.5 py-1 rounded-full bg-[#00204A] text-white shadow-xs transition-all' : 'px-3.5 py-1 rounded-full text-slate-600 hover:text-slate-900 transition-all';
+      bD.className = mode === 'dark' ? 'px-3.5 py-1 rounded-full bg-[#070A10] text-white shadow-xs transition-all' : 'px-3.5 py-1 rounded-full text-slate-600 hover:text-slate-900 transition-all';
 
-      const parentBox = img.parentElement;
-      if (mode === 'light') {
-        parentBox.style.backgroundColor = '#FFFFFF';
+      if (mode === 'white') {
+        core.style.backgroundColor = '#FFFFFF';
         img.src = '../assets/elevgro_final_fix.png';
+        label.innerText = '// MASTER LOGOTYPE • PURE ALPINE CANVAS';
+        label.className = 'text-[11px] font-mono font-bold tracking-widest uppercase text-slate-400';
       } else if (mode === 'sapphire') {
-        parentBox.style.backgroundColor = '#002552';
+        core.style.backgroundColor = '#00204A';
         img.src = '../assets/elevgro_final_white.png';
+        label.innerText = '// MASTER LOGOTYPE • SAPPHIRE CANVAS';
+        label.className = 'text-[11px] font-mono font-bold tracking-widest uppercase text-blue-300';
       } else if (mode === 'dark') {
-        parentBox.style.backgroundColor = '#060D17';
+        core.style.backgroundColor = '#070A10';
         img.src = '../assets/elevgro_final_white.png';
+        label.innerText = '// MASTER LOGOTYPE • OBSIDIAN VELVET CANVAS';
+        label.className = 'text-[11px] font-mono font-bold tracking-widest uppercase text-emerald-400';
       }
+    }
+
+    function copyColor(code, name) {
+      navigator.clipboard.writeText(code).then(() => {
+        const toast = document.createElement('div');
+        toast.className = 'fixed bottom-6 right-6 bg-[#070A10] text-white text-xs font-mono py-3 px-5 rounded-2xl shadow-2xl z-50 flex items-center gap-2 border border-white/20 animate-bounce';
+        toast.innerHTML = `<span class="w-2 h-2 rounded-full bg-emerald-400"></span> Kode <strong>${code}</strong> (${name}) berhasil disalin!`;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 2500);
+      });
     }
   </script>
 </body>
