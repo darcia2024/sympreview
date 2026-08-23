@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>ELEVGRO — Visual Identity & Brand System Proposal | SYMP Studio</title>
+  <title>ELEVGRO — Visual Identity & Official Brand Proposal | SYMP Studio</title>
   
   <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,7 +48,8 @@
   <style>
     :root {
       --elevgro-blue: #005BBD;
-      --elevgro-green: #059669;
+      --elevgro-green: #48C15A;
+      --elevgro-emerald: #059669;
       --ios-spring: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -113,25 +114,6 @@
         border-radius: 28px;
       }
     }
-
-    /* Redesigned Approval Option Cards */
-    .approval-choice-card {
-      background: #FFFFFF;
-      border-radius: 24px;
-      border: 1.5px solid #E2E8F0;
-      transition: all 0.35s var(--ios-spring);
-      position: relative;
-      overflow: hidden;
-    }
-    .approval-choice-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 35px -10px rgba(0, 91, 189, 0.12);
-    }
-    @media (min-width: 640px) {
-      .approval-choice-card {
-        border-radius: 30px;
-      }
-    }
   </style>
 </head>
 <body class="antialiased">
@@ -142,7 +124,7 @@
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-2xl border-b border-slate-200/80 px-3 sm:px-8 py-2.5 sm:py-3 transition-all">
     <div class="max-w-6xl mx-auto flex items-center justify-between gap-2 sm:gap-6">
       
-      <!-- Left Column: Prev Button & Home -->
+      <!-- Left Column: Home Portal -->
       <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
         <a href="/" class="p-1.5 sm:p-2 rounded-full text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors" title="Kembali ke Portal SYMP">
           <i data-lucide="home" class="w-4 h-4"></i>
@@ -155,9 +137,9 @@
 
       <!-- Center Column: Pill Segmented Switcher -->
       <div class="flex items-center p-1 bg-slate-100/90 rounded-full border border-slate-200/70 max-w-[280px] sm:max-w-xs w-full shadow-inner">
-        <button id="tab-slide-1" class="flex-1 py-1.5 px-2 sm:px-3 rounded-full text-[11px] sm:text-xs font-bold text-center transition-all bg-white text-emerald-800 shadow-sm flex items-center justify-center gap-1" onclick="goToSlide(1)">
-          <i data-lucide="compass" class="w-3.5 h-3.5 text-emerald-600 hidden xs:inline"></i>
-          <span>01. 2 Format Logo</span>
+        <button id="tab-slide-1" class="flex-1 py-1.5 px-2 sm:px-3 rounded-full text-[11px] sm:text-xs font-bold text-center transition-all bg-white text-[#005BBD] shadow-sm flex items-center justify-center gap-1" onclick="goToSlide(1)">
+          <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[#005BBD] hidden xs:inline"></i>
+          <span>01. Logo Final</span>
         </button>
         <button id="tab-slide-2" class="flex-1 py-1.5 px-2 sm:px-3 rounded-full text-[11px] sm:text-xs font-bold text-center transition-all text-slate-500 hover:text-slate-900 flex items-center justify-center gap-1" onclick="goToSlide(2)">
           <i data-lucide="book-open" class="w-3.5 h-3.5 hidden xs:inline"></i>
@@ -165,12 +147,14 @@
         </button>
       </div>
 
-      <!-- Right Column: Next Button -->
+      <!-- Right Column: Direct Link to Full Brand Guidelines -->
       <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
-        <button id="btn-next" class="px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-[#059669] hover:bg-[#047857] text-white text-[11px] sm:text-xs font-bold transition-all flex items-center gap-1 shadow-md hover:shadow-lg">
-          <span>Next</span>
-          <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
-        </button>
+        <a href="/elevgro/guidelines" class="px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-[#005BBD] hover:bg-blue-700 text-white text-[11px] sm:text-xs font-bold transition-all flex items-center gap-1.5 shadow-md hover:shadow-lg">
+          <i data-lucide="book-marked" class="w-3.5 h-3.5"></i>
+          <span class="hidden sm:inline">Brand Guidelines</span>
+          <span class="sm:hidden">Guidelines</span>
+          <i data-lucide="arrow-up-right" class="w-3 h-3 opacity-70"></i>
+        </a>
       </div>
 
     </div>
@@ -182,38 +166,39 @@
   <main class="max-w-6xl mx-auto px-3.5 sm:px-8 py-6 sm:py-16 space-y-12 sm:space-y-20">
 
     <!-- ======================================================= -->
-    <!-- SLIDE 01: 2 FORMAT LOGO, FILOSOFI & CLOSING HUB         -->
+    <!-- SLIDE 01: LOGO TERPILIH RESMI, FILOSOFI & CLOSING HUB   -->
     <!-- ======================================================= -->
-    <div id="slide-1" class="slide-section space-y-10 sm:space-y-20">
+    <div id="slide-1" class="slide-section space-y-10 sm:space-y-16">
       
-      <!-- HERO TITLE BLOCK (RESPONSIVE TYPOGRAPHY) -->
+      <!-- HERO TITLE BLOCK -->
       <div class="text-center space-y-3 sm:space-y-4 max-w-4xl mx-auto pt-1 sm:pt-2 px-1">
-        <p class="text-[10px] sm:text-sm font-mono font-bold tracking-wider text-slate-500 uppercase">
-          Logo Guide by SYMP Studio &bull; Design by Daru Fahmaa Muliawan
-        </p>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-[#059669] text-[11px] sm:text-xs font-mono font-bold">
+          <i data-lucide="check-check" class="w-3.5 h-3.5"></i>
+          <span>DESAIN RESMI TERPILIH &bull; FINAL IDENTITY CONFIRMED</span>
+        </div>
 
         <h1 class="text-3xl sm:text-6xl lg:text-7xl font-extrabold text-slate-950 tracking-tight leading-[1.12]">
-          Penawaran Eksklusif <br />
-          <span class="text-[#059669]">Konsep Identitas Logo</span>
+          Identitas Visual Resmi <br />
+          <span class="text-[#005BBD]">ELEVGRO System</span>
         </h1>
 
         <p class="text-xs sm:text-base text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto pt-1">
-          Eksplorasi 2 arah desain visual terbaik yang dirancang presisi untuk mengangkat wibawa brand, membangun trust instan di mata konsumen, dan siap mendominasi pasar.
+          Desain logo horizontal modern dengan aksen tunas elevasi pada huruf "v", dirancang presisi untuk membangun kredibilitas bisnis yang terpercaya dan bersahabat.
         </p>
       </div>
 
-      <!-- CANVAS & TOOL CONTROLS STRIP (CLEAN) -->
+      <!-- CANVAS & TOOL CONTROLS STRIP -->
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 border-b border-slate-200 pb-4 sm:pb-5">
         <div>
           <h2 class="text-lg sm:text-2xl font-extrabold text-slate-900 tracking-tight">
-            2 Format Logo Resmi ELEVGRO
+            Tampilan Master Logo ELEVGRO
           </h2>
           <p class="text-[11px] sm:text-xs text-slate-500 font-mono mt-0.5">
             "elevate &bull; grow &bull; help others"
           </p>
         </div>
 
-        <!-- Horizontal Swipeable Controls on Mobile -->
+        <!-- Controls on Mobile -->
         <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 w-full sm:w-auto flex-nowrap">
           
           <!-- Color Mode / Monochrome Switcher -->
@@ -242,89 +227,29 @@
         </div>
       </div>
 
-      <!-- 2-COLUMN SIDE-BY-SIDE COMPARISON (SEAMLESS CANVAS) -->
-      <div id="clean-main-wrapper" class="clean-stage-card p-4 sm:p-12 transition-all duration-500 relative">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 divide-y lg:divide-y-0 lg:divide-x divide-slate-200">
-          
-          <!-- Column 1: Stacked Wordmark -->
-          <div class="space-y-4 sm:space-y-6 flex flex-col justify-between pt-2 lg:pt-0">
-            <div class="space-y-4 sm:space-y-6">
-              
-              <!-- Clean Title Header -->
-              <div class="flex items-center justify-between">
-                <span id="tag-title-1" class="text-xs font-mono font-black text-[#005BBD] tracking-wider uppercase">
-                  STACKED WORDMARK
-                </span>
-                <span class="text-[10px] sm:text-xs font-mono text-slate-400 uppercase">TYPOGRAPHIC LOGOTYPE</span>
-              </div>
+      <!-- MAIN HERO LOGO SHOWCASE STAGE (SEAMLESS CARD) -->
+      <div id="clean-main-wrapper" class="clean-stage-card p-6 sm:p-14 transition-all duration-500 relative flex flex-col items-center justify-center min-h-[300px] sm:min-h-[420px] text-center space-y-6">
+        
+        <!-- Top Status Tag -->
+        <span id="canvas-tag-title" class="text-xs font-mono font-black text-[#005BBD] tracking-widest uppercase">
+          // OFFICIAL MASTER LOGOTYPE (LIGHT CANVAS)
+        </span>
 
-              <!-- Pure Seamless Logo Stage -->
-              <div class="flex items-center justify-center min-h-[220px] sm:min-h-[320px] py-2 sm:py-4">
-                <img id="img-opt-1" src="../assets/elevgro_logo1_full.png" alt="ELEVGRO Stacked Wordmark" class="max-h-44 sm:max-h-60 w-auto object-contain block transition-all duration-300 transform hover:scale-105" />
-              </div>
-
-              <!-- Description -->
-              <div class="space-y-1.5 sm:space-y-2">
-                <div class="flex items-center justify-between">
-                  <h3 id="title-opt-1" class="text-base sm:text-xl font-extrabold text-slate-900">
-                    Tipografi Bertumpuk (elev gro) &amp; Tunas Elevasi
-                  </h3>
-                  <i data-lucide="type" class="w-4 h-4 text-slate-400"></i>
-                </div>
-                <p id="desc-opt-1" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Komposisi tipografi 2 baris yang kompak, ramah, dan modern dengan aksen tunas hijau yang tumbuh langsung dari huruf "v". Sangat pas untuk App Icon smartphone, favicon browser, avatar sosmed, hingga stempel packaging.
-                </p>
-              </div>
-
-            </div>
-
-            <!-- Action Button: Opens Slide 2 Detail -->
-            <button onclick="goToSlide(2)" id="btn-opt-1" class="w-full py-2.5 sm:py-3 px-4 sm:px-5 rounded-xl sm:rounded-2xl bg-blue-50 hover:bg-blue-100 text-[#005BBD] text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-blue-200 mt-2">
-              <span>Baca Bedah Detail &amp; Anatomi</span>
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </button>
-          </div>
-
-          <!-- Column 2: Combination Mark -->
-          <div class="space-y-4 sm:space-y-6 flex flex-col justify-between pt-6 lg:pt-0 lg:pl-14">
-            <div class="space-y-4 sm:space-y-6">
-              
-              <!-- Clean Title Header -->
-              <div class="flex items-center justify-between">
-                <span id="tag-title-2" class="text-xs font-mono font-black text-[#059669] tracking-wider uppercase">
-                  COMBINATION MARK
-                </span>
-                <span class="text-[10px] sm:text-xs font-mono text-slate-400 uppercase">ICON + HORIZONTAL LOGOTYPE</span>
-              </div>
-
-              <!-- Pure Seamless Logo Stage -->
-              <div class="flex items-center justify-center min-h-[200px] sm:min-h-[320px] py-2 sm:py-4">
-                <img id="img-opt-2" src="../assets/elevgro_logo2_full.png" alt="ELEVGRO Combination Mark" class="max-h-16 sm:max-h-28 w-auto object-contain block transition-all duration-300 transform hover:scale-105" />
-              </div>
-
-              <!-- Description -->
-              <div class="space-y-1.5 sm:space-y-2">
-                <div class="flex items-center justify-between">
-                  <h3 id="title-opt-2" class="text-base sm:text-xl font-extrabold text-slate-900">
-                    Simbol Daun Panah &amp; Wordmark Horizontal
-                  </h3>
-                  <i data-lucide="leaf" class="w-4 h-4 text-slate-400"></i>
-                </div>
-                <p id="desc-opt-2" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Memadukan ikon mandiri berbentuk daun panah elevasi di sisi kiri dengan logotype horizontal "Elevgro". Memberikan fleksibilitas tinggi saat dipasang di header website/navbar, kop surat resmi, kartu nama, hingga neon box toko.
-                </p>
-              </div>
-
-            </div>
-
-            <!-- Action Button: Opens Slide 2 Detail -->
-            <button onclick="goToSlide(2)" id="btn-opt-2" class="w-full py-2.5 sm:py-3 px-4 sm:px-5 rounded-xl sm:rounded-2xl bg-emerald-50 hover:bg-emerald-100 text-[#059669] text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-emerald-200 mt-2">
-              <span>Baca Bedah Detail &amp; Anatomi</span>
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </button>
-          </div>
-
+        <!-- Logo Visual Display -->
+        <div class="py-6 sm:py-10 flex items-center justify-center w-full max-w-2xl">
+          <img id="img-master-logo" src="../assets/elevgro_final_fix.png" alt="ELEVGRO Master Logo" class="max-h-24 sm:max-h-36 w-auto object-contain transition-all duration-300 transform hover:scale-105" />
         </div>
+
+        <!-- Description Bar -->
+        <div class="max-w-xl space-y-2">
+          <h3 id="canvas-heading-title" class="text-lg sm:text-2xl font-extrabold text-slate-900">
+            Horizontal Logotype dengan Tunas Elevasi ('v')
+          </h3>
+          <p id="canvas-desc-text" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Perpaduan tipografi solid bernuansa modern dengan tunas hijau yang melesat ke atas pada sudut 45 derajat. Memberikan fleksibilitas maksimum di website, aplikasi kasir/POS, kartu nama, hingga neon box toko.
+          </p>
+        </div>
+
       </div>
 
       <!-- 3 PILAR FILOSOFI (CLEAN EDITORIAL SECTIONS) -->
@@ -347,14 +272,14 @@
             </div>
             <h3 class="text-base sm:text-lg font-extrabold text-slate-900">01. ELEVATE</h3>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Geometri panah ke atas yang menyatu dengan aksen tunas melambangkan tekad mengangkat standar, efisiensi, dan mutu bisnis dari biasa menjadi luar biasa di puncak industri.
+              Geometri tunas yang meluncur ke kanan atas melambangkan tekad mengangkat standar, efisiensi, dan mutu bisnis dari biasa menjadi luar biasa di puncak industri.
             </p>
           </div>
 
           <!-- Pilar 2 -->
           <div class="space-y-2.5 sm:space-y-3 pt-1">
             <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-emerald-50 text-[#059669] flex items-center justify-center font-bold">
-              <i data-lucide="leaf" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+              <i data-lucide="sprout" class="w-5 h-5 sm:w-6 sm:h-6"></i>
             </div>
             <h3 class="text-base sm:text-lg font-extrabold text-slate-900">02. GROW</h3>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -377,89 +302,51 @@
       </div>
 
       <!-- ======================================================= -->
-      <!-- REDESIGNED SLEEK CLOSING & APPROVAL HUB                -->
+      <!-- ACTION HUB: BRAND GUIDELINES & MASTER FILE DELIVERY     -->
       <!-- ======================================================= -->
-      <div class="pt-6 sm:pt-10">
+      <div class="p-6 sm:p-12 rounded-[28px] sm:rounded-[36px] bg-gradient-to-br from-slate-900 via-[#060D17] to-slate-950 text-white border border-slate-800 shadow-2xl space-y-6 sm:space-y-8">
         
-        <!-- Header text for approval -->
-        <div class="text-center space-y-2 max-w-2xl mx-auto mb-8 sm:mb-12">
-          <p class="text-xs font-mono font-bold tracking-widest text-[#059669] uppercase">
-            // KEPUTUSAN RESMI KLIEN
-          </p>
-          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">
-            Pilih Format Logo Resmi Elevgro
-          </h2>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Pilih opsi favorit Anda di bawah untuk mengonfirmasi pilihan dan melanjutkan ke penyerahan paket master file lengkap (SVG, AI, PDF, EPS, PNG High-Res).
+        <div class="text-center space-y-2 max-w-xl mx-auto">
+          <span class="text-[10px] sm:text-xs font-mono font-bold text-emerald-400 uppercase tracking-widest">// BRAND SYSTEM &amp; MASTER ASSETS</span>
+          <h3 class="text-xl sm:text-4xl font-extrabold tracking-tight">
+            Panduan Brand &amp; Master File Siap Digunakan
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-400">
+            Buka halaman Brand Guidelines lengkap untuk standar aturan desain, atau hubungi kami langsung untuk penyerahan paket file vektor asli (AI, EPS, SVG, PDF, PNG).
           </p>
         </div>
 
-        <!-- 2 Clean White Cards Side-by-Side (Mobile Optimized) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto">
           
-          <!-- Choice Card 1: Stacked Wordmark -->
-          <div class="approval-choice-card p-6 sm:p-8 flex flex-col justify-between space-y-6 hover:border-[#005BBD] group">
-            <div class="space-y-4">
-              <!-- Top Label Tag -->
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-mono font-black text-[#005BBD] tracking-wider uppercase">
-                  OPSI 01
-                </span>
-                <span class="text-[10px] font-mono text-slate-400 font-bold uppercase">STACKED WORDMARK</span>
-              </div>
-
-              <!-- Clean Logo Showcase -->
-              <div class="h-32 sm:h-36 flex items-center justify-center py-2">
-                <img src="../assets/elevgro_logo1_full.png" alt="Varian 01" class="max-h-28 sm:max-h-32 object-contain group-hover:scale-105 transition-transform duration-300" />
-              </div>
-
-              <!-- Title & Spec -->
-              <div class="space-y-1 text-center sm:text-left">
-                <h3 class="text-base sm:text-lg font-bold text-slate-900">Varian 01: Stacked Wordmark</h3>
-                <p class="text-xs text-slate-500 leading-relaxed">
-                  Tipografi bertumpuk 2 baris (<em>elev gro</em>) dengan tunas hijau di huruf 'v'. Ideal untuk App Icon &amp; avatar sosmed.
-                </p>
-              </div>
+          <!-- Card 1: Open Guidelines -->
+          <a href="/elevgro/guidelines" class="p-6 rounded-3xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#005BBD] transition-all space-y-4 text-center group">
+            <div class="w-12 h-12 mx-auto rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <i data-lucide="book-marked" class="w-6 h-6"></i>
             </div>
-
-            <!-- WhatsApp Action Button 1 -->
-            <a href="https://wa.me/6281311506025?text=insyaAllah%20abang%20pilih%20nomor%2001%20(Stacked%20Wordmark)" target="_blank" class="w-full py-3 sm:py-3.5 px-5 rounded-2xl bg-[#005BBD] hover:bg-blue-700 text-white text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg active:scale-[0.98]">
-              <i data-lucide="check" class="w-4 h-4"></i>
-              <span>Pilih Varian 01 via WhatsApp</span>
-            </a>
-          </div>
-
-          <!-- Choice Card 2: Combination Mark -->
-          <div class="approval-choice-card p-6 sm:p-8 flex flex-col justify-between space-y-6 hover:border-[#059669] group">
-            <div class="space-y-4">
-              <!-- Top Label Tag -->
-              <div class="flex items-center justify-between">
-                <span class="text-xs font-mono font-black text-[#059669] tracking-wider uppercase">
-                  OPSI 02
-                </span>
-                <span class="text-[10px] font-mono text-slate-400 font-bold uppercase">COMBINATION MARK</span>
-              </div>
-
-              <!-- Clean Logo Showcase -->
-              <div class="h-32 sm:h-36 flex items-center justify-center py-2">
-                <img src="../assets/elevgro_logo2_full.png" alt="Varian 02" class="max-h-14 sm:max-h-16 object-contain group-hover:scale-105 transition-transform duration-300" />
-              </div>
-
-              <!-- Title & Spec -->
-              <div class="space-y-1 text-center sm:text-left">
-                <h3 class="text-base sm:text-lg font-bold text-slate-900">Varian 02: Combination Mark</h3>
-                <p class="text-xs text-slate-500 leading-relaxed">
-                  Ikon mandiri daun panah elevasi + logotype horizontal "Elevgro". Ideal untuk navbar website &amp; kop surat resmi.
-                </p>
-              </div>
+            <div>
+              <h4 class="text-base font-bold text-white">Buku Brand Guidelines Lengkap</h4>
+              <p class="text-xs text-slate-400 mt-1">Panduan zona aman, warna Pantone, font, &amp; mockup</p>
             </div>
+            <div class="py-2.5 px-4 rounded-xl bg-[#005BBD] text-white text-xs font-extrabold flex items-center justify-center gap-1.5 shadow-md">
+              <span>Buka Brand Guidelines</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </div>
+          </a>
 
-            <!-- WhatsApp Action Button 2 -->
-            <a href="https://wa.me/6281311506025?text=insyaAllah%20abang%20pilih%20nomor%2002%20(Combination%20Mark)" target="_blank" class="w-full py-3 sm:py-3.5 px-5 rounded-2xl bg-[#059669] hover:bg-[#047857] text-white text-xs font-bold transition-all flex items-center justify-center gap-2 shadow-md hover:shadow-lg active:scale-[0.98]">
-              <i data-lucide="check" class="w-4 h-4"></i>
-              <span>Pilih Varian 02 via WhatsApp</span>
-            </a>
-          </div>
+          <!-- Card 2: WhatsApp Master File Delivery -->
+          <a href="https://wa.me/6281311506025?text=insyaAllah%20abang%20pilih%20desain%20logo%20final%20Elevgro%20ini.%20Mohon%20kirimkan%20master%20filenya%20ya%20Mas%20Daru." target="_blank" class="p-6 rounded-3xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#059669] transition-all space-y-4 text-center group">
+            <div class="w-12 h-12 mx-auto rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <i data-lucide="check-circle" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white">Konfirmasi Master File via WA</h4>
+              <p class="text-xs text-slate-400 mt-1">Kirim pesan persetujuan resmi ke Mas Daru (SYMP)</p>
+            </div>
+            <div class="py-2.5 px-4 rounded-xl bg-[#059669] text-white text-xs font-extrabold flex items-center justify-center gap-1.5 shadow-md">
+              <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+              <span>Konfirmasi via WhatsApp</span>
+            </div>
+          </a>
 
         </div>
 
@@ -468,120 +355,27 @@
     </div>
 
     <!-- ======================================================= -->
-    <!-- SLIDE 02: PENJELASAN RINCI, DETAIL & ANATOMI VISUAL     -->
+    <!-- SLIDE 02: BEDAH DETAIL ANATOMI & SISTEM WARNA           -->
     <!-- ======================================================= -->
     <div id="slide-2" class="slide-section space-y-12 sm:space-y-20 hidden">
       
       <!-- Section Header -->
       <div class="text-center space-y-3 sm:space-y-4 max-w-3xl mx-auto pt-2">
         <p class="text-xs font-mono font-bold tracking-widest text-[#005BBD] uppercase">
-          // BEDAH ANATOMI &amp; PANDUAN LENGKAP
+          // BEDAH ANATOMI &amp; PANDUAN CEPAT
         </p>
         <h2 class="text-3xl sm:text-5xl font-extrabold text-slate-950 tracking-tight">
-          Penjelasan Rinci Sistem Identitas ELEVGRO
+          Bedah Detail Identitas ELEVGRO
         </h2>
         <p class="text-xs sm:text-base text-slate-600 leading-relaxed">
-          Ulasan mendalam mengenai struktur visual, rasio warna, tipografi resmi, dan panduan penggunaan praktis di berbagai skenario bisnis.
+          Ulasan struktur visual, rasio warna Pantone, tipografi resmi, serta tombol akses langsung ke Buku Brand Guidelines lengkap.
         </p>
       </div>
 
-      <!-- BAB 01: PANDUAN PENGGUNAAN 2 FORMAT (KAPAN PAKAI VARIAN 1 VS VARIAN 2) -->
+      <!-- BAB 01: ANATOMI SIMBOL & STRUKTUR MAKNA GEOMETRIS -->
       <div class="space-y-6">
         <div class="border-l-2 border-[#005BBD] pl-3 sm:pl-4">
           <span class="text-[10px] font-mono text-[#005BBD] uppercase font-black">BAB 01</span>
-          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-0.5">Panduan Penggunaan: Varian 01 vs Varian 02</h3>
-          <p class="text-xs text-slate-500 font-mono">Fleksibilitas penempatan pada media digital dan media fisik</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          
-          <!-- Guide 1: Stacked Wordmark -->
-          <div class="editorial-card p-6 sm:p-8 space-y-6">
-            <div class="flex items-center justify-between border-b border-slate-100 pb-4">
-              <div>
-                <span class="text-xs font-mono font-bold text-[#005BBD]">FORMAT VERTIKAL 1:1</span>
-                <h4 class="text-lg font-bold text-slate-900">Varian 01 &bull; Stacked Wordmark</h4>
-              </div>
-              <div class="w-10 h-10 rounded-2xl bg-blue-50 text-[#005BBD] flex items-center justify-center font-bold">
-                <i data-lucide="smartphone" class="w-5 h-5"></i>
-              </div>
-            </div>
-
-            <div class="space-y-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
-              <p>
-                <strong>Karakter Utama:</strong> Memiliki fokus vertikal yang padat, ramah, dan mudah dikenali dalam ruang berbentuk persegi atau lingkaran.
-              </p>
-              <div class="space-y-2 pt-2">
-                <div class="font-bold text-slate-900 text-xs font-mono uppercase">REKOMENDASI PENGGUNAAN:</div>
-                <ul class="space-y-1.5 text-xs text-slate-600">
-                  <li class="flex items-start gap-2">
-                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#005BBD] flex-shrink-0 mt-0.5"></i>
-                    <span><strong>App Icon Smartphone</strong> (iOS &amp; Android Launcher)</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#005BBD] flex-shrink-0 mt-0.5"></i>
-                    <span><strong>Avatar Profil Media Sosial</strong> (Instagram, WhatsApp Business, TikTok)</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#005BBD] flex-shrink-0 mt-0.5"></i>
-                    <span><strong>Favicon Web Browser</strong> &amp; Smartwatch Widget</span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#005BBD] flex-shrink-0 mt-0.5"></i>
-                    <span><strong>Stempel Packaging &amp; Label Dus</strong> kemasan produk</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- Guide 2: Combination Mark -->
-          <div class="editorial-card p-6 sm:p-8 space-y-6">
-            <div class="flex items-center justify-between border-b border-slate-100 pb-4">
-              <div>
-                <span class="text-xs font-mono font-bold text-[#059669]">FORMAT HORIZONTAL MELEBAR</span>
-                <h4 class="text-lg font-bold text-slate-900">Varian 02 &bull; Combination Mark</h4>
-              </div>
-              <div class="w-10 h-10 rounded-2xl bg-emerald-50 text-[#059669] flex items-center justify-center font-bold">
-                <i data-lucide="layout" class="w-5 h-5"></i>
-              </div>
-            </div>
-
-            <div class="space-y-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
-              <p>
-                <strong>Karakter Utama:</strong> Memiliki orientasi horizontal yang luwes, formal, dan berwibawa untuk tata letak dokumen atau header layar lebar.
-              </p>
-              <div class="space-y-2 pt-2">
-                <div class="font-bold text-slate-900 text-xs font-mono uppercase">REKOMENDASI PENGGUNAAN:</div>
-                <ul class="space-y-1.5 text-xs text-slate-600">
-                  <li class="flex items-start gap-2">
-                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#059669] flex-shrink-0 mt-0.5"></i>
-                    <span><strong>Header Website &amp; Navbar Dashboard SaaS</strong></span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#059669] flex-shrink-0 mt-0.5"></i>
-                    <span><strong>Kop Surat Resmi, Invoice, &amp; Proposal Bisnis</strong></span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#059669] flex-shrink-0 mt-0.5"></i>
-                    <span><strong>Kartu Nama Bisnis &amp; ID Card Lanyard Karyawan</strong></span>
-                  </li>
-                  <li class="flex items-start gap-2">
-                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#059669] flex-shrink-0 mt-0.5"></i>
-                    <span><strong>Papan Signage Neon Box Toko &amp; Billboard Jalan</strong></span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- BAB 02: ANATOMI SIMBOL & STRUKTUR MAKNA GEOMETRIS -->
-      <div class="space-y-6">
-        <div class="border-l-2 border-[#005BBD] pl-3 sm:pl-4">
-          <span class="text-[10px] font-mono text-[#005BBD] uppercase font-black">BAB 02</span>
           <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-0.5">Bedah Anatomi Simbol &amp; Geometri</h3>
           <p class="text-xs text-slate-500 font-mono">Detail elemen visual yang membentuk kekuatan identitas</p>
         </div>
@@ -624,25 +418,12 @@
         </div>
       </div>
 
-      <!-- BAB 03: SISTEM WARNA PANTONE & KALIBRASI RASIO -->
+      <!-- BAB 02: SISTEM WARNA PANTONE & KALIBRASI RASIO -->
       <div class="space-y-6">
         <div class="border-l-2 border-[#005BBD] pl-3 sm:pl-4">
-          <span class="text-[10px] font-mono text-[#005BBD] uppercase font-black">BAB 03</span>
+          <span class="text-[10px] font-mono text-[#005BBD] uppercase font-black">BAB 02</span>
           <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-0.5">Sistem Warna &amp; Rasio Harmoni Visual</h3>
           <p class="text-xs text-slate-500 font-mono">Formula 70% Primary Blue, 20% Growth Green, 10% Dark Velvet</p>
-        </div>
-
-        <!-- Continuous Spectrum -->
-        <div class="space-y-1.5 sm:space-y-2">
-          <div class="flex justify-between text-[11px] sm:text-xs font-mono text-slate-500 font-bold">
-            <span>Rasio Distribusi Visual</span>
-            <span>70% Blue &bull; 20% Green &bull; 10% Dark Canvas</span>
-          </div>
-          <div class="h-3 sm:h-3.5 rounded-full overflow-hidden flex shadow-inner border border-slate-200">
-            <div class="w-[70%] bg-[#005BBD]"></div>
-            <div class="w-[20%] bg-[#48C15A]"></div>
-            <div class="w-[10%] bg-[#060D17]"></div>
-          </div>
         </div>
 
         <!-- 4 Pantone Swatches with 1-Tap Copy -->
@@ -667,7 +448,7 @@
             </div>
             <div>
               <span class="text-[9px] sm:text-xs font-mono text-slate-400 block uppercase">20% ACCENT</span>
-              <span class="text-xs sm:text-sm font-extrabold text-slate-900 block truncate">Growth Emerald (Majoo)</span>
+              <span class="text-xs sm:text-sm font-extrabold text-slate-900 block truncate">Growth Emerald</span>
               <span class="text-xs font-mono font-black text-[#48C15A]">#48C15A</span>
             </div>
           </div>
@@ -699,10 +480,10 @@
         </div>
       </div>
 
-      <!-- BAB 04: TIPOGRAFI RESMI & TYPE TESTER -->
+      <!-- BAB 03: TIPOGRAFI RESMI & TYPE TESTER -->
       <div class="space-y-6">
         <div class="border-l-2 border-[#005BBD] pl-3 sm:pl-4">
-          <span class="text-[10px] font-mono text-[#005BBD] uppercase font-black">BAB 04</span>
+          <span class="text-[10px] font-mono text-[#005BBD] uppercase font-black">BAB 03</span>
           <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-0.5">Tipografi Resmi: Plus Jakarta Sans</h3>
           <p class="text-xs text-slate-500 font-mono">Font modern berkarakter geometris dengan keterbacaan tinggi di segala ukuran</p>
         </div>
@@ -772,7 +553,7 @@
           gsap.fromTo(s1, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" });
         }});
 
-        t1.className = 'flex-1 py-1.5 px-2 sm:px-3 rounded-full text-[11px] sm:text-xs font-bold text-center transition-all bg-white text-emerald-800 shadow-sm flex items-center justify-center gap-1';
+        t1.className = 'flex-1 py-1.5 px-2 sm:px-3 rounded-full text-[11px] sm:text-xs font-bold text-center transition-all bg-white text-[#005BBD] shadow-sm flex items-center justify-center gap-1';
         t2.className = 'flex-1 py-1.5 px-2 sm:px-3 rounded-full text-[11px] sm:text-xs font-bold text-center transition-all text-slate-500 hover:text-slate-900 flex items-center justify-center gap-1';
       } else {
         currentSlide = 2;
@@ -782,7 +563,7 @@
           gsap.fromTo(s2, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" });
         }});
 
-        t2.className = 'flex-1 py-1.5 px-2 sm:px-3 rounded-full text-[11px] sm:text-xs font-bold text-center transition-all bg-white text-emerald-800 shadow-sm flex items-center justify-center gap-1';
+        t2.className = 'flex-1 py-1.5 px-2 sm:px-3 rounded-full text-[11px] sm:text-xs font-bold text-center transition-all bg-white text-[#005BBD] shadow-sm flex items-center justify-center gap-1';
         t1.className = 'flex-1 py-1.5 px-2 sm:px-3 rounded-full text-[11px] sm:text-xs font-bold text-center transition-all text-slate-500 hover:text-slate-900 flex items-center justify-center gap-1';
       }
 
@@ -790,26 +571,22 @@
     }
 
     document.getElementById('btn-prev').addEventListener('click', () => goToSlide(1));
-    document.getElementById('btn-next').addEventListener('click', () => goToSlide(2));
 
     // Toggle Color Mode / Monochrome
     function setColorMode(mode) {
       currentColorMode = mode;
       const bColor = document.getElementById('btn-mode-color');
       const bMono = document.getElementById('btn-mode-mono');
-      const img1 = document.getElementById('img-opt-1');
-      const img2 = document.getElementById('img-opt-2');
+      const img = document.getElementById('img-master-logo');
 
       if (mode === 'color') {
         bColor.className = 'px-2.5 sm:px-3 py-1 rounded-full bg-white text-slate-900 shadow-sm transition-all';
         bMono.className = 'px-2.5 sm:px-3 py-1 rounded-full text-slate-600 hover:text-slate-900 transition-all';
-        img1.style.filter = 'none';
-        img2.style.filter = 'none';
+        img.style.filter = 'none';
       } else {
         bMono.className = 'px-2.5 sm:px-3 py-1 rounded-full bg-white text-slate-900 shadow-sm transition-all';
         bColor.className = 'px-2.5 sm:px-3 py-1 rounded-full text-slate-600 hover:text-slate-900 transition-all';
-        img1.style.filter = 'grayscale(100%) contrast(200%)';
-        img2.style.filter = 'grayscale(100%) contrast(200%)';
+        img.style.filter = 'grayscale(100%) contrast(200%)';
       }
     }
 
@@ -817,20 +594,14 @@
     function setCleanCanvas(c) {
       currentCanvas = c;
       const wrapper = document.getElementById('clean-main-wrapper');
-      const img1 = document.getElementById('img-opt-1');
-      const img2 = document.getElementById('img-opt-2');
-
-      const title1 = document.getElementById('title-opt-1');
-      const title2 = document.getElementById('title-opt-2');
-      const desc1 = document.getElementById('desc-opt-1');
-      const desc2 = document.getElementById('desc-opt-2');
+      const img = document.getElementById('img-master-logo');
+      const tag = document.getElementById('canvas-tag-title');
+      const heading = document.getElementById('canvas-heading-title');
+      const desc = document.getElementById('canvas-desc-text');
 
       const btnL = document.getElementById('btn-canvas-light');
       const btnS = document.getElementById('btn-canvas-sapphire');
       const btnO = document.getElementById('btn-canvas-obsidian');
-
-      const btnOpt1 = document.getElementById('btn-opt-1');
-      const btnOpt2 = document.getElementById('btn-opt-2');
 
       btnL.className = c === 'light' ? 'px-2.5 sm:px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-bold bg-white text-slate-900 shadow-sm transition-all' : 'px-2.5 sm:px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-bold text-slate-600 hover:text-slate-900 transition-all';
       btnS.className = c === 'sapphire' ? 'px-2.5 sm:px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-bold bg-[#002552] text-white shadow-sm transition-all' : 'px-2.5 sm:px-3.5 py-1 rounded-full text-[11px] sm:text-xs font-bold text-slate-600 hover:text-slate-900 transition-all';
@@ -839,45 +610,27 @@
       if (c === 'light') {
         wrapper.style.backgroundColor = '#FFFFFF';
         wrapper.style.borderColor = '#E2E8F0';
-
-        img1.src = '../assets/elevgro_logo1_full.png';
-        img2.src = '../assets/elevgro_logo2_full.png';
-
-        title1.className = 'text-base sm:text-xl font-extrabold text-slate-900';
-        title2.className = 'text-base sm:text-xl font-extrabold text-slate-900';
-        desc1.className = 'text-xs sm:text-sm text-slate-600 leading-relaxed';
-        desc2.className = 'text-xs sm:text-sm text-slate-600 leading-relaxed';
-
-        btnOpt1.className = 'w-full py-2.5 sm:py-3 px-4 sm:px-5 rounded-xl sm:rounded-2xl bg-blue-50 hover:bg-blue-100 text-[#005BBD] text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-blue-200 mt-2';
-        btnOpt2.className = 'w-full py-2.5 sm:py-3 px-4 sm:px-5 rounded-xl sm:rounded-2xl bg-emerald-50 hover:bg-emerald-100 text-[#059669] text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-emerald-200 mt-2';
+        img.src = '../assets/elevgro_final_fix.png';
+        tag.innerText = '// OFFICIAL MASTER LOGOTYPE (LIGHT CANVAS)';
+        tag.className = 'text-xs font-mono font-black text-[#005BBD] tracking-widest uppercase';
+        heading.className = 'text-lg sm:text-2xl font-extrabold text-slate-900';
+        desc.className = 'text-xs sm:text-sm text-slate-600 leading-relaxed';
       } else if (c === 'sapphire') {
         wrapper.style.backgroundColor = '#002552';
         wrapper.style.borderColor = 'rgba(0, 91, 189, 0.4)';
-
-        img1.src = '../assets/elevgro_logo1_white.png';
-        img2.src = '../assets/elevgro_logo2_white.png';
-
-        title1.className = 'text-base sm:text-xl font-extrabold text-white';
-        title2.className = 'text-base sm:text-xl font-extrabold text-white';
-        desc1.className = 'text-xs sm:text-sm text-slate-300 leading-relaxed';
-        desc2.className = 'text-xs sm:text-sm text-slate-300 leading-relaxed';
-
-        btnOpt1.className = 'w-full py-2.5 sm:py-3 px-4 sm:px-5 rounded-xl sm:rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-white/20 mt-2';
-        btnOpt2.className = 'w-full py-2.5 sm:py-3 px-4 sm:px-5 rounded-xl sm:rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-white/20 mt-2';
+        img.src = '../assets/elevgro_final_white.png';
+        tag.innerText = '// REVERSE WHITE LOGOTYPE (SAPPHIRE CANVAS)';
+        tag.className = 'text-xs font-mono font-black text-emerald-400 tracking-widest uppercase';
+        heading.className = 'text-lg sm:text-2xl font-extrabold text-white';
+        desc.className = 'text-xs sm:text-sm text-slate-300 leading-relaxed';
       } else if (c === 'obsidian') {
         wrapper.style.backgroundColor = '#060D17';
         wrapper.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-
-        img1.src = '../assets/elevgro_logo1_white.png';
-        img2.src = '../assets/elevgro_logo2_white.png';
-
-        title1.className = 'text-base sm:text-xl font-extrabold text-white';
-        title2.className = 'text-base sm:text-xl font-extrabold text-white';
-        desc1.className = 'text-xs sm:text-sm text-slate-300 leading-relaxed';
-        desc2.className = 'text-xs sm:text-sm text-slate-300 leading-relaxed';
-
-        btnOpt1.className = 'w-full py-2.5 sm:py-3 px-4 sm:px-5 rounded-xl sm:rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-white/20 mt-2';
-        btnOpt2.className = 'w-full py-2.5 sm:py-3 px-4 sm:px-5 rounded-xl sm:rounded-2xl bg-white/10 hover:bg-white/20 text-white text-xs font-extrabold transition-all flex items-center justify-center gap-2 border border-white/20 mt-2';
+        img.src = '../assets/elevgro_final_white.png';
+        tag.innerText = '// REVERSE WHITE LOGOTYPE (OBSIDIAN DARK CANVAS)';
+        tag.className = 'text-xs font-mono font-black text-emerald-400 tracking-widest uppercase';
+        heading.className = 'text-lg sm:text-2xl font-extrabold text-white';
+        desc.className = 'text-xs sm:text-sm text-slate-300 leading-relaxed';
       }
     }
 
