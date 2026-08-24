@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>KOLOHAGA — Official Brand Guidelines & Design System | SYMP Studio</title>
+  
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            kol: {
+              forest: '#0B573C',
+              forestDark: '#073B28',
+              forestDeep: '#042418',
+              emerald: '#059B66',
+              emeraldLight: '#10B981',
+              gold: '#F0BE3E',
+              goldDark: '#D99B16',
+              slate: '#0F172A',
+              cream: '#FCFDFC'
+            }
+          },
+          fontFamily: {
+            jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    :root {
+      --kol-forest: #0B573C;
+      --kol-emerald: #059B66;
+      --kol-gold: #F0BE3E;
+      --kol-slate: #0F172A;
+      --agency-spring: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F8FAF8;
+      color: #0F172A;
+      overflow-x: hidden;
+      letter-spacing: -0.025em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Double-Bezel Hardware Architecture */
+    .bezel-shell {
+      background: #FFFFFF;
+      border: 1px solid #E2E8E2;
+      border-radius: 28px;
+      box-shadow: 0 4px 24px -6px rgba(11, 87, 60, 0.04);
+      transition: all 0.4s var(--agency-spring);
+    }
+    @media (min-width: 640px) {
+      .bezel-shell {
+        border-radius: 32px;
+      }
+    }
+    .bezel-shell:hover {
+      box-shadow: 0 20px 48px -12px rgba(11, 87, 60, 0.12);
+      border-color: rgba(5, 155, 102, 0.3);
+    }
+
+    .swatch-box {
+      border-radius: 20px;
+      border: 1px solid #E2E8E2;
+      transition: all 0.3s var(--agency-spring);
+      cursor: pointer;
+    }
+    .swatch-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px -6px rgba(11, 87, 60, 0.15);
+      border-color: #059B66;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="selection:bg-[#059B66] selection:text-white">
+
+  <!-- ======================================================= -->
+  <!-- FLOATING EDITORIAL TOP BAR                              -->
+  <!-- ======================================================= -->
+  <header class="sticky top-0 z-50 bg-[#F8FAF8]/90 backdrop-blur-xl border-b border-emerald-950/10 px-4 sm:px-8 py-3.5 transition-all">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      
+      <!-- Back to Proposal & Home -->
+      <div class="flex items-center gap-3">
+        <a href="../kolohaga" class="px-3.5 py-1.5 rounded-full border border-stone-200 text-xs font-bold text-slate-700 hover:bg-white transition-all flex items-center gap-1.5 shadow-xs">
+          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+          <span>Proposal Logo</span>
+        </a>
+        <div class="w-2 h-2 rounded-full bg-emerald-300"></div>
+        <span class="text-xs font-mono font-bold text-[#059B66]">KOLOHAGA GUIDELINES V1.0</span>
+      </div>
+
+      <!-- Center Anchor Tabs -->
+      <nav class="hidden md:flex items-center gap-1 p-1 bg-white rounded-full border border-emerald-950/10 shadow-xs text-xs font-bold text-slate-600">
+        <a href="#section-story" class="px-3 py-1 rounded-full hover:text-emerald-950 hover:bg-emerald-50 transition-all">01. Filosofi</a>
+        <a href="#section-logo" class="px-3 py-1 rounded-full hover:text-emerald-950 hover:bg-emerald-50 transition-all">02. Master Logo</a>
+        <a href="#section-colors" class="px-3 py-1 rounded-full hover:text-emerald-950 hover:bg-emerald-50 transition-all">03. Warna</a>
+        <a href="#section-typography" class="px-3 py-1 rounded-full hover:text-emerald-950 hover:bg-emerald-50 transition-all">04. Tipografi</a>
+        <a href="#section-applications" class="px-3 py-1 rounded-full hover:text-emerald-950 hover:bg-emerald-50 transition-all">05. Aplikasi</a>
+        <a href="#section-donts" class="px-3 py-1 rounded-full hover:text-emerald-950 hover:bg-emerald-50 transition-all">06. Larangan</a>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20telah%20meninjau%20Brand%20Guidelines%20resmi%20Kolohaga" target="_blank" class="px-4 py-2 rounded-full bg-[#059B66] hover:bg-[#0B573C] text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm">
+        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+        <span>Hubungi Desainer</span>
+      </a>
+
+    </div>
+  </header>
+
+  <!-- ======================================================= -->
+  <!-- MAIN GUIDELINES CONTENT BODY                            -->
+  <!-- ======================================================= -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-8 py-10 sm:py-20 space-y-16 sm:space-y-28">
+
+    <!-- HERO HEADER -->
+    <section class="space-y-4 max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#0B573C] text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#059B66]"></span>
+        <span>Official Visual Identity Manual &bull; V1.0</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.08]">
+        Buku Panduan Brand <br />
+        <span class="text-[#059B66]">Resmi KOLOHAGA.</span>
+      </h1>
+
+      <p class="text-sm sm:text-lg text-slate-600 font-normal leading-relaxed">
+        Standar baku implementasi identitas visual, filosofi simpul kemakmuran, sistem kalibrasi warna Forest Emerald &amp; Harvest Gold, tipografi resmi, serta aturan penggunaan media kemasan, digital, dan fisik.
+      </p>
+    </section>
+
+    <!-- SECTION 01: BRAND STORY & ESSENCE -->
+    <section id="section-story" class="space-y-8">
+      <div class="border-l-2 border-[#059B66] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#059669] uppercase">01 // BRAND STORY &amp; ESSENCE</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+          Karakter &amp; Esensi Brand KOLOHAGA
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 font-mono">"Kemurnian Alami &bull; Khasiat Terpercaya &bull; Keberlanjutan"</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Pillar 1: Authenticity -->
+        <div class="bezel-shell p-6 sm:p-8 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-[#059B66] flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="leaf" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 01</span>
+            <h3 class="text-lg font-extrabold text-slate-900">KEASLIAN ALAM (Authenticity)</h3>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Menjunjung tinggi kemurnian hasil bumi Nusantara dan kearifan herbal alami tanpa campuran zat kimia berbahaya, menjaga kepercayaan konsumen dari generasi ke generasi.
+          </p>
+        </div>
+
+        <!-- Pillar 2: Purity & Trust -->
+        <div class="bezel-shell p-6 sm:p-8 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-amber-50 text-[#F0BE3E] flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 02</span>
+            <h3 class="text-lg font-extrabold text-slate-900">KEMURNIAN KHASIAT (Purity)</h3>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Disimbolkan lewat titik emas di pusat lambang simpul. Melambangkan intisari kemurnian khasiat terbaik yang diproses higienis berstandar mutu tinggi.
+          </p>
+        </div>
+
+        <!-- Pillar 3: Sustainability -->
+        <div class="bezel-shell p-6 sm:p-8 space-y-4">
+          <div class="w-12 h-12 rounded-2xl bg-green-50 text-[#0B573C] flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="sprout" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 03</span>
+            <h3 class="text-lg font-extrabold text-slate-900">KEBERLANJUTAN (Sustainability)</h3>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Ditegaskan oleh warna hijau hutan (*Deep Forest Green*). Komitmen mensejahterakan ekosistem petani lokal dan pelestarian alam Nusantara yang lestari.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 02: MASTER LOGOTYPE VARIATIONS -->
+    <section id="section-logo" class="space-y-8">
+      <div class="border-l-2 border-[#059B66] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#059669] uppercase">02 // MASTER LOGOTYPE</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+          Master Logotype Resmi &amp; Varian Kanvas
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 font-mono">
+          Spesifikasi tampilan logo utama di latar terang, gelap, dan monokrom
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Light Canvas -->
+        <div class="bezel-shell p-6 sm:p-8 flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="text-[10px] font-mono font-bold text-[#059B66] uppercase">LIGHT CANVAS (UTAMA)</span>
+            <div class="h-36 sm:h-44 flex items-center justify-center rounded-2xl bg-white border border-slate-100 p-4 shadow-inner">
+              <img src="../assets/logo_kolohaga_1_hijau.png" alt="Kolohaga Light Logo" class="max-h-16 sm:max-h-20 w-auto object-contain" />
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-slate-900">Primary Full Color (Resmi)</h4>
+              <p class="text-xs text-slate-500 mt-1">Forest Green (#0B573C) + Emerald Nusantara (#059B66) &amp; Gold di atas latar putih.</p>
+            </div>
+          </div>
+          <div class="text-[11px] font-mono text-slate-400 bg-slate-50 p-2 rounded-xl border border-slate-100 text-center">
+            Standard: Kemasan Box, Label Botol, Kop Surat
+          </div>
+        </div>
+
+        <!-- Forest Deep Canvas -->
+        <div class="bezel-shell p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-[#0B573C] border-emerald-900 text-white">
+          <div class="space-y-3">
+            <span class="text-[10px] font-mono font-bold text-amber-300 uppercase">FOREST DEEP CANVAS</span>
+            <div class="h-36 sm:h-44 flex items-center justify-center rounded-2xl bg-[#073B28] border border-white/10 p-4 shadow-inner">
+              <img src="../assets/logo_kolohaga_1_white.png" alt="Kolohaga White Logo" class="max-h-16 sm:max-h-20 w-auto object-contain" />
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-white">Reverse Solid White</h4>
+              <p class="text-xs text-emerald-100 mt-1">100% Alpine Pure White di atas latar hijau hutan korporat.</p>
+            </div>
+          </div>
+          <div class="text-[11px] font-mono text-emerald-200 bg-white/10 p-2 rounded-xl border border-white/10 text-center">
+            Standard: Seragam, Papperbag, Souvenir, Booth
+          </div>
+        </div>
+
+        <!-- Monochrome Black -->
+        <div class="bezel-shell p-6 sm:p-8 flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <span class="text-[10px] font-mono font-bold text-slate-700 uppercase">MONOCHROME 100% K</span>
+            <div class="h-36 sm:h-44 flex items-center justify-center rounded-2xl bg-white border border-slate-100 p-4 shadow-inner">
+              <img src="../assets/logo_kolohaga_1_mono.png" alt="Kolohaga Mono Logo" class="max-h-16 sm:max-h-20 w-auto object-contain" />
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-slate-900">Solid Black Tinta Tunggal</h4>
+              <p class="text-xs text-slate-500 mt-1">Untuk cetak stempel, sablon 1 warna, resi pengiriman, faktur, dan kardus coklat.</p>
+            </div>
+          </div>
+          <div class="text-[11px] font-mono text-slate-400 bg-slate-50 p-2 rounded-xl border border-slate-100 text-center">
+            Standard: Kardus Luar (Master Carton), Stempel
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Standalone App Icon & Seal Mark Section -->
+      <div class="bezel-shell p-6 sm:p-10 space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+          <div>
+            <span class="text-xs font-mono font-bold text-[#059B66] uppercase">STANDALONE APP ICON &bull; SACRED KNOT SEAL</span>
+            <h3 class="text-lg sm:text-xl font-bold text-slate-900">Simbol Mandiri Simpul Kemakmuran</h3>
+          </div>
+          <span class="text-xs font-mono text-slate-400">RASIO 1:1 APPS &amp; AVATAR</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          
+          <!-- App Icon 1: Light Launcher -->
+          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3">
+            <div class="w-20 h-20 mx-auto rounded-2xl bg-white shadow-md flex items-center justify-center border border-slate-100">
+              <img src="../assets/kolohaga_app_icon_light.png" alt="App Icon Light" class="w-16 h-16 object-contain rounded-xl" />
+            </div>
+            <div>
+              <span class="text-xs font-bold text-slate-900 block">iOS / Android Light</span>
+              <span class="text-[10px] font-mono text-slate-500">App Launcher Icon</span>
+            </div>
+          </div>
+
+          <!-- App Icon 2: Dark Launcher -->
+          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3">
+            <div class="w-20 h-20 mx-auto rounded-2xl bg-[#0B573C] shadow-md flex items-center justify-center border border-emerald-700">
+              <img src="../assets/kolohaga_app_icon_dark.png" alt="App Icon Dark" class="w-16 h-16 object-contain rounded-xl" />
+            </div>
+            <div>
+              <span class="text-xs font-bold text-slate-900 block">Forest Pro Launcher</span>
+              <span class="text-[10px] font-mono text-slate-500">Dark Mode App UI</span>
+            </div>
+          </div>
+
+          <!-- App Icon 3: Favicon -->
+          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3">
+            <div class="w-20 h-20 mx-auto rounded-2xl bg-white shadow-md flex items-center justify-center border border-slate-100">
+              <img src="../assets/kolohaga_symbol.png" alt="Favicon" class="w-10 h-10 object-contain" />
+            </div>
+            <div>
+              <span class="text-xs font-bold text-slate-900 block">Browser Favicon</span>
+              <span class="text-[10px] font-mono text-slate-500">32x32px &amp; 16x16px</span>
+            </div>
+          </div>
+
+          <!-- App Icon 4: Social Avatar -->
+          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3">
+            <div class="w-20 h-20 mx-auto rounded-full bg-[#0B573C] shadow-md flex items-center justify-center border border-emerald-800">
+              <img src="../assets/kolohaga_app_icon_dark.png" alt="Social Avatar" class="w-14 h-14 object-contain rounded-full" />
+            </div>
+            <div>
+              <span class="text-xs font-bold text-slate-900 block">Social Avatar Profile</span>
+              <span class="text-[10px] font-mono text-slate-500">Instagram, WA, TikTok</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 03: CLEAR SPACE & MINIMUM SCALING -->
+    <section id="section-clearspace" class="space-y-8">
+      <div class="border-l-2 border-[#059B66] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#059669] uppercase">03 // CLEAR SPACE &amp; SCALING</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+          Standar Zona Aman (*Clear Space*) &amp; Ukuran Minimum
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 font-mono">
+          Aturan proteksi visual agar logo selalu tampil tajam dan berwibawa di setiap media
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Clear Space Diagram -->
+        <div class="bezel-shell p-6 sm:p-8 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-[#0B573C] uppercase">ZONA AMAN (X = TINGGI TITIK EMAS PUSAT)</span>
+            <i data-lucide="maximize-2" class="w-4 h-4 text-slate-400"></i>
+          </div>
+
+          <div class="border-2 border-dashed border-emerald-300 rounded-2xl p-6 sm:p-8 flex items-center justify-center relative bg-emerald-50/40">
+            <span class="absolute top-2 left-2 text-[10px] font-mono text-emerald-700 font-bold">X</span>
+            <span class="absolute top-2 right-2 text-[10px] font-mono text-emerald-700 font-bold">X</span>
+            <span class="absolute bottom-2 left-2 text-[10px] font-mono text-emerald-700 font-bold">X</span>
+            <span class="absolute bottom-2 right-2 text-[10px] font-mono text-emerald-700 font-bold">X</span>
+            <img src="../assets/logo_kolohaga_1_hijau.png" alt="Clear Space Diagram" class="max-h-16 sm:max-h-20 object-contain" />
+          </div>
+
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Zona aman di sekeliling logo harus selalu memiliki margin minimum <strong>X</strong> dari tepi bidang, teks, atau elemen grafis lain untuk menjaga keterbacaan murni.
+          </p>
+        </div>
+
+        <!-- Minimum Size Standard -->
+        <div class="bezel-shell p-6 sm:p-8 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-[#059B66] uppercase">STANDAR UKURAN TERKECIL</span>
+            <i data-lucide="minimize-2" class="w-4 h-4 text-slate-400"></i>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 sm:gap-4">
+            
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1.5">
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">MEDIA DIGITAL / SCREEN</span>
+              <div class="text-2xl font-black text-[#0B573C]">44 PX</div>
+              <p class="text-[11px] text-slate-500">Tinggi minimum pada navbar web &amp; mobile app</p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1.5">
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">MEDIA CETAK / PRINT</span>
+              <div class="text-2xl font-black text-[#059B66]">18 MM</div>
+              <p class="text-[11px] text-slate-500">Lebar minimum pada stiker segel &amp; label botol</p>
+            </div>
+
+          </div>
+
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Logo KOLOHAGA telah dikalibrasi presisi sehingga detail simpul dan aksen emas tetap terbaca tajam pada kemasan kecil.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 04: COLOR SCIENCE (PANTONE 70-20-10) -->
+    <section id="section-colors" class="space-y-8">
+      <div class="border-l-2 border-[#059B66] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#059669] uppercase">04 // OFFICIAL COLOR PALETTE</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+          Sistem Warna &amp; Kalibrasi Pantone (70-20-10)
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 font-mono">
+          Klik pada setiap swatch untuk menyalin kode warna secara instan ke clipboard
+        </p>
+      </div>
+
+      <!-- Continuous Spectrum Visual -->
+      <div class="space-y-2">
+        <div class="flex justify-between text-xs font-mono text-slate-500 font-bold">
+          <span>Formula Distribusi Visual</span>
+          <span>70% Deep Forest &bull; 20% Emerald Nusantara &bull; 10% Harvest Gold</span>
+        </div>
+        <div class="h-3.5 rounded-full overflow-hidden flex shadow-inner border border-slate-200">
+          <div class="w-[70%] bg-[#0B573C]"></div>
+          <div class="w-[20%] bg-[#059B66]"></div>
+          <div class="w-[10%] bg-[#F0BE3E]"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Swatch 1: Deep Forest Green -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#0B573C', 'Deep Forest Green')">
+          <div class="h-28 rounded-2xl bg-[#0B573C] flex items-end justify-end p-3 text-white shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">70% PRIMARY COLOR</span>
+              <h4 class="text-sm font-bold text-slate-900">Deep Forest Green</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-[#0B573C]">#0B573C</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>11, 87, 60</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">CMYK:</span><span>87, 36, 78, 38</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">PANTONE:</span><span>5535 C</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swatch 2: Emerald Nusantara -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#059B66', 'Emerald Nusantara')">
+          <div class="h-28 rounded-2xl bg-[#059B66] flex items-end justify-end p-3 text-white shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">20% VIBRANT ACCENT</span>
+              <h4 class="text-sm font-bold text-slate-900">Emerald Nusantara</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-[#059B66]">#059B66</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>5, 155, 102</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">CMYK:</span><span>84, 15, 76, 2</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">PANTONE:</span><span>7726 C</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swatch 3: Harvest Solar Gold -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#F0BE3E', 'Harvest Solar Gold')">
+          <div class="h-28 rounded-2xl bg-[#F0BE3E] flex items-end justify-end p-3 text-slate-900 shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">10% SACRED ACCENT</span>
+              <h4 class="text-sm font-bold text-slate-900">Harvest Solar Gold</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-[#D99B16]">#F0BE3E</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>240, 190, 62</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">CMYK:</span><span>5, 25, 85, 0</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">PANTONE:</span><span>123 C</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swatch 4: Alpine Pure White -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#FFFFFF', 'Alpine Pure White')">
+          <div class="h-28 rounded-2xl bg-white border border-slate-200 flex items-end justify-end p-3 text-slate-700 shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">LIGHT SURFACE</span>
+              <h4 class="text-sm font-bold text-slate-900">Alpine Pure White</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-slate-600">#FFFFFF</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>255, 255, 255</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">PAPER:</span><span>100% Bright White</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 05: TYPOGRAPHY -->
+    <section id="section-typography" class="space-y-8">
+      <div class="border-l-2 border-[#059B66] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#059669] uppercase">05 // TYPOGRAPHY SYSTEM</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+          Sistem Tipografi Resmi: Plus Jakarta Sans
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 font-mono">
+          Tipografi modern berkarakter geometris yang ramah, bersih, dan berstandar internasional
+        </p>
+      </div>
+
+      <div class="bezel-shell p-6 sm:p-10 space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-mono text-slate-400">WEIGHT:</span>
+            <button class="px-3.5 py-1 rounded-full text-xs font-bold bg-[#059B66] text-white" onclick="setGuideWeight('800', this)">Extra Bold (800)</button>
+            <button class="px-3.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700" onclick="setGuideWeight('600', this)">Semi Bold (600)</button>
+            <button class="px-3.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700" onclick="setGuideWeight('400', this)">Regular (400)</button>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-mono text-slate-400">SIZE:</span>
+            <input type="range" min="20" max="56" value="32" class="w-28 accent-[#059B66]" oninput="document.getElementById('guide-type-input').style.fontSize = this.value + 'px'" />
+          </div>
+        </div>
+
+        <div class="py-2">
+          <input type="text" id="guide-type-input" value="KOLOHAGA — Kemurnian Alami Nusantara" class="w-full bg-transparent border-none outline-none text-2xl sm:text-4xl font-extrabold text-slate-950 tracking-tight" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 06: APPLICATIONS -->
+    <section id="section-applications" class="space-y-8">
+      <div class="border-l-2 border-[#059B66] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#059669] uppercase">06 // REAL-WORLD APPLICATIONS</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+          Penerapan Ekosistem Brand di Dunia Nyata
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- App 1: E-Commerce & Web Header -->
+        <div class="bezel-shell p-6 sm:p-8 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <span class="text-xs font-mono font-bold text-[#0B573C] uppercase">01. WEB &amp; E-COMMERCE HEADER</span>
+            <i data-lucide="globe" class="w-4 h-4 text-slate-400"></i>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-4 flex items-center justify-between shadow-xs">
+            <img src="../assets/logo_kolohaga_1_hijau.png" alt="Header Logo" class="h-6 sm:h-7 object-contain" />
+            <div class="hidden sm:flex items-center gap-5 text-xs font-bold text-slate-600">
+              <span>Produk</span>
+              <span>Khasiat</span>
+              <span>Tentang</span>
+            </div>
+            <button class="px-4 py-1.5 rounded-full bg-[#059B66] text-white text-xs font-bold shadow-xs">Beli Sekarang</button>
+          </div>
+          <p class="text-xs text-slate-600">
+            Logotype horizontal KOLOHAGA tampil seimbang dan berwibawa di header website e-commerce dan marketplace.
+          </p>
+        </div>
+
+        <!-- App 2: Packaging Box & Label Botol -->
+        <div class="bezel-shell p-6 sm:p-8 space-y-4">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <span class="text-xs font-mono font-bold text-[#059B66] uppercase">02. KEMASAN BOTOL &amp; DUS HERBAL</span>
+            <i data-lucide="package" class="w-4 h-4 text-slate-400"></i>
+          </div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="p-4 rounded-2xl bg-[#0B573C] text-white space-y-4 shadow-sm">
+              <img src="../assets/logo_kolohaga_1_white.png" alt="Packaging Dus" class="h-4 sm:h-5 object-contain" />
+              <div>
+                <span class="text-xs font-bold block">Herbal Ekstrak Murni</span>
+                <span class="text-[10px] text-emerald-200 block">Isi 60 Kapsul Herbal</span>
+              </div>
+            </div>
+            <div class="p-4 rounded-2xl bg-white border border-slate-200 space-y-4 shadow-sm">
+              <img src="../assets/logo_kolohaga_1_hijau.png" alt="Label Botol" class="h-4 sm:h-5 object-contain" />
+              <div class="text-[10px] text-slate-500 font-mono space-y-0.5">
+                <div>BPOM RI TR &bull; Halal MUI</div>
+                <div>Diproduksi Oleh Kolohaga</div>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs text-slate-600">
+            Penerapan logo pada stiker label botol dan cetak kemasan hardbox dengan sentuhan foil emas *embossed*.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 07: DO'S & DON'TS -->
+    <section id="section-donts" class="space-y-8">
+      <div class="border-l-2 border-red-500 pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold text-red-500 tracking-wider uppercase">07 // LOGO MISUSE &amp; PROHIBITIONS</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+          Larangan Penggunaan Logo (Do's &amp; Don'ts)
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+        
+        <div class="p-5 rounded-2xl bg-red-50/50 border border-red-200 space-y-3">
+          <div class="h-24 rounded-xl bg-white flex items-center justify-center p-3 relative overflow-hidden border border-red-100">
+            <img src="../assets/logo_kolohaga_1_hijau.png" alt="Stretched" class="h-8 w-full object-fill transform scale-x-125" />
+            <div class="absolute inset-0 bg-red-500/10 flex items-center justify-center">
+              <i data-lucide="x-circle" class="w-8 h-8 text-red-500"></i>
+            </div>
+          </div>
+          <h4 class="text-xs font-bold text-red-900">JANGAN ME-REGANGKAN LOGO</h4>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-red-50/50 border border-red-200 space-y-3">
+          <div class="h-24 rounded-xl bg-white flex items-center justify-center p-3 relative overflow-hidden border border-red-100">
+            <img src="../assets/logo_kolohaga_1_hijau.png" alt="Recolored" class="h-6 object-contain filter hue-rotate-180" />
+            <div class="absolute inset-0 bg-red-500/10 flex items-center justify-center">
+              <i data-lucide="x-circle" class="w-8 h-8 text-red-500"></i>
+            </div>
+          </div>
+          <h4 class="text-xs font-bold text-red-900">JANGAN MENGUBAH WARNA RESMI</h4>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-red-50/50 border border-red-200 space-y-3">
+          <div class="h-24 rounded-xl bg-white flex items-center justify-center p-3 relative overflow-hidden border border-red-100">
+            <img src="../assets/logo_kolohaga_1_hijau.png" alt="Rotated" class="h-6 object-contain transform -rotate-12" />
+            <div class="absolute inset-0 bg-red-500/10 flex items-center justify-center">
+              <i data-lucide="x-circle" class="w-8 h-8 text-red-500"></i>
+            </div>
+          </div>
+          <h4 class="text-xs font-bold text-red-900">JANGAN MEMUTAR POSISI LOGO</h4>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 08: MASTER ASSET DELIVERY -->
+    <section class="p-8 sm:p-14 rounded-[36px] bg-[#042418] text-white border border-emerald-900 shadow-2xl space-y-8">
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-bold">
+          <i data-lucide="package-check" class="w-3.5 h-3.5"></i>
+          <span>MASTER FILE DELIVERY HUB</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+          Penyerahan Master File KOLOHAGA
+        </h2>
+        <p class="text-xs sm:text-sm text-emerald-200/80 leading-relaxed">
+          Semua file master vektor asli resolusi tinggi telah siap diserahkan dalam format lengkap (.AI, .EPS, .SVG, .PDF, .PNG High-Res).
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 max-w-3xl mx-auto">
+        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1">
+          <div class="text-lg font-black text-[#059B66]">.AI</div>
+          <span class="text-[10px] font-mono text-emerald-200">Illustrator</span>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1">
+          <div class="text-lg font-black text-[#F0BE3E]">.EPS</div>
+          <span class="text-[10px] font-mono text-emerald-200">Vector Universal</span>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1">
+          <div class="text-lg font-black text-emerald-300">.SVG</div>
+          <span class="text-[10px] font-mono text-emerald-200">Web Scalable</span>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1">
+          <div class="text-lg font-black text-red-400">.PDF</div>
+          <span class="text-[10px] font-mono text-emerald-200">Print CMYK</span>
+        </div>
+        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1 col-span-2 sm:col-span-1">
+          <div class="text-lg font-black text-white">.PNG</div>
+          <span class="text-[10px] font-mono text-emerald-200">Transparan HD</span>
+        </div>
+      </div>
+
+      <div class="text-center pt-2">
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20telah%20menyetujui%20Brand%20Guidelines%20resmi%20Kolohaga.%20Mohon%20bantu%20kirimkan%20link%20Google%20Drive%20Master%20File%20(AI,%20EPS,%20SVG,%20PDF,%20PNG)%20ke%20nomor%20ini." target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#059B66] hover:bg-[#0B573C] text-white text-sm font-extrabold shadow-lg hover:shadow-xl transition-all active:scale-95">
+          <i data-lucide="download-cloud" class="w-4 h-4"></i>
+          <span>Minta Link Master File via WhatsApp</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LUXURY FOOTER -->
+  <footer class="border-t border-slate-200 py-12 px-4 text-center text-xs font-mono text-slate-500 space-y-2 bg-white">
+    <p>&copy; 2026 <strong>KOLOHAGA Brand Guidelines</strong> &bull; Directed by <strong class="text-[#059B66]">DARU FAHMAA MULIAWAN</strong> &bull; SYMP Studio</p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    function copyColor(code, name) {
+      navigator.clipboard.writeText(code).then(() => {
+        const toast = document.createElement('div');
+        toast.className = 'fixed bottom-6 right-6 bg-[#042418] text-white text-xs font-mono py-3 px-5 rounded-2xl shadow-2xl z-50 flex items-center gap-2 border border-white/20 animate-bounce';
+        toast.innerHTML = `<span class="w-2 h-2 rounded-full bg-[#059B66]"></span> Kode <strong>${code}</strong> (${name}) berhasil disalin!`;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 2500);
+      });
+    }
+
+    function setGuideWeight(w, btn) {
+      document.getElementById('guide-type-input').style.fontWeight = w;
+      btn.parentElement.querySelectorAll('button').forEach(b => {
+        b.className = 'px-3.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700';
+      });
+      btn.className = 'px-3.5 py-1 rounded-full text-xs font-bold bg-[#059B66] text-white';
+    }
+  </script>
+</body>
+</html>
