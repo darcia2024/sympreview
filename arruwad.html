@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>AR RUWAD — Identitas Visual & Logo Angkatan Rumah Dakwah | SYMP Studio</title>
+  <title>AR RUWAD — Proposal Identitas Visual & Logo Angkatan Rumah Dakwah | SYMP Studio</title>
   
   <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,10 +37,6 @@
       }
     }
   </script>
-  
-  <!-- GSAP & ScrollTrigger CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -167,24 +163,20 @@
         </div>
       </a>
 
-      <!-- Center Segmented Option Switcher -->
-      <div class="flex items-center p-1 bg-white rounded-full border border-stone-200 shadow-xs text-xs font-bold">
-        <button id="tab-opt-1" class="px-4 py-1.5 rounded-full bg-[#C93600] text-white shadow-xs transition-all flex items-center gap-1.5" onclick="selectVariant(1)">
-          <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
-          <span>Varian 01</span>
-        </button>
-        <button id="tab-opt-2" class="px-4 py-1.5 rounded-full text-stone-600 hover:text-stone-950 transition-all flex items-center gap-1.5" onclick="selectVariant(2)">
-          <span>Varian 02</span>
-        </button>
-      </div>
+      <!-- Center Anchor Tabs (Desktop) -->
+      <nav class="hidden md:flex items-center gap-1 p-1 bg-white rounded-full border border-stone-200 shadow-xs text-xs font-bold text-stone-600">
+        <a href="#variants" class="px-3.5 py-1.5 rounded-full hover:text-stone-950 hover:bg-stone-50 transition-all text-[#C93600]">2 Varian Logo</a>
+        <a href="#philosophy" class="px-3.5 py-1.5 rounded-full hover:text-stone-950 hover:bg-stone-50 transition-all">4 Pilar Nilai</a>
+        <a href="#colors" class="px-3.5 py-1.5 rounded-full hover:text-stone-950 hover:bg-stone-50 transition-all">Warna Pantone</a>
+        <a href="#mockups" class="px-3.5 py-1.5 rounded-full hover:text-stone-950 hover:bg-stone-50 transition-all">Penerapan</a>
+      </nav>
 
       <!-- Right Action CTA -->
       <div class="flex items-center gap-2">
-        <a id="nav-wa-btn" href="https://wa.me/6281311506025?text=insyaAllah%20angkatan%20kami%20memilih%20VARIAN%2001%20untuk%20logo%20resmi%20Ar%20Ruwad%20Rumah%20Dakwah" target="_blank" class="btn-island bg-[#C93600] text-white hover:bg-[#992600] shadow-sm">
-          <span class="hidden sm:inline">Pilih Varian Ini</span>
-          <span class="sm:hidden">Pilih</span>
+        <a href="#voting" class="btn-island bg-[#C93600] text-white hover:bg-[#992600] shadow-sm">
+          <span>Pilih Logo Angkatan</span>
           <span class="btn-island-icon bg-white/15">
-            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+            <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
           </span>
         </a>
       </div>
@@ -198,110 +190,138 @@
   <main class="max-w-6xl mx-auto px-4 sm:px-8 py-10 sm:py-20 space-y-16 sm:space-y-28">
 
     <!-- ======================================================= -->
-    <!-- HERO SECTION: THE IDENTITY HERO STAGE                  -->
+    <!-- HERO SECTION: THE IDENTITY HERO                        -->
     <!-- ======================================================= -->
-    <section class="space-y-8 sm:space-y-12">
+    <section class="space-y-6 max-w-4xl">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/70 text-[#C93600] text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider">
+        <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+        <span>PROPOSAL LOGO ANGKATAN &bull; RUMAH DAKWAH 2026</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-6xl lg:text-7xl font-extrabold text-stone-950 tracking-tight leading-[1.06]">
+        Sang Pelopor Peradaban. <br />
+        <span class="text-[#C93600]">AR RUWAD</span> <span class="font-normal text-stone-400 font-mono">(الرواد)</span>
+      </h1>
+
+      <p class="text-sm sm:text-lg text-stone-600 font-normal leading-relaxed max-w-3xl">
+        Berasal dari bahasa Arab yang bermakna <strong>"Para Perintis / Pelopor"</strong>. Identitas visual ini dirancang sebagai lambang kehormatan, keteguhan tauhid, dan semangat kepeloporan kader Rumah Dakwah dalam menyebarkan kemaslahatan di garda terdepan.
+      </p>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 01: 2 VARIAN UTAMA (LANGSUNG MUNCUL DI HALAMAN) -->
+    <!-- ======================================================= -->
+    <section id="variants" class="space-y-8">
       
-      <!-- Editorial Title Block -->
-      <div class="space-y-4 max-w-3xl">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100/70 text-[#C93600] text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider">
-          <i data-lucide="shield" class="w-3.5 h-3.5"></i>
-          <span>Proposal Identitas Visual Angkatan &bull; Rumah Dakwah</span>
-        </div>
-
-        <h1 class="text-3xl sm:text-6xl lg:text-7xl font-extrabold text-stone-950 tracking-tight leading-[1.06]">
-          Sang Perintis Peradaban. <br />
-          <span class="text-[#C93600]">AR RUWAD</span> (الرواد).
-        </h1>
-
-        <p class="text-sm sm:text-lg text-stone-600 font-normal leading-relaxed">
-          Nama <strong>"Ar-Ruwad"</strong> berarti <em>Para Pelopor / Perintis</em>. Identitas visual ini dirancang untuk mewakili generasi pejuang dakwah yang berani melangkah di baris terdepan, menyalakan suluh kebaikan, dan kokoh di atas fondasi iman.
-        </p>
-      </div>
-
-      <!-- MASTER LOGO STAGE (DOUBLE-BEZEL HARDWARE CANVAS) -->
-      <div class="bezel-shell p-2 sm:p-3">
-        <div id="master-stage-core" class="bezel-core bg-white p-8 sm:p-20 flex flex-col items-center justify-center min-h-[360px] sm:min-h-[500px] relative transition-colors duration-500">
-          
-          <!-- Top Tag & Canvas Controls -->
-          <div class="w-full flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8 sm:mb-12">
-            <div>
-              <span id="stage-badge-variant" class="text-[11px] font-mono font-black tracking-widest uppercase text-[#C93600]">
-                VARIAN 01 // THE VANGUARD EMBLEM
-              </span>
-              <span id="stage-canvas-label" class="text-[10px] font-mono text-stone-400 block uppercase mt-0.5">
-                LIGHT CERAMIC CANVAS
-              </span>
-            </div>
-
-            <!-- Canvas Switcher Pills -->
-            <div class="flex items-center gap-1 p-1 bg-stone-100/90 rounded-full border border-stone-200 text-xs font-bold self-start sm:self-auto">
-              <button onclick="switchCanvas('light')" id="btn-c-light" class="px-3.5 py-1 rounded-full bg-white text-stone-900 shadow-xs transition-all">Light</button>
-              <button onclick="switchCanvas('crimson')" id="btn-c-crimson" class="px-3.5 py-1 rounded-full text-stone-600 hover:text-stone-900 transition-all">Crimson</button>
-              <button onclick="switchCanvas('dark')" id="btn-c-dark" class="px-3.5 py-1 rounded-full text-stone-600 hover:text-stone-900 transition-all">Obsidian</button>
-            </div>
-          </div>
-
-          <!-- Hero Master Logo Visual -->
-          <div class="py-6 sm:py-10 flex items-center justify-center w-full max-w-lg">
-            <img id="img-main-logo" src="../assets/logo_ar_ruwad_1.png" alt="AR RUWAD Logo" class="max-h-60 sm:max-h-80 w-auto object-contain transition-all duration-300 transform hover:scale-105" />
-          </div>
-
-          <!-- Bottom Micro Spec Bar -->
-          <div class="w-full flex flex-col sm:flex-row items-center justify-between gap-3 mt-8 sm:mt-12 pt-4 border-t border-stone-100 text-[11px] font-mono text-stone-400">
-            <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-[#C93600]"></span>
-              <span id="stage-sub-info">THE EMBLEM OF PIONEERS &bull; RUMAH DAKWAH</span>
-            </div>
-            <div id="stage-color-info">PALET: #C93600 (CRIMSON) &bull; #D68800 (SOLAR GOLD)</div>
-          </div>
-
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-stone-200 pb-4">
+        <div class="border-l-2 border-[#C93600] pl-3 sm:pl-4">
+          <span class="text-[11px] font-mono font-bold tracking-widest text-[#C93600] uppercase">THE 2 MASTER CONCEPTS</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-950 tracking-tight mt-1">
+            2 Varian Konsep Desain Logo Resmi
+          </h2>
+          <p class="text-xs sm:text-sm text-stone-500 font-mono">
+            Kedua varian ditampilkan langsung secara penuh dengan simulasi kanvas terang dan gelap
+          </p>
         </div>
       </div>
 
-      <!-- VARIANT EXPLANATION CARDS (SIDE BY SIDE COMPARISON) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- 2 LARGE SIDE-BY-SIDE PRESENTATION CARDS -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         
-        <!-- Variant 1 Box -->
-        <div id="card-desc-1" class="bezel-shell p-6 sm:p-8 space-y-4 border-[#C93600] bg-orange-50/20 cursor-pointer" onclick="selectVariant(1)">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-[#C93600]"></span>
-              <span class="text-xs font-mono font-bold text-[#C93600] uppercase">VARIAN 01</span>
+        <!-- =================================================== -->
+        <!-- VARIAN 01: THE VANGUARD EMBLEM                      -->
+        <!-- =================================================== -->
+        <div class="bezel-shell p-6 sm:p-10 space-y-6 flex flex-col justify-between border-orange-200 shadow-sm hover:border-[#C93600]">
+          
+          <div class="space-y-5">
+            <!-- Header Tag -->
+            <div class="flex items-center justify-between border-b border-stone-100 pb-4">
+              <div>
+                <span class="px-2.5 py-1 rounded-full bg-orange-100 text-[#C93600] font-mono text-[11px] font-bold">
+                  VARIAN 01 RESMI
+                </span>
+                <h3 class="text-xl sm:text-2xl font-extrabold text-stone-950 mt-1.5">The Vanguard Emblem</h3>
+              </div>
+              <div class="flex items-center gap-1 p-1 bg-stone-100 rounded-full text-xs font-bold">
+                <button onclick="toggleCardCanvas(1, 'light', this)" class="px-2.5 py-1 rounded-full bg-white text-stone-900 shadow-xs">Light</button>
+                <button onclick="toggleCardCanvas(1, 'dark', this)" class="px-2.5 py-1 rounded-full text-stone-500 hover:text-stone-900">Dark</button>
+              </div>
             </div>
-            <span class="text-xs font-mono text-stone-400">THE VANGUARD EMBLEM</span>
+
+            <!-- Visual Showcase Stage -->
+            <div id="stage-card-1" class="rounded-3xl bg-white border border-stone-200 p-8 sm:p-12 flex items-center justify-center min-h-[300px] sm:min-h-[380px] shadow-inner transition-colors duration-400">
+              <img id="img-card-1" src="../assets/logo_ar_ruwad_1.png" alt="Ar Ruwad Varian 01" class="max-h-56 sm:max-h-72 w-auto object-contain transition-transform duration-300 transform hover:scale-105" />
+            </div>
+
+            <!-- Deep Philosophy Description -->
+            <div class="space-y-2.5">
+              <h4 class="text-sm font-extrabold text-stone-950 flex items-center gap-2">
+                <i data-lucide="shield" class="w-4 h-4 text-[#C93600]"></i>
+                <span>Perisai Solid &bull; Keteguhan Benteng Keimanan</span>
+              </h4>
+              <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                Komposisi lambang kesatuan yang memadukan stilasi kaligrafi inisial dengan bentuk perisai benteng. Melambangkan perlindungan nilai tauhid, persaudaraan angkatan yang kokoh tak terpisahkan, serta wibawa para pelopor dakwah yang siap menghadapi tantangan masa depan.
+              </p>
+            </div>
           </div>
-          <h3 class="text-xl font-extrabold text-stone-950">
-            Perisai Kepeloporan &amp; Keteguhan (Emblematic Crest)
-          </h3>
-          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
-            Menghadirkan komposisi lambang kesatuan yang solid dengan garis-garis lengkung geometris yang bersatu padu. Melambangkan benteng keimanan yang kokoh, persaudaraan angkatan yang tak terpisahkan, serta tekad bulat para pelopor peradaban.
-          </p>
-          <div class="pt-2 flex items-center justify-between text-xs font-bold text-[#C93600]">
-            <span>Klik untuk melihat di kanvas utama &rarr;</span>
-            <i data-lucide="check-circle" class="w-4 h-4"></i>
+
+          <!-- Bottom Direct WhatsApp CTA -->
+          <div class="pt-4 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <span class="text-[11px] font-mono text-stone-400">Palet: Crimson Flame (#C93600)</span>
+            <a href="https://wa.me/6281311506025?text=insyaAllah%20angkatan%20kami%20resmi%20memilih%20VARIAN%2001%20(The%20Vanguard%20Emblem)%20untuk%20logo%20resmi%20Ar%20Ruwad%20Rumah%20Dakwah" target="_blank" class="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#C93600] hover:bg-[#992600] text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+              <span>Pilih Varian 01 via WA</span>
+            </a>
           </div>
+
         </div>
 
-        <!-- Variant 2 Box -->
-        <div id="card-desc-2" class="bezel-shell p-6 sm:p-8 space-y-4 opacity-75 hover:opacity-100 cursor-pointer" onclick="selectVariant(2)">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-[#D68800]"></span>
-              <span class="text-xs font-mono font-bold text-[#D68800] uppercase">VARIAN 02</span>
+        <!-- =================================================== -->
+        <!-- VARIAN 02: THE RADIANT TORCH                        -->
+        <!-- =================================================== -->
+        <div class="bezel-shell p-6 sm:p-10 space-y-6 flex flex-col justify-between border-amber-200 shadow-sm hover:border-[#D68800]">
+          
+          <div class="space-y-5">
+            <!-- Header Tag -->
+            <div class="flex items-center justify-between border-b border-stone-100 pb-4">
+              <div>
+                <span class="px-2.5 py-1 rounded-full bg-amber-100 text-[#D68800] font-mono text-[11px] font-bold">
+                  VARIAN 02 RESMI
+                </span>
+                <h3 class="text-xl sm:text-2xl font-extrabold text-stone-950 mt-1.5">The Radiant Torch</h3>
+              </div>
+              <div class="flex items-center gap-1 p-1 bg-stone-100 rounded-full text-xs font-bold">
+                <button onclick="toggleCardCanvas(2, 'light', this)" class="px-2.5 py-1 rounded-full bg-white text-stone-900 shadow-xs">Light</button>
+                <button onclick="toggleCardCanvas(2, 'dark', this)" class="px-2.5 py-1 rounded-full text-stone-500 hover:text-stone-900">Dark</button>
+              </div>
             </div>
-            <span class="text-xs font-mono text-stone-400">THE RADIANT TORCH</span>
+
+            <!-- Visual Showcase Stage -->
+            <div id="stage-card-2" class="rounded-3xl bg-white border border-stone-200 p-8 sm:p-12 flex items-center justify-center min-h-[300px] sm:min-h-[380px] shadow-inner transition-colors duration-400">
+              <img id="img-card-2" src="../assets/logo_ar_ruwad_2.png" alt="Ar Ruwad Varian 02" class="max-h-56 sm:max-h-72 w-auto object-contain transition-transform duration-300 transform hover:scale-105" />
+            </div>
+
+            <!-- Deep Philosophy Description -->
+            <div class="space-y-2.5">
+              <h4 class="text-sm font-extrabold text-stone-950 flex items-center gap-2">
+                <i data-lucide="flame" class="w-4 h-4 text-[#D68800]"></i>
+                <span>Suluh Obor Ilmu &bull; Sayap Kebangkitan Umat</span>
+              </h4>
+              <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                Siluet dinamis berkobar yang memancarkan nyala api obor ilmu (*mash'al*) dan sayap kebangkitan dengan gradasi hangat Crimson ke Solar Gold. Simbol generasi yang progresif, bergerak lincah menyebarkan pencerahan, dan adaptif merespons zaman.
+              </p>
+            </div>
           </div>
-          <h3 class="text-xl font-extrabold text-stone-950">
-            Suluh Api Obor &amp; Sayap Kebangkitan (Dynamic Wings)
-          </h3>
-          <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
-            Menampilkan siluet dinamis bernuansa api pencerahan (*mash'al*) dan sayap kebangkitan umat dengan gradasi Crimson ke Solar Gold. Simbol generasi yang progresif, bergerak cepat menyebarkan syiar, dan adaptif menghadapi tantangan zaman.
-          </p>
-          <div class="pt-2 flex items-center justify-between text-xs font-bold text-[#D68800]">
-            <span>Klik untuk melihat di kanvas utama &rarr;</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+
+          <!-- Bottom Direct WhatsApp CTA -->
+          <div class="pt-4 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <span class="text-[11px] font-mono text-stone-400">Palet: Solar Gold &bull; Crimson</span>
+            <a href="https://wa.me/6281311506025?text=insyaAllah%20angkatan%20kami%20resmi%20memilih%20VARIAN%2002%20(The%20Radiant%20Torch)%20untuk%20logo%20resmi%20Ar%20Ruwad%20Rumah%20Dakwah" target="_blank" class="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#D68800] hover:bg-[#b07000] text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm">
+              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+              <span>Pilih Varian 02 via WA</span>
+            </a>
           </div>
+
         </div>
 
       </div>
@@ -309,12 +329,12 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 02: 4 PILAR FILOSOFI AR RUWAD                  -->
+    <!-- SECTION 02: 4 PILAR FILOSOFI ANGKATAN                   -->
     <!-- ======================================================= -->
-    <section class="space-y-8">
+    <section id="philosophy" class="space-y-8">
       
       <div class="border-l-2 border-[#C93600] pl-3 sm:pl-4">
-        <span class="text-[11px] font-mono font-bold tracking-widest text-[#C93600] uppercase">FILOSOFI &amp; NILAI ANGKATAN</span>
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#C93600] uppercase">ESENSI &amp; NILAI PERGERAKAN</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-950 tracking-tight mt-1">
           4 Pilar Esensi "Ar-Ruwad" Rumah Dakwah
         </h2>
@@ -325,24 +345,24 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <!-- Pilar 1: Ar-Riyadah -->
+        <!-- Pilar 1 -->
         <div class="bezel-shell p-6 space-y-4 bg-white">
-          <div class="w-10 h-10 rounded-2xl bg-orange-50 text-[#C93600] flex items-center justify-center font-bold">
-            <i data-lucide="compass" class="w-5 h-5"></i>
+          <div class="w-12 h-12 rounded-2xl bg-orange-50 text-[#C93600] flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="compass" class="w-6 h-6"></i>
           </div>
           <div class="space-y-1">
             <span class="text-[10px] font-mono text-stone-400 uppercase font-bold">PILAR 01</span>
             <h3 class="text-base font-extrabold text-stone-950">Ar-Riyadah (Kepeloporan)</h3>
           </div>
           <p class="text-xs text-stone-600 leading-relaxed">
-            Menjadi pionir kebaikan yang tidak menunggu orang lain bergerak, melainkan berani merintis jalan dakwah dan memimpin peradaban dengan keteladanan.
+            Menjadi pionir kebaikan yang berani mengambil inisiatif, membuka jalan baru peradaban, dan memimpin dengan keteladanan akhlak.
           </p>
         </div>
 
-        <!-- Pilar 2: Al-Istiqamah -->
+        <!-- Pilar 2 -->
         <div class="bezel-shell p-6 space-y-4 bg-white">
-          <div class="w-10 h-10 rounded-2xl bg-amber-50 text-[#D68800] flex items-center justify-center font-bold">
-            <i data-lucide="anchor" class="w-5 h-5"></i>
+          <div class="w-12 h-12 rounded-2xl bg-amber-50 text-[#D68800] flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="anchor" class="w-6 h-6"></i>
           </div>
           <div class="space-y-1">
             <span class="text-[10px] font-mono text-stone-400 uppercase font-bold">PILAR 02</span>
@@ -353,24 +373,24 @@
           </p>
         </div>
 
-        <!-- Pilar 3: Al-Ukhuwwah -->
+        <!-- Pilar 3 -->
         <div class="bezel-shell p-6 space-y-4 bg-white">
-          <div class="w-10 h-10 rounded-2xl bg-red-50 text-red-700 flex items-center justify-center font-bold">
-            <i data-lucide="users-round" class="w-5 h-5"></i>
+          <div class="w-12 h-12 rounded-2xl bg-red-50 text-red-700 flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="users-round" class="w-6 h-6"></i>
           </div>
           <div class="space-y-1">
             <span class="text-[10px] font-mono text-stone-400 uppercase font-bold">PILAR 03</span>
             <h3 class="text-base font-extrabold text-stone-950">Al-Ukhuwwah (Soliditas)</h3>
           </div>
           <p class="text-xs text-stone-600 leading-relaxed">
-            Persaudaraan sejati antar anggota angkatan yang saling menguatkan, bahu-membahu menanggung amanah, dan saling menjaga hingga akhir hayat.
+            Persaudaraan sejati antar anggota angkatan yang saling menguatkan, memikul amanah bersama, dan saling menjaga hingga akhir hayat.
           </p>
         </div>
 
-        <!-- Pilar 4: Al-Atsar -->
+        <!-- Pilar 4 -->
         <div class="bezel-shell p-6 space-y-4 bg-white">
-          <div class="w-10 h-10 rounded-2xl bg-stone-100 text-stone-800 flex items-center justify-center font-bold">
-            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          <div class="w-12 h-12 rounded-2xl bg-stone-100 text-stone-800 flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
           </div>
           <div class="space-y-1">
             <span class="text-[10px] font-mono text-stone-400 uppercase font-bold">PILAR 04</span>
@@ -387,15 +407,15 @@
     <!-- ======================================================= -->
     <!-- SECTION 03: COLOR SCIENCE & PANTONE CODES               -->
     <!-- ======================================================= -->
-    <section class="space-y-8">
+    <section id="colors" class="space-y-8">
       
       <div class="border-l-2 border-[#C93600] pl-3 sm:pl-4">
         <span class="text-[11px] font-mono font-bold tracking-widest text-[#C93600] uppercase">COLOR CALIBRATION</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-950 tracking-tight mt-1">
-          Sistem Warna Resmi Ar-Ruwad
+          Sistem Warna Resmi (Formula 70-20-10)
         </h2>
         <p class="text-xs sm:text-sm text-stone-500 font-mono">
-          Klik pada setiap swatch untuk menyalin kode warna ke clipboard
+          Klik pada setiap swatch untuk menyalin kode warna ke clipboard secara instan
         </p>
       </div>
 
@@ -477,12 +497,12 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 04: REAL-WORLD APPLICATIONS (PDH, HOODIE, ETC)  -->
+    <!-- SECTION 04: REAL-WORLD APPLICATIONS (PDH, BANNER, KTA)  -->
     <!-- ======================================================= -->
-    <section class="space-y-8">
+    <section id="mockups" class="space-y-8">
       
       <div class="border-l-2 border-[#C93600] pl-3 sm:pl-4">
-        <span class="text-[11px] font-mono font-bold tracking-widest text-[#C93600] uppercase">MOCKUP &amp; PENERAPAN</span>
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#C93600] uppercase">MOCKUP &amp; IMPLEMENTASI NYATA</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-950 tracking-tight mt-1">
           Simulasi Penerapan di Media Angkatan
         </h2>
@@ -498,7 +518,7 @@
               <i data-lucide="shirt" class="w-4 h-4 text-stone-400"></i>
             </div>
             <div class="h-36 rounded-2xl bg-[#0D0B0A] flex items-center justify-center p-4 shadow-inner">
-              <img id="mockup-pdh-img" src="../assets/logo_ar_ruwad_1_putih.png" alt="PDH Patch" class="max-h-24 object-contain filter drop-shadow-md" />
+              <img src="../assets/logo_ar_ruwad_1_putih.png" alt="PDH Patch" class="max-h-24 object-contain filter drop-shadow-md" />
             </div>
             <h4 class="text-sm font-bold text-stone-950">Bordir Lengan / Dada Kiri</h4>
             <p class="text-xs text-stone-600">Penerapan bordir komputer presisi tinggi pada kemeja dinas harian (PDH) kain drill hitam/navy.</p>
@@ -513,10 +533,10 @@
               <i data-lucide="flag" class="w-4 h-4 text-stone-400"></i>
             </div>
             <div class="h-36 rounded-2xl bg-gradient-to-br from-[#992600] to-[#0D0B0A] flex flex-col items-center justify-center p-4 text-center text-white shadow-inner space-y-2">
-              <img id="mockup-banner-img" src="../assets/logo_ar_ruwad_1_putih.png" alt="Stage Banner" class="max-h-16 object-contain" />
+              <img src="../assets/logo_ar_ruwad_2_putih.png" alt="Stage Banner" class="max-h-16 object-contain" />
               <span class="text-[10px] font-mono text-orange-200 uppercase font-bold tracking-wider">Muktamar Akbar Rumah Dakwah</span>
             </div>
-            <h4 class="text-sm font-bold text-stone-950">Backdrop &amp; Stage Backdrop</h4>
+            <h4 class="text-sm font-bold text-stone-950">Backdrop Panggung Acara</h4>
             <p class="text-xs text-stone-600">Tampilan megah dan berwibawa pada latar panggung acara pelantikan dan daurah angkatan.</p>
           </div>
         </div>
@@ -530,7 +550,7 @@
             </div>
             <div class="h-36 rounded-2xl bg-white border border-stone-200 flex items-center justify-center p-4 shadow-sm">
               <div class="w-20 h-20 rounded-full bg-[#0D0B0A] flex items-center justify-center shadow-md p-2">
-                <img id="mockup-avatar-img" src="../assets/logo_ar_ruwad_1_putih.png" alt="Avatar" class="max-h-14 object-contain" />
+                <img src="../assets/logo_ar_ruwad_1_putih.png" alt="Avatar" class="max-h-14 object-contain" />
               </div>
             </div>
             <h4 class="text-sm font-bold text-stone-950">Foto Profil IG, WA, &amp; YouTube</h4>
@@ -544,7 +564,7 @@
     <!-- ======================================================= -->
     <!-- SECTION 05: DIRECT VOTING & APPROVAL HUB (WHATSAPP)    -->
     <!-- ======================================================= -->
-    <section class="p-8 sm:p-14 rounded-[36px] bg-[#0D0B0A] text-white border border-stone-800 shadow-2xl space-y-8">
+    <section id="voting" class="p-8 sm:p-14 rounded-[36px] bg-[#0D0B0A] text-white border border-stone-800 shadow-2xl space-y-8">
       
       <div class="text-center space-y-3 max-w-2xl mx-auto">
         <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-mono font-bold">
@@ -552,10 +572,10 @@
           <span>FORUM KESEPAKATAN ANGKATAN</span>
         </div>
         <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
-          Tetapkan Logo Resmi Ar-Ruwad
+          Musyawarah &amp; Penetapan Logo Angkatan
         </h2>
         <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
-          Pilih varian yang paling mewakili karakter dan visi angkatan Anda, lalu konfirmasikan langsung ke desainer untuk penyiapan master file resmi (.AI, .EPS, .SVG, .PDF, .PNG).
+          Pilih varian yang disepakati oleh angkatan Anda, lalu klik tombol di bawah untuk langsung mengonfirmasi dan meminta paket master file (.AI, .EPS, .SVG, .PDF, .PNG) ke Mas Daru (SYMP Studio).
         </p>
       </div>
 
@@ -568,11 +588,11 @@
           </div>
           <div>
             <h4 class="text-base font-bold text-white">Pilih VARIAN 01</h4>
-            <p class="text-xs text-stone-400 mt-1">Perisai Solid &bull; Emblem Kepeloporan</p>
+            <p class="text-xs text-stone-400 mt-1">The Vanguard Emblem &bull; Perisai Solid</p>
           </div>
           <div class="py-2.5 px-4 rounded-xl bg-[#C93600] text-white text-xs font-extrabold flex items-center justify-center gap-1.5 shadow-md">
-            <span>Konfirmasi Varian 01</span>
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+            <span>Pilih Varian 01 via WhatsApp</span>
           </div>
         </a>
 
@@ -583,11 +603,11 @@
           </div>
           <div>
             <h4 class="text-base font-bold text-white">Pilih VARIAN 02</h4>
-            <p class="text-xs text-stone-400 mt-1">Suluh Api Obor &bull; Sayap Kebangkitan</p>
+            <p class="text-xs text-stone-400 mt-1">The Radiant Torch &bull; Suluh Obor &amp; Sayap</p>
           </div>
           <div class="py-2.5 px-4 rounded-xl bg-[#D68800] text-white text-xs font-extrabold flex items-center justify-center gap-1.5 shadow-md">
-            <span>Konfirmasi Varian 02</span>
-            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+            <span>Pilih Varian 02 via WhatsApp</span>
           </div>
         </a>
 
@@ -608,94 +628,29 @@
   </footer>
 
   <!-- ======================================================= -->
-  <!-- INTERACTIVE CONTROLLER SCRIPT                           -->
+  <!-- INTERACTIVE CARD CONTROLLER SCRIPT                      -->
   <!-- ======================================================= -->
   <script>
     lucide.createIcons();
 
-    let currentVariant = 1;
-    let currentCanvasMode = 'light';
-
-    const variantAssets = {
-      1: {
-        color: '../assets/logo_ar_ruwad_1.png',
-        white: '../assets/logo_ar_ruwad_1_putih.png',
-        title: 'VARIAN 01 // THE VANGUARD EMBLEM',
-        waText: 'insyaAllah%20angkatan%20kami%20memilih%20VARIAN%2001%20untuk%20logo%20resmi%20Ar%20Ruwad%20Rumah%20Dakwah'
-      },
-      2: {
-        color: '../assets/logo_ar_ruwad_2.png',
-        white: '../assets/logo_ar_ruwad_2_putih.png',
-        title: 'VARIAN 02 // THE RADIANT TORCH',
-        waText: 'insyaAllah%20angkatan%20kami%20memilih%20VARIAN%2002%20untuk%20logo%20resmi%20Ar%20Ruwad%20Rumah%20Dakwah'
-      }
-    };
-
-    function selectVariant(v) {
-      currentVariant = v;
+    function toggleCardCanvas(variantNum, mode, btn) {
+      const stage = document.getElementById(`stage-card-${variantNum}`);
+      const img = document.getElementById(`img-card-${variantNum}`);
       
-      const tab1 = document.getElementById('tab-opt-1');
-      const tab2 = document.getElementById('tab-opt-2');
-      const card1 = document.getElementById('card-desc-1');
-      const card2 = document.getElementById('card-desc-2');
-      const navBtn = document.getElementById('nav-wa-btn');
-      const badge = document.getElementById('stage-badge-variant');
+      const parent = btn.parentElement;
+      parent.querySelectorAll('button').forEach(b => {
+        b.className = 'px-2.5 py-1 rounded-full text-stone-500 hover:text-stone-900';
+      });
+      btn.className = 'px-2.5 py-1 rounded-full bg-white text-stone-900 shadow-xs';
 
-      if (v === 1) {
-        tab1.className = 'px-4 py-1.5 rounded-full bg-[#C93600] text-white shadow-xs transition-all flex items-center gap-1.5';
-        tab2.className = 'px-4 py-1.5 rounded-full text-stone-600 hover:text-stone-950 transition-all flex items-center gap-1.5';
-        card1.className = 'bezel-shell p-6 sm:p-8 space-y-4 border-[#C93600] bg-orange-50/20 cursor-pointer';
-        card2.className = 'bezel-shell p-6 sm:p-8 space-y-4 opacity-75 hover:opacity-100 cursor-pointer';
-        badge.className = 'text-[11px] font-mono font-black tracking-widest uppercase text-[#C93600]';
+      if (mode === 'light') {
+        stage.style.backgroundColor = '#FFFFFF';
+        stage.style.borderColor = '#EBE7E2';
+        img.src = `../assets/logo_ar_ruwad_${variantNum}.png`;
       } else {
-        tab2.className = 'px-4 py-1.5 rounded-full bg-[#D68800] text-white shadow-xs transition-all flex items-center gap-1.5';
-        tab1.className = 'px-4 py-1.5 rounded-full text-stone-600 hover:text-stone-950 transition-all flex items-center gap-1.5';
-        card2.className = 'bezel-shell p-6 sm:p-8 space-y-4 border-[#D68800] bg-amber-50/20 cursor-pointer';
-        card1.className = 'bezel-shell p-6 sm:p-8 space-y-4 opacity-75 hover:opacity-100 cursor-pointer';
-        badge.className = 'text-[11px] font-mono font-black tracking-widest uppercase text-[#D68800]';
-      }
-
-      badge.innerText = variantAssets[v].title;
-      navBtn.href = `https://wa.me/6281311506025?text=${variantAssets[v].waText}`;
-
-      // Update mockups
-      document.getElementById('mockup-pdh-img').src = variantAssets[v].white;
-      document.getElementById('mockup-banner-img').src = variantAssets[v].white;
-      document.getElementById('mockup-avatar-img').src = variantAssets[v].white;
-
-      updateStageVisual();
-    }
-
-    function switchCanvas(mode) {
-      currentCanvasMode = mode;
-      const bL = document.getElementById('btn-c-light');
-      const bC = document.getElementById('btn-c-crimson');
-      const bD = document.getElementById('btn-c-dark');
-
-      bL.className = mode === 'light' ? 'px-3.5 py-1 rounded-full bg-white text-stone-900 shadow-xs transition-all' : 'px-3.5 py-1 rounded-full text-stone-600 hover:text-stone-900 transition-all';
-      bC.className = mode === 'crimson' ? 'px-3.5 py-1 rounded-full bg-[#992600] text-white shadow-xs transition-all' : 'px-3.5 py-1 rounded-full text-stone-600 hover:text-stone-900 transition-all';
-      bD.className = mode === 'dark' ? 'px-3.5 py-1 rounded-full bg-[#0D0B0A] text-white shadow-xs transition-all' : 'px-3.5 py-1 rounded-full text-stone-600 hover:text-stone-900 transition-all';
-
-      updateStageVisual();
-    }
-
-    function updateStageVisual() {
-      const core = document.getElementById('master-stage-core');
-      const img = document.getElementById('img-main-logo');
-      const label = document.getElementById('stage-canvas-label');
-
-      if (currentCanvasMode === 'light') {
-        core.style.backgroundColor = '#FFFFFF';
-        img.src = variantAssets[currentVariant].color;
-        label.innerText = 'LIGHT CERAMIC CANVAS';
-      } else if (currentCanvasMode === 'crimson') {
-        core.style.backgroundColor = '#992600';
-        img.src = variantAssets[currentVariant].white;
-        label.innerText = 'CRIMSON DAWN CANVAS';
-      } else if (currentCanvasMode === 'dark') {
-        core.style.backgroundColor = '#0D0B0A';
-        img.src = variantAssets[currentVariant].white;
-        label.innerText = 'DEEP OBSIDIAN CANVAS';
+        stage.style.backgroundColor = '#0D0B0A';
+        stage.style.borderColor = 'rgba(255,255,255,0.1)';
+        img.src = `../assets/logo_ar_ruwad_${variantNum}_putih.png`;
       }
     }
 
