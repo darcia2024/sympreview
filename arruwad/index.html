@@ -8,7 +8,7 @@
   <!-- Google Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -19,18 +19,18 @@
           colors: {
             arruwad: {
               red: '#C93600',
-              redDark: '#992600',
-              redDeep: '#661900',
+              amber: '#D97706',
               gold: '#D68800',
-              goldLight: '#F5A623',
+              greenLeaf: '#8DBA3D',
               green: '#1B873F',
-              greenDark: '#047857',
+              cream: '#F5E8D6',
+              espresso: '#3B2315',
               dark: '#0D0B0A',
-              darkSurface: '#171312',
-              creamBg: '#FCFAF8'
+              darkSurface: '#171312'
             }
           },
           fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
             jakarta: ['Plus Jakarta Sans', 'sans-serif'],
             sans: ['Plus Jakarta Sans', 'sans-serif'],
             mono: ['JetBrains Mono', 'monospace']
@@ -45,10 +45,10 @@
   
   <style>
     :root {
-      --arruwad-red: #C93600;
-      --arruwad-gold: #D68800;
-      --arruwad-green: #1B873F;
+      --arruwad-amber: #D97706;
+      --arruwad-green: #8DBA3D;
       --arruwad-dark: #0D0B0A;
+      --arruwad-espresso: #3B2315;
       --agency-spring: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
@@ -73,7 +73,7 @@
       background: #FFFFFF;
       border: 1px solid #EBE7E2;
       border-radius: 28px;
-      box-shadow: 0 4px 24px -6px rgba(201, 54, 0, 0.04);
+      box-shadow: 0 4px 24px -6px rgba(217, 119, 6, 0.05);
       transition: all 0.4s var(--agency-spring);
     }
     @media (min-width: 640px) {
@@ -82,8 +82,22 @@
       }
     }
     .bezel-shell:hover {
-      box-shadow: 0 20px 48px -12px rgba(201, 54, 0, 0.1);
-      border-color: rgba(201, 54, 0, 0.25);
+      box-shadow: 0 20px 48px -12px rgba(217, 119, 6, 0.12);
+      border-color: rgba(217, 119, 6, 0.3);
+    }
+
+    /* Mockup Showcase Frame */
+    .mockup-frame {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid #EBE7E2;
+      background: #FFFFFF;
+      transition: all 0.4s var(--agency-spring);
+    }
+    .mockup-frame:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -10px rgba(59, 35, 21, 0.15);
+      border-color: #D97706;
     }
 
     /* Button-in-Button Architecture */
@@ -123,8 +137,8 @@
     }
     .swatch-box:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 24px -6px rgba(201, 54, 0, 0.15);
-      border-color: #C93600;
+      box-shadow: 0 12px 24px -6px rgba(217, 119, 6, 0.18);
+      border-color: #D97706;
     }
 
     .no-scrollbar::-webkit-scrollbar {
@@ -136,7 +150,7 @@
     }
   </style>
 </head>
-<body class="selection:bg-[#C93600] selection:text-white">
+<body class="selection:bg-[#D97706] selection:text-white">
 
   <!-- ======================================================= -->
   <!-- FLOATING EDITORIAL TOP BAR                              -->
@@ -146,26 +160,26 @@
       
       <!-- Brand & Project Title -->
       <a href="../" class="flex items-center gap-3 group">
-        <div class="w-8 h-8 rounded-xl bg-[#C93600] text-white flex items-center justify-center font-black shadow-xs">
+        <div class="w-8 h-8 rounded-xl bg-[#D97706] text-white flex items-center justify-center font-black shadow-xs">
           <i data-lucide="flame" class="w-4 h-4"></i>
         </div>
         <div class="flex flex-col">
-          <span class="text-sm font-extrabold text-stone-950 tracking-tight leading-none group-hover:text-[#C93600] transition-colors">AR RUWAD</span>
-          <span class="text-[10px] font-mono text-stone-400 font-bold uppercase tracking-wider mt-0.5">RUMAH DAKWAH &bull; SYMP</span>
+          <span class="text-sm font-extrabold text-stone-950 tracking-tight leading-none group-hover:text-[#D97706] transition-colors">AR RUWAD</span>
+          <span class="text-[10px] font-mono text-stone-400 font-bold uppercase tracking-wider mt-0.5">COMMUNITY &bull; RUMAH DAKWAH</span>
         </div>
       </a>
 
       <!-- Center Anchor Tabs (Desktop) -->
       <nav class="hidden md:flex items-center gap-1 p-1 bg-white rounded-full border border-stone-200 shadow-xs text-xs font-bold text-stone-600">
-        <a href="#variants" class="px-3.5 py-1.5 rounded-full hover:text-stone-950 hover:bg-stone-50 transition-all text-[#C93600]">2 Varian Logo</a>
-        <a href="#philosophy" class="px-3.5 py-1.5 rounded-full hover:text-stone-950 hover:bg-stone-50 transition-all">4 Pilar Nilai</a>
-        <a href="#colors" class="px-3.5 py-1.5 rounded-full hover:text-stone-950 hover:bg-stone-50 transition-all">Warna Pantone</a>
-        <a href="#mockups" class="px-3.5 py-1.5 rounded-full hover:text-stone-950 hover:bg-stone-50 transition-all">Penerapan</a>
+        <a href="#variants" class="px-3.5 py-1.5 rounded-full hover:text-stone-950 hover:bg-stone-50 transition-all text-[#D97706]">2 Varian Logo</a>
+        <a href="#mockups" class="px-3.5 py-1.5 rounded-full hover:text-stone-950 hover:bg-stone-50 transition-all">Mockup Resmi</a>
+        <a href="#philosophy" class="px-3.5 py-1.5 rounded-full hover:text-stone-950 hover:bg-stone-50 transition-all">Makna &amp; Nilai</a>
+        <a href="#colors" class="px-3.5 py-1.5 rounded-full hover:text-stone-950 hover:bg-stone-50 transition-all">Warna</a>
       </nav>
 
       <!-- Right Action CTA -->
       <div class="flex items-center gap-2">
-        <a href="#voting" class="btn-island bg-[#C93600] text-white hover:bg-[#992600] shadow-sm">
+        <a href="#voting" class="btn-island bg-[#D97706] text-white hover:bg-[#b06100] shadow-sm">
           <span>Pilih Logo Angkatan</span>
           <span class="btn-island-icon bg-white/15">
             <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
@@ -185,18 +199,18 @@
     <!-- HERO SECTION                                            -->
     <!-- ======================================================= -->
     <section class="space-y-6 max-w-4xl">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/70 text-[#C93600] text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider">
-        <i data-lucide="shield" class="w-3.5 h-3.5"></i>
-        <span>PROPOSAL LOGO ANGKATAN &bull; RUMAH DAKWAH 2026</span>
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100/80 text-[#D97706] text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+        <span>OFFICIAL BRAND IDENTITY &bull; AR RUWAD COMMUNITY</span>
       </div>
 
       <h1 class="text-3xl sm:text-6xl lg:text-7xl font-extrabold text-stone-950 tracking-tight leading-[1.06]">
-        Sang Pelopor Peradaban. <br />
-        <span class="text-[#C93600]">AR RUWAD</span> <span class="font-normal text-stone-400 font-mono">(الرواد)</span>
+        Ruang Bertumbuh. <br />
+        <span class="text-[#D97706]">Langkah Menuju Kebaikan.</span>
       </h1>
 
       <p class="text-sm sm:text-lg text-stone-600 font-normal leading-relaxed max-w-3xl">
-        Berasal dari bahasa Arab yang bermakna <strong>"Para Perintis / Pelopor"</strong>. Tersedia dalam berbagai mode tampilan warna resmi: <strong>Merah Terakota</strong>, <strong>Kuning Emas</strong>, <strong>Hijau Zamrud</strong>, <strong>Putih Bersih</strong>, dan <strong>Monokrom Hitam</strong>.
+        Proposal identitas visual resmi <strong>AR RUWAD COMMUNITY</strong> (Rumah Dakwah). Melambangkan pintu kebaikan, nilai Islam &amp; cahaya petunjuk, serta pertumbuhan daun kebermanfaatan bagi masyarakat.
       </p>
     </section>
 
@@ -206,13 +220,13 @@
     <section id="variants" class="space-y-8">
       
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-stone-200 pb-4">
-        <div class="border-l-2 border-[#C93600] pl-3 sm:pl-4">
-          <span class="text-[11px] font-mono font-bold tracking-widest text-[#C93600] uppercase">INTERACTIVE COLOR MODES</span>
+        <div class="border-l-2 border-[#D97706] pl-3 sm:pl-4">
+          <span class="text-[11px] font-mono font-bold tracking-widest text-[#D97706] uppercase">2 MASTER CONCEPTS</span>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-950 tracking-tight mt-1">
-            2 Varian Konsep dengan 5 Mode Warna
+            2 Opsi Varian Logo dengan 5 Mode Tampilan
           </h2>
           <p class="text-xs sm:text-sm text-stone-500 font-mono">
-            Klik tombol warna di atas setiap kartu logo untuk mengganti mode tampilan secara instan
+            Pilih mode warna (Original, Kuning, Hijau, Putih, Monokrom) pada setiap kartu logo
           </p>
         </div>
       </div>
@@ -223,35 +237,35 @@
         <!-- =================================================== -->
         <!-- VARIAN 01: THE VANGUARD EMBLEM                      -->
         <!-- =================================================== -->
-        <div class="bezel-shell p-6 sm:p-10 space-y-6 flex flex-col justify-between border-orange-200 shadow-sm hover:border-[#C93600]">
+        <div class="bezel-shell p-6 sm:p-10 space-y-6 flex flex-col justify-between border-amber-200 shadow-sm hover:border-[#D97706]">
           
           <div class="space-y-5">
             <!-- Header Tag & Mode Switcher -->
             <div class="space-y-3 border-b border-stone-100 pb-4">
               <div class="flex items-center justify-between">
                 <div>
-                  <span class="px-2.5 py-1 rounded-full bg-orange-100 text-[#C93600] font-mono text-[11px] font-bold">
+                  <span class="px-2.5 py-1 rounded-full bg-amber-100 text-[#D97706] font-mono text-[11px] font-bold">
                     VARIAN 01 RESMI
                   </span>
                   <h3 class="text-xl sm:text-2xl font-extrabold text-stone-950 mt-1.5">The Vanguard Emblem</h3>
                 </div>
-                <span id="badge-color-1" class="text-[11px] font-mono font-bold text-[#C93600] bg-stone-100 px-3 py-1 rounded-full uppercase">
-                  MERAH ASLI
+                <span id="badge-color-1" class="text-[11px] font-mono font-bold text-[#D97706] bg-stone-100 px-3 py-1 rounded-full uppercase">
+                  WARNA UTAMA
                 </span>
               </div>
 
               <!-- 5 Color Mode Buttons for Varian 1 -->
               <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1 text-xs font-bold">
-                <button onclick="setLogoColorMode(1, 'red', this)" class="px-3 py-1.5 rounded-full bg-[#C93600] text-white shadow-xs transition-all flex items-center gap-1">
+                <button onclick="setLogoColorMode(1, 'red', this)" class="px-3 py-1.5 rounded-full bg-[#D97706] text-white shadow-xs transition-all flex items-center gap-1">
                   <span class="w-2 h-2 rounded-full bg-white"></span>
-                  <span>Merah</span>
+                  <span>Original</span>
                 </button>
                 <button onclick="setLogoColorMode(1, 'yellow', this)" class="px-3 py-1.5 rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all flex items-center gap-1">
                   <span class="w-2 h-2 rounded-full bg-[#D68800]"></span>
                   <span>Kuning</span>
                 </button>
                 <button onclick="setLogoColorMode(1, 'green', this)" class="px-3 py-1.5 rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all flex items-center gap-1">
-                  <span class="w-2 h-2 rounded-full bg-[#1B873F]"></span>
+                  <span class="w-2 h-2 rounded-full bg-[#8DBA3D]"></span>
                   <span>Hijau</span>
                 </button>
                 <button onclick="setLogoColorMode(1, 'white', this)" class="px-3 py-1.5 rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all flex items-center gap-1">
@@ -273,19 +287,19 @@
             <!-- Deep Philosophy Description -->
             <div class="space-y-2.5">
               <h4 class="text-sm font-extrabold text-stone-950 flex items-center gap-2">
-                <i data-lucide="shield" class="w-4 h-4 text-[#C93600]"></i>
-                <span>Perisai Solid &bull; Keteguhan Benteng Keimanan</span>
+                <i data-lucide="shield" class="w-4 h-4 text-[#D97706]"></i>
+                <span>Gerbang Kebaikan &bull; Benteng Keimanan</span>
               </h4>
               <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
-                Komposisi lambang kesatuan yang memadukan stilasi kaligrafi inisial dengan bentuk perisai benteng. Melambangkan perlindungan nilai tauhid, persaudaraan angkatan yang kokoh tak terpisahkan, serta wibawa para pelopor dakwah yang siap menghadapi tantangan masa depan.
+                Bentuk gerbang melambangkan pintu kebaikan dan kesempatan untuk semua. Dipadukan kubah masjid, bulan bintang petunjuk, serta sepasang daun hijau yang merepresentasikan pertumbuhan dan kebermanfaatan sejati.
               </p>
             </div>
           </div>
 
           <!-- Bottom Direct WhatsApp CTA -->
           <div class="pt-4 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <span id="info-mode-1" class="text-[11px] font-mono text-stone-400">Mode: Crimson Flame (#C93600)</span>
-            <a href="https://wa.me/6281311506025?text=insyaAllah%20angkatan%20kami%20resmi%20memilih%20VARIAN%2001%20(The%20Vanguard%20Emblem)%20untuk%20logo%20resmi%20Ar%20Ruwad%20Rumah%20Dakwah" target="_blank" class="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#C93600] hover:bg-[#992600] text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm">
+            <span id="info-mode-1" class="text-[11px] font-mono text-stone-400">Mode: Amber Warm Gold (#D97706)</span>
+            <a href="https://wa.me/6281311506025?text=insyaAllah%20angkatan%20kami%20resmi%20memilih%20VARIAN%2001%20(The%20Vanguard%20Emblem)%20untuk%20logo%20resmi%20Ar%20Ruwad%20Rumah%20Dakwah" target="_blank" class="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#D97706] hover:bg-[#b06100] text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm">
               <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
               <span>Pilih Varian 01 via WA</span>
             </a>
@@ -296,35 +310,35 @@
         <!-- =================================================== -->
         <!-- VARIAN 02: THE RADIANT TORCH                        -->
         <!-- =================================================== -->
-        <div class="bezel-shell p-6 sm:p-10 space-y-6 flex flex-col justify-between border-amber-200 shadow-sm hover:border-[#D68800]">
+        <div class="bezel-shell p-6 sm:p-10 space-y-6 flex flex-col justify-between border-stone-200 shadow-sm hover:border-[#3B2315]">
           
           <div class="space-y-5">
             <!-- Header Tag & Mode Switcher -->
             <div class="space-y-3 border-b border-stone-100 pb-4">
               <div class="flex items-center justify-between">
                 <div>
-                  <span class="px-2.5 py-1 rounded-full bg-amber-100 text-[#D68800] font-mono text-[11px] font-bold">
+                  <span class="px-2.5 py-1 rounded-full bg-stone-100 text-stone-900 font-mono text-[11px] font-bold">
                     VARIAN 02 RESMI
                   </span>
                   <h3 class="text-xl sm:text-2xl font-extrabold text-stone-950 mt-1.5">The Radiant Torch</h3>
                 </div>
-                <span id="badge-color-2" class="text-[11px] font-mono font-bold text-[#D68800] bg-stone-100 px-3 py-1 rounded-full uppercase">
-                  MERAH / EMAS
+                <span id="badge-color-2" class="text-[11px] font-mono font-bold text-stone-800 bg-stone-100 px-3 py-1 rounded-full uppercase">
+                  WARNA UTAMA
                 </span>
               </div>
 
               <!-- 5 Color Mode Buttons for Varian 2 -->
               <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1 text-xs font-bold">
-                <button onclick="setLogoColorMode(2, 'red', this)" class="px-3 py-1.5 rounded-full bg-[#D68800] text-white shadow-xs transition-all flex items-center gap-1">
+                <button onclick="setLogoColorMode(2, 'red', this)" class="px-3 py-1.5 rounded-full bg-stone-900 text-white shadow-xs transition-all flex items-center gap-1">
                   <span class="w-2 h-2 rounded-full bg-white"></span>
-                  <span>Merah/Emas</span>
+                  <span>Original</span>
                 </button>
                 <button onclick="setLogoColorMode(2, 'yellow', this)" class="px-3 py-1.5 rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all flex items-center gap-1">
                   <span class="w-2 h-2 rounded-full bg-[#D68800]"></span>
                   <span>Kuning</span>
                 </button>
                 <button onclick="setLogoColorMode(2, 'green', this)" class="px-3 py-1.5 rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all flex items-center gap-1">
-                  <span class="w-2 h-2 rounded-full bg-[#1B873F]"></span>
+                  <span class="w-2 h-2 rounded-full bg-[#8DBA3D]"></span>
                   <span>Hijau</span>
                 </button>
                 <button onclick="setLogoColorMode(2, 'white', this)" class="px-3 py-1.5 rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all flex items-center gap-1">
@@ -346,11 +360,11 @@
             <!-- Deep Philosophy Description -->
             <div class="space-y-2.5">
               <h4 class="text-sm font-extrabold text-stone-950 flex items-center gap-2">
-                <i data-lucide="flame" class="w-4 h-4 text-[#D68800]"></i>
+                <i data-lucide="flame" class="w-4 h-4 text-[#D97706]"></i>
                 <span>Suluh Obor Ilmu &bull; Sayap Kebangkitan Umat</span>
               </h4>
               <p class="text-xs sm:text-sm text-stone-600 leading-relaxed">
-                Siluet dinamis berkobar yang memancarkan nyala api obor ilmu (*mash'al*) dan sayap kebangkitan dengan gradasi hangat Crimson ke Solar Gold. Simbol generasi yang progresif, bergerak lincah menyebarkan pencerahan, dan adaptif merespons zaman.
+                Siluet dinamis berkobar yang memancarkan nyala api obor ilmu (*mash'al*) dan sayap kebangkitan. Simbol generasi yang progresif, bergerak lincah menyebarkan pencerahan, dan adaptif merespons zaman.
               </p>
             </div>
           </div>
@@ -358,7 +372,7 @@
           <!-- Bottom Direct WhatsApp CTA -->
           <div class="pt-4 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between gap-3">
             <span id="info-mode-2" class="text-[11px] font-mono text-stone-400">Mode: Solar Gold &bull; Crimson</span>
-            <a href="https://wa.me/6281311506025?text=insyaAllah%20angkatan%20kami%20resmi%20memilih%20VARIAN%2002%20(The%20Radiant%20Torch)%20untuk%20logo%20resmi%20Ar%20Ruwad%20Rumah%20Dakwah" target="_blank" class="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#D68800] hover:bg-[#b07000] text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm">
+            <a href="https://wa.me/6281311506025?text=insyaAllah%20angkatan%20kami%20resmi%20memilih%20VARIAN%2002%20(The%20Radiant%20Torch)%20untuk%20logo%20resmi%20Ar%20Ruwad%20Rumah%20Dakwah" target="_blank" class="w-full sm:w-auto px-5 py-2.5 rounded-full bg-stone-900 hover:bg-black text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm">
               <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
               <span>Pilih Varian 02 via WA</span>
             </a>
@@ -371,75 +385,146 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 02: 4 PILAR FILOSOFI ANGKATAN                   -->
+    <!-- SECTION 02: OFFICIAL REAL-WORLD MOCKUPS STUDIO          -->
+    <!-- ======================================================= -->
+    <section id="mockups" class="space-y-8">
+      
+      <div class="border-l-2 border-[#D97706] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#D97706] uppercase">OFFICIAL MOCKUP SHOWCASE</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-950 tracking-tight mt-1">
+          Simulasi Penerapan Nyata di Media Angkatan
+        </h2>
+        <p class="text-xs sm:text-sm text-stone-500 font-mono">
+          Foto asli penerapan identitas pada Kemeja PDH, Topi Official, dan Brand Board Poster
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        
+        <!-- Mockup 1: Kemeja PDH Ikhwan & Akhwat -->
+        <div class="mockup-frame flex flex-col justify-between">
+          <div class="overflow-hidden bg-stone-100 flex items-center justify-center">
+            <img src="../assets/mockup_arruwad_pdh.jpg" alt="Kemeja PDH Ar Ruwad Ikhwan dan Akhwat" class="w-full h-auto object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div class="p-6 space-y-3 bg-white">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono font-bold text-[#D97706] bg-amber-50 px-2.5 py-1 rounded-full uppercase">KEMEJA PDH RESMI</span>
+              <i data-lucide="shirt" class="w-4 h-4 text-stone-400"></i>
+            </div>
+            <h3 class="text-base font-extrabold text-stone-950">Seragam PDH Ikhwan &amp; Akhwat</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Bordir komputer logo emas &amp; teks "PROJECT DIVISION" di atas kemeja dinas harian (PDH) hitam dengan aksen jahitan kontras oranye.
+            </p>
+          </div>
+        </div>
+
+        <!-- Mockup 2: Topi Official -->
+        <div class="mockup-frame flex flex-col justify-between">
+          <div class="overflow-hidden bg-stone-100 flex items-center justify-center">
+            <img src="../assets/mockup_arruwad_topi.jpg" alt="Topi Official Ar Ruwad" class="w-full h-auto object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div class="p-6 space-y-3 bg-white">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono font-bold text-[#3B2315] bg-stone-100 px-2.5 py-1 rounded-full uppercase">TOPI MERCHANDISE</span>
+              <i data-lucide="award" class="w-4 h-4 text-stone-400"></i>
+            </div>
+            <h3 class="text-base font-extrabold text-stone-950">Topi Official 3 Pilihan Warna</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Topi katun premium dengan bordir logo timbul berpresisi tinggi. Pilihan warna: Coklat Espresso, Krem Natural, dan Hijau Tua.
+            </p>
+          </div>
+        </div>
+
+        <!-- Mockup 3: Brand Board Poster -->
+        <div class="mockup-frame flex flex-col justify-between">
+          <div class="overflow-hidden bg-stone-100 flex items-center justify-center">
+            <img src="../assets/mockup_arruwad_board.jpg" alt="Brand Board Ar Ruwad Community" class="w-full h-auto object-cover transition-transform duration-500 hover:scale-105" />
+          </div>
+          <div class="p-6 space-y-3 bg-white">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono font-bold text-[#8DBA3D] bg-emerald-50 px-2.5 py-1 rounded-full uppercase">BRAND MANUAL POSTER</span>
+              <i data-lucide="book-open" class="w-4 h-4 text-stone-400"></i>
+            </div>
+            <h3 class="text-base font-extrabold text-stone-950">Brand Board &amp; Filosofi Simbol</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Panduan lengkap makna gerbang kebaikan, masjid, bulan bintang, daun pertumbuhan, serta 4 pilar nilai komunitas Ar Ruwad.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 03: 4 PILAR NILAI AR RUWAD COMMUNITY            -->
     <!-- ======================================================= -->
     <section id="philosophy" class="space-y-8">
       
-      <div class="border-l-2 border-[#C93600] pl-3 sm:pl-4">
-        <span class="text-[11px] font-mono font-bold tracking-widest text-[#C93600] uppercase">ESENSI &amp; NILAI PERGERAKAN</span>
+      <div class="border-l-2 border-[#D97706] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#D97706] uppercase">NILAI UTAMA // CORE VALUES</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-950 tracking-tight mt-1">
-          4 Pilar Esensi "Ar-Ruwad" Rumah Dakwah
+          4 Pilar Nilai AR RUWAD COMMUNITY
         </h2>
         <p class="text-xs sm:text-sm text-stone-500 font-mono">
-          "Kepeloporan &bull; Keteguhan &bull; Soliditas &bull; Jejak Manfaat"
+          "Bersama, kita tumbuh. Bersama, kita berdampak."
         </p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
-        <!-- Pilar 1 -->
+        <!-- Pilar 1: ILMU -->
+        <div class="bezel-shell p-6 space-y-4 bg-white">
+          <div class="w-12 h-12 rounded-2xl bg-amber-50 text-[#D97706] flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="book-open" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-stone-400 uppercase font-bold">NILAI 01</span>
+            <h3 class="text-base font-extrabold text-stone-950">ILMU</h3>
+          </div>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            Belajar tanpa henti, memperdalam pemahaman agama dan wawasan peradaban, serta menyebarkan manfaat seluas-luasnya.
+          </p>
+        </div>
+
+        <!-- Pilar 2: KOMUNITAS -->
+        <div class="bezel-shell p-6 space-y-4 bg-white">
+          <div class="w-12 h-12 rounded-2xl bg-stone-100 text-[#3B2315] flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-stone-400 uppercase font-bold">NILAI 02</span>
+            <h3 class="text-base font-extrabold text-stone-950">KOMUNITAS</h3>
+          </div>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            Bersatu dalam ikatan ukhuwah islamiyah yang murni, saling tolong-menolong, dan bergerak serempak dalam kebaikan.
+          </p>
+        </div>
+
+        <!-- Pilar 3: TUMBUH -->
+        <div class="bezel-shell p-6 space-y-4 bg-white">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-[#8DBA3D] flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="sprout" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-stone-400 uppercase font-bold">NILAI 03</span>
+            <h3 class="text-base font-extrabold text-stone-950">TUMBUH</h3>
+          </div>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            Bertumbuh bersama setiap hari, mengasah potensi diri, dan bertransformasi menjadi pribadi yang lebih beriman dan berkarakter.
+          </p>
+        </div>
+
+        <!-- Pilar 4: BERMANFAAT -->
         <div class="bezel-shell p-6 space-y-4 bg-white">
           <div class="w-12 h-12 rounded-2xl bg-orange-50 text-[#C93600] flex items-center justify-center font-bold shadow-xs">
-            <i data-lucide="compass" class="w-6 h-6"></i>
+            <i data-lucide="heart-handshake" class="w-6 h-6"></i>
           </div>
           <div class="space-y-1">
-            <span class="text-[10px] font-mono text-stone-400 uppercase font-bold">PILAR 01</span>
-            <h3 class="text-base font-extrabold text-stone-950">Ar-Riyadah (Kepeloporan)</h3>
+            <span class="text-[10px] font-mono text-stone-400 uppercase font-bold">NILAI 04</span>
+            <h3 class="text-base font-extrabold text-stone-950">BERMANFAAT</h3>
           </div>
           <p class="text-xs text-stone-600 leading-relaxed">
-            Menjadi pionir kebaikan yang berani mengambil inisiatif, membuka jalan baru peradaban, dan memimpin dengan keteladanan akhlak.
-          </p>
-        </div>
-
-        <!-- Pilar 2 -->
-        <div class="bezel-shell p-6 space-y-4 bg-white">
-          <div class="w-12 h-12 rounded-2xl bg-amber-50 text-[#D68800] flex items-center justify-center font-bold shadow-xs">
-            <i data-lucide="anchor" class="w-6 h-6"></i>
-          </div>
-          <div class="space-y-1">
-            <span class="text-[10px] font-mono text-stone-400 uppercase font-bold">PILAR 02</span>
-            <h3 class="text-base font-extrabold text-stone-950">Al-Istiqamah (Keteguhan)</h3>
-          </div>
-          <p class="text-xs text-stone-600 leading-relaxed">
-            Teguh memegang prinsip tauhid dan kebenaran, kokoh layaknya karang di tengah gelombang fitnah dan arus perubahan zaman.
-          </p>
-        </div>
-
-        <!-- Pilar 3 -->
-        <div class="bezel-shell p-6 space-y-4 bg-white">
-          <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-[#1B873F] flex items-center justify-center font-bold shadow-xs">
-            <i data-lucide="users-round" class="w-6 h-6"></i>
-          </div>
-          <div class="space-y-1">
-            <span class="text-[10px] font-mono text-stone-400 uppercase font-bold">PILAR 03</span>
-            <h3 class="text-base font-extrabold text-stone-950">Al-Ukhuwwah (Soliditas)</h3>
-          </div>
-          <p class="text-xs text-stone-600 leading-relaxed">
-            Persaudaraan sejati antar anggota angkatan yang saling menguatkan, memikul amanah bersama, dan saling menjaga hingga akhir hayat.
-          </p>
-        </div>
-
-        <!-- Pilar 4 -->
-        <div class="bezel-shell p-6 space-y-4 bg-white">
-          <div class="w-12 h-12 rounded-2xl bg-stone-100 text-stone-800 flex items-center justify-center font-bold shadow-xs">
-            <i data-lucide="sparkles" class="w-6 h-6"></i>
-          </div>
-          <div class="space-y-1">
-            <span class="text-[10px] font-mono text-stone-400 uppercase font-bold">PILAR 04</span>
-            <h3 class="text-base font-extrabold text-stone-950">Al-Atsar (Jejak Manfaat)</h3>
-          </div>
-          <p class="text-xs text-stone-600 leading-relaxed">
-            Kehadiran angkatan yang meninggalkan jejak amal nyata (*atsar hasan*), menginspirasi generasi sesudahnya, dan menjadi lentera di masyarakat.
+            Memberikan dampak nyata bagi umat, menjadi teladan inspiratif, dan menorehkan jejak amal jariyah yang abadi.
           </p>
         </div>
 
@@ -447,144 +532,67 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 03: COLOR SCIENCE & PANTONE CODES               -->
+    <!-- SECTION 04: OFFICIAL COLOR PALETTE SWATCHES             -->
     <!-- ======================================================= -->
     <section id="colors" class="space-y-8">
       
-      <div class="border-l-2 border-[#C93600] pl-3 sm:pl-4">
-        <span class="text-[11px] font-mono font-bold tracking-widest text-[#C93600] uppercase">COLOR CALIBRATION</span>
+      <div class="border-l-2 border-[#D97706] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#D97706] uppercase">PALET WARNA RESMI</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-950 tracking-tight mt-1">
-          Sistem Warna Resmi Ar-Ruwad
+          Sistem Warna Resmi Ar Ruwad Community
         </h2>
         <p class="text-xs sm:text-sm text-stone-500 font-mono">
-          Klik pada setiap swatch untuk menyalin kode warna ke clipboard secara instan
+          Klik pada setiap swatch untuk menyalin kode HEX langsung ke clipboard
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
         
-        <!-- Swatch 1: Crimson Flame Red -->
-        <div class="swatch-box p-4 bg-white space-y-3" onclick="copyColor('#C93600', 'Crimson Flame')">
-          <div class="h-24 rounded-2xl bg-[#C93600] flex items-end justify-end p-2.5 text-white shadow-inner">
+        <!-- Swatch 1: Amber Warm Gold -->
+        <div class="swatch-box p-4 sm:p-5 bg-white space-y-3" onclick="copyColor('#D97706', 'Amber Gold')">
+          <div class="h-24 sm:h-28 rounded-2xl bg-[#D97706] flex items-end justify-end p-2.5 text-white shadow-inner">
             <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
           </div>
           <div class="space-y-1">
-            <span class="text-[9px] font-mono text-stone-400 uppercase font-bold">MERAH UTAMA</span>
-            <h4 class="text-xs font-bold text-stone-950">Crimson Flame</h4>
-            <div class="text-[11px] font-mono text-[#C93600] font-bold">#C93600 &bull; 7598 C</div>
+            <span class="text-[9px] font-mono text-stone-400 uppercase font-bold">WARNA HANGAT</span>
+            <h4 class="text-xs sm:text-sm font-bold text-stone-950">Amber Gold</h4>
+            <div class="text-xs font-mono text-[#D97706] font-bold">#D97706</div>
           </div>
         </div>
 
-        <!-- Swatch 2: Solar Gold -->
-        <div class="swatch-box p-4 bg-white space-y-3" onclick="copyColor('#D68800', 'Solar Gold')">
-          <div class="h-24 rounded-2xl bg-[#D68800] flex items-end justify-end p-2.5 text-white shadow-inner">
+        <!-- Swatch 2: Fresh Leaf Green -->
+        <div class="swatch-box p-4 sm:p-5 bg-white space-y-3" onclick="copyColor('#8DBA3D', 'Leaf Green')">
+          <div class="h-24 sm:h-28 rounded-2xl bg-[#8DBA3D] flex items-end justify-end p-2.5 text-white shadow-inner">
             <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
           </div>
           <div class="space-y-1">
-            <span class="text-[9px] font-mono text-stone-400 uppercase font-bold">KUNING EMAS</span>
-            <h4 class="text-xs font-bold text-stone-950">Solar Gold</h4>
-            <div class="text-[11px] font-mono text-[#D68800] font-bold">#D68800 &bull; 138 C</div>
+            <span class="text-[9px] font-mono text-stone-400 uppercase font-bold">DAUN PERTUMBUHAN</span>
+            <h4 class="text-xs sm:text-sm font-bold text-stone-950">Growth Leaf</h4>
+            <div class="text-xs font-mono text-[#8DBA3D] font-bold">#8DBA3D</div>
           </div>
         </div>
 
-        <!-- Swatch 3: Emerald Islamic Green -->
-        <div class="swatch-box p-4 bg-white space-y-3" onclick="copyColor('#1B873F', 'Emerald Green')">
-          <div class="h-24 rounded-2xl bg-[#1B873F] flex items-end justify-end p-2.5 text-white shadow-inner">
+        <!-- Swatch 3: Warm Ivory Cream -->
+        <div class="swatch-box p-4 sm:p-5 bg-white space-y-3" onclick="copyColor('#F5E8D6', 'Warm Ivory')">
+          <div class="h-24 sm:h-28 rounded-2xl bg-[#F5E8D6] border border-stone-200 flex items-end justify-end p-2.5 text-stone-700 shadow-inner">
             <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
           </div>
           <div class="space-y-1">
-            <span class="text-[9px] font-mono text-stone-400 uppercase font-bold">HIJAU ISLAMI</span>
-            <h4 class="text-xs font-bold text-stone-950">Emerald Green</h4>
-            <div class="text-[11px] font-mono text-[#1B873F] font-bold">#1B873F &bull; 348 C</div>
+            <span class="text-[9px] font-mono text-stone-400 uppercase font-bold">KREM KETULUSAN</span>
+            <h4 class="text-xs sm:text-sm font-bold text-stone-950">Warm Ivory</h4>
+            <div class="text-xs font-mono text-stone-600 font-bold">#F5E8D6</div>
           </div>
         </div>
 
-        <!-- Swatch 4: Deep Obsidian -->
-        <div class="swatch-box p-4 bg-white space-y-3" onclick="copyColor('#0D0B0A', 'Deep Obsidian')">
-          <div class="h-24 rounded-2xl bg-[#0D0B0A] flex items-end justify-end p-2.5 text-white shadow-inner">
+        <!-- Swatch 4: Deep Espresso Brown -->
+        <div class="swatch-box p-4 sm:p-5 bg-white space-y-3" onclick="copyColor('#3B2315', 'Deep Espresso')">
+          <div class="h-24 sm:h-28 rounded-2xl bg-[#3B2315] flex items-end justify-end p-2.5 text-white shadow-inner">
             <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
           </div>
           <div class="space-y-1">
-            <span class="text-[9px] font-mono text-stone-400 uppercase font-bold">HITAM VELVET</span>
-            <h4 class="text-xs font-bold text-stone-950">Deep Obsidian</h4>
-            <div class="text-[11px] font-mono text-stone-950 font-bold">#0D0B0A &bull; Black 6 C</div>
-          </div>
-        </div>
-
-        <!-- Swatch 5: Pure White -->
-        <div class="swatch-box p-4 bg-white space-y-3" onclick="copyColor('#FFFFFF', 'Pure Light')">
-          <div class="h-24 rounded-2xl bg-white border border-stone-200 flex items-end justify-end p-2.5 text-stone-700 shadow-inner">
-            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
-          </div>
-          <div class="space-y-1">
-            <span class="text-[9px] font-mono text-stone-400 uppercase font-bold">PUTIH CERAH</span>
-            <h4 class="text-xs font-bold text-stone-950">Pure Ceramic</h4>
-            <div class="text-[11px] font-mono text-stone-500 font-bold">#FFFFFF &bull; Bright White</div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ======================================================= -->
-    <!-- SECTION 04: REAL-WORLD APPLICATIONS (PDH, BANNER, KTA)  -->
-    <!-- ======================================================= -->
-    <section id="mockups" class="space-y-8">
-      
-      <div class="border-l-2 border-[#C93600] pl-3 sm:pl-4">
-        <span class="text-[11px] font-mono font-bold tracking-widest text-[#C93600] uppercase">MOCKUP &amp; IMPLEMENTASI NYATA</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-950 tracking-tight mt-1">
-          Simulasi Penerapan di Media Angkatan
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <!-- Application 1: Jaket PDH / Kemeja Angkatan -->
-        <div class="bezel-shell p-6 space-y-4 flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="flex items-center justify-between border-b border-stone-100 pb-2">
-              <span class="text-xs font-mono font-bold text-[#C93600] uppercase">01. KEMEJA PDH &bull; BORDIR</span>
-              <i data-lucide="shirt" class="w-4 h-4 text-stone-400"></i>
-            </div>
-            <div class="h-36 rounded-2xl bg-[#0D0B0A] flex items-center justify-center p-4 shadow-inner">
-              <img src="../assets/logo_ar_ruwad_1_putih.png" alt="PDH Patch" class="max-h-24 object-contain filter drop-shadow-md" />
-            </div>
-            <h4 class="text-sm font-bold text-stone-950">Bordir Lengan / Dada Kiri</h4>
-            <p class="text-xs text-stone-600">Penerapan bordir komputer presisi tinggi pada kemeja dinas harian (PDH) kain drill hitam/navy.</p>
-          </div>
-        </div>
-
-        <!-- Application 2: Banner Spanduk Muktamar / Pelantikan -->
-        <div class="bezel-shell p-6 space-y-4 flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="flex items-center justify-between border-b border-stone-100 pb-2">
-              <span class="text-xs font-mono font-bold text-[#D68800] uppercase">02. SPANDUK &amp; STAGE BANNER</span>
-              <i data-lucide="flag" class="w-4 h-4 text-stone-400"></i>
-            </div>
-            <div class="h-36 rounded-2xl bg-gradient-to-br from-[#992600] to-[#0D0B0A] flex flex-col items-center justify-center p-4 text-center text-white shadow-inner space-y-2">
-              <img src="../assets/logo_ar_ruwad_2_putih.png" alt="Stage Banner" class="max-h-16 object-contain" />
-              <span class="text-[10px] font-mono text-orange-200 uppercase font-bold tracking-wider">Muktamar Akbar Rumah Dakwah</span>
-            </div>
-            <h4 class="text-sm font-bold text-stone-950">Backdrop Panggung Acara</h4>
-            <p class="text-xs text-stone-600">Tampilan megah dan berwibawa pada latar panggung acara pelantikan dan daurah angkatan.</p>
-          </div>
-        </div>
-
-        <!-- Application 3: Media Sosial & KTA Digital -->
-        <div class="bezel-shell p-6 space-y-4 flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="flex items-center justify-between border-b border-stone-100 pb-2">
-              <span class="text-xs font-mono font-bold text-stone-700 uppercase">03. AVATAR &amp; KTA DIGITAL</span>
-              <i data-lucide="smartphone" class="w-4 h-4 text-stone-400"></i>
-            </div>
-            <div class="h-36 rounded-2xl bg-white border border-stone-200 flex items-center justify-center p-4 shadow-sm">
-              <div class="w-20 h-20 rounded-full bg-[#0D0B0A] flex items-center justify-center shadow-md p-2">
-                <img src="../assets/logo_ar_ruwad_1_putih.png" alt="Avatar" class="max-h-14 object-contain" />
-              </div>
-            </div>
-            <h4 class="text-sm font-bold text-stone-950">Foto Profil IG, WA, &amp; YouTube</h4>
-            <p class="text-xs text-stone-600">Simbol terlihat jelas dan mudah dikenali dalam format lingkaran kecil profil media sosial.</p>
+            <span class="text-[9px] font-mono text-stone-400 uppercase font-bold">COKLAT DASAR</span>
+            <h4 class="text-xs sm:text-sm font-bold text-stone-950">Deep Espresso</h4>
+            <div class="text-xs font-mono text-stone-900 font-bold">#3B2315</div>
           </div>
         </div>
 
@@ -594,48 +602,48 @@
     <!-- ======================================================= -->
     <!-- SECTION 05: DIRECT VOTING & APPROVAL HUB (WHATSAPP)    -->
     <!-- ======================================================= -->
-    <section id="voting" class="p-8 sm:p-14 rounded-[36px] bg-[#0D0B0A] text-white border border-stone-800 shadow-2xl space-y-8">
+    <section id="voting" class="p-8 sm:p-14 rounded-[36px] bg-[#3B2315] text-white border border-stone-800 shadow-2xl space-y-8">
       
       <div class="text-center space-y-3 max-w-2xl mx-auto">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-xs font-mono font-bold">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-mono font-bold">
           <i data-lucide="vote" class="w-3.5 h-3.5"></i>
           <span>FORUM KESEPAKATAN ANGKATAN</span>
         </div>
         <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
           Musyawarah &amp; Penetapan Logo Angkatan
         </h2>
-        <p class="text-xs sm:text-sm text-stone-400 leading-relaxed">
-          Pilih varian yang disepakati oleh angkatan Anda, lalu klik tombol di bawah untuk langsung mengonfirmasi dan meminta paket master file (.AI, .EPS, .SVG, .PDF, .PNG) ke Mas Daru (SYMP Studio).
+        <p class="text-xs sm:text-sm text-stone-300 leading-relaxed">
+          Pilih varian yang disepakati oleh angkatan Anda, lalu klik tombol di bawah untuk langsung mengonfirmasi dan meminta paket master file vektor asli (.AI, .EPS, .SVG, .PDF, .PNG) ke Mas Daru (SYMP Studio).
         </p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto">
         
         <!-- Vote Button 1 -->
-        <a href="https://wa.me/6281311506025?text=insyaAllah%20angkatan%20kami%20resmi%20memilih%20VARIAN%2001%20(The%20Vanguard%20Emblem)%20untuk%20logo%20resmi%20Ar%20Ruwad%20Rumah%20Dakwah" target="_blank" class="p-6 rounded-3xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#C93600] transition-all space-y-3 text-center group">
-          <div class="w-12 h-12 mx-auto rounded-2xl bg-[#C93600]/20 text-[#C93600] flex items-center justify-center group-hover:scale-110 transition-transform">
+        <a href="https://wa.me/6281311506025?text=insyaAllah%20angkatan%20kami%20resmi%20memilih%20VARIAN%2001%20(The%20Vanguard%20Emblem)%20untuk%20logo%20resmi%20Ar%20Ruwad%20Rumah%20Dakwah" target="_blank" class="p-6 rounded-3xl bg-white/10 hover:bg-white/15 border border-white/15 hover:border-[#D97706] transition-all space-y-3 text-center group">
+          <div class="w-12 h-12 mx-auto rounded-2xl bg-[#D97706]/30 text-[#D97706] flex items-center justify-center group-hover:scale-110 transition-transform">
             <i data-lucide="shield" class="w-6 h-6"></i>
           </div>
           <div>
             <h4 class="text-base font-bold text-white">Pilih VARIAN 01</h4>
-            <p class="text-xs text-stone-400 mt-1">The Vanguard Emblem &bull; Perisai Solid</p>
+            <p class="text-xs text-stone-300 mt-1">The Vanguard Emblem &bull; Gerbang Kebaikan</p>
           </div>
-          <div class="py-2.5 px-4 rounded-xl bg-[#C93600] text-white text-xs font-extrabold flex items-center justify-center gap-1.5 shadow-md">
+          <div class="py-2.5 px-4 rounded-xl bg-[#D97706] text-white text-xs font-extrabold flex items-center justify-center gap-1.5 shadow-md">
             <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
             <span>Pilih Varian 01 via WhatsApp</span>
           </div>
         </a>
 
         <!-- Vote Button 2 -->
-        <a href="https://wa.me/6281311506025?text=insyaAllah%20angkatan%20kami%20resmi%20memilih%20VARIAN%2002%20(The%20Radiant%20Torch)%20untuk%20logo%20resmi%20Ar%20Ruwad%20Rumah%20Dakwah" target="_blank" class="p-6 rounded-3xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#D68800] transition-all space-y-3 text-center group">
-          <div class="w-12 h-12 mx-auto rounded-2xl bg-[#D68800]/20 text-[#D68800] flex items-center justify-center group-hover:scale-110 transition-transform">
+        <a href="https://wa.me/6281311506025?text=insyaAllah%20angkatan%20kami%20resmi%20memilih%20VARIAN%2002%20(The%20Radiant%20Torch)%20untuk%20logo%20resmi%20Ar%20Ruwad%20Rumah%20Dakwah" target="_blank" class="p-6 rounded-3xl bg-white/10 hover:bg-white/15 border border-white/15 hover:border-amber-300 transition-all space-y-3 text-center group">
+          <div class="w-12 h-12 mx-auto rounded-2xl bg-amber-400/20 text-amber-300 flex items-center justify-center group-hover:scale-110 transition-transform">
             <i data-lucide="flame" class="w-6 h-6"></i>
           </div>
           <div>
             <h4 class="text-base font-bold text-white">Pilih VARIAN 02</h4>
-            <p class="text-xs text-stone-400 mt-1">The Radiant Torch &bull; Suluh Obor &amp; Sayap</p>
+            <p class="text-xs text-stone-300 mt-1">The Radiant Torch &bull; Suluh Obor &amp; Sayap</p>
           </div>
-          <div class="py-2.5 px-4 rounded-xl bg-[#D68800] text-white text-xs font-extrabold flex items-center justify-center gap-1.5 shadow-md">
+          <div class="py-2.5 px-4 rounded-xl bg-stone-900 text-white text-xs font-extrabold flex items-center justify-center gap-1.5 shadow-md">
             <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
             <span>Pilih Varian 02 via WhatsApp</span>
           </div>
@@ -651,9 +659,9 @@
   <!-- LUXURY FOOTER                                           -->
   <!-- ======================================================= -->
   <footer class="border-t border-stone-200 py-12 px-4 text-center text-xs font-mono text-stone-500 space-y-2 bg-white">
-    <p>&copy; 2026 <strong>AR RUWAD Identity System</strong> &bull; Rumah Dakwah.</p>
+    <p>&copy; 2026 <strong>AR RUWAD COMMUNITY</strong> &bull; Rumah Dakwah.</p>
     <p class="text-[10px] text-stone-400 font-bold tracking-wider uppercase">
-      DESIGNED &amp; DIRECTED BY <strong class="text-[#C93600]">DARU FAHMAA MULIAWAN</strong> &bull; SYMP STUDIO
+      DESIGNED &amp; DIRECTED BY <strong class="text-[#D97706]">DARU FAHMAA MULIAWAN</strong> &bull; SYMP STUDIO
     </p>
   </footer>
 
@@ -665,16 +673,16 @@
 
     const logoAssetMap = {
       1: {
-        red: { src: '../assets/logo_ar_ruwad_1.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'MERAH ASLI', info: 'Mode: Crimson Flame (#C93600)' },
+        red: { src: '../assets/logo_ar_ruwad_1.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'WARNA ASLI', info: 'Mode: Amber Warm Gold (#D97706)' },
         yellow: { src: '../assets/logo_ar_ruwad_1_kuning.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'KUNING EMAS', info: 'Mode: Solar Gold (#D68800)' },
-        green: { src: '../assets/logo_ar_ruwad_1_hijau.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'HIJAU ISLAMI', info: 'Mode: Emerald Green (#1B873F)' },
+        green: { src: '../assets/logo_ar_ruwad_1_hijau.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'HIJAU ZAMRUD', info: 'Mode: Growth Leaf (#8DBA3D)' },
         white: { src: '../assets/logo_ar_ruwad_1_putih.png', bg: '#0D0B0A', border: 'rgba(255,255,255,0.1)', name: 'PUTIH BERSIH', info: 'Mode: Reverse White on Obsidian' },
         mono: { src: '../assets/logo_ar_ruwad_1_mono.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'MONOKROM HITAM', info: 'Mode: Solid 100% K Black' }
       },
       2: {
-        red: { src: '../assets/logo_ar_ruwad_2.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'MERAH / EMAS', info: 'Mode: Solar Gold & Crimson (#D68800)' },
+        red: { src: '../assets/logo_ar_ruwad_2.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'WARNA ASLI', info: 'Mode: Solar Gold & Crimson (#D68800)' },
         yellow: { src: '../assets/logo_ar_ruwad_2_kuning.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'KUNING EMAS', info: 'Mode: Solar Gold (#D68800)' },
-        green: { src: '../assets/logo_ar_ruwad_2_hijau.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'HIJAU ISLAMI', info: 'Mode: Emerald Green (#1B873F)' },
+        green: { src: '../assets/logo_ar_ruwad_2_hijau.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'HIJAU ZAMRUD', info: 'Mode: Growth Leaf (#8DBA3D)' },
         white: { src: '../assets/logo_ar_ruwad_2_putih.png', bg: '#0D0B0A', border: 'rgba(255,255,255,0.1)', name: 'PUTIH BERSIH', info: 'Mode: Reverse White on Obsidian' },
         mono: { src: '../assets/logo_ar_ruwad_2_mono.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'MONOKROM HITAM', info: 'Mode: Solid 100% K Black' }
       }
@@ -691,8 +699,8 @@
         b.className = 'px-3 py-1.5 rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all flex items-center gap-1';
       });
 
-      const activeColor = variantNum === 1 ? '#C93600' : '#D68800';
-      btn.className = `px-3 py-1.5 rounded-full bg-[${activeColor}] text-white shadow-xs transition-all flex items-center gap-1`;
+      const activeBg = variantNum === 1 ? 'bg-[#D97706]' : 'bg-stone-900';
+      btn.className = `px-3 py-1.5 rounded-full ${activeBg} text-white shadow-xs transition-all flex items-center gap-1`;
 
       const cfg = logoAssetMap[variantNum][mode];
       stage.style.backgroundColor = cfg.bg;
@@ -705,8 +713,8 @@
     function copyColor(code, name) {
       navigator.clipboard.writeText(code).then(() => {
         const toast = document.createElement('div');
-        toast.className = 'fixed bottom-6 right-6 bg-[#0D0B0A] text-white text-xs font-mono py-3 px-5 rounded-2xl shadow-2xl z-50 flex items-center gap-2 border border-white/20 animate-bounce';
-        toast.innerHTML = `<span class="w-2 h-2 rounded-full bg-orange-400"></span> Kode <strong>${code}</strong> (${name}) berhasil disalin!`;
+        toast.className = 'fixed bottom-6 right-6 bg-[#3B2315] text-white text-xs font-mono py-3 px-5 rounded-2xl shadow-2xl z-50 flex items-center gap-2 border border-white/20 animate-bounce';
+        toast.innerHTML = `<span class="w-2 h-2 rounded-full bg-[#8DBA3D]"></span> Kode <strong>${code}</strong> (${name}) berhasil disalin!`;
         document.body.appendChild(toast);
         setTimeout(() => toast.remove(), 2500);
       });
