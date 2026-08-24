@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tentang SYMP Studio — Studio Desain Identitas Brand & Logo</title>
+  <meta name="description" content="Profil SYMP Studio, studio perancangan identitas visual dan sistem logo berstandar agensi premium.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    :root {
+      --catalog-white: #FFFFFF;
+      --catalog-surface: #F8FAFC;
+      --catalog-border: #E2E8F0;
+      --catalog-crimson: #DC143C;
+      --catalog-crimson-dark: #991B1B;
+      --catalog-ink: #0F172A;
+      --catalog-muted: #64748B;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 12%, rgba(220, 20, 60, 0.45), transparent 34rem),
+        radial-gradient(circle at 85% 18%, rgba(185, 28, 28, 0.38), transparent 32rem),
+        linear-gradient(145deg, #4A0814 0%, #20040A 50%, #400712 100%) !important;
+      color: var(--catalog-ink);
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+
+    .noodle-shell {
+      min-height: 100dvh;
+      padding: clamp(1.25rem, 4vw, 4rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .noodle-page {
+      width: min(100%, 1180px);
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: var(--catalog-white);
+      box-shadow: 0 36px 120px rgba(20, 2, 6, 0.65);
+    }
+
+    .noodle-nav {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 1.25rem;
+      padding: clamp(1rem, 2.6vw, 1.8rem) clamp(1.25rem, 4vw, 3rem);
+      border-bottom: 1px solid var(--catalog-border);
+      background: #FFFFFF;
+    }
+
+    .noodle-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .noodle-logo img {
+      width: 44px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .noodle-links {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1.2rem, 4vw, 3.5rem);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--catalog-muted);
+    }
+
+    .noodle-links a {
+      text-decoration: none;
+      transition: color 180ms ease;
+      position: relative;
+    }
+
+    .noodle-links a:hover,
+    .noodle-links a.active {
+      color: var(--catalog-crimson);
+    }
+
+    .noodle-links a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -6px;
+      height: 2px;
+      background: var(--catalog-crimson);
+      border-radius: 99px;
+    }
+
+    .noodle-contact {
+      justify-self: end;
+      font-size: 0.78rem;
+      font-weight: 800;
+      font-family: "JetBrains Mono", monospace;
+      color: var(--catalog-crimson);
+      text-decoration: none;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(220, 20, 60, 0.08);
+      border: 1px solid rgba(220, 20, 60, 0.2);
+      transition: all 180ms ease;
+    }
+
+    .noodle-contact:hover {
+      background: var(--catalog-crimson);
+      color: #FFFFFF;
+    }
+
+    .noodle-strip {
+      display: flex;
+      overflow: hidden;
+      border-top: 1px solid rgba(220, 20, 60, 0.2);
+      border-bottom: 1px solid rgba(220, 20, 60, 0.2);
+      padding: 0.55rem 0;
+      color: var(--catalog-crimson);
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.05em;
+      line-height: 1;
+      white-space: nowrap;
+      background: rgba(220, 20, 60, 0.04);
+      user-select: none;
+      position: relative;
+    }
+
+    .noodle-strip-track {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      width: max-content;
+      will-change: transform;
+      animation: noodle-ticker 22s linear infinite;
+    }
+
+    @keyframes noodle-ticker {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .noodle-links {
+        display: none;
+      }
+      .noodle-nav {
+        grid-template-columns: auto auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      html, body {
+        background: #FFFFFF !important;
+      }
+      .noodle-shell {
+        padding: 0;
+        background: #FFFFFF;
+      }
+      .noodle-page {
+        border-radius: 0;
+        border: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-[#DC143C] selection:text-white">
+  <main class="noodle-shell">
+    <div class="noodle-page">
+      
+      <!-- Top Navigation -->
+      <nav class="noodle-nav" aria-label="Navigasi utama">
+        <a href="../" class="noodle-logo" aria-label="SYMP Studio home">
+          <img src="../assets/SYMP LOGO MERAH.png" alt="SYMP Studio">
+        </a>
+
+        <div class="noodle-links">
+          <a href="../">Katalog Proposal</a>
+          <a href="./" class="active">Tentang Studio</a>
+          <a href="../layanan/">Layanan</a>
+          <a href="../elevgro/">Elevgro</a>
+          <a href="../kolohaga/guidelines/">Kolohaga</a>
+          <a href="../arruwad/">Ar Ruwad</a>
+        </div>
+
+        <a class="noodle-contact" href="https://wa.me/6281311506025?text=Halo%20Daru%20(SYMP%20Studio),%20saya%20tertarik%20konsultasi%20desain%20logo" target="_blank" rel="noreferrer">
+          0813 1150 6025
+        </a>
+      </nav>
+
+      <!-- Hero Header -->
+      <section class="p-8 sm:p-16 border-b border-slate-100 bg-white space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 text-[#DC143C] text-xs font-mono font-bold uppercase tracking-wider">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          <span>ABOUT THE STUDIO &bull; IDENTITY DESIGNERS</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-7xl font-extrabold text-slate-950 tracking-tight leading-[1.05]">
+          Menciptakan Identitas Brand <br />
+          <span class="text-[#DC143C]">Abadi &amp; Berkarakter Kuat.</span>
+        </h1>
+
+        <p class="text-sm sm:text-lg text-slate-600 font-normal leading-relaxed max-w-3xl">
+          <strong>SYMP Studio</strong> adalah studio perancangan identitas visual independen yang dipimpin oleh <strong>Daru Fahmaa Muliawan</strong>. Kami berdedikasi membangun logo sistem, pedoman brand komprehensif, dan strategi visual berstandar tinggi yang menumbuhkan rasa percaya instan di mata target audiens.
+        </p>
+      </section>
+
+      <!-- Continuous Marquee Ticker Strip -->
+      <div class="noodle-strip" aria-hidden="true">
+        <div class="noodle-strip-track">
+          <span>SYMP STUDIO</span><span>✦</span>
+          <span>CRAFTED WITH PRECISION</span><span>✦</span>
+          <span>ESTABLISHED 2026</span><span>✦</span>
+          <span>PURPOSEFUL IDENTITY</span><span>✦</span>
+          <span>TIMELESS LOGO SYSTEMS</span><span>✦</span>
+          <span>SYMP STUDIO</span><span>✦</span>
+          <span>CRAFTED WITH PRECISION</span><span>✦</span>
+          <span>ESTABLISHED 2026</span><span>✦</span>
+          <span>PURPOSEFUL IDENTITY</span><span>✦</span>
+          <span>TIMELESS LOGO SYSTEMS</span><span>✦</span>
+          <!-- Duplicate set for seamless loop -->
+          <span>SYMP STUDIO</span><span>✦</span>
+          <span>CRAFTED WITH PRECISION</span><span>✦</span>
+          <span>ESTABLISHED 2026</span><span>✦</span>
+          <span>PURPOSEFUL IDENTITY</span><span>✦</span>
+          <span>TIMELESS LOGO SYSTEMS</span><span>✦</span>
+          <span>SYMP STUDIO</span><span>✦</span>
+          <span>CRAFTED WITH PRECISION</span><span>✦</span>
+          <span>ESTABLISHED 2026</span><span>✦</span>
+          <span>PURPOSEFUL IDENTITY</span><span>✦</span>
+          <span>TIMELESS LOGO SYSTEMS</span><span>✦</span>
+        </div>
+      </div>
+
+      <!-- Core Values & Philosophy Section -->
+      <section class="p-8 sm:p-16 space-y-12 bg-white">
+        <div class="border-l-2 border-[#DC143C] pl-4">
+          <span class="text-xs font-mono font-bold tracking-widest text-[#DC143C] uppercase">PRINSIP PERANCANGAN</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-950 tracking-tight mt-1">3 Fondasi Kerja SYMP Studio</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          
+          <div class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/80 space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#DC143C] flex items-center justify-center font-bold">
+              <i data-lucide="compass" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-950">1. Konsep Berdasar Riset</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Setiap bentuk, garis, dan kurva memiliki makna filosofis yang selaras dengan visi bisnis dan karakter target pasar klien.
+            </p>
+          </div>
+
+          <div class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/80 space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#DC143C] flex items-center justify-center font-bold">
+              <i data-lucide="layers" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-950">2. Sistem Visual Utuh</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Bukan sekadar menggambar simbol, melainkan merancang sistem identitas lengkap (warna Pantone, tipografi, grid, &amp; zona aman).
+            </p>
+          </div>
+
+          <div class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/80 space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#DC143C] flex items-center justify-center font-bold">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-950">3. Kesiapan Produksi Nyata</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              File master diserahkan dalam format vektor presisi (.AI, .EPS, .SVG, .PDF) yang siap untuk aplikasi bordir, sablon, cetak kemasan, &amp; UI web.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CTA Box -->
+      <section class="m-6 sm:m-12 p-8 sm:p-14 rounded-3xl bg-[#4A0814] text-white text-center space-y-6">
+        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Siap Mewujudkan Identitas Brand Terbaik?</h2>
+        <p class="text-xs sm:text-sm text-red-100 max-w-xl mx-auto leading-relaxed">
+          Konsultasikan kebutuhan desain logo dan brand identity bisnis Anda langsung bersama Creative Director kami.
+        </p>
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20saya%20ingin%20memulai%20projek%20desain%20identitas%20brand%20baru" target="_blank" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#DC143C] hover:bg-white hover:text-[#DC143C] text-white text-xs sm:text-sm font-extrabold transition-all shadow-lg">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Mulai Konsultasi via WhatsApp</span>
+        </a>
+      </section>
+
+      <!-- Footer -->
+      <footer class="flex flex-col sm:flex-row justify-between items-center gap-4 p-8 border-t border-slate-100 text-xs font-mono text-slate-500 bg-white">
+        <span>&copy; 2026 SYMP Studio, Directed by Daru Fahmaa Muliawan</span>
+        <span>Studio Perancangan Identitas Visual</span>
+      </footer>
+
+    </div>
+  </main>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

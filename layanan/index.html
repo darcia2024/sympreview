@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Layanan & Paket Desain — SYMP Studio</title>
+  <meta name="description" content="Layanan perancangan identitas visual, logo system, dan brand guidelines book oleh SYMP Studio.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    :root {
+      --catalog-white: #FFFFFF;
+      --catalog-surface: #F8FAFC;
+      --catalog-border: #E2E8F0;
+      --catalog-crimson: #DC143C;
+      --catalog-crimson-dark: #991B1B;
+      --catalog-ink: #0F172A;
+      --catalog-muted: #64748B;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 12%, rgba(220, 20, 60, 0.45), transparent 34rem),
+        radial-gradient(circle at 85% 18%, rgba(185, 28, 28, 0.38), transparent 32rem),
+        linear-gradient(145deg, #4A0814 0%, #20040A 50%, #400712 100%) !important;
+      color: var(--catalog-ink);
+      font-family: "Plus Jakarta Sans", sans-serif;
+    }
+
+    .noodle-shell {
+      min-height: 100dvh;
+      padding: clamp(1.25rem, 4vw, 4rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .noodle-page {
+      width: min(100%, 1180px);
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: var(--catalog-white);
+      box-shadow: 0 36px 120px rgba(20, 2, 6, 0.65);
+    }
+
+    .noodle-nav {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 1.25rem;
+      padding: clamp(1rem, 2.6vw, 1.8rem) clamp(1.25rem, 4vw, 3rem);
+      border-bottom: 1px solid var(--catalog-border);
+      background: #FFFFFF;
+    }
+
+    .noodle-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+    }
+
+    .noodle-logo img {
+      width: 44px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .noodle-links {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1.2rem, 4vw, 3.5rem);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--catalog-muted);
+    }
+
+    .noodle-links a {
+      text-decoration: none;
+      transition: color 180ms ease;
+      position: relative;
+    }
+
+    .noodle-links a:hover,
+    .noodle-links a.active {
+      color: var(--catalog-crimson);
+    }
+
+    .noodle-links a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -6px;
+      height: 2px;
+      background: var(--catalog-crimson);
+      border-radius: 99px;
+    }
+
+    .noodle-contact {
+      justify-self: end;
+      font-size: 0.78rem;
+      font-weight: 800;
+      font-family: "JetBrains Mono", monospace;
+      color: var(--catalog-crimson);
+      text-decoration: none;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(220, 20, 60, 0.08);
+      border: 1px solid rgba(220, 20, 60, 0.2);
+      transition: all 180ms ease;
+    }
+
+    .noodle-contact:hover {
+      background: var(--catalog-crimson);
+      color: #FFFFFF;
+    }
+
+    .noodle-strip {
+      display: flex;
+      overflow: hidden;
+      border-top: 1px solid rgba(220, 20, 60, 0.2);
+      border-bottom: 1px solid rgba(220, 20, 60, 0.2);
+      padding: 0.55rem 0;
+      color: var(--catalog-crimson);
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.05em;
+      line-height: 1;
+      white-space: nowrap;
+      background: rgba(220, 20, 60, 0.04);
+      user-select: none;
+      position: relative;
+    }
+
+    .noodle-strip-track {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      width: max-content;
+      will-change: transform;
+      animation: noodle-ticker 22s linear infinite;
+    }
+
+    @keyframes noodle-ticker {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-50%, 0, 0);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .noodle-links {
+        display: none;
+      }
+      .noodle-nav {
+        grid-template-columns: auto auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      html, body {
+        background: #FFFFFF !important;
+      }
+      .noodle-shell {
+        padding: 0;
+        background: #FFFFFF;
+      }
+      .noodle-page {
+        border-radius: 0;
+        border: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-[#DC143C] selection:text-white">
+  <main class="noodle-shell">
+    <div class="noodle-page">
+      
+      <!-- Top Navigation -->
+      <nav class="noodle-nav" aria-label="Navigasi utama">
+        <a href="../" class="noodle-logo" aria-label="SYMP Studio home">
+          <img src="../assets/SYMP LOGO MERAH.png" alt="SYMP Studio">
+        </a>
+
+        <div class="noodle-links">
+          <a href="../">Katalog Proposal</a>
+          <a href="../tentang/">Tentang Studio</a>
+          <a href="./" class="active">Layanan</a>
+          <a href="../elevgro/">Elevgro</a>
+          <a href="../kolohaga/guidelines/">Kolohaga</a>
+          <a href="../arruwad/">Ar Ruwad</a>
+        </div>
+
+        <a class="noodle-contact" href="https://wa.me/6281311506025?text=Halo%20Daru%20(SYMP%20Studio),%20saya%20mau%20order%20layanan%20desain%20logo" target="_blank" rel="noreferrer">
+          0813 1150 6025
+        </a>
+      </nav>
+
+      <!-- Hero Header -->
+      <section class="p-8 sm:p-16 border-b border-slate-100 bg-white space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-50 text-[#DC143C] text-xs font-mono font-bold uppercase tracking-wider">
+          <i data-lucide="award" class="w-3.5 h-3.5"></i>
+          <span>SERVICES &amp; CAPABILITIES &bull; SYMP STUDIO</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-7xl font-extrabold text-slate-950 tracking-tight leading-[1.05]">
+          Paket Perancangan <br />
+          <span class="text-[#DC143C]">Identitas Visual &amp; Logo.</span>
+        </h1>
+
+        <p class="text-sm sm:text-lg text-slate-600 font-normal leading-relaxed max-w-3xl">
+          Layanan menyeluruh dari perumusan filosofi, eksplorasi konsep logo, sistem warna Pantone terkalibrasi, hingga penyusunan dokumen Brand Guidelines siap pakai.
+        </p>
+      </section>
+
+      <!-- Continuous Marquee Ticker Strip -->
+      <div class="noodle-strip" aria-hidden="true">
+        <div class="noodle-strip-track">
+          <span>LOGO IDENTITY</span><span>✦</span>
+          <span>BRAND GUIDELINES BOOK</span><span>✦</span>
+          <span>REBRANDING SYSTEM</span><span>✦</span>
+          <span>MOCKUP SIMULATION</span><span>✦</span>
+          <span>VECTOR MASTER FILES</span><span>✦</span>
+          <span>LOGO IDENTITY</span><span>✦</span>
+          <span>BRAND GUIDELINES BOOK</span><span>✦</span>
+          <span>REBRANDING SYSTEM</span><span>✦</span>
+          <span>MOCKUP SIMULATION</span><span>✦</span>
+          <span>VECTOR MASTER FILES</span><span>✦</span>
+          <!-- Duplicate set for seamless loop -->
+          <span>LOGO IDENTITY</span><span>✦</span>
+          <span>BRAND GUIDELINES BOOK</span><span>✦</span>
+          <span>REBRANDING SYSTEM</span><span>✦</span>
+          <span>MOCKUP SIMULATION</span><span>✦</span>
+          <span>VECTOR MASTER FILES</span><span>✦</span>
+          <span>LOGO IDENTITY</span><span>✦</span>
+          <span>BRAND GUIDELINES BOOK</span><span>✦</span>
+          <span>REBRANDING SYSTEM</span><span>✦</span>
+          <span>MOCKUP SIMULATION</span><span>✦</span>
+          <span>VECTOR MASTER FILES</span><span>✦</span>
+        </div>
+      </div>
+
+      <!-- Services 3-Grid -->
+      <section class="p-8 sm:p-16 space-y-12 bg-white">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          
+          <!-- Service 1 -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/80 space-y-5 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#DC143C] flex items-center justify-center font-bold">
+                <i data-lucide="pen-tool" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-950">01. Perancangan Logo Utama</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Eksplorasi konsep logo unik, filosofi mendalam, dan proposal presentasi interaktif dengan simulasi kanvas terang dan gelap.
+              </p>
+            </div>
+            <ul class="text-xs font-mono text-slate-500 space-y-1.5 border-t border-slate-200 pt-4">
+              <li>&bull; 2-3 Opsi Konsep Orisinal</li>
+              <li>&bull; Bedah Filosofi &amp; Geometri</li>
+              <li>&bull; Live Interactive Web Deck</li>
+            </ul>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/80 space-y-5 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#DC143C] flex items-center justify-center font-bold">
+                <i data-lucide="book-open" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-950">02. Brand Guidelines Book</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Dokumentasi panduan komprehensif: aturan zona aman, ukuran minimum, kalibrasi warna Pantone 70-20-10, tipografi, dan Do's &amp; Don'ts.
+              </p>
+            </div>
+            <ul class="text-xs font-mono text-slate-500 space-y-1.5 border-t border-slate-200 pt-4">
+              <li>&bull; Halaman Guidelines Interaktif</li>
+              <li>&bull; Sistem Warna Pantone / CMYK</li>
+              <li>&bull; Panduan Aplikasi Produksi</li>
+            </ul>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="p-6 sm:p-8 rounded-3xl bg-slate-50 border border-slate-200/80 space-y-5 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-12 h-12 rounded-2xl bg-red-50 text-[#DC143C] flex items-center justify-center font-bold">
+                <i data-lucide="package" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-950">03. Master File Vector Komplit</h3>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Penyerahan seluruh aset dalam format resolusi tinggi tanpa kompresi, siap pakai untuk digital, cetak massal, dan merchandise.
+              </p>
+            </div>
+            <ul class="text-xs font-mono text-slate-500 space-y-1.5 border-t border-slate-200 pt-4">
+              <li>&bull; .AI, .EPS, .SVG, .PDF, .PNG HD</li>
+              <li>&bull; App Icon 1:1 &amp; Favicon</li>
+              <li>&bull; Cloud Google Drive Backup</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CTA Box -->
+      <section class="m-6 sm:m-12 p-8 sm:p-14 rounded-3xl bg-[#4A0814] text-white text-center space-y-6">
+        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Mulai Konsultasi Projek Anda</h2>
+        <p class="text-xs sm:text-sm text-red-100 max-w-xl mx-auto leading-relaxed">
+          Diskusikan visi brand Anda sekarang untuk mendapatkan penawaran proposal logo yang tepat sasaran.
+        </p>
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20saya%20tertarik%20dengan%20layanan%20desain%20SYMP%20Studio" target="_blank" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#DC143C] hover:bg-white hover:text-[#DC143C] text-white text-xs sm:text-sm font-extrabold transition-all shadow-lg">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+          <span>Konsultasi Paket via WhatsApp</span>
+        </a>
+      </section>
+
+      <!-- Footer -->
+      <footer class="flex flex-col sm:flex-row justify-between items-center gap-4 p-8 border-t border-slate-100 text-xs font-mono text-slate-500 bg-white">
+        <span>&copy; 2026 SYMP Studio, Directed by Daru Fahmaa Muliawan</span>
+        <span>Studio Perancangan Identitas Visual</span>
+      </footer>
+
+    </div>
+  </main>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
