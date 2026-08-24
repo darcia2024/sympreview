@@ -23,6 +23,8 @@
               redDeep: '#661900',
               gold: '#D68800',
               goldLight: '#F5A623',
+              green: '#1B873F',
+              greenDark: '#047857',
               dark: '#0D0B0A',
               darkSurface: '#171312',
               creamBg: '#FCFAF8'
@@ -45,6 +47,7 @@
     :root {
       --arruwad-red: #C93600;
       --arruwad-gold: #D68800;
+      --arruwad-green: #1B873F;
       --arruwad-dark: #0D0B0A;
       --agency-spring: cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -81,17 +84,6 @@
     .bezel-shell:hover {
       box-shadow: 0 20px 48px -12px rgba(201, 54, 0, 0.1);
       border-color: rgba(201, 54, 0, 0.25);
-    }
-
-    /* Nested Inner Core */
-    .bezel-core {
-      border-radius: 22px;
-      transition: all 0.3s ease;
-    }
-    @media (min-width: 640px) {
-      .bezel-core {
-        border-radius: 28px;
-      }
     }
 
     /* Button-in-Button Architecture */
@@ -190,7 +182,7 @@
   <main class="max-w-6xl mx-auto px-4 sm:px-8 py-10 sm:py-20 space-y-16 sm:space-y-28">
 
     <!-- ======================================================= -->
-    <!-- HERO SECTION: THE IDENTITY HERO                        -->
+    <!-- HERO SECTION                                            -->
     <!-- ======================================================= -->
     <section class="space-y-6 max-w-4xl">
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/70 text-[#C93600] text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider">
@@ -204,23 +196,23 @@
       </h1>
 
       <p class="text-sm sm:text-lg text-stone-600 font-normal leading-relaxed max-w-3xl">
-        Berasal dari bahasa Arab yang bermakna <strong>"Para Perintis / Pelopor"</strong>. Identitas visual ini dirancang sebagai lambang kehormatan, keteguhan tauhid, dan semangat kepeloporan kader Rumah Dakwah dalam menyebarkan kemaslahatan di garda terdepan.
+        Berasal dari bahasa Arab yang bermakna <strong>"Para Perintis / Pelopor"</strong>. Tersedia dalam berbagai mode tampilan warna resmi: <strong>Merah Terakota</strong>, <strong>Kuning Emas</strong>, <strong>Hijau Zamrud</strong>, <strong>Putih Bersih</strong>, dan <strong>Monokrom Hitam</strong>.
       </p>
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 01: 2 VARIAN UTAMA (LANGSUNG MUNCUL DI HALAMAN) -->
+    <!-- SECTION 01: 2 VARIAN UTAMA DENGAN 5 MODE WARNA INSTAN   -->
     <!-- ======================================================= -->
     <section id="variants" class="space-y-8">
       
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-stone-200 pb-4">
         <div class="border-l-2 border-[#C93600] pl-3 sm:pl-4">
-          <span class="text-[11px] font-mono font-bold tracking-widest text-[#C93600] uppercase">THE 2 MASTER CONCEPTS</span>
+          <span class="text-[11px] font-mono font-bold tracking-widest text-[#C93600] uppercase">INTERACTIVE COLOR MODES</span>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-950 tracking-tight mt-1">
-            2 Varian Konsep Desain Logo Resmi
+            2 Varian Konsep dengan 5 Mode Warna
           </h2>
           <p class="text-xs sm:text-sm text-stone-500 font-mono">
-            Kedua varian ditampilkan langsung secara penuh dengan simulasi kanvas terang dan gelap
+            Klik tombol warna di atas setiap kartu logo untuk mengganti mode tampilan secara instan
           </p>
         </div>
       </div>
@@ -234,23 +226,48 @@
         <div class="bezel-shell p-6 sm:p-10 space-y-6 flex flex-col justify-between border-orange-200 shadow-sm hover:border-[#C93600]">
           
           <div class="space-y-5">
-            <!-- Header Tag -->
-            <div class="flex items-center justify-between border-b border-stone-100 pb-4">
-              <div>
-                <span class="px-2.5 py-1 rounded-full bg-orange-100 text-[#C93600] font-mono text-[11px] font-bold">
-                  VARIAN 01 RESMI
+            <!-- Header Tag & Mode Switcher -->
+            <div class="space-y-3 border-b border-stone-100 pb-4">
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="px-2.5 py-1 rounded-full bg-orange-100 text-[#C93600] font-mono text-[11px] font-bold">
+                    VARIAN 01 RESMI
+                  </span>
+                  <h3 class="text-xl sm:text-2xl font-extrabold text-stone-950 mt-1.5">The Vanguard Emblem</h3>
+                </div>
+                <span id="badge-color-1" class="text-[11px] font-mono font-bold text-[#C93600] bg-stone-100 px-3 py-1 rounded-full uppercase">
+                  MERAH ASLI
                 </span>
-                <h3 class="text-xl sm:text-2xl font-extrabold text-stone-950 mt-1.5">The Vanguard Emblem</h3>
               </div>
-              <div class="flex items-center gap-1 p-1 bg-stone-100 rounded-full text-xs font-bold">
-                <button onclick="toggleCardCanvas(1, 'light', this)" class="px-2.5 py-1 rounded-full bg-white text-stone-900 shadow-xs">Light</button>
-                <button onclick="toggleCardCanvas(1, 'dark', this)" class="px-2.5 py-1 rounded-full text-stone-500 hover:text-stone-900">Dark</button>
+
+              <!-- 5 Color Mode Buttons for Varian 1 -->
+              <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1 text-xs font-bold">
+                <button onclick="setLogoColorMode(1, 'red', this)" class="px-3 py-1.5 rounded-full bg-[#C93600] text-white shadow-xs transition-all flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-white"></span>
+                  <span>Merah</span>
+                </button>
+                <button onclick="setLogoColorMode(1, 'yellow', this)" class="px-3 py-1.5 rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-[#D68800]"></span>
+                  <span>Kuning</span>
+                </button>
+                <button onclick="setLogoColorMode(1, 'green', this)" class="px-3 py-1.5 rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-[#1B873F]"></span>
+                  <span>Hijau</span>
+                </button>
+                <button onclick="setLogoColorMode(1, 'white', this)" class="px-3 py-1.5 rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-stone-400"></span>
+                  <span>Putih</span>
+                </button>
+                <button onclick="setLogoColorMode(1, 'mono', this)" class="px-3 py-1.5 rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-black"></span>
+                  <span>Monokrom</span>
+                </button>
               </div>
             </div>
 
             <!-- Visual Showcase Stage -->
-            <div id="stage-card-1" class="rounded-3xl bg-white border border-stone-200 p-8 sm:p-12 flex items-center justify-center min-h-[300px] sm:min-h-[380px] shadow-inner transition-colors duration-400">
-              <img id="img-card-1" src="../assets/logo_ar_ruwad_1.png" alt="Ar Ruwad Varian 01" class="max-h-56 sm:max-h-72 w-auto object-contain transition-transform duration-300 transform hover:scale-105" />
+            <div id="stage-card-1" class="rounded-3xl bg-white border border-stone-200 p-8 sm:p-12 flex items-center justify-center min-h-[320px] sm:min-h-[400px] shadow-inner transition-colors duration-400 relative">
+              <img id="img-card-1" src="../assets/logo_ar_ruwad_1.png" alt="Ar Ruwad Varian 01" class="max-h-60 sm:max-h-72 w-auto object-contain transition-all duration-300 transform hover:scale-105" />
             </div>
 
             <!-- Deep Philosophy Description -->
@@ -267,7 +284,7 @@
 
           <!-- Bottom Direct WhatsApp CTA -->
           <div class="pt-4 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <span class="text-[11px] font-mono text-stone-400">Palet: Crimson Flame (#C93600)</span>
+            <span id="info-mode-1" class="text-[11px] font-mono text-stone-400">Mode: Crimson Flame (#C93600)</span>
             <a href="https://wa.me/6281311506025?text=insyaAllah%20angkatan%20kami%20resmi%20memilih%20VARIAN%2001%20(The%20Vanguard%20Emblem)%20untuk%20logo%20resmi%20Ar%20Ruwad%20Rumah%20Dakwah" target="_blank" class="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#C93600] hover:bg-[#992600] text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm">
               <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
               <span>Pilih Varian 01 via WA</span>
@@ -282,23 +299,48 @@
         <div class="bezel-shell p-6 sm:p-10 space-y-6 flex flex-col justify-between border-amber-200 shadow-sm hover:border-[#D68800]">
           
           <div class="space-y-5">
-            <!-- Header Tag -->
-            <div class="flex items-center justify-between border-b border-stone-100 pb-4">
-              <div>
-                <span class="px-2.5 py-1 rounded-full bg-amber-100 text-[#D68800] font-mono text-[11px] font-bold">
-                  VARIAN 02 RESMI
+            <!-- Header Tag & Mode Switcher -->
+            <div class="space-y-3 border-b border-stone-100 pb-4">
+              <div class="flex items-center justify-between">
+                <div>
+                  <span class="px-2.5 py-1 rounded-full bg-amber-100 text-[#D68800] font-mono text-[11px] font-bold">
+                    VARIAN 02 RESMI
+                  </span>
+                  <h3 class="text-xl sm:text-2xl font-extrabold text-stone-950 mt-1.5">The Radiant Torch</h3>
+                </div>
+                <span id="badge-color-2" class="text-[11px] font-mono font-bold text-[#D68800] bg-stone-100 px-3 py-1 rounded-full uppercase">
+                  MERAH / EMAS
                 </span>
-                <h3 class="text-xl sm:text-2xl font-extrabold text-stone-950 mt-1.5">The Radiant Torch</h3>
               </div>
-              <div class="flex items-center gap-1 p-1 bg-stone-100 rounded-full text-xs font-bold">
-                <button onclick="toggleCardCanvas(2, 'light', this)" class="px-2.5 py-1 rounded-full bg-white text-stone-900 shadow-xs">Light</button>
-                <button onclick="toggleCardCanvas(2, 'dark', this)" class="px-2.5 py-1 rounded-full text-stone-500 hover:text-stone-900">Dark</button>
+
+              <!-- 5 Color Mode Buttons for Varian 2 -->
+              <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1 text-xs font-bold">
+                <button onclick="setLogoColorMode(2, 'red', this)" class="px-3 py-1.5 rounded-full bg-[#D68800] text-white shadow-xs transition-all flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-white"></span>
+                  <span>Merah/Emas</span>
+                </button>
+                <button onclick="setLogoColorMode(2, 'yellow', this)" class="px-3 py-1.5 rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-[#D68800]"></span>
+                  <span>Kuning</span>
+                </button>
+                <button onclick="setLogoColorMode(2, 'green', this)" class="px-3 py-1.5 rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-[#1B873F]"></span>
+                  <span>Hijau</span>
+                </button>
+                <button onclick="setLogoColorMode(2, 'white', this)" class="px-3 py-1.5 rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-stone-400"></span>
+                  <span>Putih</span>
+                </button>
+                <button onclick="setLogoColorMode(2, 'mono', this)" class="px-3 py-1.5 rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all flex items-center gap-1">
+                  <span class="w-2 h-2 rounded-full bg-black"></span>
+                  <span>Monokrom</span>
+                </button>
               </div>
             </div>
 
             <!-- Visual Showcase Stage -->
-            <div id="stage-card-2" class="rounded-3xl bg-white border border-stone-200 p-8 sm:p-12 flex items-center justify-center min-h-[300px] sm:min-h-[380px] shadow-inner transition-colors duration-400">
-              <img id="img-card-2" src="../assets/logo_ar_ruwad_2.png" alt="Ar Ruwad Varian 02" class="max-h-56 sm:max-h-72 w-auto object-contain transition-transform duration-300 transform hover:scale-105" />
+            <div id="stage-card-2" class="rounded-3xl bg-white border border-stone-200 p-8 sm:p-12 flex items-center justify-center min-h-[320px] sm:min-h-[400px] shadow-inner transition-colors duration-400 relative">
+              <img id="img-card-2" src="../assets/logo_ar_ruwad_2.png" alt="Ar Ruwad Varian 02" class="max-h-60 sm:max-h-72 w-auto object-contain transition-all duration-300 transform hover:scale-105" />
             </div>
 
             <!-- Deep Philosophy Description -->
@@ -315,7 +357,7 @@
 
           <!-- Bottom Direct WhatsApp CTA -->
           <div class="pt-4 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <span class="text-[11px] font-mono text-stone-400">Palet: Solar Gold &bull; Crimson</span>
+            <span id="info-mode-2" class="text-[11px] font-mono text-stone-400">Mode: Solar Gold &bull; Crimson</span>
             <a href="https://wa.me/6281311506025?text=insyaAllah%20angkatan%20kami%20resmi%20memilih%20VARIAN%2002%20(The%20Radiant%20Torch)%20untuk%20logo%20resmi%20Ar%20Ruwad%20Rumah%20Dakwah" target="_blank" class="w-full sm:w-auto px-5 py-2.5 rounded-full bg-[#D68800] hover:bg-[#b07000] text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm">
               <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
               <span>Pilih Varian 02 via WA</span>
@@ -375,7 +417,7 @@
 
         <!-- Pilar 3 -->
         <div class="bezel-shell p-6 space-y-4 bg-white">
-          <div class="w-12 h-12 rounded-2xl bg-red-50 text-red-700 flex items-center justify-center font-bold shadow-xs">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-[#1B873F] flex items-center justify-center font-bold shadow-xs">
             <i data-lucide="users-round" class="w-6 h-6"></i>
           </div>
           <div class="space-y-1">
@@ -412,84 +454,72 @@
       <div class="border-l-2 border-[#C93600] pl-3 sm:pl-4">
         <span class="text-[11px] font-mono font-bold tracking-widest text-[#C93600] uppercase">COLOR CALIBRATION</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-950 tracking-tight mt-1">
-          Sistem Warna Resmi (Formula 70-20-10)
+          Sistem Warna Resmi Ar-Ruwad
         </h2>
         <p class="text-xs sm:text-sm text-stone-500 font-mono">
           Klik pada setiap swatch untuk menyalin kode warna ke clipboard secara instan
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         
         <!-- Swatch 1: Crimson Flame Red -->
-        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#C93600', 'Crimson Flame')">
-          <div class="h-28 rounded-2xl bg-[#C93600] flex items-end justify-end p-3 text-white shadow-inner">
+        <div class="swatch-box p-4 bg-white space-y-3" onclick="copyColor('#C93600', 'Crimson Flame')">
+          <div class="h-24 rounded-2xl bg-[#C93600] flex items-end justify-end p-2.5 text-white shadow-inner">
             <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
           </div>
-          <div class="space-y-2">
-            <div>
-              <span class="text-[10px] font-mono text-stone-400 uppercase font-bold">WARNA UTAMA // 70%</span>
-              <h4 class="text-sm font-bold text-stone-950">Crimson Flame</h4>
-            </div>
-            <div class="space-y-1 text-xs font-mono text-stone-600 border-t border-stone-100 pt-2">
-              <div class="flex justify-between"><span class="text-stone-400">HEX:</span><strong class="text-[#C93600]">#C93600</strong></div>
-              <div class="flex justify-between"><span class="text-stone-400">RGB:</span><span>201, 54, 0</span></div>
-              <div class="flex justify-between"><span class="text-stone-400">PANTONE:</span><span>7598 C</span></div>
-            </div>
+          <div class="space-y-1">
+            <span class="text-[9px] font-mono text-stone-400 uppercase font-bold">MERAH UTAMA</span>
+            <h4 class="text-xs font-bold text-stone-950">Crimson Flame</h4>
+            <div class="text-[11px] font-mono text-[#C93600] font-bold">#C93600 &bull; 7598 C</div>
           </div>
         </div>
 
         <!-- Swatch 2: Solar Gold -->
-        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#D68800', 'Solar Gold')">
-          <div class="h-28 rounded-2xl bg-[#D68800] flex items-end justify-end p-3 text-white shadow-inner">
+        <div class="swatch-box p-4 bg-white space-y-3" onclick="copyColor('#D68800', 'Solar Gold')">
+          <div class="h-24 rounded-2xl bg-[#D68800] flex items-end justify-end p-2.5 text-white shadow-inner">
             <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
           </div>
-          <div class="space-y-2">
-            <div>
-              <span class="text-[10px] font-mono text-stone-400 uppercase font-bold">WARNA AKSEN // 20%</span>
-              <h4 class="text-sm font-bold text-stone-950">Solar Gold (Cahaya Ilmu)</h4>
-            </div>
-            <div class="space-y-1 text-xs font-mono text-stone-600 border-t border-stone-100 pt-2">
-              <div class="flex justify-between"><span class="text-stone-400">HEX:</span><strong class="text-[#D68800]">#D68800</strong></div>
-              <div class="flex justify-between"><span class="text-stone-400">RGB:</span><span>214, 136, 0</span></div>
-              <div class="flex justify-between"><span class="text-stone-400">PANTONE:</span><span>138 C</span></div>
-            </div>
+          <div class="space-y-1">
+            <span class="text-[9px] font-mono text-stone-400 uppercase font-bold">KUNING EMAS</span>
+            <h4 class="text-xs font-bold text-stone-950">Solar Gold</h4>
+            <div class="text-[11px] font-mono text-[#D68800] font-bold">#D68800 &bull; 138 C</div>
           </div>
         </div>
 
-        <!-- Swatch 3: Deep Obsidian -->
-        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#0D0B0A', 'Deep Obsidian')">
-          <div class="h-28 rounded-2xl bg-[#0D0B0A] flex items-end justify-end p-3 text-white shadow-inner">
+        <!-- Swatch 3: Emerald Islamic Green -->
+        <div class="swatch-box p-4 bg-white space-y-3" onclick="copyColor('#1B873F', 'Emerald Green')">
+          <div class="h-24 rounded-2xl bg-[#1B873F] flex items-end justify-end p-2.5 text-white shadow-inner">
             <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
           </div>
-          <div class="space-y-2">
-            <div>
-              <span class="text-[10px] font-mono text-stone-400 uppercase font-bold">KANVAS GELAP // 10%</span>
-              <h4 class="text-sm font-bold text-stone-950">Deep Obsidian</h4>
-            </div>
-            <div class="space-y-1 text-xs font-mono text-stone-600 border-t border-stone-100 pt-2">
-              <div class="flex justify-between"><span class="text-stone-400">HEX:</span><strong class="text-stone-950">#0D0B0A</strong></div>
-              <div class="flex justify-between"><span class="text-stone-400">RGB:</span><span>13, 11, 10</span></div>
-              <div class="flex justify-between"><span class="text-stone-400">PANTONE:</span><span>Black 6 C</span></div>
-            </div>
+          <div class="space-y-1">
+            <span class="text-[9px] font-mono text-stone-400 uppercase font-bold">HIJAU ISLAMI</span>
+            <h4 class="text-xs font-bold text-stone-950">Emerald Green</h4>
+            <div class="text-[11px] font-mono text-[#1B873F] font-bold">#1B873F &bull; 348 C</div>
           </div>
         </div>
 
-        <!-- Swatch 4: Pure Light Ceramic -->
-        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#FFFFFF', 'Pure Light')">
-          <div class="h-28 rounded-2xl bg-white border border-stone-200 flex items-end justify-end p-3 text-stone-700 shadow-inner">
+        <!-- Swatch 4: Deep Obsidian -->
+        <div class="swatch-box p-4 bg-white space-y-3" onclick="copyColor('#0D0B0A', 'Deep Obsidian')">
+          <div class="h-24 rounded-2xl bg-[#0D0B0A] flex items-end justify-end p-2.5 text-white shadow-inner">
             <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
           </div>
-          <div class="space-y-2">
-            <div>
-              <span class="text-[10px] font-mono text-stone-400 uppercase font-bold">LATAR TERANG</span>
-              <h4 class="text-sm font-bold text-stone-950">Pure Ceramic White</h4>
-            </div>
-            <div class="space-y-1 text-xs font-mono text-stone-600 border-t border-stone-100 pt-2">
-              <div class="flex justify-between"><span class="text-stone-400">HEX:</span><strong class="text-stone-500">#FFFFFF</strong></div>
-              <div class="flex justify-between"><span class="text-stone-400">RGB:</span><span>255, 255, 255</span></div>
-              <div class="flex justify-between"><span class="text-stone-400">PAPER:</span><span>100% Bright White</span></div>
-            </div>
+          <div class="space-y-1">
+            <span class="text-[9px] font-mono text-stone-400 uppercase font-bold">HITAM VELVET</span>
+            <h4 class="text-xs font-bold text-stone-950">Deep Obsidian</h4>
+            <div class="text-[11px] font-mono text-stone-950 font-bold">#0D0B0A &bull; Black 6 C</div>
+          </div>
+        </div>
+
+        <!-- Swatch 5: Pure White -->
+        <div class="swatch-box p-4 bg-white space-y-3" onclick="copyColor('#FFFFFF', 'Pure Light')">
+          <div class="h-24 rounded-2xl bg-white border border-stone-200 flex items-end justify-end p-2.5 text-stone-700 shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[9px] font-mono text-stone-400 uppercase font-bold">PUTIH CERAH</span>
+            <h4 class="text-xs font-bold text-stone-950">Pure Ceramic</h4>
+            <div class="text-[11px] font-mono text-stone-500 font-bold">#FFFFFF &bull; Bright White</div>
           </div>
         </div>
 
@@ -628,30 +658,48 @@
   </footer>
 
   <!-- ======================================================= -->
-  <!-- INTERACTIVE CARD CONTROLLER SCRIPT                      -->
+  <!-- INTERACTIVE COLOR MODE CONTROLLER SCRIPT                -->
   <!-- ======================================================= -->
   <script>
     lucide.createIcons();
 
-    function toggleCardCanvas(variantNum, mode, btn) {
+    const logoAssetMap = {
+      1: {
+        red: { src: '../assets/logo_ar_ruwad_1.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'MERAH ASLI', info: 'Mode: Crimson Flame (#C93600)' },
+        yellow: { src: '../assets/logo_ar_ruwad_1_kuning.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'KUNING EMAS', info: 'Mode: Solar Gold (#D68800)' },
+        green: { src: '../assets/logo_ar_ruwad_1_hijau.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'HIJAU ISLAMI', info: 'Mode: Emerald Green (#1B873F)' },
+        white: { src: '../assets/logo_ar_ruwad_1_putih.png', bg: '#0D0B0A', border: 'rgba(255,255,255,0.1)', name: 'PUTIH BERSIH', info: 'Mode: Reverse White on Obsidian' },
+        mono: { src: '../assets/logo_ar_ruwad_1_mono.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'MONOKROM HITAM', info: 'Mode: Solid 100% K Black' }
+      },
+      2: {
+        red: { src: '../assets/logo_ar_ruwad_2.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'MERAH / EMAS', info: 'Mode: Solar Gold & Crimson (#D68800)' },
+        yellow: { src: '../assets/logo_ar_ruwad_2_kuning.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'KUNING EMAS', info: 'Mode: Solar Gold (#D68800)' },
+        green: { src: '../assets/logo_ar_ruwad_2_hijau.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'HIJAU ISLAMI', info: 'Mode: Emerald Green (#1B873F)' },
+        white: { src: '../assets/logo_ar_ruwad_2_putih.png', bg: '#0D0B0A', border: 'rgba(255,255,255,0.1)', name: 'PUTIH BERSIH', info: 'Mode: Reverse White on Obsidian' },
+        mono: { src: '../assets/logo_ar_ruwad_2_mono.png', bg: '#FFFFFF', border: '#EBE7E2', name: 'MONOKROM HITAM', info: 'Mode: Solid 100% K Black' }
+      }
+    };
+
+    function setLogoColorMode(variantNum, mode, btn) {
       const stage = document.getElementById(`stage-card-${variantNum}`);
       const img = document.getElementById(`img-card-${variantNum}`);
+      const badge = document.getElementById(`badge-color-${variantNum}`);
+      const info = document.getElementById(`info-mode-${variantNum}`);
       
       const parent = btn.parentElement;
       parent.querySelectorAll('button').forEach(b => {
-        b.className = 'px-2.5 py-1 rounded-full text-stone-500 hover:text-stone-900';
+        b.className = 'px-3 py-1.5 rounded-full bg-stone-100 text-stone-700 hover:bg-stone-200 transition-all flex items-center gap-1';
       });
-      btn.className = 'px-2.5 py-1 rounded-full bg-white text-stone-900 shadow-xs';
 
-      if (mode === 'light') {
-        stage.style.backgroundColor = '#FFFFFF';
-        stage.style.borderColor = '#EBE7E2';
-        img.src = `../assets/logo_ar_ruwad_${variantNum}.png`;
-      } else {
-        stage.style.backgroundColor = '#0D0B0A';
-        stage.style.borderColor = 'rgba(255,255,255,0.1)';
-        img.src = `../assets/logo_ar_ruwad_${variantNum}_putih.png`;
-      }
+      const activeColor = variantNum === 1 ? '#C93600' : '#D68800';
+      btn.className = `px-3 py-1.5 rounded-full bg-[${activeColor}] text-white shadow-xs transition-all flex items-center gap-1`;
+
+      const cfg = logoAssetMap[variantNum][mode];
+      stage.style.backgroundColor = cfg.bg;
+      stage.style.borderColor = cfg.border;
+      img.src = cfg.src;
+      badge.innerText = cfg.name;
+      info.innerText = cfg.info;
     }
 
     function copyColor(code, name) {

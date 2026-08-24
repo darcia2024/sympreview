@@ -10,7 +10,7 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -28,6 +28,7 @@
             }
           },
           fontFamily: {
+            display: ['Bebas Neue', 'sans-serif'],
             jakarta: ['Plus Jakarta Sans', 'sans-serif'],
             sans: ['Plus Jakarta Sans', 'sans-serif'],
             mono: ['JetBrains Mono', 'monospace']
@@ -386,156 +387,443 @@
       }
     }
   </style>
+  <style>
+    :root {
+      --catalog-cream: #fff8de;
+      --catalog-paper: #fff4cf;
+      --catalog-orange: #ff4b12;
+      --catalog-brown: #7a250b;
+      --catalog-ink: #351106;
+    }
+
+    html,
+    body {
+      background:
+        radial-gradient(circle at 10% 20%, rgba(255, 111, 29, 0.32), transparent 24rem),
+        radial-gradient(circle at 90% 24%, rgba(109, 32, 12, 0.44), transparent 26rem),
+        linear-gradient(135deg, #7b250b 0%, #3f1309 45%, #170705 100%) !important;
+    }
+
+    .noodle-shell {
+      min-height: 100dvh;
+      padding: clamp(1.25rem, 4vw, 4rem);
+      color: var(--catalog-ink);
+      background:
+        linear-gradient(90deg, rgba(255, 244, 207, 0) 0 7%, rgba(255, 244, 207, 0.18) 7% 7.2%, transparent 7.2%),
+        radial-gradient(circle at 3% 60%, rgba(255, 246, 210, 0.22), transparent 16rem),
+        radial-gradient(circle at 98% 54%, rgba(255, 246, 210, 0.18), transparent 18rem);
+    }
+
+    .noodle-page {
+      width: min(100%, 1180px);
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid rgba(255, 227, 167, 0.45);
+      background: var(--catalog-cream);
+      box-shadow: 0 36px 120px rgba(33, 6, 2, 0.42);
+    }
+
+    .noodle-nav {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 1.25rem;
+      padding: clamp(1rem, 2.6vw, 1.8rem) clamp(1.25rem, 4vw, 3rem);
+      color: var(--catalog-brown);
+    }
+
+    .noodle-logo {
+      display: grid;
+      gap: 0.15rem;
+      color: var(--catalog-orange);
+      text-decoration: none;
+    }
+
+    .noodle-logo img {
+      width: 42px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .noodle-links {
+      display: flex;
+      justify-content: center;
+      gap: clamp(1.5rem, 7vw, 6rem);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: rgba(122, 37, 11, 0.72);
+    }
+
+    .noodle-links a,
+    .noodle-contact {
+      outline: none;
+      text-decoration: none;
+      transition: color 180ms ease;
+    }
+
+    .noodle-links a:hover,
+    .noodle-links a:focus-visible,
+    .noodle-contact:hover,
+    .noodle-contact:focus-visible {
+      color: var(--catalog-orange);
+    }
+
+    .noodle-contact {
+      justify-self: end;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--catalog-brown);
+    }
+
+    .noodle-hero {
+      min-height: clamp(360px, 48vw, 620px);
+      display: grid;
+      grid-template-rows: 1fr auto;
+      padding: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .noodle-title {
+      align-self: center;
+      justify-self: center;
+      max-width: 780px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(5.4rem, 15vw, 15.5rem);
+      font-weight: 400;
+      line-height: 0.78;
+      letter-spacing: -0.015em;
+      text-align: center;
+      color: var(--catalog-orange);
+    }
+
+    .noodle-title span {
+      display: block;
+    }
+
+    .noodle-meta {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      color: rgba(122, 37, 11, 0.72);
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+
+    .noodle-meta strong {
+      display: block;
+      color: var(--catalog-orange);
+      font-weight: 900;
+    }
+
+    .noodle-strip {
+      display: flex;
+      gap: 2.2rem;
+      overflow: hidden;
+      border-top: 1px solid rgba(255, 75, 18, 0.32);
+      border-bottom: 1px solid rgba(255, 75, 18, 0.32);
+      padding: 0.45rem 0;
+      color: var(--catalog-orange);
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.25rem;
+      line-height: 1;
+      white-space: nowrap;
+      background: rgba(255, 75, 18, 0.04);
+    }
+
+    .noodle-strip span {
+      flex: 0 0 auto;
+    }
+
+    .noodle-section {
+      padding: clamp(2.6rem, 7vw, 5.5rem) clamp(1.25rem, 4vw, 3rem) clamp(3rem, 7vw, 5rem);
+    }
+
+    .noodle-section-title {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(3rem, 6vw, 5.8rem);
+      font-weight: 400;
+      line-height: 0.9;
+      text-align: center;
+      color: var(--catalog-orange);
+    }
+
+    .noodle-section-note {
+      margin: 0.9rem auto 2.4rem;
+      max-width: 560px;
+      text-align: center;
+      color: rgba(122, 37, 11, 0.68);
+      font-size: 0.94rem;
+      line-height: 1.7;
+    }
+
+    .noodle-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(0.85rem, 2vw, 1.4rem);
+    }
+
+    .noodle-card {
+      display: grid;
+      grid-template-rows: minmax(210px, 1fr) auto;
+      min-height: 292px;
+      color: var(--catalog-ink);
+      text-decoration: none;
+      outline: none;
+      transition: transform 220ms ease, filter 220ms ease;
+    }
+
+    .noodle-card:hover,
+    .noodle-card:focus-visible {
+      transform: translateY(-5px);
+      filter: saturate(1.05);
+    }
+
+    .noodle-card-media {
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(122, 37, 11, 0.14);
+      background:
+        radial-gradient(circle at 30% 18%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.2) 54%),
+        #f7edca;
+      padding: 1.3rem;
+      overflow: hidden;
+    }
+
+    .noodle-card-media img {
+      display: block;
+      max-width: min(100%, 230px);
+      max-height: 118px;
+      object-fit: contain;
+    }
+
+    .noodle-card.locked {
+      pointer-events: none;
+      opacity: 0.74;
+    }
+
+    .noodle-card.locked .noodle-card-media {
+      background: #7c2a12;
+    }
+
+    .noodle-card.locked img {
+      max-height: 78px;
+      opacity: 0.9;
+    }
+
+    .noodle-card-label {
+      display: grid;
+      gap: 0.2rem;
+      min-height: 58px;
+      align-content: center;
+      background: var(--catalog-orange);
+      padding: 0.62rem 0.8rem;
+      color: var(--catalog-cream);
+      text-align: center;
+    }
+
+    .noodle-card-label strong {
+      font-size: 0.92rem;
+      line-height: 1.1;
+      font-weight: 900;
+    }
+
+    .noodle-card-label span {
+      font-size: 0.68rem;
+      line-height: 1.25;
+      color: rgba(255, 248, 222, 0.82);
+    }
+
+    .noodle-card.locked .noodle-card-label {
+      background: rgba(122, 37, 11, 0.82);
+    }
+
+    .noodle-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem clamp(1.25rem, 4vw, 3rem) 1.2rem;
+      border-top: 1px solid rgba(122, 37, 11, 0.16);
+      color: rgba(122, 37, 11, 0.62);
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.68rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .noodle-links {
+        display: none;
+      }
+
+      .noodle-nav {
+        grid-template-columns: auto auto;
+      }
+
+      .noodle-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .noodle-shell {
+        padding: 0;
+      }
+
+      .noodle-page {
+        min-height: 100dvh;
+        border: 0;
+      }
+
+      .noodle-nav {
+        padding: 1rem;
+      }
+
+      .noodle-contact {
+        font-size: 0.72rem;
+      }
+
+      .noodle-hero {
+        min-height: 360px;
+        padding: 1rem;
+      }
+
+      .noodle-title {
+        font-size: clamp(5.1rem, 26vw, 7.2rem);
+      }
+
+      .noodle-meta {
+        align-items: start;
+        flex-direction: column;
+        font-size: 0.76rem;
+      }
+
+      .noodle-section {
+        padding: 2.6rem 1rem 3.5rem;
+      }
+
+      .noodle-grid {
+        display: flex;
+        gap: 0.85rem;
+        margin-inline: -1rem;
+        overflow-x: auto;
+        padding: 0 1rem 0.5rem;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+      }
+
+      .noodle-grid::-webkit-scrollbar {
+        display: none;
+      }
+
+      .noodle-card {
+        width: min(72vw, 260px);
+        min-width: min(72vw, 260px);
+        min-height: 276px;
+        scroll-snap-align: start;
+      }
+
+      .noodle-card-media {
+        min-height: 205px;
+      }
+
+      .noodle-footer {
+        flex-direction: column;
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
-<body class="bg-[#26080F] text-white antialiased selection:bg-[#E01E2B] selection:text-white font-jakarta">
-  <main class="ref-hero-wrapper market-shell px-4 pb-12 pt-6 sm:px-8 sm:pb-16">
-    <div class="mx-auto flex max-w-6xl flex-col gap-8">
-      <nav class="flex items-center justify-between gap-4">
-        <a href="./" class="flex items-center gap-2.5">
-          <img src="assets/SYMP LOGO PUTIH.png" alt="SYMP Studio Logo" class="h-8 object-contain sm:h-9">
-          <div class="hidden flex-col border-l border-white/20 pl-3 sm:flex">
-            <span class="flex items-center gap-1.5 text-xs font-black tracking-tight text-white">
-              SYMP STUDIO
-            </span>
-            <span class="font-mono text-[9px] uppercase tracking-widest text-slate-400">Client Proposal Hub</span>
-          </div>
+<body class="font-jakarta antialiased selection:bg-[#FF4B12] selection:text-white">
+  <main class="noodle-shell">
+    <div class="noodle-page">
+      <nav class="noodle-nav" aria-label="Navigasi katalog">
+        <a href="./" class="noodle-logo" aria-label="SYMP Studio home">
+          <img src="assets/SYMP LOGO MERAH.png" alt="SYMP Studio">
         </a>
 
-        <div class="market-nav hidden md:flex">
-          <a href="./" class="active">Marketplace</a>
+        <div class="noodle-links">
+          <a href="./">Katalog</a>
           <a href="elevgro/">Elevgro</a>
           <a href="kolohaga/">Kolohaga</a>
+          <a href="arruwad/">Ar Ruwad</a>
         </div>
 
-        <a href="https://wa.me/6281311506025?text=Halo%20Daru%20(SYMP%20Studio),%20saya%20mau%20ajukan%20brief%20penawaran%20logo%20baru" target="_blank" rel="noreferrer" class="btn-ref-white !px-4 !py-2 text-xs">
-          <span>Ajukan Brief Baru</span>
+        <a class="noodle-contact" href="https://wa.me/6281311506025?text=Halo%20Daru%20(SYMP%20Studio),%20saya%20mau%20ajukan%20brief%20penawaran%20logo%20baru" target="_blank" rel="noreferrer">
+          0813 1150 6025
         </a>
       </nav>
 
-      <section class="market-hero">
-        <p class="market-label">Marketplace deck penawaran logo</p>
+      <section class="noodle-hero">
+        <h1 class="noodle-title">
+          <span>Logo</span>
+          <span>Market</span>
+        </h1>
 
-        <div class="market-copy space-y-5">
-          <h1 class="text-5xl font-extrabold leading-[0.94] tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Galeri proposal yang siap dibuka.
-          </h1>
-          <p class="max-w-2xl text-sm leading-7 text-slate-400 sm:text-base">
-            Semua penawaran logo dikumpulkan dalam card marketplace. Klik card untuk masuk ke slug presentasi client, buka guideline, atau lanjut ke deck yang sedang aktif.
+        <div class="noodle-meta">
+          <p>
+            <strong>SYMP Studio Proposal Hub</strong>
+            Katalog deck logo resmi untuk presentasi client.
+          </p>
+          <p>
+            <strong>2026 Catalog</strong>
+            Buka card untuk masuk ke slug penawaran.
           </p>
         </div>
+      </section>
 
-        <div class="market-toolbar" aria-label="Kontrol katalog">
-          <div class="market-search">
-            <span>4 card katalog, 3 deck aktif dan 1 slot terkunci.</span>
-          </div>
+      <div class="noodle-strip" aria-hidden="true">
+        <span>Proposal deck</span><span>Proposal deck</span><span>Proposal deck</span><span>Proposal deck</span><span>Proposal deck</span><span>Proposal deck</span><span>Proposal deck</span><span>Proposal deck</span>
+      </div>
+
+      <section class="noodle-section" aria-labelledby="catalog-title">
+        <h2 id="catalog-title" class="noodle-section-title">Katalog</h2>
+        <p class="noodle-section-note">Pilih deck penawaran logo yang ingin dibuka. Card kosong dikunci sampai proposal berikutnya siap dipresentasikan.</p>
+
+        <div class="noodle-grid" aria-label="Card proposal logo">
+          <a href="elevgro/" class="noodle-card">
+            <span class="noodle-card-media">
+              <img src="assets/elevgro_final_fix_web.png" alt="Logo Elevgro">
+            </span>
+            <span class="noodle-card-label">
+              <strong>Elevgro</strong>
+              <span>Visual Identity Guidelines</span>
+            </span>
+          </a>
+
+          <a href="kolohaga/" class="noodle-card">
+            <span class="noodle-card-media">
+              <img src="assets/logo1_full.png" alt="Logo Kolohaga">
+            </span>
+            <span class="noodle-card-label">
+              <strong>Kolohaga</strong>
+              <span>Logo Proposal Deck</span>
+            </span>
+          </a>
+
+          <a href="arruwad/" class="noodle-card">
+            <span class="noodle-card-media">
+              <img src="assets/logo_ar_ruwad_1.png" alt="Logo Ar Ruwad">
+            </span>
+            <span class="noodle-card-label">
+              <strong>Ar Ruwad</strong>
+              <span>Logo Angkatan</span>
+            </span>
+          </a>
+
+          <article class="noodle-card locked" aria-label="Slot proposal terkunci">
+            <span class="noodle-card-media">
+              <img src="assets/SYMP LOGO PUTIH.png" alt="Logo SYMP Studio">
+            </span>
+            <span class="noodle-card-label">
+              <strong>Coming soon</strong>
+              <span>Slot Proposal Berikutnya</span>
+            </span>
+          </article>
         </div>
       </section>
 
-      <section class="market-grid" aria-label="Galeri deck penawaran">
-        <a href="elevgro/" class="market-card" style="--card-glow: rgba(224, 30, 43, 0.18);">
-          <span class="market-card-inner">
-            <span class="market-card-top">
-              <span class="market-card-kicker">
-                <span class="market-card-number">01</span>
-                <span>Visual guideline</span>
-              </span>
-            </span>
-
-            <span class="market-logo-frame">
-              <img src="assets/elevgro_final_fix_web.png" alt="Logo ELEVGRO">
-            </span>
-
-            <span class="market-card-copy">
-              <h2>Elevgro</h2>
-              <span class="market-card-desc">Deck penawaran identitas visual, opsi logo, dan guideline brand.</span>
-            </span>
-
-            <span class="market-card-bottom">
-              <span class="font-mono text-xs font-extrabold text-slate-500">/elevgro</span>
-              <span class="market-open" aria-hidden="true">Buka</span>
-            </span>
-          </span>
-        </a>
-
-        <a href="kolohaga/" class="market-card" style="--card-glow: rgba(224, 30, 43, 0.16);">
-          <span class="market-card-inner">
-            <span class="market-card-top">
-              <span class="market-card-kicker">
-                <span class="market-card-number">02</span>
-                <span>Logo proposal</span>
-              </span>
-            </span>
-
-            <span class="market-logo-frame">
-              <img src="assets/logo1_full.png" alt="Logo KOLOHAGA">
-            </span>
-
-            <span class="market-card-copy">
-              <h2>Kolohaga</h2>
-              <span class="market-card-desc">Deck presentasi konsep logo dengan filosofi dan sistem visual.</span>
-            </span>
-
-            <span class="market-card-bottom">
-              <span class="font-mono text-xs font-extrabold text-slate-500">/kolohaga</span>
-              <span class="market-open" aria-hidden="true">Buka</span>
-            </span>
-          </span>
-        </a>
-
-        <a href="arruwad/" class="market-card" style="--card-glow: rgba(201, 54, 0, 0.2);">
-          <span class="market-card-inner">
-            <span class="market-card-top">
-              <span class="market-card-kicker">
-                <span class="market-card-number">03</span>
-                <span>Logo Angkatan</span>
-              </span>
-            </span>
-
-            <span class="market-logo-frame">
-              <img src="assets/logo_ar_ruwad_1.png" alt="Logo AR RUWAD">
-            </span>
-
-            <span class="market-card-copy">
-              <h2>Ar Ruwad</h2>
-              <span class="market-card-desc">Proposal logo angkatan Rumah Dakwah dengan filosofi kepeloporan dan 2 varian resmi.</span>
-            </span>
-
-            <span class="market-card-bottom">
-              <span class="font-mono text-xs font-extrabold text-slate-500">/arruwad</span>
-              <span class="market-open" aria-hidden="true">Buka</span>
-            </span>
-          </span>
-        </a>
-
-        <article class="market-card locked" aria-label="Slot penawaran terkunci">
-          <span class="market-card-inner">
-            <span class="market-card-top">
-              <span class="market-card-kicker text-white/70">
-                <span class="market-card-number">04</span>
-                <span>Slot katalog</span>
-              </span>
-            </span>
-
-            <span class="market-logo-frame">
-              <img src="assets/SYMP LOGO PUTIH.png" alt="Logo SYMP Studio">
-            </span>
-
-            <span class="market-card-copy">
-              <h2 class="text-white">Coming soon</h2>
-              <span class="market-card-desc text-slate-400">Card ini kosong sampai ada deck client baru.</span>
-            </span>
-
-            <span class="market-card-bottom">
-              <span class="font-mono text-xs font-extrabold text-slate-500">/locked</span>
-              <span class="font-mono text-[10px] font-extrabold uppercase tracking-wider text-slate-500">Locked</span>
-            </span>
-          </span>
-        </article>
-      </section>
-
-      <footer class="market-pages font-mono text-[11px] uppercase tracking-wider text-slate-500">
-        <span>&copy; 2026 SYMP Studio &bull; Directed by Daru Fahmaa Muliawan</span>
-        <span>Halaman 01 / Marketplace deck</span>
+      <footer class="noodle-footer">
+        <span>&copy; 2026 SYMP Studio, Directed by Daru Fahmaa Muliawan</span>
+        <span>Marketplace deck penawaran logo</span>
       </footer>
     </div>
   </main>
