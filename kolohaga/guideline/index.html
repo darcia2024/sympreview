@@ -2,35 +2,29 @@
 <html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>KOLOHAGA — Official Brand Guidelines & Design System | SYMP Studio</title>
-  
-  <!-- Google Fonts Preconnect -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>KOLOHAGA: Brand Guidelines | SYMP Studio</title>
+  <meta name="description" content="Panduan identitas visual KOLOHAGA untuk penggunaan logo, warna, tipografi, aplikasi, dan aturan brand.">
+  <link rel="icon" href="/assets/kolohaga_app_icon_light.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS CDN -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            kol: {
-              forest: '#0B573C',
-              forestDark: '#073B28',
-              forestDeep: '#042418',
-              emerald: '#059B66',
-              emeraldLight: '#10B981',
-              gold: '#F0BE3E',
-              goldDark: '#D99B16',
-              slate: '#0F172A',
-              cream: '#FCFDFC'
+            kolohaga: {
+              blue: '#059B66',
+              deep: '#0B573C',
+              ink: '#0B573C',
+              green: '#F0BE3E',
+              moss: '#073B28',
+              paper: '#FFFFFF'
             }
           },
           fontFamily: {
-            jakarta: ['Plus Jakarta Sans', 'sans-serif'],
             sans: ['Plus Jakarta Sans', 'sans-serif'],
             mono: ['JetBrains Mono', 'monospace']
           }
@@ -38,697 +32,1828 @@
       }
     }
   </script>
-  
-  <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  
   <style>
     :root {
-      --kol-forest: #0B573C;
-      --kol-emerald: #059B66;
-      --kol-gold: #F0BE3E;
-      --kol-slate: #0F172A;
-      --agency-spring: cubic-bezier(0.16, 1, 0.3, 1);
+      --blue: #059B66;
+      --deep: #0B573C;
+      --ink: #0B573C;
+      --green: #F0BE3E;
+      --moss: #073B28;
+      --paper: #FFFFFF;
+      --line: rgba(5, 37, 91, 0.14);
+      --spring: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
       -webkit-tap-highlight-color: transparent;
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #F8FAF8;
-      color: #0F172A;
+      margin: 0;
+      min-width: 320px;
       overflow-x: hidden;
-      letter-spacing: -0.025em;
+      background: #ffffff;
+      color: #0B573C;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 400;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0;
       -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
     }
 
-    /* Double-Bezel Hardware Architecture */
-    .bezel-shell {
-      background: #FFFFFF;
-      border: 1px solid #E2E8E2;
-      border-radius: 28px;
-      box-shadow: 0 4px 24px -6px rgba(11, 87, 60, 0.04);
-      transition: all 0.4s var(--agency-spring);
-    }
-    @media (min-width: 640px) {
-      .bezel-shell {
-        border-radius: 32px;
-      }
-    }
-    .bezel-shell:hover {
-      box-shadow: 0 20px 48px -12px rgba(11, 87, 60, 0.12);
-      border-color: rgba(5, 155, 102, 0.3);
-    }
-
-    .swatch-box {
-      border-radius: 20px;
-      border: 1px solid #E2E8E2;
-      transition: all 0.3s var(--agency-spring);
-      cursor: pointer;
-    }
-    .swatch-box:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 24px -6px rgba(11, 87, 60, 0.15);
-      border-color: #059B66;
-    }
-
-    .no-scrollbar::-webkit-scrollbar {
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
       display: none;
     }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
+
+    a,
+    button,
+    input {
+      outline-offset: 4px;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 3px solid rgba(72, 193, 90, 0.75);
+      outline-offset: 4px;
+    }
+
+    .guide-shell {
+      width: min(1180px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    .manual-card {
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: #ffffff;
+      box-shadow: 0 24px 70px rgba(5, 37, 91, 0.08);
+      transition: transform 260ms var(--spring), border-color 260ms var(--spring), box-shadow 260ms var(--spring);
+    }
+
+    .manual-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(5, 37, 91, 0.28);
+      box-shadow: 0 28px 80px rgba(5, 37, 91, 0.12);
+    }
+
+    .section-kicker {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: var(--blue);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .section-kicker::before {
+      content: "";
+      width: 2.25rem;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .brand-rule {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .brand-rule::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--blue) 0 78%, var(--green) 78% 90%, var(--blue) 90%);
+      z-index: -1;
+    }
+
+    .logo-stage {
+      background:
+        linear-gradient(135deg, #ffffff, #ffffff),
+        repeating-linear-gradient(90deg, rgba(5, 37, 91, 0.035) 0 1px, transparent 1px 48px);
+    }
+
+    .color-button {
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .color-button:active,
+    .tap-active:active {
+      transform: scale(0.98);
+    }
+
+    .nav-pill {
+      min-height: 40px;
+      border-radius: 999px;
+      transition: background 200ms ease, color 200ms ease, transform 200ms ease;
+    }
+
+    .nav-pill:hover {
+      transform: translateY(-1px);
+    }
+
+    .usage-mark {
+      position: absolute;
+      right: 0.75rem;
+      top: 0.75rem;
+      display: grid;
+      height: 2.25rem;
+      width: 2.25rem;
+      place-items: center;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.82);
+      color: #b91c1c;
+      box-shadow: 0 8px 22px rgba(185, 28, 28, 0.12);
+    }
+
+    .usage-mark svg {
+      display: none;
+    }
+
+    .usage-mark::before {
+      content: "×";
+      font-family: Arial, sans-serif;
+      font-size: 2.6rem;
+      font-weight: 300;
+      line-height: 1;
+      color: #c51f1f;
+    }
+
+    .mobile-quick-nav {
+      display: none;
+    }
+
+    .hero-cover {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(5, 37, 91, 0.12);
+      border-radius: 30px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(248, 251, 255, 0.98)),
+        linear-gradient(90deg, rgba(0, 91, 189, 0.05) 1px, transparent 1px);
+      background-size: auto, 54px 54px;
+      box-shadow: 0 30px 90px rgba(5, 37, 91, 0.08);
+    }
+
+    .hero-cover::before {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 10px;
+      background: linear-gradient(90deg, var(--blue) 0 54%, var(--deep) 54% 78%, var(--green) 78%);
+    }
+
+    .hero-specimen {
+      border-radius: 26px;
+      background: #0B573C;
+      color: #fff;
+      box-shadow: 0 24px 70px rgba(5, 37, 91, 0.22);
+    }
+
+    .manual-chip {
+      border: 1px solid rgba(5, 37, 91, 0.12);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.82);
+    }
+
+    .hero-wordmark {
+      text-wrap: balance;
+    }
+
+    .brand-title-strong {
+      display: block;
+      font-weight: 800 !important;
+      letter-spacing: 0;
+      font-variation-settings: "wght" 800;
+    }
+
+    .brand-title-rest {
+      display: block;
+      font-weight: 400 !important;
+    }
+
+    .mockup-image-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      background: #f5f9ff;
+      border: 1px solid rgba(5, 37, 91, 0.1);
+      aspect-ratio: 4 / 5;
+    }
+
+    .mockup-image-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .mockup-image-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42);
+    }
+
+    h1,
+    h2 {
+      font-weight: 600 !important;
+    }
+
+    h3,
+    h4,
+    strong,
+    .font-extrabold,
+    .font-bold {
+      font-weight: 500 !important;
+    }
+
+    p {
+      font-weight: 300;
+    }
+
+    .section-kicker,
+    .font-mono,
+    .nav-pill {
+      font-weight: 500 !important;
+    }
+
+    .font-light {
+      font-weight: 300 !important;
+    }
+
+    @media (min-width: 1024px) {
+      body {
+        background:
+          radial-gradient(circle at 8% 4%, rgba(0, 91, 189, 0.08), transparent 30rem),
+          radial-gradient(circle at 92% 18%, rgba(72, 193, 90, 0.1), transparent 28rem),
+          linear-gradient(180deg, #ffffff 0%, #f7fbff 42%, #ffffff 100%);
+      }
+
+      header {
+        border-bottom-color: rgba(5, 37, 91, 0.08) !important;
+        background: rgba(255, 255, 255, 0.86) !important;
+      }
+
+      .guide-shell {
+        width: min(1240px, calc(100% - 80px));
+      }
+
+      main > section {
+        position: relative;
+        padding-top: 7rem !important;
+        padding-bottom: 7.5rem !important;
+        scroll-margin-top: 92px;
+      }
+
+      main > section:first-child {
+        padding-top: 3.5rem !important;
+      }
+
+      .manual-card {
+        border-color: rgba(5, 37, 91, 0.1);
+        border-radius: 24px;
+        box-shadow: 0 18px 55px rgba(5, 37, 91, 0.055);
+      }
+
+      .manual-card:hover {
+        box-shadow: 0 26px 70px rgba(5, 37, 91, 0.09);
+      }
+
+      .section-kicker {
+        letter-spacing: 0.08em;
+      }
+
+      .section-kicker::before {
+        width: 3.25rem;
+      }
+
+      h1 {
+        font-size: clamp(5rem, 7vw, 7.65rem) !important;
+        line-height: 0.92 !important;
+      }
+
+      h2 {
+        letter-spacing: -0.025em;
+        text-wrap: balance;
+      }
+
+      p {
+        text-wrap: pretty;
+      }
+
+      #cover > .grid {
+        grid-template-columns: minmax(0, 1.12fr) minmax(420px, 0.88fr) !important;
+        gap: 1.25rem !important;
+      }
+
+      .hero-cover {
+        border-radius: 34px;
+        background:
+          radial-gradient(circle at 78% 12%, rgba(72, 193, 90, 0.13), transparent 16rem),
+          linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(246, 250, 255, 0.96));
+      }
+
+      .hero-cover .min-h-\[520px\],
+      .hero-specimen #hero-stage {
+        min-height: 660px !important;
+      }
+
+      .hero-cover img[alt="Logo KOLOHAGA full color"] {
+        margin-bottom: 0.6rem;
+        max-height: 4rem;
+        max-width: 300px;
+      }
+
+      .hero-cover p {
+        max-width: 56ch;
+        font-size: 1.08rem;
+      }
+
+      .hero-specimen {
+        border-radius: 34px;
+        padding: 0 !important;
+        overflow: hidden;
+        background: #0B573C;
+      }
+
+      .hero-specimen #hero-stage {
+        border-radius: 34px !important;
+        padding: 2rem !important;
+      }
+
+      #hero-logo {
+        max-height: 8.5rem !important;
+        max-width: 470px !important;
+      }
+
+      #overview > .grid {
+        grid-template-columns: minmax(330px, 0.76fr) minmax(0, 1.24fr) !important;
+        align-items: start;
+      }
+
+      #overview > .grid > div:first-child {
+        position: sticky;
+        top: 108px;
+      }
+
+      #overview > .grid > div:last-child {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      #overview article:nth-child(1),
+      #overview article:nth-child(4) {
+        grid-column: span 3;
+      }
+
+      #overview article:nth-child(2),
+      #overview article:nth-child(3) {
+        grid-column: span 3;
+        transform: translateY(2rem);
+      }
+
+      #overview article {
+        min-height: 190px;
+      }
+
+      #concept {
+        width: min(1320px, calc(100% - 56px));
+        border-radius: 38px;
+        background: #0B573C;
+        color: white;
+        padding-left: 3.25rem;
+        padding-right: 3.25rem;
+      }
+
+      #concept .section-kicker,
+      #concept h2,
+      #concept h3 {
+        color: white;
+      }
+
+      #concept p {
+        color: rgba(255, 255, 255, 0.76) !important;
+      }
+
+      #concept .manual-card {
+        background: transparent;
+        border-color: rgba(255, 255, 255, 0.16);
+        box-shadow: none;
+      }
+
+      #concept .manual-card:first-child {
+        border: 0;
+        padding: 0 !important;
+      }
+
+      #concept .manual-card:first-child .rounded-2xl {
+        background: white;
+        border: 0;
+      }
+
+      #concept > .grid {
+        align-items: stretch;
+      }
+
+      #primary-logo > .grid,
+      #construction > .grid {
+        grid-template-columns: minmax(320px, 0.64fr) minmax(0, 1.36fr) !important;
+      }
+
+      #primary-logo .grid.md\:grid-cols-\[0\.8fr_1\.2fr\] {
+        grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1.28fr) !important;
+      }
+
+      #primary-logo article:last-child .h-44 {
+        height: 18rem !important;
+      }
+
+      #primary-logo article:first-child .h-44 {
+        height: 18rem !important;
+      }
+
+      #variations > .grid {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+        gap: 1rem !important;
+      }
+
+      #variations article {
+        min-height: 275px;
+      }
+
+      #variations article:nth-child(1),
+      #variations article:nth-child(2) {
+        grid-column: span 3;
+      }
+
+      #variations article:nth-child(3),
+      #variations article:nth-child(5) {
+        grid-column: span 2;
+      }
+
+      #variations article:nth-child(4) {
+        grid-column: span 2;
+      }
+
+      #variations article:nth-child(1) .h-44,
+      #variations article:nth-child(2) .h-44 {
+        height: 17rem !important;
+      }
+
+      #construction .manual-card {
+        padding: 2.25rem !important;
+      }
+
+      #construction .construction-stage {
+        min-height: 28rem !important;
+      }
+
+      #safe-area .manual-card,
+      #tipografi .manual-card,
+      #larangan,
+      #supporting,
+      #aplikasi {
+        border-radius: 34px;
+      }
+
+      #safe-area article.manual-card {
+        padding: 3rem !important;
+      }
+
+      #minimum-size > .grid {
+        grid-template-columns: minmax(0, 1.35fr) minmax(240px, 0.55fr) minmax(240px, 0.55fr) !important;
+        align-items: stretch;
+      }
+
+      #warna .color-button .h-32 {
+        height: 11rem !important;
+      }
+
+      #logo-color-usage > .grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      }
+
+      #tipografi > .manual-card {
+        background:
+          radial-gradient(circle at 92% 10%, rgba(0, 91, 189, 0.08), transparent 18rem),
+          #ffffff;
+      }
+
+      #larangan {
+        width: min(1320px, calc(100% - 56px));
+        background: #fff6f6;
+        padding-left: 3.25rem;
+        padding-right: 3.25rem;
+      }
+
+      #larangan > .grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        gap: 1rem !important;
+      }
+
+      #larangan article {
+        background: rgba(255, 255, 255, 0.72);
+      }
+
+      #supporting > .grid {
+        grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr) !important;
+      }
+
+      #aplikasi .mockup-carousel {
+        display: grid !important;
+        grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+        gap: 1rem !important;
+      }
+
+      #aplikasi .mockup-carousel > article {
+        min-height: 0;
+      }
+
+      #aplikasi .mockup-carousel > article:nth-child(1),
+      #aplikasi .mockup-carousel > article:nth-child(2) {
+        grid-column: span 3;
+      }
+
+      #aplikasi .mockup-carousel > article:nth-child(3),
+      #aplikasi .mockup-carousel > article:nth-child(4),
+      #aplikasi .mockup-carousel > article:nth-child(5) {
+        grid-column: span 2;
+      }
+
+      #aplikasi .mockup-feed {
+        aspect-ratio: 4 / 3;
+      }
+
+      #aplikasi .mockup-image-frame {
+        aspect-ratio: 4 / 5;
+        border-radius: 20px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .guide-shell {
+        width: min(100% - 24px, 1180px);
+      }
+
+      body {
+        padding-bottom: calc(68px + env(safe-area-inset-bottom));
+      }
+
+      header .guide-shell {
+        min-height: 58px !important;
+        padding-top: 0.45rem !important;
+        padding-bottom: 0.45rem !important;
+      }
+
+      header .h-11,
+      header .min-h-11 {
+        min-height: 2.4rem !important;
+        height: 2.4rem !important;
+      }
+
+      header .w-11 {
+        width: 2.4rem !important;
+      }
+
+      body::before {
+        background-size: 68px 68px;
+      }
+
+      .manual-card {
+        border-radius: 18px;
+        padding: 1rem !important;
+        box-shadow: 0 12px 36px rgba(5, 37, 91, 0.07);
+      }
+
+      .hero-cover,
+      .hero-specimen {
+        border-radius: 20px;
+      }
+
+      .hero-cover {
+        padding: 1.15rem !important;
+      }
+
+      .hero-specimen {
+        padding: 1rem !important;
+      }
+
+      .hero-cover .min-h-\[520px\] {
+        min-height: 0 !important;
+      }
+
+      .hero-specimen #hero-stage {
+        min-height: 310px !important;
+        padding: 0.75rem !important;
+      }
+
+      .hero-specimen #hero-stage .flex.h-full {
+        gap: 0.75rem !important;
+      }
+
+      .hero-specimen #hero-stage .flex.items-center {
+        align-items: flex-start !important;
+      }
+
+      .hero-specimen #hero-stage-label {
+        max-width: 7.2rem;
+        font-size: 0.56rem !important;
+        line-height: 1.35 !important;
+      }
+
+      .hero-specimen .stage-tab {
+        padding: 0.48rem 0.62rem !important;
+        font-size: 0.72rem !important;
+      }
+
+      .hero-specimen .grid-cols-\[0\.8fr_1\.2fr\] {
+        grid-template-columns: 1fr !important;
+      }
+
+      .hero-specimen img[src*="kolohaga_v_fix"] {
+        max-height: 3.2rem !important;
+      }
+
+      .hero-specimen .border-t {
+        padding-top: 0.75rem !important;
+      }
+
+      .hero-specimen .border-t > .flex {
+        align-items: center !important;
+        gap: 0.75rem !important;
+      }
+
+      .hero-specimen #hero-stage-meta {
+        max-width: 12rem;
+        font-size: 0.55rem !important;
+        line-height: 1.45 !important;
+      }
+
+      main > section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+      }
+
+      main > section:first-child {
+        padding-top: 1.25rem !important;
+      }
+
+      h1 {
+        font-size: clamp(2.25rem, 10.8vw, 3.4rem) !important;
+        line-height: 0.98 !important;
+      }
+
+      h2 {
+        font-size: clamp(1.75rem, 8vw, 2.5rem) !important;
+        line-height: 1.02 !important;
+      }
+
+      h3 {
+        line-height: 1.2 !important;
+      }
+
+      p {
+        line-height: 1.72 !important;
+      }
+
+      .section-kicker {
+        font-size: 0.67rem;
+      }
+
+      .section-kicker::before {
+        width: 1.55rem;
+      }
+
+      .logo-stage {
+        min-height: 230px !important;
+        padding: 0.85rem !important;
+      }
+
+      #hero-stage .mb-10 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.85rem;
+        margin-bottom: 1.4rem !important;
+      }
+
+      #hero-stage .py-12 {
+        padding-top: 1.1rem !important;
+        padding-bottom: 1.1rem !important;
+      }
+
+      #hero-logo {
+        max-height: 4.4rem !important;
+      }
+
+      #hero-stage-meta {
+        margin-top: 1.3rem !important;
+        padding-top: 1rem !important;
+      }
+
+      #type-sample {
+        font-size: clamp(1.85rem, 9vw, 2.7rem) !important;
+      }
+
+      .space-y-8 > :not([hidden]) ~ :not([hidden]),
+      .space-y-6 > :not([hidden]) ~ :not([hidden]),
+      .space-y-5 > :not([hidden]) ~ :not([hidden]),
+      .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+        margin-top: 0.85rem !important;
+      }
+
+      .gap-8 {
+        gap: 1rem !important;
+      }
+
+      .gap-6,
+      .gap-5 {
+        gap: 0.85rem !important;
+      }
+
+      .h-44 {
+        height: 7.5rem !important;
+      }
+
+      .h-36 {
+        height: 6rem !important;
+      }
+
+      .h-32 {
+        height: 5rem !important;
+      }
+
+      .min-h-80 {
+        min-height: 13rem !important;
+      }
+
+      .min-h-56,
+      .min-h-52 {
+        min-height: 9.5rem !important;
+      }
+
+      .min-h-40 {
+        min-height: 7.5rem !important;
+      }
+
+      img[src*="kolohaga_v_fix"] {
+        max-height: 9.5rem !important;
+        width: auto !important;
+      }
+
+      img[src*="kolohaga_v_white"] {
+        height: 4.9rem !important;
+        width: 4.9rem !important;
+      }
+
+      img[src*="kolohaga_final_fix_web"],
+      img[src*="kolohaga_final_white_web"] {
+        max-height: 3.8rem !important;
+      }
+
+      .rounded-2xl {
+        border-radius: 0.85rem !important;
+      }
+
+      .mobile-quick-nav {
+        position: fixed;
+        left: 12px;
+        right: 12px;
+        bottom: max(10px, env(safe-area-inset-bottom));
+        z-index: 70;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 4px;
+        border: 1px solid rgba(5, 37, 91, 0.14);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.96);
+        padding: 5px;
+        box-shadow: 0 18px 50px rgba(5, 37, 91, 0.16);
+        backdrop-filter: blur(16px);
+      }
+
+      .mobile-quick-nav a {
+        display: grid;
+        min-height: 44px;
+        place-items: center;
+        border-radius: 13px;
+        color: #0B573C;
+        font-size: 0.64rem;
+        line-height: 1;
+        text-align: center;
+      }
+
+      .mobile-quick-nav a:active {
+        background: #eef5ff;
+        transform: scale(0.98);
+      }
+
+      .mobile-stack-stats {
+        grid-template-columns: 1fr !important;
+      }
+
+      .mobile-stack-stats > div {
+        border-left: 0 !important;
+        border-right: 0 !important;
+        border-top: 1px solid rgba(5, 37, 91, 0.12);
+      }
+
+      .mobile-stack-stats > div:first-child {
+        border-top: 0 !important;
+      }
+
+      .manual-chip {
+        border-radius: 13px;
+        padding: 0.75rem !important;
+      }
+
+      #larangan .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 0.65rem !important;
+      }
+
+      #larangan article {
+        padding: 0.65rem !important;
+      }
+
+      #larangan article > div {
+        height: 5.8rem !important;
+        padding: 0.65rem !important;
+      }
+
+      #larangan h3 {
+        margin-top: 0.65rem !important;
+        font-size: 0.72rem !important;
+        line-height: 1.25 !important;
+      }
+
+      #larangan img {
+        max-width: 100% !important;
+      }
+
+      #larangan .misuse-lockup img:first-child {
+        height: 3rem !important;
+      }
+
+      #larangan .misuse-lockup img:last-child {
+        height: 1.55rem !important;
+      }
+
+      #larangan .usage-mark::before {
+        font-size: 2.05rem;
+      }
+
+      #larangan .usage-mark {
+        right: 0.55rem;
+        top: 0.55rem;
+        height: 1.8rem;
+        width: 1.8rem;
+      }
+
+      #warna > .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 0.65rem !important;
+      }
+
+      #warna .color-button {
+        padding: 0.65rem !important;
+      }
+
+      #warna .color-button .h-32 {
+        height: 5.8rem !important;
+        border-radius: 0.85rem !important;
+      }
+
+      #warna .color-button strong {
+        font-size: 0.8rem !important;
+        line-height: 1.25 !important;
+      }
+
+      #warna .color-button span {
+        font-size: 0.62rem !important;
+      }
+
+      #aplikasi .mockup-carousel {
+        display: flex !important;
+        grid-template-columns: none !important;
+        gap: 0.85rem !important;
+        margin-inline: -12px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        padding: 0 12px 0.35rem;
+        scroll-padding-inline: 12px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      #aplikasi .mockup-carousel::-webkit-scrollbar {
+        display: none;
+      }
+
+      #aplikasi .mockup-carousel > article {
+        width: min(78vw, 318px);
+        min-width: min(78vw, 318px);
+        scroll-snap-align: start;
+        padding: 0.85rem !important;
+      }
+
+      #aplikasi .mockup-carousel h3 {
+        font-size: 0.92rem !important;
+        line-height: 1.2 !important;
+      }
+
+      #aplikasi .mockup-carousel .mb-5 {
+        margin-bottom: 0.75rem !important;
+      }
+
+      #aplikasi .mockup-feed {
+        aspect-ratio: 4 / 5;
+        min-height: 0 !important;
+      }
+
+      #aplikasi .mockup-feed-tall {
+        min-height: 0 !important;
+      }
+
+      #variations > .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 0.65rem !important;
+      }
+
+      #variations article {
+        padding: 0.65rem !important;
+      }
+
+      #variations article > div:first-child {
+        height: 6.25rem !important;
+        overflow: hidden !important;
+        padding: 0.65rem !important;
+      }
+
+      #variations article > div:first-child img[src*="kolohaga_final"] {
+        max-height: 2.65rem !important;
+        width: 100% !important;
+        object-fit: contain !important;
+      }
+
+      #variations article > div:first-child img[src*="kolohaga_v_fix"] {
+        max-height: 4.8rem !important;
+        width: auto !important;
+        object-fit: contain !important;
+      }
+
+      #variations h3 {
+        margin-top: 0.65rem !important;
+        font-size: 0.78rem !important;
+        line-height: 1.25 !important;
+      }
+
+      #variations p {
+        margin-top: 0.35rem !important;
+        font-size: 0.68rem !important;
+        line-height: 1.35 !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      #primary-logo .manual-card {
+        padding: 0.85rem !important;
+      }
+
+      #primary-logo .manual-card > div:first-child {
+        height: 8.4rem !important;
+        overflow: hidden !important;
+        padding: 0.85rem !important;
+      }
+
+      #primary-logo .manual-card img[src*="kolohaga_v_fix"] {
+        max-height: 6.5rem !important;
+        width: auto !important;
+        object-fit: contain !important;
+      }
+
+      #primary-logo .manual-card img[src*="kolohaga_final_fix_web"] {
+        max-height: 3.5rem !important;
+        width: 100% !important;
+        object-fit: contain !important;
+      }
+
+      #primary-logo .manual-card h3 {
+        margin-top: 0.85rem !important;
+        font-size: 1rem !important;
+      }
+
+      #primary-logo .manual-card p {
+        margin-top: 0.45rem !important;
+        font-size: 0.86rem !important;
+        line-height: 1.55 !important;
+      }
+
+      #construction {
+        padding-top: 2.35rem !important;
+      }
+
+      #construction h2 {
+        font-size: clamp(2rem, 9vw, 2.7rem) !important;
+        line-height: 1.02 !important;
+      }
+
+      #construction .manual-card {
+        padding: 0.95rem !important;
+      }
+
+      #construction .construction-stage {
+        min-height: 12.5rem !important;
+        padding: 1rem !important;
+      }
+
+      #construction .construction-stage img {
+        max-height: 3.4rem !important;
+      }
+
+      #construction .construction-notes {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 0.55rem !important;
+      }
+
+      #construction .construction-notes > div {
+        border: 1px solid rgba(5, 37, 91, 0.1);
+        padding: 0.7rem !important;
+      }
+
+      #construction .construction-notes p {
+        margin-top: 0.25rem !important;
+        font-size: 0.62rem !important;
+        line-height: 1.25 !important;
+      }
     }
   </style>
 </head>
-<body class="selection:bg-[#059B66] selection:text-white">
+<body class="selection:bg-[#0B573C] selection:text-white">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[80] focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:text-sm focus:font-bold focus:text-[#0B573C]">
+    Lewati navigasi
+  </a>
 
-  <!-- ======================================================= -->
-  <!-- FLOATING EDITORIAL TOP BAR                              -->
-  <!-- ======================================================= -->
-  <header class="sticky top-0 z-50 bg-[#F8FAF8]/90 backdrop-blur-xl border-b border-emerald-950/10 px-4 sm:px-8 py-3.5 transition-all">
-    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
-      
-      <!-- Back to Proposal & Home -->
-      <div class="flex items-center gap-3">
-        <a href="../kolohaga" class="px-3.5 py-1.5 rounded-full border border-stone-200 text-xs font-bold text-slate-700 hover:bg-white transition-all flex items-center gap-1.5 shadow-xs">
-          <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
-          <span>Proposal Logo</span>
-        </a>
-        <div class="w-2 h-2 rounded-full bg-emerald-300"></div>
-        <span class="text-xs font-mono font-bold text-[#059B66]">KOLOHAGA GUIDELINES V1.0</span>
-      </div>
-
-      <!-- Center Anchor Tabs -->
-      <nav class="hidden md:flex items-center gap-1 p-1 bg-white rounded-full border border-emerald-950/10 shadow-xs text-xs font-bold text-slate-600">
-        <a href="#section-story" class="px-3 py-1 rounded-full hover:text-emerald-950 hover:bg-emerald-50 transition-all">01. Filosofi</a>
-        <a href="#section-logo" class="px-3 py-1 rounded-full hover:text-emerald-950 hover:bg-emerald-50 transition-all">02. Master Logo</a>
-        <a href="#section-colors" class="px-3 py-1 rounded-full hover:text-emerald-950 hover:bg-emerald-50 transition-all">03. Warna</a>
-        <a href="#section-typography" class="px-3 py-1 rounded-full hover:text-emerald-950 hover:bg-emerald-50 transition-all">04. Tipografi</a>
-        <a href="#section-applications" class="px-3 py-1 rounded-full hover:text-emerald-950 hover:bg-emerald-50 transition-all">05. Aplikasi</a>
-        <a href="#section-donts" class="px-3 py-1 rounded-full hover:text-emerald-950 hover:bg-emerald-50 transition-all">06. Larangan</a>
-      </nav>
-
-      <!-- Right Action CTA -->
-      <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20telah%20meninjau%20Brand%20Guidelines%20resmi%20Kolohaga" target="_blank" class="px-4 py-2 rounded-full bg-[#059B66] hover:bg-[#0B573C] text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm">
-        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
-        <span>Hubungi Desainer</span>
+  <header class="sticky top-0 z-50 border-b border-emerald-100 bg-white/95 backdrop-blur-xl">
+    <div class="guide-shell flex min-h-[72px] items-center justify-between gap-4 py-3">
+      <a href="/kolohaga" class="tap-active inline-flex min-h-11 items-center gap-3 rounded-2xl pr-3 transition hover:bg-white/70">
+        <span class="grid h-11 w-11 place-items-center rounded-2xl bg-[#0B573C] text-white">
+          <i data-lucide="arrow-left" class="h-5 w-5"></i>
+        </span>
+        <span class="hidden sm:block">
+          <span class="block text-sm font-extrabold leading-none text-[#0B573C]">KOLOHAGA</span>
+          <span class="mt-1 block font-mono text-[10px] font-bold uppercase text-slate-500">Brand guidelines v1.0</span>
+        </span>
       </a>
 
+      <nav aria-label="Navigasi guidelines" class="hidden items-center gap-1 rounded-full border border-emerald-100 bg-white p-1 text-xs font-bold text-slate-600 md:flex">
+        <a class="nav-pill px-4 py-2 hover:bg-[#ECFDF5] hover:text-[#0B573C]" href="#overview">Overview</a>
+        <a class="nav-pill px-4 py-2 hover:bg-[#ECFDF5] hover:text-[#0B573C]" href="#concept">Concept</a>
+        <a class="nav-pill px-4 py-2 hover:bg-[#ECFDF5] hover:text-[#0B573C]" href="#primary-logo">Logo</a>
+        <a class="nav-pill px-4 py-2 hover:bg-[#ECFDF5] hover:text-[#0B573C]" href="#warna">Warna</a>
+        <a class="nav-pill px-4 py-2 hover:bg-[#ECFDF5] hover:text-[#0B573C]" href="#supporting">System</a>
+        <a class="nav-pill px-4 py-2 hover:bg-[#FFF1F1] hover:text-red-700" href="#larangan">Larangan</a>
+      </nav>
+
+      <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20sudah%20meninjau%20brand%20guidelines%20Kolohaga.%20Mohon%20bantuannya%20untuk%20diskusi%20lanjutan." target="_blank" rel="noreferrer" class="tap-active inline-flex min-h-11 items-center gap-2 rounded-2xl bg-[#073B28] px-4 text-xs font-extrabold text-white transition hover:bg-[#0f7739]">
+        <i data-lucide="message-circle" class="h-4 w-4"></i>
+        <span class="hidden sm:inline">Hubungi Desainer</span>
+        <span class="sm:hidden">Kontak</span>
+      </a>
     </div>
   </header>
 
-  <!-- ======================================================= -->
-  <!-- MAIN GUIDELINES CONTENT BODY                            -->
-  <!-- ======================================================= -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-8 py-10 sm:py-20 space-y-16 sm:space-y-28">
+  <nav class="mobile-quick-nav" aria-label="Navigasi cepat mobile">
+    <a href="#cover">Cover</a>
+    <a href="#concept">Concept</a>
+    <a href="#primary-logo">Logo</a>
+    <a href="#warna">Warna</a>
+    <a href="#aplikasi">Mockup</a>
+  </nav>
 
-    <!-- HERO HEADER -->
-    <section class="space-y-4 max-w-3xl">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-[#0B573C] text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider">
-        <span class="w-1.5 h-1.5 rounded-full bg-[#059B66]"></span>
-        <span>Official Visual Identity Manual &bull; V1.0</span>
+  <main id="main-content">
+    <section id="cover" class="guide-shell pb-12 pt-8 sm:pb-20 sm:pt-12">
+      <div class="grid gap-5 lg:grid-cols-[1.05fr_0.95fr] lg:items-stretch">
+        <div class="hero-cover p-7 sm:p-10 lg:p-12">
+          <div class="relative z-10 flex h-full min-h-[520px] flex-col justify-between gap-8 max-lg:min-h-0">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+              <div class="section-kicker">01 Cover</div>
+              <span class="rounded-2xl border border-emerald-100 bg-white px-4 py-2 font-mono text-[10px] font-bold uppercase text-slate-500">Version 1.0</span>
+            </div>
+
+            <div class="space-y-7">
+              <img src="/assets/logo1_full.png" alt="Logo KOLOHAGA full color" class="mb-2 h-auto max-h-12 w-full max-w-[260px] object-contain object-left sm:max-h-14 sm:max-w-[300px] lg:max-w-[320px]">
+              <h1 class="hero-wordmark max-w-3xl text-5xl leading-[0.98] text-[#0B573C] sm:text-6xl lg:text-7xl">
+                <span class="brand-title-strong">KOLOHAGA</span>
+                <span class="brand-title-rest">Visual Identity Guidelines 2026.</span>
+              </h1>
+              <p class="max-w-2xl text-base leading-8 text-slate-700 sm:text-lg">
+                Panduan ini menjelaskan cara memakai identitas KOLOHAGA dengan konsisten, mulai dari logo utama, warna, tipografi, ikon, sampai contoh penerapan di media digital dan produksi.
+              </p>
+            </div>
+
+            <div class="grid gap-3 sm:grid-cols-3">
+              <div class="manual-chip p-4">
+                <span class="block font-mono text-[10px] font-bold uppercase text-slate-500">Forest green</span>
+                <strong class="mt-1 block text-sm text-[#059B66]">#059B66</strong>
+              </div>
+              <div class="manual-chip p-4">
+                <span class="block font-mono text-[10px] font-bold uppercase text-slate-500">Deep forest</span>
+                <strong class="mt-1 block text-sm text-[#0B573C]">#0B573C</strong>
+              </div>
+              <div class="manual-chip p-4">
+                <span class="block font-mono text-[10px] font-bold uppercase text-slate-500">Harvest gold</span>
+                <strong class="mt-1 block text-sm text-[#C79212]">#F0BE3E</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-specimen p-6 sm:p-8 lg:p-10">
+          <div id="hero-stage" class="grid h-full min-h-[520px] place-items-stretch rounded-[20px] bg-[#0B573C] p-5 transition-colors duration-300 max-lg:min-h-[360px]">
+            <div class="flex h-full flex-col justify-between gap-5">
+              <div class="flex items-center justify-between gap-3">
+                <span id="hero-stage-label" class="font-mono text-[10px] font-bold uppercase text-emerald-100">Reverse logo on deep forest canvas</span>
+                <div class="flex rounded-full bg-white/10 p-1 text-[11px] font-bold">
+                  <button type="button" class="stage-tab rounded-full bg-white px-3 py-2 text-[#0B573C]" data-stage="deep">Deep</button>
+                  <button type="button" class="stage-tab rounded-full px-3 py-2 text-emerald-100" data-stage="light">Light</button>
+                  <button type="button" class="stage-tab rounded-full px-3 py-2 text-emerald-100" data-stage="ink">Green</button>
+                  <button type="button" class="stage-tab rounded-full px-3 py-2 text-emerald-100" data-stage="mono">Mono</button>
+                </div>
+              </div>
+
+              <div class="grid flex-1 place-items-center p-6">
+                <img id="hero-logo" src="/assets/logo1_white_text.png" alt="Logo utama KOLOHAGA" class="h-auto max-h-24 w-full max-w-[420px] object-contain">
+              </div>
+
+              <div class="border-t border-white/15 pt-5">
+                <div class="flex items-end justify-between gap-5">
+                  <img src="/assets/kolohaga_symbol.png" alt="Symbol KOLOHAGA" class="h-20 w-auto object-contain">
+                  <div id="hero-stage-meta" class="grid gap-2 text-right font-mono text-[10px] font-bold uppercase text-emerald-100">
+                    <span>Forest green / Deep forest / Harvest gold / Monochrome</span>
+                    <span>Primary logo, symbol, clear space, usage rules</span>
+                  </div>
+                </div>
+                <div class="mt-5 grid grid-cols-4 gap-2">
+                  <span class="h-2 rounded-full bg-[#059B66]"></span>
+                  <span class="h-2 rounded-full bg-[#0B573C] ring-1 ring-white/20"></span>
+                  <span class="h-2 rounded-full bg-[#F0BE3E]"></span>
+                  <span class="h-2 rounded-full bg-white/80"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <h1 class="text-3xl sm:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.08]">
-        Buku Panduan Brand <br />
-        <span class="text-[#059B66]">Resmi KOLOHAGA.</span>
-      </h1>
-
-      <p class="text-sm sm:text-lg text-slate-600 font-normal leading-relaxed">
-        Standar baku implementasi identitas visual, filosofi simpul kemakmuran, sistem kalibrasi warna Forest Emerald &amp; Harvest Gold, tipografi resmi, serta aturan penggunaan media kemasan, digital, dan fisik.
-      </p>
     </section>
 
-    <!-- SECTION 01: BRAND STORY & ESSENCE -->
-    <section id="section-story" class="space-y-8">
-      <div class="border-l-2 border-[#059B66] pl-3 sm:pl-4">
-        <span class="text-[11px] font-mono font-bold tracking-widest text-[#059669] uppercase">01 // BRAND STORY &amp; ESSENCE</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-          Karakter &amp; Esensi Brand KOLOHAGA
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-500 font-mono">"Kemurnian Alami &bull; Khasiat Terpercaya &bull; Keberlanjutan"</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <!-- Pillar 1: Authenticity -->
-        <div class="bezel-shell p-6 sm:p-8 space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-[#059B66] flex items-center justify-center font-bold shadow-xs">
-            <i data-lucide="leaf" class="w-6 h-6"></i>
-          </div>
-          <div class="space-y-1">
-            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 01</span>
-            <h3 class="text-lg font-extrabold text-slate-900">KEASLIAN ALAM (Authenticity)</h3>
-          </div>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Menjunjung tinggi kemurnian hasil bumi Nusantara dan kearifan herbal alami tanpa campuran zat kimia berbahaya, menjaga kepercayaan konsumen dari generasi ke generasi.
+    <section id="overview" class="guide-shell py-14 sm:py-20">
+      <div class="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
+        <div class="space-y-4">
+          <div class="section-kicker">02 Brand overview</div>
+          <h2 class="text-3xl font-extrabold leading-tight sm:text-5xl">Identitas yang terasa alami, murni, dan terpercaya.</h2>
+          <p class="max-w-md text-sm leading-7 text-slate-600">
+            KOLOHAGA diposisikan sebagai brand herbal alami yang menonjolkan kemurnian bahan, khasiat yang terpercaya, dan hubungan yang dekat dengan alam Nusantara.
           </p>
         </div>
-
-        <!-- Pillar 2: Purity & Trust -->
-        <div class="bezel-shell p-6 sm:p-8 space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-amber-50 text-[#F0BE3E] flex items-center justify-center font-bold shadow-xs">
-            <i data-lucide="sparkles" class="w-6 h-6"></i>
-          </div>
-          <div class="space-y-1">
-            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 02</span>
-            <h3 class="text-lg font-extrabold text-slate-900">KEMURNIAN KHASIAT (Purity)</h3>
-          </div>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Disimbolkan lewat titik emas di pusat lambang simpul. Melambangkan intisari kemurnian khasiat terbaik yang diproses higienis berstandar mutu tinggi.
-          </p>
+        <div class="grid gap-4 md:grid-cols-2">
+          <article class="manual-card p-6">
+            <span class="font-mono text-[10px] font-bold uppercase text-slate-500">What</span>
+            <h3 class="mt-2 text-lg font-extrabold">Menjaga keaslian produk herbal</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">Identitas ini dibuat agar Kolohaga terlihat natural, bersih, dan dapat dipercaya pada setiap titik komunikasi.</p>
+          </article>
+          <article class="manual-card p-6">
+            <span class="font-mono text-[10px] font-bold uppercase text-slate-500">Field</span>
+            <h3 class="mt-2 text-lg font-extrabold">Produk herbal dan wellness</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">Visualnya dirancang agar fleksibel untuk kemasan, materi edukasi, promosi digital, marketplace, dan media penjualan.</p>
+          </article>
+          <article class="manual-card p-6">
+            <span class="font-mono text-[10px] font-bold uppercase text-slate-500">Vision</span>
+            <h3 class="mt-2 text-lg font-extrabold">Manfaat alami yang mudah dipercaya</h3>
+            <p class="mt-3 text-sm leading-7 text-slate-600">Arah visual KOLOHAGA harus terasa natural, bersih, terpercaya, dan siap dipakai pada kemasan, promosi digital, materi edukasi, serta media penjualan.</p>
+          </article>
+          <article class="manual-card p-6">
+            <span class="font-mono text-[10px] font-bold uppercase text-slate-500">Personality</span>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="rounded-full bg-[#ECFDF5] px-3 py-2 text-xs font-bold text-[#0B573C]">Natural</span>
+              <span class="rounded-full bg-[#ECFDF5] px-3 py-2 text-xs font-bold text-[#0B573C]">Trusted</span>
+              <span class="rounded-full bg-[#ECFDF5] px-3 py-2 text-xs font-bold text-[#0B573C]">Clean</span>
+              <span class="rounded-full bg-[#ECFDF5] px-3 py-2 text-xs font-bold text-[#0B573C]">Warm</span>
+              <span class="rounded-full bg-[#FFF8DC] px-3 py-2 text-xs font-bold text-[#073B28]">Sustainable</span>
+            </div>
+          </article>
         </div>
-
-        <!-- Pillar 3: Sustainability -->
-        <div class="bezel-shell p-6 sm:p-8 space-y-4">
-          <div class="w-12 h-12 rounded-2xl bg-green-50 text-[#0B573C] flex items-center justify-center font-bold shadow-xs">
-            <i data-lucide="sprout" class="w-6 h-6"></i>
-          </div>
-          <div class="space-y-1">
-            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 03</span>
-            <h3 class="text-lg font-extrabold text-slate-900">KEBERLANJUTAN (Sustainability)</h3>
-          </div>
-          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            Ditegaskan oleh warna hijau hutan (*Deep Forest Green*). Komitmen mensejahterakan ekosistem petani lokal dan pelestarian alam Nusantara yang lestari.
-          </p>
-        </div>
-
       </div>
     </section>
 
-    <!-- SECTION 02: MASTER LOGOTYPE VARIATIONS -->
-    <section id="section-logo" class="space-y-8">
-      <div class="border-l-2 border-[#059B66] pl-3 sm:pl-4">
-        <span class="text-[11px] font-mono font-bold tracking-widest text-[#059669] uppercase">02 // MASTER LOGOTYPE</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-          Master Logotype Resmi &amp; Varian Kanvas
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-500 font-mono">
-          Spesifikasi tampilan logo utama di latar terang, gelap, dan monokrom
-        </p>
+    <section id="concept" class="guide-shell py-14 sm:py-20">
+      <div class="grid gap-6 lg:grid-cols-12">
+        <article class="manual-card p-7 sm:p-9 lg:col-span-7">
+          <div class="section-kicker">03 Logo concept</div>
+          <div class="mt-8 grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+            <div>
+          <h2 class="text-3xl font-extrabold leading-tight sm:text-5xl">Simpul alami yang mudah diingat.</h2>
+          <p class="mt-5 text-sm leading-7 text-slate-600">
+                Logo KOLOHAGA berangkat dari gagasan simpul manfaat alami. Bentuk simbol yang saling terhubung memberi kesan kebersamaan, daun memberi rasa natural, dan titik emas menjadi penanda kemurnian khasiat.
+              </p>
+            </div>
+            <div class="grid min-h-80 place-items-center rounded-2xl border border-emerald-100 bg-white p-8">
+              <img src="/assets/kolohaga_symbol.png" alt="Symbol KOLOHAGA full color" class="max-h-72 object-contain">
+            </div>
+          </div>
+        </article>
+        <div class="grid gap-4 lg:col-span-5">
+          <article class="manual-card p-5">
+            <h3 class="text-base font-extrabold">Authentic</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Bentuk simpul memberi kesan alami, hangat, dan mudah dikenali tanpa perlu elemen yang rumit.</p>
+          </article>
+          <article class="manual-card p-5">
+            <h3 class="text-base font-extrabold">Purity</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Titik emas dan bentuk daun menegaskan kemurnian khasiat serta kualitas bahan alami.</p>
+          </article>
+          <article class="manual-card p-5">
+            <h3 class="text-base font-extrabold">Helpful connection</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Lockup dibuat rapat dan bersih agar brand terasa solid, membantu, dan mudah dipakai lintas media.</p>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
-        <!-- Light Canvas -->
-        <div class="bezel-shell p-6 sm:p-8 flex flex-col justify-between space-y-6">
-          <div class="space-y-3">
-            <span class="text-[10px] font-mono font-bold text-[#059B66] uppercase">LIGHT CANVAS (UTAMA)</span>
-            <div class="h-36 sm:h-44 flex items-center justify-center rounded-2xl bg-white border border-slate-100 p-4 shadow-inner">
-              <img src="../assets/logo_kolohaga_1_hijau.png" alt="Kolohaga Light Logo" class="max-h-16 sm:max-h-20 w-auto object-contain" />
-            </div>
-            <div>
-              <h4 class="text-sm font-bold text-slate-900">Primary Full Color (Resmi)</h4>
-              <p class="text-xs text-slate-500 mt-1">Forest Green (#0B573C) + Emerald Nusantara (#059B66) &amp; Gold di atas latar putih.</p>
-            </div>
-          </div>
-          <div class="text-[11px] font-mono text-slate-400 bg-slate-50 p-2 rounded-xl border border-slate-100 text-center">
-            Standard: Kemasan Box, Label Botol, Kop Surat
-          </div>
+    <section id="primary-logo" class="guide-shell py-14 sm:py-20">
+      <div class="grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">
+        <div class="space-y-4">
+          <div class="section-kicker">04 Primary logo</div>
+          <h2 class="text-3xl font-extrabold leading-tight sm:text-5xl">Gunakan logo utama sebagai wajah brand.</h2>
+          <p class="max-w-md text-sm leading-7 text-slate-600">
+            Primary logo adalah konfigurasi paling lengkap. Versi ini harus menjadi pilihan pertama saat brand perlu dikenalkan dengan jelas.
+          </p>
         </div>
-
-        <!-- Forest Deep Canvas -->
-        <div class="bezel-shell p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-[#0B573C] border-emerald-900 text-white">
-          <div class="space-y-3">
-            <span class="text-[10px] font-mono font-bold text-amber-300 uppercase">FOREST DEEP CANVAS</span>
-            <div class="h-36 sm:h-44 flex items-center justify-center rounded-2xl bg-[#073B28] border border-white/10 p-4 shadow-inner">
-              <img src="../assets/logo_kolohaga_1_white.png" alt="Kolohaga White Logo" class="max-h-16 sm:max-h-20 w-auto object-contain" />
+        <div class="grid gap-4 md:grid-cols-[0.8fr_1.2fr]">
+          <article class="manual-card p-5">
+            <div class="grid h-44 place-items-center rounded-2xl border border-emerald-100 bg-white p-5">
+              <img src="/assets/kolohaga_symbol.png" alt="Symbol KOLOHAGA" class="max-h-28 object-contain">
             </div>
-            <div>
-              <h4 class="text-sm font-bold text-white">Reverse Solid White</h4>
-              <p class="text-xs text-emerald-100 mt-1">100% Alpine Pure White di atas latar hijau hutan korporat.</p>
+            <h3 class="mt-5 text-base font-extrabold">Symbol</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Symbol Kolohaga dipakai untuk ruang kecil, avatar, favicon, label kemasan, dan elemen navigasi.</p>
+          </article>
+          <article class="manual-card p-5">
+            <div class="grid h-44 place-items-center rounded-2xl border border-emerald-100 bg-white p-5">
+              <img src="/assets/logo1_full.png" alt="Primary lockup KOLOHAGA" class="max-h-16 w-full object-contain">
             </div>
-          </div>
-          <div class="text-[11px] font-mono text-emerald-200 bg-white/10 p-2 rounded-xl border border-white/10 text-center">
-            Standard: Seragam, Papperbag, Souvenir, Booth
-          </div>
+            <h3 class="mt-5 text-base font-extrabold">Wordmark lockup</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-600">Wordmark adalah bentuk khusus, jadi tidak boleh diganti dengan ketikan font biasa.</p>
+          </article>
         </div>
-
-        <!-- Monochrome Black -->
-        <div class="bezel-shell p-6 sm:p-8 flex flex-col justify-between space-y-6">
-          <div class="space-y-3">
-            <span class="text-[10px] font-mono font-bold text-slate-700 uppercase">MONOCHROME 100% K</span>
-            <div class="h-36 sm:h-44 flex items-center justify-center rounded-2xl bg-white border border-slate-100 p-4 shadow-inner">
-              <img src="../assets/logo_kolohaga_1_mono.png" alt="Kolohaga Mono Logo" class="max-h-16 sm:max-h-20 w-auto object-contain" />
-            </div>
-            <div>
-              <h4 class="text-sm font-bold text-slate-900">Solid Black Tinta Tunggal</h4>
-              <p class="text-xs text-slate-500 mt-1">Untuk cetak stempel, sablon 1 warna, resi pengiriman, faktur, dan kardus coklat.</p>
-            </div>
-          </div>
-          <div class="text-[11px] font-mono text-slate-400 bg-slate-50 p-2 rounded-xl border border-slate-100 text-center">
-            Standard: Kardus Luar (Master Carton), Stempel
-          </div>
-        </div>
-
       </div>
+    </section>
 
-      <!-- Standalone App Icon & Seal Mark Section -->
-      <div class="bezel-shell p-6 sm:p-10 space-y-6">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+    <section id="variations" class="guide-shell py-14 sm:py-20">
+      <div class="mb-8">
+        <div class="section-kicker">05 Logo variations</div>
+        <h2 class="mt-4 text-3xl font-extrabold leading-tight sm:text-5xl">Pilih versi logo sesuai ruang dan konteks.</h2>
+      </div>
+      <div class="grid gap-4 md:grid-cols-3">
+        <article class="manual-card p-5">
+          <div class="grid h-44 place-items-center rounded-2xl border border-emerald-100 bg-white p-5">
+            <img src="/assets/logo1_full.png" alt="Primary horizontal KOLOHAGA" class="max-h-16 w-full object-contain">
+          </div>
+          <h3 class="mt-5 text-base font-extrabold">Primary horizontal</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-600">Dipakai untuk website, presentasi, proposal, dan materi yang perlu mengenalkan brand secara utuh.</p>
+        </article>
+        <article class="manual-card bg-[#0B573C] p-5 text-white">
+          <div class="grid h-44 place-items-center rounded-2xl border border-white/20 bg-[#0B573C] p-5">
+            <img src="/assets/logo1_white_text.png" alt="Reverse logo KOLOHAGA" class="max-h-16 w-full object-contain">
+          </div>
+          <h3 class="mt-5 text-base font-extrabold">Reverse white</h3>
+          <p class="mt-2 text-sm leading-6 text-emerald-100">Dipakai pada deep forest, forest green, atau latar gelap dengan kontras yang cukup.</p>
+        </article>
+        <article class="manual-card p-5">
+          <div class="grid h-44 place-items-center rounded-2xl border border-emerald-100 bg-white p-5">
+            <img src="/assets/kolohaga_symbol.png" alt="Symbol only KOLOHAGA" class="max-h-28 object-contain">
+          </div>
+          <h3 class="mt-5 text-base font-extrabold">Icon or symbol</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-600">Dipakai saat full logo terlalu kecil untuk terbaca dengan nyaman.</p>
+        </article>
+        <article class="manual-card p-5 md:col-span-2">
+          <div class="grid h-36 place-items-center rounded-2xl border border-emerald-100 bg-white p-5">
+            <img src="/assets/logo1_full.png" alt="Monochrome KOLOHAGA" class="max-h-14 w-full object-contain grayscale contrast-200">
+          </div>
+          <h3 class="mt-5 text-base font-extrabold">Monochrome</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-600">Disiapkan untuk kebutuhan satu warna seperti emboss, bordir, stempel, thermal print, dan dokumen hitam putih.</p>
+        </article>
+        <article class="manual-card p-5">
+          <div class="grid h-36 place-items-center rounded-2xl border border-dashed border-blue-200 bg-[#F8FCF9] p-5">
+            <span class="font-mono text-xs font-bold uppercase text-slate-500">Wordmark only asset</span>
+          </div>
+          <h3 class="mt-5 text-base font-extrabold">Wordmark only</h3>
+          <p class="mt-2 text-sm leading-6 text-slate-600">Gunakan hanya dari master file resmi saat komunikasi membutuhkan wordmark tanpa symbol.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="construction" class="guide-shell py-14 sm:py-20">
+      <div class="grid gap-8 lg:grid-cols-[0.82fr_1.18fr]">
+        <div>
+          <div class="section-kicker">06 Logo construction</div>
+          <h2 class="mt-4 text-3xl font-extrabold leading-tight sm:text-5xl">Proporsi yang menjaga logo tetap stabil.</h2>
+          <p class="mt-5 max-w-md text-sm leading-7 text-slate-600">
+            Bagian ini menunjukkan cara elemen logo saling sejajar. Tujuannya bukan membuat dekorasi grid, tetapi memastikan logo terlihat seimbang saat dipakai.
+          </p>
+        </div>
+        <div class="manual-card p-6 sm:p-8">
+          <div class="construction-stage relative grid min-h-80 place-items-center rounded-2xl border border-emerald-100 bg-[#F8FCF9] p-8">
+            <div class="absolute inset-x-8 top-1/2 border-t border-dashed border-[#059B66]/40"></div>
+            <div class="absolute inset-y-8 left-1/3 border-l border-dashed border-[#F0BE3E]/50"></div>
+            <img src="/assets/logo1_full.png" alt="Konstruksi proporsi logo KOLOHAGA" class="relative z-10 max-h-20 w-full object-contain">
+          </div>
+          <div class="construction-notes mt-5 grid gap-3 md:grid-cols-3">
+            <div class="rounded-2xl bg-white p-4">
+              <span class="font-mono text-[10px] font-bold uppercase text-slate-500">Alignment</span>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Baseline rapi.</p>
+            </div>
+            <div class="rounded-2xl bg-white p-4">
+              <span class="font-mono text-[10px] font-bold uppercase text-slate-500">Ratio</span>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Symbol terukur.</p>
+            </div>
+            <div class="rounded-2xl bg-white p-4">
+              <span class="font-mono text-[10px] font-bold uppercase text-slate-500">Radius</span>
+              <p class="mt-2 text-sm leading-6 text-slate-600">Sudut lembut.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="safe-area" class="guide-shell py-14 sm:py-20">
+      <article class="manual-card p-6 sm:p-8">
+        <div class="mb-6 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
           <div>
-            <span class="text-xs font-mono font-bold text-[#059B66] uppercase">STANDALONE APP ICON &bull; SACRED KNOT SEAL</span>
-            <h3 class="text-lg sm:text-xl font-bold text-slate-900">Simbol Mandiri Simpul Kemakmuran</h3>
+            <div class="section-kicker">07 Clear space</div>
+            <h2 class="mt-4 text-3xl font-extrabold leading-tight sm:text-5xl">Beri logo ruang untuk bernapas.</h2>
           </div>
-          <span class="text-xs font-mono text-slate-400">RASIO 1:1 APPS &amp; AVATAR</span>
+          <p class="max-w-md text-sm leading-7 text-slate-600">Clear space menjaga logo tidak terlihat penuh atau terdesak. Ukuran X diambil dari proporsi utama symbol.</p>
         </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          
-          <!-- App Icon 1: Light Launcher -->
-          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3">
-            <div class="w-20 h-20 mx-auto rounded-2xl bg-white shadow-md flex items-center justify-center border border-slate-100">
-              <img src="../assets/kolohaga_app_icon_light.png" alt="App Icon Light" class="w-16 h-16 object-contain rounded-xl" />
-            </div>
-            <div>
-              <span class="text-xs font-bold text-slate-900 block">iOS / Android Light</span>
-              <span class="text-[10px] font-mono text-slate-500">App Launcher Icon</span>
-            </div>
+        <div class="rounded-2xl border border-emerald-100 bg-white p-5 sm:p-7">
+          <div class="relative mx-auto grid min-h-52 max-w-2xl place-items-center rounded-2xl border-2 border-dashed border-[#059B66]/35 bg-[#F8FCF9] p-10">
+            <span class="absolute left-4 top-4 font-mono text-[10px] font-bold uppercase text-[#059B66]">X</span>
+            <span class="absolute right-4 top-4 font-mono text-[10px] font-bold uppercase text-[#059B66]">X</span>
+            <span class="absolute bottom-4 left-1/2 -translate-x-1/2 font-mono text-[10px] font-bold uppercase text-[#059B66]">1X safe area</span>
+            <img src="/assets/logo1_full.png" alt="Clear space logo KOLOHAGA" class="max-h-16 w-full object-contain">
           </div>
-
-          <!-- App Icon 2: Dark Launcher -->
-          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3">
-            <div class="w-20 h-20 mx-auto rounded-2xl bg-[#0B573C] shadow-md flex items-center justify-center border border-emerald-700">
-              <img src="../assets/kolohaga_app_icon_dark.png" alt="App Icon Dark" class="w-16 h-16 object-contain rounded-xl" />
-            </div>
-            <div>
-              <span class="text-xs font-bold text-slate-900 block">Forest Pro Launcher</span>
-              <span class="text-[10px] font-mono text-slate-500">Dark Mode App UI</span>
-            </div>
-          </div>
-
-          <!-- App Icon 3: Favicon -->
-          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3">
-            <div class="w-20 h-20 mx-auto rounded-2xl bg-white shadow-md flex items-center justify-center border border-slate-100">
-              <img src="../assets/kolohaga_symbol.png" alt="Favicon" class="w-10 h-10 object-contain" />
-            </div>
-            <div>
-              <span class="text-xs font-bold text-slate-900 block">Browser Favicon</span>
-              <span class="text-[10px] font-mono text-slate-500">32x32px &amp; 16x16px</span>
-            </div>
-          </div>
-
-          <!-- App Icon 4: Social Avatar -->
-          <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3">
-            <div class="w-20 h-20 mx-auto rounded-full bg-[#0B573C] shadow-md flex items-center justify-center border border-emerald-800">
-              <img src="../assets/kolohaga_app_icon_dark.png" alt="Social Avatar" class="w-14 h-14 object-contain rounded-full" />
-            </div>
-            <div>
-              <span class="text-xs font-bold text-slate-900 block">Social Avatar Profile</span>
-              <span class="text-[10px] font-mono text-slate-500">Instagram, WA, TikTok</span>
-            </div>
-          </div>
-
         </div>
+      </article>
+    </section>
+
+    <section id="minimum-size" class="guide-shell py-14 sm:py-20">
+      <div class="grid gap-5 lg:grid-cols-4">
+        <div class="lg:col-span-2">
+          <div class="section-kicker">08 Minimum size</div>
+          <h2 class="mt-4 text-3xl font-extrabold leading-tight sm:text-5xl">Ukuran minimum menjaga logo tetap terbaca.</h2>
+        </div>
+        <article class="manual-card p-6">
+          <span class="font-mono text-[10px] font-bold uppercase text-slate-500">Digital</span>
+          <div class="mt-5 space-y-3">
+            <div class="flex justify-between rounded-2xl bg-[#F8FCF9] p-4 text-sm"><span>Full logo</span><strong>120 px</strong></div>
+            <div class="flex justify-between rounded-2xl bg-[#F8FCF9] p-4 text-sm"><span>Icon</span><strong>24 px</strong></div>
+          </div>
+        </article>
+        <article class="manual-card p-6">
+          <span class="font-mono text-[10px] font-bold uppercase text-slate-500">Print</span>
+          <div class="mt-5 space-y-3">
+            <div class="flex justify-between rounded-2xl bg-[#F8FCF9] p-4 text-sm"><span>Full logo</span><strong>25 mm</strong></div>
+            <div class="flex justify-between rounded-2xl bg-[#F8FCF9] p-4 text-sm"><span>Icon</span><strong>8 mm</strong></div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <!-- SECTION 03: CLEAR SPACE & MINIMUM SCALING -->
-    <section id="section-clearspace" class="space-y-8">
-      <div class="border-l-2 border-[#059B66] pl-3 sm:pl-4">
-        <span class="text-[11px] font-mono font-bold tracking-widest text-[#059669] uppercase">03 // CLEAR SPACE &amp; SCALING</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-          Standar Zona Aman (*Clear Space*) &amp; Ukuran Minimum
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-500 font-mono">
-          Aturan proteksi visual agar logo selalu tampil tajam dan berwibawa di setiap media
+    <section id="warna" class="guide-shell py-14 sm:py-20">
+      <div class="mb-8 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+        <div>
+          <div class="section-kicker">09 Color system</div>
+          <h2 class="mt-4 text-3xl font-extrabold leading-tight sm:text-5xl">Warna membangun rasa percaya dan pertumbuhan.</h2>
+        </div>
+        <p class="max-w-md text-sm leading-7 text-slate-600">
+          Biru logo menjadi warna pengenal utama. Biru gelap memberi kesan tegas untuk presentasi, sementara hijau dipakai sebagai aksen pertumbuhan.
         </p>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        
-        <!-- Clear Space Diagram -->
-        <div class="bezel-shell p-6 sm:p-8 space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold text-[#0B573C] uppercase">ZONA AMAN (X = TINGGI TITIK EMAS PUSAT)</span>
-            <i data-lucide="maximize-2" class="w-4 h-4 text-slate-400"></i>
-          </div>
-
-          <div class="border-2 border-dashed border-emerald-300 rounded-2xl p-6 sm:p-8 flex items-center justify-center relative bg-emerald-50/40">
-            <span class="absolute top-2 left-2 text-[10px] font-mono text-emerald-700 font-bold">X</span>
-            <span class="absolute top-2 right-2 text-[10px] font-mono text-emerald-700 font-bold">X</span>
-            <span class="absolute bottom-2 left-2 text-[10px] font-mono text-emerald-700 font-bold">X</span>
-            <span class="absolute bottom-2 right-2 text-[10px] font-mono text-emerald-700 font-bold">X</span>
-            <img src="../assets/logo_kolohaga_1_hijau.png" alt="Clear Space Diagram" class="max-h-16 sm:max-h-20 object-contain" />
-          </div>
-
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Zona aman di sekeliling logo harus selalu memiliki margin minimum <strong>X</strong> dari tepi bidang, teks, atau elemen grafis lain untuk menjaga keterbacaan murni.
-          </p>
+      <div class="mb-6 overflow-hidden rounded-2xl border border-emerald-100">
+        <div class="flex h-5">
+          <div class="w-[58%] bg-[#059B66]" aria-label="58 persen hijau utama"></div>
+          <div class="w-[24%] bg-[#0B573C]" aria-label="24 persen hijau gelap"></div>
+          <div class="w-[13%] bg-[#F0BE3E]" aria-label="13 persen hijau"></div>
+          <div class="w-[5%] bg-white" aria-label="5 persen putih"></div>
         </div>
-
-        <!-- Minimum Size Standard -->
-        <div class="bezel-shell p-6 sm:p-8 space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold text-[#059B66] uppercase">STANDAR UKURAN TERKECIL</span>
-            <i data-lucide="minimize-2" class="w-4 h-4 text-slate-400"></i>
-          </div>
-
-          <div class="grid grid-cols-2 gap-3 sm:gap-4">
-            
-            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1.5">
-              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">MEDIA DIGITAL / SCREEN</span>
-              <div class="text-2xl font-black text-[#0B573C]">44 PX</div>
-              <p class="text-[11px] text-slate-500">Tinggi minimum pada navbar web &amp; mobile app</p>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1.5">
-              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">MEDIA CETAK / PRINT</span>
-              <div class="text-2xl font-black text-[#059B66]">18 MM</div>
-              <p class="text-[11px] text-slate-500">Lebar minimum pada stiker segel &amp; label botol</p>
-            </div>
-
-          </div>
-
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Logo KOLOHAGA telah dikalibrasi presisi sehingga detail simpul dan aksen emas tetap terbaca tajam pada kemasan kecil.
-          </p>
-        </div>
-
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <button type="button" class="manual-card color-button p-5" data-color="#059B66" data-name="Kolohaga Emerald">
+          <span class="block h-32 rounded-2xl bg-[#059B66]"></span>
+          <span class="mt-5 block font-mono text-[10px] font-bold uppercase text-slate-500">Forest green</span>
+          <strong class="mt-1 block text-base">Kolohaga Emerald</strong>
+          <span class="mt-3 flex justify-between border-t border-emerald-100 pt-3 font-mono text-xs text-slate-600"><span>HEX</span><span>#059B66</span></span>
+          <span class="mt-2 flex justify-between font-mono text-[10px] text-slate-500"><span>RGB</span><span>0 91 189</span></span>
+        </button>
+        <button type="button" class="manual-card color-button p-5" data-color="#F0BE3E" data-name="Harvest Gold">
+          <span class="block h-32 rounded-2xl bg-[#F0BE3E]"></span>
+          <span class="mt-5 block font-mono text-[10px] font-bold uppercase text-slate-500">Harvest accent</span>
+          <strong class="mt-1 block text-base">Harvest Gold</strong>
+          <span class="mt-3 flex justify-between border-t border-emerald-100 pt-3 font-mono text-xs text-slate-600"><span>HEX</span><span>#F0BE3E</span></span>
+          <span class="mt-2 flex justify-between font-mono text-[10px] text-slate-500"><span>RGB</span><span>72 193 90</span></span>
+        </button>
+        <button type="button" class="manual-card color-button p-5" data-color="#0B573C" data-name="Deep Forest Green">
+          <span class="block h-32 rounded-2xl bg-[#0B573C]"></span>
+          <span class="mt-5 block font-mono text-[10px] font-bold uppercase text-slate-500">Deep support</span>
+          <strong class="mt-1 block text-base">Deep Forest Green</strong>
+          <span class="mt-3 flex justify-between border-t border-emerald-100 pt-3 font-mono text-xs text-slate-600"><span>HEX</span><span>#0B573C</span></span>
+          <span class="mt-2 flex justify-between font-mono text-[10px] text-slate-500"><span>RGB</span><span>5 37 91</span></span>
+        </button>
+        <button type="button" class="manual-card color-button p-5" data-color="#FFFFFF" data-name="Pure White">
+          <span class="block h-32 rounded-2xl border border-emerald-100 bg-white"></span>
+          <span class="mt-5 block font-mono text-[10px] font-bold uppercase text-slate-500">Canvas</span>
+          <strong class="mt-1 block text-base">Pure White</strong>
+          <span class="mt-3 flex justify-between border-t border-emerald-100 pt-3 font-mono text-xs text-slate-600"><span>HEX</span><span>#FFFFFF</span></span>
+          <span class="mt-2 flex justify-between font-mono text-[10px] text-slate-500"><span>RGB</span><span>255 255 255</span></span>
+        </button>
       </div>
     </section>
 
-    <!-- SECTION 04: COLOR SCIENCE (PANTONE 70-20-10) -->
-    <section id="section-colors" class="space-y-8">
-      <div class="border-l-2 border-[#059B66] pl-3 sm:pl-4">
-        <span class="text-[11px] font-mono font-bold tracking-widest text-[#059669] uppercase">04 // OFFICIAL COLOR PALETTE</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-          Sistem Warna &amp; Kalibrasi Pantone (70-20-10)
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-500 font-mono">
-          Klik pada setiap swatch untuk menyalin kode warna secara instan ke clipboard
-        </p>
+    <section id="logo-color-usage" class="guide-shell py-14 sm:py-20">
+      <div class="mb-8">
+        <div class="section-kicker">10 Logo color usage</div>
+        <h2 class="mt-4 text-3xl font-extrabold leading-tight sm:text-5xl">Kontras menentukan versi logo yang dipakai.</h2>
       </div>
-
-      <!-- Continuous Spectrum Visual -->
-      <div class="space-y-2">
-        <div class="flex justify-between text-xs font-mono text-slate-500 font-bold">
-          <span>Formula Distribusi Visual</span>
-          <span>70% Deep Forest &bull; 20% Emerald Nusantara &bull; 10% Harvest Gold</span>
-        </div>
-        <div class="h-3.5 rounded-full overflow-hidden flex shadow-inner border border-slate-200">
-          <div class="w-[70%] bg-[#0B573C]"></div>
-          <div class="w-[20%] bg-[#059B66]"></div>
-          <div class="w-[10%] bg-[#F0BE3E]"></div>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        
-        <!-- Swatch 1: Deep Forest Green -->
-        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#0B573C', 'Deep Forest Green')">
-          <div class="h-28 rounded-2xl bg-[#0B573C] flex items-end justify-end p-3 text-white shadow-inner">
-            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <article class="manual-card p-5">
+          <div class="grid h-36 place-items-center rounded-2xl border border-emerald-100 bg-white p-5">
+            <img src="/assets/logo1_full.png" alt="Logo full color pada putih" class="max-h-14 w-full object-contain">
           </div>
-          <div class="space-y-2">
-            <div>
-              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">70% PRIMARY COLOR</span>
-              <h4 class="text-sm font-bold text-slate-900">Deep Forest Green</h4>
-            </div>
-            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
-              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-[#0B573C]">#0B573C</strong></div>
-              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>11, 87, 60</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">CMYK:</span><span>87, 36, 78, 38</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">PANTONE:</span><span>5535 C</span></div>
-            </div>
+          <h3 class="mt-4 text-sm font-extrabold">Full color on white</h3>
+        </article>
+        <article class="manual-card p-5">
+          <div class="grid h-36 place-items-center rounded-2xl bg-[#0B573C] p-5">
+            <img src="/assets/logo1_white_text.png" alt="Logo putih pada hijau gelap" class="max-h-14 w-full object-contain">
           </div>
-        </div>
-
-        <!-- Swatch 2: Emerald Nusantara -->
-        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#059B66', 'Emerald Nusantara')">
-          <div class="h-28 rounded-2xl bg-[#059B66] flex items-end justify-end p-3 text-white shadow-inner">
-            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          <h3 class="mt-4 text-sm font-extrabold">White on deep forest</h3>
+        </article>
+        <article class="manual-card p-5">
+          <div class="grid h-36 place-items-center rounded-2xl bg-[#059B66] p-5">
+            <img src="/assets/logo1_white_text.png" alt="Logo putih pada hijau utama" class="max-h-14 w-full object-contain">
           </div>
-          <div class="space-y-2">
-            <div>
-              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">20% VIBRANT ACCENT</span>
-              <h4 class="text-sm font-bold text-slate-900">Emerald Nusantara</h4>
-            </div>
-            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
-              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-[#059B66]">#059B66</strong></div>
-              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>5, 155, 102</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">CMYK:</span><span>84, 15, 76, 2</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">PANTONE:</span><span>7726 C</span></div>
-            </div>
+          <h3 class="mt-4 text-sm font-extrabold">White on forest green</h3>
+        </article>
+        <article class="manual-card p-5">
+          <div class="grid h-36 place-items-center rounded-2xl bg-[linear-gradient(135deg,#0b2c5f,#247bd5_48%,#F0BE3E)] p-5">
+            <img src="/assets/logo1_white_text.png" alt="Logo putih pada latar fotografi dengan overlay" class="max-h-14 w-full object-contain">
           </div>
-        </div>
-
-        <!-- Swatch 3: Harvest Solar Gold -->
-        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#F0BE3E', 'Harvest Solar Gold')">
-          <div class="h-28 rounded-2xl bg-[#F0BE3E] flex items-end justify-end p-3 text-slate-900 shadow-inner">
-            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
-          </div>
-          <div class="space-y-2">
-            <div>
-              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">10% SACRED ACCENT</span>
-              <h4 class="text-sm font-bold text-slate-900">Harvest Solar Gold</h4>
-            </div>
-            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
-              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-[#D99B16]">#F0BE3E</strong></div>
-              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>240, 190, 62</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">CMYK:</span><span>5, 25, 85, 0</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">PANTONE:</span><span>123 C</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Swatch 4: Alpine Pure White -->
-        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#FFFFFF', 'Alpine Pure White')">
-          <div class="h-28 rounded-2xl bg-white border border-slate-200 flex items-end justify-end p-3 text-slate-700 shadow-inner">
-            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
-          </div>
-          <div class="space-y-2">
-            <div>
-              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">LIGHT SURFACE</span>
-              <h4 class="text-sm font-bold text-slate-900">Alpine Pure White</h4>
-            </div>
-            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
-              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-slate-600">#FFFFFF</strong></div>
-              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>255, 255, 255</span></div>
-              <div class="flex justify-between"><span class="text-slate-400">PAPER:</span><span>100% Bright White</span></div>
-            </div>
-          </div>
-        </div>
-
+          <h3 class="mt-4 text-sm font-extrabold">White on photography overlay</h3>
+        </article>
       </div>
     </section>
 
-    <!-- SECTION 05: TYPOGRAPHY -->
-    <section id="section-typography" class="space-y-8">
-      <div class="border-l-2 border-[#059B66] pl-3 sm:pl-4">
-        <span class="text-[11px] font-mono font-bold tracking-widest text-[#059669] uppercase">05 // TYPOGRAPHY SYSTEM</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-          Sistem Tipografi Resmi: Plus Jakarta Sans
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-500 font-mono">
-          Tipografi modern berkarakter geometris yang ramah, bersih, dan berstandar internasional
-        </p>
-      </div>
-
-      <div class="bezel-shell p-6 sm:p-10 space-y-6">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
-          <div class="flex items-center gap-2">
-            <span class="text-xs font-mono text-slate-400">WEIGHT:</span>
-            <button class="px-3.5 py-1 rounded-full text-xs font-bold bg-[#059B66] text-white" onclick="setGuideWeight('800', this)">Extra Bold (800)</button>
-            <button class="px-3.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700" onclick="setGuideWeight('600', this)">Semi Bold (600)</button>
-            <button class="px-3.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700" onclick="setGuideWeight('400', this)">Regular (400)</button>
+    <section id="tipografi" class="guide-shell py-14 sm:py-20">
+      <div class="manual-card p-7 sm:p-10">
+        <div class="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
+          <div>
+            <div class="section-kicker">11 Typography</div>
+            <h2 class="mt-4 text-3xl font-extrabold leading-tight sm:text-5xl">Tipografi yang bersih, hangat, dan mudah dibaca.</h2>
+            <p class="mt-5 text-sm leading-7 text-slate-600">
+              Plus Jakarta Sans dipilih karena terasa modern tanpa menjadi kaku. Heading memakai 500 atau 600, body text memakai 400, dan weight 300 hanya untuk caption atau teks pendukung.
+            </p>
           </div>
-          <div class="flex items-center gap-2">
-            <span class="text-xs font-mono text-slate-400">SIZE:</span>
-            <input type="range" min="20" max="56" value="32" class="w-28 accent-[#059B66]" oninput="document.getElementById('guide-type-input').style.fontSize = this.value + 'px'" />
-          </div>
-        </div>
-
-        <div class="py-2">
-          <input type="text" id="guide-type-input" value="KOLOHAGA — Kemurnian Alami Nusantara" class="w-full bg-transparent border-none outline-none text-2xl sm:text-4xl font-extrabold text-slate-950 tracking-tight" />
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 06: APPLICATIONS -->
-    <section id="section-applications" class="space-y-8">
-      <div class="border-l-2 border-[#059B66] pl-3 sm:pl-4">
-        <span class="text-[11px] font-mono font-bold tracking-widest text-[#059669] uppercase">06 // REAL-WORLD APPLICATIONS</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-          Penerapan Ekosistem Brand di Dunia Nyata
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        
-        <!-- App 1: E-Commerce & Web Header -->
-        <div class="bezel-shell p-6 sm:p-8 space-y-4">
-          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-            <span class="text-xs font-mono font-bold text-[#0B573C] uppercase">01. WEB &amp; E-COMMERCE HEADER</span>
-            <i data-lucide="globe" class="w-4 h-4 text-slate-400"></i>
-          </div>
-          <div class="rounded-2xl border border-slate-200 bg-white p-4 flex items-center justify-between shadow-xs">
-            <img src="../assets/logo_kolohaga_1_hijau.png" alt="Header Logo" class="h-6 sm:h-7 object-contain" />
-            <div class="hidden sm:flex items-center gap-5 text-xs font-bold text-slate-600">
-              <span>Produk</span>
-              <span>Khasiat</span>
-              <span>Tentang</span>
-            </div>
-            <button class="px-4 py-1.5 rounded-full bg-[#059B66] text-white text-xs font-bold shadow-xs">Beli Sekarang</button>
-          </div>
-          <p class="text-xs text-slate-600">
-            Logotype horizontal KOLOHAGA tampil seimbang dan berwibawa di header website e-commerce dan marketplace.
-          </p>
-        </div>
-
-        <!-- App 2: Packaging Box & Label Botol -->
-        <div class="bezel-shell p-6 sm:p-8 space-y-4">
-          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-            <span class="text-xs font-mono font-bold text-[#059B66] uppercase">02. KEMASAN BOTOL &amp; DUS HERBAL</span>
-            <i data-lucide="package" class="w-4 h-4 text-slate-400"></i>
-          </div>
-          <div class="grid grid-cols-2 gap-3">
-            <div class="p-4 rounded-2xl bg-[#0B573C] text-white space-y-4 shadow-sm">
-              <img src="../assets/logo_kolohaga_1_white.png" alt="Packaging Dus" class="h-4 sm:h-5 object-contain" />
-              <div>
-                <span class="text-xs font-bold block">Herbal Ekstrak Murni</span>
-                <span class="text-[10px] text-emerald-200 block">Isi 60 Kapsul Herbal</span>
+          <div class="rounded-2xl border border-emerald-100 bg-white p-5 sm:p-7">
+            <div class="mb-5 flex flex-col justify-between gap-4 border-b border-emerald-100 pb-5 sm:flex-row">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="font-mono text-[10px] font-bold uppercase text-slate-500">Weight</span>
+                <button type="button" class="type-weight rounded-full bg-[#0B573C] px-3 py-2 text-xs font-bold text-white" data-weight="300">300</button>
+                <button type="button" class="type-weight rounded-full bg-slate-100 px-3 py-2 text-xs font-bold text-slate-700" data-weight="400">400</button>
+                <button type="button" class="type-weight rounded-full bg-slate-100 px-3 py-2 text-xs font-bold text-slate-700" data-weight="500">500</button>
               </div>
+              <label class="flex items-center gap-3">
+                <span class="font-mono text-[10px] font-bold uppercase text-slate-500">Size</span>
+                <input id="type-size" type="range" min="28" max="72" value="46" class="w-32 accent-[#0B573C]">
+              </label>
             </div>
-            <div class="p-4 rounded-2xl bg-white border border-slate-200 space-y-4 shadow-sm">
-              <img src="../assets/logo_kolohaga_1_hijau.png" alt="Label Botol" class="h-4 sm:h-5 object-contain" />
-              <div class="text-[10px] text-slate-500 font-mono space-y-0.5">
-                <div>BPOM RI TR &bull; Halal MUI</div>
-                <div>Diproduksi Oleh Kolohaga</div>
-              </div>
-            </div>
+            <input id="type-sample" type="text" value="Kemurnian alami untuk hidup lebih baik" class="w-full border-0 bg-transparent text-[46px] font-light leading-tight text-[#0B573C] outline-none">
           </div>
-          <p class="text-xs text-slate-600">
-            Penerapan logo pada stiker label botol dan cetak kemasan hardbox dengan sentuhan foil emas *embossed*.
-          </p>
         </div>
-
       </div>
     </section>
 
-    <!-- SECTION 07: DO'S & DON'TS -->
-    <section id="section-donts" class="space-y-8">
-      <div class="border-l-2 border-red-500 pl-3 sm:pl-4">
-        <span class="text-[11px] font-mono font-bold text-red-500 tracking-wider uppercase">07 // LOGO MISUSE &amp; PROHIBITIONS</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-          Larangan Penggunaan Logo (Do's &amp; Don'ts)
-        </h2>
+    <section id="larangan" class="guide-shell py-14 sm:py-20">
+      <div class="mb-8 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+        <div>
+          <div class="section-kicker text-red-700">12 Incorrect usage</div>
+          <h2 class="mt-4 text-3xl font-extrabold leading-tight sm:text-5xl">Jaga bentuk logo tetap utuh.</h2>
+        </div>
+        <p class="max-w-md text-sm leading-7 text-slate-600">Logo harus selalu dipakai dari file resmi. Perubahan kecil pada bentuk, warna, atau jarak bisa membuat brand terlihat tidak konsisten.</p>
       </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-        
-        <div class="p-5 rounded-2xl bg-red-50/50 border border-red-200 space-y-3">
-          <div class="h-24 rounded-xl bg-white flex items-center justify-center p-3 relative overflow-hidden border border-red-100">
-            <img src="../assets/logo_kolohaga_1_hijau.png" alt="Stretched" class="h-8 w-full object-fill transform scale-x-125" />
-            <div class="absolute inset-0 bg-red-500/10 flex items-center justify-center">
-              <i data-lucide="x-circle" class="w-8 h-8 text-red-500"></i>
-            </div>
+      <div class="grid gap-4 md:grid-cols-4">
+        <article class="rounded-2xl border border-red-200 bg-red-50 p-5">
+          <div class="relative grid h-36 place-items-center overflow-hidden rounded-xl border border-red-200 bg-white p-5">
+            <img src="/assets/logo1_full.png" alt="Contoh logo KOLOHAGA yang diregangkan" class="h-9 w-[78%] object-fill">
+            <span class="usage-mark"><i data-lucide="x" class="h-10 w-10"></i></span>
           </div>
-          <h4 class="text-xs font-bold text-red-900">JANGAN ME-REGANGKAN LOGO</h4>
-        </div>
-
-        <div class="p-5 rounded-2xl bg-red-50/50 border border-red-200 space-y-3">
-          <div class="h-24 rounded-xl bg-white flex items-center justify-center p-3 relative overflow-hidden border border-red-100">
-            <img src="../assets/logo_kolohaga_1_hijau.png" alt="Recolored" class="h-6 object-contain filter hue-rotate-180" />
-            <div class="absolute inset-0 bg-red-500/10 flex items-center justify-center">
-              <i data-lucide="x-circle" class="w-8 h-8 text-red-500"></i>
-            </div>
+          <h3 class="mt-4 text-sm font-extrabold text-red-900">Jangan regangkan logo</h3>
+        </article>
+        <article class="rounded-2xl border border-red-200 bg-red-50 p-5">
+          <div class="relative grid h-36 place-items-center overflow-hidden rounded-xl border border-red-200 bg-white p-5">
+            <img src="/assets/logo1_full.png" alt="Contoh logo KOLOHAGA dengan warna salah" class="h-9 object-contain hue-rotate-180">
+            <span class="usage-mark"><i data-lucide="x" class="h-10 w-10"></i></span>
           </div>
-          <h4 class="text-xs font-bold text-red-900">JANGAN MENGUBAH WARNA RESMI</h4>
-        </div>
-
-        <div class="p-5 rounded-2xl bg-red-50/50 border border-red-200 space-y-3">
-          <div class="h-24 rounded-xl bg-white flex items-center justify-center p-3 relative overflow-hidden border border-red-100">
-            <img src="../assets/logo_kolohaga_1_hijau.png" alt="Rotated" class="h-6 object-contain transform -rotate-12" />
-            <div class="absolute inset-0 bg-red-500/10 flex items-center justify-center">
-              <i data-lucide="x-circle" class="w-8 h-8 text-red-500"></i>
-            </div>
+          <h3 class="mt-4 text-sm font-extrabold text-red-900">Jangan ubah warna resmi</h3>
+        </article>
+        <article class="rounded-2xl border border-red-200 bg-red-50 p-5">
+          <div class="relative grid h-36 place-items-center overflow-hidden rounded-xl border border-red-200 bg-white p-5">
+            <img src="/assets/logo1_full.png" alt="Contoh logo KOLOHAGA yang diputar" class="h-9 rotate-[-12deg] object-contain">
+            <span class="usage-mark"><i data-lucide="x" class="h-10 w-10"></i></span>
           </div>
-          <h4 class="text-xs font-bold text-red-900">JANGAN MEMUTAR POSISI LOGO</h4>
-        </div>
-
+          <h3 class="mt-4 text-sm font-extrabold text-red-900">Jangan putar logo</h3>
+        </article>
+        <article class="rounded-2xl border border-red-200 bg-red-50 p-5">
+          <div class="relative grid h-36 place-items-center overflow-hidden rounded-xl border border-red-200 bg-white p-5">
+            <img src="/assets/logo1_full.png" alt="Contoh logo KOLOHAGA dengan shadow" class="h-9 object-contain drop-shadow-2xl">
+            <span class="usage-mark"><i data-lucide="x" class="h-10 w-10"></i></span>
+          </div>
+          <h3 class="mt-4 text-sm font-extrabold text-red-900">Jangan tambah shadow</h3>
+        </article>
+        <article class="rounded-2xl border border-red-200 bg-red-50 p-5">
+          <div class="relative grid h-36 place-items-center overflow-hidden rounded-xl border border-red-200 bg-white p-5">
+            <img src="/assets/logo1_full.png" alt="Contoh logo KOLOHAGA dengan outline" class="h-9 object-contain [filter:drop-shadow(0_0_1px_#0B573C)_drop-shadow(0_0_1px_#0B573C)]">
+            <span class="usage-mark"><i data-lucide="x" class="h-10 w-10"></i></span>
+          </div>
+          <h3 class="mt-4 text-sm font-extrabold text-red-900">Jangan tambah outline</h3>
+        </article>
+        <article class="rounded-2xl border border-red-200 bg-red-50 p-5">
+          <div class="relative grid h-36 place-items-center overflow-hidden rounded-xl border border-red-200 bg-[#059B66] p-5">
+            <img src="/assets/logo1_full.png" alt="Contoh logo KOLOHAGA pada background salah" class="h-10 w-[78%] object-contain">
+            <span class="usage-mark"><i data-lucide="x" class="h-10 w-10"></i></span>
+          </div>
+          <h3 class="mt-4 text-sm font-extrabold text-red-900">Jangan pakai kontras rendah</h3>
+        </article>
+        <article class="rounded-2xl border border-red-200 bg-red-50 p-5">
+          <div class="relative grid h-36 place-items-center overflow-hidden rounded-xl border border-red-200 bg-white p-5">
+            <div class="misuse-lockup flex w-full items-center justify-center gap-5">
+              <img src="/assets/kolohaga_symbol.png" alt="Contoh jarak symbol salah" class="h-14 w-auto object-contain">
+              <img src="/assets/logo1_full.png" alt="Contoh jarak wordmark salah" class="h-7 w-auto object-contain">
+            </div>
+            <span class="usage-mark"><i data-lucide="x" class="h-10 w-10"></i></span>
+          </div>
+          <h3 class="mt-4 text-sm font-extrabold text-red-900">Jangan ubah jarak lockup</h3>
+        </article>
+        <article class="rounded-2xl border border-red-200 bg-red-50 p-5">
+          <div class="relative grid h-36 place-items-center overflow-hidden rounded-xl border border-red-200 bg-white p-5">
+            <span class="text-2xl font-light tracking-normal text-[#0B573C]">kolohaga</span>
+            <span class="usage-mark"><i data-lucide="x" class="h-10 w-10"></i></span>
+          </div>
+          <h3 class="mt-4 text-sm font-extrabold text-red-900">Jangan ganti font wordmark</h3>
+        </article>
       </div>
     </section>
 
-    <!-- SECTION 08: MASTER ASSET DELIVERY -->
-    <section class="p-8 sm:p-14 rounded-[36px] bg-[#042418] text-white border border-emerald-900 shadow-2xl space-y-8">
-      <div class="text-center space-y-3 max-w-2xl mx-auto">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-bold">
-          <i data-lucide="package-check" class="w-3.5 h-3.5"></i>
-          <span>MASTER FILE DELIVERY HUB</span>
-        </div>
-        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
-          Penyerahan Master File KOLOHAGA
-        </h2>
-        <p class="text-xs sm:text-sm text-emerald-200/80 leading-relaxed">
-          Semua file master vektor asli resolusi tinggi telah siap diserahkan dalam format lengkap (.AI, .EPS, .SVG, .PDF, .PNG High-Res).
-        </p>
+    <section id="supporting" class="guide-shell py-14 sm:py-20">
+      <div class="mb-8">
+        <div class="section-kicker">13 Supporting graphic elements</div>
+        <h2 class="mt-4 text-3xl font-extrabold leading-tight sm:text-5xl">Elemen pendukung memperluas bahasa visual.</h2>
       </div>
-
-      <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 max-w-3xl mx-auto">
-        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1">
-          <div class="text-lg font-black text-[#059B66]">.AI</div>
-          <span class="text-[10px] font-mono text-emerald-200">Illustrator</span>
+      <div class="grid gap-5 lg:grid-cols-12">
+        <article class="manual-card p-7 sm:p-9 lg:col-span-7">
+          <div class="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+            <div>
+              <h3 class="text-2xl font-extrabold">Organic knot shape</h3>
+              <p class="mt-4 text-sm leading-7 text-slate-600">
+                Bentuk simpul dan daun dari logo dapat diturunkan menjadi pattern ringan, container ikon, label kemasan, dan highlight visual yang terasa natural.
+              </p>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+              <span class="h-28 rounded-[28px_28px_8px_28px] bg-[#059B66]"></span>
+              <span class="h-28 rounded-[8px_28px_28px_28px] bg-[#F0BE3E]"></span>
+              <span class="h-28 rounded-[28px_8px_28px_28px] bg-[#0B573C]"></span>
+            </div>
+          </div>
+        </article>
+        <div class="grid gap-5 lg:col-span-5">
+          <article class="manual-card p-6">
+            <span class="font-mono text-[10px] font-bold uppercase text-slate-500">Pattern</span>
+            <div class="mt-4 h-28 rounded-2xl border border-emerald-100 bg-[radial-gradient(circle_at_24px_24px,rgba(0,91,189,0.22)_0_4px,transparent_5px)] bg-[length:48px_48px]"></div>
+          </article>
+          <article class="manual-card p-6">
+            <span class="font-mono text-[10px] font-bold uppercase text-slate-500">Icon style</span>
+            <div class="mt-4 flex gap-3">
+              <span class="grid h-12 w-12 place-items-center rounded-2xl bg-[#ECFDF5] text-[#0B573C]"><i data-lucide="trending-up" class="h-5 w-5"></i></span>
+              <span class="grid h-12 w-12 place-items-center rounded-2xl bg-[#FFF8DC] text-[#073B28]"><i data-lucide="leaf" class="h-5 w-5"></i></span>
+              <span class="grid h-12 w-12 place-items-center rounded-2xl bg-[#0B573C] text-white"><i data-lucide="network" class="h-5 w-5"></i></span>
+            </div>
+          </article>
         </div>
-        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1">
-          <div class="text-lg font-black text-[#F0BE3E]">.EPS</div>
-          <span class="text-[10px] font-mono text-emerald-200">Vector Universal</span>
-        </div>
-        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1">
-          <div class="text-lg font-black text-emerald-300">.SVG</div>
-          <span class="text-[10px] font-mono text-emerald-200">Web Scalable</span>
-        </div>
-        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1">
-          <div class="text-lg font-black text-red-400">.PDF</div>
-          <span class="text-[10px] font-mono text-emerald-200">Print CMYK</span>
-        </div>
-        <div class="p-3.5 rounded-2xl bg-white/5 border border-white/10 text-center space-y-1 col-span-2 sm:col-span-1">
-          <div class="text-lg font-black text-white">.PNG</div>
-          <span class="text-[10px] font-mono text-emerald-200">Transparan HD</span>
-        </div>
-      </div>
-
-      <div class="text-center pt-2">
-        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20telah%20menyetujui%20Brand%20Guidelines%20resmi%20Kolohaga.%20Mohon%20bantu%20kirimkan%20link%20Google%20Drive%20Master%20File%20(AI,%20EPS,%20SVG,%20PDF,%20PNG)%20ke%20nomor%20ini." target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#059B66] hover:bg-[#0B573C] text-white text-sm font-extrabold shadow-lg hover:shadow-xl transition-all active:scale-95">
-          <i data-lucide="download-cloud" class="w-4 h-4"></i>
-          <span>Minta Link Master File via WhatsApp</span>
-        </a>
       </div>
     </section>
 
+    <section id="aplikasi" class="guide-shell py-14 sm:py-20">
+      <div class="mb-8">
+        <div class="section-kicker">14 Brand applications</div>
+        <h2 class="mt-4 text-3xl font-extrabold leading-tight sm:text-5xl">Mockup menunjukkan identitas siap dipakai.</h2>
+      </div>
+      <div class="mockup-carousel grid gap-6 lg:grid-cols-2">
+        <article class="manual-card p-4 sm:p-5">
+          <div class="mb-5 flex items-center justify-between">
+            <h3 class="text-lg font-extrabold">App icon system</h3>
+            <i data-lucide="smartphone" class="h-5 w-5 text-[#0B573C]"></i>
+          </div>
+          <div class="mockup-image-frame">
+            <img src="/assets/kolohaga_app_icon_light.png" alt="Mockup app icon KOLOHAGA pada layar ponsel dan ikon aplikasi">
+          </div>
+        </article>
+        <article class="manual-card p-4 sm:p-5">
+          <div class="mb-5 flex items-center justify-between">
+            <h3 class="text-lg font-extrabold">Business card</h3>
+            <i data-lucide="badge" class="h-5 w-5 text-[#073B28]"></i>
+          </div>
+          <div class="mockup-image-frame">
+            <img src="/assets/logo1_full.png" alt="Aplikasi logo KOLOHAGA pada media identitas visual">
+          </div>
+        </article>
+        <article class="manual-card p-4 sm:p-5">
+          <div class="mb-5 flex items-center justify-between">
+            <h3 class="text-lg font-extrabold">Instagram feeds</h3>
+            <i data-lucide="images" class="h-5 w-5 text-[#059B66]"></i>
+          </div>
+          <div class="mockup-image-frame">
+            <img src="/assets/logo2_full.png" alt="Mockup Instagram feeds KOLOHAGA dengan materi promosi aplikasi">
+          </div>
+        </article>
+        <article class="manual-card p-4 sm:p-5">
+          <div class="mb-5 flex items-center justify-between">
+            <h3 class="text-lg font-extrabold">Merch cap</h3>
+            <i data-lucide="badge-check" class="h-5 w-5 text-[#073B28]"></i>
+          </div>
+          <div class="mockup-image-frame">
+            <img src="/assets/kolohaga_symbol.png" alt="Aplikasi symbol KOLOHAGA pada merchandise">
+          </div>
+        </article>
+        <article class="manual-card p-4 sm:p-5">
+          <div class="mb-5 flex items-center justify-between">
+            <h3 class="text-lg font-extrabold">Tumbler merch</h3>
+            <i data-lucide="coffee" class="h-5 w-5 text-[#059B66]"></i>
+          </div>
+          <div class="mockup-image-frame">
+            <img src="/assets/logo1_white_text.png" alt="Aplikasi logo KOLOHAGA pada merchandise">
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="guide-shell pb-16 pt-8 sm:pb-24">
+      <div class="rounded-[28px] bg-[#0B573C] p-7 text-white sm:p-12">
+        <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div>
+            <div class="section-kicker text-[#F0BE3E]">Final delivery</div>
+            <h2 class="mt-4 text-3xl font-extrabold leading-tight sm:text-5xl">Mentahan logo siap dibuka setelah approval.</h2>
+            <p class="mt-5 max-w-2xl text-sm leading-7 text-slate-300">
+              File kerja dan aset final dapat diakses melalui folder resmi agar tim bisa mengambil format yang dibutuhkan untuk digital, presentasi, maupun produksi.
+            </p>
+          </div>
+          <a href="https://drive.google.com/drive/folders/1geu5qFOmhzK26Urco56d2walwBkzGxeR?usp=drive_link" target="_blank" rel="noreferrer" class="tap-active inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-white px-6 text-sm font-extrabold text-[#0B573C] transition hover:bg-emerald-50">
+            <i data-lucide="folder-down" class="h-5 w-5"></i>
+            Buka mentahan logo
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- LUXURY FOOTER -->
-  <footer class="border-t border-slate-200 py-12 px-4 text-center text-xs font-mono text-slate-500 space-y-2 bg-white">
-    <p>&copy; 2026 <strong>KOLOHAGA Brand Guidelines</strong> &bull; Directed by <strong class="text-[#059B66]">DARU FAHMAA MULIAWAN</strong> &bull; SYMP Studio</p>
+  <footer class="border-t border-emerald-100 bg-white py-8">
+    <div class="guide-shell flex flex-col justify-between gap-3 font-mono text-[10px] font-bold uppercase text-slate-500 sm:flex-row">
+      <p>Copyright 2026 KOLOHAGA Brand Guidelines</p>
+      <p>Directed by Daru Fahmaa Muliawan, SYMP Studio</p>
+    </div>
   </footer>
+
+  <div id="toast" role="status" aria-live="polite" class="pointer-events-none fixed bottom-5 right-5 z-[90] hidden rounded-2xl bg-[#0B573C] px-4 py-3 text-xs font-bold text-white shadow-2xl"></div>
 
   <script>
     lucide.createIcons();
 
-    function copyColor(code, name) {
-      navigator.clipboard.writeText(code).then(() => {
-        const toast = document.createElement('div');
-        toast.className = 'fixed bottom-6 right-6 bg-[#042418] text-white text-xs font-mono py-3 px-5 rounded-2xl shadow-2xl z-50 flex items-center gap-2 border border-white/20 animate-bounce';
-        toast.innerHTML = `<span class="w-2 h-2 rounded-full bg-[#059B66]"></span> Kode <strong>${code}</strong> (${name}) berhasil disalin!`;
-        document.body.appendChild(toast);
-        setTimeout(() => toast.remove(), 2500);
+    const stageData = {
+      light: {
+        bg: '#ffffff',
+        img: '/assets/logo1_full.png',
+        label: 'Primary logo on light canvas',
+        meta: 'Forest 90 / Gold 10',
+        textClass: 'text-slate-500',
+        filter: 'none'
+      },
+      deep: {
+        bg: '#0B573C',
+        img: '/assets/logo1_white_text.png',
+        label: 'Reverse logo on deep forest canvas',
+        meta: 'White logo / Deep forest field',
+        textClass: 'text-emerald-100',
+        filter: 'none'
+      },
+      ink: {
+        bg: '#059B66',
+        img: '/assets/logo1_white_text.png',
+        label: 'White logo on forest green canvas',
+        meta: 'High contrast / Forest field',
+        textClass: 'text-emerald-100',
+        filter: 'none'
+      },
+      mono: {
+        bg: '#F4F6F8',
+        img: '/assets/logo1_full.png',
+        label: 'Monochrome logo on neutral canvas',
+        meta: 'Single color / Black and white production',
+        textClass: 'text-slate-600',
+        filter: 'grayscale(1) contrast(1.25)'
+      }
+    };
+
+    document.querySelectorAll('.stage-tab').forEach((button) => {
+      button.addEventListener('click', () => {
+        const mode = button.dataset.stage;
+        const data = stageData[mode];
+        const stage = document.getElementById('hero-stage');
+        const logo = document.getElementById('hero-logo');
+        const label = document.getElementById('hero-stage-label');
+        const meta = document.getElementById('hero-stage-meta');
+
+        stage.style.background = data.bg;
+        logo.src = data.img;
+        logo.style.filter = data.filter;
+        label.textContent = data.label;
+        meta.lastElementChild.textContent = data.meta;
+        label.className = `font-mono text-[10px] font-bold uppercase ${data.textClass}`;
+        meta.className = `grid gap-2 text-right font-mono text-[10px] font-bold uppercase ${data.textClass}`;
+
+        document.querySelectorAll('.stage-tab').forEach((tab) => {
+          tab.className = mode === 'light' || mode === 'mono'
+            ? 'stage-tab rounded-full px-3 py-2 text-slate-600'
+            : 'stage-tab rounded-full px-3 py-2 text-emerald-100';
+        });
+        button.className = mode === 'light' || mode === 'mono'
+          ? 'stage-tab rounded-full bg-[#0B573C] px-3 py-2 text-white'
+          : 'stage-tab rounded-full bg-white px-3 py-2 text-[#0B573C]';
       });
+    });
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.remove('hidden');
+      window.clearTimeout(window.toastTimer);
+      window.toastTimer = window.setTimeout(() => toast.classList.add('hidden'), 2200);
     }
 
-    function setGuideWeight(w, btn) {
-      document.getElementById('guide-type-input').style.fontWeight = w;
-      btn.parentElement.querySelectorAll('button').forEach(b => {
-        b.className = 'px-3.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-700';
+    document.querySelectorAll('[data-color]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const color = button.dataset.color;
+        const name = button.dataset.name;
+        try {
+          await navigator.clipboard.writeText(color);
+          showToast(`${name} disalin: ${color}`);
+        } catch (error) {
+          showToast(`Kode warna: ${color}`);
+        }
       });
-      btn.className = 'px-3.5 py-1 rounded-full text-xs font-bold bg-[#059B66] text-white';
-    }
+    });
+
+    document.querySelectorAll('.type-weight').forEach((button) => {
+      button.addEventListener('click', () => {
+        const sample = document.getElementById('type-sample');
+        sample.style.fontWeight = button.dataset.weight;
+        document.querySelectorAll('.type-weight').forEach((item) => {
+          item.className = 'type-weight rounded-full bg-slate-100 px-3 py-2 text-xs font-bold text-slate-700';
+        });
+        button.className = 'type-weight rounded-full bg-[#0B573C] px-3 py-2 text-xs font-bold text-white';
+      });
+    });
+
+    document.getElementById('type-size').addEventListener('input', (event) => {
+      document.getElementById('type-sample').style.fontSize = `${event.target.value}px`;
+    });
   </script>
 </body>
 </html>
+
+
+
+
