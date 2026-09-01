@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>LAPTOPBISNIS — Proposal Identitas Visual & Sistem Logo | SYMP Studio</title>
+  
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            lb: {
+              cobalt: '#0E7AE7',
+              cobaltDark: '#085BB3',
+              azure: '#2097FF',
+              azureLight: '#60B4FF',
+              dark: '#0B1120',
+              darkSurface: '#111A2E',
+              slate: '#0F172A',
+              slateMuted: '#64748B',
+              creamBg: '#F8FAFC'
+            }
+          },
+          fontFamily: {
+            jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    :root {
+      --lb-cobalt: #0E7AE7;
+      --lb-azure: #2097FF;
+      --lb-dark: #0B1120;
+      --agency-spring: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F8FAFC;
+      color: #0F172A;
+      overflow-x: hidden;
+      letter-spacing: -0.025em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Double-Bezel Hardware Architecture */
+    .bezel-shell {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 24px;
+      box-shadow: 0 4px 20px -6px rgba(14, 122, 231, 0.04);
+      transition: all 0.4s var(--agency-spring);
+      cursor: pointer;
+    }
+    @media (min-width: 640px) {
+      .bezel-shell {
+        border-radius: 28px;
+      }
+    }
+    .bezel-shell:hover {
+      box-shadow: 0 20px 48px -12px rgba(14, 122, 231, 0.22);
+      border-color: #0E7AE7;
+      transform: translateY(-4px);
+    }
+
+    /* Modal Backdrop Blur & Animation */
+    .modal-backdrop {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-content {
+      transform: scale(0.95) translateY(12px);
+      transition: transform 0.35s var(--agency-spring), opacity 0.3s ease;
+      opacity: 0;
+    }
+    .modal-backdrop.active .modal-content {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+
+    /* Swatch Box */
+    .swatch-box {
+      border-radius: 20px;
+      border: 1px solid #E2E8F0;
+      transition: all 0.3s var(--agency-spring);
+      cursor: pointer;
+    }
+    .swatch-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px -6px rgba(14, 122, 231, 0.2);
+      border-color: #0E7AE7;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="selection:bg-[#0E7AE7] selection:text-white">
+
+  <!-- ======================================================= -->
+  <!-- FLOATING EDITORIAL TOP BAR                              -->
+  <!-- ======================================================= -->
+  <header class="sticky top-0 z-40 bg-[#F8FAFC]/90 backdrop-blur-xl border-b border-slate-200/80 px-4 sm:px-8 py-3.5 transition-all">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      
+      <!-- Brand & Project Title -->
+      <a href="../" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 rounded-xl bg-[#0E7AE7] text-white flex items-center justify-center font-black shadow-xs">
+          <i data-lucide="laptop" class="w-4 h-4"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-sm font-extrabold text-slate-950 tracking-tight leading-none group-hover:text-[#0E7AE7] transition-colors">LAPTOPBISNIS</span>
+          <span class="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-wider mt-0.5">BRAND PROPOSAL DECK &bull; SYMP</span>
+        </div>
+      </a>
+
+      <!-- Center Anchor Tabs (Desktop) -->
+      <nav class="hidden md:flex items-center gap-1 p-1 bg-white rounded-full border border-slate-200 shadow-xs text-xs font-bold text-slate-600">
+        <a href="#variants" class="px-3.5 py-1.5 rounded-full hover:text-slate-950 hover:bg-slate-50 transition-all text-[#0E7AE7]">5 Pilihan Logo</a>
+        <a href="#philosophy" class="px-3.5 py-1.5 rounded-full hover:text-slate-950 hover:bg-slate-50 transition-all">Nilai Utama</a>
+        <a href="#colors" class="px-3.5 py-1.5 rounded-full hover:text-slate-950 hover:bg-slate-50 transition-all">Sistem Warna</a>
+        <a href="#mockups" class="px-3.5 py-1.5 rounded-full hover:text-slate-950 hover:bg-slate-50 transition-all">Penerapan</a>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="flex items-center gap-2">
+        <a href="#voting" class="px-4 py-2 rounded-full bg-[#0E7AE7] hover:bg-[#085BB3] text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm">
+          <span>Pilih Opsi Logo</span>
+          <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ======================================================= -->
+  <!-- MAIN PRESENTATION BODY                                  -->
+  <!-- ======================================================= -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-8 py-10 sm:py-20 space-y-16 sm:space-y-24">
+
+    <!-- ======================================================= -->
+    <!-- HERO SECTION                                            -->
+    <!-- ======================================================= -->
+    <section class="space-y-5 max-w-4xl">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-[#0E7AE7] text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider border border-blue-100">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+        <span>PROPOSAL IDENTITAS VISUAL RESMI &bull; LAPTOPBISNIS 2026</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.08]">
+        Performa Tangguh &bull; Kerja Nyaman. <br />
+        <span class="text-[#0E7AE7]">Identitas Profesional LAPTOPBISNIS.</span>
+      </h1>
+
+      <p class="text-xs sm:text-base text-slate-600 font-normal leading-relaxed max-w-3xl">
+        Proposal desain logo untuk <strong>LAPTOPBISNIS</strong> — spesialis penyedia laptop &amp; perangkat komputasi profesional untuk kantor, instansi, dan para pelaku usaha. Silakan klik logo mana pun di bawah untuk membuka pop-up pengujian warna latar dan bedah maknanya!
+      </p>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 01: 5 KONSEP LOGO (3 ATAS + 2 BAWAH)            -->
+    <!-- ======================================================= -->
+    <section id="variants" class="space-y-8">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-200 pb-4">
+        <div class="border-l-2 border-[#0E7AE7] pl-3 sm:pl-4">
+          <span class="text-[11px] font-mono font-bold tracking-widest text-[#0E7AE7] uppercase">5 PILIHAN DESAIN TERBAIK</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mt-1">
+            Galeri Konsep Logo LAPTOPBISNIS
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 font-mono">
+            💡 <strong>Klik kartu</strong> untuk membuka pop-up pengujian latar belakang &amp; cerita lengkap logo
+          </p>
+        </div>
+      </div>
+
+      <!-- ROW 1: 3 GRID CARDS (KONSEP 01, 02, 03) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- CARD 01: THE EXECUTIVE MONOGRAM -->
+        <div class="bezel-shell p-5 sm:p-6 space-y-4 flex flex-col justify-between group" onclick="openConceptModal(1)">
+          <div class="space-y-3.5">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div>
+                <span class="px-2 py-0.5 rounded-full bg-blue-50 text-[#0E7AE7] font-mono text-[10px] font-bold">
+                  PILIHAN 01
+                </span>
+                <h3 class="text-base font-extrabold text-slate-950 mt-1">The Executive Monogram</h3>
+              </div>
+              <span class="text-[10px] font-mono font-bold text-[#0E7AE7] bg-blue-50 px-2 py-1 rounded-full flex items-center gap-1">
+                <span>Detail</span>
+                <i data-lucide="maximize-2" class="w-3 h-3"></i>
+              </span>
+            </div>
+
+            <!-- Preview Canvas Stage -->
+            <div class="rounded-2xl bg-white border border-slate-200 p-6 flex items-center justify-center min-h-[190px] sm:min-h-[210px] shadow-inner group-hover:border-[#0E7AE7] transition-colors">
+              <img src="../assets/laptopbisnis_1_fix.png" alt="Laptopbisnis Konsep 01" class="max-h-20 sm:max-h-24 w-auto object-contain transition-transform duration-300 transform group-hover:scale-105" />
+            </div>
+
+            <div class="space-y-1">
+              <span class="text-[11px] font-bold text-[#0E7AE7] block">"Kerja Tangguh, Bisnis Tumbuh"</span>
+              <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                Siluet laptop terbuka membentuk inisial 'LB' dinamis. Tersedia dalam format vertikal (*berdiri*) maupun horizontal (*rebahan*).
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#0E7AE7]">
+            <span class="text-[11px] font-mono text-slate-400">Klik untuk tes warna</span>
+            <span class="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Buka Pop-Up</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- CARD 02: THE SYNERGY HINGE -->
+        <div class="bezel-shell p-5 sm:p-6 space-y-4 flex flex-col justify-between group" onclick="openConceptModal(2)">
+          <div class="space-y-3.5">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div>
+                <span class="px-2 py-0.5 rounded-full bg-blue-50 text-[#0E7AE7] font-mono text-[10px] font-bold">
+                  PILIHAN 02
+                </span>
+                <h3 class="text-base font-extrabold text-slate-950 mt-1">The Synergy Hinge</h3>
+              </div>
+              <span class="text-[10px] font-mono font-bold text-[#0E7AE7] bg-blue-50 px-2 py-1 rounded-full flex items-center gap-1">
+                <span>Detail</span>
+                <i data-lucide="maximize-2" class="w-3 h-3"></i>
+              </span>
+            </div>
+
+            <!-- Preview Canvas Stage -->
+            <div class="rounded-2xl bg-white border border-slate-200 p-6 flex items-center justify-center min-h-[190px] sm:min-h-[210px] shadow-inner group-hover:border-[#0E7AE7] transition-colors">
+              <img src="../assets/laptopbisnis_2_fix.png" alt="Laptopbisnis Konsep 02" class="max-h-20 sm:max-h-24 w-auto object-contain transition-transform duration-300 transform group-hover:scale-105" />
+            </div>
+
+            <div class="space-y-1">
+              <span class="text-[11px] font-bold text-[#0E7AE7] block">"Koneksi Kuat, Performa Hebat"</span>
+              <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                Simbol engsel kokoh yang menyatukan layar dan keyboard. Menggambarkan daya tahan perangkat komputasi bisnis untuk beban kerja tinggi.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#0E7AE7]">
+            <span class="text-[11px] font-mono text-slate-400">Klik untuk tes warna</span>
+            <span class="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Buka Pop-Up</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- CARD 03: THE VELOCITY HINGE -->
+        <div class="bezel-shell p-5 sm:p-6 space-y-4 flex flex-col justify-between group" onclick="openConceptModal(3)">
+          <div class="space-y-3.5">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div>
+                <span class="px-2 py-0.5 rounded-full bg-blue-50 text-[#0E7AE7] font-mono text-[10px] font-bold">
+                  PILIHAN 03 (REBAHAN)
+                </span>
+                <h3 class="text-base font-extrabold text-slate-950 mt-1">The Velocity Hinge</h3>
+              </div>
+              <span class="text-[10px] font-mono font-bold text-[#0E7AE7] bg-blue-50 px-2 py-1 rounded-full flex items-center gap-1">
+                <span>Detail</span>
+                <i data-lucide="maximize-2" class="w-3 h-3"></i>
+              </span>
+            </div>
+
+            <!-- Preview Canvas Stage -->
+            <div class="rounded-2xl bg-white border border-slate-200 p-6 flex items-center justify-center min-h-[190px] sm:min-h-[210px] shadow-inner group-hover:border-[#0E7AE7] transition-colors">
+              <img src="../assets/laptopbisnis_3_fix.png" alt="Laptopbisnis Konsep 03" class="max-h-16 sm:max-h-20 w-auto object-contain transition-transform duration-300 transform group-hover:scale-105" />
+            </div>
+
+            <div class="space-y-1">
+              <span class="text-[11px] font-bold text-[#0E7AE7] block">"Laju Gesit, Mobilitas Maksimal"</span>
+              <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                Garis aerodinamis horizontal yang ramping. Sangat pas untuk navbar website toko, etalase online, dan kemasan box laptop.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#0E7AE7]">
+            <span class="text-[11px] font-mono text-slate-400">Klik untuk tes warna</span>
+            <span class="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Buka Pop-Up</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ROW 2: 2 GRID CARDS (KONSEP 04 & KONSEP 05) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- CARD 04: THE DUAL EDGE WORKSPACE -->
+        <div class="bezel-shell p-5 sm:p-6 space-y-4 flex flex-col justify-between group" onclick="openConceptModal(4)">
+          <div class="space-y-3.5">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div>
+                <span class="px-2 py-0.5 rounded-full bg-blue-50 text-[#0E7AE7] font-mono text-[10px] font-bold">
+                  PILIHAN 04
+                </span>
+                <h3 class="text-base font-extrabold text-slate-950 mt-1">The Dual Edge Workspace</h3>
+              </div>
+              <span class="text-[10px] font-mono font-bold text-[#0E7AE7] bg-blue-50 px-2 py-1 rounded-full flex items-center gap-1">
+                <span>Detail</span>
+                <i data-lucide="maximize-2" class="w-3 h-3"></i>
+              </span>
+            </div>
+
+            <!-- Preview Canvas Stage -->
+            <div class="rounded-2xl bg-white border border-slate-200 p-6 flex items-center justify-center min-h-[190px] sm:min-h-[210px] shadow-inner group-hover:border-[#0E7AE7] transition-colors">
+              <img src="../assets/laptopbisnis_4_fix.png" alt="Laptopbisnis Konsep 04" class="max-h-20 sm:max-h-24 w-auto object-contain transition-transform duration-300 transform group-hover:scale-105" />
+            </div>
+
+            <div class="space-y-1">
+              <span class="text-[11px] font-bold text-[#0E7AE7] block">"Presisi Kerja, Desain Berkelas"</span>
+              <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                Dua sudut presisi yang berpadu seimbang. Mencerminkan laptop bisnis dengan spesifikasi kelas atas dan estetika elegan.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#0E7AE7]">
+            <span class="text-[11px] font-mono text-slate-400">Klik untuk tes warna</span>
+            <span class="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Buka Pop-Up</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- CARD 05: THE MODERN TECH HORIZON -->
+        <div class="bezel-shell p-5 sm:p-6 space-y-4 flex flex-col justify-between group" onclick="openConceptModal(5)">
+          <div class="space-y-3.5">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div>
+                <span class="px-2 py-0.5 rounded-full bg-blue-50 text-[#0E7AE7] font-mono text-[10px] font-bold">
+                  PILIHAN 05 (REBAHAN)
+                </span>
+                <h3 class="text-base font-extrabold text-slate-950 mt-1">The Modern Tech Horizon</h3>
+              </div>
+              <span class="text-[10px] font-mono font-bold text-[#0E7AE7] bg-blue-50 px-2 py-1 rounded-full flex items-center gap-1">
+                <span>Detail</span>
+                <i data-lucide="maximize-2" class="w-3 h-3"></i>
+              </span>
+            </div>
+
+            <!-- Preview Canvas Stage -->
+            <div class="rounded-2xl bg-white border border-slate-200 p-6 flex items-center justify-center min-h-[190px] sm:min-h-[210px] shadow-inner group-hover:border-[#0E7AE7] transition-colors">
+              <img src="../assets/laptopbisnis_5_fix.png" alt="Laptopbisnis Konsep 05" class="max-h-16 sm:max-h-20 w-auto object-contain transition-transform duration-300 transform group-hover:scale-105" />
+            </div>
+
+            <div class="space-y-1">
+              <span class="text-[11px] font-bold text-[#0E7AE7] block">"Fokus Tajam, Mitra Terbaik Kantor"</span>
+              <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                Tipografi tegas dengan aksen simbol modern yang simpel. Sangat mudah dikenali pada stiker laptop, nota garansi, dan plang toko.
+              </p>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#0E7AE7]">
+            <span class="text-[11px] font-mono text-slate-400">Klik untuk tes warna</span>
+            <span class="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Buka Pop-Up</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 02: 4 NILAI UTAMA BRAND                         -->
+    <!-- ======================================================= -->
+    <section id="philosophy" class="space-y-8">
+      
+      <div class="border-l-2 border-[#0E7AE7] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#0E7AE7] uppercase">STANDAR MUTU KAMI</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mt-1">
+          4 Nilai Utama di Balik Brand LAPTOPBISNIS
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 font-mono">
+          "Tahan Banting &bull; Spek Pas &bull; Garansi Jelas &bull; Respon Cepat"
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Pilar 1 -->
+        <div class="bezel-shell p-6 space-y-3.5 bg-white">
+          <div class="w-11 h-11 rounded-2xl bg-blue-50 text-[#0E7AE7] flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">NILAI 01</span>
+            <h3 class="text-base font-extrabold text-slate-950">Daya Tahan Tinggi</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Menyediakan unit laptop grade enterprise yang awet, kokoh, dan siap dipakai kerja maraton setiap hari.
+          </p>
+        </div>
+
+        <!-- Pilar 2 -->
+        <div class="bezel-shell p-6 space-y-3.5 bg-white">
+          <div class="w-11 h-11 rounded-2xl bg-blue-50 text-[#2097FF] flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="cpu" class="w-5 h-5"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">NILAI 02</span>
+            <h3 class="text-base font-extrabold text-slate-950">Spesifikasi Tepat Sasaran</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Rekomendasi perangkat disesuaikan dengan kebutuhan riil bisnis, hemat anggaran tanpa mengorbankan performa.
+          </p>
+        </div>
+
+        <!-- Pilar 3 -->
+        <div class="bezel-shell p-6 space-y-3.5 bg-white">
+          <div class="w-11 h-11 rounded-2xl bg-slate-100 text-slate-800 flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="file-check" class="w-5 h-5"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">NILAI 03</span>
+            <h3 class="text-base font-extrabold text-slate-950">Garansi &amp; Layanan Jelas</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Jaminan purnajual resmi dan dukungan teknis sigap yang memberi rasa aman dan tenang bagi seluruh pelanggan.
+          </p>
+        </div>
+
+        <!-- Pilar 4 -->
+        <div class="bezel-shell p-6 space-y-3.5 bg-white">
+          <div class="w-11 h-11 rounded-2xl bg-slate-900 text-white flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">NILAI 04</span>
+            <h3 class="text-base font-extrabold text-slate-950">Respon Gesit</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Pelayanan konsultasi, pengiriman, dan klaim garansi yang cepat tanggap tanpa prosedur berbelit.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 03: COLOR SCIENCE & PANTONE CODES               -->
+    <!-- ======================================================= -->
+    <section id="colors" class="space-y-8">
+      
+      <div class="border-l-2 border-[#0E7AE7] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#0E7AE7] uppercase">WARNA RESMI BRAND</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mt-1">
+          Kombinasi Warna LAPTOPBISNIS (Formula 70-20-10)
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 font-mono">
+          Klik pada kotak warna untuk menyalin kode HEX langsung ke clipboard
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Swatch 1: Cobalt Tech Blue -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#0E7AE7', 'Cobalt Tech Blue')">
+          <div class="h-28 rounded-2xl bg-[#0E7AE7] flex items-end justify-end p-3 text-white shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">WARNA UTAMA (70%)</span>
+              <h4 class="text-sm font-bold text-slate-950">Cobalt Tech Blue</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-[#0E7AE7]">#0E7AE7</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">Karakter:</span><span>Hardware &amp; Kepercayaan</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swatch 2: Electric Azure -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#2097FF', 'Electric Azure')">
+          <div class="h-28 rounded-2xl bg-[#2097FF] flex items-end justify-end p-3 text-white shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">WARNA AKSEN (20%)</span>
+              <h4 class="text-sm font-bold text-slate-950">Electric Azure</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-[#2097FF]">#2097FF</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">Karakter:</span><span>Performa Tinggi &amp; Layar</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swatch 3: Midnight Obsidian -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#0B1120', 'Midnight Obsidian')">
+          <div class="h-28 rounded-2xl bg-[#0B1120] flex items-end justify-end p-3 text-white shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">KANVAS GELAP (10%)</span>
+              <h4 class="text-sm font-bold text-slate-950">Midnight Obsidian</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-slate-950">#0B1120</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">Karakter:</span><span>Bodi Laptop &amp; Elegan</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swatch 4: Pure White Ceramic -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#FFFFFF', 'Pure Light Ceramic')">
+          <div class="h-28 rounded-2xl bg-white border border-slate-200 flex items-end justify-end p-3 text-slate-700 shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">KANVAS TERANG</span>
+              <h4 class="text-sm font-bold text-slate-950">Pure White Ceramic</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-slate-500">#FFFFFF</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">Karakter:</span><span>Bersih &amp; Rapi</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 04: REAL-WORLD APPLICATIONS                     -->
+    <!-- ======================================================= -->
+    <section id="mockups" class="space-y-8">
+      
+      <div class="border-l-2 border-[#0E7AE7] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#0E7AE7] uppercase">CONTOH DI DUNIA NYATA</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mt-1">
+          Bila Dipakai di Berbagai Media
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- App 1: Website Header & Digital SaaS -->
+        <div class="bezel-shell p-6 space-y-4 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+              <span class="text-xs font-mono font-bold text-[#0E7AE7] uppercase">01. TOKO ONLINE &amp; WEBSITE</span>
+              <i data-lucide="globe" class="w-4 h-4 text-slate-400"></i>
+            </div>
+            <div class="h-36 rounded-2xl bg-[#0B1120] flex items-center justify-between px-6 py-4 shadow-inner">
+              <img src="../assets/laptopbisnis_1_putih.png" alt="Laptopbisnis Web Navbar" class="max-h-7 object-contain" />
+              <span class="px-3 py-1 rounded-full bg-[#0E7AE7] text-white text-[10px] font-bold">Katalog Unit</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-950">Navbar Web &amp; Katalog Online</h4>
+            <p class="text-xs text-slate-600">Logo format mendatar terlihat pas, tajam, dan profesional pada header website e-commerce.</p>
+          </div>
+        </div>
+
+        <!-- App 2: Corporate Business Card & Warranty -->
+        <div class="bezel-shell p-6 space-y-4 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+              <span class="text-xs font-mono font-bold text-[#2097FF] uppercase">02. KARTU GARANSI &amp; INVOICE</span>
+              <i data-lucide="file-text" class="w-4 h-4 text-slate-400"></i>
+            </div>
+            <div class="h-36 rounded-2xl bg-white border border-slate-200 flex flex-col items-center justify-center p-4 shadow-sm space-y-2">
+              <img src="../assets/laptopbisnis_1_fix.png" alt="Laptopbisnis Card" class="max-h-12 object-contain" />
+              <span class="text-[10px] font-mono text-slate-400">Official Business Laptop Partner</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-950">Kartu Garansi Resmi &amp; Invoice</h4>
+            <p class="text-xs text-slate-600">Tampilan meyakinkan saat dicetak pada kartu garansi toko, nota pembelian, dan dokumen penawaran.</p>
+          </div>
+        </div>
+
+        <!-- App 3: Hardware Sticker & Packaging -->
+        <div class="bezel-shell p-6 space-y-4 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+              <span class="text-xs font-mono font-bold text-slate-700 uppercase">03. EMBLEM LAPTOP &amp; BOX</span>
+              <i data-lucide="box" class="w-4 h-4 text-slate-400"></i>
+            </div>
+            <div class="h-36 rounded-2xl bg-gradient-to-br from-[#0E7AE7] to-[#0B1120] flex items-center justify-center p-4 shadow-inner">
+              <img src="../assets/laptopbisnis_1_berdiri_putih.png" alt="Laptop Sticker Logo" class="max-h-16 object-contain" />
+            </div>
+            <h4 class="text-sm font-bold text-slate-950">Stiker Bodi &amp; Kemasan Box</h4>
+            <p class="text-xs text-slate-600">Ikon terlihat sangat keren dan presisi saat diaplikasikan sebagai emblem laptop atau segel box.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 05: DIRECT VOTING & APPROVAL HUB (WHATSAPP)    -->
+    <!-- ======================================================= -->
+    <section id="voting" class="p-8 sm:p-14 rounded-[36px] bg-[#0B1120] text-white border border-slate-800 shadow-2xl space-y-8">
+      
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-mono font-bold">
+          <i data-lucide="vote" class="w-3.5 h-3.5"></i>
+          <span>KEPUTUSAN LOGO TERBAIK</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+          Sudah Menemukan Logo yang Pas?
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+          Pilih konsep yang paling mewakili karakter LAPTOPBISNIS, lalu klik tombol di bawah untuk langsung terhubung dengan Mas Daru (SYMP Studio) dan mendapatkan paket master file lengkap (.AI, .EPS, .SVG, .PDF, .PNG Resolusi Tinggi).
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+        
+        <!-- Vote 1 -->
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20LAPTOPBISNIS%20PILIHAN%2001%20(The%20Executive%20Monogram)" target="_blank" class="p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#0E7AE7] transition-all space-y-2.5 text-center group">
+          <div class="text-sm font-bold text-white group-hover:text-[#2097FF] transition-colors">PILIHAN 01</div>
+          <p class="text-[11px] text-slate-400">The Executive Monogram (Berdiri &amp; Rebahan)</p>
+          <div class="py-2 px-3 rounded-xl bg-[#0E7AE7] text-white text-xs font-extrabold flex items-center justify-center gap-1 shadow-md">
+            <span>Pilih Varian 01</span>
+          </div>
+        </a>
+
+        <!-- Vote 2 -->
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20LAPTOPBISNIS%20PILIHAN%2002%20(The%20Synergy%20Hinge)" target="_blank" class="p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#0E7AE7] transition-all space-y-2.5 text-center group">
+          <div class="text-sm font-bold text-white group-hover:text-[#2097FF] transition-colors">PILIHAN 02</div>
+          <p class="text-[11px] text-slate-400">The Synergy Hinge (Engsel Tangguh)</p>
+          <div class="py-2 px-3 rounded-xl bg-[#0E7AE7] text-white text-xs font-extrabold flex items-center justify-center gap-1 shadow-md">
+            <span>Pilih Varian 02</span>
+          </div>
+        </a>
+
+        <!-- Vote 3 -->
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20LAPTOPBISNIS%20PILIHAN%2003%20(The%20Velocity%20Hinge)" target="_blank" class="p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#0E7AE7] transition-all space-y-2.5 text-center group">
+          <div class="text-sm font-bold text-white group-hover:text-[#2097FF] transition-colors">PILIHAN 03</div>
+          <p class="text-[11px] text-slate-400">The Velocity Hinge (Format Mendatar)</p>
+          <div class="py-2 px-3 rounded-xl bg-[#0E7AE7] text-white text-xs font-extrabold flex items-center justify-center gap-1 shadow-md">
+            <span>Pilih Varian 03</span>
+          </div>
+        </a>
+
+        <!-- Vote 4 -->
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20LAPTOPBISNIS%20PILIHAN%2004%20(The%20Dual%20Edge%20Workspace)" target="_blank" class="p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#0E7AE7] transition-all space-y-2.5 text-center group">
+          <div class="text-sm font-bold text-white group-hover:text-[#2097FF] transition-colors">PILIHAN 04</div>
+          <p class="text-[11px] text-slate-400">The Dual Edge Workspace (Presisi Kerja)</p>
+          <div class="py-2 px-3 rounded-xl bg-[#0E7AE7] text-white text-xs font-extrabold flex items-center justify-center gap-1 shadow-md">
+            <span>Pilih Varian 04</span>
+          </div>
+        </a>
+
+        <!-- Vote 5 -->
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20LAPTOPBISNIS%20PILIHAN%2005%20(The%20Modern%20Tech%20Horizon)" target="_blank" class="p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#0E7AE7] transition-all space-y-2.5 text-center group sm:col-span-2 lg:col-span-1">
+          <div class="text-sm font-bold text-white group-hover:text-[#2097FF] transition-colors">PILIHAN 05</div>
+          <p class="text-[11px] text-slate-400">The Modern Tech Horizon (Minimalis)</p>
+          <div class="py-2 px-3 rounded-xl bg-[#0E7AE7] text-white text-xs font-extrabold flex items-center justify-center gap-1 shadow-md">
+            <span>Pilih Varian 05</span>
+          </div>
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ======================================================= -->
+  <!-- INTERACTIVE POP-UP MODAL STUDIO                         -->
+  <!-- ======================================================= -->
+  <div id="concept-modal" class="modal-backdrop fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto" onclick="handleBackdropClick(event)">
+    
+    <div class="modal-content relative w-full max-w-4xl bg-white rounded-[32px] border border-slate-200 shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col" onclick="event.stopPropagation()">
+      
+      <!-- Modal Top Header -->
+      <div class="p-6 sm:px-8 sm:py-5 border-b border-slate-100 flex items-center justify-between bg-white z-10">
+        <div class="flex items-center gap-3">
+          <span id="modal-kicker" class="px-2.5 py-1 rounded-full bg-blue-50 text-[#0E7AE7] font-mono text-[11px] font-bold uppercase">
+            PILIHAN 01
+          </span>
+          <h3 id="modal-title" class="text-lg sm:text-xl font-extrabold text-slate-950">
+            The Executive Monogram
+          </h3>
+        </div>
+
+        <button onclick="closeConceptModal()" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors" title="Tutup Pop-Up">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Scrollable Body -->
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-6">
+        
+        <!-- Background Mode Selector Bar -->
+        <div class="space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-slate-400 uppercase">TES LATAR BELAKANG (5 PILIHAN WARNA)</span>
+            <div id="modal-layout-group" class="hidden items-center gap-1 p-1 bg-slate-100 rounded-full text-xs font-bold">
+              <button onclick="setModalLayout('berdiri', this)" class="px-3 py-1 rounded-full bg-white text-slate-900 shadow-xs">Berdiri</button>
+              <button onclick="setModalLayout('rebahan', this)" class="px-3 py-1 rounded-full text-slate-500 hover:text-slate-900">Rebahan</button>
+            </div>
+          </div>
+
+          <!-- 5 Background Mode Pills -->
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs font-bold">
+            
+            <!-- Mode 1: Pure White -->
+            <button onclick="setModalBg('white', this)" class="modal-bg-btn active px-3 py-2 rounded-xl bg-slate-900 text-white border border-slate-800 flex items-center justify-center gap-1.5 transition-all">
+              <span class="w-3 h-3 rounded-full bg-white border border-slate-300"></span>
+              <span>Latar Putih</span>
+            </button>
+
+            <!-- Mode 2: Midnight Obsidian -->
+            <button onclick="setModalBg('obsidian', this)" class="modal-bg-btn px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 flex items-center justify-center gap-1.5 transition-all">
+              <span class="w-3 h-3 rounded-full bg-[#0B1120]"></span>
+              <span>Hitam Elegan</span>
+            </button>
+
+            <!-- Mode 3: Cobalt Apex -->
+            <button onclick="setModalBg('cobalt', this)" class="modal-bg-btn px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 flex items-center justify-center gap-1.5 transition-all">
+              <span class="w-3 h-3 rounded-full bg-[#0E7AE7]"></span>
+              <span>Biru Utama</span>
+            </button>
+
+            <!-- Mode 4: Azure Gradient -->
+            <button onclick="setModalBg('gradient', this)" class="modal-bg-btn px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 flex items-center justify-center gap-1.5 transition-all">
+              <span class="w-3 h-3 rounded-full bg-gradient-to-r from-[#0E7AE7] to-[#2097FF]"></span>
+              <span>Gradasi Digital</span>
+            </button>
+
+            <!-- Mode 5: Graphite Grid -->
+            <button onclick="setModalBg('graphite', this)" class="modal-bg-btn px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 flex items-center justify-center gap-1.5 transition-all col-span-2 sm:col-span-1">
+              <span class="w-3 h-3 rounded-full bg-[#1E293B]"></span>
+              <span>Slate Modern</span>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- Master Interactive Visual Stage -->
+        <div id="modal-stage" class="rounded-3xl bg-white border border-slate-200 p-8 sm:p-16 flex items-center justify-center min-h-[280px] sm:min-h-[360px] shadow-inner transition-all duration-400 relative overflow-hidden">
+          <img id="modal-img" src="../assets/laptopbisnis_1_fix.png" alt="Modal Logo Preview" class="max-h-48 sm:max-h-60 w-auto object-contain transition-transform duration-300 transform hover:scale-105" />
+        </div>
+
+        <!-- Deep Philosophy & Details Breakdown (Polite & Engaging Tone) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+          
+          <div class="md:col-span-2 space-y-3">
+            <h4 class="text-sm font-extrabold text-slate-950 flex items-center gap-2">
+              <i data-lucide="sparkles" class="w-4 h-4 text-[#0E7AE7]"></i>
+              <span id="modal-tagline" class="text-[#0E7AE7]">"Kerja Tangguh, Bisnis Tumbuh"</span>
+            </h4>
+            <div id="modal-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed space-y-2">
+              <!-- dynamic bullet points inserted via JS -->
+            </div>
+            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs font-mono text-slate-600 space-y-1">
+              <div><strong class="text-slate-900">Paling Cocok Dipakai Di:</strong> <span id="modal-usage">Website, App Icon, Kartu Nama, Seragam</span></div>
+              <div><strong class="text-slate-900">Warna Resmi:</strong> <span class="text-[#0E7AE7] font-bold">Cobalt Tech Blue (#0E7AE7)</span> &bull; <span class="text-[#2097FF] font-bold">Electric Azure (#2097FF)</span></div>
+            </div>
+          </div>
+
+          <!-- Direct WhatsApp Decision Action inside Modal -->
+          <div class="p-5 rounded-2xl bg-blue-50/70 border border-blue-200 flex flex-col justify-between space-y-3 text-center">
+            <div class="space-y-1">
+              <span class="text-[10px] font-mono font-bold text-[#0E7AE7] uppercase">COCOK DENGAN LOGO INI?</span>
+              <h5 class="text-sm font-bold text-slate-900">Pilih Desain Ini</h5>
+              <p class="text-[11px] text-slate-500">Konfirmasi langsung ke Mas Daru untuk persiapan master file.</p>
+            </div>
+
+            <a id="modal-wa-btn" href="#" target="_blank" class="w-full py-3 px-4 rounded-xl bg-[#0E7AE7] hover:bg-[#085BB3] text-white text-xs font-extrabold transition-all flex items-center justify-center gap-1.5 shadow-md">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Pilih via WhatsApp</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================================================= -->
+  <!-- LUXURY FOOTER                                           -->
+  <!-- ======================================================= -->
+  <footer class="border-t border-slate-200 py-12 px-4 text-center text-xs font-mono text-slate-500 space-y-2 bg-white">
+    <p>&copy; 2026 <strong>LAPTOPBISNIS Identity System</strong> &bull; Directed by <strong class="text-[#0E7AE7]">DARU FAHMAA MULIAWAN</strong> &bull; SYMP Studio</p>
+    <p class="text-[10px] text-slate-400 font-bold tracking-wider uppercase">
+      PROFESSIONAL BRAND &bull; LOGO PROPOSAL DECK
+    </p>
+  </footer>
+
+  <!-- ======================================================= -->
+  <!-- INTERACTIVE POP-UP & BACKGROUND CONTROLLER SCRIPT       -->
+  <!-- ======================================================= -->
+  <script>
+    lucide.createIcons();
+
+    // Data definition for all 5 concepts with fresh, engaging, polite storytelling
+    const conceptsData = {
+      1: {
+        kicker: 'PILIHAN 01 RESMI',
+        title: 'The Executive Monogram',
+        tagline: '“Kerja Tangguh, Bisnis Tumbuh”',
+        bullets: [
+          '<strong>Siluet Laptop & Inisial LB:</strong> Sudut layar terbuka membentuk inisial huruf yang tegas. Menggambarkan kesiapan perangkat komputasi untuk selalu menyala dan mendukung produktivitas pebisnis tanpa kompromi.',
+          '<strong>Dua Mode Lengkap:</strong> Disediakan format <em>Berdiri (Stacked)</em> yang gagah untuk sampul profil/stiker bodi, dan format <em>Rebahan (Horizontal)</em> yang rapi untuk header website.',
+          '<strong>Kombinasi Biru & Hitam:</strong> Memancarkan kesan teknologi canggih, performa mesin yang stabil, dan wibawa bisnis profesional.'
+        ],
+        usage: 'Stiker Bodi Laptop, Website E-commerce, Kartu Garansi, Seragam Tim, Kop Surat',
+        hasLayoutSwitch: true,
+        defaultLayout: 'rebahan',
+        assets: {
+          berdiri: {
+            color: '../assets/laptopbisnis_1_berdiri_fix.png',
+            white: '../assets/laptopbisnis_1_berdiri_putih.png'
+          },
+          rebahan: {
+            color: '../assets/laptopbisnis_1_fix.png',
+            white: '../assets/laptopbisnis_1_putih.png'
+          }
+        },
+        waText: 'Halo%20Mas%20Daru,%20kami%20resmi%20memilih%20LAPTOPBISNIS%20PILIHAN%2001%20(The%20Executive%20Monogram)'
+      },
+      2: {
+        kicker: 'PILIHAN 02 RESMI',
+        title: 'The Synergy Hinge',
+        tagline: '“Koneksi Kuat, Performa Hebat”',
+        bullets: [
+          '<strong>Simbol Engsel Presisi:</strong> Terinspirasi dari mekanisme engsel laptop kelas workstation yang kokoh dan tahan ribuan kali buka-tutup.',
+          '<strong>Struktur Simetris & Rapi:</strong> Memberikan rasa percaya diri bagi pembeli bahwa Laptopbisnis hanya menghadirkan unit teruji dengan kualitas hardware terbaik.',
+          '<strong>Tipografi Modern Tegas:</strong> Memastikan nama Laptopbisnis mudah dibaca dari kejauhan pada plang toko maupun banner pameran.'
+        ],
+        usage: 'Plang Toko Komputer, Brosur Penawaran Instansi, Nota Penjualan, Avatar WhatsApp Bisnis',
+        hasLayoutSwitch: false,
+        defaultLayout: 'rebahan',
+        assets: {
+          rebahan: {
+            color: '../assets/laptopbisnis_2_fix.png',
+            white: '../assets/laptopbisnis_2_putih.png'
+          }
+        },
+        waText: 'Halo%20Mas%20Daru,%20kami%20resmi%20memilih%20LAPTOPBISNIS%20PILIHAN%2002%20(The%20Synergy%20Hinge)'
+      },
+      3: {
+        kicker: 'PILIHAN 03 (REBAHAN)',
+        title: 'The Velocity Hinge',
+        tagline: '“Laju Gesit, Mobilitas Maksimal”',
+        bullets: [
+          '<strong>Garis Aerodinamis Ramping:</strong> Memberi kesan perangkat laptop yang tipis (*ultrabook*), ringan, namun punya tenaga komputasi super kencang.',
+          '<strong>Keterbacaan Sangat Luas:</strong> Format mendatar ini sangat pas di mata ketika ditaruh di navbar aplikasi e-commerce atau stempel faktur resmi.',
+          '<strong>Aksen Biru Gradasi:</strong> Menambah sentuhan modern yang disukai kalangan profesional muda dan perusahaan rintisan (*startup*).'
+        ],
+        usage: 'Navbar Website Toko, Kemasan Box Laptop, Spanduk Promosi, Cap/Stempel Toko',
+        hasLayoutSwitch: false,
+        defaultLayout: 'rebahan',
+        assets: {
+          rebahan: {
+            color: '../assets/laptopbisnis_3_fix.png',
+            white: '../assets/laptopbisnis_3_putih_rebahan.png'
+          }
+        },
+        waText: 'Halo%20Mas%20Daru,%20kami%20resmi%20memilih%20LAPTOPBISNIS%20PILIHAN%2003%20(The%20Velocity%20Hinge)'
+      },
+      4: {
+        kicker: 'PILIHAN 04',
+        title: 'The Dual Edge Workspace',
+        tagline: '“Presisi Kerja, Desain Berkelas”',
+        bullets: [
+          '<strong>Dua Sudut Geometris Seimbang:</strong> Menggambarkan paduan harmonis antara performa komputasi hardware yang tangguh dan kenyamanan bekerja para eksekutif.',
+          '<strong>Karakter Berwibawa:</strong> Memberikan citra bahwa Laptopbisnis adalah partner pengadaan IT terpercaya untuk proyek perusahaan besar maupun instansi pemerintah.',
+          '<strong>Simpel & Premium:</strong> Terlihat sangat mewah saat dicetak dengan efek sablon mengkilap (*spot UV*) di atas kardus box laptop hitam.'
+        ],
+        usage: 'Kardus Box Laptop, Dokumen Kontrak Pengadaan IT, Banner Pameran Teknologi, Kartu Nama',
+        hasLayoutSwitch: false,
+        defaultLayout: 'rebahan',
+        assets: {
+          rebahan: {
+            color: '../assets/laptopbisnis_4_fix.png',
+            white: '../assets/laptopbisnis_4_putih.png'
+          }
+        },
+        waText: 'Halo%20Mas%20Daru,%20kami%20resmi%20memilih%20LAPTOPBISNIS%20PILIHAN%2004%20(The%20Dual%20Edge%20Workspace)'
+      },
+      5: {
+        kicker: 'PILIHAN 05 (REBAHAN)',
+        title: 'The Modern Tech Horizon',
+        tagline: '“Fokus Tajam, Mitra Terbaik Kantor”',
+        bullets: [
+          '<strong>Garis Horison Modern Minimalis:</strong> Desain yang *timeless* (tak lekang oleh zaman), simpel, dan langsung melekat di ingatan pelanggan.',
+          '<strong>Penekanan pada Nama Brand:</strong> Memudahkan calon pembeli untuk langsung fokus pada nama "LAPTOPBISNIS" sebagai solusi utama saat mencari laptop kerja.',
+          '<strong>Daya Terap Serbaguna:</strong> Sangat fleksibel dipakai di media apa pun, mulai dari favicon kecil di browser hingga neon box besar di gedung toko.'
+        ],
+        usage: 'Neon Box Toko, Header Marketplace (Tokopedia/Shopee), Tali Lanyard Karyawan, Tas Laptop',
+        hasLayoutSwitch: false,
+        defaultLayout: 'rebahan',
+        assets: {
+          rebahan: {
+            color: '../assets/laptopbisnis_5_fix.png',
+            white: '../assets/laptopbisnis_5_putih.png'
+          }
+        },
+        waText: 'Halo%20Mas%20Daru,%20kami%20resmi%20memilih%20LAPTOPBISNIS%20PILIHAN%2005%20(The%20Modern%20Tech%20Horizon)'
+      }
+    };
+
+    let activeModalConcept = 1;
+    let activeModalLayout = 'rebahan';
+    let activeModalBg = 'white';
+
+    function openConceptModal(num) {
+      activeModalConcept = num;
+      const data = conceptsData[num];
+      activeModalLayout = data.defaultLayout;
+      activeModalBg = 'white';
+
+      document.getElementById('modal-kicker').innerText = data.kicker;
+      document.getElementById('modal-title').innerText = data.title;
+      document.getElementById('modal-tagline').innerText = data.tagline;
+      
+      // Render bullet points cleanly
+      const descContainer = document.getElementById('modal-desc');
+      descContainer.innerHTML = data.bullets.map(b => `<p class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#0E7AE7] mt-1.5 flex-shrink-0"></span><span>${b}</span></p>`).join('');
+
+      document.getElementById('modal-usage').innerText = data.usage;
+      document.getElementById('modal-wa-btn').href = `https://wa.me/6281311506025?text=${data.waText}`;
+
+      // Show or hide orientation toggle
+      const layoutGroup = document.getElementById('modal-layout-group');
+      if (data.hasLayoutSwitch) {
+        layoutGroup.classList.remove('hidden');
+        layoutGroup.classList.add('flex');
+        layoutGroup.querySelectorAll('button').forEach((b, idx) => {
+          b.className = idx === 1 ? 'px-3 py-1 rounded-full bg-white text-slate-900 shadow-xs' : 'px-3 py-1 rounded-full text-slate-500 hover:text-slate-900';
+        });
+      } else {
+        layoutGroup.classList.remove('flex');
+        layoutGroup.classList.add('hidden');
+      }
+
+      // Reset background button styles to white active
+      document.querySelectorAll('.modal-bg-btn').forEach((b, idx) => {
+        b.className = idx === 0 ? 'modal-bg-btn active px-3 py-2 rounded-xl bg-slate-900 text-white border border-slate-800 flex items-center justify-center gap-1.5 transition-all' : 'modal-bg-btn px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 flex items-center justify-center gap-1.5 transition-all';
+      });
+
+      updateModalStage();
+      document.getElementById('concept-modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeConceptModal() {
+      document.getElementById('concept-modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target.id === 'concept-modal') {
+        closeConceptModal();
+      }
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeConceptModal();
+    });
+
+    function setModalLayout(layout, btn) {
+      activeModalLayout = layout;
+      btn.parentElement.querySelectorAll('button').forEach(b => {
+        b.className = 'px-3 py-1 rounded-full text-slate-500 hover:text-slate-900';
+      });
+      btn.className = 'px-3 py-1 rounded-full bg-white text-slate-900 shadow-xs';
+      updateModalStage();
+    }
+
+    function setModalBg(bgMode, btn) {
+      activeModalBg = bgMode;
+      document.querySelectorAll('.modal-bg-btn').forEach(b => {
+        b.className = 'modal-bg-btn px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 flex items-center justify-center gap-1.5 transition-all';
+      });
+      btn.className = 'modal-bg-btn active px-3 py-2 rounded-xl bg-slate-900 text-white border border-slate-800 flex items-center justify-center gap-1.5 transition-all';
+      updateModalStage();
+    }
+
+    function updateModalStage() {
+      const data = conceptsData[activeModalConcept];
+      const stage = document.getElementById('modal-stage');
+      const img = document.getElementById('modal-img');
+
+      const isWhiteBg = (activeModalBg === 'white');
+      const logoVersion = isWhiteBg ? 'color' : 'white';
+      
+      const src = data.assets[activeModalLayout][logoVersion];
+      img.src = src;
+
+      // Apply background styles to modal stage
+      switch(activeModalBg) {
+        case 'white':
+          stage.style.background = '#FFFFFF';
+          stage.style.borderColor = '#E2E8F0';
+          break;
+        case 'obsidian':
+          stage.style.background = '#0B1120';
+          stage.style.borderColor = 'rgba(255,255,255,0.1)';
+          break;
+        case 'cobalt':
+          stage.style.background = '#0E7AE7';
+          stage.style.borderColor = 'rgba(255,255,255,0.2)';
+          break;
+        case 'gradient':
+          stage.style.background = 'linear-gradient(135deg, #0E7AE7 0%, #2097FF 100%)';
+          stage.style.borderColor = 'rgba(255,255,255,0.2)';
+          break;
+        case 'graphite':
+          stage.style.background = 'radial-gradient(circle at 50% 50%, #1E293B 0%, #0F172A 100%)';
+          stage.style.borderColor = 'rgba(255,255,255,0.15)';
+          break;
+      }
+    }
+
+    function copyColor(code, name) {
+      navigator.clipboard.writeText(code).then(() => {
+        const toast = document.createElement('div');
+        toast.className = 'fixed bottom-6 right-6 bg-[#0B1120] text-white text-xs font-mono py-3 px-5 rounded-2xl shadow-2xl z-50 flex items-center gap-2 border border-white/20 animate-bounce';
+        toast.innerHTML = `<span class="w-2 h-2 rounded-full bg-[#2097FF]"></span> Kode <strong>${code}</strong> (${name}) berhasil disalin!`;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 2500);
+      });
+    }
+  </script>
+</body>
+</html>
