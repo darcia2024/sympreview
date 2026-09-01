@@ -73,6 +73,7 @@
       border-radius: 24px;
       box-shadow: 0 4px 20px -6px rgba(14, 122, 231, 0.04);
       transition: all 0.4s var(--agency-spring);
+      cursor: pointer;
     }
     @media (min-width: 640px) {
       .bezel-shell {
@@ -80,36 +81,29 @@
       }
     }
     .bezel-shell:hover {
-      box-shadow: 0 16px 36px -10px rgba(14, 122, 231, 0.16);
-      border-color: rgba(14, 122, 231, 0.4);
+      box-shadow: 0 20px 48px -12px rgba(14, 122, 231, 0.22);
+      border-color: #0E7AE7;
+      transform: translateY(-4px);
     }
 
-    /* Button-in-Button Architecture */
-    .btn-island {
-      display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 9px 9px 9px 20px;
-      border-radius: 9999px;
-      font-weight: 700;
-      font-size: 13px;
-      transition: all 0.3s var(--agency-spring);
+    /* Modal Backdrop Blur & Animation */
+    .modal-backdrop {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
     }
-    .btn-island:active {
-      transform: scale(0.98);
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
     }
-    .btn-island-icon {
-      width: 30px;
-      height: 30px;
-      border-radius: 9999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s var(--agency-spring);
+    .modal-content {
+      transform: scale(0.95) translateY(12px);
+      transition: transform 0.35s var(--agency-spring), opacity 0.3s ease;
+      opacity: 0;
     }
-    .btn-island:hover .btn-island-icon {
-      transform: translateX(2px) translateY(-1px) scale(1.05);
+    .modal-backdrop.active .modal-content {
+      transform: scale(1) translateY(0);
+      opacity: 1;
     }
 
     /* Swatch Box */
@@ -139,7 +133,7 @@
   <!-- ======================================================= -->
   <!-- FLOATING EDITORIAL TOP BAR                              -->
   <!-- ======================================================= -->
-  <header class="sticky top-0 z-50 bg-[#F8FAFC]/90 backdrop-blur-xl border-b border-slate-200/80 px-4 sm:px-8 py-3.5 transition-all">
+  <header class="sticky top-0 z-40 bg-[#F8FAFC]/90 backdrop-blur-xl border-b border-slate-200/80 px-4 sm:px-8 py-3.5 transition-all">
     <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
       
       <!-- Brand & Project Title -->
@@ -163,11 +157,9 @@
 
       <!-- Right Action CTA -->
       <div class="flex items-center gap-2">
-        <a href="#voting" class="btn-island bg-[#0E7AE7] text-white hover:bg-[#085BB3] shadow-sm">
+        <a href="#voting" class="px-4 py-2 rounded-full bg-[#0E7AE7] hover:bg-[#085BB3] text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm">
           <span>Pilih Opsi Logo</span>
-          <span class="btn-island-icon bg-white/20">
-            <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
-          </span>
+          <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
         </a>
       </div>
 
@@ -194,12 +186,12 @@
       </h1>
 
       <p class="text-xs sm:text-base text-slate-600 font-normal leading-relaxed max-w-3xl">
-        Proposal identitas merek <strong>ZALVICE</strong> (<em>Zenith &bull; Alliance &bull; Service</em>). 5 opsi konsep desain di bawah ini telah dikelompokkan dalam tata letak kompak (3 kolom di baris atas &amp; 2 kolom di baris bawah) untuk memudahkan perbandingan visual.
+        Klik pada salah satu kartu konsep logo di bawah ini untuk membuka <strong>Pop-Up Studio Interaktif</strong>: gonta-ganti latar belakang warna secara instan (*White, Obsidian, Cobalt, Azure Gradient, Graphite Grid*), bedah makna geometri mendalam, dan memilih varian via WhatsApp.
       </p>
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 01: 5 KONSEP LOGO (3 GRID ATAS + 2 GRID BAWAH)  -->
+    <!-- SECTION 01: 5 KONSEP LOGO (KLIK UNTUK BUKA POP-UP)     -->
     <!-- ======================================================= -->
     <section id="variants" class="space-y-8">
       
@@ -210,7 +202,7 @@
             Galeri 5 Konsep Logo ZALVICE
           </h2>
           <p class="text-xs sm:text-sm text-slate-500 font-mono">
-            Gunakan tombol interaktif di atas setiap kartu untuk mengubah orientasi dan kanvas warna
+            💡 <strong>Klik pada kartu</strong> untuk membuka pop-up pengujian latar belakang &amp; bedah filosofi
           </p>
         </div>
       </div>
@@ -218,13 +210,9 @@
       <!-- ROW 1: 3 GRID CARDS (KONSEP 01, 02, 03) -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <!-- =================================================== -->
-        <!-- CARD 01: THE DYNAMIC CATALYST                       -->
-        <!-- =================================================== -->
-        <div class="bezel-shell p-5 sm:p-6 space-y-4 flex flex-col justify-between">
+        <!-- CARD 01: THE DYNAMIC CATALYST -->
+        <div class="bezel-shell p-5 sm:p-6 space-y-4 flex flex-col justify-between group" onclick="openConceptModal(1)">
           <div class="space-y-3.5">
-            
-            <!-- Card Header -->
             <div class="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
                 <span class="px-2 py-0.5 rounded-full bg-blue-50 text-[#0E7AE7] font-mono text-[10px] font-bold">
@@ -232,47 +220,34 @@
                 </span>
                 <h3 class="text-base font-extrabold text-slate-950 mt-1">The Dynamic Catalyst</h3>
               </div>
+              <span class="text-[10px] font-mono font-bold text-[#0E7AE7] bg-blue-50 px-2 py-1 rounded-full flex items-center gap-1">
+                <span>Pop-Up</span>
+                <i data-lucide="maximize-2" class="w-3 h-3"></i>
+              </span>
             </div>
 
-            <!-- Controls (Format & Canvas) -->
-            <div class="flex items-center justify-between gap-2">
-              <div class="flex items-center gap-1 p-0.5 bg-slate-100 rounded-full text-[10px] font-bold">
-                <button onclick="setConceptLayout(1, 'stacked', this)" class="px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs">Vertikal</button>
-                <button onclick="setConceptLayout(1, 'rebahan', this)" class="px-2.5 py-1 rounded-full text-slate-500 hover:text-slate-900">Rebahan</button>
-              </div>
-              <div class="flex items-center gap-1 p-0.5 bg-slate-100 rounded-full text-[10px] font-bold">
-                <button onclick="setConceptCanvas(1, 'light', this)" class="px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs">Light</button>
-                <button onclick="setConceptCanvas(1, 'dark', this)" class="px-2.5 py-1 rounded-full text-slate-500 hover:text-slate-900">Dark</button>
-              </div>
+            <!-- Preview Canvas Stage -->
+            <div class="rounded-2xl bg-white border border-slate-200 p-6 flex items-center justify-center min-h-[190px] sm:min-h-[210px] shadow-inner group-hover:border-[#0E7AE7] transition-colors">
+              <img src="../assets/zalvice_1_fix.png" alt="Zalvice Konsep 01" class="max-h-28 sm:max-h-32 w-auto object-contain transition-transform duration-300 transform group-hover:scale-105" />
             </div>
 
-            <!-- Canvas Stage -->
-            <div id="stage-concept-1" class="rounded-2xl bg-white border border-slate-200 p-6 flex items-center justify-center min-h-[190px] sm:min-h-[210px] shadow-inner transition-colors duration-300">
-              <img id="img-concept-1" src="../assets/zalvice_1_fix.png" alt="Zalvice Konsep 01" class="max-h-28 sm:max-h-32 w-auto object-contain transition-transform duration-300 transform hover:scale-105" />
-            </div>
-
-            <!-- Philosophy Summary -->
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Huruf 'Z' geometris dinamis berlapis dengan gradasi Azure ke Cobalt Blue. Melambangkan akselerasi kecepatan eksekusi dan transformasi layanan.
+            <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+              Huruf 'Z' geometris dinamis berlapis dengan gradasi Azure ke Cobalt Blue. Melambangkan akselerasi kecepatan eksekusi.
             </p>
           </div>
 
-          <!-- Bottom WA Action -->
-          <div class="pt-3 border-t border-slate-100">
-            <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20ZALVICE%20KONSEP%2001%20(The%20Dynamic%20Catalyst)" target="_blank" class="w-full py-2.5 px-4 rounded-xl bg-[#0E7AE7] hover:bg-[#085BB3] text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm">
-              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
-              <span>Pilih Konsep 01</span>
-            </a>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#0E7AE7]">
+            <span class="text-[11px] font-mono text-slate-400">Klik untuk detail</span>
+            <span class="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Buka Mode</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
           </div>
         </div>
 
-        <!-- =================================================== -->
-        <!-- CARD 02: THE SYNERGY MONOGRAM                       -->
-        <!-- =================================================== -->
-        <div class="bezel-shell p-5 sm:p-6 space-y-4 flex flex-col justify-between">
+        <!-- CARD 02: THE SYNERGY MONOGRAM -->
+        <div class="bezel-shell p-5 sm:p-6 space-y-4 flex flex-col justify-between group" onclick="openConceptModal(2)">
           <div class="space-y-3.5">
-            
-            <!-- Card Header -->
             <div class="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
                 <span class="px-2 py-0.5 rounded-full bg-blue-50 text-[#0E7AE7] font-mono text-[10px] font-bold">
@@ -280,47 +255,34 @@
                 </span>
                 <h3 class="text-base font-extrabold text-slate-950 mt-1">The Synergy Monogram</h3>
               </div>
+              <span class="text-[10px] font-mono font-bold text-[#0E7AE7] bg-blue-50 px-2 py-1 rounded-full flex items-center gap-1">
+                <span>Pop-Up</span>
+                <i data-lucide="maximize-2" class="w-3 h-3"></i>
+              </span>
             </div>
 
-            <!-- Controls (Format & Canvas) -->
-            <div class="flex items-center justify-between gap-2">
-              <div class="flex items-center gap-1 p-0.5 bg-slate-100 rounded-full text-[10px] font-bold">
-                <button onclick="setConceptLayout(2, 'stacked', this)" class="px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs">Vertikal</button>
-                <button onclick="setConceptLayout(2, 'rebahan', this)" class="px-2.5 py-1 rounded-full text-slate-500 hover:text-slate-900">Rebahan</button>
-              </div>
-              <div class="flex items-center gap-1 p-0.5 bg-slate-100 rounded-full text-[10px] font-bold">
-                <button onclick="setConceptCanvas(2, 'light', this)" class="px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs">Light</button>
-                <button onclick="setConceptCanvas(2, 'dark', this)" class="px-2.5 py-1 rounded-full text-slate-500 hover:text-slate-900">Dark</button>
-              </div>
+            <!-- Preview Canvas Stage -->
+            <div class="rounded-2xl bg-white border border-slate-200 p-6 flex items-center justify-center min-h-[190px] sm:min-h-[210px] shadow-inner group-hover:border-[#0E7AE7] transition-colors">
+              <img src="../assets/zalvice_2_fix.png" alt="Zalvice Konsep 02" class="max-h-28 sm:max-h-32 w-auto object-contain transition-transform duration-300 transform group-hover:scale-105" />
             </div>
 
-            <!-- Canvas Stage -->
-            <div id="stage-concept-2" class="rounded-2xl bg-white border border-slate-200 p-6 flex items-center justify-center min-h-[190px] sm:min-h-[210px] shadow-inner transition-colors duration-300">
-              <img id="img-concept-2" src="../assets/zalvice_2_fix.png" alt="Zalvice Konsep 02" class="max-h-28 sm:max-h-32 w-auto object-contain transition-transform duration-300 transform hover:scale-105" />
-            </div>
-
-            <!-- Philosophy Summary -->
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Monogram heksagonal simetris yang mengikat elemen modul layanan terpadu (*Integrated Service Ecosystem*) yang kokoh dan saling bersinergi.
+            <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+              Monogram heksagonal simetris yang mengikat elemen modul layanan terpadu (*Integrated Service Ecosystem*).
             </p>
           </div>
 
-          <!-- Bottom WA Action -->
-          <div class="pt-3 border-t border-slate-100">
-            <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20ZALVICE%20KONSEP%2002%20(The%20Synergy%20Monogram)" target="_blank" class="w-full py-2.5 px-4 rounded-xl bg-[#0E7AE7] hover:bg-[#085BB3] text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm">
-              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
-              <span>Pilih Konsep 02</span>
-            </a>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#0E7AE7]">
+            <span class="text-[11px] font-mono text-slate-400">Klik untuk detail</span>
+            <span class="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Buka Mode</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
           </div>
         </div>
 
-        <!-- =================================================== -->
-        <!-- CARD 03: THE VELOCITY STREAM (REBAHAN)              -->
-        <!-- =================================================== -->
-        <div class="bezel-shell p-5 sm:p-6 space-y-4 flex flex-col justify-between">
+        <!-- CARD 03: THE VELOCITY STREAM -->
+        <div class="bezel-shell p-5 sm:p-6 space-y-4 flex flex-col justify-between group" onclick="openConceptModal(3)">
           <div class="space-y-3.5">
-            
-            <!-- Card Header -->
             <div class="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
                 <span class="px-2 py-0.5 rounded-full bg-blue-50 text-[#0E7AE7] font-mono text-[10px] font-bold">
@@ -328,34 +290,28 @@
                 </span>
                 <h3 class="text-base font-extrabold text-slate-950 mt-1">The Velocity Stream</h3>
               </div>
+              <span class="text-[10px] font-mono font-bold text-[#0E7AE7] bg-blue-50 px-2 py-1 rounded-full flex items-center gap-1">
+                <span>Pop-Up</span>
+                <i data-lucide="maximize-2" class="w-3 h-3"></i>
+              </span>
             </div>
 
-            <!-- Controls (Canvas Only) -->
-            <div class="flex items-center justify-between gap-2">
-              <span class="text-[10px] font-mono text-slate-400">Landscape Only</span>
-              <div class="flex items-center gap-1 p-0.5 bg-slate-100 rounded-full text-[10px] font-bold">
-                <button onclick="setConceptCanvas(3, 'light', this)" class="px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs">Light</button>
-                <button onclick="setConceptCanvas(3, 'dark', this)" class="px-2.5 py-1 rounded-full text-slate-500 hover:text-slate-900">Dark</button>
-              </div>
+            <!-- Preview Canvas Stage -->
+            <div class="rounded-2xl bg-white border border-slate-200 p-6 flex items-center justify-center min-h-[190px] sm:min-h-[210px] shadow-inner group-hover:border-[#0E7AE7] transition-colors">
+              <img src="../assets/zalvice_3_rebahan_fix_only.png" alt="Zalvice Konsep 03" class="max-h-16 sm:max-h-20 w-auto object-contain transition-transform duration-300 transform group-hover:scale-105" />
             </div>
 
-            <!-- Canvas Stage -->
-            <div id="stage-concept-3" class="rounded-2xl bg-white border border-slate-200 p-6 flex items-center justify-center min-h-[190px] sm:min-h-[210px] shadow-inner transition-colors duration-300">
-              <img id="img-concept-3" src="../assets/zalvice_3_rebahan_fix_only.png" alt="Zalvice Konsep 03" class="max-h-16 sm:max-h-20 w-auto object-contain transition-transform duration-300 transform hover:scale-105" />
-            </div>
-
-            <!-- Philosophy Summary -->
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Siluet horizontal aerodinamis yang mengalir tanpa batas, dirancang optimal untuk navbar sistem website, signage kantor horizontal, dan kop surat.
+            <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+              Siluet horizontal aerodinamis yang mengalir tanpa batas, dirancang optimal untuk navbar sistem website dan signage.
             </p>
           </div>
 
-          <!-- Bottom WA Action -->
-          <div class="pt-3 border-t border-slate-100">
-            <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20ZALVICE%20KONSEP%2003%20(The%20Velocity%20Stream)" target="_blank" class="w-full py-2.5 px-4 rounded-xl bg-[#0E7AE7] hover:bg-[#085BB3] text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm">
-              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
-              <span>Pilih Konsep 03</span>
-            </a>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#0E7AE7]">
+            <span class="text-[11px] font-mono text-slate-400">Klik untuk detail</span>
+            <span class="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Buka Mode</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
           </div>
         </div>
 
@@ -364,13 +320,9 @@
       <!-- ROW 2: 2 GRID CARDS (KONSEP 04 & KONSEP 05) -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-        <!-- =================================================== -->
-        <!-- CARD 04: THE APEX PRISM (STACKED)                   -->
-        <!-- =================================================== -->
-        <div class="bezel-shell p-5 sm:p-6 space-y-4 flex flex-col justify-between">
+        <!-- CARD 04: THE APEX PRISM -->
+        <div class="bezel-shell p-5 sm:p-6 space-y-4 flex flex-col justify-between group" onclick="openConceptModal(4)">
           <div class="space-y-3.5">
-            
-            <!-- Card Header -->
             <div class="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
                 <span class="px-2 py-0.5 rounded-full bg-blue-50 text-[#0E7AE7] font-mono text-[10px] font-bold">
@@ -378,41 +330,34 @@
                 </span>
                 <h3 class="text-base font-extrabold text-slate-950 mt-1">The Apex Prism</h3>
               </div>
-              
-              <!-- Controls (Canvas Only) -->
-              <div class="flex items-center gap-1 p-0.5 bg-slate-100 rounded-full text-[10px] font-bold">
-                <button onclick="setConceptCanvas(4, 'light', this)" class="px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs">Light</button>
-                <button onclick="setConceptCanvas(4, 'dark', this)" class="px-2.5 py-1 rounded-full text-slate-500 hover:text-slate-900">Dark</button>
-              </div>
+              <span class="text-[10px] font-mono font-bold text-[#0E7AE7] bg-blue-50 px-2 py-1 rounded-full flex items-center gap-1">
+                <span>Pop-Up</span>
+                <i data-lucide="maximize-2" class="w-3 h-3"></i>
+              </span>
             </div>
 
-            <!-- Canvas Stage -->
-            <div id="stage-concept-4" class="rounded-2xl bg-white border border-slate-200 p-6 flex items-center justify-center min-h-[190px] sm:min-h-[210px] shadow-inner transition-colors duration-300">
-              <img id="img-concept-4" src="../assets/zalvice_4_fix_only.png" alt="Zalvice Konsep 04" class="max-h-28 sm:max-h-32 w-auto object-contain transition-transform duration-300 transform hover:scale-105" />
+            <!-- Preview Canvas Stage -->
+            <div class="rounded-2xl bg-white border border-slate-200 p-6 flex items-center justify-center min-h-[190px] sm:min-h-[210px] shadow-inner group-hover:border-[#0E7AE7] transition-colors">
+              <img src="../assets/zalvice_4_fix_only.png" alt="Zalvice Konsep 04" class="max-h-28 sm:max-h-32 w-auto object-contain transition-transform duration-300 transform group-hover:scale-105" />
             </div>
 
-            <!-- Philosophy Summary -->
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Prisma simetris kokoh yang merepresentasikan stabilitas sistem korporat dan ketajaman eksekusi layanan bisnis berstandar enterprise.
+            <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+              Prisma simetris kokoh yang merepresentasikan stabilitas sistem korporat dan ketajaman eksekusi layanan bisnis.
             </p>
           </div>
 
-          <!-- Bottom WA Action -->
-          <div class="pt-3 border-t border-slate-100">
-            <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20ZALVICE%20KONSEP%2004%20(The%20Apex%20Prism)" target="_blank" class="w-full py-2.5 px-4 rounded-xl bg-[#0E7AE7] hover:bg-[#085BB3] text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm">
-              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
-              <span>Pilih Konsep 04</span>
-            </a>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#0E7AE7]">
+            <span class="text-[11px] font-mono text-slate-400">Klik untuk detail</span>
+            <span class="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Buka Mode</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
           </div>
         </div>
 
-        <!-- =================================================== -->
-        <!-- CARD 05: THE PRECISION HORIZON (REBAHAN)            -->
-        <!-- =================================================== -->
-        <div class="bezel-shell p-5 sm:p-6 space-y-4 flex flex-col justify-between">
+        <!-- CARD 05: THE PRECISION HORIZON -->
+        <div class="bezel-shell p-5 sm:p-6 space-y-4 flex flex-col justify-between group" onclick="openConceptModal(5)">
           <div class="space-y-3.5">
-            
-            <!-- Card Header -->
             <div class="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
                 <span class="px-2 py-0.5 rounded-full bg-blue-50 text-[#0E7AE7] font-mono text-[10px] font-bold">
@@ -420,31 +365,28 @@
                 </span>
                 <h3 class="text-base font-extrabold text-slate-950 mt-1">The Precision Horizon</h3>
               </div>
-              
-              <!-- Controls (Canvas Only) -->
-              <div class="flex items-center gap-1 p-0.5 bg-slate-100 rounded-full text-[10px] font-bold">
-                <button onclick="setConceptCanvas(5, 'light', this)" class="px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs">Light</button>
-                <button onclick="setConceptCanvas(5, 'dark', this)" class="px-2.5 py-1 rounded-full text-slate-500 hover:text-slate-900">Dark</button>
-              </div>
+              <span class="text-[10px] font-mono font-bold text-[#0E7AE7] bg-blue-50 px-2 py-1 rounded-full flex items-center gap-1">
+                <span>Pop-Up</span>
+                <i data-lucide="maximize-2" class="w-3 h-3"></i>
+              </span>
             </div>
 
-            <!-- Canvas Stage -->
-            <div id="stage-concept-5" class="rounded-2xl bg-white border border-slate-200 p-6 flex items-center justify-center min-h-[190px] sm:min-h-[210px] shadow-inner transition-colors duration-300">
-              <img id="img-concept-5" src="../assets/zalvice_5_rebahan_fix.png" alt="Zalvice Konsep 05" class="max-h-16 sm:max-h-20 w-auto object-contain transition-transform duration-300 transform hover:scale-105" />
+            <!-- Preview Canvas Stage -->
+            <div class="rounded-2xl bg-white border border-slate-200 p-6 flex items-center justify-center min-h-[190px] sm:min-h-[210px] shadow-inner group-hover:border-[#0E7AE7] transition-colors">
+              <img src="../assets/zalvice_5_rebahan_fix.png" alt="Zalvice Konsep 05" class="max-h-16 sm:max-h-20 w-auto object-contain transition-transform duration-300 transform group-hover:scale-105" />
             </div>
 
-            <!-- Philosophy Summary -->
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Garis cakrawala modern dengan ketepatan garis geometris, menghadirkan daya baca maksimal dalam berbagai skala media visual fisik maupun digital.
+            <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+              Garis cakrawala modern dengan ketepatan garis geometris, menghadirkan daya baca maksimal dalam berbagai skala media.
             </p>
           </div>
 
-          <!-- Bottom WA Action -->
-          <div class="pt-3 border-t border-slate-100">
-            <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20ZALVICE%20KONSEP%2005%20(The%20Precision%20Horizon)" target="_blank" class="w-full py-2.5 px-4 rounded-xl bg-[#0E7AE7] hover:bg-[#085BB3] text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 shadow-sm">
-              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
-              <span>Pilih Konsep 05</span>
-            </a>
+          <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#0E7AE7]">
+            <span class="text-[11px] font-mono text-slate-400">Klik untuk detail</span>
+            <span class="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Buka Mode</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
           </div>
         </div>
 
@@ -756,6 +698,121 @@
   </main>
 
   <!-- ======================================================= -->
+  <!-- INTERACTIVE POP-UP MODAL STUDIO                         -->
+  <!-- ======================================================= -->
+  <div id="concept-modal" class="modal-backdrop fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto" onclick="handleBackdropClick(event)">
+    
+    <div class="modal-content relative w-full max-w-4xl bg-white rounded-[32px] border border-slate-200 shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col" onclick="event.stopPropagation()">
+      
+      <!-- Modal Top Header -->
+      <div class="p-6 sm:px-8 sm:py-5 border-b border-slate-100 flex items-center justify-between bg-white z-10">
+        <div class="flex items-center gap-3">
+          <span id="modal-kicker" class="px-2.5 py-1 rounded-full bg-blue-50 text-[#0E7AE7] font-mono text-[11px] font-bold uppercase">
+            KONSEP 01
+          </span>
+          <h3 id="modal-title" class="text-lg sm:text-xl font-extrabold text-slate-950">
+            The Dynamic Catalyst
+          </h3>
+        </div>
+
+        <button onclick="closeConceptModal()" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Scrollable Body -->
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-6">
+        
+        <!-- Background Mode Selector Bar -->
+        <div class="space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-slate-400 uppercase">UJI LATAR BELAKANG (5 MODE WARNA)</span>
+            <div id="modal-layout-group" class="hidden items-center gap-1 p-1 bg-slate-100 rounded-full text-xs font-bold">
+              <button onclick="setModalLayout('stacked', this)" class="px-3 py-1 rounded-full bg-white text-slate-900 shadow-xs">Vertikal</button>
+              <button onclick="setModalLayout('rebahan', this)" class="px-3 py-1 rounded-full text-slate-500 hover:text-slate-900">Rebahan</button>
+            </div>
+          </div>
+
+          <!-- 5 Background Mode Pills -->
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs font-bold">
+            
+            <!-- Mode 1: Pure White -->
+            <button onclick="setModalBg('white', this)" class="modal-bg-btn active px-3 py-2 rounded-xl bg-slate-900 text-white border border-slate-800 flex items-center justify-center gap-1.5 transition-all">
+              <span class="w-3 h-3 rounded-full bg-white border border-slate-300"></span>
+              <span>White</span>
+            </button>
+
+            <!-- Mode 2: Midnight Obsidian -->
+            <button onclick="setModalBg('obsidian', this)" class="modal-bg-btn px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 flex items-center justify-center gap-1.5 transition-all">
+              <span class="w-3 h-3 rounded-full bg-[#0B1120]"></span>
+              <span>Obsidian</span>
+            </button>
+
+            <!-- Mode 3: Cobalt Apex -->
+            <button onclick="setModalBg('cobalt', this)" class="modal-bg-btn px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 flex items-center justify-center gap-1.5 transition-all">
+              <span class="w-3 h-3 rounded-full bg-[#0E7AE7]"></span>
+              <span>Cobalt Blue</span>
+            </button>
+
+            <!-- Mode 4: Azure Gradient -->
+            <button onclick="setModalBg('gradient', this)" class="modal-bg-btn px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 flex items-center justify-center gap-1.5 transition-all">
+              <span class="w-3 h-3 rounded-full bg-gradient-to-r from-[#0E7AE7] to-[#2097FF]"></span>
+              <span>Azure Gradient</span>
+            </button>
+
+            <!-- Mode 5: Graphite Grid -->
+            <button onclick="setModalBg('graphite', this)" class="modal-bg-btn px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 flex items-center justify-center gap-1.5 transition-all col-span-2 sm:col-span-1">
+              <span class="w-3 h-3 rounded-full bg-[#1E293B]"></span>
+              <span>Graphite</span>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- Master Interactive Visual Stage -->
+        <div id="modal-stage" class="rounded-3xl bg-white border border-slate-200 p-8 sm:p-16 flex items-center justify-center min-h-[280px] sm:min-h-[380px] shadow-inner transition-all duration-400 relative overflow-hidden">
+          <img id="modal-img" src="../assets/zalvice_1_fix.png" alt="Modal Logo Preview" class="max-h-48 sm:max-h-64 w-auto object-contain transition-transform duration-300 transform hover:scale-105" />
+        </div>
+
+        <!-- Deep Philosophy & Details Breakdown -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+          
+          <div class="md:col-span-2 space-y-3">
+            <h4 class="text-sm font-extrabold text-slate-950 flex items-center gap-2">
+              <i data-lucide="compass" class="w-4 h-4 text-[#0E7AE7]"></i>
+              <span>Makna Filosofis &amp; Karakter Geometri</span>
+            </h4>
+            <p id="modal-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Deskripsi konsep logo.
+            </p>
+            <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs font-mono text-slate-600 space-y-1">
+              <div><strong class="text-slate-900">Rekomendasi Penerapan:</strong> <span id="modal-usage">Digital, Website, App Icon, Print</span></div>
+              <div><strong class="text-slate-900">Palet Warna Utama:</strong> <span class="text-[#0E7AE7] font-bold">#0E7AE7 (Cobalt)</span> &bull; <span class="text-[#2097FF] font-bold">#2097FF (Azure)</span></div>
+            </div>
+          </div>
+
+          <!-- Direct WhatsApp Decision Action inside Modal -->
+          <div class="p-5 rounded-2xl bg-blue-50/70 border border-blue-200 flex flex-col justify-between space-y-3 text-center">
+            <div class="space-y-1">
+              <span class="text-[10px] font-mono font-bold text-[#0E7AE7] uppercase">KEPUTUSAN KLIEN</span>
+              <h5 class="text-sm font-bold text-slate-900">Pilih Konsep Ini?</h5>
+              <p class="text-[11px] text-slate-500">Konfirmasi langsung ke desainer untuk penyerahan master file.</p>
+            </div>
+
+            <a id="modal-wa-btn" href="#" target="_blank" class="w-full py-3 px-4 rounded-xl bg-[#0E7AE7] hover:bg-[#085BB3] text-white text-xs font-extrabold transition-all flex items-center justify-center gap-1.5 shadow-md">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Pilih via WhatsApp</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================================================= -->
   <!-- LUXURY FOOTER                                           -->
   <!-- ======================================================= -->
   <footer class="border-t border-slate-200 py-12 px-4 text-center text-xs font-mono text-slate-500 space-y-2 bg-white">
@@ -766,93 +823,205 @@
   </footer>
 
   <!-- ======================================================= -->
-  <!-- INTERACTIVE CONTROLLER SCRIPT                           -->
+  <!-- INTERACTIVE POP-UP & BACKGROUND CONTROLLER SCRIPT       -->
   <!-- ======================================================= -->
   <script>
     lucide.createIcons();
 
-    const assetMap = {
+    // Data definition for all 5 concepts
+    const conceptsData = {
       1: {
-        stacked: {
-          light: '../assets/zalvice_1_fix.png',
-          dark: '../assets/zalvice_1_putih.png'
+        kicker: 'KONSEP 01 RESMI',
+        title: 'The Dynamic Catalyst',
+        desc: 'Inisial huruf "Z" geometris dinamis berlapis dengan gradasi Azure ke Cobalt Blue. Melambangkan akselerasi kecepatan eksekusi, kelincahan transformasi, dan dorongan katalis positif dalam memajukan bisnis klien di lanskap digital modern.',
+        usage: 'Dashboard SaaS, Mobile App Icon, Website Header, Merchandise, Kartu Nama',
+        hasLayoutSwitch: true,
+        defaultLayout: 'stacked',
+        assets: {
+          stacked: {
+            color: '../assets/zalvice_1_fix.png',
+            white: '../assets/zalvice_1_putih.png'
+          },
+          rebahan: {
+            color: '../assets/zalvice_1_rebahan_fix.png',
+            white: '../assets/zalvice_1_rebahan_putih.png'
+          }
         },
-        rebahan: {
-          light: '../assets/zalvice_1_rebahan_fix.png',
-          dark: '../assets/zalvice_1_rebahan_putih.png'
-        }
+        waText: 'Halo%20Mas%20Daru,%20kami%20resmi%20memilih%20ZALVICE%20KONSEP%2001%20(The%20Dynamic%20Catalyst)'
       },
       2: {
-        stacked: {
-          light: '../assets/zalvice_2_fix.png',
-          dark: '../assets/zalvice_2_putih.png'
+        kicker: 'KONSEP 02 RESMI',
+        title: 'The Synergy Monogram',
+        desc: 'Monogram simetris heksagonal yang mengikat elemen modul layanan terpadu (*Integrated Service Ecosystem*). Merepresentasikan stabilitas korporat, soliditas aliansi tim, serta perlindungan nilai integritas dalam setiap kemitraan strategis.',
+        usage: 'Kop Surat Resmi, Plakat Perusahaan, Signage Gedung, ID Card Karyawan, Avatar Medsos',
+        hasLayoutSwitch: true,
+        defaultLayout: 'stacked',
+        assets: {
+          stacked: {
+            color: '../assets/zalvice_2_fix.png',
+            white: '../assets/zalvice_2_putih.png'
+          },
+          rebahan: {
+            color: '../assets/zalvice_2_rebahan_fix.png',
+            white: '../assets/zalvice_2_rebahan_putih.png'
+          }
         },
-        rebahan: {
-          light: '../assets/zalvice_2_rebahan_fix.png',
-          dark: '../assets/zalvice_2_rebahan_putih.png'
-        }
+        waText: 'Halo%20Mas%20Daru,%20kami%20resmi%20memilih%20ZALVICE%20KONSEP%2002%20(The%20Synergy%20Monogram)'
       },
       3: {
-        rebahan: {
-          light: '../assets/zalvice_3_rebahan_fix_only.png',
-          dark: '../assets/zalvice_3_rebahan_fix_only_putih.png'
-        }
+        kicker: 'KONSEP 03 (REBAHAN)',
+        title: 'The Velocity Stream',
+        desc: 'Siluet horizontal aerodinamis yang mengalir tanpa batas. Dirancang secara proporsional untuk keterbacaan optimal pada header sistem digital, spanduk horizontal, navbar aplikasi, dan media luar ruang (*billboard*).',
+        usage: 'Navbar Website, Billboard, Spanduk Panggung, Kop Surat Landscape, Cap/Stempel',
+        hasLayoutSwitch: false,
+        defaultLayout: 'rebahan',
+        assets: {
+          rebahan: {
+            color: '../assets/zalvice_3_rebahan_fix_only.png',
+            white: '../assets/zalvice_3_rebahan_fix_only_putih.png'
+          }
+        },
+        waText: 'Halo%20Mas%20Daru,%20kami%20resmi%20memilih%20ZALVICE%20KONSEP%2003%20(The%20Velocity%20Stream)'
       },
       4: {
-        stacked: {
-          light: '../assets/zalvice_4_fix_only.png',
-          dark: '../assets/zalvice_4_fix_only_putih.png'
-        }
+        kicker: 'KONSEP 04 (VERTIKAL)',
+        title: 'The Apex Prism',
+        desc: 'Prisma simetris kokoh yang merepresentasikan stabilitas sistem dan ketajaman eksekusi layanan. Garis piramida puncak menegaskan wibawa Zalvice sebagai pemimpin solusi terpercaya yang tangguh menghadapi tantangan.',
+        usage: 'Buku Pedoman Perusahaan, Sampul Profil Bisnis, Banner Vertikal, Poster Presentasi',
+        hasLayoutSwitch: false,
+        defaultLayout: 'stacked',
+        assets: {
+          stacked: {
+            color: '../assets/zalvice_4_fix_only.png',
+            white: '../assets/zalvice_4_fix_only_putih.png'
+          }
+        },
+        waText: 'Halo%20Mas%20Daru,%20kami%20resmi%20memilih%20ZALVICE%20KONSEP%2004%20(The%20Apex%20Prism)'
       },
       5: {
-        rebahan: {
-          light: '../assets/zalvice_5_rebahan_fix.png',
-          dark: '../assets/zalvice_5_rebahan_putih.png'
-        }
+        kicker: 'KONSEP 05 (REBAHAN)',
+        title: 'The Precision Horizon',
+        desc: 'Garis cakrawala modern dengan ketepatan garis geometris berpresisi tinggi. Menghadirkan harmonisasi seimbang antara simbol grafis dan tipografi Zalvice dalam format horizontal kontemporer.',
+        usage: 'Header Web, Lanyard, Kemasan Produk, Signage Akrilik Pintu Kantor',
+        hasLayoutSwitch: false,
+        defaultLayout: 'rebahan',
+        assets: {
+          rebahan: {
+            color: '../assets/zalvice_5_rebahan_fix.png',
+            white: '../assets/zalvice_5_rebahan_putih.png'
+          }
+        },
+        waText: 'Halo%20Mas%20Daru,%20kami%20resmi%20memilih%20ZALVICE%20KONSEP%2005%20(The%20Precision%20Horizon)'
       }
     };
 
-    const state = {
-      1: { layout: 'stacked', canvas: 'light' },
-      2: { layout: 'stacked', canvas: 'light' },
-      3: { layout: 'rebahan', canvas: 'light' },
-      4: { layout: 'stacked', canvas: 'light' },
-      5: { layout: 'rebahan', canvas: 'light' }
-    };
+    let activeModalConcept = 1;
+    let activeModalLayout = 'stacked';
+    let activeModalBg = 'white';
 
-    function updateConceptView(num) {
-      const s = state[num];
-      const img = document.getElementById(`img-concept-${num}`);
-      const stage = document.getElementById(`stage-concept-${num}`);
+    function openConceptModal(num) {
+      activeModalConcept = num;
+      const data = conceptsData[num];
+      activeModalLayout = data.defaultLayout;
+      activeModalBg = 'white';
+
+      document.getElementById('modal-kicker').innerText = data.kicker;
+      document.getElementById('modal-title').innerText = data.title;
+      document.getElementById('modal-desc').innerText = data.desc;
+      document.getElementById('modal-usage').innerText = data.usage;
+      document.getElementById('modal-wa-btn').href = `https://wa.me/6281311506025?text=${data.waText}`;
+
+      // Show or hide orientation toggle
+      const layoutGroup = document.getElementById('modal-layout-group');
+      if (data.hasLayoutSwitch) {
+        layoutGroup.classList.remove('hidden');
+        layoutGroup.classList.add('flex');
+        layoutGroup.querySelectorAll('button').forEach((b, idx) => {
+          b.className = idx === 0 ? 'px-3 py-1 rounded-full bg-white text-slate-900 shadow-xs' : 'px-3 py-1 rounded-full text-slate-500 hover:text-slate-900';
+        });
+      } else {
+        layoutGroup.classList.remove('flex');
+        layoutGroup.classList.add('hidden');
+      }
+
+      // Reset background button styles to white active
+      document.querySelectorAll('.modal-bg-btn').forEach((b, idx) => {
+        b.className = idx === 0 ? 'modal-bg-btn active px-3 py-2 rounded-xl bg-slate-900 text-white border border-slate-800 flex items-center justify-center gap-1.5 transition-all' : 'modal-bg-btn px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 flex items-center justify-center gap-1.5 transition-all';
+      });
+
+      updateModalStage();
+      document.getElementById('concept-modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeConceptModal() {
+      document.getElementById('concept-modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target.id === 'concept-modal') {
+        closeConceptModal();
+      }
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeConceptModal();
+    });
+
+    function setModalLayout(layout, btn) {
+      activeModalLayout = layout;
+      btn.parentElement.querySelectorAll('button').forEach(b => {
+        b.className = 'px-3 py-1 rounded-full text-slate-500 hover:text-slate-900';
+      });
+      btn.className = 'px-3 py-1 rounded-full bg-white text-slate-900 shadow-xs';
+      updateModalStage();
+    }
+
+    function setModalBg(bgMode, btn) {
+      activeModalBg = bgMode;
+      document.querySelectorAll('.modal-bg-btn').forEach(b => {
+        b.className = 'modal-bg-btn px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 flex items-center justify-center gap-1.5 transition-all';
+      });
+      btn.className = 'modal-bg-btn active px-3 py-2 rounded-xl bg-slate-900 text-white border border-slate-800 flex items-center justify-center gap-1.5 transition-all';
+      updateModalStage();
+    }
+
+    function updateModalStage() {
+      const data = conceptsData[activeModalConcept];
+      const stage = document.getElementById('modal-stage');
+      const img = document.getElementById('modal-img');
+
+      const isWhiteBg = (activeModalBg === 'white');
+      const logoVersion = isWhiteBg ? 'color' : 'white';
       
-      const src = assetMap[num][s.layout][s.canvas];
+      const src = data.assets[activeModalLayout][logoVersion];
       img.src = src;
 
-      if (s.canvas === 'light') {
-        stage.style.backgroundColor = '#FFFFFF';
-        stage.style.borderColor = '#E2E8F0';
-      } else {
-        stage.style.backgroundColor = '#0B1120';
-        stage.style.borderColor = 'rgba(255,255,255,0.1)';
+      // Apply background styles to modal stage
+      switch(activeModalBg) {
+        case 'white':
+          stage.style.background = '#FFFFFF';
+          stage.style.borderColor = '#E2E8F0';
+          break;
+        case 'obsidian':
+          stage.style.background = '#0B1120';
+          stage.style.borderColor = 'rgba(255,255,255,0.1)';
+          break;
+        case 'cobalt':
+          stage.style.background = '#0E7AE7';
+          stage.style.borderColor = 'rgba(255,255,255,0.2)';
+          break;
+        case 'gradient':
+          stage.style.background = 'linear-gradient(135deg, #0E7AE7 0%, #2097FF 100%)';
+          stage.style.borderColor = 'rgba(255,255,255,0.2)';
+          break;
+        case 'graphite':
+          stage.style.background = 'radial-gradient(circle at 50% 50%, #1E293B 0%, #0F172A 100%)';
+          stage.style.borderColor = 'rgba(255,255,255,0.15)';
+          break;
       }
-    }
-
-    function setConceptLayout(num, layout, btn) {
-      state[num].layout = layout;
-      btn.parentElement.querySelectorAll('button').forEach(b => {
-        b.className = 'px-2.5 py-1 rounded-full text-slate-500 hover:text-slate-900';
-      });
-      btn.className = 'px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs';
-      updateConceptView(num);
-    }
-
-    function setConceptCanvas(num, canvas, btn) {
-      state[num].canvas = canvas;
-      btn.parentElement.querySelectorAll('button').forEach(b => {
-        b.className = 'px-2.5 py-1 rounded-full text-slate-500 hover:text-slate-900';
-      });
-      btn.className = 'px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs';
-      updateConceptView(num);
     }
 
     function copyColor(code, name) {
