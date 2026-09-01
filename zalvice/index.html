@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>ZALVICE — Proposal Identitas Visual & Sistem Logo | SYMP Studio</title>
+  
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            zal: {
+              cobalt: '#0E7AE7',
+              cobaltDark: '#085BB3',
+              azure: '#2097FF',
+              azureLight: '#60B4FF',
+              dark: '#0B1120',
+              darkSurface: '#111A2E',
+              slate: '#0F172A',
+              slateMuted: '#64748B',
+              creamBg: '#F8FAFC'
+            }
+          },
+          fontFamily: {
+            jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    :root {
+      --zal-cobalt: #0E7AE7;
+      --zal-azure: #2097FF;
+      --zal-dark: #0B1120;
+      --agency-spring: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #F8FAFC;
+      color: #0F172A;
+      overflow-x: hidden;
+      letter-spacing: -0.025em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Double-Bezel Hardware Architecture */
+    .bezel-shell {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 28px;
+      box-shadow: 0 4px 24px -6px rgba(14, 122, 231, 0.04);
+      transition: all 0.4s var(--agency-spring);
+    }
+    @media (min-width: 640px) {
+      .bezel-shell {
+        border-radius: 36px;
+      }
+    }
+    .bezel-shell:hover {
+      box-shadow: 0 20px 48px -12px rgba(14, 122, 231, 0.14);
+      border-color: rgba(14, 122, 231, 0.35);
+    }
+
+    /* Button-in-Button Architecture */
+    .btn-island {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 10px 10px 24px;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 13px;
+      transition: all 0.3s var(--agency-spring);
+    }
+    .btn-island:active {
+      transform: scale(0.98);
+    }
+    .btn-island-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 9999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s var(--agency-spring);
+    }
+    .btn-island:hover .btn-island-icon {
+      transform: translateX(2px) translateY(-1px) scale(1.05);
+    }
+
+    /* Swatch Box */
+    .swatch-box {
+      border-radius: 20px;
+      border: 1px solid #E2E8F0;
+      transition: all 0.3s var(--agency-spring);
+      cursor: pointer;
+    }
+    .swatch-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px -6px rgba(14, 122, 231, 0.2);
+      border-color: #0E7AE7;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="selection:bg-[#0E7AE7] selection:text-white">
+
+  <!-- ======================================================= -->
+  <!-- FLOATING EDITORIAL TOP BAR                              -->
+  <!-- ======================================================= -->
+  <header class="sticky top-0 z-50 bg-[#F8FAFC]/90 backdrop-blur-xl border-b border-slate-200/80 px-4 sm:px-8 py-3.5 transition-all">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      
+      <!-- Brand & Project Title -->
+      <a href="../" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 rounded-xl bg-[#0E7AE7] text-white flex items-center justify-center font-black shadow-xs">
+          <i data-lucide="zap" class="w-4 h-4"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-sm font-extrabold text-slate-950 tracking-tight leading-none group-hover:text-[#0E7AE7] transition-colors">ZALVICE</span>
+          <span class="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-wider mt-0.5">BRAND PROPOSAL DECK &bull; SYMP</span>
+        </div>
+      </a>
+
+      <!-- Center Anchor Tabs (Desktop) -->
+      <nav class="hidden md:flex items-center gap-1 p-1 bg-white rounded-full border border-slate-200 shadow-xs text-xs font-bold text-slate-600">
+        <a href="#variants" class="px-3.5 py-1.5 rounded-full hover:text-slate-950 hover:bg-slate-50 transition-all text-[#0E7AE7]">5 Konsep Logo</a>
+        <a href="#philosophy" class="px-3.5 py-1.5 rounded-full hover:text-slate-950 hover:bg-slate-50 transition-all">4 Pilar Nilai</a>
+        <a href="#colors" class="px-3.5 py-1.5 rounded-full hover:text-slate-950 hover:bg-slate-50 transition-all">Sistem Warna</a>
+        <a href="#mockups" class="px-3.5 py-1.5 rounded-full hover:text-slate-950 hover:bg-slate-50 transition-all">Penerapan</a>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="flex items-center gap-2">
+        <a href="#voting" class="btn-island bg-[#0E7AE7] text-white hover:bg-[#085BB3] shadow-sm">
+          <span>Pilih Opsi Logo</span>
+          <span class="btn-island-icon bg-white/20">
+            <i data-lucide="arrow-down" class="w-3.5 h-3.5"></i>
+          </span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ======================================================= -->
+  <!-- MAIN PRESENTATION BODY                                  -->
+  <!-- ======================================================= -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-8 py-10 sm:py-20 space-y-16 sm:space-y-28">
+
+    <!-- ======================================================= -->
+    <!-- HERO SECTION: THE IDENTITY HERO                        -->
+    <!-- ======================================================= -->
+    <section class="space-y-6 max-w-4xl">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 text-[#0E7AE7] text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider border border-blue-100">
+        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+        <span>PROPOSAL IDENTITAS VISUAL RESMI &bull; ZALVICE 2026</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-6xl lg:text-7xl font-extrabold text-slate-950 tracking-tight leading-[1.06]">
+        Akselerasi Solusi. <br />
+        <span class="text-[#0E7AE7]">Presisi &amp; Keandalan Layanan.</span>
+      </h1>
+
+      <p class="text-sm sm:text-lg text-slate-600 font-normal leading-relaxed max-w-3xl">
+        Proposal identitas merek untuk <strong>ZALVICE</strong> (<em>Zenith &bull; Alliance &bull; Service</em>). Dirancang dengan estetika modern, garis geometris presisi tinggi, dan kalibrasi warna Cobalt Apex Blue yang memancarkan kredibilitas teknologi dan layanan berstandar internasional.
+      </p>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 01: 5 KONSEP LOGO RESMI INTERAKTIF              -->
+    <!-- ======================================================= -->
+    <section id="variants" class="space-y-10">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-200 pb-4">
+        <div class="border-l-2 border-[#0E7AE7] pl-3 sm:pl-4">
+          <span class="text-[11px] font-mono font-bold tracking-widest text-[#0E7AE7] uppercase">5 MASTER LOGO DIRECTIONS</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mt-1">
+            Eksplorasi 5 Konsep Desain Logo ZALVICE
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 font-mono">
+            Gunakan tombol format (Vertikal / Rebahan) dan kanvas (Light / Dark) untuk simulasi interaktif
+          </p>
+        </div>
+      </div>
+
+      <!-- SHOWCASE CARDS CONTAINER -->
+      <div class="space-y-10">
+
+        <!-- =================================================== -->
+        <!-- KONSEP 01: THE DYNAMIC CATALYST                     -->
+        <!-- =================================================== -->
+        <div class="bezel-shell p-6 sm:p-10 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+            <div>
+              <span class="px-2.5 py-1 rounded-full bg-blue-50 text-[#0E7AE7] font-mono text-[11px] font-bold">
+                KONSEP 01 RESMI
+              </span>
+              <h3 class="text-xl sm:text-2xl font-extrabold text-slate-950 mt-1.5">The Dynamic Catalyst</h3>
+            </div>
+            
+            <!-- Format & Canvas Switcher -->
+            <div class="flex flex-wrap items-center gap-2">
+              <div class="flex items-center gap-1 p-1 bg-slate-100 rounded-full text-xs font-bold">
+                <button onclick="setConceptLayout(1, 'stacked', this)" class="px-3 py-1 rounded-full bg-white text-slate-900 shadow-xs">Vertikal</button>
+                <button onclick="setConceptLayout(1, 'rebahan', this)" class="px-3 py-1 rounded-full text-slate-500 hover:text-slate-900">Rebahan</button>
+              </div>
+              <div class="flex items-center gap-1 p-1 bg-slate-100 rounded-full text-xs font-bold">
+                <button onclick="setConceptCanvas(1, 'light', this)" class="px-3 py-1 rounded-full bg-white text-slate-900 shadow-xs">Light</button>
+                <button onclick="setConceptCanvas(1, 'dark', this)" class="px-3 py-1 rounded-full text-slate-500 hover:text-slate-900">Dark</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Canvas Stage -->
+          <div id="stage-concept-1" class="rounded-3xl bg-white border border-slate-200 p-8 sm:p-14 flex items-center justify-center min-h-[260px] sm:min-h-[340px] shadow-inner transition-colors duration-400">
+            <img id="img-concept-1" src="../assets/zalvice_1_fix.png" alt="Zalvice Konsep 01" class="max-h-44 sm:max-h-56 w-auto object-contain transition-transform duration-300 transform hover:scale-105" />
+          </div>
+
+          <!-- Philosophy Description & CTA -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+            <div class="md:col-span-2 space-y-2">
+              <h4 class="text-sm font-extrabold text-slate-950 flex items-center gap-2">
+                <i data-lucide="sparkles" class="w-4 h-4 text-[#0E7AE7]"></i>
+                <span>Karakter Geometris Dinamis &bull; Simbol Akselerasi</span>
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Menghadirkan inisial huruf 'Z' yang terdekonstruksi secara presisi dengan gradasi warna Azure ke Cobalt Blue. Melambangkan akselerasi kecepatan eksekusi dan transformasi layanan yang adaptif di era digital modern.
+              </p>
+            </div>
+            <div class="flex items-center md:justify-end">
+              <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20ZALVICE%20KONSEP%2001%20(The%20Dynamic%20Catalyst)" target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-full bg-[#0E7AE7] hover:bg-[#085BB3] text-white text-xs font-extrabold transition-all flex items-center justify-center gap-2 shadow-sm">
+                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                <span>Pilih Konsep 01 via WA</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- =================================================== -->
+        <!-- KONSEP 02: THE SYNERGY MONOGRAM                     -->
+        <!-- =================================================== -->
+        <div class="bezel-shell p-6 sm:p-10 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+            <div>
+              <span class="px-2.5 py-1 rounded-full bg-blue-50 text-[#0E7AE7] font-mono text-[11px] font-bold">
+                KONSEP 02 RESMI
+              </span>
+              <h3 class="text-xl sm:text-2xl font-extrabold text-slate-950 mt-1.5">The Synergy Monogram</h3>
+            </div>
+            
+            <!-- Format & Canvas Switcher -->
+            <div class="flex flex-wrap items-center gap-2">
+              <div class="flex items-center gap-1 p-1 bg-slate-100 rounded-full text-xs font-bold">
+                <button onclick="setConceptLayout(2, 'stacked', this)" class="px-3 py-1 rounded-full bg-white text-slate-900 shadow-xs">Vertikal</button>
+                <button onclick="setConceptLayout(2, 'rebahan', this)" class="px-3 py-1 rounded-full text-slate-500 hover:text-slate-900">Rebahan</button>
+              </div>
+              <div class="flex items-center gap-1 p-1 bg-slate-100 rounded-full text-xs font-bold">
+                <button onclick="setConceptCanvas(2, 'light', this)" class="px-3 py-1 rounded-full bg-white text-slate-900 shadow-xs">Light</button>
+                <button onclick="setConceptCanvas(2, 'dark', this)" class="px-3 py-1 rounded-full text-slate-500 hover:text-slate-900">Dark</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Canvas Stage -->
+          <div id="stage-concept-2" class="rounded-3xl bg-white border border-slate-200 p-8 sm:p-14 flex items-center justify-center min-h-[260px] sm:min-h-[340px] shadow-inner transition-colors duration-400">
+            <img id="img-concept-2" src="../assets/zalvice_2_fix.png" alt="Zalvice Konsep 02" class="max-h-44 sm:max-h-56 w-auto object-contain transition-transform duration-300 transform hover:scale-105" />
+          </div>
+
+          <!-- Philosophy Description & CTA -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+            <div class="md:col-span-2 space-y-2">
+              <h4 class="text-sm font-extrabold text-slate-950 flex items-center gap-2">
+                <i data-lucide="layers" class="w-4 h-4 text-[#0E7AE7]"></i>
+                <span>Sinergi Terpadu &bull; Ekosistem Layanan Terintegrasi</span>
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Struktur monogram yang menggabungkan elemen modul interkoneksi. Merepresentasikan integrasi berbagai divisi solusi dalam satu bendera Zalvice yang solid, kokoh, dan berdaya saing tinggi.
+              </p>
+            </div>
+            <div class="flex items-center md:justify-end">
+              <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20ZALVICE%20KONSEP%2002%20(The%20Synergy%20Monogram)" target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-full bg-[#0E7AE7] hover:bg-[#085BB3] text-white text-xs font-extrabold transition-all flex items-center justify-center gap-2 shadow-sm">
+                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                <span>Pilih Konsep 02 via WA</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- =================================================== -->
+        <!-- KONSEP 03: THE VELOCITY STREAM (REBAHAN ONLY)       -->
+        <!-- =================================================== -->
+        <div class="bezel-shell p-6 sm:p-10 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+            <div>
+              <span class="px-2.5 py-1 rounded-full bg-blue-50 text-[#0E7AE7] font-mono text-[11px] font-bold">
+                KONSEP 03 RESMI (FORMAT REBAHAN)
+              </span>
+              <h3 class="text-xl sm:text-2xl font-extrabold text-slate-950 mt-1.5">The Velocity Stream</h3>
+            </div>
+            
+            <!-- Canvas Switcher -->
+            <div class="flex items-center gap-1 p-1 bg-slate-100 rounded-full text-xs font-bold">
+              <button onclick="setConceptCanvas(3, 'light', this)" class="px-3 py-1 rounded-full bg-white text-slate-900 shadow-xs">Light</button>
+              <button onclick="setConceptCanvas(3, 'dark', this)" class="px-3 py-1 rounded-full text-slate-500 hover:text-slate-900">Dark</button>
+            </div>
+          </div>
+
+          <!-- Canvas Stage -->
+          <div id="stage-concept-3" class="rounded-3xl bg-white border border-slate-200 p-8 sm:p-14 flex items-center justify-center min-h-[220px] sm:min-h-[280px] shadow-inner transition-colors duration-400">
+            <img id="img-concept-3" src="../assets/zalvice_3_rebahan_fix_only.png" alt="Zalvice Konsep 03" class="max-h-24 sm:max-h-32 w-auto object-contain transition-transform duration-300 transform hover:scale-105" />
+          </div>
+
+          <!-- Philosophy Description & CTA -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+            <div class="md:col-span-2 space-y-2">
+              <h4 class="text-sm font-extrabold text-slate-950 flex items-center gap-2">
+                <i data-lucide="wind" class="w-4 h-4 text-[#0E7AE7]"></i>
+                <span>Komposisi Horizontal Streamline &bull; Header &amp; Signage Optimal</span>
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Format landscape ramping yang dirancang optimal untuk tata letak navbar website, signage kantor horizontal, kop surat formal, dan banner digital.
+              </p>
+            </div>
+            <div class="flex items-center md:justify-end">
+              <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20ZALVICE%20KONSEP%2003%20(The%20Velocity%20Stream)" target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-full bg-[#0E7AE7] hover:bg-[#085BB3] text-white text-xs font-extrabold transition-all flex items-center justify-center gap-2 shadow-sm">
+                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                <span>Pilih Konsep 03 via WA</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- =================================================== -->
+        <!-- KONSEP 04: THE APEX PRISM (STACKED ONLY)            -->
+        <!-- =================================================== -->
+        <div class="bezel-shell p-6 sm:p-10 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+            <div>
+              <span class="px-2.5 py-1 rounded-full bg-blue-50 text-[#0E7AE7] font-mono text-[11px] font-bold">
+                KONSEP 04 RESMI (FORMAT VERTIKAL)
+              </span>
+              <h3 class="text-xl sm:text-2xl font-extrabold text-slate-950 mt-1.5">The Apex Prism</h3>
+            </div>
+            
+            <!-- Canvas Switcher -->
+            <div class="flex items-center gap-1 p-1 bg-slate-100 rounded-full text-xs font-bold">
+              <button onclick="setConceptCanvas(4, 'light', this)" class="px-3 py-1 rounded-full bg-white text-slate-900 shadow-xs">Light</button>
+              <button onclick="setConceptCanvas(4, 'dark', this)" class="px-3 py-1 rounded-full text-slate-500 hover:text-slate-900">Dark</button>
+            </div>
+          </div>
+
+          <!-- Canvas Stage -->
+          <div id="stage-concept-4" class="rounded-3xl bg-white border border-slate-200 p-8 sm:p-14 flex items-center justify-center min-h-[260px] sm:min-h-[340px] shadow-inner transition-colors duration-400">
+            <img id="img-concept-4" src="../assets/zalvice_4_fix_only.png" alt="Zalvice Konsep 04" class="max-h-44 sm:max-h-56 w-auto object-contain transition-transform duration-300 transform hover:scale-105" />
+          </div>
+
+          <!-- Philosophy Description & CTA -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+            <div class="md:col-span-2 space-y-2">
+              <h4 class="text-sm font-extrabold text-slate-950 flex items-center gap-2">
+                <i data-lucide="triangle" class="w-4 h-4 text-[#0E7AE7]"></i>
+                <span>Prisma Simetris &bull; Stabilitas Fondasi Korporat</span>
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Penekanan pada pilar vertikal yang kokoh dan seimbang. Menegaskan wibawa Zalvice sebagai penyedia solusi bisnis yang berintegritas dan tahan terhadap fluktuasi pasar.
+              </p>
+            </div>
+            <div class="flex items-center md:justify-end">
+              <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20ZALVICE%20KONSEP%2004%20(The%20Apex%20Prism)" target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-full bg-[#0E7AE7] hover:bg-[#085BB3] text-white text-xs font-extrabold transition-all flex items-center justify-center gap-2 shadow-sm">
+                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                <span>Pilih Konsep 04 via WA</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- =================================================== -->
+        <!-- KONSEP 05: THE PRECISION HORIZON (REBAHAN ONLY)     -->
+        <!-- =================================================== -->
+        <div class="bezel-shell p-6 sm:p-10 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+            <div>
+              <span class="px-2.5 py-1 rounded-full bg-blue-50 text-[#0E7AE7] font-mono text-[11px] font-bold">
+                KONSEP 05 RESMI (FORMAT REBAHAN)
+              </span>
+              <h3 class="text-xl sm:text-2xl font-extrabold text-slate-950 mt-1.5">The Precision Horizon</h3>
+            </div>
+            
+            <!-- Canvas Switcher -->
+            <div class="flex items-center gap-1 p-1 bg-slate-100 rounded-full text-xs font-bold">
+              <button onclick="setConceptCanvas(5, 'light', this)" class="px-3 py-1 rounded-full bg-white text-slate-900 shadow-xs">Light</button>
+              <button onclick="setConceptCanvas(5, 'dark', this)" class="px-3 py-1 rounded-full text-slate-500 hover:text-slate-900">Dark</button>
+            </div>
+          </div>
+
+          <!-- Canvas Stage -->
+          <div id="stage-concept-5" class="rounded-3xl bg-white border border-slate-200 p-8 sm:p-14 flex items-center justify-center min-h-[220px] sm:min-h-[280px] shadow-inner transition-colors duration-400">
+            <img id="img-concept-5" src="../assets/zalvice_5_rebahan_fix.png" alt="Zalvice Konsep 05" class="max-h-24 sm:max-h-32 w-auto object-contain transition-transform duration-300 transform hover:scale-105" />
+          </div>
+
+          <!-- Philosophy Description & CTA -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+            <div class="md:col-span-2 space-y-2">
+              <h4 class="text-sm font-extrabold text-slate-950 flex items-center gap-2">
+                <i data-lucide="compass" class="w-4 h-4 text-[#0E7AE7]"></i>
+                <span>Garis Cakrawala Modern &bull; Visi Masa Depan</span>
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                Harmonisasi proporsional antara ikon grafis dan logotype Zalvice yang tajam, menghadirkan daya baca maksimal dalam berbagai skala media visual.
+              </p>
+            </div>
+            <div class="flex items-center md:justify-end">
+              <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20ZALVICE%20KONSEP%2005%20(The%20Precision%20Horizon)" target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-full bg-[#0E7AE7] hover:bg-[#085BB3] text-white text-xs font-extrabold transition-all flex items-center justify-center gap-2 shadow-sm">
+                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                <span>Pilih Konsep 05 via WA</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 02: 4 PILAR NILAI ESENSI ZALVICE               -->
+    <!-- ======================================================= -->
+    <section id="philosophy" class="space-y-8">
+      
+      <div class="border-l-2 border-[#0E7AE7] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#0E7AE7] uppercase">BRAND ESSENCE &amp; PILLARS</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mt-1">
+          4 Pilar Nilai Inti Brand ZALVICE
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 font-mono">
+          "Kecepatan &bull; Akurasi &bull; Sinergi &bull; Keandalan Layanan"
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Pilar 1 -->
+        <div class="bezel-shell p-6 space-y-4 bg-white">
+          <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#2097FF] flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="zap" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 01</span>
+            <h3 class="text-base font-extrabold text-slate-950">Velocity (Kecepatan)</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Menghadirkan alur kerja yang lincah, tanggap terhadap dinamika pasar, dan mempercepat pertumbuhan bisnis klien tanpa hambatan birokrasi.
+          </p>
+        </div>
+
+        <!-- Pilar 2 -->
+        <div class="bezel-shell p-6 space-y-4 bg-white">
+          <div class="w-12 h-12 rounded-2xl bg-blue-50 text-[#0E7AE7] flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="target" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 02</span>
+            <h3 class="text-base font-extrabold text-slate-950">Accuracy (Akurasi)</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Eksekusi solusi berbasis data presisi dan metode teruji yang memastikan setiap langkah strategi menghasilkan dampak nyata.
+          </p>
+        </div>
+
+        <!-- Pilar 3 -->
+        <div class="bezel-shell p-6 space-y-4 bg-white">
+          <div class="w-12 h-12 rounded-2xl bg-slate-100 text-slate-800 flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="network" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 03</span>
+            <h3 class="text-base font-extrabold text-slate-950">Synergy (Sinergi)</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Kemitraan strategis yang solid dan kolaboratif, menghubungkan berbagai potensi untuk mencapai tujuan bersama yang lebih besar.
+          </p>
+        </div>
+
+        <!-- Pilar 4 -->
+        <div class="bezel-shell p-6 space-y-4 bg-white">
+          <div class="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 04</span>
+            <h3 class="text-base font-extrabold text-slate-950">Reliability (Keandalan)</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Fondasi reputasi yang dapat diandalkan setiap saat, memberikan rasa aman dan ketenangan bagi seluruh pemangku kepentingan.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 03: COLOR SCIENCE & PANTONE CODES               -->
+    <!-- ======================================================= -->
+    <section id="colors" class="space-y-8">
+      
+      <div class="border-l-2 border-[#0E7AE7] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#0E7AE7] uppercase">COLOR CALIBRATION</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mt-1">
+          Sistem Warna Resmi ZALVICE (Formula 70-20-10)
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 font-mono">
+          Klik pada setiap swatch untuk menyalin kode warna HEX ke clipboard secara instan
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Swatch 1: Cobalt Apex Blue -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#0E7AE7', 'Cobalt Apex Blue')">
+          <div class="h-28 rounded-2xl bg-[#0E7AE7] flex items-end justify-end p-3 text-white shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">WARNA UTAMA // 70%</span>
+              <h4 class="text-sm font-bold text-slate-950">Cobalt Apex Blue</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-[#0E7AE7]">#0E7AE7</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>14, 122, 231</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">PANTONE:</span><span>2174 C</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swatch 2: Electric Azure -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#2097FF', 'Electric Azure')">
+          <div class="h-28 rounded-2xl bg-[#2097FF] flex items-end justify-end p-3 text-white shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">WARNA AKSEN // 20%</span>
+              <h4 class="text-sm font-bold text-slate-950">Electric Azure</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-[#2097FF]">#2097FF</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>32, 151, 255</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">PANTONE:</span><span>2925 C</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swatch 3: Midnight Obsidian -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#0B1120', 'Midnight Obsidian')">
+          <div class="h-28 rounded-2xl bg-[#0B1120] flex items-end justify-end p-3 text-white shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">KANVAS GELAP // 10%</span>
+              <h4 class="text-sm font-bold text-slate-950">Midnight Obsidian</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-slate-950">#0B1120</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>11, 17, 32</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">PANTONE:</span><span>Black 6 C</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swatch 4: Pure White Ceramic -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#FFFFFF', 'Pure Light Ceramic')">
+          <div class="h-28 rounded-2xl bg-white border border-slate-200 flex items-end justify-end p-3 text-slate-700 shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">LATAR TERANG</span>
+              <h4 class="text-sm font-bold text-slate-950">Pure Ceramic White</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-slate-500">#FFFFFF</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">RGB:</span><span>255, 255, 255</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">PAPER:</span><span>100% Bright White</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 04: REAL-WORLD APPLICATIONS                     -->
+    <!-- ======================================================= -->
+    <section id="mockups" class="space-y-8">
+      
+      <div class="border-l-2 border-[#0E7AE7] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#0E7AE7] uppercase">APLIKASI DUNIA NYATA</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight mt-1">
+          Simulasi Penerapan di Berbagai Media
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- App 1: Website Header & Digital SaaS -->
+        <div class="bezel-shell p-6 space-y-4 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+              <span class="text-xs font-mono font-bold text-[#0E7AE7] uppercase">01. DIGITAL HEADER &amp; APP</span>
+              <i data-lucide="globe" class="w-4 h-4 text-slate-400"></i>
+            </div>
+            <div class="h-36 rounded-2xl bg-[#0B1120] flex items-center justify-between px-6 py-4 shadow-inner">
+              <img src="../assets/zalvice_1_rebahan_putih.png" alt="Zalvice Web Navbar" class="max-h-7 object-contain" />
+              <span class="px-3 py-1 rounded-full bg-[#0E7AE7] text-white text-[10px] font-bold">Portal Client</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-950">Navbar Web &amp; Dashboard SaaS</h4>
+            <p class="text-xs text-slate-600">Logo landscape tampil tajam dan proporsional pada header sistem web dan dashboard layanan klien.</p>
+          </div>
+        </div>
+
+        <!-- App 2: Corporate Business Card -->
+        <div class="bezel-shell p-6 space-y-4 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+              <span class="text-xs font-mono font-bold text-[#2097FF] uppercase">02. KARTU NAMA &amp; STATIONERY</span>
+              <i data-lucide="credit-card" class="w-4 h-4 text-slate-400"></i>
+            </div>
+            <div class="h-36 rounded-2xl bg-white border border-slate-200 flex flex-col items-center justify-center p-4 shadow-sm space-y-2">
+              <img src="../assets/zalvice_1_fix.png" alt="Zalvice Card" class="max-h-14 object-contain" />
+              <span class="text-[10px] font-mono text-slate-400">Integrated Service Solutions</span>
+            </div>
+            <h4 class="text-sm font-bold text-slate-950">Kartu Nama Eksekutif</h4>
+            <p class="text-xs text-slate-600">Penerapan cetak foil perak / spot UV timbul di atas kertas *cotton cardstock* putih tebal.</p>
+          </div>
+        </div>
+
+        <!-- App 3: ID Card & Lanyard -->
+        <div class="bezel-shell p-6 space-y-4 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+              <span class="text-xs font-mono font-bold text-slate-700 uppercase">03. MERCHANDISE &amp; LANYARD</span>
+              <i data-lucide="badge" class="w-4 h-4 text-slate-400"></i>
+            </div>
+            <div class="h-36 rounded-2xl bg-gradient-to-br from-[#0E7AE7] to-[#0B1120] flex items-center justify-center p-4 shadow-inner">
+              <img src="../assets/zalvice_2_putih.png" alt="ID Card Logo" class="max-h-16 object-contain" />
+            </div>
+            <h4 class="text-sm font-bold text-slate-950">ID Card Karyawan &amp; Lanyard</h4>
+            <p class="text-xs text-slate-600">Simbol terlihat jelas dari kejauhan pada kartu identitas, seragam, dan perlengkapan kantor resmi.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 05: DIRECT VOTING & APPROVAL HUB (WHATSAPP)    -->
+    <!-- ======================================================= -->
+    <section id="voting" class="p-8 sm:p-14 rounded-[36px] bg-[#0B1120] text-white border border-slate-800 shadow-2xl space-y-8">
+      
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-mono font-bold">
+          <i data-lucide="vote" class="w-3.5 h-3.5"></i>
+          <span>FORUM KEPUTUSAN KLIEN</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+          Pilih Opsi Logo Resmi ZALVICE
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+          Tentukan opsi konsep logo terbaik untuk merek Anda, lalu klik salah satu tombol di bawah untuk langsung mengonfirmasi dan meminta paket master file vektor komplit (.AI, .EPS, .SVG, .PDF, .PNG High-Res) ke Mas Daru (SYMP Studio).
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+        
+        <!-- Vote 1 -->
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20ZALVICE%20KONSEP%2001%20(The%20Dynamic%20Catalyst)" target="_blank" class="p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#0E7AE7] transition-all space-y-2.5 text-center group">
+          <div class="text-sm font-bold text-white group-hover:text-[#2097FF] transition-colors">KONSEP 01</div>
+          <p class="text-[11px] text-slate-400">The Dynamic Catalyst (Stacked &amp; Rebahan)</p>
+          <div class="py-2 px-3 rounded-xl bg-[#0E7AE7] text-white text-xs font-extrabold flex items-center justify-center gap-1 shadow-md">
+            <span>Pilih Konsep 01</span>
+          </div>
+        </a>
+
+        <!-- Vote 2 -->
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20ZALVICE%20KONSEP%2002%20(The%20Synergy%20Monogram)" target="_blank" class="p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#0E7AE7] transition-all space-y-2.5 text-center group">
+          <div class="text-sm font-bold text-white group-hover:text-[#2097FF] transition-colors">KONSEP 02</div>
+          <p class="text-[11px] text-slate-400">The Synergy Monogram (Stacked &amp; Rebahan)</p>
+          <div class="py-2 px-3 rounded-xl bg-[#0E7AE7] text-white text-xs font-extrabold flex items-center justify-center gap-1 shadow-md">
+            <span>Pilih Konsep 02</span>
+          </div>
+        </a>
+
+        <!-- Vote 3 -->
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20ZALVICE%20KONSEP%2003%20(The%20Velocity%20Stream)" target="_blank" class="p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#0E7AE7] transition-all space-y-2.5 text-center group">
+          <div class="text-sm font-bold text-white group-hover:text-[#2097FF] transition-colors">KONSEP 03</div>
+          <p class="text-[11px] text-slate-400">The Velocity Stream (Landscape Only)</p>
+          <div class="py-2 px-3 rounded-xl bg-[#0E7AE7] text-white text-xs font-extrabold flex items-center justify-center gap-1 shadow-md">
+            <span>Pilih Konsep 03</span>
+          </div>
+        </a>
+
+        <!-- Vote 4 -->
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20ZALVICE%20KONSEP%2004%20(The%20Apex%20Prism)" target="_blank" class="p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#0E7AE7] transition-all space-y-2.5 text-center group">
+          <div class="text-sm font-bold text-white group-hover:text-[#2097FF] transition-colors">KONSEP 04</div>
+          <p class="text-[11px] text-slate-400">The Apex Prism (Stacked Vertical Only)</p>
+          <div class="py-2 px-3 rounded-xl bg-[#0E7AE7] text-white text-xs font-extrabold flex items-center justify-center gap-1 shadow-md">
+            <span>Pilih Konsep 04</span>
+          </div>
+        </a>
+
+        <!-- Vote 5 -->
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20memilih%20ZALVICE%20KONSEP%2005%20(The%20Precision%20Horizon)" target="_blank" class="p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#0E7AE7] transition-all space-y-2.5 text-center group sm:col-span-2 lg:col-span-1">
+          <div class="text-sm font-bold text-white group-hover:text-[#2097FF] transition-colors">KONSEP 05</div>
+          <p class="text-[11px] text-slate-400">The Precision Horizon (Landscape Only)</p>
+          <div class="py-2 px-3 rounded-xl bg-[#0E7AE7] text-white text-xs font-extrabold flex items-center justify-center gap-1 shadow-md">
+            <span>Pilih Konsep 05</span>
+          </div>
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ======================================================= -->
+  <!-- LUXURY FOOTER                                           -->
+  <!-- ======================================================= -->
+  <footer class="border-t border-slate-200 py-12 px-4 text-center text-xs font-mono text-slate-500 space-y-2 bg-white">
+    <p>&copy; 2026 <strong>ZALVICE Identity System</strong> &bull; Directed by <strong class="text-[#0E7AE7]">DARU FAHMAA MULIAWAN</strong> &bull; SYMP Studio</p>
+    <p class="text-[10px] text-slate-400 font-bold tracking-wider uppercase">
+      PROFESSIONAL BRAND &bull; LOGO PROPOSAL DECK
+    </p>
+  </footer>
+
+  <!-- ======================================================= -->
+  <!-- INTERACTIVE CONTROLLER SCRIPT                           -->
+  <!-- ======================================================= -->
+  <script>
+    lucide.createIcons();
+
+    // Map of asset paths
+    const assetMap = {
+      1: {
+        stacked: {
+          light: '../assets/zalvice_1_fix.png',
+          dark: '../assets/zalvice_1_putih.png'
+        },
+        rebahan: {
+          light: '../assets/zalvice_1_rebahan_fix.png',
+          dark: '../assets/zalvice_1_rebahan_putih.png'
+        }
+      },
+      2: {
+        stacked: {
+          light: '../assets/zalvice_2_fix.png',
+          dark: '../assets/zalvice_2_putih.png'
+        },
+        rebahan: {
+          light: '../assets/zalvice_2_rebahan_fix.png',
+          dark: '../assets/zalvice_2_rebahan_putih.png'
+        }
+      },
+      3: {
+        rebahan: {
+          light: '../assets/zalvice_3_rebahan_fix_only.png',
+          dark: '../assets/zalvice_3_rebahan_fix_only_putih.png'
+        }
+      },
+      4: {
+        stacked: {
+          light: '../assets/zalvice_4_fix_only.png',
+          dark: '../assets/zalvice_4_fix_only_putih.png'
+        }
+      },
+      5: {
+        rebahan: {
+          light: '../assets/zalvice_5_rebahan_fix.png',
+          dark: '../assets/zalvice_5_rebahan_putih.png'
+        }
+      }
+    };
+
+    // Current states
+    const state = {
+      1: { layout: 'stacked', canvas: 'light' },
+      2: { layout: 'stacked', canvas: 'light' },
+      3: { layout: 'rebahan', canvas: 'light' },
+      4: { layout: 'stacked', canvas: 'light' },
+      5: { layout: 'rebahan', canvas: 'light' }
+    };
+
+    function updateConceptView(num) {
+      const s = state[num];
+      const img = document.getElementById(`img-concept-${num}`);
+      const stage = document.getElementById(`stage-concept-${num}`);
+      
+      const src = assetMap[num][s.layout][s.canvas];
+      img.src = src;
+
+      if (s.canvas === 'light') {
+        stage.style.backgroundColor = '#FFFFFF';
+        stage.style.borderColor = '#E2E8F0';
+      } else {
+        stage.style.backgroundColor = '#0B1120';
+        stage.style.borderColor = 'rgba(255,255,255,0.1)';
+      }
+    }
+
+    function setConceptLayout(num, layout, btn) {
+      state[num].layout = layout;
+      btn.parentElement.querySelectorAll('button').forEach(b => {
+        b.className = 'px-3 py-1 rounded-full text-slate-500 hover:text-slate-900';
+      });
+      btn.className = 'px-3 py-1 rounded-full bg-white text-slate-900 shadow-xs';
+      updateConceptView(num);
+    }
+
+    function setConceptCanvas(num, canvas, btn) {
+      state[num].canvas = canvas;
+      btn.parentElement.querySelectorAll('button').forEach(b => {
+        b.className = 'px-3 py-1 rounded-full text-slate-500 hover:text-slate-900';
+      });
+      btn.className = 'px-3 py-1 rounded-full bg-white text-slate-900 shadow-xs';
+      updateConceptView(num);
+    }
+
+    function copyColor(code, name) {
+      navigator.clipboard.writeText(code).then(() => {
+        const toast = document.createElement('div');
+        toast.className = 'fixed bottom-6 right-6 bg-[#0B1120] text-white text-xs font-mono py-3 px-5 rounded-2xl shadow-2xl z-50 flex items-center gap-2 border border-white/20 animate-bounce';
+        toast.innerHTML = `<span class="w-2 h-2 rounded-full bg-[#2097FF]"></span> Kode <strong>${code}</strong> (${name}) berhasil disalin!`;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 2500);
+      });
+    }
+  </script>
+</body>
+</html>
