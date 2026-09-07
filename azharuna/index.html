@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>Azharuna Group — Proposal Identitas Visual & Sistem Logo | SYMP Studio</title>
+  <title>Logo Presentation — Azharuna Group by SYMP Studio</title>
   
   <!-- Google Fonts: Plus Jakarta Sans Only -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,10 +59,10 @@
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #F8FAFC;
+      background-color: #FFFFFF;
       color: #0F172A;
       overflow-x: hidden;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.025em;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -128,12 +128,12 @@
     }
   </style>
 </head>
-<body class="selection:bg-[#8D222E] selection:text-white">
+<body class="selection:bg-[#8D222E] selection:text-white bg-white">
 
   <!-- ======================================================= -->
   <!-- TOP NAVIGATION BAR                                      -->
   <!-- ======================================================= -->
-  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-slate-200/80 px-4 sm:px-8 py-3.5 transition-all">
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-xl border-b border-slate-100 px-4 sm:px-8 py-3.5 transition-all">
     <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
       
       <!-- Brand Title -->
@@ -167,27 +167,128 @@
   </header>
 
   <!-- ======================================================= -->
+  <!-- HERO SECTION MATCHING USER REFERENCE IMAGE              -->
+  <!-- ======================================================= -->
+  <section class="relative pt-12 sm:pt-20 pb-8 sm:pb-16 overflow-hidden border-b border-slate-100 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-8 relative">
+      
+      <!-- 4 Corner Micro-Annotations with Arrows (Like Reference Image) -->
+      <div class="hidden lg:flex justify-between items-start pointer-events-none select-none text-xs">
+        <!-- Top-Left -->
+        <div class="space-y-0.5">
+          <div class="text-[#8D222E] font-bold flex items-center gap-1">
+            <span>&#x2198;</span>
+            <span>Identitas Holding</span>
+          </div>
+          <div class="text-slate-500 font-medium">Azharuna Group</div>
+        </div>
+        
+        <!-- Top-Right -->
+        <div class="space-y-0.5 text-right">
+          <div class="text-[#8D222E] font-bold flex items-center justify-end gap-1">
+            <span>Tata Kelola Berwibawa</span>
+            <span>&#x2199;</span>
+          </div>
+          <div class="text-slate-500 font-medium">Sinergi Berkelanjutan</div>
+        </div>
+      </div>
+
+      <!-- Centered Giant Headline -->
+      <div class="text-center space-y-6 sm:space-y-8 my-4 sm:my-8">
+        <h1 class="text-5xl sm:text-7xl lg:text-[92px] font-extrabold text-slate-950 tracking-[-0.04em] leading-[0.92] select-none">
+          Logo<br />Presentation
+        </h1>
+
+        <!-- Pill Capsules (Reference: Telegram: @pol1na_kh) -->
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 pt-2">
+          <div class="px-6 py-3 rounded-full bg-slate-100 text-slate-800 text-sm sm:text-base font-semibold border border-slate-200/80 shadow-xs">
+            Azharuna Group
+          </div>
+          <div class="px-6 py-3 rounded-full bg-[#8D222E] text-white text-sm sm:text-base font-bold shadow-md hover:bg-[#68151E] transition-all">
+            by SYMP Studio
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Micro-Annotations -->
+      <div class="hidden lg:flex justify-between items-end pointer-events-none select-none text-xs pb-4">
+        <!-- Bottom-Left -->
+        <div class="space-y-0.5">
+          <div class="text-[#8D222E] font-bold flex items-center gap-1">
+            <span>&#x2198;</span>
+            <span>2 Master Konsep</span>
+          </div>
+          <div class="text-slate-500 font-medium">Format Berdiri &amp; Rebahan</div>
+        </div>
+        
+        <!-- Bottom-Right -->
+        <div class="space-y-0.5 text-right">
+          <div class="text-[#8D222E] font-bold flex items-center justify-end gap-1">
+            <span>Paket Vektor Lengkap</span>
+            <span>&#x2199;</span>
+          </div>
+          <div class="text-slate-500 font-medium">Standar Korporat Global</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Fanned Portfolio Cards Deck (Matching Bottom Fan in Reference Image) -->
+    <div class="relative max-w-5xl mx-auto pt-6 pb-2 flex justify-center items-end overflow-x-auto sm:overflow-visible no-scrollbar px-4">
+      <div class="flex items-end justify-center -space-x-8 sm:-space-x-12 py-4">
+        
+        <!-- Card 1: -12 deg -->
+        <div class="w-36 sm:w-52 aspect-[4/5] rounded-2xl bg-white border border-slate-200 shadow-xl p-4 flex flex-col justify-between transform -rotate-12 hover:rotate-0 hover:scale-105 hover:z-30 transition-all duration-300 cursor-pointer flex-shrink-0" onclick="openConceptModal(1)">
+          <div class="text-[10px] font-bold text-[#8D222E] uppercase">Varian 01</div>
+          <div class="flex-1 flex items-center justify-center p-2">
+            <img src="../assets/azharuna_group_1_berdiri.png" alt="Concept 1" class="max-h-24 sm:max-h-32 w-auto object-contain" />
+          </div>
+          <div class="text-[11px] font-bold text-slate-800 text-center">The Noble Blossom</div>
+        </div>
+
+        <!-- Card 2: -6 deg (Signage Mockup) -->
+        <div class="w-36 sm:w-52 aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-slate-200 transform -rotate-6 hover:rotate-0 hover:scale-105 hover:z-30 transition-all duration-300 cursor-pointer flex-shrink-0" onclick="document.getElementById('mockups').scrollIntoView({behavior: 'smooth'})">
+          <img src="../assets/mockup_azharuna_signage.jpg" alt="Lobby Signage" class="w-full h-full object-cover" />
+        </div>
+
+        <!-- Card 3: Center (0 deg elevated - Crimson Card) -->
+        <div class="w-40 sm:w-60 aspect-[4/5] rounded-2xl bg-[#8D222E] text-white shadow-2xl p-5 flex flex-col justify-between transform hover:scale-105 hover:z-30 transition-all duration-300 z-20 cursor-pointer border border-[#68151E] flex-shrink-0" onclick="openConceptModal(1)">
+          <div class="flex justify-between items-center">
+            <span class="text-[10px] font-bold text-white/80 uppercase">Official Holding</span>
+            <span class="w-2 h-2 rounded-full bg-[#E1C9AC]"></span>
+          </div>
+          <div class="flex-1 flex items-center justify-center p-2">
+            <img src="../assets/azharuna_group_1_berdiri_putih.png" alt="Concept 1 White" class="max-h-28 sm:max-h-36 w-auto object-contain" />
+          </div>
+          <div class="text-center space-y-0.5">
+            <div class="text-xs sm:text-sm font-extrabold text-white">AZHARUNA GROUP</div>
+            <div class="text-[10px] text-[#E1C9AC] font-medium">Merah Crimson Resmi</div>
+          </div>
+        </div>
+
+        <!-- Card 4: +6 deg (Stationery Mockup) -->
+        <div class="w-36 sm:w-52 aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl border border-slate-200 transform rotate-6 hover:rotate-0 hover:scale-105 hover:z-30 transition-all duration-300 cursor-pointer flex-shrink-0" onclick="document.getElementById('mockups').scrollIntoView({behavior: 'smooth'})">
+          <img src="../assets/mockup_azharuna_stationery.jpg" alt="Stationery Mockup" class="w-full h-full object-cover" />
+        </div>
+
+        <!-- Card 5: +12 deg (Dark Onyx Card) -->
+        <div class="w-36 sm:w-52 aspect-[4/5] rounded-2xl bg-[#0B1120] text-white border border-slate-800 shadow-xl p-4 flex flex-col justify-between transform rotate-12 hover:rotate-0 hover:scale-105 hover:z-30 transition-all duration-300 cursor-pointer flex-shrink-0" onclick="openConceptModal(2)">
+          <div class="text-[10px] font-bold text-[#E1C9AC] uppercase">Varian 02</div>
+          <div class="flex-1 flex items-center justify-center p-2">
+            <img src="../assets/azharuna_group_2_berdiri_putih.png" alt="Concept 2 White" class="max-h-24 sm:max-h-32 w-auto object-contain" />
+          </div>
+          <div class="text-[11px] font-bold text-white text-center">The Sovereign Crest</div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ======================================================= -->
   <!-- MAIN PRESENTATION BODY                                  -->
   <!-- ======================================================= -->
   <main class="max-w-6xl mx-auto px-4 sm:px-8 py-12 sm:py-20 space-y-16 sm:space-y-24">
-
-    <!-- ======================================================= -->
-    <!-- HERO SECTION (RATA TENGAH / CENTERED)                   -->
-    <!-- ======================================================= -->
-    <section class="max-w-3xl mx-auto text-center space-y-5 pt-4">
-      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-tight leading-[1.12]">
-        Warisan Mulia, Sinergi Berkelanjutan.<br />
-        <span class="text-[#8D222E]">Identitas Agung Azharuna Group</span>
-      </h1>
-
-      <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto">
-        Proposal identitas merek untuk Azharuna Group. Terinspirasi dari makna luhur Azharuna sebagai simbol pertumbuhan mekar yang berakar kuat, dipadukan dengan palet Merah Crimson yang memancarkan integritas, wibawa kepemimpinan, dan kesinambungan holding group.
-      </p>
-
-      <div class="pt-2 flex justify-center">
-        <div class="w-12 h-1 bg-[#8D222E] rounded-full"></div>
-      </div>
-    </section>
 
     <!-- ======================================================= -->
     <!-- SECTION 01: 2 MASTER LOGO CONCEPTS                      -->
@@ -674,7 +775,7 @@
   <footer class="border-t border-slate-200 py-12 px-4 text-center text-xs text-slate-500 space-y-2 bg-white">
     <p>&copy; 2026 <strong>Azharuna Group Identity System</strong> &bull; Directed by <strong class="text-[#8D222E]">DARU FAHMAA MULIAWAN</strong> &bull; SYMP Studio</p>
     <p class="text-[11px] text-slate-400 font-medium">
-      Proposal Identitas Visual Korporat
+      Logo Presentation by SYMP Studio
     </p>
   </footer>
 
