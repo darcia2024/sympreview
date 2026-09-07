@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>AZHARUNA GROUP — Proposal Identitas Visual & Sistem Logo | SYMP Studio</title>
+  
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            azh: {
+              burgundy: '#8D222E',
+              burgundyDark: '#5E141D',
+              burgundyDeep: '#3D0A11',
+              gold: '#E1C9AC',
+              goldDark: '#C7A884',
+              goldLight: '#F5EBE1',
+              dark: '#0D0B0E',
+              darkSurface: '#161114',
+              slate: '#1E1B20',
+              creamBg: '#FAF8F5'
+            }
+          },
+          fontFamily: {
+            jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            cinzel: ['Cinzel', 'serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    :root {
+      --azh-burgundy: #8D222E;
+      --azh-gold: #E1C9AC;
+      --azh-dark: #0D0B0E;
+      --agency-spring: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAF8F5;
+      color: #1E1B20;
+      overflow-x: hidden;
+      letter-spacing: -0.025em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Double-Bezel Hardware Architecture */
+    .bezel-shell {
+      background: #FFFFFF;
+      border: 1px solid #EAE4DC;
+      border-radius: 28px;
+      box-shadow: 0 6px 24px -8px rgba(141, 34, 46, 0.05);
+      transition: all 0.4s var(--agency-spring);
+      cursor: pointer;
+    }
+    @media (min-width: 640px) {
+      .bezel-shell {
+        border-radius: 32px;
+      }
+    }
+    .bezel-shell:hover {
+      box-shadow: 0 24px 50px -12px rgba(141, 34, 46, 0.22);
+      border-color: #8D222E;
+      transform: translateY(-4px);
+    }
+
+    /* Modal Backdrop Blur & Animation */
+    .modal-backdrop {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-content {
+      transform: scale(0.95) translateY(12px);
+      transition: transform 0.35s var(--agency-spring), opacity 0.3s ease;
+      opacity: 0;
+    }
+    .modal-backdrop.active .modal-content {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+
+    /* Swatch Box */
+    .swatch-box {
+      border-radius: 20px;
+      border: 1px solid #EAE4DC;
+      transition: all 0.3s var(--agency-spring);
+      cursor: pointer;
+    }
+    .swatch-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px -6px rgba(141, 34, 46, 0.2);
+      border-color: #8D222E;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="selection:bg-[#8D222E] selection:text-white">
+
+  <!-- ======================================================= -->
+  <!-- FLOATING EDITORIAL TOP BAR                              -->
+  <!-- ======================================================= -->
+  <header class="sticky top-0 z-40 bg-[#FAF8F5]/90 backdrop-blur-xl border-b border-[#EAE4DC] px-4 sm:px-8 py-3.5 transition-all">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      
+      <!-- Brand & Project Title -->
+      <a href="../" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 rounded-xl bg-[#8D222E] text-white flex items-center justify-center font-black shadow-xs">
+          <i data-lucide="crown" class="w-4 h-4 text-[#E1C9AC]"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-sm font-extrabold text-[#0D0B0E] tracking-tight leading-none group-hover:text-[#8D222E] transition-colors">AZHARUNA GROUP</span>
+          <span class="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-wider mt-0.5">HOLDING PROPOSAL DECK &bull; SYMP</span>
+        </div>
+      </a>
+
+      <!-- Center Anchor Tabs (Desktop) -->
+      <nav class="hidden md:flex items-center gap-1 p-1 bg-white rounded-full border border-[#EAE4DC] shadow-xs text-xs font-bold text-slate-600">
+        <a href="#variants" class="px-3.5 py-1.5 rounded-full hover:text-slate-950 hover:bg-slate-50 transition-all text-[#8D222E]">2 Pilihan Master Logo</a>
+        <a href="#philosophy" class="px-3.5 py-1.5 rounded-full hover:text-slate-950 hover:bg-slate-50 transition-all">4 Pilar Nilai</a>
+        <a href="#colors" class="px-3.5 py-1.5 rounded-full hover:text-slate-950 hover:bg-slate-50 transition-all">Sistem Warna</a>
+        <a href="#mockups" class="px-3.5 py-1.5 rounded-full hover:text-slate-950 hover:bg-slate-50 transition-all">Penerapan</a>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="flex items-center gap-2">
+        <a href="#voting" class="px-4 py-2 rounded-full bg-[#8D222E] hover:bg-[#5E141D] text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm">
+          <span>Pilih Opsi Logo</span>
+          <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-[#E1C9AC]"></i>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ======================================================= -->
+  <!-- MAIN PRESENTATION BODY                                  -->
+  <!-- ======================================================= -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-8 py-10 sm:py-20 space-y-16 sm:space-y-24">
+
+    <!-- ======================================================= -->
+    <!-- HERO SECTION                                            -->
+    <!-- ======================================================= -->
+    <section class="space-y-5 max-w-4xl">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#8D222E]/10 text-[#8D222E] text-[10px] sm:text-xs font-mono font-bold uppercase tracking-wider border border-[#8D222E]/20">
+        <i data-lucide="award" class="w-3.5 h-3.5 text-[#8D222E]"></i>
+        <span>PROPOSAL IDENTITAS VISUAL RESMI &bull; AZHARUNA GROUP 2026</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#0D0B0E] tracking-tight leading-[1.08]">
+        Warisan Mulia &bull; Sinergi Berkelanjutan. <br />
+        <span class="text-[#8D222E]">Identitas Agung AZHARUNA GROUP.</span>
+      </h1>
+
+      <p class="text-xs sm:text-base text-slate-600 font-normal leading-relaxed max-w-3xl">
+        Proposal desain identitas visual untuk <strong>AZHARUNA GROUP</strong>. Terinspirasi dari makna luhur <em>"Azharuna"</em> (Bunga-bunga yang Mekar Indah &amp; Menyinari Sekitarnya), dipadukan dengan palet aristokrat <strong>Royal Burgundy Wine &amp; Champagne Sand Gold</strong> yang mencerminkan integritas, wibawa, dan keberlanjutan holding lintas sektor.
+      </p>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 01: 2 MASTER LOGO CONCEPTS                      -->
+    <!-- ======================================================= -->
+    <section id="variants" class="space-y-8">
+      
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EAE4DC] pb-4">
+        <div class="border-l-2 border-[#8D222E] pl-3 sm:pl-4">
+          <span class="text-[11px] font-mono font-bold tracking-widest text-[#8D222E] uppercase">2 MASTER LOGO DIRECTIONS</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0D0B0E] tracking-tight mt-1">
+            Galeri Konsep Logo AZHARUNA GROUP
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 font-mono">
+            💡 <strong>Klik pada kartu</strong> untuk membuka pop-up pengujian latar belakang (5 mode warna) &amp; bedah filosofi
+          </p>
+        </div>
+      </div>
+
+      <!-- 2-COLUMN EXECUTIVE GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- CARD 01: THE NOBLE BLOSSOM -->
+        <div class="bezel-shell p-6 sm:p-8 space-y-5 flex flex-col justify-between group" onclick="openConceptModal(1)">
+          <div class="space-y-4">
+            
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#8D222E]/10 text-[#8D222E] font-mono text-[10px] font-bold">
+                  PILIHAN 01 RESMI
+                </span>
+                <h3 class="text-lg sm:text-xl font-extrabold text-[#0D0B0E] mt-1">The Noble Blossom</h3>
+              </div>
+              <span class="text-[10px] font-mono font-bold text-[#8D222E] bg-[#8D222E]/10 px-2.5 py-1 rounded-full flex items-center gap-1">
+                <span>Detail Pop-Up</span>
+                <i data-lucide="maximize-2" class="w-3 h-3"></i>
+              </span>
+            </div>
+
+            <!-- Controls in Card: Layout & Canvas Switch -->
+            <div class="flex flex-wrap items-center justify-between gap-2" onclick="event.stopPropagation()">
+              <div class="flex items-center gap-1 p-0.5 bg-slate-100 rounded-full text-[10px] font-bold">
+                <button onclick="setCardLayout(1, 'berdiri', this)" class="px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs">Berdiri</button>
+                <button onclick="setCardLayout(1, 'rebahan', this)" class="px-2.5 py-1 rounded-full text-slate-500 hover:text-slate-900">Rebahan</button>
+              </div>
+              <div class="flex items-center gap-1 p-0.5 bg-slate-100 rounded-full text-[10px] font-bold">
+                <button onclick="setCardCanvas(1, 'light', this)" class="px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs">Latar Putih</button>
+                <button onclick="setCardCanvas(1, 'dark', this)" class="px-2.5 py-1 rounded-full text-slate-500 hover:text-slate-900">Latar Gelap</button>
+              </div>
+            </div>
+
+            <!-- Preview Canvas Stage -->
+            <div id="stage-card-1" class="rounded-3xl bg-white border border-[#EAE4DC] p-8 flex items-center justify-center min-h-[260px] sm:min-h-[300px] shadow-inner group-hover:border-[#8D222E] transition-all">
+              <img id="img-card-1" src="../assets/azharuna_group_1_berdiri.png" alt="Azharuna Group Konsep 01" class="max-h-44 sm:max-h-52 w-auto object-contain transition-transform duration-300 transform group-hover:scale-105" />
+            </div>
+
+            <div class="space-y-1.5">
+              <span class="text-xs font-bold text-[#8D222E] block">“Mekar Anggun, Mengakar Kuat”</span>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Kelopak daun mekar yang simetris dan dinamis — melambangkan Azharuna Group yang terus bertumbuh melahirkan unit-unit usaha unggul yang memberi manfaat dan berkah luas bagi masyarakat.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#8D222E]">
+            <span class="text-[11px] font-mono text-slate-400">Klik kartu untuk uji 5 warna</span>
+            <span class="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Buka Pop-Up Studio</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- CARD 02: THE SOVEREIGN CREST -->
+        <div class="bezel-shell p-6 sm:p-8 space-y-5 flex flex-col justify-between group" onclick="openConceptModal(2)">
+          <div class="space-y-4">
+            
+            <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div>
+                <span class="px-2.5 py-0.5 rounded-full bg-[#8D222E]/10 text-[#8D222E] font-mono text-[10px] font-bold">
+                  PILIHAN 02 RESMI
+                </span>
+                <h3 class="text-lg sm:text-xl font-extrabold text-[#0D0B0E] mt-1">The Sovereign Crest</h3>
+              </div>
+              <span class="text-[10px] font-mono font-bold text-[#8D222E] bg-[#8D222E]/10 px-2.5 py-1 rounded-full flex items-center gap-1">
+                <span>Detail Pop-Up</span>
+                <i data-lucide="maximize-2" class="w-3 h-3"></i>
+              </span>
+            </div>
+
+            <!-- Controls in Card: Layout & Canvas Switch -->
+            <div class="flex flex-wrap items-center justify-between gap-2" onclick="event.stopPropagation()">
+              <div class="flex items-center gap-1 p-0.5 bg-slate-100 rounded-full text-[10px] font-bold">
+                <button onclick="setCardLayout(2, 'berdiri', this)" class="px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs">Berdiri</button>
+                <button onclick="setCardLayout(2, 'rebahan', this)" class="px-2.5 py-1 rounded-full text-slate-500 hover:text-slate-900">Rebahan</button>
+              </div>
+              <div class="flex items-center gap-1 p-0.5 bg-slate-100 rounded-full text-[10px] font-bold">
+                <button onclick="setCardCanvas(2, 'light', this)" class="px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs">Latar Putih</button>
+                <button onclick="setCardCanvas(2, 'dark', this)" class="px-2.5 py-1 rounded-full text-slate-500 hover:text-slate-900">Latar Gelap</button>
+              </div>
+            </div>
+
+            <!-- Preview Canvas Stage -->
+            <div id="stage-card-2" class="rounded-3xl bg-white border border-[#EAE4DC] p-8 flex items-center justify-center min-h-[260px] sm:min-h-[300px] shadow-inner group-hover:border-[#8D222E] transition-all">
+              <img id="img-card-2" src="../assets/azharuna_group_2_berdiri.png" alt="Azharuna Group Konsep 02" class="max-h-44 sm:max-h-52 w-auto object-contain transition-transform duration-300 transform group-hover:scale-105" />
+            </div>
+
+            <div class="space-y-1.5">
+              <span class="text-xs font-bold text-[#8D222E] block">“Wibawa Menjulang, Integritas Abadi”</span>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Siluet lambang kerajaan vertikal yang menjulang kokoh layaknya menara mercusuar. Melambangkan fondasi tata kelola holding yang transparan, kuat, dan prestisius di kancah nasional maupun global.
+              </p>
+            </div>
+
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#8D222E]">
+            <span class="text-[11px] font-mono text-slate-400">Klik kartu untuk uji 5 warna</span>
+            <span class="flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+              <span>Buka Pop-Up Studio</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 02: 4 PILAR NILAI UTAMA BRAND                   -->
+    <!-- ======================================================= -->
+    <section id="philosophy" class="space-y-8">
+      
+      <div class="border-l-2 border-[#8D222E] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#8D222E] uppercase">ESENSI &amp; NILAI HOLDING</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0D0B0E] tracking-tight mt-1">
+          4 Pilar Nilai Agung AZHARUNA GROUP
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 font-mono">
+          "Amanah &bull; Bertumbuh &bull; Berwibawa &bull; Berkah Maslahat"
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Pilar 1 -->
+        <div class="bezel-shell p-6 space-y-3.5 bg-white">
+          <div class="w-11 h-11 rounded-2xl bg-[#8D222E]/10 text-[#8D222E] flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="shield-check" class="w-5 h-5"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 01</span>
+            <h3 class="text-base font-extrabold text-[#0D0B0E]">Integritas (Amanah)</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Menjunjung tinggi prinsip kejujuran, transparansi, dan komitmen profesional dalam setiap tata kelola bisnis.
+          </p>
+        </div>
+
+        <!-- Pilar 2 -->
+        <div class="bezel-shell p-6 space-y-3.5 bg-white">
+          <div class="w-11 h-11 rounded-2xl bg-[#E1C9AC]/30 text-[#8D222E] flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="sprout" class="w-5 h-5"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 02</span>
+            <h3 class="text-base font-extrabold text-[#0D0B0E]">Pertumbuhan (Mekar)</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Menumbuhkan entitas anak usaha secara berkelanjutan (*sustainable growth*) yang tangguh menghadapi dinamika zaman.
+          </p>
+        </div>
+
+        <!-- Pilar 3 -->
+        <div class="bezel-shell p-6 space-y-3.5 bg-white">
+          <div class="w-11 h-11 rounded-2xl bg-slate-100 text-[#0D0B0E] flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="crown" class="w-5 h-5 text-[#8D222E]"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 03</span>
+            <h3 class="text-base font-extrabold text-[#0D0B0E]">Wibawa (Heritage)</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Menghormati nilai-nilai luhur dan kearifan kepemimpinan, berpadu standar mutu korporasi kelas dunia.
+          </p>
+        </div>
+
+        <!-- Pilar 4 -->
+        <div class="bezel-shell p-6 space-y-3.5 bg-white">
+          <div class="w-11 h-11 rounded-2xl bg-[#0D0B0E] text-[#E1C9AC] flex items-center justify-center font-bold shadow-xs">
+            <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+          </div>
+          <div class="space-y-1">
+            <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">PILAR 04</span>
+            <h3 class="text-base font-extrabold text-[#0D0B0E]">Kemaslahatan (Berkah)</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Menghadirkan dampak nyata dan kebermanfaatan yang luas bagi karyawan, mitra strategis, dan masyarakat luas.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 03: COLOR SCIENCE & PANTONE CODES               -->
+    <!-- ======================================================= -->
+    <section id="colors" class="space-y-8">
+      
+      <div class="border-l-2 border-[#8D222E] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#8D222E] uppercase">SISTEM WARNA RESMI</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0D0B0E] tracking-tight mt-1">
+          Palet Warna Aristokrat (Formula 70-20-10)
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 font-mono">
+          Klik pada kotak warna untuk menyalin kode HEX langsung ke clipboard
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <!-- Swatch 1: Royal Burgundy Wine -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#8D222E', 'Royal Burgundy Wine')">
+          <div class="h-28 rounded-2xl bg-[#8D222E] flex items-end justify-end p-3 text-[#E1C9AC] shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">WARNA UTAMA (70%)</span>
+              <h4 class="text-sm font-bold text-[#0D0B0E]">Royal Burgundy Wine</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-[#8D222E]">#8D222E</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">PANTONE:</span><span>1955 C</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">Filosofi:</span><span>Wibawa &amp; Kemakmuran</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swatch 2: Champagne Sand Gold -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#E1C9AC', 'Champagne Sand Gold')">
+          <div class="h-28 rounded-2xl bg-[#E1C9AC] flex items-end justify-end p-3 text-[#8D222E] shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">WARNA AKSEN (20%)</span>
+              <h4 class="text-sm font-bold text-[#0D0B0E]">Champagne Sand Gold</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-[#8D222E]">#E1C9AC</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">PANTONE:</span><span>7506 C</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">Filosofi:</span><span>Keanggunan &amp; Harmoni</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swatch 3: Deep Onyx Obsidian -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#0D0B0E', 'Deep Onyx Obsidian')">
+          <div class="h-28 rounded-2xl bg-[#0D0B0E] flex items-end justify-end p-3 text-[#E1C9AC] shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">KANVAS GELAP (10%)</span>
+              <h4 class="text-sm font-bold text-[#0D0B0E]">Deep Onyx Obsidian</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-[#0D0B0E]">#0D0B0E</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">PANTONE:</span><span>Black 7 C</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">Filosofi:</span><span>Kedalaman &amp; Keteguhan</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swatch 4: Pure Alabaster Pearl -->
+        <div class="swatch-box p-5 bg-white space-y-4" onclick="copyColor('#FAF8F5', 'Alabaster Pearl')">
+          <div class="h-28 rounded-2xl bg-[#FAF8F5] border border-[#EAE4DC] flex items-end justify-end p-3 text-slate-700 shadow-inner">
+            <i data-lucide="copy" class="w-4 h-4 opacity-75"></i>
+          </div>
+          <div class="space-y-2">
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold">KANVAS TERANG</span>
+              <h4 class="text-sm font-bold text-[#0D0B0E]">Pure Alabaster Pearl</h4>
+            </div>
+            <div class="space-y-1 text-xs font-mono text-slate-600 border-t border-slate-100 pt-2">
+              <div class="flex justify-between"><span class="text-slate-400">HEX:</span><strong class="text-slate-600">#FAF8F5</strong></div>
+              <div class="flex justify-between"><span class="text-slate-400">PAPER:</span><span>Cotton Warm White</span></div>
+              <div class="flex justify-between"><span class="text-slate-400">Filosofi:</span><span>Kejernihan Etika</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 04: REAL-WORLD APPLICATIONS (MOCKUP GALLERY)    -->
+    <!-- ======================================================= -->
+    <section id="mockups" class="space-y-8">
+      
+      <div class="border-l-2 border-[#8D222E] pl-3 sm:pl-4">
+        <span class="text-[11px] font-mono font-bold tracking-widest text-[#8D222E] uppercase">SIMULASI CORPORATE HOLDING</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0D0B0E] tracking-tight mt-1">
+          Penerapan Nyata di Berbagai Media Eksekutif
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Mockup 1: Lobby Marble Wall Signage -->
+        <div class="bezel-shell p-6 space-y-4 flex flex-col justify-between overflow-hidden">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+              <span class="text-xs font-mono font-bold text-[#8D222E] uppercase">01. HEADQUARTERS LOBBY SIGNAGE</span>
+              <i data-lucide="building-2" class="w-4 h-4 text-slate-400"></i>
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-md border border-[#EAE4DC] aspect-[16/9]">
+              <img src="../assets/mockup_azharuna_signage.jpg" alt="Azharuna Group Lobby Signage Mockup" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
+            </div>
+            <h4 class="text-base font-extrabold text-[#0D0B0E]">Plakat Logam Emas di Dinding Marmer Lobi</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Lambang Azharuna Group tampil sangat prestisius dengan finishing brushed gold &amp; royal burgundy enamel di atas dinding marmer Italia lobi kantor pusat.
+            </p>
+          </div>
+        </div>
+
+        <!-- Mockup 2: Executive Stationery Suite -->
+        <div class="bezel-shell p-6 space-y-4 flex flex-col justify-between overflow-hidden">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+              <span class="text-xs font-mono font-bold text-[#8D222E] uppercase">02. EXECUTIVE STATIONERY &amp; CARDS</span>
+              <i data-lucide="file-check" class="w-4 h-4 text-slate-400"></i>
+            </div>
+            <div class="rounded-2xl overflow-hidden shadow-md border border-[#EAE4DC] aspect-[16/9]">
+              <img src="../assets/mockup_azharuna_stationery.jpg" alt="Azharuna Group Stationery Mockup" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
+            </div>
+            <h4 class="text-base font-extrabold text-[#0D0B0E]">Dokumen Resmi Holding &amp; Kartu Nama Direksi</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Kop surat resmi, amplop segel, dan kartu nama eksekutif dengan cetak timbul emas (*foil stamping*) di atas kertas katun tebal memberikan kesan kemewahan korporat yang tak tertandingi.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- App 3: Web Portal & Digital Header Preview -->
+      <div class="bezel-shell p-6 sm:p-8 space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+          <span class="text-xs font-mono font-bold text-[#8D222E] uppercase">03. DIGITAL ECOSYSTEM &amp; INVESTOR RELATIONS PORTAL</span>
+          <i data-lucide="globe" class="w-4 h-4 text-slate-400"></i>
+        </div>
+        <div class="rounded-2xl bg-[#0D0B0E] p-6 sm:p-10 flex items-center justify-between shadow-inner border border-white/10">
+          <div class="flex items-center gap-4">
+            <img src="../assets/azharuna_group_1_rebahan_putih.png" alt="Azharuna Web Header" class="max-h-9 sm:max-h-12 w-auto object-contain" />
+          </div>
+          <div class="hidden sm:flex items-center gap-4 text-xs text-[#E1C9AC] font-mono">
+            <span>Portfolio</span>
+            <span>Tata Kelola</span>
+            <span>Hubungan Investor</span>
+            <span class="px-3 py-1 rounded-full bg-[#8D222E] text-white font-bold">Portal Holding</span>
+          </div>
+        </div>
+        <p class="text-xs text-slate-600">
+          Format rebahan (horizontal) menyatu secara harmonis pada header website resmi, laporan keuangan tahunan digital, maupun sistem informasi holding group.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 05: DIRECT VOTING & APPROVAL HUB (WHATSAPP)    -->
+    <!-- ======================================================= -->
+    <section id="voting" class="p-8 sm:p-14 rounded-[36px] bg-[#0D0B0E] text-white border border-[#8D222E]/30 shadow-2xl space-y-8">
+      
+      <div class="text-center space-y-3 max-w-2xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#8D222E]/20 border border-[#8D222E]/40 text-[#E1C9AC] text-xs font-mono font-bold">
+          <i data-lucide="vote" class="w-3.5 h-3.5 text-[#E1C9AC]"></i>
+          <span>FORUM KEPUTUSAN DEWAN DIREKSI</span>
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold tracking-tight">
+          Tentukan Identitas Agung AZHARUNA GROUP
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          Pilih konsep yang paling mewakili visi besar dan wibawa Azharuna Group, lalu klik tombol di bawah untuk langsung mengonfirmasi pilihan ke Mas Daru (SYMP Studio) dan mendapatkan paket master vector terlengkap (.AI, .EPS, .SVG, .PDF, .PNG High-Res).
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        
+        <!-- Vote 1 -->
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20resmi%20memilih%20AZHARUNA%20GROUP%20PILIHAN%2001%20(The%20Noble%20Blossom)" target="_blank" class="p-6 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#8D222E] transition-all space-y-3 text-center group">
+          <div class="text-base font-bold text-white group-hover:text-[#E1C9AC] transition-colors">PILIHAN 01</div>
+          <p class="text-xs text-slate-400">The Noble Blossom (Kelopak Bunga Mekar)</p>
+          <div class="py-3 px-4 rounded-xl bg-[#8D222E] hover:bg-[#5E141D] text-white text-xs font-extrabold flex items-center justify-center gap-2 shadow-md">
+            <i data-lucide="check-circle" class="w-4 h-4 text-[#E1C9AC]"></i>
+            <span>Pilih Varian 01 via WhatsApp</span>
+          </div>
+        </a>
+
+        <!-- Vote 2 -->
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru,%20kami%20resmi%20memilih%20AZHARUNA%20GROUP%20PILIHAN%2002%20(The%20Sovereign%20Crest)" target="_blank" class="p-6 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#8D222E] transition-all space-y-3 text-center group">
+          <div class="text-base font-bold text-white group-hover:text-[#E1C9AC] transition-colors">PILIHAN 02</div>
+          <p class="text-xs text-slate-400">The Sovereign Crest (Lambang Menara Aristokrat)</p>
+          <div class="py-3 px-4 rounded-xl bg-[#8D222E] hover:bg-[#5E141D] text-white text-xs font-extrabold flex items-center justify-center gap-2 shadow-md">
+            <i data-lucide="check-circle" class="w-4 h-4 text-[#E1C9AC]"></i>
+            <span>Pilih Varian 02 via WhatsApp</span>
+          </div>
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ======================================================= -->
+  <!-- INTERACTIVE POP-UP MODAL STUDIO                         -->
+  <!-- ======================================================= -->
+  <div id="concept-modal" class="modal-backdrop fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto" onclick="handleBackdropClick(event)">
+    
+    <div class="modal-content relative w-full max-w-4xl bg-white rounded-[32px] border border-[#EAE4DC] shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col" onclick="event.stopPropagation()">
+      
+      <!-- Modal Top Header -->
+      <div class="p-6 sm:px-8 sm:py-5 border-b border-slate-100 flex items-center justify-between bg-white z-10">
+        <div class="flex items-center gap-3">
+          <span id="modal-kicker" class="px-2.5 py-1 rounded-full bg-[#8D222E]/10 text-[#8D222E] font-mono text-[11px] font-bold uppercase">
+            PILIHAN 01 RESMI
+          </span>
+          <h3 id="modal-title" class="text-lg sm:text-xl font-extrabold text-[#0D0B0E]">
+            The Noble Blossom
+          </h3>
+        </div>
+
+        <button onclick="closeConceptModal()" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors" title="Tutup Pop-Up">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Scrollable Body -->
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-6">
+        
+        <!-- Background Mode Selector Bar -->
+        <div class="space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-slate-400 uppercase">PENGUJIAN WARNA LATAR (5 MODE ARISTOKRAT)</span>
+            <div id="modal-layout-group" class="flex items-center gap-1 p-1 bg-slate-100 rounded-full text-xs font-bold">
+              <button onclick="setModalLayout('berdiri', this)" class="px-3 py-1 rounded-full bg-white text-slate-900 shadow-xs">Berdiri</button>
+              <button onclick="setModalLayout('rebahan', this)" class="px-3 py-1 rounded-full text-slate-500 hover:text-slate-900">Rebahan</button>
+            </div>
+          </div>
+
+          <!-- 5 Background Mode Pills -->
+          <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs font-bold">
+            
+            <!-- Mode 1: Pure White -->
+            <button onclick="setModalBg('white', this)" class="modal-bg-btn active px-3 py-2 rounded-xl bg-slate-900 text-white border border-slate-800 flex items-center justify-center gap-1.5 transition-all">
+              <span class="w-3 h-3 rounded-full bg-white border border-slate-300"></span>
+              <span>Latar Putih</span>
+            </button>
+
+            <!-- Mode 2: Midnight Obsidian -->
+            <button onclick="setModalBg('obsidian', this)" class="modal-bg-btn px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 flex items-center justify-center gap-1.5 transition-all">
+              <span class="w-3 h-3 rounded-full bg-[#0D0B0E]"></span>
+              <span>Hitam Onyx</span>
+            </button>
+
+            <!-- Mode 3: Royal Burgundy -->
+            <button onclick="setModalBg('burgundy', this)" class="modal-bg-btn px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 flex items-center justify-center gap-1.5 transition-all">
+              <span class="w-3 h-3 rounded-full bg-[#8D222E]"></span>
+              <span>Burgundy</span>
+            </button>
+
+            <!-- Mode 4: Imperial Gradient -->
+            <button onclick="setModalBg('gradient', this)" class="modal-bg-btn px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 flex items-center justify-center gap-1.5 transition-all">
+              <span class="w-3 h-3 rounded-full bg-gradient-to-r from-[#8D222E] to-[#3D0A11]"></span>
+              <span>Gradasi Mulia</span>
+            </button>
+
+            <!-- Mode 5: Sandstone Gold -->
+            <button onclick="setModalBg('gold', this)" class="modal-bg-btn px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 flex items-center justify-center gap-1.5 transition-all col-span-2 sm:col-span-1">
+              <span class="w-3 h-3 rounded-full bg-[#E1C9AC]"></span>
+              <span>Champagne</span>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- Master Interactive Visual Stage -->
+        <div id="modal-stage" class="rounded-3xl bg-white border border-[#EAE4DC] p-8 sm:p-16 flex items-center justify-center min-h-[280px] sm:min-h-[360px] shadow-inner transition-all duration-400 relative overflow-hidden">
+          <img id="modal-img" src="../assets/azharuna_group_1_berdiri.png" alt="Modal Logo Preview" class="max-h-48 sm:max-h-60 w-auto object-contain transition-transform duration-300 transform hover:scale-105" />
+        </div>
+
+        <!-- Deep Philosophy & Details Breakdown (Polite & Engaging Tone) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+          
+          <div class="md:col-span-2 space-y-3">
+            <h4 class="text-sm font-extrabold text-[#0D0B0E] flex items-center gap-2">
+              <i data-lucide="sparkles" class="w-4 h-4 text-[#8D222E]"></i>
+              <span id="modal-tagline" class="text-[#8D222E]">"Mekar Anggun, Mengakar Kuat"</span>
+            </h4>
+            <div id="modal-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed space-y-2">
+              <!-- dynamic bullet points inserted via JS -->
+            </div>
+            <div class="p-3.5 rounded-2xl bg-[#FAF8F5] border border-[#EAE4DC] text-xs font-mono text-slate-600 space-y-1">
+              <div><strong class="text-[#0D0B0E]">Rekomendasi Penerapan:</strong> <span id="modal-usage">Plakat Gedung Lobi, Kop Surat Resmi, Kartu Nama Direksi, Annual Report</span></div>
+              <div><strong class="text-[#0D0B0E]">Warna Resmi:</strong> <span class="text-[#8D222E] font-bold">Royal Burgundy (#8D222E)</span> &bull; <span class="text-[#8D222E] font-bold">Champagne Gold (#E1C9AC)</span></div>
+            </div>
+          </div>
+
+          <!-- Direct WhatsApp Decision Action inside Modal -->
+          <div class="p-5 rounded-2xl bg-[#8D222E]/5 border border-[#8D222E]/20 flex flex-col justify-between space-y-3 text-center">
+            <div class="space-y-1">
+              <span class="text-[10px] font-mono font-bold text-[#8D222E] uppercase">DEWAN DIREKSI</span>
+              <h5 class="text-sm font-bold text-[#0D0B0E]">Pilih Konsep Ini</h5>
+              <p class="text-[11px] text-slate-500">Konfirmasi langsung ke Mas Daru untuk penyerahan paket master file vector lengkap.</p>
+            </div>
+
+            <a id="modal-wa-btn" href="#" target="_blank" class="w-full py-3 px-4 rounded-xl bg-[#8D222E] hover:bg-[#5E141D] text-white text-xs font-extrabold transition-all flex items-center justify-center gap-1.5 shadow-md">
+              <i data-lucide="message-circle" class="w-4 h-4 text-[#E1C9AC]"></i>
+              <span>Pilih via WhatsApp</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================================================= -->
+  <!-- LUXURY FOOTER                                           -->
+  <!-- ======================================================= -->
+  <footer class="border-t border-[#EAE4DC] py-12 px-4 text-center text-xs font-mono text-slate-500 space-y-2 bg-white">
+    <p>&copy; 2026 <strong>AZHARUNA GROUP Identity System</strong> &bull; Directed by <strong class="text-[#8D222E]">DARU FAHMAA MULIAWAN</strong> &bull; SYMP Studio</p>
+    <p class="text-[10px] text-slate-400 font-bold tracking-wider uppercase">
+      PROFESSIONAL BRAND &bull; LOGO PROPOSAL DECK
+    </p>
+  </footer>
+
+  <!-- ======================================================= -->
+  <!-- INTERACTIVE POP-UP & BACKGROUND CONTROLLER SCRIPT       -->
+  <!-- ======================================================= -->
+  <script>
+    lucide.createIcons();
+
+    // Data definition for both concepts
+    const conceptsData = {
+      1: {
+        kicker: 'PILIHAN 01 RESMI',
+        title: 'The Noble Blossom',
+        tagline: '“Mekar Anggun, Mengakar Kuat”',
+        bullets: [
+          '<strong>Simbol Bunga Mekar Dinamis:</strong> Mengakar dari kata "Azharuna" (Bunga-bunga yang mekar indah). Kelopak yang bersusun simetris melambangkan unit-unit bisnis yang tumbuh subur dan saling menopang di bawah naungan holding group.',
+          '<strong>Harmonisasi Bentuk Melengkung:</strong> Menggambarkan gaya kepemimpinan yang luwes, humanis, dan adaptif terhadap perkembangan zaman tanpa meninggalkan akar kearifan.',
+          '<strong>Dua Format Lengkap:</strong> Disediakan format <em>Berdiri (Stacked)</em> yang agung untuk sampul annual report dan plakat gedung, serta format <em>Rebahan (Horizontal)</em> yang rapi untuk header website korporat.'
+        ],
+        usage: 'Plakat Lobi Kantor Pusat, Sampul Dokumen Holding, Kartu Nama Direksi, Website Korporat',
+        assets: {
+          berdiri: {
+            color: '../assets/azharuna_group_1_berdiri.png',
+            white: '../assets/azharuna_group_1_berdiri_putih.png'
+          },
+          rebahan: {
+            color: '../assets/azharuna_group_1_rebahan.png',
+            white: '../assets/azharuna_group_1_rebahan_putih.png'
+          }
+        },
+        waText: 'Halo%20Mas%20Daru,%20kami%20resmi%20memilih%20AZHARUNA%20GROUP%20PILIHAN%2001%20(The%20Noble%20Blossom)'
+      },
+      2: {
+        kicker: 'PILIHAN 02 RESMI',
+        title: 'The Sovereign Crest',
+        tagline: '“Wibawa Menjulang, Integritas Abadi”',
+        bullets: [
+          '<strong>Siluet Lambang Menara Aristokrat:</strong> Struktur vertikal yang lebih ramping dan menjulang tinggi, mengadopsi aura mahkota kedaulatan dan mercusuar penunjuk arah bisnis yang kokoh.',
+          '<strong>Garis Geometri Presisi &amp; Tegas:</strong> Melambangkan fondasi kepatuhan tata kelola (*good corporate governance*), kekuatan hukum, dan ketajaman strategi holding lintas sektor.',
+          '<strong>Daya Wibawa Maksimal:</strong> Sangat anggun saat dicetak menggunakan teknik emas timbul (*gold foil stamping*) di atas kop surat resmi atau diukir di pelat kuningan pintu direksi.'
+        ],
+        usage: 'Signage Kuningan Pintu Utama, Kop Surat Resmi, Plakat Kerjasama Strategis, Lanyard Sutra',
+        assets: {
+          berdiri: {
+            color: '../assets/azharuna_group_2_berdiri.png',
+            white: '../assets/azharuna_group_2_berdiri_putih.png'
+          },
+          rebahan: {
+            color: '../assets/azharuna_group_2_rebahan.png',
+            white: '../assets/azharuna_group_2_rebahan_putih.png'
+          }
+        },
+        waText: 'Halo%20Mas%20Daru,%20kami%20resmi%20memilih%20AZHARUNA%20GROUP%20PILIHAN%2002%20(The%20Sovereign%20Crest)'
+      }
+    };
+
+    // State for cards in the main section
+    const cardState = {
+      1: { layout: 'berdiri', canvas: 'light' },
+      2: { layout: 'berdiri', canvas: 'light' }
+    };
+
+    function updateCardView(num) {
+      const s = cardState[num];
+      const img = document.getElementById(`img-card-${num}`);
+      const stage = document.getElementById(`stage-card-${num}`);
+      const data = conceptsData[num];
+
+      const isWhite = (s.canvas === 'light');
+      const logoVersion = isWhite ? 'color' : 'white';
+
+      img.src = data.assets[s.layout][logoVersion];
+
+      if (isWhite) {
+        stage.style.backgroundColor = '#FFFFFF';
+        stage.style.borderColor = '#EAE4DC';
+      } else {
+        stage.style.backgroundColor = '#0D0B0E';
+        stage.style.borderColor = 'rgba(255,255,255,0.15)';
+      }
+    }
+
+    function setCardLayout(num, layout, btn) {
+      cardState[num].layout = layout;
+      btn.parentElement.querySelectorAll('button').forEach(b => {
+        b.className = 'px-2.5 py-1 rounded-full text-slate-500 hover:text-slate-900';
+      });
+      btn.className = 'px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs';
+      updateCardView(num);
+    }
+
+    function setCardCanvas(num, canvas, btn) {
+      cardState[num].canvas = canvas;
+      btn.parentElement.querySelectorAll('button').forEach(b => {
+        b.className = 'px-2.5 py-1 rounded-full text-slate-500 hover:text-slate-900';
+      });
+      btn.className = 'px-2.5 py-1 rounded-full bg-white text-slate-900 shadow-xs';
+      updateCardView(num);
+    }
+
+    // Modal state
+    let activeModalConcept = 1;
+    let activeModalLayout = 'berdiri';
+    let activeModalBg = 'white';
+
+    function openConceptModal(num) {
+      activeModalConcept = num;
+      const data = conceptsData[num];
+      activeModalLayout = cardState[num].layout;
+      activeModalBg = 'white';
+
+      document.getElementById('modal-kicker').innerText = data.kicker;
+      document.getElementById('modal-title').innerText = data.title;
+      document.getElementById('modal-tagline').innerText = data.tagline;
+      
+      const descContainer = document.getElementById('modal-desc');
+      descContainer.innerHTML = data.bullets.map(b => `<p class="flex items-start gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#8D222E] mt-1.5 flex-shrink-0"></span><span>${b}</span></p>`).join('');
+
+      document.getElementById('modal-usage').innerText = data.usage;
+      document.getElementById('modal-wa-btn').href = `https://wa.me/6281311506025?text=${data.waText}`;
+
+      // Set orientation button styles
+      const layoutBtns = document.getElementById('modal-layout-group').querySelectorAll('button');
+      layoutBtns.forEach((b, idx) => {
+        const isSelected = (idx === 0 && activeModalLayout === 'berdiri') || (idx === 1 && activeModalLayout === 'rebahan');
+        b.className = isSelected ? 'px-3 py-1 rounded-full bg-white text-slate-900 shadow-xs' : 'px-3 py-1 rounded-full text-slate-500 hover:text-slate-900';
+      });
+
+      // Reset background buttons
+      document.querySelectorAll('.modal-bg-btn').forEach((b, idx) => {
+        b.className = idx === 0 ? 'modal-bg-btn active px-3 py-2 rounded-xl bg-slate-900 text-white border border-slate-800 flex items-center justify-center gap-1.5 transition-all' : 'modal-bg-btn px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 flex items-center justify-center gap-1.5 transition-all';
+      });
+
+      updateModalStage();
+      document.getElementById('concept-modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeConceptModal() {
+      document.getElementById('concept-modal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target.id === 'concept-modal') {
+        closeConceptModal();
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeConceptModal();
+    });
+
+    function setModalLayout(layout, btn) {
+      activeModalLayout = layout;
+      btn.parentElement.querySelectorAll('button').forEach(b => {
+        b.className = 'px-3 py-1 rounded-full text-slate-500 hover:text-slate-900';
+      });
+      btn.className = 'px-3 py-1 rounded-full bg-white text-slate-900 shadow-xs';
+      updateModalStage();
+    }
+
+    function setModalBg(bgMode, btn) {
+      activeModalBg = bgMode;
+      document.querySelectorAll('.modal-bg-btn').forEach(b => {
+        b.className = 'modal-bg-btn px-3 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 flex items-center justify-center gap-1.5 transition-all';
+      });
+      btn.className = 'modal-bg-btn active px-3 py-2 rounded-xl bg-slate-900 text-white border border-slate-800 flex items-center justify-center gap-1.5 transition-all';
+      updateModalStage();
+    }
+
+    function updateModalStage() {
+      const data = conceptsData[activeModalConcept];
+      const stage = document.getElementById('modal-stage');
+      const img = document.getElementById('modal-img');
+
+      // Check whether to use colored or white logo
+      const isWhiteBg = (activeModalBg === 'white');
+      const isGoldBg = (activeModalBg === 'gold');
+      // For white background, use color logo.
+      // For dark/burgundy/gradient, use white reverse logo.
+      // For gold champagne, use color logo (burgundy looks gorgeous on gold).
+      const logoVersion = (isWhiteBg || isGoldBg) ? 'color' : 'white';
+      
+      const src = data.assets[activeModalLayout][logoVersion];
+      img.src = src;
+
+      switch(activeModalBg) {
+        case 'white':
+          stage.style.background = '#FFFFFF';
+          stage.style.borderColor = '#EAE4DC';
+          break;
+        case 'obsidian':
+          stage.style.background = '#0D0B0E';
+          stage.style.borderColor = 'rgba(255,255,255,0.15)';
+          break;
+        case 'burgundy':
+          stage.style.background = '#8D222E';
+          stage.style.borderColor = 'rgba(225,201,172,0.3)';
+          break;
+        case 'gradient':
+          stage.style.background = 'linear-gradient(135deg, #8D222E 0%, #3D0A11 100%)';
+          stage.style.borderColor = 'rgba(225,201,172,0.3)';
+          break;
+        case 'gold':
+          stage.style.background = '#E1C9AC';
+          stage.style.borderColor = 'rgba(141,34,46,0.3)';
+          break;
+      }
+    }
+
+    function copyColor(code, name) {
+      navigator.clipboard.writeText(code).then(() => {
+        const toast = document.createElement('div');
+        toast.className = 'fixed bottom-6 right-6 bg-[#0D0B0E] text-[#E1C9AC] text-xs font-mono py-3 px-5 rounded-2xl shadow-2xl z-50 flex items-center gap-2 border border-[#8D222E]/40 animate-bounce';
+        toast.innerHTML = `<span class="w-2 h-2 rounded-full bg-[#8D222E]"></span> Kode <strong>${code}</strong> (${name}) berhasil disalin!`;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 2500);
+      });
+    }
+  </script>
+</body>
+</html>
