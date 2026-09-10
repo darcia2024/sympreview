@@ -13,7 +13,7 @@
   <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -33,8 +33,7 @@
             onyx: '#0B1120'
           },
           fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace']
+            sans: ['Plus Jakarta Sans', 'sans-serif']
           }
         }
       }
@@ -69,26 +68,6 @@
       letter-spacing: -0.025em;
     }
 
-    /* Infinite Marquee Strip */
-    .ticker-container {
-      display: flex;
-      overflow: hidden;
-      user-select: none;
-      white-space: nowrap;
-    }
-    .ticker-track {
-      display: flex;
-      gap: 3rem;
-      animation: tickerLoop 30s linear infinite;
-    }
-    @keyframes tickerLoop {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .ticker-container:hover .ticker-track {
-      animation-play-state: paused;
-    }
-
     /* Fanned card hover dynamics */
     .fanned-card {
       transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -99,49 +78,31 @@
 <body class="selection:bg-[#DC143C] selection:text-white bg-white text-slate-900">
 
   <!-- ======================================================= -->
-  <!-- 1. NAVBAR CASUAL & ELEGAN                               -->
+  <!-- 1. NAVBAR MINIMALIS (TANPA BADGE & OUTLINE)             -->
   <!-- ======================================================= -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md transition-all">
     <div class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
       
       <!-- Brand Lockup -->
       <a href="./" class="flex items-center gap-3.5 group text-slate-900 hover:text-[#DC143C] transition">
-        <div class="relative">
-          <img src="assets/SYMP LOGO MERAH.png" alt="SYMP Studio Logo" class="h-8 w-auto object-contain transition-transform group-hover:scale-105" />
-          <span class="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-[#DC143C]"></span>
-        </div>
+        <img src="assets/SYMP LOGO MERAH.png" alt="SYMP Studio Logo" class="h-8 w-auto object-contain transition-transform group-hover:scale-105" />
         <div class="flex flex-col">
-          <div class="flex items-center gap-1.5">
-            <span class="text-sm font-semibold tracking-tight text-slate-950 group-hover:text-[#DC143C] transition">SYMP STUDIO</span>
-            <span class="text-[10px] text-[#DC143C] font-mono">✦</span>
-          </div>
+          <span class="text-sm font-semibold tracking-tight text-slate-950 group-hover:text-[#DC143C] transition">SYMP STUDIO</span>
           <span class="text-[11px] text-slate-400 font-medium tracking-wide">Brand &amp; Logo Showcase</span>
         </div>
       </a>
 
-      <!-- Center Links (Santai & Rapi) -->
+      <!-- Center Links (Bersih, Rapi, Tanpa Badge) -->
       <nav class="hidden md:flex items-center gap-8 text-xs font-medium text-slate-600">
-        <a href="#katalog" class="text-slate-950 font-semibold hover:text-[#DC143C] transition relative py-1">
-          Koleksi Deck
-          <span class="absolute bottom-0 left-0 w-full h-[1.5px] bg-[#DC143C] rounded-full"></span>
-        </a>
-        <a href="azharuna/guidelines/" class="hover:text-[#DC143C] transition flex items-center gap-1.5">
-          <span>Azharuna Guidelines</span>
-          <span class="px-2 py-0.5 rounded-full text-[9px] bg-rose-50 text-[#8D222E] border border-rose-200 font-semibold">Baru Nih!</span>
-        </a>
+        <a href="#katalog" class="text-slate-950 font-semibold hover:text-[#DC143C] transition">Koleksi Deck</a>
+        <a href="azharuna/guidelines/" class="hover:text-[#DC143C] transition">Azharuna Guidelines</a>
         <a href="kolohaga/guidelines/" class="hover:text-[#DC143C] transition">Kolohaga</a>
         <a href="elevgro/" class="hover:text-[#DC143C] transition">Elevgro</a>
       </nav>
 
-      <!-- Right Action & Status -->
+      <!-- Right Action -->
       <div class="flex items-center gap-4">
-        <div class="hidden sm:flex items-center gap-2 text-[11px] font-medium border-r border-slate-150 pr-4">
-          <span class="w-2 h-2 rounded-full bg-[#DC143C] animate-pulse"></span>
-          <span class="text-slate-600">6 Client Siap Dikepoin!</span>
-        </div>
-        
-        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru%20(SYMP%20Studio),%20gue%20mau%20konsultasi%20bikin%20desain%20logo%20baru%20dong!" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8D222E] text-white text-xs font-medium hover:bg-[#68151E] hover:scale-105 active:scale-95 transition-all duration-200 shadow-sm shadow-rose-900/10">
-          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#E1C9AC]"></i>
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru%20(SYMP%20Studio),%20gue%20mau%20konsultasi%20bikin%20desain%20logo%20baru%20dong!" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#8D222E] text-white text-xs font-medium hover:bg-[#68151E] hover:scale-105 active:scale-95 transition-all duration-200 shadow-sm shadow-rose-900/10">
           <span>Ngobrol Santai</span>
         </a>
       </div>
@@ -152,125 +113,95 @@
   <main>
 
     <!-- ======================================================= -->
-    <!-- 2. HERO HEADER (GAYA ANAK MUDA & ELEGAN)                -->
+    <!-- 2. HERO HEADER (BERSIH, TANPA BADGE & OUTLINE)          -->
     <!-- ======================================================= -->
-    <section class="pt-16 sm:pt-24 pb-0 overflow-hidden relative border-b border-slate-100">
+    <section class="pt-20 sm:pt-28 pb-0 overflow-hidden relative">
       
       <!-- Subtle Radial Crimson Atmosphere -->
-      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-radial from-[#DC143C]/06 via-rose-500/02 to-transparent blur-3xl pointer-events-none -z-10"></div>
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-radial from-[#DC143C]/05 via-rose-500/02 to-transparent blur-3xl pointer-events-none -z-10"></div>
 
-      <div class="max-w-5xl mx-auto px-6 sm:px-10 text-center space-y-7">
+      <div class="max-w-5xl mx-auto px-6 sm:px-10 text-center space-y-6">
         
-        <!-- Top Badge (Asik & Kreatif) -->
-        <div class="flex flex-col items-center justify-center space-y-2.5">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-[11px] font-semibold tracking-wider text-[#8D222E] uppercase shadow-xs">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#DC143C] animate-ping"></span>
-            <span>Koleksi Logo Paling Fresh ✨</span>
-          </div>
-        </div>
-
-        <!-- Monumental Editorial Headline -->
-        <div class="max-w-4xl mx-auto space-y-3">
+        <!-- Grand Editorial Headline (Murni Teks, Tanpa Badge Kotak Miring) -->
+        <div class="max-w-4xl mx-auto space-y-4">
           <h1 class="text-4xl sm:text-6xl lg:text-7xl font-semibold text-slate-950 tracking-tight leading-[1.12]">
-            Tempat Nongkrongnya
-            <span class="inline-flex items-center align-middle mx-1 sm:mx-2 -mt-1.5 sm:-mt-2">
-              <span class="inline-block transform -rotate-6 hover:rotate-0 transition duration-300 shadow-xl shadow-rose-900/25 rounded-2xl bg-gradient-to-br from-[#DC143C] via-[#B01735] to-[#8D222E] px-4 py-1.5 text-white text-xs sm:text-sm font-semibold tracking-wider select-none border border-white/30">
-                ✦ DECK LOGO
-              </span>
-            </span>
-            Brand-Brand <span class="text-[#8D222E]">Keren.</span>
+            Tempat Nongkrongnya Presentasi &amp; Brand Guidelines <span class="text-[#8D222E]">Keren.</span>
           </h1>
           
-          <p class="text-base sm:text-xl text-slate-500 font-normal max-w-2xl mx-auto leading-relaxed pt-2">
-            Galeri presentasi proposal &amp; brand guidelines resmi racikan <strong>SYMP Studio</strong>. Tinggal klik kartu di bawah buat intip konsep filosofi, warna, sampai visual lengkapnya!
+          <p class="text-base sm:text-xl text-slate-500 font-normal max-w-2xl mx-auto leading-relaxed pt-1">
+            Galeri presentasi proposal dan buku panduan identitas visual resmi racikan SYMP Studio. Klik kartu buat intip konsep filosofi, warna, sampai mockup lengkapnya.
           </p>
         </div>
 
-        <!-- Pill CTA Button -->
-        <div class="pt-2">
-          <a href="#katalog" class="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-slate-950 hover:bg-[#8D222E] text-white text-xs font-medium hover:scale-105 active:scale-95 transition-all duration-300 shadow-md shadow-rose-900/10 group">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#DC143C] group-hover:bg-white transition-colors"></span>
+        <!-- Pill CTA Button (Bersih Tanpa Dot Kecil) -->
+        <div class="pt-3">
+          <a href="#katalog" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-slate-950 hover:bg-[#8D222E] text-white text-xs font-medium hover:scale-105 active:scale-95 transition-all duration-300 shadow-md shadow-slate-900/10">
             <span>Gas Kepoin Koleksi</span>
-            <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-rose-300 group-hover:text-white transition-colors"></i>
+            <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-slate-300"></i>
           </a>
         </div>
 
       </div>
 
-      <!-- Fanned-Out Cards Preview Stage (Full Color, Vibrant & Pop!) -->
-      <div class="mt-14 sm:mt-20 flex justify-center items-end overflow-hidden pt-8 pb-0 px-4">
+      <!-- Fanned-Out Cards Preview Stage (Full Color, Murni Tanpa Outline & Tanpa Badge) -->
+      <div class="mt-16 sm:mt-24 flex justify-center items-end overflow-hidden pt-8 pb-0 px-4">
         <div class="flex items-end justify-center -space-x-12 sm:-space-x-20 max-w-5xl w-full translate-y-6 sm:translate-y-8">
           
-          <!-- Card 1 (Leftmost, Tilted -14deg): Laptopbisnis (Cyber Midnight Purple & Cyan) -->
-          <a href="laptopbisnis/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-gradient-to-br from-[#0F172A] via-[#1E1B4B] to-[#311042] p-5 flex flex-col justify-between shadow-2xl transform -rotate-14 hover:-rotate-6 hover:-translate-y-10 hover:z-40 border border-indigo-500/40 hover:border-cyan-400 group text-white">
-            <div class="flex items-center justify-between text-[10px] text-slate-300 font-mono">
-              <span class="px-1.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-400/30">TECH</span>
-              <span class="text-indigo-300">01</span>
-            </div>
+          <!-- Card 1 (Leftmost, Tilted -14deg): Laptopbisnis (Cyber Midnight) -->
+          <a href="laptopbisnis/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-gradient-to-br from-[#0F172A] via-[#1E1B4B] to-[#311042] p-6 flex flex-col justify-between shadow-2xl transform -rotate-14 hover:-rotate-6 hover:-translate-y-10 hover:z-40 group text-white">
+            <div></div>
             <div class="py-4 flex items-center justify-center">
               <img src="assets/laptopbisnis_1_putih.png" alt="Laptopbisnis" class="max-h-20 w-auto object-contain group-hover:scale-110 transition duration-300 drop-shadow-md" />
             </div>
-            <div class="space-y-0.5 border-t border-indigo-900/60 pt-3">
+            <div class="space-y-0.5">
               <div class="text-xs font-semibold text-white group-hover:text-cyan-300 transition">Laptopbisnis</div>
               <div class="text-[10px] text-slate-300">Identity &amp; Logo System</div>
             </div>
           </a>
 
-          <!-- Card 2 (Tilted -7deg): Zalvice (Vibrant Coral Rose & Peach) -->
-          <a href="zalvice/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-gradient-to-br from-[#FFF1F2] via-[#FFE4E6] to-[#FECDD3] p-5 flex flex-col justify-between shadow-2xl transform -rotate-7 hover:rotate-0 hover:-translate-y-10 hover:z-40 border border-rose-300 hover:border-rose-500 group text-slate-900">
-            <div class="flex items-center justify-between text-[10px] font-mono">
-              <span class="px-1.5 py-0.5 rounded-full bg-[#DC143C] text-white font-semibold">FASHION</span>
-              <span class="text-rose-700 font-medium">02</span>
-            </div>
+          <!-- Card 2 (Tilted -7deg): Zalvice (Coral Rose) -->
+          <a href="zalvice/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-gradient-to-br from-[#FFF1F2] via-[#FFE4E6] to-[#FECDD3] p-6 flex flex-col justify-between shadow-2xl transform -rotate-7 hover:rotate-0 hover:-translate-y-10 hover:z-40 group text-slate-900">
+            <div></div>
             <div class="py-4 flex items-center justify-center">
               <img src="assets/zalvice_1_fix.png" alt="Zalvice" class="max-h-20 w-auto object-contain group-hover:scale-110 transition duration-300" />
             </div>
-            <div class="space-y-0.5 border-t border-rose-200/80 pt-3">
+            <div class="space-y-0.5">
               <div class="text-xs font-semibold text-slate-950 group-hover:text-[#DC143C] transition">Zalvice</div>
               <div class="text-[10px] text-rose-800">Identity &amp; Wordmark</div>
             </div>
           </a>
 
-          <!-- Card 3 (Centerpiece, 0deg): Azharuna Group (Warm Cream & Crimson Masterpiece) -->
-          <a href="azharuna/guidelines/" class="fanned-card w-44 sm:w-64 h-64 sm:h-84 rounded-2xl bg-gradient-to-b from-[#FAF4E8] via-[#FFFDF9] to-[#F5EFE6] p-6 flex flex-col justify-between shadow-2xl transform rotate-0 hover:-translate-y-10 hover:scale-105 hover:z-40 border-2 border-[#8D222E] hover:border-[#DC143C] z-20 group text-slate-900">
-            <div class="flex items-center justify-between text-[10px] text-[#8D222E] font-semibold">
-              <span class="px-2.5 py-1 rounded-full bg-[#8D222E] text-white text-[10px] font-semibold shadow-xs">★ Official Guidelines</span>
-              <span class="text-[#8D222E] font-mono font-bold">03</span>
-            </div>
+          <!-- Card 3 (Centerpiece, 0deg): Azharuna Group (Royal Cream) -->
+          <a href="azharuna/guidelines/" class="fanned-card w-44 sm:w-64 h-64 sm:h-84 rounded-2xl bg-gradient-to-b from-[#FAF4E8] via-[#FFFDF9] to-[#F5EFE6] p-7 flex flex-col justify-between shadow-2xl transform rotate-0 hover:-translate-y-10 hover:scale-105 hover:z-40 z-20 group text-slate-900">
+            <div></div>
             <div class="py-4 flex items-center justify-center">
               <img src="assets/azharuna_group_1_berdiri.png" alt="Azharuna Group" class="max-h-28 sm:max-h-36 w-auto object-contain group-hover:scale-105 transition duration-300 drop-shadow-sm" />
             </div>
-            <div class="space-y-0.5 border-t border-[#EADEC9] pt-3">
+            <div class="space-y-0.5">
               <div class="text-sm font-semibold text-slate-950 group-hover:text-[#8D222E] transition">AZHARUNA GROUP</div>
               <div class="text-[11px] text-[#8D222E] font-medium">Baitullah &amp; Menara Harmoni</div>
             </div>
           </a>
 
-          <!-- Card 4 (Tilted +7deg): Kolohaga (Rich Emerald Leaf & Mint) -->
-          <a href="kolohaga/guidelines/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-gradient-to-br from-[#ECFDF5] via-[#D1FAE5] to-[#A7F3D0] p-5 flex flex-col justify-between shadow-2xl transform rotate-7 hover:rotate-0 hover:-translate-y-10 hover:z-40 border border-emerald-300 hover:border-emerald-600 group text-slate-900">
-            <div class="flex items-center justify-between text-[10px] font-mono">
-              <span class="px-1.5 py-0.5 rounded-full bg-emerald-700 text-white font-semibold">AGRI</span>
-              <span class="text-emerald-800 font-medium">04</span>
-            </div>
+          <!-- Card 4 (Tilted +7deg): Kolohaga (Emerald Mint) -->
+          <a href="kolohaga/guidelines/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-gradient-to-br from-[#ECFDF5] via-[#D1FAE5] to-[#A7F3D0] p-6 flex flex-col justify-between shadow-2xl transform rotate-7 hover:rotate-0 hover:-translate-y-10 hover:z-40 group text-slate-900">
+            <div></div>
             <div class="py-4 flex items-center justify-center">
               <img src="assets/logo_kolohaga_1_hijau.png" alt="Kolohaga" class="max-h-20 w-auto object-contain group-hover:scale-110 transition duration-300" />
             </div>
-            <div class="space-y-0.5 border-t border-emerald-300/80 pt-3">
+            <div class="space-y-0.5">
               <div class="text-xs font-semibold text-slate-950 group-hover:text-emerald-800 transition">Kolohaga</div>
               <div class="text-[10px] text-emerald-800">Brand Guidelines &amp; Identity</div>
             </div>
           </a>
 
-          <!-- Card 5 (Rightmost, Tilted +14deg): Elevgro (Cobalt Electric Blue & Cyan) -->
-          <a href="elevgro/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-gradient-to-br from-[#EFF6FF] via-[#DBEAFE] to-[#BFDBFE] p-5 flex flex-col justify-between shadow-2xl transform rotate-14 hover:rotate-6 hover:-translate-y-10 hover:z-40 border border-blue-300 hover:border-blue-600 group text-slate-900">
-            <div class="flex items-center justify-between text-[10px] font-mono">
-              <span class="px-1.5 py-0.5 rounded-full bg-blue-600 text-white font-semibold">GROWTH</span>
-              <span class="text-blue-800 font-medium">05</span>
-            </div>
+          <!-- Card 5 (Rightmost, Tilted +14deg): Elevgro (Sky Blue) -->
+          <a href="elevgro/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-gradient-to-br from-[#EFF6FF] via-[#DBEAFE] to-[#BFDBFE] p-6 flex flex-col justify-between shadow-2xl transform rotate-14 hover:rotate-6 hover:-translate-y-10 hover:z-40 group text-slate-900">
+            <div></div>
             <div class="py-4 flex items-center justify-center">
               <img src="assets/elevgro_final_fix_web.png" alt="Elevgro" class="max-h-20 w-auto object-contain group-hover:scale-110 transition duration-300" />
             </div>
-            <div class="space-y-0.5 border-t border-blue-200 pt-3">
+            <div class="space-y-0.5">
               <div class="text-xs font-semibold text-slate-950 group-hover:text-blue-700 transition">Elevgro</div>
               <div class="text-[10px] text-blue-700">Visual Identity System</div>
             </div>
@@ -281,71 +212,29 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- 3. SLICK MARQUEE TICKER                                 -->
+    <!-- 3. CATALOG SECTION (WARNA-WARNI MURNI TANPA OUTLINE)   -->
     <!-- ======================================================= -->
-    <div class="ticker-container py-3.5 border-b border-slate-100 bg-rose-50/40 text-xs font-medium text-slate-600 tracking-wider uppercase">
-      <div class="ticker-track">
-        <span>Azharuna Group</span><span class="text-[#DC143C]">✦</span>
-        <span>Brand Guidelines Resmi</span><span class="text-[#DC143C]">✦</span>
-        <span>Kolohaga Official</span><span class="text-[#DC143C]">✦</span>
-        <span>Elevgro Identity</span><span class="text-[#DC143C]">✦</span>
-        <span>Zalvice Presentation</span><span class="text-[#DC143C]">✦</span>
-        <span>Laptopbisnis Deck</span><span class="text-[#DC143C]">✦</span>
-        <span>Ar Ruwad System</span><span class="text-[#DC143C]">✦</span>
-        <span>Karya Desain SYMP Studio</span><span class="text-[#DC143C]">✦</span>
-        <!-- Duplicate for loop -->
-        <span>Azharuna Group</span><span class="text-[#DC143C]">✦</span>
-        <span>Brand Guidelines Resmi</span><span class="text-[#DC143C]">✦</span>
-        <span>Kolohaga Official</span><span class="text-[#DC143C]">✦</span>
-        <span>Elevgro Identity</span><span class="text-[#DC143C]">✦</span>
-        <span>Zalvice Presentation</span><span class="text-[#DC143C]">✦</span>
-        <span>Laptopbisnis Deck</span><span class="text-[#DC143C]">✦</span>
-        <span>Ar Ruwad System</span><span class="text-[#DC143C]">✦</span>
-        <span>Karya Desain SYMP Studio</span><span class="text-[#DC143C]">✦</span>
-      </div>
-    </div>
-
-    <!-- ======================================================= -->
-    <!-- 4. CATALOG SECTION (WARNA-WARNI & SEGAR)                -->
-    <!-- ======================================================= -->
-    <section id="katalog" class="py-20 sm:py-28 max-w-7xl mx-auto px-6 sm:px-10 space-y-16">
+    <section id="katalog" class="py-24 sm:py-32 max-w-7xl mx-auto px-6 sm:px-10 space-y-16">
       
-      <!-- Section Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-100">
-        <div class="space-y-2 max-w-xl">
-          <div class="flex items-center gap-2 text-xs uppercase font-semibold text-[#8D222E] tracking-wider">
-            <span class="w-5 h-[2px] bg-[#DC143C]"></span>
-            <span>Koleksi Paling Gress 🔥</span>
-          </div>
-          <h2 class="text-2xl sm:text-4xl font-semibold text-slate-950 tracking-tight">
-            Deretan Deck &amp; Guideline yang Udah Rilis
-          </h2>
-          <p class="text-sm text-slate-500 font-normal leading-relaxed">
-            Pilih logo yang mau lo bedah. Dari konsep filosofi, variasi warna, sampai mockup visualnya udah komplit di dalem!
-          </p>
-        </div>
-
-        <div class="flex items-center gap-2 text-xs font-medium text-slate-500 bg-slate-50 px-3.5 py-1.5 rounded-full border border-slate-200">
-          <span class="w-2 h-2 rounded-full bg-[#DC143C] animate-pulse"></span>
-          <span>6 Proyek Siap Diakses</span>
-        </div>
+      <!-- Section Header (Bersih Tanpa Badge Kecil) -->
+      <div class="space-y-3 max-w-2xl">
+        <h2 class="text-3xl sm:text-5xl font-semibold text-slate-950 tracking-tight">
+          Koleksi Deck &amp; Guideline Pilihan
+        </h2>
+        <p class="text-sm sm:text-base text-slate-500 font-normal leading-relaxed">
+          Pilih logo yang mau lo bedah. Dari konsep filosofi, variasi warna, sampai mockup visualnya udah komplit di dalem.
+        </p>
       </div>
 
-      <!-- 6 Vibrant Colorful Project Cards -->
+      <!-- 6 Vibrant Colorful Project Cards (Zero Outlines, Zero Badges) -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
         
-        <!-- Card 1: Azharuna Group (Warm Cream & Crimson Masterpiece) -->
+        <!-- Card 1: Azharuna Group (Warm Cream) -->
         <a href="azharuna/guidelines/" class="group block space-y-4">
-          <div class="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#FAF4E8] via-[#FFFDF9] to-[#F5EFE6] p-8 flex items-center justify-center border-2 border-[#8D222E]/40 overflow-hidden relative transition duration-300 group-hover:shadow-xl group-hover:shadow-rose-900/15 group-hover:-translate-y-1 group-hover:border-[#8D222E]">
-            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#8D222E] text-white text-[10px] font-semibold tracking-wide shadow-sm">
-              ★ Official Guidelines
-            </span>
-            <span class="absolute top-4 right-4 text-[10px] font-mono text-[#8D222E] font-bold">
-              01
-            </span>
+          <div class="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#FAF4E8] via-[#FFFDF9] to-[#F5EFE6] p-8 flex items-center justify-center overflow-hidden transition duration-300 group-hover:shadow-2xl group-hover:shadow-rose-900/15 group-hover:-translate-y-1.5">
             <img src="assets/azharuna_group_1_berdiri.png" alt="Logo Azharuna Group" class="max-h-40 w-auto object-contain transition duration-500 group-hover:scale-105 drop-shadow-sm" />
           </div>
-          <div class="flex items-start justify-between">
+          <div class="flex items-start justify-between pt-1">
             <div class="space-y-0.5">
               <h3 class="text-base font-semibold text-slate-950 group-hover:text-[#8D222E] transition">Azharuna Group</h3>
               <p class="text-xs text-slate-500">Baitullah &amp; Menara Harmoni — Holding Syariah</p>
@@ -354,18 +243,12 @@
           </div>
         </a>
 
-        <!-- Card 2: Kolohaga (Lush Emerald Mint) -->
+        <!-- Card 2: Kolohaga (Emerald Mint) -->
         <a href="kolohaga/guidelines/" class="group block space-y-4">
-          <div class="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#ECFDF5] via-[#D1FAE5] to-[#A7F3D0] p-8 flex items-center justify-center border-2 border-emerald-300/80 overflow-hidden relative transition duration-300 group-hover:shadow-xl group-hover:shadow-emerald-900/15 group-hover:-translate-y-1 group-hover:border-emerald-600">
-            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-emerald-800 text-white text-[10px] font-semibold tracking-wide shadow-sm">
-              Guidelines
-            </span>
-            <span class="absolute top-4 right-4 text-[10px] font-mono text-emerald-800 font-bold">
-              02
-            </span>
+          <div class="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#ECFDF5] via-[#D1FAE5] to-[#A7F3D0] p-8 flex items-center justify-center overflow-hidden transition duration-300 group-hover:shadow-2xl group-hover:shadow-emerald-900/15 group-hover:-translate-y-1.5">
             <img src="assets/logo_kolohaga_1_hijau.png" alt="Logo Kolohaga Official" class="max-h-40 w-auto object-contain transition duration-500 group-hover:scale-105 drop-shadow-sm" />
           </div>
-          <div class="flex items-start justify-between">
+          <div class="flex items-start justify-between pt-1">
             <div class="space-y-0.5">
               <h3 class="text-base font-semibold text-slate-950 group-hover:text-emerald-700 transition">Kolohaga</h3>
               <p class="text-xs text-slate-500">Brand Guidelines &amp; Identity System</p>
@@ -374,18 +257,12 @@
           </div>
         </a>
 
-        <!-- Card 3: Elevgro (Electric Sky & Cyan) -->
+        <!-- Card 3: Elevgro (Electric Sky) -->
         <a href="elevgro/" class="group block space-y-4">
-          <div class="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#EFF6FF] via-[#DBEAFE] to-[#BFDBFE] p-8 flex items-center justify-center border-2 border-blue-200 overflow-hidden relative transition duration-300 group-hover:shadow-xl group-hover:shadow-blue-900/15 group-hover:-translate-y-1 group-hover:border-blue-500">
-            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-blue-700 text-white text-[10px] font-semibold tracking-wide shadow-sm">
-              Presentation Deck
-            </span>
-            <span class="absolute top-4 right-4 text-[10px] font-mono text-blue-700 font-bold">
-              03
-            </span>
+          <div class="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#EFF6FF] via-[#DBEAFE] to-[#BFDBFE] p-8 flex items-center justify-center overflow-hidden transition duration-300 group-hover:shadow-2xl group-hover:shadow-blue-900/15 group-hover:-translate-y-1.5">
             <img src="assets/elevgro_final_fix_web.png" alt="Logo Elevgro" class="max-h-40 w-auto object-contain transition duration-500 group-hover:scale-105 drop-shadow-sm" />
           </div>
-          <div class="flex items-start justify-between">
+          <div class="flex items-start justify-between pt-1">
             <div class="space-y-0.5">
               <h3 class="text-base font-semibold text-slate-950 group-hover:text-blue-700 transition">Elevgro</h3>
               <p class="text-xs text-slate-500">Visual Identity System &amp; Pitch Deck</p>
@@ -394,18 +271,12 @@
           </div>
         </a>
 
-        <!-- Card 4: Zalvice (Warm Coral & Peachy Rose) -->
+        <!-- Card 4: Zalvice (Coral Rose) -->
         <a href="zalvice/" class="group block space-y-4">
-          <div class="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#FFF1F2] via-[#FFE4E6] to-[#FECDD3] p-8 flex items-center justify-center border-2 border-rose-200 overflow-hidden relative transition duration-300 group-hover:shadow-xl group-hover:shadow-rose-900/15 group-hover:-translate-y-1 group-hover:border-[#DC143C]">
-            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-[#DC143C] text-white text-[10px] font-semibold tracking-wide shadow-sm">
-              Presentation Deck
-            </span>
-            <span class="absolute top-4 right-4 text-[10px] font-mono text-[#DC143C] font-bold">
-              04
-            </span>
+          <div class="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#FFF1F2] via-[#FFE4E6] to-[#FECDD3] p-8 flex items-center justify-center overflow-hidden transition duration-300 group-hover:shadow-2xl group-hover:shadow-rose-900/15 group-hover:-translate-y-1.5">
             <img src="assets/zalvice_1_fix.png" alt="Logo Zalvice" class="max-h-40 w-auto object-contain transition duration-500 group-hover:scale-105 drop-shadow-sm" />
           </div>
-          <div class="flex items-start justify-between">
+          <div class="flex items-start justify-between pt-1">
             <div class="space-y-0.5">
               <h3 class="text-base font-semibold text-slate-950 group-hover:text-[#DC143C] transition">Zalvice</h3>
               <p class="text-xs text-slate-500">Identity &amp; Wordmark Proposal</p>
@@ -414,18 +285,12 @@
           </div>
         </a>
 
-        <!-- Card 5: Laptopbisnis (Cyber Dark Midnight & Indigo) -->
+        <!-- Card 5: Laptopbisnis (Cyber Midnight) -->
         <a href="laptopbisnis/" class="group block space-y-4">
-          <div class="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#0F172A] via-[#1E1B4B] to-[#311042] p-8 flex items-center justify-center border-2 border-indigo-500/40 overflow-hidden relative transition duration-300 group-hover:shadow-xl group-hover:shadow-indigo-950/40 group-hover:-translate-y-1 group-hover:border-cyan-400">
-            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 text-[10px] font-semibold tracking-wide">
-              Presentation Deck
-            </span>
-            <span class="absolute top-4 right-4 text-[10px] font-mono text-cyan-300 font-bold">
-              05
-            </span>
+          <div class="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#0F172A] via-[#1E1B4B] to-[#311042] p-8 flex items-center justify-center overflow-hidden transition duration-300 group-hover:shadow-2xl group-hover:shadow-indigo-950/40 group-hover:-translate-y-1.5">
             <img src="assets/laptopbisnis_1_putih.png" alt="Logo Laptopbisnis" class="max-h-40 w-auto object-contain transition duration-500 group-hover:scale-105 drop-shadow-md" />
           </div>
-          <div class="flex items-start justify-between">
+          <div class="flex items-start justify-between pt-1">
             <div class="space-y-0.5">
               <h3 class="text-base font-semibold text-slate-950 group-hover:text-indigo-600 transition">Laptopbisnis</h3>
               <p class="text-xs text-slate-500">Identity &amp; Logo System</p>
@@ -434,18 +299,12 @@
           </div>
         </a>
 
-        <!-- Card 6: Ar Ruwad (Warm Golden Ochre & Honey) -->
+        <!-- Card 6: Ar Ruwad (Golden Ochre) -->
         <a href="arruwad/" class="group block space-y-4">
-          <div class="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#FFFBEB] via-[#FEF3C7] to-[#FDE68A] p-8 flex items-center justify-center border-2 border-amber-300 overflow-hidden relative transition duration-300 group-hover:shadow-xl group-hover:shadow-amber-900/15 group-hover:-translate-y-1 group-hover:border-amber-500">
-            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-amber-800 text-white text-[10px] font-semibold tracking-wide shadow-sm">
-              Presentation Deck
-            </span>
-            <span class="absolute top-4 right-4 text-[10px] font-mono text-amber-900 font-bold">
-              06
-            </span>
+          <div class="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#FFFBEB] via-[#FEF3C7] to-[#FDE68A] p-8 flex items-center justify-center overflow-hidden transition duration-300 group-hover:shadow-2xl group-hover:shadow-amber-900/15 group-hover:-translate-y-1.5">
             <img src="assets/logo_ar_ruwad_1.png" alt="Logo Ar Ruwad" class="max-h-40 w-auto object-contain transition duration-500 group-hover:scale-105 drop-shadow-sm" />
           </div>
-          <div class="flex items-start justify-between">
+          <div class="flex items-start justify-between pt-1">
             <div class="space-y-0.5">
               <h3 class="text-base font-semibold text-slate-950 group-hover:text-amber-800 transition">Ar Ruwad</h3>
               <p class="text-xs text-slate-500">Logo Angkatan &amp; Identity Proposal</p>
@@ -459,24 +318,20 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- 5. CONSULTATION CALL-TO-ACTION (SANTAI & GAS POL)       -->
+    <!-- 4. CONSULTATION CTA (BERSIH & SANTAI)                   -->
     <!-- ======================================================= -->
-    <section class="py-20 sm:py-24 border-t border-slate-100 bg-gradient-to-b from-slate-50/60 via-rose-50/25 to-white">
+    <section class="py-20 sm:py-28 bg-gradient-to-b from-slate-50/60 to-white">
       <div class="max-w-4xl mx-auto px-6 sm:px-10 text-center space-y-6">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-xs font-semibold text-[#8D222E] uppercase tracking-wider">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#DC143C]"></span>
-          <span>Mau Bikin Logo Kece Kayak Gini? 🚀</span>
-        </div>
         <h2 class="text-3xl sm:text-5xl font-semibold text-slate-950 tracking-tight">
-          Punya Ide Brand Baru atau Mau Rebrand Bisnis?
+          Mau Bikin Logo Brand Lo Jadi Sekeren Ini?
         </h2>
         <p class="text-sm sm:text-base text-slate-600 max-w-xl mx-auto font-normal leading-relaxed">
-          Dari logo konsep, pitch deck korporat, sampai buku panduan visual brand komplit, serahin aja ke tim <strong>SYMP Studio</strong>. Santai aja, konsultasi dulu gratis kok!
+          Lagi ngebangun brand baru atau mau rebrand bisnis biar makin stand out? Gas ngobrol bareng Daru di WhatsApp, santai aja bro!
         </p>
-        <div class="pt-2">
+        <div class="pt-3">
           <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru%20(SYMP%20Studio),%20gue%20mau%20bikin%20identitas%20visual%20brand%20baru%20nih!" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#8D222E] text-white text-xs font-semibold hover:bg-[#68151E] hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-rose-900/20">
-            <i data-lucide="message-circle" class="w-4 h-4 text-[#E1C9AC]"></i>
-            <span>Gas Ngobrol Bareng Daru di WA</span>
+            <span>Gas Ngobrol di WhatsApp</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 text-[#E1C9AC]"></i>
           </a>
         </div>
       </div>
@@ -485,14 +340,11 @@
   </main>
 
   <!-- ======================================================= -->
-  <!-- 6. MINIMALIST CLEAN FOOTER                              -->
+  <!-- 5. MINIMALIST CLEAN FOOTER                              -->
   <!-- ======================================================= -->
-  <footer class="bg-white py-12 border-t border-slate-100 text-xs text-slate-400 font-normal">
+  <footer class="bg-white py-12 text-xs text-slate-400 font-normal">
     <div class="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-[#DC143C]"></span>
-        <p>&copy; 2026 SYMP Studio. Dirancang dengan penuh dedikasi oleh Daru Fahmaa Muliawan.</p>
-      </div>
+      <p>&copy; 2026 SYMP Studio. Dirancang oleh Daru Fahmaa Muliawan.</p>
       <p>Presentation Archive &amp; Brand Guidelines Hub</p>
     </div>
   </footer>
