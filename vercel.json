@@ -11,12 +11,31 @@
       "source": "/elevgro/guidelines",
       "destination": "/elevgro/guideline",
       "permanent": false
+    },
+    {
+      "source": "/azharuna/guidelines.html",
+      "destination": "/azharuna/guidelines",
+      "permanent": false
+    },
+    {
+      "source": "/azharuna/guideline.html",
+      "destination": "/azharuna/guidelines",
+      "permanent": false
+    },
+    {
+      "source": "/azharuna/guideline",
+      "destination": "/azharuna/guidelines",
+      "permanent": false
     }
   ],
   "rewrites": [
     {
       "source": "/elevgro/guideline",
       "destination": "/elevgro/guidelines.html"
+    },
+    {
+      "source": "/azharuna/guidelines",
+      "destination": "/azharuna/guidelines/index.html"
     }
   ]
 }
