@@ -50,53 +50,18 @@
       --agency-spring: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    @font-face {
-      font-family: 'ES Rebond Grotesque';
-      src: url('../assets/fonts/ESRebondGrotesque-Bold.otf') format('opentype');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'ES Rebond Grotesque';
-      src: url('../assets/fonts/ESRebondGrotesque-Extrabold.otf') format('opentype');
-      font-weight: 800;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'ES Rebond Grotesque';
-      src: url('../assets/fonts/ESRebondGrotesque-Semibold.otf') format('opentype');
-      font-weight: 600;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'ES Rebond Grotesque';
-      src: url('../assets/fonts/ESRebondGrotesque-Medium.otf') format('opentype');
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'ES Rebond Grotesque';
-      src: url('../assets/fonts/ESRebondGrotesque-Thin.otf') format('opentype');
-      font-weight: 100;
-      font-style: normal;
-      font-display: swap;
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       -webkit-tap-highlight-color: transparent;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-weight: 400 !important;
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 400;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-weight: 400 !important;
       background-color: #FFFFFF;
       color: #0F172A;
       overflow-x: hidden;
@@ -104,8 +69,12 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    h1, h2, h3, h4, h5, h6, p, span, a, button, div, strong, b, label, input, .font-heading, .font-bold, .font-semibold, .font-medium {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-weight: 400 !important;
+    }
+
     h1, h2, h3, h4, .font-heading {
-      font-family: 'ES Rebond Grotesque', 'Plus Jakarta Sans', sans-serif !important;
       letter-spacing: -0.02em;
     }
 

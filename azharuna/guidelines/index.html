@@ -4,11 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>AZHARUNA GROUP: Brand Guidelines | SYMP Studio</title>
-  <meta name="description" content="Buku panduan identitas visual resmi AZHARUNA GROUP (Pilihan 01: Baitullah & Menara Harmoni). Standar penggunaan logo, sistem warna korporat, tipografi ES Rebond Grotesque & Plus Jakarta Sans, safe area, larangan, dan aplikasi holding syariah.">
+  <meta name="description" content="Buku panduan identitas visual resmi AZHARUNA GROUP (Pilihan 01: Baitullah & Menara Harmoni). Standar penggunaan logo, warna, tipografi, safe area, larangan, dan aplikasi holding syariah.">
   <link rel="icon" href="../../assets/azharuna_group_1_berdiri.png">
+  
+  <!-- Google Fonts: Plus Jakarta Sans Only -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400&display=swap" rel="stylesheet">
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -25,7 +28,7 @@
             cream: {
               DEFAULT: '#FAF4E8',
               light: '#FFFDF9',
-              soft: '#F4ECE0'
+              soft: '#F5EFE6'
             },
             gold: {
               DEFAULT: '#E1C9AC',
@@ -34,55 +37,15 @@
             onyx: '#0B1120'
           },
           fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-            heading: ['ES Rebond Grotesque', 'Plus Jakarta Sans', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace']
+            sans: ['Plus Jakarta Sans', 'sans-serif']
           }
         }
       }
     }
   </script>
   <script src="https://unpkg.com/lucide@latest"></script>
+  
   <style>
-    /* ======================================================= */
-    /* CUSTOM FONT-FACE: ES REBOND GROTESQUE                   */
-    /* ======================================================= */
-    @font-face {
-      font-family: 'ES Rebond Grotesque';
-      src: url('../../assets/fonts/ESRebondGrotesque-Thin.otf') format('opentype');
-      font-weight: 100;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'ES Rebond Grotesque';
-      src: url('../../assets/fonts/ESRebondGrotesque-Medium.otf') format('opentype');
-      font-weight: 500;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'ES Rebond Grotesque';
-      src: url('../../assets/fonts/ESRebondGrotesque-Semibold.otf') format('opentype');
-      font-weight: 600;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'ES Rebond Grotesque';
-      src: url('../../assets/fonts/ESRebondGrotesque-Bold.otf') format('opentype');
-      font-weight: 700;
-      font-style: normal;
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'ES Rebond Grotesque';
-      src: url('../../assets/fonts/ESRebondGrotesque-Extrabold.otf') format('opentype');
-      font-weight: 800;
-      font-style: normal;
-      font-display: swap;
-    }
-
     :root {
       --crimson: #8D222E;
       --crimson-dark: #68151E;
@@ -93,70 +56,63 @@
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
       -webkit-tap-highlight-color: transparent;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-weight: 400 !important;
     }
 
     body {
-      margin: 0;
       min-width: 320px;
       overflow-x: hidden;
       background: #FFFFFF;
       color: #0F172A;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 400;
-      font-variant-numeric: tabular-nums;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-weight: 400 !important;
       letter-spacing: -0.015em;
       -webkit-font-smoothing: antialiased;
       text-rendering: geometricPrecision;
     }
 
-    /* All Headings & Titles strictly use ES Rebond Grotesque */
-    h1, h2, h3, h4, .font-heading {
-      font-family: 'ES Rebond Grotesque', 'Plus Jakarta Sans', sans-serif !important;
-      letter-spacing: -0.02em;
+    h1, h2, h3, h4, h5, h6, p, span, a, button, div, strong, b, label, input {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-weight: 400 !important;
     }
 
-    /* Clean Unboxed Swatch Bar */
-    .swatch-bar {
-      height: 120px;
-      border-radius: 14px;
-      transition: transform 0.2s ease, opacity 0.2s ease;
-      cursor: pointer;
-    }
-    .swatch-bar:hover {
-      transform: translateY(-2px);
-      opacity: 0.95;
+    /* Minimalist continuous color line */
+    .color-swatch-line {
+      height: 4px;
+      width: 100%;
     }
 
-    /* Minimalist Floating Navigation Dock on Mobile */
-    .mobile-bottom-nav {
+    /* Floating bottom mobile navigation dock */
+    .mobile-bottom-dock {
       display: none;
     }
     @media (max-width: 768px) {
-      .mobile-bottom-nav {
+      .mobile-bottom-dock {
         position: fixed;
-        left: 16px;
-        right: 16px;
-        bottom: max(12px, env(safe-area-inset-bottom));
+        left: 20px;
+        right: 20px;
+        bottom: max(16px, env(safe-area-inset-bottom));
         z-index: 60;
         display: flex;
         align-items: center;
         justify-content: space-around;
-        background: rgba(255, 255, 255, 0.94);
+        background: rgba(255, 255, 255, 0.96);
         backdrop-filter: blur(20px);
         border: 1px solid rgba(141, 34, 46, 0.12);
         border-radius: 999px;
-        padding: 6px 12px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        padding: 8px 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
       }
-      .mobile-bottom-nav a {
-        padding: 6px 8px;
-        font-size: 0.7rem;
-        font-weight: 600;
+      .mobile-bottom-dock a {
+        font-size: 0.72rem;
         color: #64748B;
         text-decoration: none;
       }
-      .mobile-bottom-nav a:hover, .mobile-bottom-nav a:active {
+      .mobile-bottom-dock a:hover, .mobile-bottom-dock a:active {
         color: var(--crimson);
       }
     }
@@ -165,22 +121,22 @@
 <body class="selection:bg-[#8D222E] selection:text-white">
 
   <!-- ======================================================= -->
-  <!-- MINIMALIST STICKY HEADER                                -->
+  <!-- MINIMALIST STICKY HEADER (UNBOXED)                      -->
   <!-- ======================================================= -->
-  <header class="sticky top-0 z-50 bg-white/92 backdrop-blur-md border-b border-slate-100 transition-all">
-    <div class="max-w-6xl mx-auto px-6 sm:px-10 h-16 sm:h-20 flex items-center justify-between">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all">
+    <div class="max-w-5xl mx-auto px-6 sm:px-10 h-16 sm:h-20 flex items-center justify-between">
       
       <!-- Back Link & Title -->
-      <a href="/azharuna" class="group flex items-center gap-3 text-slate-900 hover:text-[#8D222E] transition">
+      <a href="/azharuna" class="group flex items-center gap-3 text-slate-800 hover:text-[#8D222E] transition">
         <i data-lucide="arrow-left" class="w-4 h-4 text-slate-400 group-hover:-translate-x-1 group-hover:text-[#8D222E] transition-transform"></i>
         <div class="flex flex-col">
-          <span class="text-xs sm:text-sm font-bold tracking-tight text-slate-900 font-heading">AZHARUNA GROUP</span>
-          <span class="text-[10px] font-mono text-slate-400">Brand Guidelines 2026</span>
+          <span class="text-sm tracking-tight text-slate-900">AZHARUNA GROUP</span>
+          <span class="text-[11px] text-slate-400">Brand Guidelines 2026</span>
         </div>
       </a>
 
-      <!-- Desktop Minimal Anchors -->
-      <nav class="hidden lg:flex items-center gap-7 text-xs text-slate-500 font-medium">
+      <!-- Desktop Nav Anchors -->
+      <nav class="hidden md:flex items-center gap-7 text-xs text-slate-500">
         <a href="#overview" class="hover:text-[#8D222E] transition">Overview</a>
         <a href="#concept" class="hover:text-[#8D222E] transition">Konsep</a>
         <a href="#primary-logo" class="hover:text-[#8D222E] transition">Logo</a>
@@ -191,20 +147,19 @@
         <a href="#mockups" class="hover:text-[#8D222E] transition">Aplikasi</a>
       </nav>
 
-      <!-- Direct Contact -->
+      <!-- Direct Action -->
       <div class="flex items-center gap-3">
-        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru%20(SYMP%20Studio),%20kami%20ingin%20konsultasi%20mengenai%20Brand%20Guidelines%20Azharuna%20Group." target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8D222E] text-white text-xs font-medium hover:bg-[#68151E] transition">
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru%20(SYMP%20Studio),%20kami%20ingin%20konsultasi%20mengenai%20Brand%20Guidelines%20Azharuna%20Group." target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8D222E] text-white text-xs hover:bg-[#68151E] transition">
           <i data-lucide="message-circle" class="w-3.5 h-3.5 text-[#E1C9AC]"></i>
-          <span class="hidden sm:inline">Kontak Desainer</span>
-          <span class="sm:hidden">Kontak</span>
+          <span>Kontak Desainer</span>
         </a>
       </div>
 
     </div>
   </header>
 
-  <!-- Mobile Bottom Floating Navigation -->
-  <nav class="mobile-bottom-nav" aria-label="Navigasi mobile">
+  <!-- Mobile Bottom Dock -->
+  <nav class="mobile-bottom-dock" aria-label="Navigasi mobile">
     <a href="#hero">Cover</a>
     <a href="#concept">Konsep</a>
     <a href="#primary-logo">Logo</a>
@@ -215,53 +170,53 @@
   <main id="main-content">
 
     <!-- ======================================================= -->
-    <!-- SECTION 01: HERO / MONUMENTAL COVER (UNBOXED)           -->
+    <!-- SECTION 01: HERO & FLOATING MASTER LOGO (ZERO BOXES)    -->
     <!-- ======================================================= -->
-    <section id="hero" class="pt-16 sm:pt-24 pb-20 sm:pb-28 border-b border-slate-100">
+    <section id="hero" class="pt-16 sm:pt-24 pb-20 sm:pb-28 border-b border-slate-100 transition-colors duration-500" id="hero-section">
       <div class="max-w-5xl mx-auto px-6 sm:px-10">
         
         <!-- Eyebrow Tag -->
-        <div class="flex items-center gap-2 text-xs font-mono text-[#8D222E] mb-6">
+        <div class="flex items-center gap-2 text-xs text-[#8D222E] mb-6">
           <span class="w-6 h-[1px] bg-[#8D222E]"></span>
-          <span class="tracking-widest uppercase font-semibold">Identitas Visual Resmi — Opsi 01 Terpilih</span>
+          <span class="tracking-wider uppercase">Identitas Visual Resmi — Opsi 01 Terpilih</span>
         </div>
 
-        <!-- Monumental Title in ES Rebond Grotesque -->
-        <div class="space-y-4 mb-14">
-          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-950 tracking-tight leading-[1.05]">
+        <!-- Monumental Title in Jakarta Plus Sans Regular -->
+        <div class="space-y-4 mb-16">
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl text-slate-950 tracking-tight leading-[1.08]">
             AZHARUNA GROUP
           </h1>
-          <p class="text-base sm:text-2xl text-slate-500 font-normal tracking-tight max-w-3xl leading-relaxed">
+          <p class="text-base sm:text-2xl text-slate-500 tracking-tight max-w-3xl leading-relaxed">
             Baitullah &amp; Menara Harmoni — Buku Panduan Standar Identitas Visual Korporat Holding Syariah 2026.
           </p>
         </div>
 
-        <!-- Master Floating Logo Stage (Seamless, No Double-Box) -->
-        <div id="hero-stage" class="relative rounded-3xl p-8 sm:p-16 transition-all duration-500 flex flex-col items-center justify-center min-h-[380px] sm:min-h-[500px]" style="background-color: #FAF4E8;">
+        <!-- Master Floating Logo Stage (Completely Unboxed, Free Floating) -->
+        <div id="hero-stage-canvas" class="py-12 sm:py-20 flex flex-col items-center justify-center transition-all duration-500">
           
-          <!-- Subtle Floating Palette Switcher -->
-          <div class="absolute top-5 right-5 sm:top-7 sm:right-7 flex items-center gap-1.5 p-1 bg-white/90 backdrop-blur-md rounded-full shadow-xs border border-slate-200/60 text-xs">
-            <button onclick="setHeroStage('cream')" id="btn-theme-cream" class="px-3.5 py-1.5 rounded-full text-xs font-semibold transition bg-[#8D222E] text-white">Ivory</button>
-            <button onclick="setHeroStage('white')" id="btn-theme-white" class="px-3.5 py-1.5 rounded-full text-xs font-semibold transition text-slate-600 hover:text-slate-950">White</button>
-            <button onclick="setHeroStage('crimson')" id="btn-theme-crimson" class="px-3.5 py-1.5 rounded-full text-xs font-semibold transition text-slate-600 hover:text-slate-950">Crimson</button>
-            <button onclick="setHeroStage('onyx')" id="btn-theme-onyx" class="px-3.5 py-1.5 rounded-full text-xs font-semibold transition text-slate-600 hover:text-slate-950">Onyx</button>
+          <img id="hero-logo-img" src="../../assets/azharuna_group_1_berdiri.png" alt="Logo Resmi Azharuna Group" class="max-h-60 sm:max-h-80 w-auto object-contain transition-all duration-300" />
+          
+          <!-- Minimalist Orientation Controls -->
+          <div class="mt-8 flex items-center gap-6 text-xs text-slate-500">
+            <button onclick="setHeroOrientation('berdiri')" id="btn-orient-berdiri" class="text-[#8D222E] underline underline-offset-4 transition">
+              Format Berdiri
+            </button>
+            <span class="text-slate-300">·</span>
+            <button onclick="setHeroOrientation('rebahan')" id="btn-orient-rebahan" class="hover:text-slate-900 transition">
+              Format Rebahan
+            </button>
           </div>
 
-          <!-- Master Emblem (Floats freely on canvas) -->
-          <div class="w-full flex items-center justify-center py-6">
-            <img id="hero-logo-img" src="../../assets/azharuna_group_1_berdiri.png" alt="Logo Resmi Azharuna Group" class="max-h-52 sm:max-h-72 w-auto object-contain transition-all duration-300" />
-          </div>
-
-          <!-- Minimalist Layout Switcher: Berdiri vs Rebahan -->
-          <div class="mt-4 flex items-center gap-2">
-            <button onclick="setHeroOrientation('berdiri')" id="btn-orient-berdiri" class="px-4 py-1.5 rounded-full text-xs font-semibold transition bg-white text-slate-900 shadow-xs">Format Berdiri</button>
-            <button onclick="setHeroOrientation('rebahan')" id="btn-orient-rebahan" class="px-4 py-1.5 rounded-full text-xs font-semibold transition text-slate-500 hover:text-slate-900">Format Rebahan</button>
-          </div>
-
-          <!-- Stage Caption -->
-          <div class="absolute bottom-4 left-6 right-6 flex items-center justify-between text-[11px] text-slate-400 font-mono">
-            <span id="hero-canvas-label">Kanvas: Cream Terang (#FAF4E8)</span>
-            <span class="hidden sm:inline">Vektor Master Rasio Presisi</span>
+          <!-- Subtle Background Switcher (Text-based, No Ugly Boxes) -->
+          <div class="mt-4 flex items-center gap-3 text-xs text-slate-400">
+            <span>Uji Latar:</span>
+            <button onclick="setHeroBackground('white')" id="btn-bg-white" class="hover:text-slate-900 transition text-[#8D222E] font-medium">Putih</button>
+            <span>·</span>
+            <button onclick="setHeroBackground('cream')" id="btn-bg-cream" class="hover:text-slate-900 transition">Cream (#FAF4E8)</button>
+            <span>·</span>
+            <button onclick="setHeroBackground('crimson')" id="btn-bg-crimson" class="hover:text-slate-900 transition">Merah Crimson</button>
+            <span>·</span>
+            <button onclick="setHeroBackground('onyx')" id="btn-bg-onyx" class="hover:text-slate-900 transition">Deep Onyx</button>
           </div>
 
         </div>
@@ -270,53 +225,52 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 02: BRAND OVERVIEW & 4 PILLARS (UNBOXED)        -->
+    <!-- SECTION 02: PROFIL & 4 PILAR UTAMA (UNBOXED COLUMNS)    -->
     <!-- ======================================================= -->
     <section id="overview" class="py-20 sm:py-28 border-b border-slate-100">
       <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
         
-        <!-- Section Header -->
         <div class="max-w-2xl space-y-3">
-          <span class="text-xs font-mono font-semibold uppercase text-[#8D222E] tracking-wider">01 / Profil &amp; Filosofi</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight leading-snug">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">01 / Profil &amp; Filosofi</span>
+          <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
             Fondasi Amanah, Membawa Berkah bagi Seluruh Umat.
           </h2>
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            AZHARUNA GROUP hadir sebagai holding korporat syariah terpercaya yang menaungi ekosistem Haji &amp; Umrah, Halal Travel, Hospitality, dan Layanan Umat. Seluruh identitas visual dirancang untuk mencerminkan wibawa kepemimpinan modern, ketenangan spiritual tanah suci, dan kehangatan khidmat pelayanan.
+            AZHARUNA GROUP hadir sebagai holding korporat syariah terpercaya yang menaungi ekosistem Haji &amp; Umrah, Halal Travel, Hospitality, dan Layanan Umat. Seluruh identitas visual dirancang untuk memancarkan wibawa kepemimpinan modern, ketenangan spiritual tanah suci, dan kehangatan khidmat pelayanan.
           </p>
         </div>
 
-        <!-- 4 Pillars as Typographic Columns (No Enclosing Boxes!) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pt-8 border-t border-slate-150">
+        <!-- 4 Pillars as Typographic Columns (No Boxes!) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pt-8 border-t border-slate-100">
           
-          <div class="space-y-3">
-            <span class="font-mono text-3xl font-bold text-[#8D222E]">01</span>
-            <h3 class="text-base font-bold text-slate-950">Amanah Tertinggi</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">
+          <div class="space-y-2.5">
+            <span class="text-2xl text-[#8D222E] block">01</span>
+            <h3 class="text-base text-slate-950">Amanah Tertinggi</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
               Integritas syariah tanpa kompromi. Menjaga setiap amanah perjalanan ibadah jamaah dan kemitraan bisnis dengan transparansi penuh.
             </p>
           </div>
 
-          <div class="space-y-3">
-            <span class="font-mono text-3xl font-bold text-[#8D222E]">02</span>
-            <h3 class="text-base font-bold text-slate-950">Pelayanan Khidmat</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">
+          <div class="space-y-2.5">
+            <span class="text-2xl text-[#8D222E] block">02</span>
+            <h3 class="text-base text-slate-950">Pelayanan Khidmat</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
               Mendampingi jamaah dan mitra dengan ketulusan hati, empati tinggi, serta kenyamanan fasilitas kelas satu dari tanah air hingga tanah suci.
             </p>
           </div>
 
-          <div class="space-y-3">
-            <span class="font-mono text-3xl font-bold text-[#8D222E]">03</span>
-            <h3 class="text-base font-bold text-slate-950">Wibawa &amp; Profesionalitas</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">
+          <div class="space-y-2.5">
+            <span class="text-2xl text-[#8D222E] block">03</span>
+            <h3 class="text-base text-slate-950">Wibawa &amp; Profesionalitas</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
               Memadukan adab mulia ketauhidan dengan sistem manajemen modern, kecepatan teknologi, dan ketepatan operasional berstandar internasional.
             </p>
           </div>
 
-          <div class="space-y-3">
-            <span class="font-mono text-3xl font-bold text-[#8D222E]">04</span>
-            <h3 class="text-base font-bold text-slate-950">Keberkahan Maslahat</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">
+          <div class="space-y-2.5">
+            <span class="text-2xl text-[#8D222E] block">04</span>
+            <h3 class="text-base text-slate-950">Keberkahan Maslahat</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
               Bisnis yang bertumbuh untuk meluaskan kemaslahatan sosial, membuka lapangan kerja yang berkah, dan mendukung dakwah kebaikan bagi umat.
             </p>
           </div>
@@ -327,14 +281,14 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 03: LOGO CONCEPT & ANATOMY                      -->
+    <!-- SECTION 03: KONSEP & ANATOMI SIMBOL (UNBOXED)           -->
     <!-- ======================================================= -->
     <section id="concept" class="py-20 sm:py-28 border-b border-slate-100">
       <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
         
         <div class="max-w-2xl space-y-3">
-          <span class="text-xs font-mono font-semibold uppercase text-[#8D222E] tracking-wider">02 / Konsep Simbol</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight leading-snug">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">02 / Konsep Simbol</span>
+          <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
             Baitullah &amp; Menara Harmoni
           </h2>
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
@@ -345,18 +299,18 @@
         <!-- Asymmetrical Split: Floating Logo Left, Editorial Narrative Right -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:items-center">
           
-          <!-- Left: Grand Floating Emblem -->
-          <div class="lg:col-span-6 flex items-center justify-center p-8 sm:p-12 rounded-3xl bg-[#FAF4E8]/60">
+          <!-- Left: Grand Floating Emblem (Zero Boxes) -->
+          <div class="lg:col-span-6 flex items-center justify-center py-6">
             <img src="../../assets/azharuna_group_1_berdiri.png" alt="Azharuna Group Master Emblem" class="max-h-80 w-auto object-contain" />
           </div>
 
-          <!-- Right: Numbered Breakdown (No Cards, Clean Hairlines) -->
-          <div class="lg:col-span-6 space-y-8">
+          <!-- Right: Clean Numbered Breakdown -->
+          <div class="lg:col-span-6 space-y-7">
             
             <div class="space-y-1.5 pb-6 border-b border-slate-100">
               <div class="flex items-center gap-3">
-                <span class="font-mono text-xs font-bold text-[#8D222E]">01.</span>
-                <h3 class="text-base font-bold text-slate-950">Siluet Ka'bah Al-Musyarafah</h3>
+                <span class="text-xs text-[#8D222E]">01.</span>
+                <h3 class="text-base text-slate-950">Siluet Ka'bah Al-Musyarafah</h3>
               </div>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed pl-7">
                 Pusat tauhid dan kiblat umat Islam sedunia. Menggambarkan keteguhan prinsip syariah, integritas amanah, dan kesucian tujuan dalam melayani tamu-tamu Allah.
@@ -365,8 +319,8 @@
 
             <div class="space-y-1.5 pb-6 border-b border-slate-100">
               <div class="flex items-center gap-3">
-                <span class="font-mono text-xs font-bold text-[#8D222E]">02.</span>
-                <h3 class="text-base font-bold text-slate-950">Menara Masjidil Haram</h3>
+                <span class="text-xs text-[#8D222E]">02.</span>
+                <h3 class="text-base text-slate-950">Menara Masjidil Haram</h3>
               </div>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed pl-7">
                 Menjulang tinggi sebagai mercusuar dakwah, wibawa kepemimpinan korporasi holding, serta visi jangkauan pelayanan berkelas dunia.
@@ -375,8 +329,8 @@
 
             <div class="space-y-1.5 pb-6 border-b border-slate-100">
               <div class="flex items-center gap-3">
-                <span class="font-mono text-xs font-bold text-[#8D222E]">03.</span>
-                <h3 class="text-base font-bold text-slate-950">Lengkungan Kubah Harmoni</h3>
+                <span class="text-xs text-[#8D222E]">03.</span>
+                <h3 class="text-base text-slate-950">Lengkungan Kubah Harmoni</h3>
               </div>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed pl-7">
                 Lengkungan kubah memayungi seluruh elemen simbolis, mencerminkan perlindungan syar'i, kenyamanan keluarga, dan persatuan ekosistem bisnis holding.
@@ -385,8 +339,8 @@
 
             <div class="space-y-1.5">
               <div class="flex items-center gap-3">
-                <span class="font-mono text-xs font-bold text-[#8D222E]">04.</span>
-                <h3 class="text-base font-bold text-slate-950">Sapuan Kiswah &amp; Ka'bah Mikro pada Huruf 'O'</h3>
+                <span class="text-xs text-[#8D222E]">04.</span>
+                <h3 class="text-base text-slate-950">Sapuan Kiswah &amp; Ka'bah Mikro pada Huruf 'O'</h3>
               </div>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed pl-7">
                 Garis bawah dinamis melambangkan gelombang thawaf yang khusyuk. Pada kata "GROUP", huruf 'O' memuat siluet Ka'bah mikro sebagai ciri kepemilikan holding yang khas.
@@ -407,8 +361,8 @@
       <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
         
         <div class="max-w-2xl space-y-3">
-          <span class="text-xs font-mono font-semibold uppercase text-[#8D222E] tracking-wider">03 / Format Lockup</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight leading-snug">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">03 / Format Lockup</span>
+          <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
             Orientasi Berdiri &amp; Rebahan
           </h2>
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
@@ -416,18 +370,18 @@
           </p>
         </div>
 
-        <!-- Lockups Display (Frameless, Clean Surface) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- Lockups Display (Completely Unboxed, Free Floating) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           
           <!-- Format Berdiri -->
-          <div class="space-y-4">
-            <div class="rounded-3xl p-10 sm:p-14 bg-[#FAF4E8]/50 flex items-center justify-center min-h-[300px]">
+          <div class="space-y-6">
+            <div class="py-8 flex items-center justify-center min-h-[260px]">
               <img src="../../assets/azharuna_group_1_berdiri.png" alt="Format Berdiri Azharuna Group" class="max-h-56 w-auto object-contain" />
             </div>
-            <div class="space-y-1 pt-2">
-              <div class="flex items-center justify-between">
-                <h3 class="text-sm font-bold text-slate-950 uppercase tracking-wide">Format Berdiri (Vertikal)</h3>
-                <span class="text-xs font-mono text-slate-400">Rasio 1 : 1.38</span>
+            <div class="space-y-1.5 border-t border-slate-100 pt-4">
+              <div class="flex items-center justify-between text-xs">
+                <h3 class="text-slate-950 uppercase tracking-wide">Format Berdiri (Vertikal)</h3>
+                <span class="text-slate-400">Rasio 1 : 1.38</span>
               </div>
               <p class="text-xs text-slate-500 leading-relaxed">
                 Dipakai untuk dokumen resmi, map holding, kop surat portrait, sertifikat, banner vertikal, cover company profile, dan plakat resmi.
@@ -436,14 +390,14 @@
           </div>
 
           <!-- Format Rebahan -->
-          <div class="space-y-4">
-            <div class="rounded-3xl p-10 sm:p-14 bg-[#FAF4E8]/50 flex items-center justify-center min-h-[300px]">
+          <div class="space-y-6">
+            <div class="py-8 flex items-center justify-center min-h-[260px]">
               <img src="../../assets/azharuna_group_1_rebahan.png" alt="Format Rebahan Azharuna Group" class="max-h-32 w-auto max-w-[360px] object-contain" />
             </div>
-            <div class="space-y-1 pt-2">
-              <div class="flex items-center justify-between">
-                <h3 class="text-sm font-bold text-slate-950 uppercase tracking-wide">Format Rebahan (Horizontal)</h3>
-                <span class="text-xs font-mono text-slate-400">Rasio 2.59 : 1</span>
+            <div class="space-y-1.5 border-t border-slate-100 pt-4">
+              <div class="flex items-center justify-between text-xs">
+                <h3 class="text-slate-950 uppercase tracking-wide">Format Rebahan (Horizontal)</h3>
+                <span class="text-slate-400">Rasio 2.59 : 1</span>
               </div>
               <p class="text-xs text-slate-500 leading-relaxed">
                 Dipakai untuk navbar website, email header, signage fasad gedung, billboard horizontal, lanyard ID card, dan sponsor banner.
@@ -463,58 +417,58 @@
       <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
         
         <div class="max-w-2xl space-y-3">
-          <span class="text-xs font-mono font-semibold uppercase text-[#8D222E] tracking-wider">04 / Kontras Latar</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight leading-snug">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">04 / Kontras Latar</span>
+          <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
             Variasi Penerapan Warna
           </h2>
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Empat standar adaptasi warna logo untuk menjamin kontras tertinggi dan keterbacaan sempurna di segala media.
+            Standar adaptasi logo berdasarkan warna latar belakang untuk menjaga kontras dan estetika maksimal.
           </p>
         </div>
 
-        <!-- 4 Clean Full-Bleed Specimen Tiles -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 4 Clean Borderless Specimen Blocks -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           
           <!-- 1. White Canvas -->
           <div class="space-y-3">
-            <div class="rounded-2xl p-8 bg-white border border-slate-100 flex items-center justify-center h-48">
+            <div class="bg-white border border-slate-150 rounded-xl p-8 flex items-center justify-center h-48">
               <img src="../../assets/azharuna_group_1_berdiri.png" alt="Full color on white" class="max-h-36 object-contain" />
             </div>
             <div>
-              <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wide">Full Color di Putih</h4>
+              <h4 class="text-xs text-slate-900 uppercase tracking-wide">Full Color di Putih</h4>
               <p class="text-[11px] text-slate-500 mt-0.5">Dokumen resmi, kop surat, faktur.</p>
             </div>
           </div>
 
           <!-- 2. Cream Canvas -->
           <div class="space-y-3">
-            <div class="rounded-2xl p-8 bg-[#FAF4E8] flex items-center justify-center h-48">
+            <div class="bg-[#FAF4E8] rounded-xl p-8 flex items-center justify-center h-48">
               <img src="../../assets/azharuna_group_1_berdiri.png" alt="Full color on cream" class="max-h-36 object-contain" />
             </div>
             <div>
-              <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wide">Full Color di Cream</h4>
+              <h4 class="text-xs text-slate-900 uppercase tracking-wide">Full Color di Cream</h4>
               <p class="text-[11px] text-slate-500 mt-0.5">Sertifikat mewah, undangan, web resmi.</p>
             </div>
           </div>
 
           <!-- 3. Crimson Canvas -->
           <div class="space-y-3">
-            <div class="rounded-2xl p-8 bg-[#8D222E] flex items-center justify-center h-48">
+            <div class="bg-[#8D222E] rounded-xl p-8 flex items-center justify-center h-48">
               <img src="../../assets/azharuna_group_1_berdiri_putih.png" alt="Reverse on crimson" class="max-h-36 object-contain" />
             </div>
             <div>
-              <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wide">Reverse di Crimson</h4>
+              <h4 class="text-xs text-slate-900 uppercase tracking-wide">Reverse di Crimson</h4>
               <p class="text-[11px] text-slate-500 mt-0.5">Seragam holding, map eksekutif, display.</p>
             </div>
           </div>
 
           <!-- 4. Onyx Dark Canvas -->
           <div class="space-y-3">
-            <div class="rounded-2xl p-8 bg-[#0B1120] flex items-center justify-center h-48">
+            <div class="bg-[#0B1120] rounded-xl p-8 flex items-center justify-center h-48">
               <img src="../../assets/azharuna_group_1_berdiri_putih.png" alt="Reverse on onyx" class="max-h-36 object-contain" />
             </div>
             <div>
-              <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wide">Reverse di Onyx</h4>
+              <h4 class="text-xs text-slate-900 uppercase tracking-wide">Reverse di Onyx</h4>
               <p class="text-[11px] text-slate-500 mt-0.5">Presentasi digital dark mode, neon malam.</p>
             </div>
           </div>
@@ -525,14 +479,14 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 06: CLEAR SPACE & MINIMUM SIZE                  -->
+    <!-- SECTION 06: RUANG AMAN (CLEAR SPACE)                    -->
     <!-- ======================================================= -->
     <section id="safe-area" class="py-20 sm:py-28 border-b border-slate-100">
       <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
         
         <div class="max-w-2xl space-y-3">
-          <span class="text-xs font-mono font-semibold uppercase text-[#8D222E] tracking-wider">05 / Ruang Bebas</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight leading-snug">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">05 / Ruang Bebas</span>
+          <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
             Clear Space &amp; Batas Ukuran
           </h2>
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
@@ -542,57 +496,53 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          <!-- Left: Architectural Schematic Stage (No Cards) -->
-          <div class="lg:col-span-7 rounded-3xl p-10 sm:p-14 bg-[#FAF4E8]/60 flex flex-col items-center justify-center relative overflow-hidden">
-            <div class="absolute inset-8 sm:inset-12 border border-dashed border-[#8D222E]/30 rounded-2xl pointer-events-none flex flex-col justify-between p-2">
-              <div class="flex justify-between text-[10px] font-mono text-[#8D222E]/70 font-semibold">
-                <span>X</span>
-                <span>X</span>
-              </div>
-              <div class="flex justify-between text-[10px] font-mono text-[#8D222E]/70 font-semibold">
-                <span>X</span>
-                <span>X</span>
-              </div>
+          <!-- Left: Architectural Schematic (Free Floating) -->
+          <div class="lg:col-span-7 py-12 flex flex-col items-center justify-center relative">
+            <div class="border border-dashed border-[#8D222E]/30 p-8 sm:p-12 relative flex items-center justify-center">
+              <span class="absolute top-1 left-2 text-[10px] text-[#8D222E]">X</span>
+              <span class="absolute top-1 right-2 text-[10px] text-[#8D222E]">X</span>
+              <span class="absolute bottom-1 left-2 text-[10px] text-[#8D222E]">X</span>
+              <span class="absolute bottom-1 right-2 text-[10px] text-[#8D222E]">X</span>
+              <img src="../../assets/azharuna_group_1_berdiri.png" alt="Clear Space Diagram Azharuna" class="max-h-52 sm:max-h-64 object-contain" />
             </div>
-            <img src="../../assets/azharuna_group_1_berdiri.png" alt="Clear Space Diagram Azharuna" class="max-h-48 sm:max-h-56 object-contain relative z-10" />
-            <span class="mt-4 font-mono text-[11px] text-slate-400">Margin Isolasi Minimum: 1X di Semua Sisi</span>
+            <span class="mt-4 text-[11px] text-slate-400">Margin Isolasi Minimum: 1X di Semua Sisi</span>
           </div>
 
-          <!-- Right: Minimalist Data Table -->
+          <!-- Right: Minimalist Specs Table -->
           <div class="lg:col-span-5 space-y-8">
             
             <div class="space-y-3 pb-6 border-b border-slate-100">
-              <h3 class="text-sm font-bold text-slate-950 uppercase tracking-wider">Media Cetak (Print 300 DPI)</h3>
+              <h3 class="text-xs text-slate-950 uppercase tracking-wider">Media Cetak (Print 300 DPI)</h3>
               <div class="space-y-2 text-xs">
                 <div class="flex justify-between text-slate-600 py-1">
                   <span>Format Berdiri (Tinggi minimum):</span>
-                  <span class="font-mono font-bold text-[#8D222E]">25 mm</span>
+                  <span class="text-[#8D222E]">25 mm</span>
                 </div>
                 <div class="flex justify-between text-slate-600 py-1">
                   <span>Format Rebahan (Lebar minimum):</span>
-                  <span class="font-mono font-bold text-[#8D222E]">35 mm</span>
+                  <span class="text-[#8D222E]">35 mm</span>
                 </div>
                 <div class="flex justify-between text-slate-600 py-1">
                   <span>Hot-stamping Gold Foil:</span>
-                  <span class="font-mono font-bold text-slate-900">30 mm</span>
+                  <span class="text-slate-900">30 mm</span>
                 </div>
               </div>
             </div>
 
             <div class="space-y-3">
-              <h3 class="text-sm font-bold text-slate-950 uppercase tracking-wider">Media Digital (Screen @1x &amp; @2x)</h3>
+              <h3 class="text-xs text-slate-950 uppercase tracking-wider">Media Digital (Screen @1x &amp; @2x)</h3>
               <div class="space-y-2 text-xs">
                 <div class="flex justify-between text-slate-600 py-1">
                   <span>Format Berdiri (Tinggi minimum):</span>
-                  <span class="font-mono font-bold text-[#8D222E]">80 px</span>
+                  <span class="text-[#8D222E]">80 px</span>
                 </div>
                 <div class="flex justify-between text-slate-600 py-1">
                   <span>Format Rebahan (Lebar minimum):</span>
-                  <span class="font-mono font-bold text-[#8D222E]">120 px</span>
+                  <span class="text-[#8D222E]">120 px</span>
                 </div>
                 <div class="flex justify-between text-slate-600 py-1">
                   <span>Favicon / App Icon Mikro:</span>
-                  <span class="font-mono font-bold text-slate-900">32 × 32 px</span>
+                  <span class="text-slate-900">32 × 32 px</span>
                 </div>
               </div>
             </div>
@@ -611,8 +561,8 @@
       <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
         
         <div class="max-w-2xl space-y-3">
-          <span class="text-xs font-mono font-semibold uppercase text-[#8D222E] tracking-wider">06 / Palet Warna</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight leading-snug">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">06 / Palet Warna</span>
+          <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
             Sistem Warna Korporat
           </h2>
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
@@ -620,72 +570,72 @@
           </p>
         </div>
 
-        <!-- 6 Clean Color Tiles (No Boxes/Cards, Minimalist Architectural Spec) -->
+        <!-- 6 Clean Color Tiles (Minimalist Architectural Spec, No Boxes) -->
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
           
           <!-- Swatch 1 -->
-          <div class="space-y-3" onclick="copyColorCode('#8D222E', 'Merah Crimson')">
-            <div class="swatch-bar bg-[#8D222E]"></div>
+          <div class="space-y-3 cursor-pointer" onclick="copyColorCode('#8D222E', 'Merah Crimson')">
+            <div class="h-28 rounded-lg bg-[#8D222E]"></div>
             <div class="space-y-0.5 text-xs">
-              <h4 class="font-bold text-slate-950">Merah Crimson</h4>
-              <div class="font-mono text-[#8D222E] font-semibold text-[11px]">#8D222E</div>
+              <h4 class="text-slate-950">Merah Crimson</h4>
+              <div class="text-[#8D222E] text-[11px]">#8D222E</div>
               <div class="text-[10px] text-slate-400">Pantone 1955 C</div>
-              <div class="text-[10px] text-slate-500 font-semibold pt-1">Warna Utama (70%)</div>
+              <div class="text-[10px] text-slate-500 pt-1">Warna Utama (70%)</div>
             </div>
           </div>
 
           <!-- Swatch 2 -->
-          <div class="space-y-3" onclick="copyColorCode('#68151E', 'Crimson Dark')">
-            <div class="swatch-bar bg-[#68151E]"></div>
+          <div class="space-y-3 cursor-pointer" onclick="copyColorCode('#68151E', 'Crimson Dark')">
+            <div class="h-28 rounded-lg bg-[#68151E]"></div>
             <div class="space-y-0.5 text-xs">
-              <h4 class="font-bold text-slate-950">Crimson Dark</h4>
-              <div class="font-mono text-[#68151E] font-semibold text-[11px]">#68151E</div>
+              <h4 class="text-slate-950">Crimson Dark</h4>
+              <div class="text-[#68151E] text-[11px]">#68151E</div>
               <div class="text-[10px] text-slate-400">Pantone 195 C</div>
-              <div class="text-[10px] text-slate-500 font-semibold pt-1">Deep Accent</div>
+              <div class="text-[10px] text-slate-500 pt-1">Deep Accent</div>
             </div>
           </div>
 
           <!-- Swatch 3 -->
-          <div class="space-y-3" onclick="copyColorCode('#FAF4E8', 'Cream Terang')">
-            <div class="swatch-bar bg-[#FAF4E8] border border-[#EADEC9]"></div>
+          <div class="space-y-3 cursor-pointer" onclick="copyColorCode('#FAF4E8', 'Cream Terang')">
+            <div class="h-28 rounded-lg bg-[#FAF4E8] border border-[#EADEC9]"></div>
             <div class="space-y-0.5 text-xs">
-              <h4 class="font-bold text-slate-950">Cream Terang</h4>
-              <div class="font-mono text-slate-700 font-semibold text-[11px]">#FAF4E8</div>
+              <h4 class="text-slate-950">Cream Terang</h4>
+              <div class="text-slate-700 text-[11px]">#FAF4E8</div>
               <div class="text-[10px] text-slate-400">Pantone 7527 C</div>
-              <div class="text-[10px] text-slate-500 font-semibold pt-1">Kanvas Lembut (20%)</div>
+              <div class="text-[10px] text-slate-500 pt-1">Kanvas Lembut (20%)</div>
             </div>
           </div>
 
           <!-- Swatch 4 -->
-          <div class="space-y-3" onclick="copyColorCode('#E1C9AC', 'Sand Gold')">
-            <div class="swatch-bar bg-[#E1C9AC]"></div>
+          <div class="space-y-3 cursor-pointer" onclick="copyColorCode('#E1C9AC', 'Sand Gold')">
+            <div class="h-28 rounded-lg bg-[#E1C9AC]"></div>
             <div class="space-y-0.5 text-xs">
-              <h4 class="font-bold text-slate-950">Sand Gold</h4>
-              <div class="font-mono text-[#A87F4D] font-semibold text-[11px]">#E1C9AC</div>
+              <h4 class="text-slate-950">Sand Gold</h4>
+              <div class="text-[#A87F4D] text-[11px]">#E1C9AC</div>
               <div class="text-[10px] text-slate-400">Pantone 467 C</div>
-              <div class="text-[10px] text-slate-500 font-semibold pt-1">Aksen Kemewahan (10%)</div>
+              <div class="text-[10px] text-slate-500 pt-1">Aksen Kemewahan (10%)</div>
             </div>
           </div>
 
           <!-- Swatch 5 -->
-          <div class="space-y-3" onclick="copyColorCode('#0B1120', 'Deep Onyx')">
-            <div class="swatch-bar bg-[#0B1120]"></div>
+          <div class="space-y-3 cursor-pointer" onclick="copyColorCode('#0B1120', 'Deep Onyx')">
+            <div class="h-28 rounded-lg bg-[#0B1120]"></div>
             <div class="space-y-0.5 text-xs">
-              <h4 class="font-bold text-slate-950">Deep Onyx</h4>
-              <div class="font-mono text-slate-700 font-semibold text-[11px]">#0B1120</div>
+              <h4 class="text-slate-950">Deep Onyx</h4>
+              <div class="text-slate-700 text-[11px]">#0B1120</div>
               <div class="text-[10px] text-slate-400">Pantone Black 6 C</div>
-              <div class="text-[10px] text-slate-500 font-semibold pt-1">Teks &amp; Gelap</div>
+              <div class="text-[10px] text-slate-500 pt-1">Teks &amp; Gelap</div>
             </div>
           </div>
 
           <!-- Swatch 6 -->
-          <div class="space-y-3" onclick="copyColorCode('#FFFFFF', 'Pure White')">
-            <div class="swatch-bar bg-white border border-slate-200"></div>
+          <div class="space-y-3 cursor-pointer" onclick="copyColorCode('#FFFFFF', 'Pure White')">
+            <div class="h-28 rounded-lg bg-white border border-slate-200"></div>
             <div class="space-y-0.5 text-xs">
-              <h4 class="font-bold text-slate-950">Pure White</h4>
-              <div class="font-mono text-slate-400 font-semibold text-[11px]">#FFFFFF</div>
+              <h4 class="text-slate-950">Pure White</h4>
+              <div class="text-slate-400 text-[11px]">#FFFFFF</div>
               <div class="text-[10px] text-slate-400">Opaque White</div>
-              <div class="text-[10px] text-slate-500 font-semibold pt-1">Kertas &amp; Reverse</div>
+              <div class="text-[10px] text-slate-500 pt-1">Kertas &amp; Reverse</div>
             </div>
           </div>
 
@@ -695,64 +645,53 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 08: TYPOGRAPHY SYSTEM                           -->
-    <!-- ES REBOND GROTESQUE (HEADINGS) + PLUS JAKARTA SANS      -->
+    <!-- SECTION 08: TYPOGRAPHY SYSTEM (JAKARTA PLUS SANS ONLY)  -->
     <!-- ======================================================= -->
     <section id="tipografi" class="py-20 sm:py-28 border-b border-slate-100">
       <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
         
         <div class="max-w-2xl space-y-3">
-          <span class="text-xs font-mono font-semibold uppercase text-[#8D222E] tracking-wider">07 / Tipografi Resmi</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight leading-snug">
-            ES Rebond Grotesque &amp; Plus Jakarta Sans
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">07 / Tipografi Resmi</span>
+          <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
+            Plus Jakarta Sans Regular
           </h2>
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Kombinasi tipografi tingkat agensi: <strong>ES Rebond Grotesque</strong> sebagai font judul utama (Display &amp; Headings) yang berwibawa, berkarakter tegas, dan modern; dipadukan dengan <strong>Plus Jakarta Sans</strong> untuk teks tubuh (body text) yang sangat jernih dan nyaman dibaca.
+            Seluruh identitas visual dan dokumen resmi Azharuna Group menggunakan font <strong>Plus Jakarta Sans Regular (400)</strong> secara konsisten untuk judul, subjudul, dan teks tubuh agar tercipta kesan bersih, lapang, dan berkelas tinggi.
           </p>
         </div>
 
-        <!-- Grand Alphabet Specimen in ES Rebond Grotesque -->
+        <!-- Grand Alphabet Specimen in Plus Jakarta Sans Regular -->
         <div class="space-y-6">
-          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
-            <span class="text-xs font-mono font-bold uppercase text-[#8D222E]">Display &amp; Title Typeface: ES Rebond Grotesque</span>
-            <span class="text-xs font-mono text-slate-400">Weights: Thin, Medium, Semibold, Bold, Extrabold</span>
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3 text-xs">
+            <span class="uppercase text-[#8D222E]">Specimen: Plus Jakarta Sans Regular (Weight 400)</span>
+            <span class="text-slate-400">Font Resmi Dokumen &amp; Judul</span>
           </div>
           
-          <div id="specimen-display" class="text-3xl sm:text-5xl lg:text-6xl font-heading text-slate-950 tracking-tight leading-tight select-none">
+          <div class="text-3xl sm:text-5xl lg:text-6xl text-slate-950 tracking-tight leading-tight select-none">
             Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz
           </div>
           
-          <div class="text-2xl sm:text-4xl font-heading text-slate-400 tracking-wider select-none">
+          <div class="text-2xl sm:text-4xl text-slate-400 tracking-wider select-none">
             0123456789 &amp; (.,;:!?@#$%)
           </div>
         </div>
 
-        <!-- Clean Interactive Type Tester for ES Rebond Grotesque -->
-        <div class="pt-8 border-t border-slate-150 space-y-6">
+        <!-- Clean Interactive Type Tester -->
+        <div class="pt-8 border-t border-slate-100 space-y-6">
           
           <div class="flex flex-wrap items-center justify-between gap-4 text-xs">
-            <div class="flex items-center gap-2">
-              <span class="font-semibold text-slate-700">Pilih Bobot:</span>
-              <div class="flex items-center gap-1">
-                <button onclick="setFontWeight(100, this)" class="px-2.5 py-1 rounded-md text-xs font-medium text-slate-500 hover:text-slate-950 transition">Thin</button>
-                <button onclick="setFontWeight(500, this)" class="px-2.5 py-1 rounded-md text-xs font-medium text-slate-500 hover:text-slate-950 transition">Medium</button>
-                <button onclick="setFontWeight(600, this)" class="px-2.5 py-1 rounded-md text-xs font-medium text-slate-500 hover:text-slate-950 transition">Semibold</button>
-                <button onclick="setFontWeight(700, this)" class="px-2.5 py-1 rounded-md text-xs font-bold bg-[#8D222E] text-white transition">Bold</button>
-                <button onclick="setFontWeight(800, this)" class="px-2.5 py-1 rounded-md text-xs font-medium text-slate-500 hover:text-slate-950 transition">Extrabold</button>
-              </div>
-            </div>
-
+            <span class="text-slate-700">Uji Coba Teks Langsung:</span>
             <div class="flex items-center gap-3">
-              <span class="font-mono text-slate-400">Ukuran:</span>
-              <input id="font-size-slider" type="range" min="18" max="72" value="42" class="w-36 accent-[#8D222E] cursor-pointer" oninput="updateFontSize(this.value)" />
-              <span id="font-size-label" class="font-mono font-bold text-[#8D222E] w-12 text-right">42px</span>
+              <span class="text-slate-400">Ukuran Font:</span>
+              <input id="font-size-slider" type="range" min="18" max="72" value="38" class="w-36 accent-[#8D222E] cursor-pointer" oninput="updateFontSize(this.value)" />
+              <span id="font-size-label" class="text-[#8D222E] w-12 text-right">38px</span>
             </div>
           </div>
 
           <input id="font-preview-input" type="text" value="AZHARUNA GROUP — Amanah Menuju Baitullah" class="w-full bg-transparent border-b border-slate-200 py-3 text-sm focus:border-[#8D222E] focus:outline-hidden transition text-slate-800" oninput="updatePreviewText(this.value)" />
 
-          <div class="py-8 min-h-[120px] flex items-center">
-            <p id="font-live-preview" class="font-heading text-slate-950 tracking-tight leading-tight" style="font-size: 42px; font-weight: 700;">
+          <div class="py-8 min-h-[100px] flex items-center">
+            <p id="font-live-preview" class="text-slate-950 tracking-tight leading-tight" style="font-size: 38px;">
               AZHARUNA GROUP — Amanah Menuju Baitullah
             </p>
           </div>
@@ -760,21 +699,21 @@
         </div>
 
         <!-- Hierarchy Guide in 3 Clean Columns -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8 border-t border-slate-150 text-xs">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8 border-t border-slate-100 text-xs">
           <div class="space-y-1.5">
-            <span class="font-mono text-[10px] uppercase font-bold text-[#8D222E]">Headline (H1/H2)</span>
-            <div class="text-lg font-bold text-slate-950 font-heading">ES Rebond Grotesque Bold</div>
-            <p class="text-slate-500 leading-relaxed">Tracking -0.02em, leading 1.05. Digunakan untuk judul utama presentasi, cover, dan billboard.</p>
+            <span class="text-[10px] uppercase text-[#8D222E]">Headline (H1/H2)</span>
+            <div class="text-lg text-slate-950">Plus Jakarta Sans Regular (Scale Large)</div>
+            <p class="text-slate-500 leading-relaxed">Tracking -0.025em, leading 1.05. Judul utama presentasi, cover, dan billboard.</p>
           </div>
           <div class="space-y-1.5">
-            <span class="font-mono text-[10px] uppercase font-bold text-[#8D222E]">Subjudul (H3/H4)</span>
-            <div class="text-lg font-semibold text-slate-950 font-heading">ES Rebond Grotesque Semibold</div>
-            <p class="text-slate-500 leading-relaxed">Tracking -0.015em, leading 1.2. Digunakan untuk judul seksi dan sub-bab dokumen.</p>
+            <span class="text-[10px] uppercase text-[#8D222E]">Subjudul (H3/H4)</span>
+            <div class="text-lg text-slate-950">Plus Jakarta Sans Regular (Scale Medium)</div>
+            <p class="text-slate-500 leading-relaxed">Tracking -0.015em, leading 1.25. Judul seksi dan sub-bab dokumen.</p>
           </div>
           <div class="space-y-1.5">
-            <span class="font-mono text-[10px] uppercase font-bold text-[#8D222E]">Body Text &amp; Paragraf</span>
-            <div class="text-lg font-normal text-slate-950">Plus Jakarta Sans Regular</div>
-            <p class="text-slate-500 leading-relaxed">Tracking normal, leading 1.65. Digunakan untuk teks tubuh, proposal, surat, dan deskripsi teknis.</p>
+            <span class="text-[10px] uppercase text-[#8D222E]">Body Text &amp; Paragraf</span>
+            <div class="text-lg text-slate-950">Plus Jakarta Sans Regular (14px–16px)</div>
+            <p class="text-slate-500 leading-relaxed">Tracking normal, leading 1.65. Teks tubuh, proposal, surat, dan deskripsi teknis.</p>
           </div>
         </div>
 
@@ -788,8 +727,8 @@
       <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
         
         <div class="max-w-2xl space-y-3">
-          <span class="text-xs font-mono font-semibold uppercase text-red-600 tracking-wider">08 / Aturan Larangan</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight leading-snug">
+          <span class="text-xs uppercase text-red-600 tracking-wider">08 / Aturan Larangan</span>
+          <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
             Larangan Penggunaan Logo
           </h2>
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
@@ -797,78 +736,78 @@
           </p>
         </div>
 
-        <!-- 6 Clean Misuse Grid Items (Zero Chunky Cards) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 6 Clean Misuse Grid Items (Zero Chunky Boxes) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           
           <!-- Misuse 1 -->
           <div class="space-y-3">
-            <div class="relative rounded-2xl p-6 bg-slate-50 flex items-center justify-center h-44">
-              <span class="absolute top-3 right-3 text-red-500 font-bold text-sm">✕</span>
+            <div class="relative p-6 bg-slate-50 rounded-xl flex items-center justify-center h-44">
+              <span class="absolute top-3 right-3 text-red-500 text-sm">✕</span>
               <img src="../../assets/azharuna_group_1_berdiri.png" alt="Distorted" class="max-h-28 object-contain scale-x-150 transform" />
             </div>
             <div class="space-y-1">
-              <h4 class="text-xs font-bold text-slate-950">1. Jangan Distorsi Aspek Rasio</h4>
+              <h4 class="text-xs text-slate-950">1. Jangan Distorsi Aspek Rasio</h4>
               <p class="text-[11px] text-slate-500 leading-relaxed">Dilarang menarik atau memipihkan logo. Rasio wajib terkunci proporsional.</p>
             </div>
           </div>
 
           <!-- Misuse 2 -->
           <div class="space-y-3">
-            <div class="relative rounded-2xl p-6 bg-slate-50 flex items-center justify-center h-44">
-              <span class="absolute top-3 right-3 text-red-500 font-bold text-sm">✕</span>
+            <div class="relative p-6 bg-slate-50 rounded-xl flex items-center justify-center h-44">
+              <span class="absolute top-3 right-3 text-red-500 text-sm">✕</span>
               <img src="../../assets/azharuna_group_1_berdiri.png" alt="Recolored" class="max-h-28 object-contain hue-rotate-90 filter" />
             </div>
             <div class="space-y-1">
-              <h4 class="text-xs font-bold text-slate-950">2. Jangan Mengubah Warna Resmi</h4>
+              <h4 class="text-xs text-slate-950">2. Jangan Mengubah Warna Resmi</h4>
               <p class="text-[11px] text-slate-500 leading-relaxed">Dilarang mengganti warna logo dengan warna acak (hijau, biru neon, ungu).</p>
             </div>
           </div>
 
           <!-- Misuse 3 -->
           <div class="space-y-3">
-            <div class="relative rounded-2xl p-6 bg-slate-50 flex items-center justify-center h-44">
-              <span class="absolute top-3 right-3 text-red-500 font-bold text-sm">✕</span>
+            <div class="relative p-6 bg-slate-50 rounded-xl flex items-center justify-center h-44">
+              <span class="absolute top-3 right-3 text-red-500 text-sm">✕</span>
               <img src="../../assets/azharuna_group_1_berdiri.png" alt="Drop shadow" class="max-h-28 object-contain drop-shadow-[0_12px_12px_rgba(0,0,0,0.8)]" />
             </div>
             <div class="space-y-1">
-              <h4 class="text-xs font-bold text-slate-950">3. Jangan Beri Drop Shadow Kasar</h4>
+              <h4 class="text-xs text-slate-950">3. Jangan Beri Drop Shadow Kasar</h4>
               <p class="text-[11px] text-slate-500 leading-relaxed">Dilarang menambahkan efek bayangan tebal atau bevel 3D yang merusak keaslian flat.</p>
             </div>
           </div>
 
           <!-- Misuse 4 -->
           <div class="space-y-3">
-            <div class="relative rounded-2xl p-6 bg-slate-50 flex flex-col items-center justify-center h-44 text-center">
-              <span class="absolute top-3 right-3 text-red-500 font-bold text-sm">✕</span>
-              <span class="text-2xl text-[#8D222E]" style="font-family: 'Times New Roman', serif;">AZHARUNA</span>
-              <span class="text-xs tracking-widest text-slate-700" style="font-family: 'Times New Roman', serif;">GROUP</span>
+            <div class="relative p-6 bg-slate-50 rounded-xl flex flex-col items-center justify-center h-44 text-center">
+              <span class="absolute top-3 right-3 text-red-500 text-sm">✕</span>
+              <span class="text-2xl text-[#8D222E]" style="font-family: 'Times New Roman', serif !important;">AZHARUNA</span>
+              <span class="text-xs tracking-widest text-slate-700" style="font-family: 'Times New Roman', serif !important;">GROUP</span>
             </div>
             <div class="space-y-1">
-              <h4 class="text-xs font-bold text-slate-950">4. Jangan Mengganti Jenis Font</h4>
+              <h4 class="text-xs text-slate-950">4. Jangan Mengganti Jenis Font</h4>
               <p class="text-[11px] text-slate-500 leading-relaxed">Dilarang mengetik ulang nama brand. Wordmark adalah aset vektor resmi tersendiri.</p>
             </div>
           </div>
 
           <!-- Misuse 5 -->
           <div class="space-y-3">
-            <div class="relative rounded-2xl p-6 bg-slate-50 flex items-center justify-center h-44">
-              <span class="absolute top-3 right-3 text-red-500 font-bold text-sm">✕</span>
+            <div class="relative p-6 bg-slate-50 rounded-xl flex items-center justify-center h-44">
+              <span class="absolute top-3 right-3 text-red-500 text-sm">✕</span>
               <img src="../../assets/azharuna_group_1_berdiri.png" alt="Rotated" class="max-h-28 object-contain -rotate-45 transform" />
             </div>
             <div class="space-y-1">
-              <h4 class="text-xs font-bold text-slate-950">5. Jangan Memutar Sudut Logo</h4>
+              <h4 class="text-xs text-slate-950">5. Jangan Memutar Sudut Logo</h4>
               <p class="text-[11px] text-slate-500 leading-relaxed">Logo harus selalu berdiri tegak 0°. Dilarang memutar posisi Ka'bah &amp; Menara miring.</p>
             </div>
           </div>
 
           <!-- Misuse 6 -->
           <div class="space-y-3">
-            <div class="relative rounded-2xl p-6 bg-gradient-to-r from-amber-400 via-pink-500 to-purple-500 flex items-center justify-center h-44">
-              <span class="absolute top-3 right-3 text-white font-bold text-sm">✕</span>
+            <div class="relative p-6 bg-gradient-to-r from-amber-400 via-pink-500 to-purple-500 rounded-xl flex items-center justify-center h-44">
+              <span class="absolute top-3 right-3 text-white text-sm">✕</span>
               <img src="../../assets/azharuna_group_1_berdiri.png" alt="Low contrast" class="max-h-28 object-contain opacity-75" />
             </div>
             <div class="space-y-1">
-              <h4 class="text-xs font-bold text-slate-950">6. Hindari Latar Tabrakan Kontras</h4>
+              <h4 class="text-xs text-slate-950">6. Hindari Latar Tabrakan Kontras</h4>
               <p class="text-[11px] text-slate-500 leading-relaxed">Dilarang menempatkan logo berwarna di atas latar foto ramai tanpa overlay peredam.</p>
             </div>
           </div>
@@ -879,14 +818,14 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 10: APPLICATION MOCKUPS (GALLERY SHOWCASE)      -->
+    <!-- SECTION 10: APPLICATION MOCKUPS (CLEAN GALLERY)         -->
     <!-- ======================================================= -->
     <section id="mockups" class="py-20 sm:py-28 border-b border-slate-100">
       <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
         
         <div class="max-w-2xl space-y-3">
-          <span class="text-xs font-mono font-semibold uppercase text-[#8D222E] tracking-wider">09 / Aplikasi Nyata</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight leading-snug">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">09 / Aplikasi Nyata</span>
+          <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
             Showcase Penerapan Korporat
           </h2>
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
@@ -894,49 +833,49 @@
           </p>
         </div>
 
-        <!-- 4 Gallery Frames (Clean, Edge-to-Edge Images, No Card Wrappers) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- 4 Gallery Frames (Completely Unboxed, Frameless Photography) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           
           <!-- Mockup 1 -->
           <div class="space-y-3">
-            <div class="overflow-hidden rounded-2xl aspect-[16/10] bg-slate-100">
+            <div class="overflow-hidden rounded-xl aspect-[16/10] bg-slate-100">
               <img src="../../assets/azharuna_mockup_1.png" alt="Acrylic Wall Signage Kantor Pusat" class="w-full h-full object-cover hover:scale-102 transition duration-500" />
             </div>
             <div class="space-y-0.5">
-              <h3 class="text-sm font-bold text-slate-950">Acrylic Wall Signage Kantor Pusat</h3>
+              <h3 class="text-sm text-slate-950">Acrylic Wall Signage Kantor Pusat</h3>
               <p class="text-xs text-slate-500 leading-relaxed">Plat akrilik timbul dan aksen kuningan di lobi utama kantor holding.</p>
             </div>
           </div>
 
           <!-- Mockup 2 -->
           <div class="space-y-3">
-            <div class="overflow-hidden rounded-2xl aspect-[16/10] bg-slate-100">
+            <div class="overflow-hidden rounded-xl aspect-[16/10] bg-slate-100">
               <img src="../../assets/azharuna_mockup_2.png" alt="Luxury Corporate Stationery Suite" class="w-full h-full object-cover hover:scale-102 transition duration-500" />
             </div>
             <div class="space-y-0.5">
-              <h3 class="text-sm font-bold text-slate-950">Luxury Corporate Stationery &amp; Folder</h3>
+              <h3 class="text-sm text-slate-950">Luxury Corporate Stationery &amp; Folder</h3>
               <p class="text-xs text-slate-500 leading-relaxed">Map proposal crimson, kop surat ivory, dan kartu nama hot-stamping emas.</p>
             </div>
           </div>
 
           <!-- Mockup 3 -->
           <div class="space-y-3">
-            <div class="overflow-hidden rounded-2xl aspect-[16/10] bg-slate-100">
+            <div class="overflow-hidden rounded-xl aspect-[16/10] bg-slate-100">
               <img src="../../assets/mockup_azharuna_signage.jpg" alt="Monumental Signboard & Fasad" class="w-full h-full object-cover hover:scale-102 transition duration-500" />
             </div>
             <div class="space-y-0.5">
-              <h3 class="text-sm font-bold text-slate-950">Monumental Signboard &amp; Fasad Gedung</h3>
+              <h3 class="text-sm text-slate-950">Monumental Signboard &amp; Fasad Gedung</h3>
               <p class="text-xs text-slate-500 leading-relaxed">Signage luar ruang dengan pencahayaan warm-white untuk visibilitas malam.</p>
             </div>
           </div>
 
           <!-- Mockup 4 -->
           <div class="space-y-3">
-            <div class="overflow-hidden rounded-2xl aspect-[16/10] bg-slate-100">
+            <div class="overflow-hidden rounded-xl aspect-[16/10] bg-slate-100">
               <img src="../../assets/mockup_azharuna_stationery.jpg" alt="Holding Presentation Suite" class="w-full h-full object-cover hover:scale-102 transition duration-500" />
             </div>
             <div class="space-y-0.5">
-              <h3 class="text-sm font-bold text-slate-950">Holding Presentation Collateral Kit</h3>
+              <h3 class="text-sm text-slate-950">Holding Presentation Collateral Kit</h3>
               <p class="text-xs text-slate-500 leading-relaxed">Perangkat penawaran resmi kepada kementerian haji, maskapai, dan konsorsium.</p>
             </div>
           </div>
@@ -953,8 +892,8 @@
       <div class="max-w-5xl mx-auto px-6 sm:px-10 flex flex-col md:flex-row md:items-center justify-between gap-10">
         
         <div class="space-y-3 max-w-xl">
-          <span class="text-xs font-mono font-semibold uppercase text-[#E1C9AC] tracking-widest">Master Vektor Siap Pakai</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          <span class="text-xs uppercase text-[#E1C9AC] tracking-widest">Master Vektor Siap Pakai</span>
+          <h2 class="text-2xl sm:text-4xl tracking-tight">
             Paket Aset Vektor Resmi
           </h2>
           <p class="text-sm text-rose-100/90 leading-relaxed">
@@ -963,11 +902,11 @@
         </div>
 
         <div class="flex flex-col sm:flex-row gap-3">
-          <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru%20(SYMP%20Studio),%20kami%20ingin%20meminta%20link%20folder%20master%20vektor%20Azharuna%20Group%20Pilihan%2001." target="_blank" rel="noreferrer" class="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full bg-white px-6 text-xs font-bold text-[#8D222E] hover:bg-[#FAF4E8] transition shadow-md">
+          <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru%20(SYMP%20Studio),%20kami%20ingin%20meminta%20link%20folder%20master%20vektor%20Azharuna%20Group%20Pilihan%2001." target="_blank" rel="noreferrer" class="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full bg-white px-6 text-xs text-[#8D222E] hover:bg-[#FAF4E8] transition">
             <i data-lucide="download-cloud" class="w-4 h-4"></i>
             <span>Minta Master Vektor</span>
           </a>
-          <a href="/azharuna" class="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full bg-white/15 hover:bg-white/25 border border-white/30 px-6 text-xs font-bold text-white transition">
+          <a href="/azharuna" class="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 px-6 text-xs text-white transition">
             <i data-lucide="arrow-left" class="w-4 h-4"></i>
             <span>Deck Presentasi</span>
           </a>
@@ -979,7 +918,7 @@
   </main>
 
   <!-- Minimalist Clean Footer -->
-  <footer class="bg-white py-10 border-t border-slate-100 text-xs text-slate-400 font-mono">
+  <footer class="bg-white py-12 border-t border-slate-100 text-xs text-slate-400">
     <div class="max-w-5xl mx-auto px-6 sm:px-10 flex flex-col sm:flex-row items-center justify-between gap-4">
       <p>&copy; 2026 AZHARUNA GROUP — Visual Identity Guidelines</p>
       <p>Directed by Daru Fahmaa Muliawan, SYMP Studio</p>
@@ -987,7 +926,7 @@
   </footer>
 
   <!-- Toast Notification -->
-  <div id="toast" role="status" aria-live="polite" class="pointer-events-none fixed bottom-6 right-6 z-[90] hidden rounded-full bg-[#8D222E] px-5 py-3 text-xs font-semibold text-white shadow-xl flex items-center gap-2">
+  <div id="toast" role="status" aria-live="polite" class="pointer-events-none fixed bottom-6 right-6 z-[90] hidden rounded-full bg-[#8D222E] px-5 py-3 text-xs text-white shadow-xl flex items-center gap-2">
     <i data-lucide="check" class="w-4 h-4 text-[#E1C9AC]"></i>
     <span id="toast-message">Kode warna disalin!</span>
   </div>
@@ -996,75 +935,71 @@
   <script>
     lucide.createIcons();
 
-    // Stage Interactive State
-    let currentTheme = 'cream';
     let currentOrientation = 'berdiri';
+    let currentBg = 'white';
 
-    const stageThemes = {
-      cream: {
-        bg: '#FAF4E8',
-        imgBerdiri: '../../assets/azharuna_group_1_berdiri.png',
-        imgRebahan: '../../assets/azharuna_group_1_rebahan.png',
-        label: 'Kanvas: Cream Terang (#FAF4E8)'
-      },
+    const bgConfigs = {
       white: {
         bg: '#FFFFFF',
         imgBerdiri: '../../assets/azharuna_group_1_berdiri.png',
         imgRebahan: '../../assets/azharuna_group_1_rebahan.png',
-        label: 'Kanvas: Pure White (#FFFFFF)'
+        label: 'Putih'
+      },
+      cream: {
+        bg: '#FAF4E8',
+        imgBerdiri: '../../assets/azharuna_group_1_berdiri.png',
+        imgRebahan: '../../assets/azharuna_group_1_rebahan.png',
+        label: 'Cream'
       },
       crimson: {
         bg: '#8D222E',
         imgBerdiri: '../../assets/azharuna_group_1_berdiri_putih.png',
         imgRebahan: '../../assets/azharuna_group_1_rebahan_putih.png',
-        label: 'Kanvas: Merah Crimson (#8D222E)'
+        label: 'Merah Crimson'
       },
       onyx: {
         bg: '#0B1120',
         imgBerdiri: '../../assets/azharuna_group_1_berdiri_putih.png',
         imgRebahan: '../../assets/azharuna_group_1_rebahan_putih.png',
-        label: 'Kanvas: Deep Onyx (#0B1120)'
+        label: 'Deep Onyx'
       }
     };
 
-    function setHeroStage(theme) {
-      currentTheme = theme;
-      const data = stageThemes[theme];
-      const stage = document.getElementById('hero-stage');
+    function setHeroBackground(bg) {
+      currentBg = bg;
+      const data = bgConfigs[bg];
+      const section = document.getElementById('hero');
       const logo = document.getElementById('hero-logo-img');
-      const label = document.getElementById('hero-canvas-label');
 
-      stage.style.backgroundColor = data.bg;
+      section.style.backgroundColor = data.bg;
       logo.src = currentOrientation === 'berdiri' ? data.imgBerdiri : data.imgRebahan;
-      label.textContent = data.label;
 
-      // Update switcher pills
-      ['cream', 'white', 'crimson', 'onyx'].forEach(t => {
-        const btn = document.getElementById('btn-theme-' + t);
-        if (t === theme) {
-          btn.className = 'px-3.5 py-1.5 rounded-full text-xs font-semibold transition bg-[#8D222E] text-white';
+      ['white', 'cream', 'crimson', 'onyx'].forEach(b => {
+        const btn = document.getElementById('btn-bg-' + b);
+        if (b === bg) {
+          btn.className = 'text-[#8D222E] font-medium transition underline underline-offset-2';
         } else {
-          btn.className = 'px-3.5 py-1.5 rounded-full text-xs font-semibold transition text-slate-600 hover:text-slate-950';
+          btn.className = (bg === 'crimson' || bg === 'onyx') ? 'text-white/60 hover:text-white transition' : 'text-slate-400 hover:text-slate-900 transition';
         }
       });
     }
 
     function setHeroOrientation(orient) {
       currentOrientation = orient;
-      const data = stageThemes[currentTheme];
+      const data = bgConfigs[currentBg];
       const logo = document.getElementById('hero-logo-img');
       logo.src = orient === 'berdiri' ? data.imgBerdiri : data.imgRebahan;
 
       const btnBerdiri = document.getElementById('btn-orient-berdiri');
       const btnRebahan = document.getElementById('btn-orient-rebahan');
       if (orient === 'berdiri') {
-        btnBerdiri.className = 'px-4 py-1.5 rounded-full text-xs font-semibold transition bg-white text-slate-900 shadow-xs';
-        btnRebahan.className = 'px-4 py-1.5 rounded-full text-xs font-semibold transition text-slate-500 hover:text-slate-900';
-        logo.className = 'max-h-52 sm:max-h-72 w-auto object-contain transition-all duration-300';
+        btnBerdiri.className = 'text-[#8D222E] underline underline-offset-4 transition';
+        btnRebahan.className = 'hover:text-slate-900 transition text-slate-500';
+        logo.className = 'max-h-60 sm:max-h-80 w-auto object-contain transition-all duration-300';
       } else {
-        btnRebahan.className = 'px-4 py-1.5 rounded-full text-xs font-semibold transition bg-white text-slate-900 shadow-xs';
-        btnBerdiri.className = 'px-4 py-1.5 rounded-full text-xs font-semibold transition text-slate-500 hover:text-slate-900';
-        logo.className = 'max-h-28 sm:max-h-36 w-auto max-w-[420px] object-contain transition-all duration-300';
+        btnRebahan.className = 'text-[#8D222E] underline underline-offset-4 transition';
+        btnBerdiri.className = 'hover:text-slate-900 transition text-slate-500';
+        logo.className = 'max-h-32 sm:max-h-40 w-auto max-w-[420px] object-contain transition-all duration-300';
       }
     }
 
@@ -1089,16 +1024,7 @@
       }, 2200);
     }
 
-    // Font Live Tester Controls for ES Rebond Grotesque
-    function setFontWeight(weight, button) {
-      const liveText = document.getElementById('font-live-preview');
-      liveText.style.fontWeight = weight;
-      button.parentElement.querySelectorAll('button').forEach(btn => {
-        btn.className = 'px-2.5 py-1 rounded-md text-xs font-medium text-slate-500 hover:text-slate-950 transition';
-      });
-      button.className = 'px-2.5 py-1 rounded-md text-xs font-bold bg-[#8D222E] text-white transition';
-    }
-
+    // Font Live Tester Controls
     function updateFontSize(size) {
       const liveText = document.getElementById('font-live-preview');
       const sizeLabel = document.getElementById('font-size-label');
