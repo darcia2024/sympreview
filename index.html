@@ -2,16 +2,18 @@
 <html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>SYMP Studio — Marketplace Deck Penawaran Logo</title>
-  <meta name="description" content="Hub Presentasi & Review Proposal Logo SYMP Studio. Buka setiap card untuk masuk ke slug presentasi klien.">
-  <meta property="og:title" content="SYMP Studio — Marketplace Deck Penawaran Logo">
-  <meta property="og:description" content="Galeri proposal logo SYMP Studio yang terhubung ke slug presentasi masing-masing klien.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>SYMP Studio — Curated Identity & Proposal Archive</title>
+  <meta name="description" content="Hub presentasi dan buku panduan identitas visual resmi SYMP Studio. Akses kurasi deck logo dan brand guidelines untuk klien terpilih.">
+  <meta property="og:title" content="SYMP Studio — Curated Identity & Proposal Archive">
+  <meta property="og:description" content="Koleksi presentasi logo resmi dan brand guidelines eksklusif yang dirancang oleh SYMP Studio.">
   <meta property="og:type" content="website">
+  <link rel="icon" href="assets/SYMP LOGO MERAH.png">
   
+  <!-- Google Fonts: Plus Jakarta Sans (Regular 400, Medium 500, Semibold 600) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -19,18 +21,18 @@
       theme: {
         extend: {
           colors: {
-            symp: {
-              red: '#DC143C',
-              crimson: '#C9183B',
-              redDeep: '#991B1B',
-              redDark: '#4A0814',
-              slate: '#0F172A',
-              slateMuted: '#475569'
-            }
+            crimson: {
+              DEFAULT: '#8D222E',
+              dark: '#68151E',
+              bright: '#DC143C'
+            },
+            cream: {
+              DEFAULT: '#FAF4E8',
+              soft: '#F5EFE6'
+            },
+            onyx: '#0B1120'
           },
           fontFamily: {
-            display: ['Bebas Neue', 'sans-serif'],
-            jakarta: ['Plus Jakarta Sans', 'sans-serif'],
             sans: ['Plus Jakarta Sans', 'sans-serif'],
             mono: ['JetBrains Mono', 'monospace']
           }
@@ -38,570 +40,427 @@
       }
     }
   </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   
   <style>
-    :root {
-      --catalog-white: #FFFFFF;
-      --catalog-surface: #F8FAFC;
-      --catalog-border: #E2E8F0;
-      --catalog-crimson: #DC143C;
-      --catalog-crimson-dark: #991B1B;
-      --catalog-ink: #0F172A;
-      --catalog-muted: #64748B;
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      -webkit-tap-highlight-color: transparent;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
     }
 
-    html,
     body {
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at 15% 12%, rgba(220, 20, 60, 0.45), transparent 34rem),
-        radial-gradient(circle at 85% 18%, rgba(185, 28, 28, 0.38), transparent 32rem),
-        radial-gradient(circle at 50% 85%, rgba(255, 46, 62, 0.25), transparent 30rem),
-        linear-gradient(145deg, #4A0814 0%, #20040A 50%, #400712 100%) !important;
-      color: var(--catalog-ink);
-      font-family: "Plus Jakarta Sans", sans-serif;
-    }
-
-    .noodle-shell {
-      min-height: 100dvh;
-      padding: clamp(1.25rem, 4vw, 4rem);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .noodle-page {
-      width: min(100%, 1180px);
-      margin: 0 auto;
-      overflow: hidden;
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      background: var(--catalog-white);
-      box-shadow: 0 36px 120px rgba(20, 2, 6, 0.65);
-    }
-
-    .noodle-nav {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 1.25rem;
-      padding: clamp(1rem, 2.6vw, 1.8rem) clamp(1.25rem, 4vw, 3rem);
-      border-bottom: 1px solid var(--catalog-border);
+      min-width: 320px;
+      overflow-x: hidden;
       background: #FFFFFF;
-    }
-
-    .noodle-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      text-decoration: none;
-    }
-
-    .noodle-logo img {
-      width: 44px;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .noodle-links {
-      display: flex;
-      justify-content: center;
-      gap: clamp(1.5rem, 6vw, 5rem);
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--catalog-muted);
-    }
-
-    .noodle-links a {
-      text-decoration: none;
-      transition: color 180ms ease;
-    }
-
-    .noodle-links a:hover,
-    .noodle-links a:focus-visible {
-      color: var(--catalog-crimson);
-    }
-
-    .noodle-contact {
-      justify-self: end;
-      font-size: 0.78rem;
-      font-weight: 800;
-      font-family: "JetBrains Mono", monospace;
-      color: var(--catalog-crimson);
-      text-decoration: none;
-      padding: 0.4rem 0.9rem;
-      border-radius: 999px;
-      background: rgba(220, 20, 60, 0.08);
-      border: 1px solid rgba(220, 20, 60, 0.2);
-      transition: all 180ms ease;
-    }
-
-    .noodle-contact:hover {
-      background: var(--catalog-crimson);
-      color: #FFFFFF;
-    }
-
-    .noodle-hero {
-      min-height: clamp(300px, 38vw, 480px);
-      display: grid;
-      grid-template-rows: 1fr auto;
-      padding: clamp(1.5rem, 4vw, 3rem);
-      background: #FFFFFF;
-    }
-
-    .noodle-title {
-      align-self: center;
-      justify-self: center;
-      max-width: 780px;
-      font-family: "Bebas Neue", sans-serif;
-      font-size: clamp(5.4rem, 13vw, 13.5rem);
+      color: #0F172A;
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
       font-weight: 400;
-      line-height: 0.78;
       letter-spacing: -0.015em;
-      text-align: center;
-      color: var(--catalog-crimson);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: geometricPrecision;
     }
 
-    .noodle-title span {
-      display: block;
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+      font-weight: 600;
+      letter-spacing: -0.025em;
     }
 
-    .noodle-meta {
+    /* Infinite Marquee Strip */
+    .ticker-container {
       display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 1rem;
-      color: var(--catalog-muted);
-      font-size: 0.84rem;
-      line-height: 1.55;
-      padding-top: 1rem;
-    }
-
-    .noodle-meta strong {
-      display: block;
-      color: var(--catalog-ink);
-      font-weight: 800;
-    }
-
-    .noodle-strip {
-      display: flex;
-      gap: 2.2rem;
       overflow: hidden;
-      border-top: 1px solid rgba(220, 20, 60, 0.2);
-      border-bottom: 1px solid rgba(220, 20, 60, 0.2);
-      padding: 0.5rem 0;
-      color: var(--catalog-crimson);
-      font-family: "Bebas Neue", sans-serif;
-      font-size: 1.25rem;
-      line-height: 1;
+      user-select: none;
       white-space: nowrap;
-      background: rgba(220, 20, 60, 0.04);
     }
-
-    .noodle-strip span {
-      flex: 0 0 auto;
-    }
-
-    .noodle-section {
-      padding: clamp(2rem, 5vw, 3.8rem) clamp(1.25rem, 4vw, 3rem) clamp(3rem, 6vw, 4.5rem);
-      background: #FFFFFF;
-    }
-
-    .noodle-section-title {
-      font-family: "Bebas Neue", sans-serif;
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      font-weight: 400;
-      line-height: 0.9;
-      text-align: center;
-      color: var(--catalog-crimson);
-    }
-
-    .noodle-section-note {
-      margin: 0.65rem auto 2.2rem;
-      max-width: 560px;
-      text-align: center;
-      color: var(--catalog-muted);
-      font-size: 0.92rem;
-      line-height: 1.65;
-    }
-
-    .noodle-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: clamp(0.85rem, 2vw, 1.4rem);
-    }
-
-    .noodle-card {
-      display: grid;
-      grid-template-rows: minmax(210px, 1fr) auto;
-      min-height: 292px;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--catalog-border);
-      text-decoration: none;
-      outline: none;
-      background: var(--catalog-surface);
-      transition: all 260ms cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .noodle-card:hover,
-    .noodle-card:focus-visible {
-      transform: translateY(-6px);
-      border-color: var(--catalog-crimson);
-      box-shadow: 0 16px 36px -8px rgba(220, 20, 60, 0.18);
-    }
-
-    .noodle-card-media {
-      display: grid;
-      place-items: center;
-      background: #FAFAFA;
-      padding: 1.3rem;
-      overflow: hidden;
-      border-bottom: 1px solid var(--catalog-border);
-    }
-
-    .noodle-card-media img {
-      display: block;
-      max-width: min(100%, 220px);
-      max-height: 118px;
-      object-fit: contain;
-      transition: transform 260ms ease;
-    }
-
-    .noodle-card:hover .noodle-card-media img {
-      transform: scale(1.05);
-    }
-
-    .noodle-card.locked {
-      pointer-events: none;
-      opacity: 0.6;
-    }
-
-    .noodle-card.locked .noodle-card-media {
-      background: #0F172A;
-      border-color: #1E293B;
-    }
-
-    .noodle-card.locked img {
-      max-height: 72px;
-      opacity: 0.8;
-    }
-
-    .noodle-card-label {
-      display: grid;
-      gap: 0.2rem;
-      min-height: 58px;
-      align-content: center;
-      background: var(--catalog-crimson);
-      padding: 0.65rem 0.85rem;
-      color: #FFFFFF;
-      text-align: center;
-      transition: background 200ms ease;
-    }
-
-    .noodle-card:hover .noodle-card-label {
-      background: var(--catalog-crimson-dark);
-    }
-
-    .noodle-card-label strong {
-      font-size: 0.95rem;
-      line-height: 1.1;
-      font-weight: 800;
-    }
-
-    .noodle-card-label span {
-      font-size: 0.68rem;
-      line-height: 1.25;
-      color: rgba(255, 255, 255, 0.85);
-    }
-
-    .noodle-card.locked .noodle-card-label {
-      background: #1E293B;
-      color: #94A3B8;
-    }
-
-    .noodle-footer {
+    .ticker-track {
       display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1.2rem clamp(1.25rem, 4vw, 3rem);
-      border-top: 1px solid var(--catalog-border);
-      color: var(--catalog-muted);
-      font-family: "JetBrains Mono", monospace;
-      font-size: 0.7rem;
-      line-height: 1.6;
-      background: #FFFFFF;
+      gap: 3rem;
+      animation: tickerLoop 32s linear infinite;
+    }
+    @keyframes tickerLoop {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-container:hover .ticker-track {
+      animation-play-state: paused;
     }
 
-    @media (max-width: 900px) {
-      .noodle-links {
-        display: none;
-      }
-
-      .noodle-nav {
-        grid-template-columns: auto auto;
-      }
-
-      .noodle-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 640px) {
-      html,
-      body {
-        background: #FFFFFF !important;
-      }
-
-      .noodle-shell {
-        padding: 0;
-        background: #FFFFFF;
-      }
-
-      .noodle-page {
-        min-height: 100dvh;
-        border-radius: 0;
-        border: 0;
-        box-shadow: none;
-      }
-
-      .noodle-nav {
-        min-height: 68px;
-        padding: 0.9rem 1rem 0.65rem;
-        align-items: center;
-      }
-
-      .noodle-logo img {
-        width: 36px;
-      }
-
-      .noodle-contact {
-        min-height: 38px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 0.85rem;
-        font-size: 0.72rem;
-      }
-
-      .noodle-hero {
-        min-height: 240px;
-        padding: 1rem;
-      }
-
-      .noodle-title {
-        font-size: clamp(4.8rem, 23vw, 6.4rem);
-      }
-
-      .noodle-meta {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.8rem;
-        font-size: 0.7rem;
-      }
-
-      .noodle-section {
-        padding: 1.5rem 1rem 3rem;
-      }
-
-      .noodle-section-title {
-        font-size: clamp(3rem, 14vw, 3.8rem);
-      }
-
-      .noodle-grid {
-        display: flex;
-        gap: 0.95rem;
-        margin-inline: -1rem;
-        overflow-x: auto;
-        overscroll-behavior-x: contain;
-        padding: 0 1rem 0.65rem;
-        scroll-padding-inline: 1rem;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-      }
-
-      .noodle-grid::-webkit-scrollbar {
-        display: none;
-      }
-
-      .noodle-card {
-        width: min(78vw, 300px);
-        min-width: min(78vw, 300px);
-        min-height: 310px;
-        scroll-snap-align: start;
-      }
-
-      .noodle-footer {
-        flex-direction: column;
-        gap: 0.4rem;
-        padding: 1rem 1rem max(1rem, env(safe-area-inset-bottom));
-        font-size: 0.64rem;
-      }
+    /* Subtle fanned card hover lift */
+    .fanned-card {
+      transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+      transform-origin: bottom center;
     }
   </style>
 </head>
-<body class="font-jakarta antialiased selection:bg-[#DC143C] selection:text-white">
-  <main class="noodle-shell">
-    <div class="noodle-page">
+<body class="selection:bg-[#DC143C] selection:text-white bg-white text-slate-900">
+
+  <!-- ======================================================= -->
+  <!-- 1. ULTRA-ELEGAN NAVBAR                                  -->
+  <!-- ======================================================= -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
       
-      <!-- Top Navigation -->
-      <nav class="noodle-nav" aria-label="Navigasi katalog">
-        <a href="./" class="noodle-logo" aria-label="SYMP Studio home">
-          <img src="assets/SYMP LOGO MERAH.png" alt="SYMP Studio">
-        </a>
-
-        <div class="noodle-links">
-          <a href="./" class="active">Katalog</a>
-          <a href="tentang/">Tentang</a>
-          <a href="layanan/">Layanan</a>
-          <a href="elevgro/">Elevgro</a>
-          <a href="kolohaga/guidelines/">Kolohaga</a>
-          <a href="arruwad/">Ar Ruwad</a>
-          <a href="zalvice/">Zalvice</a>
-          <a href="laptopbisnis/">Laptopbisnis</a>
-          <a href="azharuna/">Azharuna Group</a>
+      <!-- Brand Lockup -->
+      <a href="./" class="flex items-center gap-3.5 group text-slate-900 hover:text-[#DC143C] transition">
+        <img src="assets/SYMP LOGO MERAH.png" alt="SYMP Studio Logo" class="h-8 w-auto object-contain transition-transform group-hover:scale-105" />
+        <div class="flex flex-col">
+          <span class="text-sm font-semibold tracking-tight text-slate-950">SYMP STUDIO</span>
+          <span class="text-[11px] text-slate-400 font-medium tracking-wide">Client Presentation Hub</span>
         </div>
+      </a>
 
-        <a class="noodle-contact" href="https://wa.me/6281311506025?text=Halo%20Daru%20(SYMP%20Studio),%20saya%20mau%20ajukan%20brief%20penawaran%20logo%20baru" target="_blank" rel="noreferrer">
-          0813 1150 6025
+      <!-- Center Links (Clean & Refined) -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-medium text-slate-600">
+        <a href="#katalog" class="text-slate-950 hover:text-[#DC143C] transition">Koleksi Proposal</a>
+        <a href="azharuna/guidelines/" class="hover:text-[#DC143C] transition flex items-center gap-1.5">
+          <span>Azharuna Guidelines</span>
+          <span class="px-1.5 py-0.5 rounded-full text-[9px] bg-[#FAF4E8] text-[#8D222E] border border-[#EADEC9]">New</span>
         </a>
+        <a href="kolohaga/guidelines/" class="hover:text-[#DC143C] transition">Kolohaga Guidelines</a>
+        <a href="elevgro/" class="hover:text-[#DC143C] transition">Elevgro</a>
       </nav>
 
-      <!-- Hero Header -->
-      <section class="noodle-hero">
-        <h1 class="noodle-title">
-          <span>Logo</span>
-          <span>Review</span>
-        </h1>
+      <!-- Right Action & Status -->
+      <div class="flex items-center gap-4">
+        <div class="hidden sm:flex items-center gap-2 text-[11px] text-slate-400 font-medium border-r border-slate-150 pr-4">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>6 Deck Aktif</span>
+        </div>
+        
+        <a href="https://wa.me/6281311506025?text=Halo%20Daru%20(SYMP%20Studio),%20saya%20ingin%20konsultasi%20mengenai%20proyek%20identitas%20visual%20baru." target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-950 text-white text-xs font-medium hover:bg-slate-800 transition duration-200 shadow-xs">
+          <i data-lucide="message-square" class="w-3.5 h-3.5 text-rose-300"></i>
+          <span>Hubungi Studio</span>
+        </a>
+      </div>
 
-        <div class="noodle-meta">
-          <p>
-            <strong>SYMP Studio Proposal Hub</strong>
-            Katalog deck logo resmi untuk presentasi client.
-          </p>
-          <p>
-            <strong>2026 Catalog</strong>
-            Buka card untuk masuk ke slug penawaran.
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ======================================================= -->
+    <!-- 2. HERO HEADER (INSPIRED DIRECTLY BY REFERENCE)         -->
+    <!-- ======================================================= -->
+    <section class="pt-16 sm:pt-24 pb-0 overflow-hidden relative border-b border-slate-100">
+      <div class="max-w-5xl mx-auto px-6 sm:px-10 text-center space-y-7">
+        
+        <!-- Top Centered Stamp (Reference Style) -->
+        <div class="flex flex-col items-center justify-center space-y-2.5">
+          <div class="flex items-center gap-1.5 p-1">
+            <span class="w-2.5 h-2.5 bg-slate-900 rounded-[2px]"></span>
+            <span class="w-2.5 h-2.5 bg-slate-500 rounded-[2px]"></span>
+            <span class="w-2.5 h-2.5 bg-[#DC143C] rounded-[2px]"></span>
+          </div>
+          <span class="text-[11px] tracking-widest uppercase font-medium text-slate-400">
+            Curated by SYMP Studio®
+          </span>
+        </div>
+
+        <!-- Monumental Editorial Headline with Inline Tilted Badge -->
+        <div class="max-w-4xl mx-auto space-y-3">
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-semibold text-slate-950 tracking-tight leading-[1.12]">
+            One Stop Presentation
+            <span class="inline-flex items-center align-middle mx-1 sm:mx-2 -mt-1.5 sm:-mt-2">
+              <span class="inline-block transform -rotate-6 hover:rotate-0 transition duration-300 shadow-md rounded-xl bg-gradient-to-br from-[#DC143C] to-[#8D222E] px-3.5 py-1.5 text-white text-xs sm:text-sm font-semibold tracking-wider select-none">
+                ✦ DECK
+              </span>
+            </span>
+            for Selected Brands.
+          </h1>
+          
+          <p class="text-base sm:text-xl text-slate-500 font-normal max-w-2xl mx-auto leading-relaxed pt-2">
+            Buku panduan identitas visual dan arsip proposal logo resmi yang dikurasi khusus untuk presentasi klien.
           </p>
         </div>
-      </section>
 
-      <!-- Running Ticker Strip (Infinite Smooth Marquee) -->
-      <div class="noodle-strip" aria-hidden="true">
-        <div class="noodle-strip-track">
-          <span>LOGO REVIEW</span><span>✦</span>
-          <span>PROPOSAL DECK</span><span>✦</span>
-          <span>BRAND GUIDELINES</span><span>✦</span>
-          <span>VISUAL IDENTITY SYSTEM</span><span>✦</span>
-          <span>SYMP STUDIO</span><span>✦</span>
-          <span>LOGO REVIEW</span><span>✦</span>
-          <span>PROPOSAL DECK</span><span>✦</span>
-          <span>BRAND GUIDELINES</span><span>✦</span>
-          <span>VISUAL IDENTITY SYSTEM</span><span>✦</span>
-          <span>SYMP STUDIO</span><span>✦</span>
-          <!-- Duplicate set for seamless infinite loop -->
-          <span>LOGO REVIEW</span><span>✦</span>
-          <span>PROPOSAL DECK</span><span>✦</span>
-          <span>BRAND GUIDELINES</span><span>✦</span>
-          <span>VISUAL IDENTITY SYSTEM</span><span>✦</span>
-          <span>SYMP STUDIO</span><span>✦</span>
-          <span>LOGO REVIEW</span><span>✦</span>
-          <span>PROPOSAL DECK</span><span>✦</span>
-          <span>BRAND GUIDELINES</span><span>✦</span>
-          <span>VISUAL IDENTITY SYSTEM</span><span>✦</span>
-          <span>SYMP STUDIO</span><span>✦</span>
+        <!-- Pill CTA Button (Direct Reference) -->
+        <div class="pt-2">
+          <a href="#katalog" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-slate-950 text-white text-xs font-medium hover:bg-slate-800 hover:scale-105 active:scale-95 transition-all duration-200 shadow-sm">
+            <span>View Collections</span>
+            <i data-lucide="arrow-down" class="w-3.5 h-3.5 text-slate-300"></i>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Fanned-Out Cards Preview Stage (Exact Reference Signature!) -->
+      <div class="mt-14 sm:mt-20 flex justify-center items-end overflow-hidden pt-8 pb-0 px-4">
+        <div class="flex items-end justify-center -space-x-12 sm:-space-x-20 max-w-5xl w-full translate-y-6 sm:translate-y-8">
+          
+          <!-- Card 1 (Leftmost, Tilted -14deg): Laptopbisnis -->
+          <a href="laptopbisnis/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-slate-950 p-5 flex flex-col justify-between shadow-2xl transform -rotate-14 hover:-rotate-6 hover:-translate-y-10 hover:z-40 border border-slate-800 group text-white">
+            <div class="flex items-center justify-between text-[10px] text-slate-400 font-mono">
+              <span>01 / SLUG</span>
+              <span class="text-cyan-400 font-sans font-medium">Tech</span>
+            </div>
+            <div class="py-4 flex items-center justify-center">
+              <img src="assets/laptopbisnis_1_putih.png" alt="Laptopbisnis" class="max-h-20 w-auto object-contain group-hover:scale-110 transition duration-300" />
+            </div>
+            <div class="space-y-0.5 border-t border-slate-800 pt-3">
+              <div class="text-xs font-semibold text-white">Laptopbisnis</div>
+              <div class="text-[10px] text-slate-400">Identity &amp; Logo System</div>
+            </div>
+          </a>
+
+          <!-- Card 2 (Tilted -7deg): Zalvice -->
+          <a href="zalvice/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-slate-50 p-5 flex flex-col justify-between shadow-2xl transform -rotate-7 hover:rotate-0 hover:-translate-y-10 hover:z-40 border border-slate-200 group text-slate-900">
+            <div class="flex items-center justify-between text-[10px] text-slate-400 font-mono">
+              <span>02 / SLUG</span>
+              <span class="text-slate-600 font-sans font-medium">Fashion</span>
+            </div>
+            <div class="py-4 flex items-center justify-center">
+              <img src="assets/zalvice_1_fix.png" alt="Zalvice" class="max-h-20 w-auto object-contain group-hover:scale-110 transition duration-300" />
+            </div>
+            <div class="space-y-0.5 border-t border-slate-200 pt-3">
+              <div class="text-xs font-semibold text-slate-950">Zalvice</div>
+              <div class="text-[10px] text-slate-500">Identity &amp; Wordmark</div>
+            </div>
+          </a>
+
+          <!-- Card 3 (Center Highlight, 0deg): Azharuna Group -->
+          <a href="azharuna/guidelines/" class="fanned-card w-44 sm:w-64 h-64 sm:h-84 rounded-2xl bg-[#FAF4E8] p-6 flex flex-col justify-between shadow-2xl transform rotate-0 hover:-translate-y-10 hover:scale-105 hover:z-40 border border-[#EADEC9] z-20 group text-slate-900">
+            <div class="flex items-center justify-between text-[10px] text-[#8D222E] font-medium">
+              <span class="tracking-wider uppercase">03 / Terpilih</span>
+              <span class="px-2 py-0.5 rounded-full bg-[#8D222E] text-white text-[9px]">Guidelines</span>
+            </div>
+            <div class="py-4 flex items-center justify-center">
+              <img src="assets/azharuna_group_1_berdiri.png" alt="Azharuna Group" class="max-h-28 sm:max-h-36 w-auto object-contain group-hover:scale-105 transition duration-300" />
+            </div>
+            <div class="space-y-0.5 border-t border-[#EADEC9] pt-3">
+              <div class="text-sm font-semibold text-slate-950">AZHARUNA GROUP</div>
+              <div class="text-[11px] text-[#8D222E] font-medium">Baitullah &amp; Menara Harmoni</div>
+            </div>
+          </a>
+
+          <!-- Card 4 (Tilted +7deg): Kolohaga -->
+          <a href="kolohaga/guidelines/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-emerald-50/90 p-5 flex flex-col justify-between shadow-2xl transform rotate-7 hover:rotate-0 hover:-translate-y-10 hover:z-40 border border-emerald-200 group text-slate-900">
+            <div class="flex items-center justify-between text-[10px] text-emerald-800 font-mono">
+              <span>04 / SLUG</span>
+              <span class="text-emerald-700 font-sans font-medium">Agri</span>
+            </div>
+            <div class="py-4 flex items-center justify-center">
+              <img src="assets/logo_kolohaga_1_hijau.png" alt="Kolohaga" class="max-h-20 w-auto object-contain group-hover:scale-110 transition duration-300" />
+            </div>
+            <div class="space-y-0.5 border-t border-emerald-200 pt-3">
+              <div class="text-xs font-semibold text-slate-950">Kolohaga</div>
+              <div class="text-[10px] text-slate-500">Brand Guidelines &amp; Identity</div>
+            </div>
+          </a>
+
+          <!-- Card 5 (Rightmost, Tilted +14deg): Elevgro -->
+          <a href="elevgro/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-white p-5 flex flex-col justify-between shadow-2xl transform rotate-14 hover:rotate-6 hover:-translate-y-10 hover:z-40 border border-slate-200 group text-slate-900">
+            <div class="flex items-center justify-between text-[10px] text-slate-400 font-mono">
+              <span>05 / SLUG</span>
+              <span class="text-blue-600 font-sans font-medium">Growth</span>
+            </div>
+            <div class="py-4 flex items-center justify-center">
+              <img src="assets/elevgro_final_fix_web.png" alt="Elevgro" class="max-h-20 w-auto object-contain group-hover:scale-110 transition duration-300" />
+            </div>
+            <div class="space-y-0.5 border-t border-slate-200 pt-3">
+              <div class="text-xs font-semibold text-slate-950">Elevgro</div>
+              <div class="text-[10px] text-slate-500">Visual Identity Guidelines</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- 3. SLICK TICKER MARQUEE                                 -->
+    <!-- ======================================================= -->
+    <div class="ticker-container py-3.5 border-b border-slate-100 bg-slate-50/60 text-xs font-medium text-slate-400 tracking-wider uppercase">
+      <div class="ticker-track">
+        <span>Azharuna Group</span><span>✦</span>
+        <span>Brand Guidelines</span><span>✦</span>
+        <span>Kolohaga Official</span><span>✦</span>
+        <span>Elevgro Identity</span><span>✦</span>
+        <span>Zalvice Presentation</span><span>✦</span>
+        <span>Laptopbisnis Deck</span><span>✦</span>
+        <span>Ar Ruwad System</span><span>✦</span>
+        <span>SYMP Studio 2026</span><span>✦</span>
+        <!-- Duplicate for loop -->
+        <span>Azharuna Group</span><span>✦</span>
+        <span>Brand Guidelines</span><span>✦</span>
+        <span>Kolohaga Official</span><span>✦</span>
+        <span>Elevgro Identity</span><span>✦</span>
+        <span>Zalvice Presentation</span><span>✦</span>
+        <span>Laptopbisnis Deck</span><span>✦</span>
+        <span>Ar Ruwad System</span><span>✦</span>
+        <span>SYMP Studio 2026</span><span>✦</span>
+      </div>
+    </div>
+
+    <!-- ======================================================= -->
+    <!-- 4. CATALOG SECTION (CLEAN EDITORIAL GRID)               -->
+    <!-- ======================================================= -->
+    <section id="katalog" class="py-20 sm:py-28 max-w-7xl mx-auto px-6 sm:px-10 space-y-16">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-100">
+        <div class="space-y-2 max-w-xl">
+          <span class="text-xs uppercase font-semibold text-[#DC143C] tracking-wider">Koleksi Terkurasi</span>
+          <h2 class="text-2xl sm:text-4xl font-semibold text-slate-950 tracking-tight">
+            Katalog Proposal &amp; Brand Guidelines
+          </h2>
+          <p class="text-sm text-slate-500 font-normal leading-relaxed">
+            Klik kartu untuk membuka tautan presentasi proposal lengkap atau buku panduan identitas visual masing-masing klien.
+          </p>
+        </div>
+
+        <div class="text-xs font-medium text-slate-400">
+          Total 6 Proyek Aktif Terverifikasi
         </div>
       </div>
 
-      <!-- Catalog Section -->
-      <section class="noodle-section" aria-labelledby="catalog-title">
-        <h2 id="catalog-title" class="noodle-section-title">Katalog</h2>
-        <p class="noodle-section-note">Pilih deck penawaran logo yang ingin dibuka. Card kosong dikunci sampai proposal berikutnya siap dipresentasikan.</p>
+      <!-- 6 Clean Project Cards (Refined Architecture) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+        
+        <!-- Card 1: Azharuna Group (Featured) -->
+        <a href="azharuna/guidelines/" class="group block space-y-4">
+          <div class="aspect-[16/11] rounded-2xl bg-[#FAF4E8] p-8 flex items-center justify-center border border-[#EADEC9] overflow-hidden relative transition duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
+            <span class="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-[#8D222E] text-white text-[10px] font-semibold tracking-wide">
+              Official Guidelines
+            </span>
+            <img src="assets/azharuna_group_1_berdiri.png" alt="Logo Azharuna Group" class="max-h-40 w-auto object-contain transition duration-500 group-hover:scale-105" />
+          </div>
+          <div class="flex items-start justify-between">
+            <div class="space-y-0.5">
+              <h3 class="text-base font-semibold text-slate-950 group-hover:text-[#8D222E] transition">Azharuna Group</h3>
+              <p class="text-xs text-slate-500">Baitullah &amp; Menara Harmoni — Holding Syariah</p>
+            </div>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-[#8D222E] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+          </div>
+        </a>
 
-        <div class="noodle-grid" aria-label="Card proposal logo">
-          
-          <!-- Card 1: Elevgro -->
-          <a href="elevgro/" class="noodle-card">
-            <span class="noodle-card-media">
-              <img src="assets/elevgro_final_fix_web.png" alt="Logo Elevgro">
+        <!-- Card 2: Kolohaga -->
+        <a href="kolohaga/guidelines/" class="group block space-y-4">
+          <div class="aspect-[16/11] rounded-2xl bg-emerald-50/60 p-8 flex items-center justify-center border border-emerald-100 overflow-hidden relative transition duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
+            <span class="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-emerald-700 text-white text-[10px] font-semibold tracking-wide">
+              Guidelines
             </span>
-            <span class="noodle-card-label">
-              <strong>Elevgro</strong>
-              <span>Visual Identity Guidelines</span>
-            </span>
-          </a>
+            <img src="assets/logo_kolohaga_1_hijau.png" alt="Logo Kolohaga Official" class="max-h-40 w-auto object-contain transition duration-500 group-hover:scale-105" />
+          </div>
+          <div class="flex items-start justify-between">
+            <div class="space-y-0.5">
+              <h3 class="text-base font-semibold text-slate-950 group-hover:text-emerald-700 transition">Kolohaga</h3>
+              <p class="text-xs text-slate-500">Brand Guidelines &amp; Identity System</p>
+            </div>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-emerald-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+          </div>
+        </a>
 
-          <!-- Card 2: Kolohaga -->
-          <a href="kolohaga/guidelines/" class="noodle-card">
-            <span class="noodle-card-media">
-              <img src="assets/logo_kolohaga_1_hijau.png" alt="Logo Kolohaga Official">
+        <!-- Card 3: Elevgro -->
+        <a href="elevgro/" class="group block space-y-4">
+          <div class="aspect-[16/11] rounded-2xl bg-slate-50 p-8 flex items-center justify-center border border-slate-150 overflow-hidden relative transition duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
+            <span class="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-slate-800 text-white text-[10px] font-semibold tracking-wide">
+              Presentation
             </span>
-            <span class="noodle-card-label">
-              <strong>Kolohaga</strong>
-              <span>Brand Guidelines &amp; Identity</span>
-            </span>
-          </a>
+            <img src="assets/elevgro_final_fix_web.png" alt="Logo Elevgro" class="max-h-40 w-auto object-contain transition duration-500 group-hover:scale-105" />
+          </div>
+          <div class="flex items-start justify-between">
+            <div class="space-y-0.5">
+              <h3 class="text-base font-semibold text-slate-950 group-hover:text-[#DC143C] transition">Elevgro</h3>
+              <p class="text-xs text-slate-500">Visual Identity System &amp; Pitch Deck</p>
+            </div>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-[#DC143C] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+          </div>
+        </a>
 
-          <!-- Card 3: Ar Ruwad -->
-          <a href="arruwad/" class="noodle-card">
-            <span class="noodle-card-media">
-              <img src="assets/logo_ar_ruwad_1.png" alt="Logo Ar Ruwad">
+        <!-- Card 4: Zalvice -->
+        <a href="zalvice/" class="group block space-y-4">
+          <div class="aspect-[16/11] rounded-2xl bg-slate-50 p-8 flex items-center justify-center border border-slate-150 overflow-hidden relative transition duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
+            <span class="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-slate-800 text-white text-[10px] font-semibold tracking-wide">
+              Presentation
             </span>
-            <span class="noodle-card-label">
-              <strong>Ar Ruwad</strong>
-              <span>Logo Angkatan Proposal</span>
-            </span>
-          </a>
+            <img src="assets/zalvice_1_fix.png" alt="Logo Zalvice" class="max-h-40 w-auto object-contain transition duration-500 group-hover:scale-105" />
+          </div>
+          <div class="flex items-start justify-between">
+            <div class="space-y-0.5">
+              <h3 class="text-base font-semibold text-slate-950 group-hover:text-[#DC143C] transition">Zalvice</h3>
+              <p class="text-xs text-slate-500">Identity &amp; Wordmark Proposal</p>
+            </div>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-[#DC143C] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+          </div>
+        </a>
 
-          <!-- Card 4: Zalvice -->
-          <a href="zalvice/" class="noodle-card">
-            <span class="noodle-card-media">
-              <img src="assets/zalvice_1_fix.png" alt="Logo Zalvice">
+        <!-- Card 5: Laptopbisnis -->
+        <a href="laptopbisnis/" class="group block space-y-4">
+          <div class="aspect-[16/11] rounded-2xl bg-slate-950 p-8 flex items-center justify-center border border-slate-800 overflow-hidden relative transition duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
+            <span class="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-white/10 text-white border border-white/20 text-[10px] font-semibold tracking-wide">
+              Presentation
             </span>
-            <span class="noodle-card-label">
-              <strong>Zalvice</strong>
-              <span>Identity &amp; Logo System</span>
-            </span>
-          </a>
-          <!-- Card 5: Laptopbisnis -->
-          <a href="laptopbisnis/" class="noodle-card">
-            <span class="noodle-card-media">
-              <img src="assets/laptopbisnis_1_fix.png" alt="Logo Laptopbisnis">
-            </span>
-            <span class="noodle-card-label">
-              <strong>Laptopbisnis</strong>
-              <span>Identity &amp; Logo System</span>
-            </span>
-          </a>
+            <img src="assets/laptopbisnis_1_putih.png" alt="Logo Laptopbisnis" class="max-h-40 w-auto object-contain transition duration-500 group-hover:scale-105" />
+          </div>
+          <div class="flex items-start justify-between">
+            <div class="space-y-0.5">
+              <h3 class="text-base font-semibold text-slate-950 group-hover:text-[#DC143C] transition">Laptopbisnis</h3>
+              <p class="text-xs text-slate-500">Identity &amp; Logo System</p>
+            </div>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-[#DC143C] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+          </div>
+        </a>
 
-          <!-- Card 6: Azharuna Group -->
-          <a href="azharuna/guidelines/" class="noodle-card">
-            <span class="noodle-card-media">
-              <img src="assets/azharuna_group_1_berdiri.png" alt="Logo Azharuna Group">
+        <!-- Card 6: Ar Ruwad -->
+        <a href="arruwad/" class="group block space-y-4">
+          <div class="aspect-[16/11] rounded-2xl bg-slate-50 p-8 flex items-center justify-center border border-slate-150 overflow-hidden relative transition duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
+            <span class="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-slate-800 text-white text-[10px] font-semibold tracking-wide">
+              Presentation
             </span>
-            <span class="noodle-card-label">
-              <strong>Azharuna Group</strong>
-              <span>Brand Guidelines &amp; Identity</span>
-            </span>
-          </a>
+            <img src="assets/logo_ar_ruwad_1.png" alt="Logo Ar Ruwad" class="max-h-40 w-auto object-contain transition duration-500 group-hover:scale-105" />
+          </div>
+          <div class="flex items-start justify-between">
+            <div class="space-y-0.5">
+              <h3 class="text-base font-semibold text-slate-950 group-hover:text-[#DC143C] transition">Ar Ruwad</h3>
+              <p class="text-xs text-slate-500">Logo Angkatan &amp; Identity Proposal</p>
+            </div>
+            <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-[#DC143C] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+          </div>
+        </a>
 
+      </div>
+
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- 5. CONSULTATION CALL-TO-ACTION                          -->
+    <!-- ======================================================= -->
+    <section class="py-20 sm:py-24 border-t border-slate-100 bg-slate-50/70">
+      <div class="max-w-4xl mx-auto px-6 sm:px-10 text-center space-y-6">
+        <span class="text-xs uppercase font-semibold text-[#DC143C] tracking-widest">Kolaborasi Desain</span>
+        <h2 class="text-3xl sm:text-5xl font-semibold text-slate-950 tracking-tight">
+          Punya Proyek Identitas Visual Baru?
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 max-w-xl mx-auto font-normal leading-relaxed">
+          Konsultasikan kebutuhan desain logo, pitch deck presentasi korporat, hingga standarisasi master brand guidelines bersama SYMP Studio.
+        </p>
+        <div class="pt-2">
+          <a href="https://wa.me/6281311506025?text=Halo%20Daru%20(SYMP%20Studio),%20saya%20mau%20ajukan%20brief%20penawaran%20logo%20baru." target="_blank" rel="noreferrer" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-slate-950 text-white text-xs font-semibold hover:bg-slate-800 transition duration-300 shadow-md">
+            <i data-lucide="message-circle" class="w-4 h-4 text-rose-300"></i>
+            <span>Mulai Diskusi via WhatsApp</span>
+          </a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Footer -->
-      <footer class="noodle-footer">
-        <span>&copy; 2026 SYMP Studio, Directed by Daru Fahmaa Muliawan</span>
-        <span>Hub Presentasi & Review Proposal Logo</span>
-      </footer>
-
-    </div>
   </main>
+
+  <!-- ======================================================= -->
+  <!-- 6. CLEAN MINIMALIST FOOTER                              -->
+  <!-- ======================================================= -->
+  <footer class="bg-white py-12 border-t border-slate-100 text-xs text-slate-400 font-normal">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>&copy; 2026 SYMP Studio. Directed by Daru Fahmaa Muliawan.</p>
+      <p>Presentation Archive &amp; Brand Guidelines Hub</p>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>
