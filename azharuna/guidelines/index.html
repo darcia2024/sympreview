@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>AZHARUNA GROUP: Brand Guidelines | SYMP Studio</title>
-  <meta name="description" content="Buku panduan identitas visual resmi AZHARUNA GROUP (Pilihan 01: Baitullah & Menara Harmoni). Standar penggunaan logo, warna, tipografi, safe area, larangan, dan aplikasi holding syariah.">
+  <title>AZHARUNA GROUP: Comprehensive Brand Guidelines | SYMP Studio</title>
+  <meta name="description" content="Buku panduan identitas visual resmi AZHARUNA GROUP (Pilihan 01: Baitullah & Menara Harmoni). Standar arsitektur sub-brand, tone of voice, supergraphic pattern, art direction fotografi, digital presence, co-branding, dan aplikasi korporat syariah.">
   <link rel="icon" href="../../assets/azharuna_group_1_berdiri.png">
   
-  <!-- Google Fonts: Plus Jakarta Sans Only -->
+  <!-- Google Fonts: Plus Jakarta Sans Only (Regular 400) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400&display=swap" rel="stylesheet">
@@ -75,37 +75,49 @@
       text-rendering: geometricPrecision;
     }
 
-    h1, h2, h3, h4, h5, h6, p, span, a, button, div, strong, b, label, input {
+    h1, h2, h3, h4, h5, h6, p, span, a, button, div, strong, b, label, input, select, textarea, table, th, td {
       font-family: 'Plus Jakarta Sans', sans-serif !important;
       font-weight: 400 !important;
     }
 
-    /* Minimalist continuous color line */
-    .color-swatch-line {
-      height: 4px;
-      width: 100%;
+    /* Pattern Tile SVG Background */
+    .pattern-tile-cream {
+      background-color: #FAF4E8;
+      background-image: radial-gradient(#8D222E 0.75px, transparent 0.75px), radial-gradient(#8D222E 0.75px, #FAF4E8 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+      background-blend-mode: multiply;
+      opacity: 0.95;
     }
 
-    /* Floating bottom mobile navigation dock */
+    .pattern-svg-thawaf {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%238D222E' stroke-width='1' stroke-opacity='0.12'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3Ccircle cx='30' cy='30' r='18'/%3E%3Ccircle cx='30' cy='30' r='10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .pattern-svg-thawaf-gold {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23FAF4E8' stroke-width='1' stroke-opacity='0.16'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3Ccircle cx='30' cy='30' r='18'/%3E%3Ccircle cx='30' cy='30' r='10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    /* Mobile Bottom Dock */
     .mobile-bottom-dock {
       display: none;
     }
     @media (max-width: 768px) {
       .mobile-bottom-dock {
         position: fixed;
-        left: 20px;
-        right: 20px;
-        bottom: max(16px, env(safe-area-inset-bottom));
+        left: 16px;
+        right: 16px;
+        bottom: max(14px, env(safe-area-inset-bottom));
         z-index: 60;
         display: flex;
         align-items: center;
         justify-content: space-around;
-        background: rgba(255, 255, 255, 0.96);
+        background: rgba(255, 255, 255, 0.97);
         backdrop-filter: blur(20px);
         border: 1px solid rgba(141, 34, 46, 0.12);
         border-radius: 999px;
-        padding: 8px 16px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        padding: 8px 14px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
       }
       .mobile-bottom-dock a {
         font-size: 0.72rem;
@@ -124,26 +136,29 @@
   <!-- MINIMALIST STICKY HEADER (UNBOXED)                      -->
   <!-- ======================================================= -->
   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all">
-    <div class="max-w-5xl mx-auto px-6 sm:px-10 h-16 sm:h-20 flex items-center justify-between">
+    <div class="max-w-6xl mx-auto px-6 sm:px-10 h-16 sm:h-20 flex items-center justify-between">
       
       <!-- Back Link & Title -->
       <a href="/azharuna" class="group flex items-center gap-3 text-slate-800 hover:text-[#8D222E] transition">
         <i data-lucide="arrow-left" class="w-4 h-4 text-slate-400 group-hover:-translate-x-1 group-hover:text-[#8D222E] transition-transform"></i>
         <div class="flex flex-col">
           <span class="text-sm tracking-tight text-slate-900">AZHARUNA GROUP</span>
-          <span class="text-[11px] text-slate-400">Brand Guidelines 2026</span>
+          <span class="text-[11px] text-slate-400">Master Brand Guidelines 2026</span>
         </div>
       </a>
 
       <!-- Desktop Nav Anchors -->
-      <nav class="hidden md:flex items-center gap-7 text-xs text-slate-500">
-        <a href="#overview" class="hover:text-[#8D222E] transition">Overview</a>
+      <nav class="hidden lg:flex items-center gap-6 text-xs text-slate-500">
+        <a href="#overview" class="hover:text-[#8D222E] transition">Profil</a>
+        <a href="#tone-of-voice" class="hover:text-[#8D222E] transition">Voice</a>
         <a href="#concept" class="hover:text-[#8D222E] transition">Konsep</a>
-        <a href="#primary-logo" class="hover:text-[#8D222E] transition">Logo</a>
-        <a href="#safe-area" class="hover:text-[#8D222E] transition">Safe Area</a>
+        <a href="#sub-brands" class="hover:text-[#8D222E] transition">Sub-Brand</a>
         <a href="#warna" class="hover:text-[#8D222E] transition">Warna</a>
+        <a href="#supergraphic" class="hover:text-[#8D222E] transition">Pattern</a>
         <a href="#tipografi" class="hover:text-[#8D222E] transition">Tipografi</a>
-        <a href="#larangan" class="hover:text-red-700 transition">Larangan</a>
+        <a href="#art-direction" class="hover:text-[#8D222E] transition">Fotografi</a>
+        <a href="#digital" class="hover:text-[#8D222E] transition">Digital</a>
+        <a href="#co-branding" class="hover:text-[#8D222E] transition">Kemitraan</a>
         <a href="#mockups" class="hover:text-[#8D222E] transition">Aplikasi</a>
       </nav>
 
@@ -151,7 +166,7 @@
       <div class="flex items-center gap-3">
         <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru%20(SYMP%20Studio),%20kami%20ingin%20konsultasi%20mengenai%20Brand%20Guidelines%20Azharuna%20Group." target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8D222E] text-white text-xs hover:bg-[#68151E] transition">
           <i data-lucide="message-circle" class="w-3.5 h-3.5 text-[#E1C9AC]"></i>
-          <span>Kontak Desainer</span>
+          <span>Hubungi Tim Desain</span>
         </a>
       </div>
 
@@ -161,10 +176,11 @@
   <!-- Mobile Bottom Dock -->
   <nav class="mobile-bottom-dock" aria-label="Navigasi mobile">
     <a href="#hero">Cover</a>
-    <a href="#concept">Konsep</a>
-    <a href="#primary-logo">Logo</a>
+    <a href="#tone-of-voice">Voice</a>
+    <a href="#sub-brands">Sub-Brand</a>
     <a href="#warna">Warna</a>
-    <a href="#mockups">Aplikasi</a>
+    <a href="#digital">Digital</a>
+    <a href="#co-branding">Mitra</a>
   </nav>
 
   <main id="main-content">
@@ -172,13 +188,13 @@
     <!-- ======================================================= -->
     <!-- SECTION 01: HERO & FLOATING MASTER LOGO (ZERO BOXES)    -->
     <!-- ======================================================= -->
-    <section id="hero" class="pt-16 sm:pt-24 pb-20 sm:pb-28 border-b border-slate-100 transition-colors duration-500" id="hero-section">
-      <div class="max-w-5xl mx-auto px-6 sm:px-10">
+    <section id="hero" class="pt-16 sm:pt-24 pb-20 sm:pb-28 border-b border-slate-100 transition-colors duration-500">
+      <div class="max-w-6xl mx-auto px-6 sm:px-10">
         
         <!-- Eyebrow Tag -->
         <div class="flex items-center gap-2 text-xs text-[#8D222E] mb-6">
           <span class="w-6 h-[1px] bg-[#8D222E]"></span>
-          <span class="tracking-wider uppercase">Identitas Visual Resmi — Opsi 01 Terpilih</span>
+          <span class="tracking-wider uppercase">Pedoman Identitas Korporat Terpilih — Opsi 01 Resmi</span>
         </div>
 
         <!-- Monumental Title in Jakarta Plus Sans Regular -->
@@ -186,8 +202,8 @@
           <h1 class="text-4xl sm:text-6xl lg:text-7xl text-slate-950 tracking-tight leading-[1.08]">
             AZHARUNA GROUP
           </h1>
-          <p class="text-base sm:text-2xl text-slate-500 tracking-tight max-w-3xl leading-relaxed">
-            Baitullah &amp; Menara Harmoni — Buku Panduan Standar Identitas Visual Korporat Holding Syariah 2026.
+          <p class="text-base sm:text-2xl text-slate-500 tracking-tight max-w-4xl leading-relaxed">
+            Baitullah &amp; Menara Harmoni — Standar Holistik Identitas Visual, Arsitektur Sub-Brand, dan Komunikasi Holding Syariah.
           </p>
         </div>
 
@@ -210,7 +226,7 @@
           <!-- Subtle Background Switcher (Text-based, No Ugly Boxes) -->
           <div class="mt-4 flex items-center gap-3 text-xs text-slate-400">
             <span>Uji Latar:</span>
-            <button onclick="setHeroBackground('white')" id="btn-bg-white" class="hover:text-slate-900 transition text-[#8D222E] font-medium">Putih</button>
+            <button onclick="setHeroBackground('white')" id="btn-bg-white" class="hover:text-slate-900 transition text-[#8D222E]">Putih</button>
             <span>·</span>
             <button onclick="setHeroBackground('cream')" id="btn-bg-cream" class="hover:text-slate-900 transition">Cream (#FAF4E8)</button>
             <span>·</span>
@@ -225,18 +241,18 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 02: PROFIL & 4 PILAR UTAMA (UNBOXED COLUMNS)    -->
+    <!-- SECTION 02: PROFIL & 4 PILAR UTAMA                      -->
     <!-- ======================================================= -->
     <section id="overview" class="py-20 sm:py-28 border-b border-slate-100">
-      <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
+      <div class="max-w-6xl mx-auto px-6 sm:px-10 space-y-16">
         
-        <div class="max-w-2xl space-y-3">
+        <div class="max-w-3xl space-y-3">
           <span class="text-xs uppercase text-[#8D222E] tracking-wider">01 / Profil &amp; Filosofi</span>
           <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
             Fondasi Amanah, Membawa Berkah bagi Seluruh Umat.
           </h2>
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            AZHARUNA GROUP hadir sebagai holding korporat syariah terpercaya yang menaungi ekosistem Haji &amp; Umrah, Halal Travel, Hospitality, dan Layanan Umat. Seluruh identitas visual dirancang untuk memancarkan wibawa kepemimpinan modern, ketenangan spiritual tanah suci, dan kehangatan khidmat pelayanan.
+            AZHARUNA GROUP hadir sebagai induk korporasi syariah (holding) terpercaya yang menaungi ekosistem perjalanan ibadah haji &amp; umrah, perhotelan tanah suci, logistik jamaah, dan filantropi umat. Seluruh rancangan identitas visual memancarkan wibawa kepemimpinan modern, ketenangan spiritual baitullah, dan adab pelayanan khidmat.
           </p>
         </div>
 
@@ -247,7 +263,7 @@
             <span class="text-2xl text-[#8D222E] block">01</span>
             <h3 class="text-base text-slate-950">Amanah Tertinggi</h3>
             <p class="text-xs text-slate-500 leading-relaxed">
-              Integritas syariah tanpa kompromi. Menjaga setiap amanah perjalanan ibadah jamaah dan kemitraan bisnis dengan transparansi penuh.
+              Integritas syariah tanpa kompromi. Menjaga setiap titipan perjalanan ibadah jamaah dan kemitraan bisnis dengan transparansi penuh.
             </p>
           </div>
 
@@ -263,7 +279,7 @@
             <span class="text-2xl text-[#8D222E] block">03</span>
             <h3 class="text-base text-slate-950">Wibawa &amp; Profesionalitas</h3>
             <p class="text-xs text-slate-500 leading-relaxed">
-              Memadukan adab mulia ketauhidan dengan sistem manajemen modern, kecepatan teknologi, dan ketepatan operasional berstandar internasional.
+              Memadukan adab mulia ketauhidan dengan sistem manajemen korporasi modern, tata kelola rapi, dan ketepatan operasional berstandar internasional.
             </p>
           </div>
 
@@ -271,7 +287,7 @@
             <span class="text-2xl text-[#8D222E] block">04</span>
             <h3 class="text-base text-slate-950">Keberkahan Maslahat</h3>
             <p class="text-xs text-slate-500 leading-relaxed">
-              Bisnis yang bertumbuh untuk meluaskan kemaslahatan sosial, membuka lapangan kerja yang berkah, dan mendukung dakwah kebaikan bagi umat.
+              Bisnis yang bertumbuh untuk meluaskan kemaslahatan sosial, membuka lapangan kerja halal, dan mendukung dakwah kebaikan bagi umat luas.
             </p>
           </div>
 
@@ -281,13 +297,140 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 03: KONSEP & ANATOMI SIMBOL (UNBOXED)           -->
+    <!-- SECTION 03: TONE OF VOICE & KARAKTER BAHASA (BARU)      -->
+    <!-- ======================================================= -->
+    <section id="tone-of-voice" class="py-20 sm:py-28 border-b border-slate-100">
+      <div class="max-w-6xl mx-auto px-6 sm:px-10 space-y-16">
+        
+        <div class="max-w-3xl space-y-3">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">02 / Karakter Bahasa &amp; Suara Korporat</span>
+          <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
+            Adab, Ketulusan, dan Kejernihan Komunikasi Syariah.
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Karakter verbal Azharuna Group mencerminkan kehormatan tuan rumah dan ketawadhu'an pelayan tamu-tamu Allah (*Khuddam Dhuyufurrahman*). Bahasa yang digunakan selalu santun, terstruktur rapi, menenteramkan batin, dan bebas dari sensasionalisme komersial murahan.
+          </p>
+        </div>
+
+        <!-- 4 Voice Principles Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pt-8 border-t border-slate-100">
+          
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 text-xs text-[#8D222E]">
+              <i data-lucide="heart-handshake" class="w-4 h-4"></i>
+              <span>Khidmat &amp; Tawadhu</span>
+            </div>
+            <h3 class="text-base text-slate-950">Santun Beradab</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Mengutamakan penghormatan tulus. Menyapa jamaah dan mitra sebagai keluarga mulia yang sedang dititipkan amanah ibadah suci.
+            </p>
+          </div>
+
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 text-xs text-[#8D222E]">
+              <i data-lucide="shield-check" class="w-4 h-4"></i>
+              <span>Amanah &amp; Akurat</span>
+            </div>
+            <h3 class="text-base text-slate-950">Jelas Tanpa Hiperbola</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Fakta jadwal, jarak hotel, maskapai, dan fasilitas disampaikan secara presisi, lugas, dan transparan tanpa menyembunyikan ketentuan.
+            </p>
+          </div>
+
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 text-xs text-[#8D222E]">
+              <i data-lucide="feather" class="w-4 h-4"></i>
+              <span>Teduh &amp; Thuma'ninah</span>
+            </div>
+            <h3 class="text-base text-slate-950">Menenteramkan Batin</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Pilihan kata membawa ketenangan spiritual, membimbing persiapan ibadah dengan hikmah dan kelembutan tuntunan sunnah.
+            </p>
+          </div>
+
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 text-xs text-[#8D222E]">
+              <i data-lucide="building" class="w-4 h-4"></i>
+              <span>Wibawa Korporat</span>
+            </div>
+            <h3 class="text-base text-slate-950">Berstandar Global</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Menggunakan struktur bahasa baku yang anggun, visioner, dan mencerminkan tata kelola holding berkelas dunia saat berdialog bisnis.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Editorial Lexicon Table: Direkomendasikan vs Dihindari -->
+        <div class="pt-8 border-t border-slate-100 space-y-6">
+          <div class="flex items-center justify-between text-xs">
+            <span class="text-slate-950 uppercase tracking-wider">Panduan Kosakata Resmi (Core Lexicon)</span>
+            <span class="text-slate-400">Standar Redaksional Publikasi &amp; Proposal</span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead>
+                <tr class="border-b border-slate-200 text-slate-400">
+                  <th class="py-3 pr-6 font-normal">Konteks Komunikasi</th>
+                  <th class="py-3 px-6 font-normal text-[#8D222E]">Pilihan Kata Direkomendasikan</th>
+                  <th class="py-3 pl-6 font-normal text-slate-500">Kata yang Wajib Dihindari</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 text-slate-700">
+                <tr>
+                  <td class="py-3.5 pr-6 text-slate-950">Hubungan dengan Pelanggan</td>
+                  <td class="py-3.5 px-6 text-[#8D222E]">"Tamu Allah", "Keluarga Jamaah", "Amanah Perjalanan"</td>
+                  <td class="py-3.5 pl-6 text-slate-400">"Klien", "Konsumen", "Penumpang biasa"</td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 pr-6 text-slate-950">Paket &amp; Layanan</td>
+                  <td class="py-3.5 px-6 text-[#8D222E]">"Program Khidmat", "Ihtiar Ibadah", "Fasilitas Prioritas"</td>
+                  <td class="py-3.5 pl-6 text-slate-400">"Paket Murah Meriah", "Jualan Diskon", "Promo Cuci Gudang"</td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 pr-6 text-slate-950">Tujuan &amp; Destinasi</td>
+                  <td class="py-3.5 px-6 text-[#8D222E]">"Tanah Suci", "Baitullah Al-Haram", "Ziarah Sejarah Nabawi"</td>
+                  <td class="py-3.5 pl-6 text-slate-400">"Spot Wisata", "Pelesiran", "Tempat Rekreasi"</td>
+                </tr>
+                <tr>
+                  <td class="py-3.5 pr-6 text-slate-950">Relasi Bisnis &amp; Vendor</td>
+                  <td class="py-3.5 px-6 text-[#8D222E]">"Mitra Sinergi Berkah", "Konsorsium Ekosistem Holding"</td>
+                  <td class="py-3.5 pl-6 text-slate-400">"Pihak Ketiga", "Penyuplai", "Pihak Sub-kontraktor"</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Formal Protocols -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4 text-xs">
+            <div class="space-y-1">
+              <span class="text-slate-400 block">Pembuka Korespondensi Resmi:</span>
+              <p class="text-slate-900 leading-relaxed">
+                "Bismillahirrohmanirrohim. Assalamu’alaikum Warahmatullahi Wabarakatuh. Semoga salam, rahmat, dan keberkahan Allah SWT senantiasa menyertai Bapak/Ibu sekalian..."
+              </p>
+            </div>
+            <div class="space-y-1">
+              <span class="text-slate-400 block">Penutup Korespondensi Resmi:</span>
+              <p class="text-slate-900 leading-relaxed">
+                "Wassalamu’alaikum Warahmatullahi Wabarakatuh. Semoga Allah meridhai ikhtiar khidmat kita dalam melayani tamu-tamu-Nya Menuju Baitullah."
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 04: KONSEP & ANATOMI SIMBOL                     -->
     <!-- ======================================================= -->
     <section id="concept" class="py-20 sm:py-28 border-b border-slate-100">
-      <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
+      <div class="max-w-6xl mx-auto px-6 sm:px-10 space-y-16">
         
-        <div class="max-w-2xl space-y-3">
-          <span class="text-xs uppercase text-[#8D222E] tracking-wider">02 / Konsep Simbol</span>
+        <div class="max-w-3xl space-y-3">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">03 / Konsep Simbol</span>
           <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
             Baitullah &amp; Menara Harmoni
           </h2>
@@ -313,7 +456,7 @@
                 <h3 class="text-base text-slate-950">Siluet Ka'bah Al-Musyarafah</h3>
               </div>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed pl-7">
-                Pusat tauhid dan kiblat umat Islam sedunia. Menggambarkan keteguhan prinsip syariah, integritas amanah, dan kesucian tujuan dalam melayani tamu-tamu Allah.
+                Pusat tauhid dan kiblat umat Islam sedunia. Menggambarkan keteguhan prinsip syariah, integritas amanah, dan kesucian niat dalam melayani tamu-tamu Allah.
               </p>
             </div>
 
@@ -323,7 +466,7 @@
                 <h3 class="text-base text-slate-950">Menara Masjidil Haram</h3>
               </div>
               <p class="text-xs sm:text-sm text-slate-600 leading-relaxed pl-7">
-                Menjulang tinggi sebagai mercusuar dakwah, wibawa kepemimpinan korporasi holding, serta visi jangkauan pelayanan berkelas dunia.
+                Menjulang tinggi sebagai mercusuar syiar dakwah, wibawa kepemimpinan korporasi holding, serta visi jangkauan pelayanan berkelas internasional.
               </p>
             </div>
 
@@ -355,13 +498,13 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 04: PRIMARY LOGO LOCKUPS                        -->
+    <!-- SECTION 05: PRIMARY LOGO LOCKUPS                        -->
     <!-- ======================================================= -->
     <section id="primary-logo" class="py-20 sm:py-28 border-b border-slate-100">
-      <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
+      <div class="max-w-6xl mx-auto px-6 sm:px-10 space-y-16">
         
-        <div class="max-w-2xl space-y-3">
-          <span class="text-xs uppercase text-[#8D222E] tracking-wider">03 / Format Lockup</span>
+        <div class="max-w-3xl space-y-3">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">04 / Format Lockup Utama</span>
           <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
             Orientasi Berdiri &amp; Rebahan
           </h2>
@@ -411,13 +554,107 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 05: COLORWAYS & CONTRAST (BORDERLESS)           -->
+    <!-- SECTION 06: ARSITEKTUR SUB-BRAND & UNIT USAHA (BARU)    -->
+    <!-- ======================================================= -->
+    <section id="sub-brands" class="py-20 sm:py-28 border-b border-slate-100">
+      <div class="max-w-6xl mx-auto px-6 sm:px-10 space-y-16">
+        
+        <div class="max-w-3xl space-y-3">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">05 / Arsitektur Sub-Brand &amp; Unit Usaha</span>
+          <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
+            Sistem Ekosistem Holding &amp; Entitas Anak Perusahaan
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Azharuna Group menerapkan pendekatan <strong>Monolithic-Endorsed Architecture</strong>. Simbol Baitullah &amp; Menara dipertahankan sebagai mahkota pemersatu seluruh unit bisnis, dipadukan dengan tipografi penamaan spesifik di bawah garis hairline pemisah.
+          </p>
+        </div>
+
+        <!-- Interactive Sub-Brand Switcher Stage (Unboxed) -->
+        <div class="py-10 flex flex-col items-center justify-center text-center space-y-8 border-t border-b border-slate-100">
+          
+          <!-- Live Preview Visual Lockup -->
+          <div class="space-y-4 py-6 flex flex-col items-center">
+            <img src="../../assets/azharuna_group_1_berdiri.png" alt="Holding Emblem" class="h-28 sm:h-36 w-auto object-contain" />
+            <div class="h-[1px] w-24 bg-[#8D222E]/30"></div>
+            <div class="space-y-1">
+              <span id="subbrand-display-name" class="text-lg sm:text-2xl text-slate-950 tracking-wider block">
+                AZHARUNA TRAVEL
+              </span>
+              <span id="subbrand-display-desc" class="text-xs text-slate-500 tracking-wide block">
+                Haji Khusus, Umrah Eksekutif &amp; Wisata Halal Dunia
+              </span>
+            </div>
+          </div>
+
+          <!-- Unit Selector Switchers -->
+          <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-slate-500">
+            <button onclick="setSubBrand('travel')" id="btn-sb-travel" class="text-[#8D222E] underline underline-offset-4 transition">
+              Azharuna Travel
+            </button>
+            <span class="text-slate-300">·</span>
+            <button onclick="setSubBrand('hospitality')" id="btn-sb-hospitality" class="hover:text-slate-900 transition">
+              Azharuna Hospitality
+            </button>
+            <span class="text-slate-300">·</span>
+            <button onclick="setSubBrand('kargo')" id="btn-sb-kargo" class="hover:text-slate-900 transition">
+              Azharuna Kargo
+            </button>
+            <span class="text-slate-300">·</span>
+            <button onclick="setSubBrand('peduli')" id="btn-sb-peduli" class="hover:text-slate-900 transition">
+              Azharuna Peduli
+            </button>
+          </div>
+
+        </div>
+
+        <!-- 4 Unit Profiles Overview -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          
+          <div class="space-y-2.5">
+            <span class="text-xs text-[#8D222E]">Unit 01 / Perjalanan Ibadah</span>
+            <h3 class="text-base text-slate-950">Azharuna Travel</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Pelayanan ibadah haji khusus kuota resmi dan umrah prioritas dengan muthawwif bersertifikasi dan hotel ring-1 pelataran Haramain.
+            </p>
+          </div>
+
+          <div class="space-y-2.5">
+            <span class="text-xs text-[#8D222E]">Unit 02 / Akomodasi</span>
+            <h3 class="text-base text-slate-950">Azharuna Hospitality</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Manajemen hotel, wisma transit, katering cita rasa nusantara halal, serta layanan lounge eksklusif bandara untuk para jamaah.
+            </p>
+          </div>
+
+          <div class="space-y-2.5">
+            <span class="text-xs text-[#8D222E]">Unit 03 / Logistik</span>
+            <h3 class="text-base text-slate-950">Azharuna Kargo</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Pengurusan bagasi door-to-door, pengiriman air zam-zam terdaftar, kurir kargo internasional Arab Saudi – Indonesia yang amanah.
+            </p>
+          </div>
+
+          <div class="space-y-2.5">
+            <span class="text-xs text-[#8D222E]">Unit 04 / Filantropi</span>
+            <h3 class="text-base text-slate-950">Azharuna Peduli</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">
+              Penyaluran dam, qurban tanah suci, dana zakat, infaq, wakaf produktif, dan pemberdayaan pendidikan generasi yatim berprestasi.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 07: VARIASI PENERAPAN WARNA                     -->
     <!-- ======================================================= -->
     <section id="variations" class="py-20 sm:py-28 border-b border-slate-100">
-      <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
+      <div class="max-w-6xl mx-auto px-6 sm:px-10 space-y-16">
         
-        <div class="max-w-2xl space-y-3">
-          <span class="text-xs uppercase text-[#8D222E] tracking-wider">04 / Kontras Latar</span>
+        <div class="max-w-3xl space-y-3">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">06 / Kontras Latar</span>
           <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
             Variasi Penerapan Warna
           </h2>
@@ -431,7 +668,7 @@
           
           <!-- 1. White Canvas -->
           <div class="space-y-3">
-            <div class="bg-white border border-slate-150 rounded-xl p-8 flex items-center justify-center h-48">
+            <div class="bg-white border border-slate-200 rounded-xl p-8 flex items-center justify-center h-48">
               <img src="../../assets/azharuna_group_1_berdiri.png" alt="Full color on white" class="max-h-36 object-contain" />
             </div>
             <div>
@@ -479,13 +716,13 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 06: RUANG AMAN (CLEAR SPACE)                    -->
+    <!-- SECTION 08: RUANG AMAN (CLEAR SPACE)                    -->
     <!-- ======================================================= -->
     <section id="safe-area" class="py-20 sm:py-28 border-b border-slate-100">
-      <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
+      <div class="max-w-6xl mx-auto px-6 sm:px-10 space-y-16">
         
-        <div class="max-w-2xl space-y-3">
-          <span class="text-xs uppercase text-[#8D222E] tracking-wider">05 / Ruang Bebas</span>
+        <div class="max-w-3xl space-y-3">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">07 / Ruang Bebas</span>
           <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
             Clear Space &amp; Batas Ukuran
           </h2>
@@ -555,22 +792,22 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 07: OFFICIAL COLOR PALETTE (CLEAN EDITORIAL)    -->
+    <!-- SECTION 09: OFFICIAL COLOR PALETTE                      -->
     <!-- ======================================================= -->
     <section id="warna" class="py-20 sm:py-28 border-b border-slate-100">
-      <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
+      <div class="max-w-6xl mx-auto px-6 sm:px-10 space-y-16">
         
-        <div class="max-w-2xl space-y-3">
-          <span class="text-xs uppercase text-[#8D222E] tracking-wider">06 / Palet Warna</span>
+        <div class="max-w-3xl space-y-3">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">08 / Palet Warna Korporat</span>
           <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
-            Sistem Warna Korporat
+            Sistem Warna Resmi
           </h2>
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
             Dominan Merah Crimson (70%) melambangkan kepemimpinan dan kemuliaan, dipadukan kelembutan Cream Terang (20%) dan aksen Sand Gold (10%). Klik swatch warna untuk menyalin kode HEX.
           </p>
         </div>
 
-        <!-- 6 Clean Color Tiles (Minimalist Architectural Spec, No Boxes) -->
+        <!-- 6 Clean Color Tiles -->
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
           
           <!-- Swatch 1 -->
@@ -645,13 +882,84 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 08: TYPOGRAPHY SYSTEM (JAKARTA PLUS SANS ONLY)  -->
+    <!-- SECTION 10: SUPERGRAPHIC & BRAND PATTERN (BARU)         -->
+    <!-- ======================================================= -->
+    <section id="supergraphic" class="py-20 sm:py-28 border-b border-slate-100">
+      <div class="max-w-6xl mx-auto px-6 sm:px-10 space-y-16">
+        
+        <div class="max-w-3xl space-y-3">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">09 / Supergraphic &amp; Brand Pattern</span>
+          <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
+            Irama Gelombang Thawaf &amp; Geometri Lengkungan Kubah
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Sebagai ornamen identitas pendukung, pola grafis geometris diturunkan dari radius lengkungan kubah harmoni dan konsentrisitas putaran thawaf di pelataran Ka'bah. Pola ini menghadirkan kedalaman visual tanpa mengaburkan hierarki teks utama.
+          </p>
+        </div>
+
+        <!-- Pattern Visual Specimen Displays (Unboxed) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          
+          <!-- Specimen A: Light Cream Lining Pattern -->
+          <div class="space-y-4">
+            <div class="h-64 sm:h-72 rounded-xl pattern-svg-thawaf bg-[#FAF4E8] p-8 flex flex-col justify-between border border-[#EADEC9]">
+              <span class="text-xs uppercase text-[#8D222E] tracking-wider">Aplikasi Kanvas Terang (Opasitas 10%)</span>
+              <div class="space-y-1">
+                <span class="text-sm text-slate-900 block">Interior Map Holding &amp; Amplop Eksklusif</span>
+                <span class="text-xs text-slate-500 block">Memberikan tekstur adiluhung pada kertas ivory / conqueror linen.</span>
+              </div>
+            </div>
+            <div class="text-xs text-slate-500">
+              <strong class="text-slate-900 font-normal">Spesifikasi Cetak:</strong> Spot UV pernis doff atau cetak perak/gold tipis di atas bahan kertas Cream 220 GSM.
+            </div>
+          </div>
+
+          <!-- Specimen B: Dark Crimson Luxury Pattern -->
+          <div class="space-y-4">
+            <div class="h-64 sm:h-72 rounded-xl pattern-svg-thawaf-gold bg-[#8D222E] p-8 flex flex-col justify-between text-white">
+              <span class="text-xs uppercase text-[#E1C9AC] tracking-wider">Aplikasi Kanvas Gelap (Opasitas 15%)</span>
+              <div class="space-y-1">
+                <span class="text-sm text-white block">Cover Passport Holder &amp; Kartu Akses Eksklusif</span>
+                <span class="text-xs text-rose-100/70 block">Memperkuat identitas mewah seragam holding dan latar panggung wisuda/pelepasan.</span>
+              </div>
+            </div>
+            <div class="text-xs text-slate-500">
+              <strong class="text-slate-900 font-normal">Spesifikasi Teknis:</strong> Blind deboss (cetak timbul tanpa tinta) pada kulit sintetis atau hot-stamping foil emas matte.
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 3 Strict Pattern Rules -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8 border-t border-slate-100 text-xs">
+          <div class="space-y-1.5">
+            <span class="text-[10px] uppercase text-[#8D222E]">Batas Opasitas Maksimum</span>
+            <div class="text-base text-slate-950">Maksimal 12% - 15%</div>
+            <p class="text-slate-500 leading-relaxed">Pola tidak boleh mendominasi pandangan. Ia harus selalu berfungsi sebagai latar tekstural yang halus.</p>
+          </div>
+          <div class="space-y-1.5">
+            <span class="text-[10px] uppercase text-[#8D222E]">Penempatan Terlarang</span>
+            <div class="text-base text-slate-950">Dilarang di Belakang Teks Kecil</div>
+            <p class="text-slate-500 leading-relaxed">Jangan menaruh pola di belakang badan paragraf utama atau tabel angka laporan keuangan.</p>
+          </div>
+          <div class="space-y-1.5">
+            <span class="text-[10px] uppercase text-[#8D222E]">Skala Ukuran Pola</span>
+            <div class="text-base text-slate-950">Grid Rasio 60mm × 60mm</div>
+            <p class="text-slate-500 leading-relaxed">Ukuran modul pola tidak boleh diperkecil hingga terlihat berdebu atau diperbesar berlebihan.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 11: TIPOGRAFI RESMI (JAKARTA PLUS SANS ONLY)    -->
     <!-- ======================================================= -->
     <section id="tipografi" class="py-20 sm:py-28 border-b border-slate-100">
-      <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
+      <div class="max-w-6xl mx-auto px-6 sm:px-10 space-y-16">
         
-        <div class="max-w-2xl space-y-3">
-          <span class="text-xs uppercase text-[#8D222E] tracking-wider">07 / Tipografi Resmi</span>
+        <div class="max-w-3xl space-y-3">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">10 / Tipografi Resmi</span>
           <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
             Plus Jakarta Sans Regular
           </h2>
@@ -721,22 +1029,260 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 09: MISUSE RULES (UNBOXED, CLEAN)               -->
+    <!-- SECTION 12: ART DIRECTION & FOTOGRAFI (BARU)            -->
+    <!-- ======================================================= -->
+    <section id="art-direction" class="py-20 sm:py-28 border-b border-slate-100">
+      <div class="max-w-6xl mx-auto px-6 sm:px-10 space-y-16">
+        
+        <div class="max-w-3xl space-y-3">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">11 / Art Direction &amp; Fotografi</span>
+          <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
+            Kurasi Visual: Spiritualitas, Ketulusan, dan Cahaya Alami
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Fotografi Azharuna Group bercerita tentang kekhusyukan ibadah dan adab pelayanan mulia. Gambar harus memancarkan kehangatan cahaya fajar/senja (*warm sunlight*), kejujuran ekspresi humanis, serta ketenangan arsitektural tempat-tempat suci.
+          </p>
+        </div>
+
+        <!-- 3 Photographic Pillars (Frameless Editorial) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          
+          <div class="space-y-4">
+            <div class="aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 relative">
+              <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=800&q=80" alt="Spiritualitas Murni" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+              <span class="absolute bottom-3 left-3 text-xs text-white">01. Keheningan Spiritual</span>
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-sm text-slate-950">Momen Doa &amp; Thawaf Murni</h3>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                Merekam ekspresi doa yang tulus, tawaf yang hening, dan air mata haru jamaah tanpa rekayasa pose buatan.
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div class="aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 relative">
+              <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80" alt="Khidmat Pelayanan" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+              <span class="absolute bottom-3 left-3 text-xs text-white">02. Kehangatan Khidmat</span>
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-sm text-slate-950">Adab &amp; Pendampingan</h3>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                Interaksi hangat muthawwif dan petugas yang menuntun jamaah lansia dengan senyuman dan kelembutan sikap.
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div class="aspect-[4/3] rounded-xl overflow-hidden bg-slate-100 relative">
+              <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=800&q=80" alt="Kemegahan Arsitektur" class="w-full h-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+              <span class="absolute bottom-3 left-3 text-xs text-white">03. Wibawa Arsitektural</span>
+            </div>
+            <div class="space-y-1">
+              <h3 class="text-sm text-slate-950">Simetri &amp; Kemegahan Marmer</h3>
+              <p class="text-xs text-slate-500 leading-relaxed">
+                Perspektif lapang pilar-pilar Masjidil Haram dan Nabawi yang bersih, memancarkan kesucian dan keteraturan semesta.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Color Grading & Overlay Rule -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 pt-8 border-t border-slate-100 text-xs">
+          <div class="space-y-2">
+            <span class="text-slate-400 block uppercase tracking-wider">Aturan Grading Warna:</span>
+            <p class="text-slate-700 leading-relaxed">
+              Temperatur foto hangat alami (+5% amber tint), kontras lembut pada bayangan (shadows lift +10%), dan saturasi warna kulit yang natural. <strong>Dilarang keras:</strong> Menggunakan preset filter Instagram yang berlebihan, vignette hitam tebal, atau saturasi warna hijau/oranye yang menyengat.
+            </p>
+          </div>
+          <div class="space-y-2">
+            <span class="text-slate-400 block uppercase tracking-wider">Formula Teks di Atas Foto:</span>
+            <p class="text-slate-700 leading-relaxed">
+              Bila menaruh teks putih di atas foto promosi, gunakan lapisan gradasi linear halus (Deep Onyx #0B1120 dari 0% ke 40% opasitas) di area teks. Jangan menaruh teks berwarna merah crimson langsung di atas foto yang ramai elemen visualnya.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 13: DIGITAL & MEDIA SOSIAL STANDARDS (BARU)     -->
+    <!-- ======================================================= -->
+    <section id="digital" class="py-20 sm:py-28 border-b border-slate-100">
+      <div class="max-w-6xl mx-auto px-6 sm:px-10 space-y-16">
+        
+        <div class="max-w-3xl space-y-3">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">12 / Standar Digital &amp; Media Sosial</span>
+          <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
+            Avatar Lingkaran, Grid Konten, &amp; Surel Resmi
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Menjaga konsistensi identitas Azharuna Group pada platform komunikasi harian: profil akun sosial (Instagram, LinkedIn, WhatsApp Business) serta format tanda tangan email profesional holding.
+          </p>
+        </div>
+
+        <!-- Avatar Framework: Do vs Don't for Profile Circles -->
+        <div class="space-y-8">
+          <div class="flex items-center justify-between text-xs pb-3 border-b border-slate-100">
+            <span class="text-slate-950 uppercase tracking-wider">Aturan Avatar Lingkaran Profil Media Sosial</span>
+            <span class="text-slate-400">Instagram, WhatsApp Business, LinkedIn</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 items-center">
+            
+            <!-- Avatar Benar 1: Monogram di Cream -->
+            <div class="space-y-3 text-center flex flex-col items-center">
+              <div class="w-28 h-28 rounded-full bg-[#FAF4E8] border border-[#EADEC9] p-5 flex items-center justify-center shadow-xs">
+                <img src="../../assets/azharuna_group_1_berdiri.png" alt="Avatar Cream" class="w-full h-full object-contain" />
+              </div>
+              <div>
+                <span class="text-xs text-emerald-600 block">✓ Benar (Resmi)</span>
+                <span class="text-[11px] text-slate-500">Monogram emblem di atas kanvas Cream.</span>
+              </div>
+            </div>
+
+            <!-- Avatar Benar 2: Reverse di Crimson -->
+            <div class="space-y-3 text-center flex flex-col items-center">
+              <div class="w-28 h-28 rounded-full bg-[#8D222E] p-5 flex items-center justify-center shadow-xs">
+                <img src="../../assets/azharuna_group_1_berdiri_putih.png" alt="Avatar Crimson" class="w-full h-full object-contain" />
+              </div>
+              <div>
+                <span class="text-xs text-emerald-600 block">✓ Benar (Resmi)</span>
+                <span class="text-[11px] text-slate-500">Monogram putih di atas kanvas Crimson holding.</span>
+              </div>
+            </div>
+
+            <!-- Avatar Salah: Teks Kepotong -->
+            <div class="space-y-3 text-center flex flex-col items-center">
+              <div class="w-28 h-28 rounded-full bg-white border border-red-200 p-3 flex items-center justify-center relative overflow-hidden">
+                <span class="absolute top-2 right-2 text-red-500 text-xs">✕</span>
+                <img src="../../assets/azharuna_group_1_rebahan.png" alt="Avatar Salah" class="w-full scale-125 object-contain" />
+              </div>
+              <div>
+                <span class="text-xs text-red-500 block">✕ Dilarang Keras</span>
+                <span class="text-[11px] text-slate-400">Dilarang memasukkan logo horizontal panjang ke lingkaran profil.</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Official Email Signature Specimen (Minimalist Clean) -->
+        <div class="pt-8 border-t border-slate-100 space-y-6">
+          <div class="flex items-center justify-between text-xs pb-2">
+            <span class="text-slate-950 uppercase tracking-wider">Format Standar Tanda Tangan Surel (Email Signature)</span>
+            <span class="text-slate-400">Wajib Digunakan Seluruh Manajemen &amp; Staf</span>
+          </div>
+
+          <div class="p-6 bg-slate-50/70 rounded-xl border border-slate-100 max-w-2xl space-y-4">
+            <div class="flex items-start gap-5">
+              <img src="../../assets/azharuna_group_1_berdiri.png" alt="Azharuna Group" class="h-16 w-auto object-contain" />
+              <div class="space-y-1 text-xs">
+                <div class="text-sm text-slate-950">H. Muhammad Rayhan, S.E.</div>
+                <div class="text-slate-500">Direktur Eksekutif Pelayanan Haji &amp; Umrah</div>
+                <div class="text-[#8D222E]">AZHARUNA GROUP — Holding Syariah</div>
+                <div class="text-slate-400 pt-1 text-[11px]">
+                  P: +62 21 8900 1234 · M: +62 813 1150 6025 · W: www.azharunagroup.com<br>
+                  Menara Azharuna Lt. 18, Jl. H.R. Rasuna Said, Jakarta Selatan
+                </div>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-slate-200/60 text-[10px] text-slate-400 leading-normal">
+              Disclaimer: Surel ini dan dokumen lampirannya ditujukan khusus untuk penerima yang berhak. Memuat amanah komunikasi syariah yang bersifat rahasia. Dilarang menggandakan tanpa izin tertulis dari manajemen Azharuna Group.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 14: KEMITRAAN & CO-BRANDING (BARU)              -->
+    <!-- ======================================================= -->
+    <section id="co-branding" class="py-20 sm:py-28 border-b border-slate-100">
+      <div class="max-w-6xl mx-auto px-6 sm:px-10 space-y-16">
+        
+        <div class="max-w-3xl space-y-3">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">13 / Kemitraan &amp; Co-Branding</span>
+          <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
+            Prinsip Kesetaraan Visual (Equal Stature)
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+            Dalam operasional holding, Azharuna Group bersinergi dengan maskapai penerbangan, perbankan syariah, muassasah Arab Saudi, dan kementerian. Penempatan logo mitra wajib mengikuti standar kesetaraan optik dan pembatas garis hairline resmi.
+          </p>
+        </div>
+
+        <!-- Co-branding Schematic Display (Unboxed) -->
+        <div class="py-12 flex flex-col items-center justify-center border-t border-b border-slate-100 space-y-6">
+          
+          <div class="flex flex-wrap items-center justify-center gap-8 sm:gap-14">
+            
+            <!-- Azharuna Group Horizontal Lockup -->
+            <div class="flex items-center">
+              <img src="../../assets/azharuna_group_1_rebahan.png" alt="Azharuna Group" class="h-10 sm:h-12 w-auto object-contain" />
+            </div>
+
+            <!-- Divider Bar (1X Hairline) -->
+            <div class="h-8 w-[1px] bg-slate-300"></div>
+
+            <!-- Representative Partner Badge (Clean Typography Simulation) -->
+            <div class="flex items-center gap-3">
+              <div class="flex flex-col text-left">
+                <span class="text-xs tracking-wider text-slate-900 uppercase">MITRA SINERGI RESMI</span>
+                <span class="text-[11px] text-slate-400">Maskapai Penerbangan / Bank Syariah Rekanan</span>
+              </div>
+            </div>
+
+          </div>
+
+          <span class="text-[11px] text-slate-400">Tinggi optik logo rekanan tidak boleh melebihi 100% tinggi siluet logo Azharuna Group</span>
+
+        </div>
+
+        <!-- 3 Strict Co-Branding Rules -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8 border-t border-slate-100 text-xs">
+          <div class="space-y-1.5">
+            <span class="text-[10px] uppercase text-[#8D222E]">Garis Pemisah (Divider Bar)</span>
+            <div class="text-base text-slate-950">Ketebalan 1px Netral</div>
+            <p class="text-slate-500 leading-relaxed">Pemisah menggunakan warna abu-abu netral (#CBD5E1) dengan tinggi setara simbol Ka'bah, berjarak 2X dari kedua sisi logo.</p>
+          </div>
+          <div class="space-y-1.5">
+            <span class="text-[10px] uppercase text-[#8D222E]">Posisi Utama (Primary Seat)</span>
+            <div class="text-base text-slate-950">Azharuna Selalu di Sisi Kiri</div>
+            <p class="text-slate-500 leading-relaxed">Sebagai entitas penyelenggara program, logo Azharuna Group diposisikan di sebelah kiri atau di posisi atas.</p>
+          </div>
+          <div class="space-y-1.5">
+            <span class="text-[10px] uppercase text-[#8D222E]">Harmoni Latar Belakang</span>
+            <div class="text-base text-slate-950">Wajib Monokrom Bila Bertabrakan</div>
+            <p class="text-slate-500 leading-relaxed">Jika warna logo mitra bertabrakan secara visual dengan Crimson, kedua logo dialihkan ke versi monokrom putih atau slate gelap.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 15: ATURAN LARANGAN (MISUSE RULES)              -->
     <!-- ======================================================= -->
     <section id="larangan" class="py-20 sm:py-28 border-b border-slate-100">
-      <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
+      <div class="max-w-6xl mx-auto px-6 sm:px-10 space-y-16">
         
-        <div class="max-w-2xl space-y-3">
-          <span class="text-xs uppercase text-red-600 tracking-wider">08 / Aturan Larangan</span>
+        <div class="max-w-3xl space-y-3">
+          <span class="text-xs uppercase text-red-600 tracking-wider">14 / Aturan Larangan</span>
           <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
             Larangan Penggunaan Logo
           </h2>
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Integritas simbol sakral Baitullah &amp; Menara wajib dijaga. Perlakuan visual berikut dilarang keras dalam kondisi apapun.
+            Integritas simbol sakral Baitullah &amp; Menara wajib dijaga. Perlakuan visual berikut dilarang keras dalam kondisi apapun demi menjaga kehormatan holding.
           </p>
         </div>
 
-        <!-- 6 Clean Misuse Grid Items (Zero Chunky Boxes) -->
+        <!-- 6 Clean Misuse Grid Items -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           
           <!-- Misuse 1 -->
@@ -759,7 +1305,7 @@
             </div>
             <div class="space-y-1">
               <h4 class="text-xs text-slate-950">2. Jangan Mengubah Warna Resmi</h4>
-              <p class="text-[11px] text-slate-500 leading-relaxed">Dilarang mengganti warna logo dengan warna acak (hijau, biru neon, ungu).</p>
+              <p class="text-[11px] text-slate-500 leading-relaxed">Dilarang mengganti warna logo dengan warna acak (hijau neon, biru muda, ungu).</p>
             </div>
           </div>
 
@@ -818,18 +1364,18 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 10: APPLICATION MOCKUPS (CLEAN GALLERY)         -->
+    <!-- SECTION 16: APPLICATION MOCKUPS                         -->
     <!-- ======================================================= -->
     <section id="mockups" class="py-20 sm:py-28 border-b border-slate-100">
-      <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
+      <div class="max-w-6xl mx-auto px-6 sm:px-10 space-y-16">
         
-        <div class="max-w-2xl space-y-3">
-          <span class="text-xs uppercase text-[#8D222E] tracking-wider">09 / Aplikasi Nyata</span>
+        <div class="max-w-3xl space-y-3">
+          <span class="text-xs uppercase text-[#8D222E] tracking-wider">15 / Aplikasi Nyata</span>
           <h2 class="text-2xl sm:text-4xl text-slate-950 tracking-tight leading-snug">
             Showcase Penerapan Korporat
           </h2>
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Implementasi identitas Azharuna Group pada media arsitektur kantor pusat, luxury stationery suite, dan materi representasi holding.
+            Implementasi identitas Azharuna Group pada media arsitektur kantor pusat holding, luxury stationery suite, dan materi representasi eksekutif.
           </p>
         </div>
 
@@ -886,18 +1432,18 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 11: CLOSING & ASSET DELIVERY                    -->
+    <!-- SECTION 17: CLOSING & ASSET DELIVERY                    -->
     <!-- ======================================================= -->
     <section class="py-20 sm:py-28 bg-[#8D222E] text-white">
-      <div class="max-w-5xl mx-auto px-6 sm:px-10 flex flex-col md:flex-row md:items-center justify-between gap-10">
+      <div class="max-w-6xl mx-auto px-6 sm:px-10 flex flex-col md:flex-row md:items-center justify-between gap-10">
         
         <div class="space-y-3 max-w-xl">
-          <span class="text-xs uppercase text-[#E1C9AC] tracking-widest">Master Vektor Siap Pakai</span>
+          <span class="text-xs uppercase text-[#E1C9AC] tracking-widest">Master Vektor &amp; Brand Assets</span>
           <h2 class="text-2xl sm:text-4xl tracking-tight">
-            Paket Aset Vektor Resmi
+            Paket Berkas Master Vektor Resmi
           </h2>
           <p class="text-sm text-rose-100/90 leading-relaxed">
-            Seluruh berkas master Pilihan 01 (.AI, .EPS, .SVG, .PDF, .PNG High-Res) telah disiapkan lengkap untuk kebutuhan percetakan, arsitektural, dan media penyiaran resmi holding.
+            Seluruh berkas master Pilihan 01 (.AI, .EPS, .SVG, .PDF, .PNG High-Res) serta aset sub-brand telah disiapkan lengkap untuk kebutuhan percetakan, arsitektural, dan penyiaran digital holding.
           </p>
         </div>
 
@@ -908,7 +1454,7 @@
           </a>
           <a href="/azharuna" class="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 px-6 text-xs text-white transition">
             <i data-lucide="arrow-left" class="w-4 h-4"></i>
-            <span>Deck Presentasi</span>
+            <span>Kembali ke Deck Presentasi</span>
           </a>
         </div>
 
@@ -919,8 +1465,8 @@
 
   <!-- Minimalist Clean Footer -->
   <footer class="bg-white py-12 border-t border-slate-100 text-xs text-slate-400">
-    <div class="max-w-5xl mx-auto px-6 sm:px-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p>&copy; 2026 AZHARUNA GROUP — Visual Identity Guidelines</p>
+    <div class="max-w-6xl mx-auto px-6 sm:px-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>&copy; 2026 AZHARUNA GROUP — Master Visual Identity Guidelines</p>
       <p>Directed by Daru Fahmaa Muliawan, SYMP Studio</p>
     </div>
   </footer>
@@ -977,7 +1523,7 @@
       ['white', 'cream', 'crimson', 'onyx'].forEach(b => {
         const btn = document.getElementById('btn-bg-' + b);
         if (b === bg) {
-          btn.className = 'text-[#8D222E] font-medium transition underline underline-offset-2';
+          btn.className = 'text-[#8D222E] underline underline-offset-4 transition';
         } else {
           btn.className = (bg === 'crimson' || bg === 'onyx') ? 'text-white/60 hover:text-white transition' : 'text-slate-400 hover:text-slate-900 transition';
         }
@@ -1001,6 +1547,41 @@
         btnBerdiri.className = 'hover:text-slate-900 transition text-slate-500';
         logo.className = 'max-h-32 sm:max-h-40 w-auto max-w-[420px] object-contain transition-all duration-300';
       }
+    }
+
+    // Sub-Brand Switcher Logic
+    const subbrandData = {
+      travel: {
+        name: 'AZHARUNA TRAVEL',
+        desc: 'Haji Khusus, Umrah Eksekutif & Wisata Halal Dunia'
+      },
+      hospitality: {
+        name: 'AZHARUNA HOSPITALITY',
+        desc: 'Manajemen Hotel, Wisma Transit & Katering Nusantara di Tanah Suci'
+      },
+      kargo: {
+        name: 'AZHARUNA KARGO',
+        desc: 'Logistik Terpadu Jamaah, Bagasi Door-to-Door & Pengiriman Internasional'
+      },
+      peduli: {
+        name: 'AZHARUNA PEDULI',
+        desc: 'Lembaga Wakaf, Infaq, Shadaqah & Pemberdayaan Maslahat Umat'
+      }
+    };
+
+    function setSubBrand(key) {
+      const data = subbrandData[key];
+      document.getElementById('subbrand-display-name').textContent = data.name;
+      document.getElementById('subbrand-display-desc').textContent = data.desc;
+
+      ['travel', 'hospitality', 'kargo', 'peduli'].forEach(k => {
+        const btn = document.getElementById('btn-sb-' + k);
+        if (k === key) {
+          btn.className = 'text-[#8D222E] underline underline-offset-4 transition';
+        } else {
+          btn.className = 'hover:text-slate-900 transition text-slate-500';
+        }
+      });
     }
 
     // Clipboard Copy
