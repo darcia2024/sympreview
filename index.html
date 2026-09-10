@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>SYMP Studio — Showcase Logo & Brand Guidelines Paling Fresh</title>
-  <meta name="description" content="Kumpulan deck presentasi logo dan brand guidelines resmi bikinan SYMP Studio. Tinggal klik buat intip konsep visual keren tiap brand!">
-  <meta property="og:title" content="SYMP Studio — Showcase Logo & Brand Guidelines Paling Fresh">
-  <meta property="og:description" content="Kumpulan deck presentasi logo dan brand guidelines resmi bikinan SYMP Studio. Kepoin konsep visual keren tiap brand di sini!">
+  <title>SYMP Studio — Curated Identity &amp; Proposal Archive</title>
+  <meta name="description" content="Hub presentasi dan buku panduan identitas visual resmi SYMP Studio. Akses kurasi deck logo dan brand guidelines untuk klien terpilih.">
+  <meta property="og:title" content="SYMP Studio — Curated Identity &amp; Proposal Archive">
+  <meta property="og:description" content="Koleksi presentasi logo resmi dan brand guidelines eksklusif yang dirancang oleh SYMP Studio.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/SYMP LOGO MERAH.png">
   
-  <!-- Google Fonts: Plus Jakarta Sans -->
+  <!-- Google Fonts: Plus Jakarta Sans (Regular 400, Medium 500, Semibold 600) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -30,10 +30,15 @@
               DEFAULT: '#FAF4E8',
               soft: '#F5EFE6'
             },
+            stone: {
+              gallery: '#F6F6F4',
+              surface: '#EFEFEA'
+            },
             onyx: '#0B1120'
           },
           fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif']
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
           }
         }
       }
@@ -70,40 +75,49 @@
 
     /* Fanned card hover dynamics */
     .fanned-card {
-      transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1);
       transform-origin: bottom center;
+    }
+
+    /* Luxury Case Image Hover Zoom */
+    .case-card-img {
+      transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .group:hover .case-card-img {
+      transform: scale(1.04);
     }
   </style>
 </head>
-<body class="selection:bg-[#DC143C] selection:text-white bg-white text-slate-900">
+<body class="selection:bg-[#8D222E] selection:text-white bg-white text-slate-900">
 
   <!-- ======================================================= -->
-  <!-- 1. NAVBAR MINIMALIS (TANPA BADGE & OUTLINE)             -->
+  <!-- 1. NAVBAR MINIMALIS MEWAH                               -->
   <!-- ======================================================= -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md transition-all">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md transition-all border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
       
       <!-- Brand Lockup -->
-      <a href="./" class="flex items-center gap-3.5 group text-slate-900 hover:text-[#DC143C] transition">
+      <a href="./" class="flex items-center gap-3.5 group text-slate-900 hover:text-[#8D222E] transition">
         <img src="assets/SYMP LOGO MERAH.png" alt="SYMP Studio Logo" class="h-8 w-auto object-contain transition-transform group-hover:scale-105" />
         <div class="flex flex-col">
-          <span class="text-sm font-semibold tracking-tight text-slate-950 group-hover:text-[#DC143C] transition">SYMP STUDIO</span>
-          <span class="text-[11px] text-slate-400 font-medium tracking-wide">Brand &amp; Logo Showcase</span>
+          <span class="text-sm font-semibold tracking-tight text-slate-950 group-hover:text-[#8D222E] transition">SYMP STUDIO</span>
+          <span class="text-[11px] text-slate-400 font-medium tracking-wide">Identity Archive 2026</span>
         </div>
       </a>
 
-      <!-- Center Links (Bersih, Rapi, Tanpa Badge) -->
+      <!-- Center Links (Bersih, Rapi, Bernuansa Galeri) -->
       <nav class="hidden md:flex items-center gap-8 text-xs font-medium text-slate-600">
-        <a href="#katalog" class="text-slate-950 font-semibold hover:text-[#DC143C] transition">Koleksi Deck</a>
-        <a href="azharuna/guidelines/" class="hover:text-[#DC143C] transition">Azharuna Guidelines</a>
-        <a href="kolohaga/guidelines/" class="hover:text-[#DC143C] transition">Kolohaga</a>
-        <a href="elevgro/" class="hover:text-[#DC143C] transition">Elevgro</a>
+        <a href="#katalog" class="text-slate-950 font-semibold hover:text-[#8D222E] transition">Koleksi Kasus</a>
+        <a href="azharuna/guidelines/" class="hover:text-[#8D222E] transition">Azharuna Guidelines</a>
+        <a href="kolohaga/guidelines/" class="hover:text-[#8D222E] transition">Kolohaga</a>
+        <a href="elevgro/" class="hover:text-[#8D222E] transition">Elevgro</a>
       </nav>
 
-      <!-- Right Action -->
+      <!-- Right Action: Clean Pill -->
       <div class="flex items-center gap-4">
-        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru%20(SYMP%20Studio),%20gue%20mau%20konsultasi%20bikin%20desain%20logo%20baru%20dong!" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#8D222E] text-white text-xs font-medium hover:bg-[#68151E] hover:scale-105 active:scale-95 transition-all duration-200 shadow-sm shadow-rose-900/10">
+        <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru%20(SYMP%20Studio),%20gue%20mau%20konsultasi%20bikin%20desain%20logo%20baru%20dong!" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-950 text-white text-xs font-medium hover:bg-[#8D222E] hover:scale-105 active:scale-95 transition-all duration-300 shadow-sm">
           <span>Ngobrol Santai</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 text-slate-400"></i>
         </a>
       </div>
 
@@ -113,27 +127,32 @@
   <main>
 
     <!-- ======================================================= -->
-    <!-- 2. HERO HEADER (BERSIH, TANPA BADGE & OUTLINE)          -->
+    <!-- 2. HERO HEADER (MONUMENTAL & ELEGAN SEPERTI REFERENSI)   -->
     <!-- ======================================================= -->
     <section class="pt-20 sm:pt-28 pb-0 overflow-hidden relative">
       
-      <!-- Subtle Radial Crimson Atmosphere -->
-      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-radial from-[#DC143C]/05 via-rose-500/02 to-transparent blur-3xl pointer-events-none -z-10"></div>
+      <!-- Subtle Radial Ambient Glow -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-radial from-[#8D222E]/05 via-rose-500/02 to-transparent blur-3xl pointer-events-none -z-10"></div>
 
       <div class="max-w-5xl mx-auto px-6 sm:px-10 text-center space-y-6">
         
-        <!-- Grand Editorial Headline (Murni Teks, Tanpa Badge Kotak Miring) -->
+        <!-- Top Curator Stamp (Reference Style) -->
+        <div class="flex items-center justify-center gap-2 text-xs font-medium tracking-widest text-slate-400 uppercase">
+          <span>Curated by SYMP Studio®</span>
+        </div>
+
+        <!-- Monumental Editorial Headline -->
         <div class="max-w-4xl mx-auto space-y-4">
           <h1 class="text-4xl sm:text-6xl lg:text-7xl font-semibold text-slate-950 tracking-tight leading-[1.12]">
             Tempat Nongkrongnya Presentasi &amp; Brand Guidelines <span class="text-[#8D222E]">Keren.</span>
           </h1>
           
           <p class="text-base sm:text-xl text-slate-500 font-normal max-w-2xl mx-auto leading-relaxed pt-1">
-            Galeri presentasi proposal dan buku panduan identitas visual resmi racikan SYMP Studio. Klik kartu buat intip konsep filosofi, warna, sampai mockup lengkapnya.
+            Galeri presentasi proposal dan buku panduan identitas visual resmi racikan SYMP Studio. Eksplorasi konsep filosofi, implementasi nyata, dan master aset tiap brand.
           </p>
         </div>
 
-        <!-- Pill CTA Button (Bersih Tanpa Dot Kecil) -->
+        <!-- Pill CTA Button -->
         <div class="pt-3">
           <a href="#katalog" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-slate-950 hover:bg-[#8D222E] text-white text-xs font-medium hover:scale-105 active:scale-95 transition-all duration-300 shadow-md shadow-slate-900/10">
             <span>Gas Kepoin Koleksi</span>
@@ -143,37 +162,40 @@
 
       </div>
 
-      <!-- Fanned-Out Cards Preview Stage (Full Color, Murni Tanpa Outline & Tanpa Badge) -->
+      <!-- Fanned-Out Luxury Case Cards Stage (Visual Ikonik Referensi!) -->
       <div class="mt-16 sm:mt-24 flex justify-center items-end overflow-hidden pt-8 pb-0 px-4">
         <div class="flex items-end justify-center -space-x-12 sm:-space-x-20 max-w-5xl w-full translate-y-6 sm:translate-y-8">
           
-          <!-- Card 1 (Leftmost, Tilted -14deg): Laptopbisnis (Cyber Midnight) -->
-          <a href="laptopbisnis/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-gradient-to-br from-[#0F172A] via-[#1E1B4B] to-[#311042] p-6 flex flex-col justify-between shadow-2xl transform -rotate-14 hover:-rotate-6 hover:-translate-y-10 hover:z-40 group text-white">
-            <div></div>
+          <!-- Card 1 (Leftmost, Tilted -14deg): Laptopbisnis (OLED Hardware Dark) -->
+          <a href="laptopbisnis/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-[#0B1120] p-6 flex flex-col justify-between shadow-2xl transform -rotate-14 hover:-rotate-6 hover:-translate-y-10 hover:z-40 group text-white">
+            <div class="text-[10px] font-mono text-slate-400">HARDWARE TECH</div>
             <div class="py-4 flex items-center justify-center">
-              <img src="assets/laptopbisnis_1_putih.png" alt="Laptopbisnis" class="max-h-20 w-auto object-contain group-hover:scale-110 transition duration-300 drop-shadow-md" />
+              <img src="assets/laptopbisnis_1_putih.png" alt="Laptopbisnis" class="max-h-16 w-auto object-contain group-hover:scale-110 transition duration-300 drop-shadow-md" />
             </div>
             <div class="space-y-0.5">
-              <div class="text-xs font-semibold text-white group-hover:text-cyan-300 transition">Laptopbisnis</div>
-              <div class="text-[10px] text-slate-300">Identity &amp; Logo System</div>
+              <div class="text-xs font-semibold text-white group-hover:text-[#E1C9AC] transition">Laptopbisnis</div>
+              <div class="text-[10px] text-slate-400">Enterprise System</div>
             </div>
           </a>
 
-          <!-- Card 2 (Tilted -7deg): Zalvice (Coral Rose) -->
-          <a href="zalvice/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-gradient-to-br from-[#FFF1F2] via-[#FFE4E6] to-[#FECDD3] p-6 flex flex-col justify-between shadow-2xl transform -rotate-7 hover:rotate-0 hover:-translate-y-10 hover:z-40 group text-slate-900">
-            <div></div>
+          <!-- Card 2 (Tilted -7deg): Zalvice (Editorial Linen Tone) -->
+          <a href="zalvice/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-[#F6F6F4] p-6 flex flex-col justify-between shadow-2xl transform -rotate-7 hover:rotate-0 hover:-translate-y-10 hover:z-40 group text-slate-900">
+            <div class="text-[10px] font-mono text-slate-400">AGENCY WORDMARK</div>
             <div class="py-4 flex items-center justify-center">
-              <img src="assets/zalvice_1_fix.png" alt="Zalvice" class="max-h-20 w-auto object-contain group-hover:scale-110 transition duration-300" />
+              <img src="assets/zalvice_1_fix.png" alt="Zalvice" class="max-h-16 w-auto object-contain group-hover:scale-110 transition duration-300" />
             </div>
             <div class="space-y-0.5">
-              <div class="text-xs font-semibold text-slate-950 group-hover:text-[#DC143C] transition">Zalvice</div>
-              <div class="text-[10px] text-rose-800">Identity &amp; Wordmark</div>
+              <div class="text-xs font-semibold text-slate-950 group-hover:text-[#8D222E] transition">Zalvice</div>
+              <div class="text-[10px] text-slate-500">Digital Identity</div>
             </div>
           </a>
 
-          <!-- Card 3 (Centerpiece, 0deg): Azharuna Group (Royal Cream) -->
-          <a href="azharuna/guidelines/" class="fanned-card w-44 sm:w-64 h-64 sm:h-84 rounded-2xl bg-gradient-to-b from-[#FAF4E8] via-[#FFFDF9] to-[#F5EFE6] p-7 flex flex-col justify-between shadow-2xl transform rotate-0 hover:-translate-y-10 hover:scale-105 hover:z-40 z-20 group text-slate-900">
-            <div></div>
+          <!-- Card 3 (Centerpiece, 0deg): Azharuna Group (Real Luxury Wall Signage) -->
+          <a href="azharuna/guidelines/" class="fanned-card w-44 sm:w-64 h-64 sm:h-84 rounded-2xl bg-[#FAF4E8] p-7 flex flex-col justify-between shadow-2xl transform rotate-0 hover:-translate-y-10 hover:scale-105 hover:z-40 z-20 group text-slate-900 relative overflow-hidden">
+            <div class="flex items-center justify-between text-[10px] text-[#8D222E] font-medium tracking-wide">
+              <span>HOLDING SYARIAH</span>
+              <span class="font-mono">★ 2026</span>
+            </div>
             <div class="py-4 flex items-center justify-center">
               <img src="assets/azharuna_group_1_berdiri.png" alt="Azharuna Group" class="max-h-28 sm:max-h-36 w-auto object-contain group-hover:scale-105 transition duration-300 drop-shadow-sm" />
             </div>
@@ -183,27 +205,27 @@
             </div>
           </a>
 
-          <!-- Card 4 (Tilted +7deg): Kolohaga (Emerald Mint) -->
-          <a href="kolohaga/guidelines/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-gradient-to-br from-[#ECFDF5] via-[#D1FAE5] to-[#A7F3D0] p-6 flex flex-col justify-between shadow-2xl transform rotate-7 hover:rotate-0 hover:-translate-y-10 hover:z-40 group text-slate-900">
-            <div></div>
+          <!-- Card 4 (Tilted +7deg): Kolohaga (Fresh Mint & Green) -->
+          <a href="kolohaga/guidelines/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-[#F0FDF4] p-6 flex flex-col justify-between shadow-2xl transform rotate-7 hover:rotate-0 hover:-translate-y-10 hover:z-40 group text-slate-900">
+            <div class="text-[10px] font-mono text-emerald-800">AGRI SUPPLY</div>
             <div class="py-4 flex items-center justify-center">
-              <img src="assets/logo_kolohaga_1_hijau.png" alt="Kolohaga" class="max-h-20 w-auto object-contain group-hover:scale-110 transition duration-300" />
+              <img src="assets/logo_kolohaga_1_hijau.png" alt="Kolohaga" class="max-h-16 w-auto object-contain group-hover:scale-110 transition duration-300" />
             </div>
             <div class="space-y-0.5">
               <div class="text-xs font-semibold text-slate-950 group-hover:text-emerald-800 transition">Kolohaga</div>
-              <div class="text-[10px] text-emerald-800">Brand Guidelines &amp; Identity</div>
+              <div class="text-[10px] text-emerald-700">Brand Guidelines</div>
             </div>
           </a>
 
-          <!-- Card 5 (Rightmost, Tilted +14deg): Elevgro (Sky Blue) -->
-          <a href="elevgro/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-gradient-to-br from-[#EFF6FF] via-[#DBEAFE] to-[#BFDBFE] p-6 flex flex-col justify-between shadow-2xl transform rotate-14 hover:rotate-6 hover:-translate-y-10 hover:z-40 group text-slate-900">
-            <div></div>
+          <!-- Card 5 (Rightmost, Tilted +14deg): Elevgro (Clean White Sky) -->
+          <a href="elevgro/" class="fanned-card w-40 sm:w-56 h-56 sm:h-76 rounded-2xl bg-white p-6 flex flex-col justify-between shadow-2xl transform rotate-14 hover:rotate-6 hover:-translate-y-10 hover:z-40 group text-slate-900">
+            <div class="text-[10px] font-mono text-blue-700">GROWTH PLATFORM</div>
             <div class="py-4 flex items-center justify-center">
-              <img src="assets/elevgro_final_fix_web.png" alt="Elevgro" class="max-h-20 w-auto object-contain group-hover:scale-110 transition duration-300" />
+              <img src="assets/elevgro_final_fix_web.png" alt="Elevgro" class="max-h-16 w-auto object-contain group-hover:scale-110 transition duration-300" />
             </div>
             <div class="space-y-0.5">
               <div class="text-xs font-semibold text-slate-950 group-hover:text-blue-700 transition">Elevgro</div>
-              <div class="text-[10px] text-blue-700">Visual Identity System</div>
+              <div class="text-[10px] text-slate-500">Visual System</div>
             </div>
           </a>
 
@@ -212,104 +234,146 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- 3. CATALOG SECTION (WARNA-WARNI MURNI TANPA OUTLINE)   -->
+    <!-- 3. CATALOG SECTION: EDITORIAL CASE STUDIES (MOCKUP NYATA)-->
     <!-- ======================================================= -->
     <section id="katalog" class="py-24 sm:py-32 max-w-7xl mx-auto px-6 sm:px-10 space-y-16">
       
-      <!-- Section Header (Bersih Tanpa Badge Kecil) -->
-      <div class="space-y-3 max-w-2xl">
-        <h2 class="text-3xl sm:text-5xl font-semibold text-slate-950 tracking-tight">
-          Koleksi Deck &amp; Guideline Pilihan
-        </h2>
-        <p class="text-sm sm:text-base text-slate-500 font-normal leading-relaxed">
-          Pilih logo yang mau lo bedah. Dari konsep filosofi, variasi warna, sampai mockup visualnya udah komplit di dalem.
-        </p>
+      <!-- Section Header (Editorial & Tenang) -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-slate-100">
+        <div class="space-y-3 max-w-2xl">
+          <span class="text-xs font-mono text-[#8D222E] uppercase tracking-widest block">CASE ARCHIVE · 2026</span>
+          <h2 class="text-3xl sm:text-5xl font-semibold text-slate-950 tracking-tight">
+            Koleksi Studi Kasus &amp; Guidelines
+          </h2>
+          <p class="text-sm sm:text-base text-slate-500 font-normal leading-relaxed">
+            Kurasi karya identitas visual yang dirancang untuk scale-up bisnis nyata. Klik kartu untuk membuka deck proposal lengkap dan buku panduannya.
+          </p>
+        </div>
+
+        <div class="text-xs font-mono text-slate-400">
+          INDEX: 06 VERIFIED CLIENTS
+        </div>
       </div>
 
-      <!-- 6 Vibrant Colorful Project Cards (Zero Outlines, Zero Badges) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+      <!-- 6 Luxury Case Study Cards (Mockup Nyata yang Auto Kelihatan Mahal) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         
-        <!-- Card 1: Azharuna Group (Warm Cream) -->
+        <!-- Case 1: Azharuna Group (Real Acrylic Wall Signage Mockup) -->
         <a href="azharuna/guidelines/" class="group block space-y-4">
-          <div class="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#FAF4E8] via-[#FFFDF9] to-[#F5EFE6] p-8 flex items-center justify-center overflow-hidden transition duration-300 group-hover:shadow-2xl group-hover:shadow-rose-900/15 group-hover:-translate-y-1.5">
-            <img src="assets/azharuna_group_1_berdiri.png" alt="Logo Azharuna Group" class="max-h-40 w-auto object-contain transition duration-500 group-hover:scale-105 drop-shadow-sm" />
+          <div class="aspect-[16/11] rounded-2xl bg-[#F6F6F4] overflow-hidden relative shadow-sm group-hover:shadow-2xl transition duration-500">
+            <img src="assets/azharuna_mockup_1.png" alt="Azharuna Group Wall Signage Mockup" class="case-card-img w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
           </div>
           <div class="flex items-start justify-between pt-1">
-            <div class="space-y-0.5">
-              <h3 class="text-base font-semibold text-slate-950 group-hover:text-[#8D222E] transition">Azharuna Group</h3>
-              <p class="text-xs text-slate-500">Baitullah &amp; Menara Harmoni — Holding Syariah</p>
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <h3 class="text-base font-semibold text-slate-950 group-hover:text-[#8D222E] transition">Azharuna Group</h3>
+                <span class="text-[10px] font-mono text-[#8D222E] bg-rose-50 px-2 py-0.5 rounded-full font-medium">Guidelines</span>
+              </div>
+              <p class="text-xs text-slate-500 font-normal">Holding Syariah — Baitullah &amp; Menara Harmoni</p>
             </div>
-            <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-[#8D222E] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+            <div class="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-[#8D222E] group-hover:text-white flex items-center justify-center transition duration-300">
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </div>
           </div>
         </a>
 
-        <!-- Card 2: Kolohaga (Emerald Mint) -->
+        <!-- Case 2: Kolohaga (Real Packaging Mockup) -->
         <a href="kolohaga/guidelines/" class="group block space-y-4">
-          <div class="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#ECFDF5] via-[#D1FAE5] to-[#A7F3D0] p-8 flex items-center justify-center overflow-hidden transition duration-300 group-hover:shadow-2xl group-hover:shadow-emerald-900/15 group-hover:-translate-y-1.5">
-            <img src="assets/logo_kolohaga_1_hijau.png" alt="Logo Kolohaga Official" class="max-h-40 w-auto object-contain transition duration-500 group-hover:scale-105 drop-shadow-sm" />
+          <div class="aspect-[16/11] rounded-2xl bg-[#F6F6F4] overflow-hidden relative shadow-sm group-hover:shadow-2xl transition duration-500">
+            <img src="assets/mockup-kolohaga-packaging.png" alt="Kolohaga Packaging Mockup" class="case-card-img w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
           </div>
           <div class="flex items-start justify-between pt-1">
-            <div class="space-y-0.5">
-              <h3 class="text-base font-semibold text-slate-950 group-hover:text-emerald-700 transition">Kolohaga</h3>
-              <p class="text-xs text-slate-500">Brand Guidelines &amp; Identity System</p>
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <h3 class="text-base font-semibold text-slate-950 group-hover:text-emerald-800 transition">Kolohaga</h3>
+                <span class="text-[10px] font-mono text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full font-medium">Guidelines</span>
+              </div>
+              <p class="text-xs text-slate-500 font-normal">Agriculture &amp; Regional Supply Chain System</p>
             </div>
-            <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-emerald-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+            <div class="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-emerald-800 group-hover:text-white flex items-center justify-center transition duration-300">
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </div>
           </div>
         </a>
 
-        <!-- Card 3: Elevgro (Electric Sky) -->
+        <!-- Case 3: Elevgro (Real Luxury Business Card Mockup) -->
         <a href="elevgro/" class="group block space-y-4">
-          <div class="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#EFF6FF] via-[#DBEAFE] to-[#BFDBFE] p-8 flex items-center justify-center overflow-hidden transition duration-300 group-hover:shadow-2xl group-hover:shadow-blue-900/15 group-hover:-translate-y-1.5">
-            <img src="assets/elevgro_final_fix_web.png" alt="Logo Elevgro" class="max-h-40 w-auto object-contain transition duration-500 group-hover:scale-105 drop-shadow-sm" />
+          <div class="aspect-[16/11] rounded-2xl bg-[#F6F6F4] overflow-hidden relative shadow-sm group-hover:shadow-2xl transition duration-500">
+            <img src="assets/mockup-elevgro-business-card.jpg" alt="Elevgro Luxury Business Card Mockup" class="case-card-img w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
           </div>
           <div class="flex items-start justify-between pt-1">
-            <div class="space-y-0.5">
-              <h3 class="text-base font-semibold text-slate-950 group-hover:text-blue-700 transition">Elevgro</h3>
-              <p class="text-xs text-slate-500">Visual Identity System &amp; Pitch Deck</p>
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <h3 class="text-base font-semibold text-slate-950 group-hover:text-blue-700 transition">Elevgro</h3>
+                <span class="text-[10px] font-mono text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full font-medium">Deck</span>
+              </div>
+              <p class="text-xs text-slate-500 font-normal">Visual Identity &amp; Platform Pitch Deck</p>
             </div>
-            <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-blue-700 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+            <div class="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-blue-700 group-hover:text-white flex items-center justify-center transition duration-300">
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </div>
           </div>
         </a>
 
-        <!-- Card 4: Zalvice (Coral Rose) -->
-        <a href="zalvice/" class="group block space-y-4">
-          <div class="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#FFF1F2] via-[#FFE4E6] to-[#FECDD3] p-8 flex items-center justify-center overflow-hidden transition duration-300 group-hover:shadow-2xl group-hover:shadow-rose-900/15 group-hover:-translate-y-1.5">
-            <img src="assets/zalvice_1_fix.png" alt="Logo Zalvice" class="max-h-40 w-auto object-contain transition duration-500 group-hover:scale-105 drop-shadow-sm" />
-          </div>
-          <div class="flex items-start justify-between pt-1">
-            <div class="space-y-0.5">
-              <h3 class="text-base font-semibold text-slate-950 group-hover:text-[#DC143C] transition">Zalvice</h3>
-              <p class="text-xs text-slate-500">Identity &amp; Wordmark Proposal</p>
-            </div>
-            <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-[#DC143C] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
-          </div>
-        </a>
-
-        <!-- Card 5: Laptopbisnis (Cyber Midnight) -->
-        <a href="laptopbisnis/" class="group block space-y-4">
-          <div class="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#0F172A] via-[#1E1B4B] to-[#311042] p-8 flex items-center justify-center overflow-hidden transition duration-300 group-hover:shadow-2xl group-hover:shadow-indigo-950/40 group-hover:-translate-y-1.5">
-            <img src="assets/laptopbisnis_1_putih.png" alt="Logo Laptopbisnis" class="max-h-40 w-auto object-contain transition duration-500 group-hover:scale-105 drop-shadow-md" />
-          </div>
-          <div class="flex items-start justify-between pt-1">
-            <div class="space-y-0.5">
-              <h3 class="text-base font-semibold text-slate-950 group-hover:text-indigo-600 transition">Laptopbisnis</h3>
-              <p class="text-xs text-slate-500">Identity &amp; Logo System</p>
-            </div>
-            <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
-          </div>
-        </a>
-
-        <!-- Card 6: Ar Ruwad (Golden Ochre) -->
+        <!-- Case 4: Ar Ruwad (Real Architectural Signage Board Mockup) -->
         <a href="arruwad/" class="group block space-y-4">
-          <div class="aspect-[16/11] rounded-2xl bg-gradient-to-br from-[#FFFBEB] via-[#FEF3C7] to-[#FDE68A] p-8 flex items-center justify-center overflow-hidden transition duration-300 group-hover:shadow-2xl group-hover:shadow-amber-900/15 group-hover:-translate-y-1.5">
-            <img src="assets/logo_ar_ruwad_1.png" alt="Logo Ar Ruwad" class="max-h-40 w-auto object-contain transition duration-500 group-hover:scale-105 drop-shadow-sm" />
+          <div class="aspect-[16/11] rounded-2xl bg-[#F6F6F4] overflow-hidden relative shadow-sm group-hover:shadow-2xl transition duration-500">
+            <img src="assets/mockup_arruwad_board.jpg" alt="Ar Ruwad Signage Board Mockup" class="case-card-img w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
           </div>
           <div class="flex items-start justify-between pt-1">
-            <div class="space-y-0.5">
-              <h3 class="text-base font-semibold text-slate-950 group-hover:text-amber-800 transition">Ar Ruwad</h3>
-              <p class="text-xs text-slate-500">Logo Angkatan &amp; Identity Proposal</p>
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <h3 class="text-base font-semibold text-slate-950 group-hover:text-amber-800 transition">Ar Ruwad</h3>
+                <span class="text-[10px] font-mono text-amber-800 bg-amber-50 px-2 py-0.5 rounded-full font-medium">Deck</span>
+              </div>
+              <p class="text-xs text-slate-500 font-normal">Lembaga Pendidikan &amp; Identity Proposal</p>
             </div>
-            <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-amber-800 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+            <div class="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-amber-800 group-hover:text-white flex items-center justify-center transition duration-300">
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- Case 5: Laptopbisnis (OLED Hardware Presentation) -->
+        <a href="laptopbisnis/" class="group block space-y-4">
+          <div class="aspect-[16/11] rounded-2xl bg-[#0B1120] p-8 flex items-center justify-center overflow-hidden relative shadow-sm group-hover:shadow-2xl transition duration-500">
+            <div class="absolute inset-0 bg-radial from-cyan-500/10 via-transparent to-transparent"></div>
+            <img src="assets/laptopbisnis_1_putih.png" alt="Logo Laptopbisnis" class="case-card-img max-h-36 w-auto object-contain drop-shadow-2xl z-10" />
+          </div>
+          <div class="flex items-start justify-between pt-1">
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <h3 class="text-base font-semibold text-slate-950 group-hover:text-[#8D222E] transition">Laptopbisnis</h3>
+                <span class="text-[10px] font-mono text-slate-600 bg-slate-100 px-2 py-0.5 rounded-full font-medium">Deck</span>
+              </div>
+              <p class="text-xs text-slate-500 font-normal">Hardware Enterprise &amp; Logo System</p>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-slate-950 group-hover:text-white flex items-center justify-center transition duration-300">
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- Case 6: Zalvice (High-Fashion Agency Wordmark on Warm Stone) -->
+        <a href="zalvice/" class="group block space-y-4">
+          <div class="aspect-[16/11] rounded-2xl bg-[#F6F6F4] p-8 flex items-center justify-center overflow-hidden relative shadow-sm group-hover:shadow-2xl transition duration-500">
+            <img src="assets/zalvice_1_fix.png" alt="Logo Zalvice" class="case-card-img max-h-36 w-auto object-contain drop-shadow-sm" />
+          </div>
+          <div class="flex items-start justify-between pt-1">
+            <div class="space-y-1">
+              <div class="flex items-center gap-2">
+                <h3 class="text-base font-semibold text-slate-950 group-hover:text-[#8D222E] transition">Zalvice</h3>
+                <span class="text-[10px] font-mono text-slate-600 bg-slate-100 px-2 py-0.5 rounded-full font-medium">Deck</span>
+              </div>
+              <p class="text-xs text-slate-500 font-normal">Digital Agency &amp; Identity Wordmark</p>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-[#8D222E] group-hover:text-white flex items-center justify-center transition duration-300">
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </div>
           </div>
         </a>
 
@@ -318,20 +382,21 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- 4. CONSULTATION CTA (BERSIH & SANTAI)                   -->
+    <!-- 4. CONSULTATION CTA (TENANG, BERKELAS, GAS POL)        -->
     <!-- ======================================================= -->
-    <section class="py-20 sm:py-28 bg-gradient-to-b from-slate-50/60 to-white">
+    <section class="py-24 sm:py-32 bg-slate-50/70 border-t border-slate-100">
       <div class="max-w-4xl mx-auto px-6 sm:px-10 text-center space-y-6">
+        <span class="text-xs font-mono text-[#8D222E] uppercase tracking-widest block">START A PROJECT</span>
         <h2 class="text-3xl sm:text-5xl font-semibold text-slate-950 tracking-tight">
           Mau Bikin Logo Brand Lo Jadi Sekeren Ini?
         </h2>
         <p class="text-sm sm:text-base text-slate-600 max-w-xl mx-auto font-normal leading-relaxed">
           Lagi ngebangun brand baru atau mau rebrand bisnis biar makin stand out? Gas ngobrol bareng Daru di WhatsApp, santai aja bro!
         </p>
-        <div class="pt-3">
-          <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru%20(SYMP%20Studio),%20gue%20mau%20bikin%20identitas%20visual%20brand%20baru%20nih!" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#8D222E] text-white text-xs font-semibold hover:bg-[#68151E] hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-rose-900/20">
+        <div class="pt-4">
+          <a href="https://wa.me/6281311506025?text=Halo%20Mas%20Daru%20(SYMP%20Studio),%20gue%20mau%20bikin%20identitas%20visual%20brand%20baru%20nih!" target="_blank" rel="noreferrer" class="inline-flex items-center gap-3 px-9 py-4 rounded-full bg-slate-950 text-white text-xs font-medium hover:bg-[#8D222E] hover:scale-105 active:scale-95 transition-all duration-300 shadow-xl shadow-slate-900/10">
             <span>Gas Ngobrol di WhatsApp</span>
-            <i data-lucide="arrow-right" class="w-4 h-4 text-[#E1C9AC]"></i>
+            <i data-lucide="arrow-right" class="w-4 h-4 text-rose-300"></i>
           </a>
         </div>
       </div>
@@ -342,10 +407,10 @@
   <!-- ======================================================= -->
   <!-- 5. MINIMALIST CLEAN FOOTER                              -->
   <!-- ======================================================= -->
-  <footer class="bg-white py-12 text-xs text-slate-400 font-normal">
+  <footer class="bg-white py-14 text-xs text-slate-400 font-normal border-t border-slate-100">
     <div class="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col sm:flex-row items-center justify-between gap-4">
       <p>&copy; 2026 SYMP Studio. Dirancang oleh Daru Fahmaa Muliawan.</p>
-      <p>Presentation Archive &amp; Brand Guidelines Hub</p>
+      <p class="font-mono">PRESENTATION &amp; BRAND GUIDELINES HUB</p>
     </div>
   </footer>
 
