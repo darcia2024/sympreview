@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>AZHARUNA GROUP: Brand Guidelines | SYMP Studio</title>
-  <meta name="description" content="Buku panduan identitas visual resmi AZHARUNA GROUP (Pilihan 01: Baitullah & Menara Harmoni). Standar penggunaan logo, sistem warna korporat, tipografi, safe area, larangan, dan aplikasi holding syariah.">
+  <meta name="description" content="Buku panduan identitas visual resmi AZHARUNA GROUP (Pilihan 01: Baitullah & Menara Harmoni). Standar penggunaan logo, sistem warna korporat, tipografi ES Rebond Grotesque & Plus Jakarta Sans, safe area, larangan, dan aplikasi holding syariah.">
   <link rel="icon" href="../../assets/azharuna_group_1_berdiri.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,6 +35,7 @@
           },
           fontFamily: {
             sans: ['Plus Jakarta Sans', 'sans-serif'],
+            heading: ['ES Rebond Grotesque', 'Plus Jakarta Sans', 'sans-serif'],
             mono: ['JetBrains Mono', 'monospace']
           }
         }
@@ -43,6 +44,45 @@
   </script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
+    /* ======================================================= */
+    /* CUSTOM FONT-FACE: ES REBOND GROTESQUE                   */
+    /* ======================================================= */
+    @font-face {
+      font-family: 'ES Rebond Grotesque';
+      src: url('../../assets/fonts/ESRebondGrotesque-Thin.otf') format('opentype');
+      font-weight: 100;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'ES Rebond Grotesque';
+      src: url('../../assets/fonts/ESRebondGrotesque-Medium.otf') format('opentype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'ES Rebond Grotesque';
+      src: url('../../assets/fonts/ESRebondGrotesque-Semibold.otf') format('opentype');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'ES Rebond Grotesque';
+      src: url('../../assets/fonts/ESRebondGrotesque-Bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'ES Rebond Grotesque';
+      src: url('../../assets/fonts/ESRebondGrotesque-Extrabold.otf') format('opentype');
+      font-weight: 800;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
       --crimson: #8D222E;
       --crimson-dark: #68151E;
@@ -68,6 +108,12 @@
       letter-spacing: -0.015em;
       -webkit-font-smoothing: antialiased;
       text-rendering: geometricPrecision;
+    }
+
+    /* All Headings & Titles strictly use ES Rebond Grotesque */
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'ES Rebond Grotesque', 'Plus Jakarta Sans', sans-serif !important;
+      letter-spacing: -0.02em;
     }
 
     /* Clean Unboxed Swatch Bar */
@@ -128,7 +174,7 @@
       <a href="/azharuna" class="group flex items-center gap-3 text-slate-900 hover:text-[#8D222E] transition">
         <i data-lucide="arrow-left" class="w-4 h-4 text-slate-400 group-hover:-translate-x-1 group-hover:text-[#8D222E] transition-transform"></i>
         <div class="flex flex-col">
-          <span class="text-xs sm:text-sm font-bold tracking-tight text-slate-900">AZHARUNA GROUP</span>
+          <span class="text-xs sm:text-sm font-bold tracking-tight text-slate-900 font-heading">AZHARUNA GROUP</span>
           <span class="text-[10px] font-mono text-slate-400">Brand Guidelines 2026</span>
         </div>
       </a>
@@ -180,7 +226,7 @@
           <span class="tracking-widest uppercase font-semibold">Identitas Visual Resmi — Opsi 01 Terpilih</span>
         </div>
 
-        <!-- Monumental Title -->
+        <!-- Monumental Title in ES Rebond Grotesque -->
         <div class="space-y-4 mb-14">
           <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-slate-950 tracking-tight leading-[1.05]">
             AZHARUNA GROUP
@@ -498,7 +544,6 @@
           
           <!-- Left: Architectural Schematic Stage (No Cards) -->
           <div class="lg:col-span-7 rounded-3xl p-10 sm:p-14 bg-[#FAF4E8]/60 flex flex-col items-center justify-center relative overflow-hidden">
-            <!-- Subtle dashed lines for clear space -->
             <div class="absolute inset-8 sm:inset-12 border border-dashed border-[#8D222E]/30 rounded-2xl pointer-events-none flex flex-col justify-between p-2">
               <div class="flex justify-between text-[10px] font-mono text-[#8D222E]/70 font-semibold">
                 <span>X</span>
@@ -650,47 +695,64 @@
     </section>
 
     <!-- ======================================================= -->
-    <!-- SECTION 08: TYPOGRAPHY (PLUS JAKARTA SANS)              -->
+    <!-- SECTION 08: TYPOGRAPHY SYSTEM                           -->
+    <!-- ES REBOND GROTESQUE (HEADINGS) + PLUS JAKARTA SANS      -->
     <!-- ======================================================= -->
     <section id="tipografi" class="py-20 sm:py-28 border-b border-slate-100">
       <div class="max-w-5xl mx-auto px-6 sm:px-10 space-y-16">
         
         <div class="max-w-2xl space-y-3">
-          <span class="text-xs font-mono font-semibold uppercase text-[#8D222E] tracking-wider">07 / Tipografi</span>
+          <span class="text-xs font-mono font-semibold uppercase text-[#8D222E] tracking-wider">07 / Tipografi Resmi</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight leading-snug">
-            Plus Jakarta Sans
+            ES Rebond Grotesque &amp; Plus Jakarta Sans
           </h2>
           <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-            Font geometris modern dengan keterbacaan jernih pada media cetak maupun digital, menunjang wibawa korporasi tanpa terasa kaku.
+            Kombinasi tipografi tingkat agensi: <strong>ES Rebond Grotesque</strong> sebagai font judul utama (Display &amp; Headings) yang berwibawa, berkarakter tegas, dan modern; dipadukan dengan <strong>Plus Jakarta Sans</strong> untuk teks tubuh (body text) yang sangat jernih dan nyaman dibaca.
           </p>
         </div>
 
-        <!-- Grand Alphabet Specimen -->
-        <div class="space-y-8">
-          <div class="text-3xl sm:text-5xl lg:text-6xl font-light text-slate-900 tracking-tight leading-tight select-none">
+        <!-- Grand Alphabet Specimen in ES Rebond Grotesque -->
+        <div class="space-y-6">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+            <span class="text-xs font-mono font-bold uppercase text-[#8D222E]">Display &amp; Title Typeface: ES Rebond Grotesque</span>
+            <span class="text-xs font-mono text-slate-400">Weights: Thin, Medium, Semibold, Bold, Extrabold</span>
+          </div>
+          
+          <div id="specimen-display" class="text-3xl sm:text-5xl lg:text-6xl font-heading text-slate-950 tracking-tight leading-tight select-none">
             Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz
           </div>
-          <div class="text-2xl sm:text-4xl font-mono text-slate-400 tracking-widest select-none">
-            0123456789 (.,;:!?@#$%)
+          
+          <div class="text-2xl sm:text-4xl font-heading text-slate-400 tracking-wider select-none">
+            0123456789 &amp; (.,;:!?@#$%)
           </div>
         </div>
 
-        <!-- Clean Interactive Type Tester (No Cards) -->
+        <!-- Clean Interactive Type Tester for ES Rebond Grotesque -->
         <div class="pt-8 border-t border-slate-150 space-y-6">
           
           <div class="flex flex-wrap items-center justify-between gap-4 text-xs">
-            <span class="font-semibold text-slate-700">Uji Teks Langsung:</span>
+            <div class="flex items-center gap-2">
+              <span class="font-semibold text-slate-700">Pilih Bobot:</span>
+              <div class="flex items-center gap-1">
+                <button onclick="setFontWeight(100, this)" class="px-2.5 py-1 rounded-md text-xs font-medium text-slate-500 hover:text-slate-950 transition">Thin</button>
+                <button onclick="setFontWeight(500, this)" class="px-2.5 py-1 rounded-md text-xs font-medium text-slate-500 hover:text-slate-950 transition">Medium</button>
+                <button onclick="setFontWeight(600, this)" class="px-2.5 py-1 rounded-md text-xs font-medium text-slate-500 hover:text-slate-950 transition">Semibold</button>
+                <button onclick="setFontWeight(700, this)" class="px-2.5 py-1 rounded-md text-xs font-bold bg-[#8D222E] text-white transition">Bold</button>
+                <button onclick="setFontWeight(800, this)" class="px-2.5 py-1 rounded-md text-xs font-medium text-slate-500 hover:text-slate-950 transition">Extrabold</button>
+              </div>
+            </div>
+
             <div class="flex items-center gap-3">
               <span class="font-mono text-slate-400">Ukuran:</span>
-              <input id="font-size-slider" type="range" min="18" max="64" value="36" class="w-36 accent-[#8D222E] cursor-pointer" oninput="updateFontSize(this.value)" />
-              <span id="font-size-label" class="font-mono font-bold text-[#8D222E] w-12 text-right">36px</span>
+              <input id="font-size-slider" type="range" min="18" max="72" value="42" class="w-36 accent-[#8D222E] cursor-pointer" oninput="updateFontSize(this.value)" />
+              <span id="font-size-label" class="font-mono font-bold text-[#8D222E] w-12 text-right">42px</span>
             </div>
           </div>
 
           <input id="font-preview-input" type="text" value="AZHARUNA GROUP — Amanah Menuju Baitullah" class="w-full bg-transparent border-b border-slate-200 py-3 text-sm focus:border-[#8D222E] focus:outline-hidden transition text-slate-800" oninput="updatePreviewText(this.value)" />
 
-          <div class="py-8 min-h-[100px] flex items-center">
-            <p id="font-live-preview" class="text-slate-950 font-normal tracking-tight" style="font-size: 36px;">
+          <div class="py-8 min-h-[120px] flex items-center">
+            <p id="font-live-preview" class="font-heading text-slate-950 tracking-tight leading-tight" style="font-size: 42px; font-weight: 700;">
               AZHARUNA GROUP — Amanah Menuju Baitullah
             </p>
           </div>
@@ -699,20 +761,20 @@
 
         <!-- Hierarchy Guide in 3 Clean Columns -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8 border-t border-slate-150 text-xs">
-          <div class="space-y-1">
+          <div class="space-y-1.5">
             <span class="font-mono text-[10px] uppercase font-bold text-[#8D222E]">Headline (H1/H2)</span>
-            <div class="text-base font-bold text-slate-950">Bold / SemiBold</div>
-            <p class="text-slate-500 leading-relaxed">Tracking -0.02em, leading 1.1. Judul presentasi &amp; cover resmi.</p>
+            <div class="text-lg font-bold text-slate-950 font-heading">ES Rebond Grotesque Bold</div>
+            <p class="text-slate-500 leading-relaxed">Tracking -0.02em, leading 1.05. Digunakan untuk judul utama presentasi, cover, dan billboard.</p>
           </div>
-          <div class="space-y-1">
-            <span class="font-mono text-[10px] uppercase font-bold text-[#8D222E]">Body Copy (Paragraf)</span>
-            <div class="text-base font-normal text-slate-950">Regular (Weight 400)</div>
-            <p class="text-slate-500 leading-relaxed">Tracking normal, leading 1.6. Paragraf proposal &amp; surat resmi.</p>
+          <div class="space-y-1.5">
+            <span class="font-mono text-[10px] uppercase font-bold text-[#8D222E]">Subjudul (H3/H4)</span>
+            <div class="text-lg font-semibold text-slate-950 font-heading">ES Rebond Grotesque Semibold</div>
+            <p class="text-slate-500 leading-relaxed">Tracking -0.015em, leading 1.2. Digunakan untuk judul seksi dan sub-bab dokumen.</p>
           </div>
-          <div class="space-y-1">
-            <span class="font-mono text-[10px] uppercase font-bold text-[#8D222E]">Label &amp; Meta</span>
-            <div class="text-base font-medium text-slate-950 uppercase">Medium / SemiBold</div>
-            <p class="text-slate-500 leading-relaxed">Tracking +0.06em, all-caps. Kategori, penomoran, &amp; footer.</p>
+          <div class="space-y-1.5">
+            <span class="font-mono text-[10px] uppercase font-bold text-[#8D222E]">Body Text &amp; Paragraf</span>
+            <div class="text-lg font-normal text-slate-950">Plus Jakarta Sans Regular</div>
+            <p class="text-slate-500 leading-relaxed">Tracking normal, leading 1.65. Digunakan untuk teks tubuh, proposal, surat, dan deskripsi teknis.</p>
           </div>
         </div>
 
@@ -1027,7 +1089,16 @@
       }, 2200);
     }
 
-    // Font Live Tester Controls
+    // Font Live Tester Controls for ES Rebond Grotesque
+    function setFontWeight(weight, button) {
+      const liveText = document.getElementById('font-live-preview');
+      liveText.style.fontWeight = weight;
+      button.parentElement.querySelectorAll('button').forEach(btn => {
+        btn.className = 'px-2.5 py-1 rounded-md text-xs font-medium text-slate-500 hover:text-slate-950 transition';
+      });
+      button.className = 'px-2.5 py-1 rounded-md text-xs font-bold bg-[#8D222E] text-white transition';
+    }
+
     function updateFontSize(size) {
       const liveText = document.getElementById('font-live-preview');
       const sizeLabel = document.getElementById('font-size-label');
