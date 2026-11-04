@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Opsi Logo Markaz Tatwir | SYMP Studio</title>
+  <meta name="description" content="Tiga opsi logo Markaz Tatwir, dari Daru di SYMP Studio.">
+  <meta name="theme-color" content="#F8F1E1">
+  <link rel="icon" href="../assets/markaz_tatwir_3_coklat_symbol.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_downward,chat,close,content_copy&display=block" rel="stylesheet">
+  <style>
+    /* Material 3 tokens on a cream page. The logo's gold and brown lead the palette;
+       cards are a lighter cream with a soft outline. */
+    :root {
+      --md-sys-color-primary: #7A4F1D;
+      --md-sys-color-primary-container: #E8B20C;
+      --md-sys-color-on-primary-container: #3A2510;
+      --md-sys-color-secondary-container: #F2E2AE;
+      --md-sys-color-on-secondary-container: #3A2510;
+      --md-sys-color-surface: #F8F1E1;
+      --md-sys-color-surface-container-lowest: #FFFCF5;
+      --md-sys-color-on-surface: #3A2510;
+      --md-sys-color-on-surface-variant: #6A5742;
+      --md-sys-color-outline-variant: #E6D9C0;
+      --md-sys-color-inverse-surface: #3A2510;
+      --md-sys-color-inverse-on-surface: #FFFCF5;
+
+      --md-sys-shape-corner-medium: 12px;
+      --md-sys-shape-corner-large: 16px;
+      --md-sys-shape-corner-extra-large: 28px;
+      --md-sys-shape-corner-full: 999px;
+
+      --md-sys-motion-easing-standard: cubic-bezier(.2, 0, 0, 1);
+      --md-sys-motion-easing-emphasized-decelerate: cubic-bezier(.05, .7, .1, 1);
+      --md-sys-elevation-3: 0 1px 3px rgba(58, 37, 16, .25), 0 4px 8px 3px rgba(58, 37, 16, .12);
+
+      --gutter: clamp(16px, 3vw, 24px);
+      --heading: 'Cabinet Grotesk', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; scrollbar-gutter: stable; }
+    body { font-family: 'Cabinet Grotesk', system-ui, sans-serif; font-size: 17px; line-height: 26px; color: var(--md-sys-color-on-surface); background: var(--md-sys-color-surface); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+    :focus-visible { outline: 3px solid var(--md-sys-color-primary); outline-offset: 2px; }
+    [lang="ar"] { font-family: 'Amiri', serif; font-weight: 700; }
+    .icon { font-family: 'Material Symbols Rounded'; font-weight: 400; font-size: 20px; line-height: 1; letter-spacing: normal; display: inline-block; white-space: nowrap; direction: ltr; font-feature-settings: 'liga'; -webkit-font-smoothing: antialiased; flex: none; width: 1em; overflow: hidden; }
+
+    /* Type */
+    .display { font-family: var(--heading); font-size: clamp(36px, 5.4vw, 72px); line-height: 1.02; letter-spacing: -.03em; font-weight: 800; text-wrap: balance; }
+    .headline { font-family: var(--heading); font-size: clamp(30px, 3.1vw, 44px); line-height: 1.1; letter-spacing: -.02em; font-weight: 800; text-wrap: balance; }
+    .title-large { font-family: var(--heading); font-size: 25px; line-height: 30px; font-weight: 700; letter-spacing: -.01em; }
+    .title-medium { font-family: var(--heading); font-size: 19px; line-height: 24px; font-weight: 700; }
+    .body-medium { font-size: 15.5px; line-height: 23px; }
+    .label-large { font-size: 15.5px; line-height: 20px; font-weight: 700; }
+    .variant { color: var(--md-sys-color-on-surface-variant); }
+
+    /* State layer: hover 8%, focus and press 10% */
+    .state { position: relative; isolation: isolate; }
+    .state::before { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: currentColor; opacity: 0; transition: opacity .2s var(--md-sys-motion-easing-standard); pointer-events: none; }
+    .state:hover::before { opacity: .08; }
+    .state:focus-visible::before, .state:active::before { opacity: .1; }
+
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 40px; padding: 10px 24px; border-radius: var(--md-sys-shape-corner-full); white-space: nowrap; }
+    .btn .icon { font-size: 18px; margin-left: -8px; }
+    .btn-filled { background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); }
+
+    /* Top bar */
+    .bar { position: sticky; top: 0; z-index: 20; background: var(--md-sys-color-surface); transition: box-shadow .2s var(--md-sys-motion-easing-standard); }
+    .bar.scrolled { box-shadow: 0 1px 0 var(--md-sys-color-outline-variant); }
+    .bar-in { max-width: 1200px; margin: auto; padding: 12px var(--gutter); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; }
+    .brand { display: flex; align-items: center; gap: 12px; justify-self: start; }
+    .brand img { height: 40px; width: auto; }
+    .brand b { display: block; font-family: var(--heading); font-size: 18px; line-height: 20px; font-weight: 700; }
+    .brand small { display: block; font-size: 13px; line-height: 16px; color: var(--md-sys-color-on-surface-variant); }
+    .nav { display: flex; gap: 4px; }
+    .nav a { padding: 8px 16px; border-radius: var(--md-sys-shape-corner-full); color: var(--md-sys-color-on-surface-variant); transition: background .2s var(--md-sys-motion-easing-standard), color .2s var(--md-sys-motion-easing-standard); }
+    .nav a.on { background: var(--md-sys-color-secondary-container); color: var(--md-sys-color-on-secondary-container); }
+    .bar .btn { justify-self: end; }
+
+    main { max-width: 1200px; margin: auto; padding: clamp(32px, 5vw, 64px) var(--gutter) 0; display: grid; row-gap: clamp(64px, 8vw, 96px); }
+    .sec-head { margin-bottom: 24px; max-width: 720px; }
+    .sec-head p { margin-top: 8px; }
+
+    .hero p { margin-top: 16px; max-width: 680px; font-size: clamp(16px, 1.4vw, 18px); line-height: 1.55; }
+    .hero .accent { color: var(--md-sys-color-primary); }
+    #variants { margin-top: calc(clamp(64px, 8vw, 96px) * -.45); }
+
+    /* Outlined cards */
+    .cards { display: grid; gap: 16px; }
+    .c3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .c4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .card { background: var(--md-sys-color-surface-container-lowest); border: 1px solid var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-extra-large); padding: 12px; display: flex; flex-direction: column; }
+    .card-body { padding: 12px 12px 8px; display: flex; flex-direction: column; flex: 1; }
+
+    /* Logo cards */
+    .logo-card { position: relative; transition: border-color .25s var(--md-sys-motion-easing-standard); }
+    .logo-card:hover { border-color: var(--md-sys-color-primary-container); }
+    .stage { width: 100%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; padding: 5%; overflow: hidden; border-radius: var(--md-sys-shape-corner-large); cursor: zoom-in; }
+    .stage img { max-width: 100%; max-height: 100%; width: auto; object-fit: contain; transition: transform .4s var(--md-sys-motion-easing-emphasized-decelerate); }
+    .logo-card:hover .stage img { transform: scale(1.04); }
+        .card-desc { margin-top: 6px; flex: 1; }
+    .card-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; }
+    .btn-text { color: var(--md-sys-color-primary); padding-inline: 14px; }
+
+    /* Colours */
+    .swatch { position: relative; text-align: left; width: 100%; height: 100%; }
+    .chip-color { height: 112px; border-radius: var(--md-sys-shape-corner-large); display: flex; align-items: flex-end; justify-content: flex-end; padding: 12px; }
+    .swatch .card-body { display: block; padding-bottom: 4px; }
+    .swatch .specs { margin-top: 8px; display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; }
+    .swatch .k { color: var(--md-sys-color-on-surface-variant); }
+    .swatch .v { text-align: right; font-variant-numeric: tabular-nums; }
+
+    /* Information */
+    .info { display: grid; row-gap: 16px; }
+    .info-card { padding: 24px; }
+    .info-card > h3 { margin-bottom: 4px; }
+    table { width: 100%; border-collapse: collapse; table-layout: fixed; margin-top: 12px; }
+    th, td { text-align: left; vertical-align: top; padding: 12px 16px 12px 0; font-weight: 400; font-size: 15.5px; line-height: 22px; }
+    thead th { font-weight: 700; font-family: var(--heading); font-size: 17px; }
+    tbody th { color: var(--md-sys-color-on-surface-variant); width: 18%; }
+    tbody tr { border-top: 1px solid var(--md-sys-color-outline-variant); }
+    .mini th, .mini td { padding: 8px 8px 8px 0; }
+    .mini thead th { font-family: inherit; font-size: 14px; font-weight: 700; color: var(--md-sys-color-on-surface-variant); }
+    .mini tbody th { width: 46%; color: inherit; }
+    .rules { list-style: none; display: grid; gap: 8px; margin-top: 12px; }
+    .steps { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; margin-top: 16px; }
+    .steps b { display: block; font-weight: 700; font-size: 16.5px; line-height: 22px; }
+    .file-note { margin-top: 20px; }
+
+    /* Decision */
+    .vote-wrap { text-align: center; padding-bottom: clamp(48px, 6vw, 72px); }
+    .vote-wrap > p { max-width: 620px; margin: 12px auto 0; }
+    .votes { margin-top: 32px; text-align: left; }
+    .vote { position: relative; gap: 12px; }
+    .vote-logo { position: relative; aspect-ratio: 5 / 3; }
+    .vote-logo img { position: absolute; inset: 7%; width: 86%; height: 86%; object-fit: contain; }
+    .vote b { padding-inline: 8px; }
+    .vote .btn { width: 100%; }
+
+    footer { max-width: 1200px; margin: auto; padding: 0 var(--gutter) 40px; text-align: center; color: var(--md-sys-color-on-surface-variant); }
+
+    /* Dialog */
+    dialog { border: 0; padding: 0; margin: auto; width: min(100% - 32px, 880px); max-height: min(100dvh - 48px, 920px); background: var(--md-sys-color-surface-container-lowest); color: var(--md-sys-color-on-surface); border-radius: var(--md-sys-shape-corner-extra-large); box-shadow: var(--md-sys-elevation-3); overflow: hidden; }
+    dialog[open] { display: flex; flex-direction: column; animation: dlg-in .4s var(--md-sys-motion-easing-emphasized-decelerate); }
+    dialog::backdrop { background: rgba(58, 37, 16, .32); animation: fade-in .25s var(--md-sys-motion-easing-standard); }
+    @keyframes dlg-in { from { opacity: 0; transform: translateY(-16px) scale(.98); } }
+    @keyframes fade-in { from { opacity: 0; } }
+    .dlg-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 24px 16px 8px 24px; }
+    .dlg-head [lang="ar"] { font-size: 22px; line-height: 28px; margin-left: 10px; color: var(--md-sys-color-primary); }
+    .icon-btn { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; flex: none; color: var(--md-sys-color-on-surface-variant); }
+    .icon-btn .icon { font-size: 24px; }
+    .dlg-body { overflow-y: auto; padding: 0 24px 24px; }
+    .dlg-stage { height: clamp(240px, 40vh, 380px); display: flex; align-items: center; justify-content: center; padding: 24px; }
+    .dlg-stage img { max-width: 100%; max-height: 100%; width: auto; object-fit: contain; }
+    .dlg-info { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 24px; margin-top: 16px; align-items: start; }
+    .dlg-tag { color: var(--md-sys-color-primary); margin-bottom: 8px; }
+    .dlg-points { list-style: none; display: grid; gap: 10px; }
+    .dlg-points b { font-weight: 700; color: var(--md-sys-color-on-surface); }
+    .dlg-fit { margin-top: 16px; }
+    .dlg-fit b { font-weight: 700; }
+    .dlg-act { border: 1px solid var(--md-sys-color-outline-variant); border-radius: var(--md-sys-shape-corner-large); padding: 16px; }
+    .dlg-act p { margin-block: 4px 12px; }
+    .dlg-act .btn { width: 100%; }
+
+    /* Snackbar */
+    .snack { position: fixed; left: 50%; bottom: 24px; z-index: 30; transform: translate(-50%, 16px); min-height: 48px; display: flex; align-items: center; padding: 14px 16px; border-radius: 4px; background: var(--md-sys-color-inverse-surface); color: var(--md-sys-color-inverse-on-surface); box-shadow: var(--md-sys-elevation-3); opacity: 0; pointer-events: none; transition: opacity .15s var(--md-sys-motion-easing-standard), transform .3s var(--md-sys-motion-easing-emphasized-decelerate); white-space: nowrap; }
+    .snack.show { opacity: 1; transform: translate(-50%, 0); }
+
+    /* Entrance */
+    .js .rise { opacity: 0; transform: translateY(16px); transition: opacity .5s var(--md-sys-motion-easing-emphasized-decelerate), transform .5s var(--md-sys-motion-easing-emphasized-decelerate); transition-delay: calc(var(--i, 0) * 50ms); }
+    .js .rise.in { opacity: 1; transform: none; }
+
+    @media (max-width: 1000px) {
+      .bar-in { grid-template-columns: 1fr auto; }
+      .nav { display: none; }
+      .c4, .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 840px) {
+      .c3 { grid-template-columns: minmax(0, 1fr); }
+      .stage { aspect-ratio: 4 / 3; padding: 6%; }
+    }
+    @media (max-width: 600px) {
+      .bar .brand small { display: none; }
+      .btn { padding-inline: 16px; }
+      .c4, .steps { grid-template-columns: minmax(0, 1fr); }
+      .stage { aspect-ratio: 4 / 3; }
+      .info-card { padding: 20px; }
+
+      /* The comparison reads as short groups instead of scrolling sideways. */
+      .compare thead { display: none; }
+      .compare, .compare tbody, .compare tr, .compare tbody th, .compare td { display: block; width: auto; }
+      .compare tr { padding-block: 12px; }
+      .compare tbody th { padding: 0 0 6px; font-weight: 600; color: inherit; }
+      .compare td { padding: 2px 0; display: grid; grid-template-columns: 84px minmax(0, 1fr); column-gap: 8px; }
+      .compare td::before { content: attr(data-name); color: var(--md-sys-color-on-surface-variant); }
+
+      dialog { width: 100%; max-width: 100%; max-height: 100dvh; height: 100dvh; border-radius: 0; }
+      .dlg-info { grid-template-columns: minmax(0, 1fr); }
+      .dlg-head { padding-left: 16px; }
+      .dlg-body { padding-inline: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .js .rise { opacity: 1; transform: none; transition: none; }
+      *, ::before, ::after, dialog[open], dialog::backdrop { animation: none !important; transition-duration: .01ms !important; }
+    }
+  </style>
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <header class="bar" id="bar">
+    <div class="bar-in">
+      <a class="brand" href="../" title="Kembali ke galeri SYMP Studio">
+        <img src="../assets/markaz_tatwir_3_coklat_symbol.png" alt="">
+        <span><b>Markaz Tatwir</b><small>Dari Daru, SYMP Studio</small></span>
+      </a>
+      <nav class="nav label-large" aria-label="Bagian halaman">
+        <a href="#variants" class="on">Logonya</a>
+        <a href="#colors">Warnanya</a>
+        <a href="#informasi">Bedanya</a>
+      </nav>
+      <a href="#voting" class="btn btn-filled state label-large"><span class="icon" aria-hidden="true">arrow_downward</span>Pilih Logo</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 class="display rise">Ini tiga opsi logo<br><span class="accent">buat Markaz Tatwir.</span></h1>
+      <p class="variant rise" style="--i: 1;">Silakan dilihat dulu ya. Nanti kabari saya mana yang paling cocok buat Markaz.</p>
+    </section>
+
+    <section id="variants" aria-labelledby="h-variants">
+      <h2 id="h-variants" class="headline sec-head rise">Ini opsi-opsinya</h2>
+      <div class="cards c3">
+        <article class="card logo-card rise">
+          <button type="button" class="stage" data-open="1" aria-label="Lihat makna logo Bangkit dari Halaman"><img src="../assets/markaz_tatwir_1_coklat.png" alt="Logo Bangkit dari Halaman" width="1964" height="947"></button>
+          <div class="card-body">
+            <h3 class="title-large">Bangkit dari Halaman</h3>
+            <p class="card-desc body-medium variant">Yang ini paling hangat. Kaligrafinya saya bikin naik dari buku yang terbuka, kayak huruf yang hidup habis dibaca.</p>
+            <div class="card-actions"><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Bangkit%20dari%20Halaman%20ya.">Saya pilih ini</a><button type="button" class="btn btn-text state label-large" data-open="1">Lihat maknanya</button></div>
+          </div>
+        </article>
+        <article class="card logo-card rise" style="--i: 1;">
+          <button type="button" class="stage" data-open="2" aria-label="Lihat makna logo Gerbang Terbuka"><img src="../assets/markaz_tatwir_2_coklat.png" alt="Logo Gerbang Terbuka" width="1181" height="1635"></button>
+          <div class="card-body">
+            <h3 class="title-large">Gerbang Terbuka</h3>
+            <p class="card-desc body-medium variant">Yang ini paling megah. Lengkung mihrabnya jadi gerbang, terus kaligrafinya jalan keluar lewat kakinya.</p>
+            <div class="card-actions"><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Gerbang%20Terbuka%20ya.">Saya pilih ini</a><button type="button" class="btn btn-text state label-large" data-open="2">Lihat maknanya</button></div>
+          </div>
+        </article>
+        <article class="card logo-card rise" style="--i: 2;">
+          <button type="button" class="stage" data-open="3" aria-label="Lihat makna logo Tumbuh dari Dasar"><img src="../assets/markaz_tatwir_3_coklat.png" alt="Logo Tumbuh dari Dasar" width="1166" height="1529"></button>
+          <div class="card-body">
+            <h3 class="title-large">Tumbuh dari Dasar</h3>
+            <p class="card-desc body-medium variant">Yang ini paling rapi. Bacanya dari bawah ke atas: buku, huruf kufi, lalu daun, seperti tahapan belajar.</p>
+            <div class="card-actions"><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Tumbuh%20dari%20Dasar%20ya.">Saya pilih ini</a><button type="button" class="btn btn-text state label-large" data-open="3">Lihat maknanya</button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="colors" aria-labelledby="h-colors">
+      <div class="sec-head rise">
+        <h2 id="h-colors" class="headline">Warna yang saya pakai</h2>
+        <p class="variant">Kuningnya langsung dari logo, cokelatnya buat teks, kremnya buat latar. Kalau butuh kodenya, tinggal ketuk warnanya.</p>
+      </div>
+      <div class="cards c3">
+        <button type="button" class="card swatch state rise" data-hex="#F8F1E1">
+          <span class="chip-color" style="background: #F8F1E1; color: #3A2510; box-shadow: inset 0 0 0 1px #E6D9C0;"><span class="icon" aria-hidden="true">content_copy</span></span>
+          <span class="card-body"><span class="title-medium" style="display: block;">Krem Tatwir</span><span class="specs body-medium"><span class="k">Porsi</span><span class="v">Paling banyak, buat latar</span><span class="k">HEX</span><span class="v">#F8F1E1</span></span></span>
+        </button>
+        <button type="button" class="card swatch state rise" style="--i: 1;" data-hex="#E8B20C">
+          <span class="chip-color" style="background: #E8B20C; color: #3A2510;"><span class="icon" aria-hidden="true">content_copy</span></span>
+          <span class="card-body"><span class="title-medium" style="display: block;">Kuning Tatwir</span><span class="specs body-medium"><span class="k">Porsi</span><span class="v">Warna utama</span><span class="k">HEX</span><span class="v">#E8B20C</span></span></span>
+        </button>
+        <button type="button" class="card swatch state rise" style="--i: 2;" data-hex="#6B4423">
+          <span class="chip-color" style="background: #6B4423; color: #FFFCF5;"><span class="icon" aria-hidden="true">content_copy</span></span>
+          <span class="card-body"><span class="title-medium" style="display: block;">Cokelat Tatwir</span><span class="specs body-medium"><span class="k">Porsi</span><span class="v">Secukupnya, logo dan teks</span><span class="k">HEX</span><span class="v">#6B4423</span></span></span>
+        </button>
+      </div>
+    </section>
+
+    <section id="informasi" aria-labelledby="h-info">
+      <div class="sec-head rise">
+        <h2 id="h-info" class="headline">Biar gampang milihnya</h2>
+        <p class="variant">Ini saya rangkum bedanya, sekalian catatan kalau logonya nanti dipakai.</p>
+      </div>
+      <div class="info">
+
+        <div class="card info-card rise">
+          <h3 class="title-medium">Bedanya di mana</h3>
+          <table class="compare">
+            <thead><tr><td></td><th scope="col">Bangkit dari Halaman</th><th scope="col">Gerbang Terbuka</th><th scope="col">Tumbuh dari Dasar</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Kesan</th><td data-name="Bangkit">Hangat dan ramah</td><td data-name="Gerbang">Megah dan klasik</td><td data-name="Tumbuh">Rapi dan modern</td></tr>
+              <tr><th scope="row">Jenis tulisan</th><td data-name="Bangkit">Kaligrafi lentur</td><td data-name="Gerbang">Kaligrafi di dalam gerbang</td><td data-name="Tumbuh">Khat kufi bersudut</td></tr>
+              <tr><th scope="row">Bentuk</th><td data-name="Bangkit">Mendatar</td><td data-name="Gerbang">Berdiri</td><td data-name="Tumbuh">Berdiri</td></tr>
+              <tr><th scope="row">Kalau dibuat kecil</th><td data-name="Bangkit">Cukup baik</td><td data-name="Gerbang">Detailnya mulai nyatu</td><td data-name="Tumbuh">Paling jelas</td></tr>
+              <tr><th scope="row">Paling cocok buat</th><td data-name="Bangkit">Kop surat, website, spanduk</td><td data-name="Gerbang">Sertifikat, sampul buku, plakat</td><td data-name="Tumbuh">Stempel, bordir, ikon aplikasi</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="cards c3">
+          <div class="card info-card rise">
+            <h3 class="title-medium">Jangan lebih kecil dari ini</h3>
+            <table class="mini">
+              <thead><tr><td></td><th scope="col">Cetak</th><th scope="col">Layar</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Logo lengkap</th><td>30 mm</td><td>120 px</td></tr>
+                <tr><th scope="row">Simbol saja</th><td>10 mm</td><td>32 px</td></tr>
+              </tbody>
+            </table>
+            <p class="body-medium variant" style="margin-top: 8px;">Ini angka awal ya. Nanti saya tes lagi di logo yang kepilih.</p>
+          </div>
+          <div class="card info-card rise" style="--i: 1;">
+            <h3 class="title-medium">Kasih ruang di sekelilingnya</h3>
+            <p class="body-medium variant" style="margin-top: 12px;">Sisain ruang kosong di semua sisi, kira-kira seperempat lebar simbolnya. Biar logonya nggak sesak sama teks atau gambar lain.</p>
+          </div>
+          <div class="card info-card rise" style="--i: 2;">
+            <h3 class="title-medium">Yang perlu dijaga</h3>
+            <ul class="rules body-medium variant">
+              <li>Pakainya di latar krem atau yang terang.</li>
+              <li>Jangan ditarik sampai proporsinya berubah.</li>
+              <li>Jangan dimiringkan, nanti tulisan Arabnya susah dibaca.</li>
+              <li>Warnanya jangan diganti di luar yang tadi.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card info-card rise">
+          <h3 class="title-medium">Habis dipilih</h3>
+          <ol class="steps">
+            <li><b>1. Kabari saya</b><span class="body-medium variant">Tinggal pencet tombol WhatsApp di bawah.</span></li>
+            <li><b>2. Kasih masukan</b><span class="body-medium variant">Kalau ada yang mau diubah, bilang aja, termasuk teks Arabnya.</span></li>
+            <li><b>3. Saya rapikan</b><span class="body-medium variant">Saya finalkan, lalu saya tes di ukuran kecil dan buat cetak.</span></li>
+            <li><b>4. Saya kirim filenya</b><span class="body-medium variant">Master file-nya saya kirim, biar bisa langsung dipakai tim Markaz.</span></li>
+          </ol>
+          <p class="file-note body-medium variant">Filenya nanti ada .AI, .EPS, .SVG, .PDF, dan .PNG.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="voting" class="vote-wrap" aria-labelledby="h-vote">
+      <h2 id="h-vote" class="headline rise">Jadi yang mana?</h2>
+      <p class="variant rise" style="--i: 1;">Pilih satu, pesannya langsung masuk ke WhatsApp saya.</p>
+      <div class="cards c3 votes">
+        <div class="card vote rise"><div class="vote-logo"><img src="../assets/markaz_tatwir_1_coklat.png" alt=""></div><b class="title-medium">Bangkit dari Halaman</b><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Bangkit%20dari%20Halaman%20ya.">Saya pilih ini</a></div>
+        <div class="card vote rise" style="--i: 1;"><div class="vote-logo"><img src="../assets/markaz_tatwir_2_coklat.png" alt=""></div><b class="title-medium">Gerbang Terbuka</b><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Gerbang%20Terbuka%20ya.">Saya pilih ini</a></div>
+        <div class="card vote rise" style="--i: 2;"><div class="vote-logo"><img src="../assets/markaz_tatwir_3_coklat.png" alt=""></div><b class="title-medium">Tumbuh dari Dasar</b><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Tumbuh%20dari%20Dasar%20ya.">Saya pilih ini</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="body-medium">Daru Fahmaa Muliawan, SYMP Studio, 2026.</footer>
+
+  <dialog id="dlg" aria-labelledby="d-title">
+    <div class="dlg-head">
+      <h2 class="title-large" style="font-size: 24px; line-height: 32px;"><span id="d-title"></span><span lang="ar" dir="rtl" id="d-ar"></span></h2>
+      <button type="button" class="icon-btn state" id="d-close" aria-label="Tutup"><span class="icon" aria-hidden="true">close</span></button>
+    </div>
+    <div class="dlg-body">
+      <div class="dlg-stage"><img id="d-img" src="" alt=""></div>
+      <div class="dlg-info">
+        <div>
+          <p class="dlg-tag title-medium" id="d-tag"></p>
+          <ul class="dlg-points body-medium variant" id="d-points"></ul>
+          <p class="dlg-fit body-medium"><b>Paling cocok buat</b> <span id="d-fit"></span></p>
+        </div>
+        <div class="dlg-act">
+          <h3 class="title-medium">Suka yang ini?</h3>
+          <p class="body-medium variant">Kabari saya, nanti saya siapin master file-nya.</p>
+          <a class="btn btn-filled state label-large" id="d-wa" target="_blank" rel="noopener" href="#voting"><span class="icon" aria-hidden="true">chat</span>Kabari lewat WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="snack body-medium" id="snack" role="status" aria-live="polite"></div>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const data = {
+      1: { title: 'Bangkit dari Halaman', ar: 'نهوض', tag: 'Hangat dan luwes, rasanya dekat sama suasana kelas.', fit: 'kop surat, website, sama spanduk.',
+        points: [['Tiang huruf yang menjulang', 'ini titik tertinggi logonya, saya bayangin pelajar yang terus naik.'], ['Tanda seperti harakat', 'buat penutur non-Arab, ini alat bantu pertama waktu belajar baca.'], ['Lembar yang terangkat', 'kayak halaman yang lagi dibalik, pelajaran berikutnya mulai kebuka.']] },
+      2: { title: 'Gerbang Terbuka', ar: 'الباب', tag: 'Megah dan berwibawa, nuansanya klasik.', fit: 'sertifikat, sampul buku, sama plakat.',
+        points: [['Lengkung ganda', 'dua garisnya sejajar, kayak guru yang nemenin pelajarnya.'], ['Bintang delapan penjuru', 'pelajar dari mana aja ketemu di satu bahasa.'], ['Goresan yang keluar gerbang', 'ilmu dari kelas dibawa keluar, dipakai sehari-hari.']] },
+      3: { title: 'Tumbuh dari Dasar', ar: 'نماء', tag: 'Rapi dan modern, paling jelas kalau dibuat kecil.', fit: 'stempel, bordir, sama ikon aplikasi.',
+        points: [['Buku', 'tahap pertama, tempat semua pelajar mulai.'], ['Huruf kufi', 'tahap kedua, kaidah yang nata bahasanya.'], ['Sepasang daun', 'tahap ketiga, ilmunya tumbuh dan mulai bermanfaat.']] }
+    };
+
+    // Dialog
+    const dlg = $('dlg');
+    let opener = null;
+    function openDialog(c, from) {
+      opener = from;
+      const d = data[c];
+      $('d-title').textContent = d.title;
+      $('d-ar').textContent = d.ar;
+      $('d-tag').textContent = d.tag;
+      $('d-points').innerHTML = d.points.map(([t, m]) => `<li><b>${t}:</b> ${m}</li>`).join('');
+      $('d-fit').textContent = d.fit;
+      $('d-img').src = `../assets/markaz_tatwir_${c}_coklat.png`;
+      $('d-img').alt = `Logo ${d.title}`;
+      $('d-wa').href = `https://wa.me/6281311506025?text=${encodeURIComponent(`Halo, saya pilih logo ${d.title} ya.`)}`;
+      dlg.showModal();
+      document.body.style.overflow = 'hidden';
+    }
+    document.querySelectorAll('[data-open]').forEach((b) => b.addEventListener('click', () => openDialog(Number(b.dataset.open), b)));
+    $('d-close').addEventListener('click', () => dlg.close());
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+    dlg.addEventListener('close', () => { document.body.style.overflow = ''; if (opener) opener.focus(); });
+
+    // Copy colour
+    const snack = $('snack');
+    let snackTimer;
+    function say(text) {
+      snack.textContent = text; snack.classList.add('show');
+      clearTimeout(snackTimer); snackTimer = setTimeout(() => snack.classList.remove('show'), 2500);
+    }
+    document.querySelectorAll('[data-hex]').forEach((b) => b.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(b.dataset.hex); say(`${b.dataset.hex} disalin`); }
+      catch (e) { say(`Kode warna: ${b.dataset.hex}`); }
+    }));
+
+    // Bar edge on scroll, active section in the nav, entrance
+    const bar = $('bar');
+    addEventListener('scroll', () => bar.classList.toggle('scrolled', scrollY > 8), { passive: true });
+    const links = [...document.querySelectorAll('.nav a')];
+    if ('IntersectionObserver' in window) {
+      const spy = new IntersectionObserver((es) => es.forEach((e) => {
+        if (e.isIntersecting) links.forEach((a) => a.classList.toggle('on', a.getAttribute('href') === `#${e.target.id}`));
+      }), { rootMargin: '-35% 0px -60% 0px' });
+      links.forEach((a) => { const s = document.querySelector(a.getAttribute('href')); if (s) spy.observe(s); });
+      const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -6% 0px' });
+      document.querySelectorAll('.rise').forEach((el) => io.observe(el));
+    } else {
+      document.querySelectorAll('.rise').forEach((el) => el.classList.add('in'));
+    }
+  </script>
+</body>
+</html>
