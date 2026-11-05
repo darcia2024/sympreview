@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Opsi Logo Markaz Tatwir | SYMP Studio</title>
-  <meta name="description" content="Tiga opsi logo Markaz Tatwir, dari Daru di SYMP Studio.">
+  <title>Logo Markaz Tatwir | SYMP Studio</title>
+  <meta name="description" content="Logo Markaz Tatwir yang dipilih: Gerbang Terbuka, dari Daru di SYMP Studio.">
   <meta name="theme-color" content="#F8F1E1">
-  <link rel="icon" href="../assets/markaz_tatwir_3_coklat_symbol.png">
+  <link rel="icon" href="../assets/markaz_tatwir_2_coklat_symbol.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap" rel="stylesheet">
@@ -111,6 +111,20 @@
     .card-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 16px; }
     .btn-text { color: var(--md-sys-color-primary); padding-inline: 14px; }
 
+    /* Chosen and not chosen: the other two options go grey */
+    .chip { display: inline-flex; align-self: flex-start; align-items: center; min-height: 28px; padding: 4px 12px; border-radius: var(--md-sys-shape-corner-full); font-size: 13.5px; line-height: 20px; font-weight: 700; margin-bottom: 8px; }
+    .chip-on { background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); }
+    .chip-off { background: #ECECEC; color: #6B6B6B; }
+    .logo-card.picked { border: 2px solid var(--md-sys-color-primary-container); }
+    .off { background: #F6F6F6; }
+    .off.logo-card:hover { border-color: var(--md-sys-color-outline-variant); }
+    .off img { filter: grayscale(1); opacity: .5; }
+    .off .title-large, .off .title-medium, .off .card-desc { color: #8A8A8A; }
+    .off .btn-text { color: #7A7A7A; }
+    .compare .col-off { color: #9A9A9A; }
+    .compare .col-on { font-weight: 700; background: rgba(232, 178, 12, .14); padding-left: 12px; }
+    .vote-tag { display: flex; align-items: center; justify-content: center; min-height: 40px; color: #8A8A8A; }
+
     /* Colours */
     .swatch { position: relative; text-align: left; width: 100%; height: 100%; }
     .chip-color { height: 112px; border-radius: var(--md-sys-shape-corner-large); display: flex; align-items: flex-end; justify-content: flex-end; padding: 12px; }
@@ -141,6 +155,7 @@
     .vote-wrap > p { max-width: 620px; margin: 12px auto 0; }
     .votes { margin-top: 32px; text-align: left; }
     .vote { position: relative; gap: 12px; }
+    .vote.picked { border: 2px solid var(--md-sys-color-primary-container); }
     .vote-logo { position: relative; aspect-ratio: 5 / 3; }
     .vote-logo img { position: absolute; inset: 7%; width: 86%; height: 86%; object-fit: contain; }
     .vote b { padding-inline: 8px; }
@@ -202,6 +217,7 @@
       .compare tbody th { padding: 0 0 6px; font-weight: 600; color: inherit; }
       .compare td { padding: 2px 0; display: grid; grid-template-columns: 84px minmax(0, 1fr); column-gap: 8px; }
       .compare td::before { content: attr(data-name); color: var(--md-sys-color-on-surface-variant); }
+      .compare .col-on { padding-left: 0; background: none; }
 
       dialog { width: 100%; max-width: 100%; max-height: 100dvh; height: 100dvh; border-radius: 0; }
       .dlg-info { grid-template-columns: minmax(0, 1fr); }
@@ -221,7 +237,7 @@
   <header class="bar" id="bar">
     <div class="bar-in">
       <a class="brand" href="../" title="Kembali ke galeri SYMP Studio">
-        <img src="../assets/markaz_tatwir_3_coklat_symbol.png" alt="">
+        <img src="../assets/markaz_tatwir_2_coklat_symbol.png" alt="">
         <span><b>Markaz Tatwir</b><small>Dari Daru, SYMP Studio</small></span>
       </a>
       <nav class="nav label-large" aria-label="Bagian halaman">
@@ -229,41 +245,41 @@
         <a href="#colors">Warnanya</a>
         <a href="#informasi">Bedanya</a>
       </nav>
-      <a href="#voting" class="btn btn-filled state label-large"><span class="icon" aria-hidden="true">arrow_downward</span>Pilih Logo</a>
+      <a href="#voting" class="btn btn-filled state label-large"><span class="icon" aria-hidden="true">arrow_downward</span>Logo Terpilih</a>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <h1 class="display rise">Ini tiga opsi logo<br><span class="accent">buat Markaz Tatwir.</span></h1>
-      <p class="variant rise" style="--i: 1;">Silakan dilihat dulu ya. Nanti kabari saya mana yang paling cocok buat Markaz.</p>
+      <h1 class="display rise">Logo Markaz Tatwir:<br><span class="accent">Gerbang Terbuka.</span></h1>
+      <p class="variant rise" style="--i: 1;">Dari tiga opsi, yang dipilih Gerbang Terbuka, yang ada sepasang menara Al-Azhar di dalam gerbangnya. Dua opsi lainnya masih saya tampilkan sebagai arsip.</p>
     </section>
 
     <section id="variants" aria-labelledby="h-variants">
-      <h2 id="h-variants" class="headline sec-head rise">Ini opsi-opsinya</h2>
+      <h2 id="h-variants" class="headline sec-head rise">Opsi-opsinya</h2>
       <div class="cards c3">
-        <article class="card logo-card rise">
-          <button type="button" class="stage" data-open="1" aria-label="Lihat makna logo Bangkit dari Halaman"><img src="../assets/markaz_tatwir_1_coklat.png" alt="Logo Bangkit dari Halaman" width="1964" height="947"></button>
-          <div class="card-body">
-            <h3 class="title-large">Bangkit dari Halaman</h3>
-            <p class="card-desc body-medium variant">Yang ini paling hangat. Kaligrafinya saya bikin naik dari buku yang terbuka, kayak huruf yang hidup habis dibaca.</p>
-            <div class="card-actions"><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Bangkit%20dari%20Halaman%20ya.">Saya pilih ini</a><button type="button" class="btn btn-text state label-large" data-open="1">Lihat maknanya</button></div>
-          </div>
-        </article>
-        <article class="card logo-card rise" style="--i: 1;">
+        <article class="card logo-card picked rise">
           <button type="button" class="stage" data-open="2" aria-label="Lihat makna logo Gerbang Terbuka"><img src="../assets/markaz_tatwir_2_coklat.png" alt="Logo Gerbang Terbuka" width="1318" height="1426"></button>
           <div class="card-body">
-            <h3 class="title-large">Gerbang Terbuka</h3>
+            <span class="chip chip-on">Terpilih</span><h3 class="title-large">Gerbang Terbuka</h3>
             <p class="card-desc body-medium variant">Yang ini paling megah. Lengkung mihrabnya jadi gerbang, terus kaligrafinya jalan keluar lewat kakinya.</p>
-            <div class="card-actions"><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Gerbang%20Terbuka%20ya.">Saya pilih ini</a><button type="button" class="btn btn-text state label-large" data-open="2">Lihat maknanya</button></div>
+            <div class="card-actions"><button type="button" class="btn btn-filled state label-large" data-open="2">Lihat maknanya</button></div>
           </div>
         </article>
-        <article class="card logo-card rise" style="--i: 2;">
+        <article class="card logo-card off rise" style="--i: 1;">
+          <button type="button" class="stage" data-open="1" aria-label="Lihat makna logo Bangkit dari Halaman"><img src="../assets/markaz_tatwir_1_coklat.png" alt="Logo Bangkit dari Halaman" width="1964" height="947"></button>
+          <div class="card-body">
+            <span class="chip chip-off">Tidak dipilih</span><h3 class="title-large">Bangkit dari Halaman</h3>
+            <p class="card-desc body-medium variant">Yang ini paling hangat. Kaligrafinya saya bikin naik dari buku yang terbuka, kayak huruf yang hidup habis dibaca.</p>
+            <div class="card-actions"><button type="button" class="btn btn-text state label-large" data-open="1">Lihat maknanya</button></div>
+          </div>
+        </article>
+        <article class="card logo-card off rise" style="--i: 2;">
           <button type="button" class="stage" data-open="3" aria-label="Lihat makna logo Tumbuh dari Dasar"><img src="../assets/markaz_tatwir_3_coklat.png" alt="Logo Tumbuh dari Dasar" width="1166" height="1529"></button>
           <div class="card-body">
-            <h3 class="title-large">Tumbuh dari Dasar</h3>
+            <span class="chip chip-off">Tidak dipilih</span><h3 class="title-large">Tumbuh dari Dasar</h3>
             <p class="card-desc body-medium variant">Yang ini paling rapi. Bacanya dari bawah ke atas: buku, huruf kufi, lalu daun, seperti tahapan belajar.</p>
-            <div class="card-actions"><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Tumbuh%20dari%20Dasar%20ya.">Saya pilih ini</a><button type="button" class="btn btn-text state label-large" data-open="3">Lihat maknanya</button></div>
+            <div class="card-actions"><button type="button" class="btn btn-text state label-large" data-open="3">Lihat maknanya</button></div>
           </div>
         </article>
       </div>
@@ -292,21 +308,21 @@
 
     <section id="informasi" aria-labelledby="h-info">
       <div class="sec-head rise">
-        <h2 id="h-info" class="headline">Biar gampang milihnya</h2>
-        <p class="variant">Ini saya rangkum bedanya, sekalian catatan kalau logonya nanti dipakai.</p>
+        <h2 id="h-info" class="headline">Bedanya dan cara pakainya</h2>
+        <p class="variant">Ini bedanya dengan dua opsi lain, sekalian catatan buat pakai logonya.</p>
       </div>
       <div class="info">
 
         <div class="card info-card rise">
           <h3 class="title-medium">Bedanya di mana</h3>
           <table class="compare">
-            <thead><tr><td></td><th scope="col">Bangkit dari Halaman</th><th scope="col">Gerbang Terbuka</th><th scope="col">Tumbuh dari Dasar</th></tr></thead>
+            <thead><tr><td></td><th scope="col" class="col-off">Bangkit dari Halaman</th><th scope="col" class="col-on">Gerbang Terbuka</th><th scope="col" class="col-off">Tumbuh dari Dasar</th></tr></thead>
             <tbody>
-              <tr><th scope="row">Kesan</th><td data-name="Bangkit">Hangat dan ramah</td><td data-name="Gerbang">Megah dan klasik</td><td data-name="Tumbuh">Rapi dan modern</td></tr>
-              <tr><th scope="row">Jenis tulisan</th><td data-name="Bangkit">Kaligrafi lentur</td><td data-name="Gerbang">Kaligrafi di dalam gerbang</td><td data-name="Tumbuh">Khat kufi bersudut</td></tr>
-              <tr><th scope="row">Bentuk</th><td data-name="Bangkit">Mendatar</td><td data-name="Gerbang">Berdiri</td><td data-name="Tumbuh">Berdiri</td></tr>
-              <tr><th scope="row">Kalau dibuat kecil</th><td data-name="Bangkit">Cukup baik</td><td data-name="Gerbang">Detailnya mulai nyatu</td><td data-name="Tumbuh">Paling jelas</td></tr>
-              <tr><th scope="row">Paling cocok buat</th><td data-name="Bangkit">Kop surat, website, spanduk</td><td data-name="Gerbang">Sertifikat, sampul buku, plakat</td><td data-name="Tumbuh">Stempel, bordir, ikon aplikasi</td></tr>
+              <tr><th scope="row">Kesan</th><td data-name="Bangkit" class="col-off">Hangat dan ramah</td><td data-name="Gerbang" class="col-on">Megah dan klasik</td><td data-name="Tumbuh" class="col-off">Rapi dan modern</td></tr>
+              <tr><th scope="row">Jenis tulisan</th><td data-name="Bangkit" class="col-off">Kaligrafi lentur</td><td data-name="Gerbang" class="col-on">Kaligrafi di dalam gerbang</td><td data-name="Tumbuh" class="col-off">Khat kufi bersudut</td></tr>
+              <tr><th scope="row">Bentuk</th><td data-name="Bangkit" class="col-off">Mendatar</td><td data-name="Gerbang" class="col-on">Berdiri</td><td data-name="Tumbuh" class="col-off">Berdiri</td></tr>
+              <tr><th scope="row">Kalau dibuat kecil</th><td data-name="Bangkit" class="col-off">Cukup baik</td><td data-name="Gerbang" class="col-on">Detailnya mulai nyatu</td><td data-name="Tumbuh" class="col-off">Paling jelas</td></tr>
+              <tr><th scope="row">Paling cocok buat</th><td data-name="Bangkit" class="col-off">Kop surat, website, spanduk</td><td data-name="Gerbang" class="col-on">Sertifikat, sampul buku, plakat</td><td data-name="Tumbuh" class="col-off">Stempel, bordir, ikon aplikasi</td></tr>
             </tbody>
           </table>
         </div>
@@ -321,7 +337,7 @@
                 <tr><th scope="row">Simbol saja</th><td>10 mm</td><td>32 px</td></tr>
               </tbody>
             </table>
-            <p class="body-medium variant" style="margin-top: 8px;">Ini angka awal ya. Nanti saya tes lagi di logo yang kepilih.</p>
+            <p class="body-medium variant" style="margin-top: 8px;">Ini angka awal ya. Nanti saya tes lagi di Gerbang Terbuka, karena detail menaranya mulai nyatu kalau terlalu kecil.</p>
           </div>
           <div class="card info-card rise" style="--i: 1;">
             <h3 class="title-medium">Kasih ruang di sekelilingnya</h3>
@@ -339,9 +355,9 @@
         </div>
 
         <div class="card info-card rise">
-          <h3 class="title-medium">Habis dipilih</h3>
+          <h3 class="title-medium">Langkah berikutnya</h3>
           <ol class="steps">
-            <li><b>1. Kabari saya</b><span class="body-medium variant">Tinggal pencet tombol WhatsApp di bawah.</span></li>
+            <li><b>1. Sudah dipilih</b><span class="body-medium variant">Logonya Gerbang Terbuka.</span></li>
             <li><b>2. Kasih masukan</b><span class="body-medium variant">Kalau ada yang mau diubah, bilang aja, termasuk teks Arabnya.</span></li>
             <li><b>3. Saya rapikan</b><span class="body-medium variant">Saya finalkan, lalu saya tes di ukuran kecil dan buat cetak.</span></li>
             <li><b>4. Saya kirim filenya</b><span class="body-medium variant">Master file-nya saya kirim, biar bisa langsung dipakai tim Markaz.</span></li>
@@ -352,12 +368,12 @@
     </section>
 
     <section id="voting" class="vote-wrap" aria-labelledby="h-vote">
-      <h2 id="h-vote" class="headline rise">Jadi yang mana?</h2>
-      <p class="variant rise" style="--i: 1;">Pilih satu, pesannya langsung masuk ke WhatsApp saya.</p>
+      <h2 id="h-vote" class="headline rise">Sudah dipilih</h2>
+      <p class="variant rise" style="--i: 1;">Logonya Gerbang Terbuka. Kalau masih ada yang mau diubah, termasuk teks Arabnya, kabari saya lewat WhatsApp.</p>
       <div class="cards c3 votes">
-        <div class="card vote rise"><div class="vote-logo"><img src="../assets/markaz_tatwir_1_coklat.png" alt=""></div><b class="title-medium">Bangkit dari Halaman</b><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Bangkit%20dari%20Halaman%20ya.">Saya pilih ini</a></div>
-        <div class="card vote rise" style="--i: 1;"><div class="vote-logo"><img src="../assets/markaz_tatwir_2_coklat.png" alt=""></div><b class="title-medium">Gerbang Terbuka</b><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Gerbang%20Terbuka%20ya.">Saya pilih ini</a></div>
-        <div class="card vote rise" style="--i: 2;"><div class="vote-logo"><img src="../assets/markaz_tatwir_3_coklat.png" alt=""></div><b class="title-medium">Tumbuh dari Dasar</b><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Tumbuh%20dari%20Dasar%20ya.">Saya pilih ini</a></div>
+        <div class="card vote picked rise"><div class="vote-logo"><img src="../assets/markaz_tatwir_2_coklat.png" alt=""></div><b class="title-medium">Gerbang Terbuka</b><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20soal%20logo%20Gerbang%20Terbuka%20ya."><span class="icon" aria-hidden="true">chat</span>Kabari lewat WhatsApp</a></div>
+        <div class="card vote off rise" style="--i: 1;"><div class="vote-logo"><img src="../assets/markaz_tatwir_1_coklat.png" alt=""></div><b class="title-medium">Bangkit dari Halaman</b><span class="vote-tag label-large">Tidak dipilih</span></div>
+        <div class="card vote off rise" style="--i: 2;"><div class="vote-logo"><img src="../assets/markaz_tatwir_3_coklat.png" alt=""></div><b class="title-medium">Tumbuh dari Dasar</b><span class="vote-tag label-large">Tidak dipilih</span></div>
       </div>
     </section>
   </main>
@@ -378,8 +394,8 @@
           <p class="dlg-fit body-medium"><b>Paling cocok buat</b> <span id="d-fit"></span></p>
         </div>
         <div class="dlg-act">
-          <h3 class="title-medium">Suka yang ini?</h3>
-          <p class="body-medium variant">Kabari saya, nanti saya siapin master file-nya.</p>
+          <h3 class="title-medium" id="d-act-title">Suka yang ini?</h3>
+          <p class="body-medium variant" id="d-act-text">Kabari saya, nanti saya siapin master file-nya.</p>
           <a class="btn btn-filled state label-large" id="d-wa" target="_blank" rel="noopener" href="#voting"><span class="icon" aria-hidden="true">chat</span>Kabari lewat WhatsApp</a>
         </div>
       </div>
@@ -412,7 +428,12 @@
       $('d-fit').textContent = d.fit;
       $('d-img').src = `../assets/markaz_tatwir_${c}_coklat.png`;
       $('d-img').alt = `Logo ${d.title}`;
-      $('d-wa').href = `https://wa.me/6281311506025?text=${encodeURIComponent(`Halo, saya pilih logo ${d.title} ya.`)}`;
+      const picked = c === 2;
+      $('d-act-title').textContent = picked ? 'Ini logo yang dipilih' : 'Tidak dipilih';
+      $('d-act-text').textContent = picked ? 'Kalau masih ada yang mau diubah, kabari saya.' : 'Logo yang dipilih Gerbang Terbuka. Opsi ini disimpan sebagai arsip.';
+      $('d-wa').hidden = !picked;
+      $('d-wa').href = 'https://wa.me/6281311506025?text=Halo,%20soal%20logo%20Gerbang%20Terbuka%20ya.';
+      $('d-img').style.filter = picked ? '' : 'grayscale(1)';
       dlg.showModal();
       document.body.style.overflow = 'hidden';
     }
