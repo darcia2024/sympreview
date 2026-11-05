@@ -146,34 +146,37 @@
       .sec-head { margin-bottom: 14px; }
       .sec-head p { margin-top: 6px; }
 
-      #opsi { margin-top: -20px; row-gap: 32px; }
+      #opsi { margin-top: -20px; row-gap: 40px; }
       .opt { grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); gap: 8px; }
       .panel { border-radius: var(--md-sys-shape-corner-large); }
-      .panel img { inset: 8%; width: 84%; height: 84%; }
-      .panel-light img { inset: 8%; width: 84%; height: 84%; }
-      .opt-text { grid-template-columns: minmax(0, 1fr); gap: 4px; padding-top: 6px; }
-      .opt-act { margin-top: 10px; min-height: 40px; padding-block: 8px; }
+      .panel img { inset: 10%; width: 80%; height: 80%; }
+      .opt-text { grid-template-columns: minmax(0, 1fr); gap: 6px; padding-top: 10px; }
+      .opt-act { display: flex; width: 100%; margin-top: 14px; }
 
-      /* The comparison keeps its three columns; each row's label sits above its values. */
+      /* The comparison keeps its three columns; each row's label sits above its values,
+         and every name breaks onto two lines so the columns line up. */
       .compare, .compare thead, .compare tbody { display: block; width: auto; }
-      .compare tr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 10px; padding-block: 8px; }
+      .compare tr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 12px; row-gap: 4px; padding-block: 10px; }
+      .compare thead tr { padding-top: 0; }
       .compare thead td { display: none; }
-      .compare thead th { padding: 0; font-size: 14.5px; line-height: 19px; }
-      .compare tbody th { grid-column: 1 / -1; width: auto; padding: 0 0 2px; font-size: 13.5px; line-height: 19px; font-weight: 700; }
-      .compare td { padding: 0; font-size: 14px; line-height: 19px; }
+      .compare thead th { padding: 0; font-size: 15px; line-height: 19px; word-spacing: 100vw; }
+      .compare tbody th { grid-column: 1 / -1; width: auto; padding: 0; font-size: 13px; line-height: 18px; font-weight: 500; }
+      .compare td { padding: 0; font-size: 14.5px; line-height: 20px; }
 
       .swatches { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-      .swatch { min-height: 88px; padding: 10px 12px; border-radius: var(--md-sys-shape-corner-large); }
-      .swatch b { font-size: 14.5px; line-height: 18px; }
-      .swatch span.hex { font-size: 13px; line-height: 18px; }
+      .swatch { min-height: 96px; padding: 12px; border-radius: var(--md-sys-shape-corner-large); }
+      .swatch b { font-size: 15px; line-height: 18px; word-spacing: 100vw; margin-bottom: 4px; }
+      .swatch span.hex { display: block; font-size: 13px; line-height: 18px; }
       .swatch .icon { display: none; }
 
+      /* Each choice is one cream row: its logo, then a short button. */
       .vote-wrap { padding-bottom: 28px; }
       .votes { grid-template-columns: minmax(0, 1fr); gap: 8px; }
-      .vote { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); align-items: center; gap: 10px; }
-      .vote-logo { border-radius: var(--md-sys-shape-corner-large); }
-      .vote-logo img { inset: 8%; width: 84%; height: 84%; }
-      .vote .btn { align-self: center; width: 100%; padding-inline: 10px; white-space: normal; text-align: center; font-size: 14.5px; }
+      .vote { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 12px; background: var(--krem); border-radius: var(--md-sys-shape-corner-large); }
+      .vote-logo { aspect-ratio: auto; height: 56px; background: none; border-radius: 0; }
+      .vote-logo img { inset: 0; width: min(100%, 148px); height: 100%; object-position: left center; }
+      .vote .btn { min-height: 40px; padding: 8px 22px; }
+      .vote-name { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
       footer { padding-bottom: 24px; font-size: 14px; }
     }
     @media (max-width: 600px) {
@@ -255,9 +258,9 @@
         <thead><tr><td></td><th scope="col">Gerbang Bintang</th><th scope="col">Kubah Terbuka</th><th scope="col">Sosok Juara</th></tr></thead>
         <tbody>
           <tr><th scope="row">Kesan</th><td data-name="Gerbang">Khidmat dan klasik</td><td data-name="Kubah">Anggun dan lembut</td><td data-name="Sosok">Berani dan modern</td></tr>
-          <tr><th scope="row">Yang paling kelihatan</th><td data-name="Gerbang">Gerbang dan bintang</td><td data-name="Kubah">Kubah di atas buku</td><td data-name="Sosok">Orang merentangkan tangan</td></tr>
+          <tr><th scope="row">Yang paling kelihatan</th><td data-name="Gerbang">Gerbang dan bintang</td><td data-name="Kubah">Kubah di atas buku</td><td data-name="Sosok">Sosok tangan terbuka</td></tr>
           <tr><th scope="row">Kalau dibuat kecil</th><td data-name="Gerbang">Bintangnya mulai nyatu</td><td data-name="Kubah">Cukup jelas</td><td data-name="Sosok">Paling jelas</td></tr>
-          <tr><th scope="row">Paling cocok buat</th><td data-name="Gerbang">Sertifikat dan plakat</td><td data-name="Kubah">Backdrop dan undangan</td><td data-name="Sosok">Trofi, medsos, dan merchandise</td></tr>
+          <tr><th scope="row">Paling cocok buat</th><td data-name="Gerbang">Sertifikat dan plakat</td><td data-name="Kubah">Backdrop dan undangan</td><td data-name="Sosok">Trofi dan medsos</td></tr>
         </tbody>
       </table>
     </section>
@@ -280,9 +283,9 @@
         <p class="variant">Pilih satu, pesannya langsung masuk ke WhatsApp saya. Kalau ada yang mau diubah, tulis sekalian di situ.</p>
       </div>
       <div class="votes">
-        <div class="vote rise"><div class="vote-logo"><img src="../assets/hamasah_1_samping_terang.png" alt="Logo Gerbang Bintang"></div><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Gerbang%20Bintang%20ya.">Pilih Gerbang Bintang</a></div>
-        <div class="vote rise" style="--i: 1;"><div class="vote-logo"><img src="../assets/hamasah_2_samping_terang.png" alt="Logo Kubah Terbuka"></div><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Kubah%20Terbuka%20ya.">Pilih Kubah Terbuka</a></div>
-        <div class="vote rise" style="--i: 2;"><div class="vote-logo"><img src="../assets/hamasah_3_samping_terang.png" alt="Logo Sosok Juara"></div><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Sosok%20Juara%20ya.">Pilih Sosok Juara</a></div>
+        <div class="vote rise"><div class="vote-logo"><img src="../assets/hamasah_1_samping_terang.png" alt="Logo Gerbang Bintang"></div><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Gerbang%20Bintang%20ya.">Pilih<span class="vote-name"> Gerbang Bintang</span></a></div>
+        <div class="vote rise" style="--i: 1;"><div class="vote-logo"><img src="../assets/hamasah_2_samping_terang.png" alt="Logo Kubah Terbuka"></div><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Kubah%20Terbuka%20ya.">Pilih<span class="vote-name"> Kubah Terbuka</span></a></div>
+        <div class="vote rise" style="--i: 2;"><div class="vote-logo"><img src="../assets/hamasah_3_samping_terang.png" alt="Logo Sosok Juara"></div><a class="btn btn-filled state label-large" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Sosok%20Juara%20ya.">Pilih<span class="vote-name"> Sosok Juara</span></a></div>
       </div>
     </section>
   </main>
