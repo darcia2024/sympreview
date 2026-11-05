@@ -153,15 +153,16 @@
       .opt-text { grid-template-columns: minmax(0, 1fr); gap: 6px; padding-top: 10px; }
       .opt-act { display: flex; width: 100%; margin-top: 14px; }
 
-      /* The comparison keeps its three columns; each row's label sits above its values,
-         and every name breaks onto two lines so the columns line up. */
+      /* A ruled table: lines between every cell keep the three narrow columns apart.
+         Each row's label takes the full width above its three values. */
       .compare, .compare thead, .compare tbody { display: block; width: auto; }
-      .compare tr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 12px; row-gap: 4px; padding-block: 10px; }
-      .compare thead tr { padding-top: 0; }
+      .compare { border: 1px solid var(--md-sys-color-outline-variant); border-radius: 8px; overflow: hidden; }
+      .compare tr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .compare thead td { display: none; }
-      .compare thead th { padding: 0; font-size: 15px; line-height: 19px; word-spacing: 100vw; }
-      .compare tbody th { grid-column: 1 / -1; width: auto; padding: 0; font-size: 13px; line-height: 18px; font-weight: 500; }
-      .compare td { padding: 0; font-size: 14.5px; line-height: 20px; }
+      .compare thead th { padding: 10px; font-size: 14.5px; line-height: 18px; word-spacing: 100vw; }
+      .compare thead th:not(:first-of-type), .compare td + td { border-left: 1px solid var(--md-sys-color-outline-variant); }
+      .compare tbody th { grid-column: 1 / -1; width: auto; padding: 6px 10px; font-size: 13px; line-height: 18px; font-weight: 700; background: var(--krem); color: var(--md-sys-color-on-surface); border-bottom: 1px solid var(--md-sys-color-outline-variant); }
+      .compare td { padding: 8px 10px; font-size: 14px; line-height: 19px; }
 
       .swatches { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
       .swatch { min-height: 96px; padding: 12px; border-radius: var(--md-sys-shape-corner-large); }
