@@ -11,7 +11,7 @@
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_downward,content_copy&display=block" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_downward,content_copy,download&display=block" rel="stylesheet">
   <style>
     /* Material 3 tokens on a white page. The logo carries three inks: yellow, orange and
        dark brown on cream; on the brown panel, cream takes the place of brown. */
@@ -93,7 +93,8 @@
     .panel-light { background: var(--krem); aspect-ratio: auto; }
     .panel-light img { inset: 14% 12%; width: 76%; height: 72%; }
     .opt-text { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 16px; padding-top: 12px; }
-    .opt-act { margin-top: 20px; }
+    .opt-act { margin-top: 20px; vertical-align: top; }
+    .opt-act + .opt-act { margin-left: 8px; }
 
     /* Comparison */
     table { width: 100%; border-collapse: collapse; table-layout: fixed; }
@@ -110,6 +111,18 @@
     .sw-brown { background: var(--md-sys-color-primary); color: var(--md-sys-color-on-primary); }
     .sw-yellow { background: var(--md-sys-color-on-primary); }
     .sw-orange { background: var(--oranye); color: var(--md-sys-color-primary); }
+
+    /* Downloads: each file is shown on the background it was made for */
+    .dl-all { margin-top: 20px; }
+    .dls { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+    .dl { display: flex; flex-direction: column; gap: 14px; }
+    .dl-logo { position: relative; aspect-ratio: 1 / 1; background: var(--md-sys-color-primary); border-radius: var(--md-sys-shape-corner-extra-large); }
+    .dl-logo.light { background: var(--krem); }
+    .dl-logo img { position: absolute; inset: 14%; width: 72%; height: 72%; object-fit: contain; }
+    .dl-meta b { display: block; }
+    .dl-meta span { display: block; font-size: 14.5px; line-height: 20px; }
+    .btn-tonal { background: var(--md-sys-color-secondary-container); color: var(--md-sys-color-on-surface); }
+    .dl .btn { align-self: flex-start; margin-top: auto; }
 
     /* Decision */
     .vote-wrap { padding-bottom: clamp(48px, 6vw, 72px); }
@@ -152,6 +165,7 @@
       .panel img { inset: 10%; width: 80%; height: 80%; }
       .opt-text { grid-template-columns: minmax(0, 1fr); gap: 6px; padding-top: 10px; }
       .opt-act { display: flex; width: 100%; margin-top: 14px; }
+      .opt-act + .opt-act { margin-left: 0; margin-top: 8px; }
 
       /* A ruled table: lines between every cell keep the three narrow columns apart.
          Each row's label takes the full width above its three values. */
@@ -163,6 +177,12 @@
       .compare thead th:not(:first-of-type), .compare td + td { border-left: 1px solid var(--md-sys-color-outline-variant); }
       .compare tbody th { grid-column: 1 / -1; width: auto; padding: 6px 10px; font-size: 13px; line-height: 18px; font-weight: 700; background: var(--krem); color: var(--md-sys-color-on-surface); border-bottom: 1px solid var(--md-sys-color-outline-variant); }
       .compare td { padding: 8px 10px; font-size: 14px; line-height: 19px; }
+
+      .dls { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 8px; }
+      .dl { gap: 10px; }
+      .dl-logo { border-radius: var(--md-sys-shape-corner-large); }
+      .dl .btn { align-self: stretch; min-height: 40px; padding: 8px 16px; }
+      .dl-all { display: flex; width: 100%; margin-top: 14px; }
 
       .swatches { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
       .swatch { min-height: 96px; padding: 12px; border-radius: var(--md-sys-shape-corner-large); }
@@ -202,6 +222,7 @@
         <a href="#opsi" class="on">Logonya</a>
         <a href="#bedanya">Bedanya</a>
         <a href="#warna">Warnanya</a>
+        <a href="#unduh">Download</a>
       </nav>
       <a href="#pilih" class="btn btn-filled state label-large"><span class="icon" aria-hidden="true">arrow_downward</span>Pilih Logo</a>
     </div>
@@ -234,6 +255,7 @@
           <div>
             <p class="variant">Yang ini paling anggun. Kubahnya berlapis, makin ke dalam makin runcing, lalu berdiri di atas buku yang terbuka. Garisnya melengkung semua, jadi rasanya paling lembut dari ketiganya.</p>
             <a class="btn btn-filled state label-large opt-act" target="_blank" rel="noopener" href="https://wa.me/6281311506025?text=Halo,%20saya%20pilih%20logo%20Kubah%20Terbuka%20ya.">Saya pilih ini</a>
+            <a class="btn btn-tonal state label-large opt-act" href="#unduh"><span class="icon" aria-hidden="true">download</span>Download logo</a>
           </div>
         </div>
       </article>
@@ -275,6 +297,36 @@
         <button type="button" class="swatch sw-yellow state rise" data-hex="#F7C31E"><span><b>Kuning Hamasah</b><span class="hex">#F7C31E</span></span><span class="icon" aria-hidden="true">content_copy</span></button>
         <button type="button" class="swatch sw-orange state rise" style="--i: 1;" data-hex="#E2601A"><span><b>Oranye Bara</b><span class="hex">#E2601A</span></span><span class="icon" aria-hidden="true">content_copy</span></button>
         <button type="button" class="swatch sw-brown state rise" style="--i: 2;" data-hex="#3A2408"><span><b>Cokelat Tua</b><span class="hex">#3A2408</span></span><span class="icon" aria-hidden="true">content_copy</span></button>
+      </div>
+    </section>
+
+    <section id="unduh" aria-labelledby="h-unduh">
+      <div class="sec-head rise">
+        <h2 id="h-unduh" class="headline">Download logo Kubah Terbuka</h2>
+        <p class="variant">Ada empat versi, semuanya PNG dengan latar transparan. Yang berwarna tulisan di bawah dibuat buat latar gelap, karena kubah dalam dan bukunya warna krem. Kalau latarnya terang, pakai yang tulisan di samping.</p>
+        <a class="btn btn-tonal state label-large dl-all" href="../assets/hamasah-kubah-terbuka/hamasah-kubah-terbuka-semua.zip" download><span class="icon" aria-hidden="true">download</span>Download semua (ZIP)</a>
+      </div>
+      <div class="dls">
+        <div class="dl rise" style="--i: 0;">
+          <div class="dl-logo"><img src="../assets/hamasah-kubah-terbuka/kubah_terbuka_bawah_warna.png" alt="Logo Kubah Terbuka, tulisan di bawah, berwarna" width="1154" height="1600" loading="lazy"></div>
+          <div class="dl-meta"><b class="title-medium">Tulisan di bawah, berwarna</b><span class="variant">Buat latar gelap · PNG 1154 × 1600</span></div>
+          <a class="btn btn-filled state label-large" href="../assets/hamasah-kubah-terbuka/kubah_terbuka_bawah_warna.png" download="kubah_terbuka_bawah_warna.png"><span class="icon" aria-hidden="true">download</span>Download</a>
+        </div>
+        <div class="dl rise" style="--i: 1;">
+          <div class="dl-logo light"><img src="../assets/hamasah-kubah-terbuka/kubah_terbuka_samping_warna.png" alt="Logo Kubah Terbuka, tulisan di samping, berwarna" width="1600" height="679" loading="lazy"></div>
+          <div class="dl-meta"><b class="title-medium">Tulisan di samping, berwarna</b><span class="variant">Buat latar terang · PNG 1600 × 679</span></div>
+          <a class="btn btn-filled state label-large" href="../assets/hamasah-kubah-terbuka/kubah_terbuka_samping_warna.png" download="kubah_terbuka_samping_warna.png"><span class="icon" aria-hidden="true">download</span>Download</a>
+        </div>
+        <div class="dl rise" style="--i: 2;">
+          <div class="dl-logo"><img src="../assets/hamasah-kubah-terbuka/kubah_terbuka_bawah_putih.png" alt="Logo Kubah Terbuka, tulisan di bawah, putih" width="1154" height="1600" loading="lazy"></div>
+          <div class="dl-meta"><b class="title-medium">Tulisan di bawah, putih</b><span class="variant">Buat latar gelap atau foto · PNG 1154 × 1600</span></div>
+          <a class="btn btn-filled state label-large" href="../assets/hamasah-kubah-terbuka/kubah_terbuka_bawah_putih.png" download="kubah_terbuka_bawah_putih.png"><span class="icon" aria-hidden="true">download</span>Download</a>
+        </div>
+        <div class="dl rise" style="--i: 3;">
+          <div class="dl-logo"><img src="../assets/hamasah-kubah-terbuka/kubah_terbuka_samping_putih.png" alt="Logo Kubah Terbuka, tulisan di samping, putih" width="1600" height="679" loading="lazy"></div>
+          <div class="dl-meta"><b class="title-medium">Tulisan di samping, putih</b><span class="variant">Buat latar gelap atau foto · PNG 1600 × 679</span></div>
+          <a class="btn btn-filled state label-large" href="../assets/hamasah-kubah-terbuka/kubah_terbuka_samping_putih.png" download="kubah_terbuka_samping_putih.png"><span class="icon" aria-hidden="true">download</span>Download</a>
+        </div>
       </div>
     </section>
 
